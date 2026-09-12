@@ -1,5 +1,6 @@
 import { spawn } from "node:child_process"
 import { promises as fs } from "node:fs"
+import { createRequire } from "node:module"
 import path from "node:path"
 
 import { registryDirectorySchema } from "../lib/registry-directory"
@@ -20,6 +21,7 @@ import {
 import directory from "../registry/directory.json"
 
 const PHASES = new Set(["prepare", "check", "publish"] as const)
+const resolveFromScript = createRequire(import.meta.url).resolve
 const MODES = new Set<RegistryMonitorMode>([
   "auto",
   "hourly",
@@ -181,10 +183,7 @@ async function checkRegistries() {
       ? null
       : registryMonitorStateSchema.parse(previousStateValue)
   const parsedDirectory = registryDirectorySchema.parse(directory)
-  const cliPath = path.resolve(
-    process.cwd(),
-    "../../packages/shadcn/dist/index.js"
-  )
+  const cliPath = resolveFromScript("shadcn")
   const result = await runRegistryMonitor({
     directory: parsedDirectory,
     previousState,

@@ -1430,12 +1430,13 @@ async function getItemDependencies(
 async function buildRegistry(styleName: string) {
   const outputPath = `public/r/styles/${styleName}`
   const registryPath = `registry-${styleName}.json`
+  const cliPath = resolveFromScript("shadcn")
 
   await new Promise<void>((resolve, reject) => {
     const proc = spawn(
-      "node",
+      process.execPath,
       [
-        "../../packages/shadcn/dist/index.js",
+        cliPath,
         "build",
         registryPath,
         "--output",
