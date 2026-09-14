@@ -6,6 +6,7 @@ import { IconAlertCircle } from "@tabler/icons-react"
 import { cn } from "cn"
 import { I18nProvider } from "react-aria-components"
 
+import { JapanesePreview } from "@/lib/japanese-preview"
 import {
   LanguageProvider,
   LanguageSelector,
@@ -13,15 +14,15 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { DirectionProvider as BaseDirectionProvider } from "@/registry/bases/base/ui/direction"
-import { DirectionProvider as RadixDirectionProvider } from "@/registry/bases/radix/ui/direction"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { Separator } from "@/registry/new-york-v4/ui/separator"
+import { DirectionProvider as BaseDirectionProvider } from "@/components/ui/base/direction"
+import { DirectionProvider as RadixDirectionProvider } from "@/components/ui/radix/direction"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function ComponentPreviewTabs({
   className,
@@ -72,7 +73,7 @@ export function ComponentPreviewTabs({
                     className="ml-auto size-7"
                   >
                     <IconAlertCircle />
-                    <span className="sr-only">Toggle</span>
+                    <span className="sr-only">切り替え</span>
                   </Button>
                 }
               ></PopoverTrigger>
@@ -167,7 +168,7 @@ export function ComponentPreviewTabs({
                     setIsMobileCodeVisible(true)
                   }}
                 >
-                  View Code
+                  コードを見る
                 </Button>
               </div>
             </div>
@@ -239,7 +240,7 @@ function PreviewWrapper({
           previewClassName
         )}
       >
-        {children}
+        <JapanesePreview>{children}</JapanesePreview>
       </div>
     </div>
   )

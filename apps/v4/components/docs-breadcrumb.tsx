@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation"
 import { useBreadcrumb } from "fumadocs-core/breadcrumb"
 import type { Root } from "fumadocs-core/page-tree"
 
+import { getPageDisplayName } from "@/lib/page-tree"
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,7 +14,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/registry/new-york-v4/ui/breadcrumb"
+} from "@/components/ui/breadcrumb"
 
 export function DocsBreadcrumb({
   tree,
@@ -33,7 +34,7 @@ export function DocsBreadcrumb({
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link href="/docs" className="hover:text-accent-foreground">
-              Docs
+              Documentation
             </Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -48,7 +49,7 @@ export function DocsBreadcrumb({
                     href={item.url}
                     className="truncate hover:text-accent-foreground"
                   >
-                    {item.name}
+                    {getPageDisplayName(item)}
                   </Link>
                 </BreadcrumbLink>
               </BreadcrumbItem>

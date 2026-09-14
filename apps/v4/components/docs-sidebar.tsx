@@ -7,7 +7,11 @@ import { usePathname } from "next/navigation"
 import { PAGES_NEW } from "@/lib/docs"
 import { DOCS_SIDEBAR_SCROLL_STORAGE_KEY } from "@/lib/docs-sidebar-scroll"
 import { showMcpDocs } from "@/lib/flags"
-import { getCurrentBase, getPagesFromFolder } from "@/lib/page-tree"
+import {
+  getCurrentBase,
+  getPageDisplayName,
+  getPagesFromFolder,
+} from "@/lib/page-tree"
 import type { source } from "@/lib/source"
 import {
   Sidebar,
@@ -18,20 +22,20 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/registry/new-york-v4/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "はじめに", href: "/docs" },
   {
-    name: "Components",
+    name: "コンポーネント",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "インストール",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "テーマ",
     href: "/docs/theming",
   },
   {
@@ -39,19 +43,11 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/cli",
   },
   {
-    name: "Typeset",
-    href: "/docs/typeset",
-  },
-  {
     name: "Skills",
     href: "/docs/skills",
   },
   {
-    name: "Registry",
-    href: "/docs/registry",
-  },
-  {
-    name: "Changelog",
+    name: "変更履歴",
     href: "/docs/changelog",
   },
 ]
@@ -249,7 +245,7 @@ export function DocsSidebar({
                           >
                             <Link href={page.url}>
                               <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />
-                              {page.name}
+                              {getPageDisplayName(page)}
                               {PAGES_NEW.includes(page.url) && (
                                 <span
                                   className="flex size-2 rounded-full bg-blue-500"

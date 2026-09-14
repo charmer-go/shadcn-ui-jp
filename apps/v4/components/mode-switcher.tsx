@@ -6,7 +6,7 @@ import { cn } from "cn"
 import { useTheme } from "next-themes"
 
 import { useMetaColor } from "@/hooks/use-meta-color"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 
 export const DARK_MODE_FORWARD_TYPE = "dark-mode-forward"
 
@@ -54,7 +54,7 @@ export function ModeSwitcher({
         <path d="M12 14.3l7.37 -7.37" />
         <path d="M12 19.6l8.85 -8.85" />
       </svg>
-      <span className="sr-only">Toggle theme</span>
+      <span className="sr-only">テーマを切り替え</span>
     </Button>
   )
 }

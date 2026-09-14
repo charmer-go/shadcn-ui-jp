@@ -7,27 +7,31 @@ import { cn } from "cn"
 
 import { PAGES_NEW } from "@/lib/docs"
 import { showMcpDocs } from "@/lib/flags"
-import { getCurrentBase, getPagesFromFolder } from "@/lib/page-tree"
+import {
+  getCurrentBase,
+  getPageDisplayName,
+  getPagesFromFolder,
+} from "@/lib/page-tree"
 import { type source } from "@/lib/source"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
+} from "@/components/ui/popover"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "はじめに", href: "/docs" },
   {
-    name: "Components",
+    name: "コンポーネント",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "インストール",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "テーマ",
     href: "/docs/theming",
   },
   {
@@ -47,15 +51,11 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/mcp",
   },
   {
-    name: "Registry",
-    href: "/docs/registry",
-  },
-  {
     name: "Forms",
     href: "/docs/forms",
   },
   {
-    name: "Changelog",
+    name: "変更履歴",
     href: "/docs/changelog",
   },
 ]
@@ -169,7 +169,7 @@ export function MobileNav({
                             onOpenChange={setOpen}
                             className="flex items-center gap-2"
                           >
-                            {item.name}{" "}
+                            {getPageDisplayName(item)}{" "}
                             {PAGES_NEW.includes(item.url) && (
                               <span className="flex size-2 rounded-full bg-blue-500" />
                             )}
