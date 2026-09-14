@@ -4,14 +4,14 @@ import * as React from "react"
 import { CalendarDate } from "@internationalized/date"
 import { Clock2Icon } from "lucide-react"
 
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Card, CardContent, CardFooter } from "@/styles/aria-nova/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Card, CardContent, CardFooter } from "@/components/ui/aria/card"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
+} from "@/components/ui/aria/input-group"
 
 export function CalendarWithTime() {
   const [date, setDate] = React.useState<CalendarDate | undefined>(

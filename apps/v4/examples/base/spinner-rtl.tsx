@@ -11,8 +11,8 @@ import {
   ItemContent,
   ItemMedia,
   ItemTitle,
-} from "@/styles/base-nova/ui-rtl/item"
-import { Spinner } from "@/styles/base-nova/ui-rtl/spinner"
+} from "@/components/ui/base/item"
+import { Spinner } from "@/components/ui/base/spinner"
 
 const translations: Translations = {
   en: {

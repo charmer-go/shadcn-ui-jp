@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { Bubble, BubbleContent } from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardContent,
@@ -11,8 +11,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-rhea/ui/card"
-import { Message, MessageContent } from "@/styles/radix-rhea/ui/message"
+} from "@/components/ui/radix/card"
+import { Message, MessageContent } from "@/components/ui/radix/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -21,8 +21,8 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScroller,
-} from "@/styles/radix-rhea/ui/message-scroller"
-import { Tabs, TabsList, TabsTrigger } from "@/styles/radix-rhea/ui/tabs"
+} from "@/components/ui/radix/message-scroller"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/radix/tabs"
 
 const messages = [
   {

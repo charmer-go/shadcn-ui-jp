@@ -1,14 +1,14 @@
 import { CopyIcon, TrashIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 
 export function InputGroupWithButtons() {
   return (

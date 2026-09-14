@@ -6,7 +6,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 const northAmerica = [
   { label: "Eastern Standard Time", value: "est" },

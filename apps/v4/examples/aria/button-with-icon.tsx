@@ -1,6 +1,6 @@
 import { IconGitBranch, IconGitFork } from "@tabler/icons-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 
 export default function ButtonWithIcon() {
   return (

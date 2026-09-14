@@ -11,7 +11,7 @@ import {
   ComboboxLabel,
   ComboboxList,
   ComboboxSeparator,
-} from "@/styles/aria-nova/ui/combobox"
+} from "@/components/ui/aria/combobox"
 
 const timezones = [
   {

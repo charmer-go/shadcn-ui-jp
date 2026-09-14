@@ -16,7 +16,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/aria-nova/ui/questionnaire"
+} from "@/components/ui/aria/questionnaire"
 
 export function QuestionnaireConditional() {
   const [runtime, setRuntime] = React.useState("local")

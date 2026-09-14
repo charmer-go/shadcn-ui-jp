@@ -16,8 +16,8 @@ import {
   ComboboxEmpty,
   ComboboxItem,
   ComboboxList,
-} from "@/styles/aria-nova/ui-rtl/combobox"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui-rtl/field"
+} from "@/components/ui/aria/combobox"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
 
 const categories = [
   "technology",

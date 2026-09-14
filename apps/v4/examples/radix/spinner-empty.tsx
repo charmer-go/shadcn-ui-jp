@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Empty,
   EmptyContent,
@@ -6,8 +6,8 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+} from "@/components/ui/radix/empty"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function SpinnerEmpty() {
   return (

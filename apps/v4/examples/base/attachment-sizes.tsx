@@ -6,7 +6,7 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/base-rhea/ui/attachment"
+} from "@/components/ui/base/attachment"
 
 export function AttachmentSizes() {
   return (

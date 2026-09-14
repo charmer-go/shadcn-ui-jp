@@ -1,5 +1,5 @@
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export function TextareaDisabled() {
   return (

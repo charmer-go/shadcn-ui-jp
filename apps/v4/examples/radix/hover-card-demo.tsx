@@ -1,9 +1,9 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/styles/radix-nova/ui/hover-card"
+} from "@/components/ui/radix/hover-card"
 
 export default function HoverCardDemo() {
   return (

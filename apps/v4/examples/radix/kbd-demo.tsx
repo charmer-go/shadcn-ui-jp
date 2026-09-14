@@ -1,4 +1,4 @@
-import { Kbd, KbdGroup } from "@/styles/radix-nova/ui/kbd"
+import { Kbd, KbdGroup } from "@/components/ui/radix/kbd"
 
 export default function KbdDemo() {
   return (

@@ -1,4 +1,4 @@
-import { Slider } from "@/styles/base-nova/ui/slider"
+import { Slider } from "@/components/ui/base/slider"
 
 export function SliderVertical() {
   return (

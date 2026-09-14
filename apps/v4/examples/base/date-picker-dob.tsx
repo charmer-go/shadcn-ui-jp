@@ -2,14 +2,14 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Button } from "@/components/ui/base/button"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function DatePickerSimple() {
   const [open, setOpen] = React.useState(false)

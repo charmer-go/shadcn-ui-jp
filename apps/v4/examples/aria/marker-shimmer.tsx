@@ -1,4 +1,4 @@
-import { Marker, MarkerContent } from "@/styles/aria-rhea/ui/marker"
+import { Marker, MarkerContent } from "@/components/ui/aria/marker"
 
 export function MarkerShimmerDemo() {
   return (

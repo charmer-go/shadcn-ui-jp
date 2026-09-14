@@ -13,13 +13,13 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { Calendar } from "@/styles/base-nova/ui-rtl/calendar"
+import { Button } from "@/components/ui/base/button"
+import { Calendar } from "@/components/ui/base/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui-rtl/popover"
+} from "@/components/ui/base/popover"
 
 const translations: Translations = {
   en: {

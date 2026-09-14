@@ -15,7 +15,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/radix-nova/ui-rtl/table"
+} from "@/components/ui/radix/table"
 
 const translations: Translations = {
   en: {

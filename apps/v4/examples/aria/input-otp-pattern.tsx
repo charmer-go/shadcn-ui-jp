@@ -2,12 +2,12 @@
 
 import { REGEXP_ONLY_DIGITS } from "input-otp"
 
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/styles/aria-nova/ui/input-otp"
+} from "@/components/ui/aria/input-otp"
 
 export function InputOTPPattern() {
   return (

@@ -9,7 +9,7 @@ import {
   AttachmentMedia,
   AttachmentTitle,
   AttachmentTrigger,
-} from "@/styles/radix-rhea/ui/attachment"
+} from "@/components/ui/radix/attachment"
 import {
   Dialog,
   DialogContent,
@@ -17,7 +17,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/radix-rhea/ui/dialog"
+} from "@/components/ui/radix/dialog"
 
 export function AttachmentTriggerDemo() {
   return (

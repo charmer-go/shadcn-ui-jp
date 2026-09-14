@@ -1,4 +1,4 @@
-import { Toggle } from "@/styles/radix-nova/ui/toggle"
+import { Toggle } from "@/components/ui/radix/toggle"
 
 export function ToggleDisabled() {
   return (

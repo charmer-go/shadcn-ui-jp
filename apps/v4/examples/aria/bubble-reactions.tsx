@@ -6,8 +6,8 @@ import {
   Bubble,
   BubbleContent,
   BubbleReactions,
-} from "@/styles/aria-rhea/ui/bubble"
-import { Button } from "@/styles/aria-rhea/ui/button"
+} from "@/components/ui/aria/bubble"
+import { Button } from "@/components/ui/aria/button"
 
 export function BubbleReactionsDemo() {
   return (

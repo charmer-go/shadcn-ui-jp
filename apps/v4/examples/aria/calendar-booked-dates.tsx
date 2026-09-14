@@ -3,8 +3,8 @@
 import * as React from "react"
 import { CalendarDate, isSameDay } from "@internationalized/date"
 
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Card, CardContent } from "@/styles/aria-nova/ui/card"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Card, CardContent } from "@/components/ui/aria/card"
 
 export function CalendarBookedDates() {
   const [date, setDate] = React.useState<CalendarDate | undefined>(

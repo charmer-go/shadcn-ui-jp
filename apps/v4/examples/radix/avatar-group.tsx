@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarGroup,
   AvatarImage,
-} from "@/styles/radix-nova/ui/avatar"
+} from "@/components/ui/radix/avatar"
 
 export function AvatarGroupExample() {
   return (

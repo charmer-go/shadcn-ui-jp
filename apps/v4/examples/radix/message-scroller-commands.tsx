@@ -3,8 +3,8 @@
 import * as React from "react"
 
 import { createChat, getMessageText } from "@/lib/ai"
-import { Bubble, BubbleContent } from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -12,15 +12,15 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-rhea/ui/card"
+} from "@/components/ui/radix/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/styles/radix-rhea/ui/dropdown-menu"
-import { Message, MessageContent } from "@/styles/radix-rhea/ui/message"
+} from "@/components/ui/radix/dropdown-menu"
+import { Message, MessageContent } from "@/components/ui/radix/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -29,7 +29,7 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScroller,
-} from "@/styles/radix-rhea/ui/message-scroller"
+} from "@/components/ui/radix/message-scroller"
 
 const chat = createChat()
   .user(

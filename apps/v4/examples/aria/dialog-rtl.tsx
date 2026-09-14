@@ -4,7 +4,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/aria-nova/ui-rtl/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Dialog,
   DialogClose,
@@ -13,10 +13,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/aria-nova/ui-rtl/dialog"
-import { Field, FieldGroup } from "@/styles/aria-nova/ui-rtl/field"
-import { Input } from "@/styles/aria-nova/ui-rtl/input"
-import { Label } from "@/styles/aria-nova/ui-rtl/label"
+} from "@/components/ui/aria/dialog"
+import { Field, FieldGroup } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
+import { Label } from "@/components/ui/aria/label"
 
 const translations: Translations = {
   en: {

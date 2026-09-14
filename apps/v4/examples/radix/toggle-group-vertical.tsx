@@ -3,7 +3,7 @@ import { BoldIcon, ItalicIcon, UnderlineIcon } from "lucide-react"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/radix-nova/ui/toggle-group"
+} from "@/components/ui/radix/toggle-group"
 
 export function ToggleGroupVertical() {
   return (

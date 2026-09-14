@@ -1,5 +1,5 @@
-import { Badge } from "@/styles/radix-nova/ui/badge"
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Badge } from "@/components/ui/radix/badge"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -7,7 +7,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
+} from "@/components/ui/radix/card"
 
 export function CardImage() {
   return (

@@ -9,8 +9,8 @@ import {
   AttachmentGroup,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/aria-rhea/ui/attachment"
-import { Spinner } from "@/styles/aria-rhea/ui/spinner"
+} from "@/components/ui/aria/attachment"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 const images = [
   {

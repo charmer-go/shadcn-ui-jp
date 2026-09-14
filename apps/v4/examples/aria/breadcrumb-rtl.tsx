@@ -14,13 +14,13 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/styles/aria-nova/ui-rtl/breadcrumb"
+} from "@/components/ui/aria/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui-rtl/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 const translations: Translations = {
   en: {

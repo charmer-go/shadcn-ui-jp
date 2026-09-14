@@ -6,7 +6,7 @@ import {
   ItemContent,
   ItemDescription,
   ItemTitle,
-} from "@/styles/aria-nova/ui/item"
+} from "@/components/ui/aria/item"
 
 export function ItemLink() {
   return (

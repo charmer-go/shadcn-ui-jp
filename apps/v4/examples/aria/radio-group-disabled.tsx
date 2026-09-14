@@ -1,5 +1,5 @@
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/aria-nova/ui/radio-group"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 export function RadioGroupDisabled() {
   return (

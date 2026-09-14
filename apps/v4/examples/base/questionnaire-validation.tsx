@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/styles/base-nova/ui/card"
+} from "@/components/ui/base/card"
 import {
   Questionnaire,
   QuestionnaireActions,
@@ -24,7 +24,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/base-nova/ui/questionnaire"
+} from "@/components/ui/base/questionnaire"
 
 const items = [
   { name: "detail", required: true },

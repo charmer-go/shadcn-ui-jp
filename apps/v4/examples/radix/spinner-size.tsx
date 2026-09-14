@@ -1,4 +1,4 @@
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function SpinnerSize() {
   return (

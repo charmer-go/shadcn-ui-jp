@@ -12,7 +12,7 @@ import {
   ComboboxEmpty,
   ComboboxItem,
   ComboboxList,
-} from "@/styles/aria-nova/ui/combobox"
+} from "@/components/ui/aria/combobox"
 
 const frameworks = [
   "Next.js",

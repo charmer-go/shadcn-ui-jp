@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/styles/base-nova/ui/card"
+import { Card, CardContent } from "@/components/ui/base/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/styles/base-nova/ui/carousel"
+} from "@/components/ui/base/carousel"
 
 export function CarouselMultiple() {
   return (

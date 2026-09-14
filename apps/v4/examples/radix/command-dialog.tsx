@@ -19,7 +19,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/radix-nova/ui/command"
+} from "@/components/ui/radix/command"
 
 export function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)

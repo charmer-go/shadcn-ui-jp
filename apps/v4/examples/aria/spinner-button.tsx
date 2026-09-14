@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Spinner } from "@/styles/aria-nova/ui/spinner"
+import { Button } from "@/components/ui/aria/button"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export function SpinnerButton() {
   return (

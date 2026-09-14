@@ -3,8 +3,8 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/base-nova/ui/radio-group"
+} from "@/components/ui/base/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/base/radio-group"
 
 export function RadioGroupDescription() {
   return (

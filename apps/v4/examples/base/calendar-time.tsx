@@ -3,14 +3,14 @@
 import * as React from "react"
 import { Clock2Icon } from "lucide-react"
 
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Card, CardContent, CardFooter } from "@/styles/base-nova/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Card, CardContent, CardFooter } from "@/components/ui/base/card"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 
 export function CalendarWithTime() {
   const [date, setDate] = React.useState<Date | undefined>(

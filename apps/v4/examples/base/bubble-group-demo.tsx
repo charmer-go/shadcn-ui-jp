@@ -3,7 +3,7 @@ import {
   BubbleContent,
   BubbleGroup,
   BubbleReactions,
-} from "@/styles/base-rhea/ui/bubble"
+} from "@/components/ui/base/bubble"
 
 export function BubbleGroupDemo() {
   return (

@@ -1,7 +1,7 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Input } from "@/styles/aria-nova/ui/input"
-import { Label } from "@/styles/aria-nova/ui/label"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Input } from "@/components/ui/aria/input"
+import { Label } from "@/components/ui/aria/label"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export default function PopoverDemo() {
   return (

@@ -2,8 +2,8 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Textarea } from "@/styles/base-nova/ui/textarea"
+} from "@/components/ui/base/field"
+import { Textarea } from "@/components/ui/base/textarea"
 
 export function TextareaInvalid() {
   return (

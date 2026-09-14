@@ -10,7 +10,7 @@ import {
   AttachmentMedia,
   AttachmentTitle,
   AttachmentTrigger,
-} from "@/styles/base-rhea/ui/attachment"
+} from "@/components/ui/base/attachment"
 
 const images = [
   {

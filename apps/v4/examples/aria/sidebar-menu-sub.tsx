@@ -12,7 +12,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
-} from "@/styles/aria-nova/ui/sidebar"
+} from "@/components/ui/aria/sidebar"
 
 const items = [
   {

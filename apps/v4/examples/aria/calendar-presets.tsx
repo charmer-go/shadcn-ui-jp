@@ -3,9 +3,9 @@
 import * as React from "react"
 import { CalendarDate, getLocalTimeZone, today } from "@internationalized/date"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Card, CardContent, CardFooter } from "@/styles/aria-nova/ui/card"
+import { Button } from "@/components/ui/aria/button"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Card, CardContent, CardFooter } from "@/components/ui/aria/card"
 
 export function CalendarWithPresets() {
   const [date, setDate] = React.useState<CalendarDate | undefined>(

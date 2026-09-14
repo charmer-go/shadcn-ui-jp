@@ -12,7 +12,7 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/aria-nova/ui-rtl/field"
+} from "@/components/ui/aria/field"
 import {
   InputGroup,
   InputGroupAddon,
@@ -20,8 +20,8 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/aria-nova/ui-rtl/input-group"
-import { Spinner } from "@/styles/aria-nova/ui-rtl/spinner"
+} from "@/components/ui/aria/input-group"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 const translations: Translations = {
   en: {

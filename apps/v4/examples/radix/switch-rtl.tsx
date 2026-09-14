@@ -11,8 +11,8 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui-rtl/field"
-import { Switch } from "@/styles/radix-nova/ui-rtl/switch"
+} from "@/components/ui/radix/field"
+import { Switch } from "@/components/ui/radix/switch"
 
 const translations: Translations = {
   en: {

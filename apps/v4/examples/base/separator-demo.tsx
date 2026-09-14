@@ -1,4 +1,4 @@
-import { Separator } from "@/styles/base-nova/ui/separator"
+import { Separator } from "@/components/ui/base/separator"
 
 export default function SeparatorDemo() {
   return (

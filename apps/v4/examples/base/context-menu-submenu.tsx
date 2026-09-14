@@ -9,7 +9,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/styles/base-nova/ui/context-menu"
+} from "@/components/ui/base/context-menu"
 
 export function ContextMenuSubmenu() {
   return (

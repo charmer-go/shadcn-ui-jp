@@ -12,8 +12,8 @@ import {
   ComboboxItem,
   ComboboxLabel,
   ComboboxList,
-} from "@/styles/radix-nova/ui/combobox"
-import { InputGroupAddon } from "@/styles/radix-nova/ui/input-group"
+} from "@/components/ui/radix/combobox"
+import { InputGroupAddon } from "@/components/ui/radix/input-group"
 
 const timezones = [
   {

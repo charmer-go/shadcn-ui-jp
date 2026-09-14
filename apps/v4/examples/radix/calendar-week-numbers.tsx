@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Card, CardContent } from "@/styles/radix-nova/ui/card"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Card, CardContent } from "@/components/ui/radix/card"
 
 export function CalendarWeekNumbers() {
   const [date, setDate] = React.useState<Date | undefined>(

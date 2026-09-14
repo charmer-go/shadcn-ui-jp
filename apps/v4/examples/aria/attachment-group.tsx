@@ -15,7 +15,7 @@ import {
   AttachmentGroup,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/aria-rhea/ui/attachment"
+} from "@/components/ui/aria/attachment"
 
 type Item = {
   name: string

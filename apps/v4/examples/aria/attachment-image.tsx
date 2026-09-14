@@ -10,7 +10,7 @@ import {
   AttachmentMedia,
   AttachmentTitle,
   AttachmentTrigger,
-} from "@/styles/aria-rhea/ui/attachment"
+} from "@/components/ui/aria/attachment"
 
 const images = [
   {

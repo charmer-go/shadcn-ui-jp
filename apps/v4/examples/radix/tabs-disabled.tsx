@@ -1,4 +1,4 @@
-import { Tabs, TabsList, TabsTrigger } from "@/styles/radix-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/radix/tabs"
 
 export function TabsDisabled() {
   return (

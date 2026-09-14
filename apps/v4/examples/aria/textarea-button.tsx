@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+import { Button } from "@/components/ui/aria/button"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export function TextareaButton() {
   return (

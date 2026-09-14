@@ -1,14 +1,14 @@
 import { CopyIcon, TrashIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+import { Button } from "@/components/ui/aria/button"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
+} from "@/components/ui/aria/input-group"
 
 export function InputGroupWithButtons() {
   return (

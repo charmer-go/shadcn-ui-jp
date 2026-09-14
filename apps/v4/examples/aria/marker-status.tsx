@@ -1,5 +1,5 @@
-import { Marker, MarkerContent, MarkerIcon } from "@/styles/aria-rhea/ui/marker"
-import { Spinner } from "@/styles/aria-rhea/ui/spinner"
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/aria/marker"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export function MarkerStatusDemo() {
   return (

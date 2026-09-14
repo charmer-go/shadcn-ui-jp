@@ -4,8 +4,8 @@ import {
   FieldGroup,
   FieldLabel,
   FieldSet,
-} from "@/styles/aria-nova/ui/field"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+} from "@/components/ui/aria/field"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export default function FieldTextarea() {
   return (

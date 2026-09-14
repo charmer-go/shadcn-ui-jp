@@ -1,7 +1,7 @@
 import {
   NativeSelect,
   NativeSelectOption,
-} from "@/styles/base-nova/ui/native-select"
+} from "@/components/ui/base/native-select"
 
 export function NativeSelectInvalid() {
   return (

@@ -4,8 +4,8 @@ import {
   FieldDescription,
   FieldLabel,
   FieldTitle,
-} from "@/styles/radix-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/radix-nova/ui/radio-group"
+} from "@/components/ui/radix/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radix/radio-group"
 
 export function RadioGroupChoiceCard() {
   return (

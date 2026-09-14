@@ -1,4 +1,4 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Dialog,
   DialogClose,
@@ -8,10 +8,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/base-nova/ui/dialog"
-import { Field, FieldGroup } from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
-import { Label } from "@/styles/base-nova/ui/label"
+} from "@/components/ui/base/dialog"
+import { Field, FieldGroup } from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
+import { Label } from "@/components/ui/base/label"
 
 export function DialogDemo() {
   return (

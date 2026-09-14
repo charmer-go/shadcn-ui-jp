@@ -4,7 +4,7 @@ import {
   Marker,
   MarkerContent,
   MarkerIcon,
-} from "@/styles/radix-rhea/ui/marker"
+} from "@/components/ui/radix/marker"
 
 export function MarkerIconDemo() {
   return (

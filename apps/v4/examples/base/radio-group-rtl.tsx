@@ -11,11 +11,11 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui-rtl/field"
+} from "@/components/ui/base/field"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@/styles/base-nova/ui-rtl/radio-group"
+} from "@/components/ui/base/radio-group"
 
 const translations: Translations = {
   en: {

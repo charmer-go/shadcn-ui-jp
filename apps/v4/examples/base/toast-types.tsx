@@ -1,7 +1,7 @@
 "use client"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { toast } from "@/styles/base-nova/ui/toast"
+import { Button } from "@/components/ui/base/button"
+import { toast } from "@/components/ui/base/toast"
 
 export function ToastTypes() {
   return (

@@ -26,8 +26,8 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { Checkbox } from "@/styles/base-nova/ui-rtl/checkbox"
+import { Button } from "@/components/ui/base/button"
+import { Checkbox } from "@/components/ui/base/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -37,8 +37,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui-rtl/dropdown-menu"
-import { Input } from "@/styles/base-nova/ui-rtl/input"
+} from "@/components/ui/base/dropdown-menu"
+import { Input } from "@/components/ui/base/input"
 import {
   Table,
   TableBody,
@@ -46,7 +46,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/base-nova/ui-rtl/table"
+} from "@/components/ui/base/table"
 
 const translations: Translations = {
   en: {

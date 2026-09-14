@@ -8,7 +8,7 @@ import {
   ContextMenuGroup,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/styles/aria-nova/ui/context-menu"
+} from "@/components/ui/aria/context-menu"
 
 export function ContextMenuCheckboxes() {
   const [selectedKeys, setSelectedKeys] = useState<Selection>(

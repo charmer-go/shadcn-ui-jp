@@ -4,8 +4,8 @@ import * as React from "react"
 import { CalendarDate, isWeekend } from "@internationalized/date"
 import { useLocale, type DateRange } from "react-aria-components"
 
-import { RangeCalendar } from "@/styles/aria-nova/ui/calendar"
-import { Card, CardContent } from "@/styles/aria-nova/ui/card"
+import { RangeCalendar } from "@/components/ui/aria/calendar"
+import { Card, CardContent } from "@/components/ui/aria/card"
 
 export function CalendarCustomDays() {
   const { locale } = useLocale()

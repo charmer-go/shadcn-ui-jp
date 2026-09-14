@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/aria-nova/ui/avatar"
+} from "@/components/ui/aria/avatar"
 
 export default function AvatarDemo() {
   return (

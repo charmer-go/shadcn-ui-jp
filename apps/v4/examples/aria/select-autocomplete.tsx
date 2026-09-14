@@ -2,7 +2,7 @@
 
 import { Autocomplete, useFilter } from "react-aria-components"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Select,
   SelectEmpty,
@@ -13,7 +13,7 @@ import {
   SelectPopover,
   SelectTrigger,
   SelectValue,
-} from "@/styles/aria-nova/ui/select"
+} from "@/components/ui/aria/select"
 
 const countries = [
   {

@@ -1,5 +1,5 @@
-import { Field, FieldGroup, FieldLabel } from "@/styles/radix-nova/ui/field"
-import { Switch } from "@/styles/radix-nova/ui/switch"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/radix/field"
+import { Switch } from "@/components/ui/radix/switch"
 
 export function SwitchSizes() {
   return (

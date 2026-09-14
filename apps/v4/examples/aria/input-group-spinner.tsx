@@ -5,8 +5,8 @@ import {
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "@/styles/aria-nova/ui/input-group"
-import { Spinner } from "@/styles/aria-nova/ui/spinner"
+} from "@/components/ui/aria/input-group"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export default function InputGroupSpinner() {
   return (

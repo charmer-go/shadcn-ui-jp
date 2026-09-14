@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Kbd } from "@/styles/aria-nova/ui/kbd"
+import { Button } from "@/components/ui/aria/button"
+import { Kbd } from "@/components/ui/aria/kbd"
 
 export default function KbdButton() {
   return (

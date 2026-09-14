@@ -22,8 +22,8 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
+import { Button } from "@/components/ui/base/button"
+import { Checkbox } from "@/components/ui/base/checkbox"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -33,8 +33,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/dropdown-menu"
+import { Input } from "@/components/ui/base/input"
 import {
   Table,
   TableBody,
@@ -42,7 +42,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/base-nova/ui/table"
+} from "@/components/ui/base/table"
 
 // New in v9: declare the features this table uses — anything you don't
 // register is tree-shaken out of the bundle.

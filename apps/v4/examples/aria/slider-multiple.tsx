@@ -1,4 +1,4 @@
-import { Slider } from "@/styles/aria-nova/ui/slider"
+import { Slider } from "@/components/ui/aria/slider"
 
 export function SliderMultiple() {
   return (

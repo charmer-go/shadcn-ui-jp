@@ -10,8 +10,8 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/aria-nova/ui/alert-dialog"
-import { Button } from "@/styles/aria-nova/ui/button"
+} from "@/components/ui/aria/alert-dialog"
+import { Button } from "@/components/ui/aria/button"
 
 export function AlertDialogWithMedia() {
   return (

@@ -14,7 +14,7 @@ import {
 
 import { createChat, getMessageText } from "@/lib/ai"
 import { MessageAnimated } from "@/components/message-animated"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -23,32 +23,32 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-rhea/ui/card"
+} from "@/components/ui/radix/card"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/radix-rhea/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
-} from "@/styles/radix-rhea/ui/input-group"
+} from "@/components/ui/radix/input-group"
 import {
   MessageScroller,
   MessageScrollerButton,
   MessageScrollerContent,
   MessageScrollerProvider,
   MessageScrollerViewport,
-} from "@/styles/radix-rhea/ui/message-scroller"
-import { Slider } from "@/styles/radix-rhea/ui/slider"
+} from "@/components/ui/radix/message-scroller"
+import { Slider } from "@/components/ui/radix/slider"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-rhea/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 const DEFAULT_PEEK = 64
 

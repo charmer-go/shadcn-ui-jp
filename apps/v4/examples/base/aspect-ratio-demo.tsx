@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { AspectRatio } from "@/styles/base-nova/ui/aspect-ratio"
+import { AspectRatio } from "@/components/ui/base/aspect-ratio"
 
 export default function AspectRatioDemo() {
   return (

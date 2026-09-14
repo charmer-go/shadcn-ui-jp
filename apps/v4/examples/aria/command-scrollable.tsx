@@ -27,7 +27,7 @@ import {
   ZoomOutIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Command,
   CommandDialog,
@@ -38,7 +38,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/aria-nova/ui/command"
+} from "@/components/ui/aria/command"
 
 export function CommandManyItems() {
   const [open, setOpen] = React.useState(false)

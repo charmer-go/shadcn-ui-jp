@@ -12,8 +12,8 @@ import {
   ComboboxItem,
   ComboboxLabel,
   ComboboxList,
-} from "@/styles/base-nova/ui/combobox"
-import { InputGroupAddon } from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/combobox"
+import { InputGroupAddon } from "@/components/ui/base/input-group"
 
 const timezones = [
   {

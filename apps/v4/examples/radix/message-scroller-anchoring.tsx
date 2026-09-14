@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 
 import { MessageAnimated } from "@/components/message-animated"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -17,25 +17,25 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-rhea/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Empty,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-rhea/ui/empty"
+} from "@/components/ui/radix/empty"
 import {
   MessageScroller,
   MessageScrollerButton,
   MessageScrollerContent,
   MessageScrollerProvider,
   MessageScrollerViewport,
-} from "@/styles/radix-rhea/ui/message-scroller"
+} from "@/components/ui/radix/message-scroller"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/radix-rhea/ui/toggle-group"
+} from "@/components/ui/radix/toggle-group"
 
 type AnchorRole = "user" | "assistant"
 

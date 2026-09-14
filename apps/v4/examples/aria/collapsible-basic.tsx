@@ -1,10 +1,10 @@
-import { ChevronDownIcon } from "@/registry/icons/__lucide__"
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Card, CardContent } from "@/styles/aria-nova/ui/card"
+import { ChevronDownIcon } from "lucide-react"
+import { Button } from "@/components/ui/aria/button"
+import { Card, CardContent } from "@/components/ui/aria/card"
 import {
   Collapsible,
   CollapsibleContent,
-} from "@/styles/aria-nova/ui/collapsible"
+} from "@/components/ui/aria/collapsible"
 
 export function CollapsibleBasic() {
   return (

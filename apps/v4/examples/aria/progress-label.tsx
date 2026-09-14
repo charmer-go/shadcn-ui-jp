@@ -2,7 +2,7 @@ import {
   Progress,
   ProgressLabel,
   ProgressValue,
-} from "@/styles/aria-nova/ui/progress"
+} from "@/components/ui/aria/progress"
 
 export function ProgressWithLabel() {
   return (

@@ -22,7 +22,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/styles/radix-nova/ui-rtl/context-menu"
+} from "@/components/ui/radix/context-menu"
 
 const translations: Translations = {
   en: {

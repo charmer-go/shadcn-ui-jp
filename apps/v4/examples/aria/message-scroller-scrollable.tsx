@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/aria-rhea/ui/card"
+} from "@/components/ui/aria/card"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -16,7 +16,7 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScrollerScrollable,
-} from "@/styles/aria-rhea/ui/message-scroller"
+} from "@/components/ui/aria/message-scroller"
 
 const messages = Array.from({ length: 12 }, (_, index) => ({
   id: `scrollable-${index + 1}`,

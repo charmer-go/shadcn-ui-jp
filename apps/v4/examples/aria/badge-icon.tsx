@@ -1,6 +1,6 @@
 import { BadgeCheck, BookmarkIcon } from "lucide-react"
 
-import { Badge } from "@/styles/aria-nova/ui/badge"
+import { Badge } from "@/components/ui/aria/badge"
 
 export function BadgeWithIconLeft() {
   return (

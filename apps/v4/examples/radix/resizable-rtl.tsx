@@ -10,7 +10,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/styles/radix-nova/ui-rtl/resizable"
+} from "@/components/ui/radix/resizable"
 
 const translations: Translations = {
   en: {

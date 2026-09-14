@@ -11,8 +11,8 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui-rtl/field"
-import { Switch } from "@/styles/aria-nova/ui-rtl/switch"
+} from "@/components/ui/aria/field"
+import { Switch } from "@/components/ui/aria/switch"
 
 const translations: Translations = {
   en: {

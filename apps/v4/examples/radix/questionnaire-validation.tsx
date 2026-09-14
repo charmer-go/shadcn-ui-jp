@@ -10,7 +10,7 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-} from "@/styles/radix-nova/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Questionnaire,
   QuestionnaireActions,
@@ -24,7 +24,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 const items = [
   { name: "detail", required: true },

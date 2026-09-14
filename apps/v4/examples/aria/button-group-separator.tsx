@@ -1,8 +1,8 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   ButtonGroup,
   ButtonGroupSeparator,
-} from "@/styles/aria-nova/ui/button-group"
+} from "@/components/ui/aria/button-group"
 
 export default function ButtonGroupSeparatorDemo() {
   return (

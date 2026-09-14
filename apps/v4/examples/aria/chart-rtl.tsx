@@ -13,7 +13,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "@/styles/aria-nova/ui-rtl/chart"
+} from "@/components/ui/aria/chart"
 
 const translations: Translations = {
   en: {

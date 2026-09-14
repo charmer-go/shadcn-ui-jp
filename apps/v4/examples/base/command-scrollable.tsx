@@ -27,7 +27,7 @@ import {
   ZoomOutIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Command,
   CommandDialog,
@@ -38,7 +38,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/base-nova/ui/command"
+} from "@/components/ui/base/command"
 
 export function CommandManyItems() {
   const [open, setOpen] = React.useState(false)

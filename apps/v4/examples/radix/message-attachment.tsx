@@ -10,9 +10,9 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/radix-rhea/ui/attachment"
-import { Bubble, BubbleContent } from "@/styles/radix-rhea/ui/bubble"
-import { Message, MessageContent } from "@/styles/radix-rhea/ui/message"
+} from "@/components/ui/radix/attachment"
+import { Bubble, BubbleContent } from "@/components/ui/radix/bubble"
+import { Message, MessageContent } from "@/components/ui/radix/message"
 
 export function MessageAttachmentDemo() {
   return (

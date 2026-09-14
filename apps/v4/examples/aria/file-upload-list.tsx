@@ -10,8 +10,8 @@ import {
   ItemGroup,
   ItemMedia,
   ItemTitle,
-} from "@/styles/aria-nova/ui/item"
-import { Progress } from "@/styles/aria-nova/ui/progress"
+} from "@/components/ui/aria/item"
+import { Progress } from "@/components/ui/aria/progress"
 
 export function FileUploadList() {
   const files = React.useMemo(

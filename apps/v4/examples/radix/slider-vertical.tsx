@@ -1,4 +1,4 @@
-import { Slider } from "@/styles/radix-nova/ui/slider"
+import { Slider } from "@/components/ui/radix/slider"
 
 export function SliderVertical() {
   return (

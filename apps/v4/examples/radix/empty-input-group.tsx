@@ -6,13 +6,13 @@ import {
   EmptyDescription,
   EmptyHeader,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
+} from "@/components/ui/radix/empty"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/radix-nova/ui/input-group"
-import { Kbd } from "@/styles/radix-nova/ui/kbd"
+} from "@/components/ui/radix/input-group"
+import { Kbd } from "@/components/ui/radix/kbd"
 
 export default function EmptyInputGroup() {
   return (

@@ -1,4 +1,4 @@
-import { Tabs, TabsList, TabsTrigger } from "@/styles/aria-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/aria/tabs"
 
 export function TabsDisabled() {
   return (

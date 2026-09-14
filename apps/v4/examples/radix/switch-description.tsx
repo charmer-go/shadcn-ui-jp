@@ -3,8 +3,8 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui/field"
-import { Switch } from "@/styles/radix-nova/ui/switch"
+} from "@/components/ui/radix/field"
+import { Switch } from "@/components/ui/radix/switch"
 
 export function SwitchDescription() {
   return (

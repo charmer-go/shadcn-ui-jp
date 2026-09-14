@@ -2,7 +2,7 @@ import {
   NativeSelect,
   NativeSelectOptGroup,
   NativeSelectOption,
-} from "@/styles/aria-nova/ui/native-select"
+} from "@/components/ui/aria/native-select"
 
 export default function NativeSelectGroups() {
   return (

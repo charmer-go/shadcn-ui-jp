@@ -1,5 +1,5 @@
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Switch } from "@/styles/base-nova/ui/switch"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
+import { Switch } from "@/components/ui/base/switch"
 
 export function SwitchSizes() {
   return (

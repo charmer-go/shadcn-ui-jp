@@ -22,8 +22,8 @@ import {
 } from "@tanstack/react-table"
 import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
 
-import { Button, buttonVariants } from "@/styles/aria-nova/ui/button"
-import { Checkbox } from "@/styles/aria-nova/ui/checkbox"
+import { Button, buttonVariants } from "@/components/ui/aria/button"
+import { Checkbox } from "@/components/ui/aria/checkbox"
 import {
   DropdownMenu,
   DropdownMenuGroup,
@@ -31,8 +31,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
-import { Input } from "@/styles/aria-nova/ui/input"
+} from "@/components/ui/aria/dropdown-menu"
+import { Input } from "@/components/ui/aria/input"
 import {
   Table,
   TableBody,
@@ -40,7 +40,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/aria-nova/ui/table"
+} from "@/components/ui/aria/table"
 
 // New in v9: declare the features this table uses — anything you don't
 // register is tree-shaken out of the bundle.

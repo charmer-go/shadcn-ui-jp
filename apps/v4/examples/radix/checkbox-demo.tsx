@@ -1,6 +1,6 @@
 "use client"
 
-import { Checkbox } from "@/styles/radix-nova/ui/checkbox"
+import { Checkbox } from "@/components/ui/radix/checkbox"
 import {
   Field,
   FieldContent,
@@ -8,8 +8,8 @@ import {
   FieldGroup,
   FieldLabel,
   FieldTitle,
-} from "@/styles/radix-nova/ui/field"
-import { Label } from "@/styles/radix-nova/ui/label"
+} from "@/components/ui/radix/field"
+import { Label } from "@/components/ui/radix/label"
 
 export default function CheckboxDemo() {
   return (

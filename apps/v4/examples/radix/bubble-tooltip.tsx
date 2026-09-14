@@ -4,13 +4,13 @@ import {
   Bubble,
   BubbleContent,
   BubbleReactions,
-} from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+} from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-rhea/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export function BubbleTooltipDemo() {
   return (

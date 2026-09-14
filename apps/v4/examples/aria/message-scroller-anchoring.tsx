@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 
 import { MessageAnimated } from "@/components/message-animated"
-import { Button } from "@/styles/aria-rhea/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Card,
   CardAction,
@@ -17,25 +17,25 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/aria-rhea/ui/card"
+} from "@/components/ui/aria/card"
 import {
   Empty,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/aria-rhea/ui/empty"
+} from "@/components/ui/aria/empty"
 import {
   MessageScroller,
   MessageScrollerButton,
   MessageScrollerContent,
   MessageScrollerProvider,
   MessageScrollerViewport,
-} from "@/styles/aria-rhea/ui/message-scroller"
+} from "@/components/ui/aria/message-scroller"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/aria-rhea/ui/toggle-group"
+} from "@/components/ui/aria/toggle-group"
 
 type AnchorRole = "user" | "assistant"
 

@@ -8,7 +8,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/styles/base-nova/ui/breadcrumb"
+} from "@/components/ui/base/breadcrumb"
 
 export function BreadcrumbEllipsisDemo() {
   return (

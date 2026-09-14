@@ -19,7 +19,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/base-nova/ui/command"
+} from "@/components/ui/base/command"
 
 export function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)

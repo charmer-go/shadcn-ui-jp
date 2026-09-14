@@ -1,20 +1,20 @@
 "use client"
 
 import { createChat, getMessageText } from "@/lib/ai"
-import { Bubble, BubbleContent } from "@/styles/base-rhea/ui/bubble"
+import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/base-rhea/ui/card"
+} from "@/components/ui/base/card"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/styles/base-rhea/ui/hover-card"
-import { Message, MessageContent } from "@/styles/base-rhea/ui/message"
+} from "@/components/ui/base/hover-card"
+import { Message, MessageContent } from "@/components/ui/base/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -24,7 +24,7 @@ import {
   MessageScrollerViewport,
   useMessageScroller,
   useMessageScrollerVisibility,
-} from "@/styles/base-rhea/ui/message-scroller"
+} from "@/components/ui/base/message-scroller"
 
 const chat = createChat()
   .user("Review the incident handoff and tell me what to read first.", {

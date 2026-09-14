@@ -23,7 +23,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/aria-nova/ui-rtl/command"
+} from "@/components/ui/aria/command"
 
 const translations: Translations = {
   en: {

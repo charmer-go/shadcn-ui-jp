@@ -7,7 +7,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "@/styles/base-nova/ui/chart"
+} from "@/components/ui/base/chart"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },

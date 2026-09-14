@@ -12,13 +12,13 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/base-nova/ui-rtl/card"
+} from "@/components/ui/base/card"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/styles/base-nova/ui-rtl/tabs"
+} from "@/components/ui/base/tabs"
 
 const translations: Translations = {
   en: {

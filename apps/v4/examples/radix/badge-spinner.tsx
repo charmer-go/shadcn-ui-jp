@@ -1,5 +1,5 @@
-import { Badge } from "@/styles/radix-nova/ui/badge"
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+import { Badge } from "@/components/ui/radix/badge"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function BadgeWithSpinner() {
   return (

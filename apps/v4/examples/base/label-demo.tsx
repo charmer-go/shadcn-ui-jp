@@ -1,5 +1,5 @@
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
-import { Label } from "@/styles/base-nova/ui/label"
+import { Checkbox } from "@/components/ui/base/checkbox"
+import { Label } from "@/components/ui/base/label"
 
 export default function LabelDemo() {
   return (

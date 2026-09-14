@@ -2,14 +2,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/base-rhea/ui/avatar"
-import { Bubble, BubbleContent } from "@/styles/base-rhea/ui/bubble"
+} from "@/components/ui/base/avatar"
+import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
 import {
   Message,
   MessageAvatar,
   MessageContent,
   MessageGroup,
-} from "@/styles/base-rhea/ui/message"
+} from "@/components/ui/base/message"
 
 export function MessageGroupDemo() {
   return (

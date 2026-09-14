@@ -1,7 +1,7 @@
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/aria-nova/ui/toggle-group"
+} from "@/components/ui/aria/toggle-group"
 
 export function ToggleGroupSizes() {
   return (

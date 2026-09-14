@@ -1,5 +1,5 @@
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Switch } from "@/styles/aria-nova/ui/switch"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
+import { Switch } from "@/components/ui/aria/switch"
 
 export function SwitchSizes() {
   return (

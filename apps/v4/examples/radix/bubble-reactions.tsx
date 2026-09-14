@@ -6,8 +6,8 @@ import {
   Bubble,
   BubbleContent,
   BubbleReactions,
-} from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+} from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 
 export function BubbleReactionsDemo() {
   return (

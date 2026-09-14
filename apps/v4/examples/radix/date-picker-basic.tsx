@@ -3,14 +3,14 @@
 import * as React from "react"
 import { format } from "date-fns"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Button } from "@/components/ui/radix/button"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 export function DatePickerSimple() {
   const [date, setDate] = React.useState<Date>()

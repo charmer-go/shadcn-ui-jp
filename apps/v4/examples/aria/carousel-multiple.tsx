@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/styles/aria-nova/ui/card"
+import { Card, CardContent } from "@/components/ui/aria/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/styles/aria-nova/ui/carousel"
+} from "@/components/ui/aria/carousel"
 
 export function CarouselMultiple() {
   return (

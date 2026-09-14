@@ -5,8 +5,8 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-nova/ui/tooltip"
+} from "@/components/ui/aria/input-group"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 export default function InputGroupTooltip() {
   return (

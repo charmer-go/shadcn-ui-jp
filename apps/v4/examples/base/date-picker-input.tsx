@@ -3,19 +3,19 @@
 import * as React from "react"
 import { CalendarIcon } from "lucide-react"
 
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 function formatDate(date: Date | undefined) {
   if (!date) {

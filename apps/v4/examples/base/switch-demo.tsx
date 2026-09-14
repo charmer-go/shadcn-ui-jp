@@ -1,5 +1,5 @@
-import { Label } from "@/styles/base-nova/ui/label"
-import { Switch } from "@/styles/base-nova/ui/switch"
+import { Label } from "@/components/ui/base/label"
+import { Switch } from "@/components/ui/base/switch"
 
 export function SwitchDemo() {
   return (

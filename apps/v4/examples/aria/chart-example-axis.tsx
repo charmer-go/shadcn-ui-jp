@@ -2,7 +2,7 @@
 
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
-import { ChartContainer, type ChartConfig } from "@/styles/aria-nova/ui/chart"
+import { ChartContainer, type ChartConfig } from "@/components/ui/aria/chart"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
