@@ -1,9 +1,9 @@
 ---
 title: Astro
-description: Install and configure shadcn/ui for Astro.
+description: Astro 用の shadcn/ui をインストールして構成します。
 ---
 
-Choose the setup that matches your starting point.
+開始地点に合うセットアップ方法を選択してください。
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
@@ -12,7 +12,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset and generate an Astro project command.
+      プリセットを構築し、Astro プロジェクト コマンドを生成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -21,7 +21,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Scaffold a new Astro project directly from the terminal.
+      ターミナルから新しい Astro プロジェクトを直接作成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -30,7 +30,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Existing Project</div>
     <div className="leading-relaxed text-muted-foreground">
-      Configure shadcn/ui manually in an existing Astro project.
+      既存の Astro プロジェクトで shadcn/ui を手動構成します。
     </div>
   </LinkedCard>
 </div>
@@ -40,9 +40,9 @@ Choose the setup that matches your starting point.
 
 <Steps>
 
-### Build Your Preset
+### プリセットを作成する
 
-Open [shadcn/create](/create?template=astro) and build your preset visually. Choose your style, colors, fonts, icons, and more.
+[shadcn/create](/create?template=astro)を開き、プリセットを視覚的に作成します。スタイル、色、フォント、アイコンなどを選択してください。
 
 <Button asChild size="sm">
   <Link
@@ -51,37 +51,37 @@ Open [shadcn/create](/create?template=astro) and build your preset visually. Cho
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    shadcn/create を開く
   </Link>
 </Button>
 
-### Create Project
+### プロジェクトを作成する
 
-Click `Create Project`, choose your package manager, and copy the generated command.
+`Create Project` をクリックし、パッケージ マネージャーを選択して、生成されたコマンドをコピーします。
 
-The generated command will look similar to this:
+生成されたコマンドは次のようになります。
 
 ```bash
 npx shadcn@latest init --preset [CODE] --template astro
 ```
 
-The exact command will include your selected options such as `--base`, `--monorepo`, or `--rtl`.
+正確なコマンドには、`--base`、`--monorepo`、`--rtl` などの選択したオプションが含まれます。
 
-### Add Components
+### コンポーネントを追加する
 
-Add the `Card` component to your project:
+プロジェクトに `Card` コンポーネントを追加します。
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+モノレポを作成した場合は `apps/web` からコマンドを実行するか、リポジトリのルートからワークスペースを指定します。
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上のコマンドで `Card` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```astro title="src/pages/index.astro" showLineNumbers
 ---
@@ -98,19 +98,19 @@ import {
 <Layout>
   <Card className="max-w-sm">
     <CardHeader>
-      <CardTitle>Project Overview</CardTitle>
+      <CardTitle>プロジェクト概要</CardTitle>
       <CardDescription>
-        Track progress and recent activity for your Astro app.
+        Astro アプリの進捗と最近のアクティビティを確認します。
       </CardDescription>
     </CardHeader>
     <CardContent>
-      Your design system is ready. Start building your next component.
+      デザイン システムの準備ができました。次のコンポーネントの構築を始めましょう。
     </CardContent>
   </Card>
 </Layout>
 ```
 
-If you created a monorepo, update `apps/web/src/pages/index.astro` and import from `@workspace/ui/components/card` instead. The monorepo layout at `apps/web/src/layouts/main.astro` already imports `@workspace/ui/globals.css` for you.
+モノレポを作成した場合は `apps/web/src/pages/index.astro` を更新し、代わりに `@workspace/ui/components/card` からインポートします。`apps/web/src/layouts/main.astro` のモノレポ レイアウトでは、すでに `@workspace/ui/globals.css` がインポートされています。
 
 </Steps>
 
@@ -119,35 +119,35 @@ If you created a monorepo, update `apps/web/src/pages/index.astro` and import fr
 
 <Steps>
 
-### Create Project
+### プロジェクトを作成する
 
-Run the `init` command to scaffold a new Astro project. Follow the prompts to configure your project: base, preset, monorepo, and more.
+`init` コマンドを実行して新しい Astro プロジェクトを作成します。プロンプトに従って、ベース、プリセット、モノレポなどを構成します。
 
 ```bash
 npx shadcn@latest init -t astro
 ```
 
-**For a monorepo project, use `--monorepo` flag:**
+**モノレポ プロジェクトでは `--monorepo` フラグを使います。**
 
 ```bash
 npx shadcn@latest init -t astro --monorepo
 ```
 
-### Add Components
+### コンポーネントを追加する
 
-Add the `Card` component to your project:
+プロジェクトに `Card` コンポーネントを追加します。
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+モノレポを作成した場合は `apps/web` からコマンドを実行するか、リポジトリのルートからワークスペースを指定します。
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上のコマンドで `Card` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```astro title="src/pages/index.astro" showLineNumbers
 ---
@@ -164,19 +164,19 @@ import {
 <Layout>
   <Card className="max-w-sm">
     <CardHeader>
-      <CardTitle>Project Overview</CardTitle>
+      <CardTitle>プロジェクト概要</CardTitle>
       <CardDescription>
-        Track progress and recent activity for your Astro app.
+        Astro アプリの進捗と最近のアクティビティを確認します。
       </CardDescription>
     </CardHeader>
     <CardContent>
-      Your design system is ready. Start building your next component.
+      デザイン システムの準備ができました。次のコンポーネントの構築を始めましょう。
     </CardContent>
   </Card>
 </Layout>
 ```
 
-If you created a monorepo, update `apps/web/src/pages/index.astro` and import from `@workspace/ui/components/card` instead. The monorepo layout at `apps/web/src/layouts/main.astro` already imports `@workspace/ui/globals.css` for you.
+モノレポを作成した場合は `apps/web/src/pages/index.astro` を更新し、代わりに `@workspace/ui/components/card` からインポートします。`apps/web/src/layouts/main.astro` のモノレポ レイアウトでは、すでに `@workspace/ui/globals.css` がインポートされています。
 
 </Steps>
 
@@ -185,23 +185,23 @@ If you created a monorepo, update `apps/web/src/pages/index.astro` and import fr
 
 <Steps>
 
-### Create Project
+### プロジェクトを作成する
 
-If you need a new Astro project, create one first. Otherwise, skip this step.
+新しい Astro プロジェクトが必要な場合は、先に作成します。既存のプロジェクトがある場合は、この手順を省略してください。
 
 ```bash
 npm create astro@latest astro-app -- --template with-tailwindcss --install --add react --git
 ```
 
-This command sets up Tailwind CSS and the React integration for you. If you're adding shadcn/ui to an older or custom Astro app, make sure both are configured before continuing.
+このコマンドで Tailwind CSS と React 統合が設定されます。古い Astro アプリやカスタム Astro アプリに shadcn/ui を追加する場合は、続行する前に両方が構成されていることを確認してください。
 
-The Tailwind starter loads your global stylesheet through `src/layouts/main.astro`. Keep that layout in place, or make sure your page imports `@/styles/global.css`.
+Tailwind スターターは、`src/layouts/main.astro` を通じてグローバル スタイルシートを読み込みます。そのレイアウトをそのまま維持するか、ページに `@/styles/global.css` がインポートされていることを確認してください。
 
-### Edit tsconfig.json file
+### tsconfig.json を編集する
 
-If your project already has the `@/*` alias configured, skip this step.
+プロジェクトに `@/*` エイリアスがすでに構成されている場合は、この手順を省略してください。
 
-Add the following code to the `tsconfig.json` file to resolve paths:
+パスを解決するため、次のコードを `tsconfig.json` に追加します。
 
 ```ts title="tsconfig.json" {4-9} showLineNumbers
 {
@@ -218,23 +218,23 @@ Add the following code to the `tsconfig.json` file to resolve paths:
 }
 ```
 
-### Run the CLI
+### CLI を実行する
 
-Run the `shadcn` init command to set up your project:
+`shadcn` の init コマンドを実行して、プロジェクトを設定します。
 
 ```bash
 npx shadcn@latest init
 ```
 
-### Add Components
+### コンポーネントを追加する
 
-You can now start adding components to your project.
+これで、プロジェクトへのコンポーネントの追加を開始できます。
 
 ```bash
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+上のコマンドで `Button` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```astro title="src/pages/index.astro" showLineNumbers
 ---
@@ -244,7 +244,7 @@ import { Button } from "@/components/ui/button"
 
 <Layout>
   <div class="grid h-screen place-items-center content-center">
-    <Button>Button</Button>
+    <Button>ボタン</Button>
   </div>
 </Layout>
 ```

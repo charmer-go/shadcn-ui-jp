@@ -1,6 +1,6 @@
 ---
-title: Alert Dialog
-description: A modal dialog that interrupts the user with important content and expects a response.
+title: アラートダイアログ
+description: 重要なコンテンツでユーザーを中断し、応答を期待するモーダル ダイアログ。
 featured: true
 base: aria
 component: true
@@ -15,13 +15,13 @@ links:
   previewClassName="h-56"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add alert-dialog
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="alert-dialog"
@@ -49,7 +49,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -91,9 +91,9 @@ import {
 </AlertDialogTrigger>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `AlertDialog`:
+次の構成を使用して、`AlertDialog` を構築します。
 
 ```text
 AlertDialogTrigger
@@ -108,9 +108,9 @@ AlertDialogTrigger
         └── AlertDialogAction
 ```
 
-## Basic
+## 基本
 
-A basic alert dialog with a title, description, and cancel and continue buttons.
+タイトル、説明、キャンセルボタンと続行ボタンを備えた基本的なアラートダイアログ。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -118,9 +118,9 @@ A basic alert dialog with a title, description, and cancel and continue buttons.
   previewClassName="h-56"
 />
 
-## Small
+## 小さい
 
-Use the `size="sm"` prop to make the alert dialog smaller.
+`size="sm"` プロップを使用して、アラート ダイアログを小さくします。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -128,9 +128,9 @@ Use the `size="sm"` prop to make the alert dialog smaller.
   previewClassName="h-56"
 />
 
-## Media
+## メディア
 
-Use the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`AlertDialogMedia` コンポーネントを使用して、アイコンや画像などのメディア要素をアラート ダイアログに追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -138,9 +138,9 @@ Use the `AlertDialogMedia` component to add a media element such as an icon or i
   previewClassName="h-56"
 />
 
-## Small with Media
+## メディアを使用した小規模な
 
-Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`size="sm"` プロパティを使用してアラート ダイアログを小さくし、`AlertDialogMedia` コンポーネントを使用してアイコンや画像などのメディア要素をアラート ダイアログに追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -148,9 +148,9 @@ Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMe
   previewClassName="h-56"
 />
 
-## Destructive
+## 破壊的
 
-Use the `AlertDialogAction` component to add a destructive action button to the alert dialog.
+`AlertDialogAction` コンポーネントを使用して、警告ダイアログに破壊的なアクション ボタンを追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -160,7 +160,7 @@ Use the `AlertDialogAction` component to add a destructive action button to the 
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -169,14 +169,14 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-56"
 />
 
-## API Reference
+## API リファレンス
 
-### size
+### サイズ
 
-Use the `size` props on the `AlertDialogContent` component to control the size of the alert dialog. It accepts the following values:
+`AlertDialogContent` コンポーネントの `size` プロパティを使用して、アラート ダイアログのサイズを制御します。次の値を受け入れます。
 
-| Prop   | Type                | Default     |
+|小道具 |タイプ |デフォルト |
 | ------ | ------------------- | ----------- |
 | `size` | `"default" \| "sm"` | `"default"` |
 
-For more information about the other components and their props, see the [React Aria documentation](https://react-aria.adobe.com/Modal#api).
+他のコンポーネントとそのプロパティの詳細については、[React Aria ドキュメント](https://react-aria.adobe.com/Modal#api) を参照してください。

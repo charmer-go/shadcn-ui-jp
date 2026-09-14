@@ -1,23 +1,23 @@
 ---
-title: Theming
-description: Using CSS variables and theme tokens.
+title: テーマ
+description: CSS 変数とテーマ トークンの使用。
 ---
 
 <Callout>
 
-Want to build your theme visually? Use [shadcn/create](/create) to preview colors, radius, fonts, and icons, then generate a preset for your project.
+テーマを視覚的に構築したいですか? [shadcn/create](/create) を使用して色、半径、フォント、アイコンをプレビューし、プロジェクトのプリセットを生成します。
 
 </Callout>
 
-We use and recommend CSS variables for theming.
+テーマには CSS 変数を使用し、推奨します。
 
-This gives you semantic theme tokens like `background`, `foreground`, and `primary` that components use by default. Override those tokens in your CSS to change the look of your app without rewriting component classes.
+これにより、コンポーネントがデフォルトで使用する `background`、`foreground`、`primary` などのセマンティック テーマ トークンが得られます。 CSS でこれらのトークンをオーバーライドすると、コンポーネント クラスを書き換えずにアプリの外観を変更できます。
 
 ```tsx /bg-background/ /text-foreground/
 <div className="bg-background text-foreground" />
 ```
 
-To use CSS variables for theming, set `tailwind.cssVariables` to `true` in your `components.json` file. This is the default.
+テーマに CSS 変数を使用するには、`components.json` ファイルで `tailwind.cssVariables` を `true` に設定します。これがデフォルトです。
 
 ```json {8} title="components.json" showLineNumbers
 {
@@ -32,69 +32,69 @@ To use CSS variables for theming, set `tailwind.cssVariables` to `true` in your 
 }
 ```
 
-Tailwind maps these tokens into utilities like `bg-background`, `text-foreground`, `border-border`, and `ring-ring`.
+Tailwind は、これらのトークンを `bg-background`、`text-foreground`、`border-border`、`ring-ring` などのユーティリティにマップします。
 
-Dark mode works by overriding the same tokens inside a `.dark` selector. See the [dark mode docs](/docs/dark-mode/next) for adding a theme provider and toggling the `.dark` class.
+ダーク モードは、`.dark` セレクター内の同じトークンをオーバーライドすることで機能します。テーマプロバイダーの追加と `.dark` クラスの切り替えについては、[ダーク モード ドキュメント](/docs/dark-mode/next) を参照してください。
 
-## Token Convention
+## トークン規約
 
-We use semantic background and foreground pairs. The base token controls the surface color and the `-foreground` token controls the text and icon color that sits on that surface.
+セマンティックな背景と前景のペアを使用します。ベース トークンはサーフェスの色を制御し、`-foreground` トークンはそのサーフェス上にあるテキストとアイコンの色を制御します。
 
 <Callout className="mt-4">
 
-The background suffix is omitted for the surface token. For example, `primary` pairs with `primary-foreground`.
+表面トークンでは背景のサフィックスが省略されます。たとえば、`primary` は `primary-foreground` とペアになります。
 
 </Callout>
 
-Given the following CSS variables:
+次の CSS 変数があるとします。
 
 ```css
 --primary: oklch(0.205 0 0);
 --primary-foreground: oklch(0.985 0 0);
 ```
 
-The `background` color of the following component will be `var(--primary)` and the `foreground` color will be `var(--primary-foreground)`.
+次のコンポーネントの `background` の色は `var(--primary)` になり、`foreground` の色は `var(--primary-foreground)` になります。
 
 ```tsx
 <div className="bg-primary text-primary-foreground">Hello</div>
 ```
 
-## Theme Tokens
+## テーマトークン
 
-These tokens live in your CSS file under `:root` and `.dark`.
+これらのトークンは、CSS ファイルの `:root` および `.dark` の下に存在します。
 
-| Token                                            | What it controls                                       | Used by                                                                      |
+|トークン |何を制御するのか |使用者 |
 | ------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
-| `background` / `foreground`                      | The default app background and text color.             | The page shell, page sections, and default text.                             |
-| `card` / `card-foreground`                       | Elevated surfaces and the content inside them.         | `Card`, dashboard panels, settings panels.                                   |
-| `popover` / `popover-foreground`                 | Floating surfaces and the content inside them.         | `Popover`, `DropdownMenu`, `ContextMenu`, and other overlays.                |
-| `primary` / `primary-foreground`                 | High-emphasis actions and brand surfaces.              | Default `Button`, selected states, badges, and active accents.               |
-| `secondary` / `secondary-foreground`             | Lower-emphasis filled actions and supporting surfaces. | Secondary buttons, secondary badges, and supporting UI.                      |
-| `muted` / `muted-foreground`                     | Subtle surfaces and lower-emphasis content.            | Descriptions, placeholders, empty states, helper text, and subdued surfaces. |
-| `accent` / `accent-foreground`                   | Interactive hover, focus, and active surfaces.         | Ghost buttons, menu highlight states, hovered rows, and selected items.      |
-| `destructive`                                    | Destructive actions and error emphasis.                | Destructive buttons, invalid states, and destructive menu items.             |
-| `border`                                         | Default borders and separators.                        | Cards, menus, tables, separators, and layout dividers.                       |
-| `input`                                          | Form control borders and input surface treatment.      | `Input`, `Textarea`, `Select`, and outline-style controls.                   |
-| `ring`                                           | Focus rings and outlines.                              | Buttons, inputs, checkboxes, menus, and other focusable controls.            |
-| `chart-1` ... `chart-5`                          | The default chart palette.                             | Charts and chart-driven dashboard blocks.                                    |
-| `sidebar` / `sidebar-foreground`                 | The base sidebar surface and default sidebar text.     | The `Sidebar` container and its default content.                             |
-| `sidebar-primary` / `sidebar-primary-foreground` | High-emphasis actions inside the sidebar.              | Active items, icon tiles, badges, and sidebar CTAs.                          |
-| `sidebar-accent` / `sidebar-accent-foreground`   | Hover and selected states inside the sidebar.          | Sidebar menu hover states, open items, and interactive rows.                 |
-| `sidebar-border`                                 | Sidebar-specific borders and separators.               | Sidebar headers, groups, and internal dividers.                              |
-| `sidebar-ring`                                   | Sidebar-specific focus rings.                          | Focused controls inside the sidebar.                                         |
-| `radius`                                         | The base corner radius scale.                          | Cards, inputs, buttons, popovers, and the derived `radius-*` tokens.         |
+| `background` / `foreground` |デフォルトのアプリの背景とテキストの色。             |ページシェル、ページセクション、およびデフォルトのテキスト。                             |
+| `card` / `card-foreground` |隆起した表面とその内部のコンテンツ。         | `Card`、ダッシュボード パネル、設定パネル。                                   |
+| `popover` / `popover-foreground` |浮遊サーフェスとその内部のコンテンツ。         | `Popover`、`DropdownMenu`、`ContextMenu`、およびその他のオーバーレイ。                |
+| `primary` / `primary-foreground` |強調されたアクションとブランドの表面。              |デフォルトの `Button`、選択された状態、バッジ、およびアクティブなアクセント。               |
+| `secondary` / `secondary-foreground` |低強調のアクションとサポート面を埋め込みます。 |二次ボタン、二次バッジ、およびサポート UI。                      |
+| `muted` / `muted-foreground` |微妙な表面と低めの強調のコンテンツ。            |説明、プレースホルダー、空の状態、ヘルパー テキスト、および落ち着いた表面。 |
+| `accent` / `accent-foreground` |インタラクティブなホバー、フォーカス、アクティブなサーフェス。         |ゴースト ボタン、メニューのハイライト状態、ホバーされた行、および選択された項目。      |
+| `destructive` |破壊的なアクションとエラーの強調。                |破壊的なボタン、無効な状態、および破壊的なメニュー項目。             |
+| `border` |デフォルトの境界線と区切り文字。                        |カード、メニュー、テーブル、セパレーター、レイアウトの仕切り。                       |
+| `input` |フォームコントロールの境界線と入力表面処理。      | `Input`、`Textarea`、`Select`、およびアウトライン スタイルのコントロール。                   |
+| `ring` |フォーカスリングと輪郭。                              |ボタン、入力、チェックボックス、メニュー、およびその他のフォーカス可能なコントロール。            |
+| `chart-1` ... `chart-5` |デフォルトのグラフパレット。                             |チャートとチャート駆動のダッシュボード ブロック。                                    |
+| `sidebar` / `sidebar-foreground` |ベースのサイドバーの表面とデフォルトのサイドバーのテキスト。     | `Sidebar` コンテナーとそのデフォルトのコンテンツ。                             |
+| `sidebar-primary` / `sidebar-primary-foreground` |サイドバー内のアクションを強調します。              |アクティブなアイテム、アイコン タイル、バッジ、サイドバー CTA。                          |
+| `sidebar-accent` / `sidebar-accent-foreground` |サイドバー内でホバーして選択した状態を表示します。          |サイドバー メニューのホバー状態、開いている項目、およびインタラクティブな行。                 |
+| `sidebar-border` |サイドバー固有の境界線と区切り文字。               |サイドバーのヘッダー、グループ、および内部の仕切り。                              |
+| `sidebar-ring` |サイドバー固有のフォーカス リング。                          |サイドバー内のフォーカスされたコントロール。                                         |
+| `radius` |ベースコーナー半径のスケール。                          |カード、入力、ボタン、ポップオーバー、および派生した `radius-*` トークン。         |
 
 <Callout className="mt-4">
 
-The chart tokens are covered in more detail in the [Chart theming docs](/docs/components/chart#theming).
+チャート トークンについては、[チャート テーマに関するドキュメント](/docs/components/chart#theming) で詳しく説明されています。
 
 </Callout>
 
-## Radius Scale
+## 半径スケール
 
-`--radius` is the base radius token for your theme.
+`--radius` は、テーマの基本半径トークンです。
 
-We derive a small radius scale from it so components can use consistent corner sizes while still sharing a single source of truth.
+そこから小さな半径スケールを導き出すので、コンポーネントは単一の真実の情報源を共有しながら、一貫した角のサイズを使用できます。
 
 ```css title="app/globals.css" showLineNumbers
 @theme inline {
@@ -108,16 +108,16 @@ We derive a small radius scale from it so components can use consistent corner s
 }
 ```
 
-This means:
+これはつまり：
 
-- `radius-lg` is the base value.
-- Smaller radii scale down from `--radius`.
-- Larger radii scale up from `--radius`.
-- Changing `--radius` updates the entire radius scale.
+- `radius-lg` は基本値です。
+- `--radius` から半径が小さくスケールダウンします。
+- `--radius` からより大きな半径スケールアップ。
+- `--radius` を変更すると、半径スケール全体が更新されます。
 
-## Adding New Tokens
+## 新しいトークンの追加
 
-To add a new token, define it under `:root` and `.dark`, then expose it to Tailwind with `@theme inline`.
+新しいトークンを追加するには、`:root` および `.dark` で定義し、`@theme inline` を使用して Tailwind に公開します。
 
 ```css title="app/globals.css" showLineNumbers
 :root {
@@ -136,21 +136,21 @@ To add a new token, define it under `:root` and `.dark`, then expose it to Tailw
 }
 ```
 
-You can now use `bg-warning` and `text-warning-foreground` in your components.
+コンポーネントで `bg-warning` および `text-warning-foreground` を使用できるようになりました。
 
 ```tsx /bg-warning/ /text-warning-foreground/
 <div className="bg-warning text-warning-foreground" />
 ```
 
-## Base Colors
+## ベースカラー
 
-`tailwind.baseColor` controls the default token values generated for your project when you run `init` or use a preset.
+`tailwind.baseColor` は、`init` を実行するとき、またはプリセットを使用するときにプロジェクトに対して生成されるデフォルトのトークン値を制御します。
 
-The available base colors are: **Neutral**, **Stone**, **Zinc**, **Mauve**, **Olive**, **Mist**, and **Taupe**.
+利用可能なベースカラーは次のとおりです: **ニュートラル**、**ストーン**、**亜鉛**、**モーブ**、**オリーブ**、**ミスト**、**トープ**。
 
-## Default Theme CSS
+## デフォルトのテーマ CSS
 
-The following is the full default `neutral` theme scaffold. Copy it into your global CSS file and adjust the tokens as needed.
+以下は完全なデフォルトの `neutral` テーマ スキャフォールドです。これをグローバル CSS ファイルにコピーし、必要に応じてトークンを調整します。
 
 <CodeCollapsibleWrapper>
 
@@ -283,15 +283,15 @@ The following is the full default `neutral` theme scaffold. Copy it into your gl
 
 </CodeCollapsibleWrapper>
 
-## Without CSS Variables
+## CSS 変数なし
 
-If you do not want to use CSS variables, the CLI can generate components with inline Tailwind color utilities instead.
+CSS 変数を使用したくない場合は、代わりに CLI でインライン Tailwind カラー ユーティリティを使用してコンポーネントを生成できます。
 
 ```bash
 npx shadcn@latest init --no-css-variables
 ```
 
-This sets `tailwind.cssVariables` to `false` in your `components.json` file.
+これにより、`components.json` ファイル内の `tailwind.cssVariables` が `false` に設定されます。
 
 ```tsx /bg-zinc-950/ /text-zinc-50/ /dark:bg-white/ /dark:text-zinc-950/
 <div className="bg-zinc-950 text-zinc-50 dark:bg-white dark:text-zinc-950" />
@@ -299,6 +299,6 @@ This sets `tailwind.cssVariables` to `false` in your `components.json` file.
 
 <Callout className="mt-4">
 
-This is an installation-time choice. To switch an existing project, delete and re-install your components.
+これはインストール時の選択です。既存のプロジェクトを切り替えるには、コンポーネントを削除して再インストールします。
 
 </Callout>

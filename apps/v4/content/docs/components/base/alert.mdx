@@ -1,6 +1,6 @@
 ---
 title: Alert
-description: Displays a callout for user attention.
+description: ユーザーの注意を促すコールアウトを表示します。
 base: base
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add alert
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   styleName="base-nova"
@@ -39,7 +39,7 @@ npx shadcn@latest add alert
   title="components/ui/alert.tsx"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add alert
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -71,7 +71,7 @@ import {
 </Alert>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build an `Alert`:
 
@@ -83,9 +83,9 @@ Alert
 └── AlertAction
 ```
 
-## Basic
+## 基本
 
-A basic alert with an icon, title and description.
+アイコン、タイトル、説明を含む基本的なアラート。
 
 <ComponentPreview
   styleName="base-nova"
@@ -93,7 +93,7 @@ A basic alert with an icon, title and description.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Destructive
+## 破壊的な
 
 Use `variant="destructive"` to create a destructive alert.
 
@@ -103,9 +103,9 @@ Use `variant="destructive"` to create a destructive alert.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Action
+## アクション
 
-Use `AlertAction` to add a button or other action element to the alert.
+`AlertAction` を使用して、ボタンまたはその他のアクション要素をアラートに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -113,9 +113,9 @@ Use `AlertAction` to add a button or other action element to the alert.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Custom Colors
+## カスタムカラー
 
-You can customize the alert colors by adding custom classes such as `bg-amber-50 dark:bg-amber-950` to the `Alert` component.
+`bg-amber-50 dark:bg-amber-950` などのカスタム クラスを `Alert` コンポーネントに追加することで、アラートの色をカスタマイズできます。
 
 <ComponentPreview
   styleName="base-nova"
@@ -125,7 +125,7 @@ You can customize the alert colors by adding custom classes such as `bg-amber-50
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -134,21 +134,21 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## API Reference
+## API リファレンス
 
 ### Alert
 
 The `Alert` component displays a callout for user attention.
 
-| Prop      | Type                         | Default     |
+|小道具 |タイプ |デフォルト |
 | --------- | ---------------------------- | ----------- |
 | `variant` | `"default" \| "destructive"` | `"default"` |
 
 ### AlertTitle
 
-The `AlertTitle` component displays the title of the alert.
+`AlertTitle` コンポーネントは、アラートのタイトルを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
@@ -156,14 +156,14 @@ The `AlertTitle` component displays the title of the alert.
 
 The `AlertDescription` component displays the description or content of the alert.
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |
 
 ### AlertAction
 
-The `AlertAction` component displays an action element (like a button) positioned absolutely in the top-right corner of the alert.
+`AlertAction` コンポーネントは、アラートの右上隅に絶対配置されたアクション要素 (ボタンなど) を表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` | -       |

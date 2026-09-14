@@ -1,15 +1,15 @@
 ---
-title: Typeset
-description: A styling system for HTML and rendered markdown, from blog posts to streaming chat. One CSS file you own.
+title: タイプセット
+description: ブログ投稿からストリーミング チャットまで、HTML およびレンダリングされたマークダウンのスタイル システム。あなたが所有する 1 つの CSS ファイル。
 ---
 
-You render markdown and get back plain unstyled HTML: headings, paragraphs, lists, and tables. So you style the elements one by one: font sizes, line heights, spacing.
+マークダウンをレンダリングすると、見出し、段落、リスト、表など、スタイルのないプレーンな HTML が返されます。したがって、フォント サイズ、行の高さ、間隔などの要素を 1 つずつスタイル設定します。
 
-You do it for your blog. Then you do it again for the docs. Then again for the chat app. Every time you're fighting the same thing: sizing and spacing.
+あなたは自分のブログのためにそれをします。次に、ドキュメントに対して同じ作業をもう一度行います。次にチャットアプリについてです。サイズと間隔という同じことを戦うたびに。
 
-To fix this, we created **shadcn/typeset**. It's one CSS file that styles everything inside a `typeset` container. The file lives in your project, so you can change it directly when you need to.
+これを修正するために、**shadcn/typeset** を作成しました。これは、`typeset` コンテナ内のすべてのスタイルを設定する 1 つの CSS ファイルです。ファイルはプロジェクト内に存在するため、必要なときに直接変更できます。
 
-A typeset is just a small preset class. You can have multiple typesets in your app, for different contexts.
+タイプセットは、単なる小さなプリセット クラスです。さまざまなコンテキストに合わせて、アプリ内に複数のタイプセットを含めることができます。
 
 ```css
 .typeset-docs {
@@ -23,42 +23,42 @@ A typeset is just a small preset class. You can have multiple typesets in your a
 ```
 
 <Button asChild className="mt-6" size="sm">
-  <Link href="/typeset">Build your typeset</Link>
+  <Link href="/typeset">タイプセットを構築する</Link>
 </Button>
 
 ---
 
-## Principles
+## 原則
 
-We read a lot about type: scale ratios, tracking, kerning, optical sizing, measure, leading, the space above and below every element. We tried exposing all of it, and it was too much. Nobody wants to set a dozen variables to make markdown look right.
+私たちは、スケール比率、トラッキング、カーニング、光学サイジング、メジャー、行送り、各要素の上下のスペースなど、タイプについて多くのことを読みます。全部暴露してみましたが、やりすぎでした。マークダウンを正しく見せるために多数の変数を設定したいと思う人はいません。
 
-So we sat down and condensed everything into three controls: size, leading, and flow. Everything else, heading sizes, list indents, the gap under a heading, the space around a rule, derives from them. Three controls. We called it rhythm.
-
----
-
-## Features
-
-- **It fits its container.** Put it in a chat bubble and it follows the smaller type around it. Put it in an article and it scales up with the page. On smaller screens, it gets a small bump for readability.
-- **It uses your theme.** Colors, fonts, and radius come from your app. Dark mode follows the same tokens.
-- **It's easy to tune.** Three values control the base size, line height, and space between blocks. Change them in a preset and the whole document follows.
-- **It works well with streaming.** When a new block arrives, Typeset doesn't make earlier blocks switch margins, borders, or styles.
+そこで私たちは、すべてをサイズ、リーディング、フローという 3 つのコントロールに凝縮しました。見出しのサイズ、リストのインデント、見出しの下の隙間、ルールの周囲のスペースなど、他のすべてはそれらから派生します。 3つのコントロール。私たちはそれをリズムと呼んでいました。
 
 ---
 
-## Building Your Typeset
+## 特徴
 
-Create your typeset in the [typeset builder](/typeset). Pick your fonts and rhythm, then preview them on docs, chat, articles, and other real content.
+- **そのコンテナに適合します。** チャットバブルに入れると、その周りの小さいタイプに従います。記事に挿入すると、ページに合わせて拡大されます。小さな画面では、読みやすくするために小さな隆起が生じます。
+- **テーマを使用します。** 色、フォント、半径はアプリから取得されます。ダーク モードは同じトークンに従います。
+- **調整は簡単です。** 3 つの値で、ベース サイズ、行の高さ、ブロック間のスペースを制御します。プリセットでそれらを変更すると、ドキュメント全体がそれに追従します。
+- **ストリーミングでうまく機能します。** 新しいブロックが到着しても、Typeset は以前のブロックのマージン、境界線、またはスタイルを切り替えません。
 
-The panel gives you the `typeset.css` file, the font setup for your framework, a preset class with your choices, and the wrapper to add around your content.
+---
 
-Copy `typeset.css` next to your main CSS file and import it after Tailwind:
+## タイプセットを構築する
+
+[タイプセット ビルダー](/typeset) でタイプセットを作成します。フォントとリズムを選択し、ドキュメント、チャット、記事、その他の実際のコンテンツでプレビューします。
+
+このパネルには、`typeset.css` ファイル、フレームワークのフォント設定、選択したプリセット クラス、およびコンテンツの周囲に追加するラッパーが表示されます。
+
+メイン CSS ファイルの隣に `typeset.css` をコピーし、Tailwind の後にインポートします。
 
 ```css
 @import "tailwindcss";
 @import "./typeset.css";
 ```
 
-Then wrap your rendered markdown with `typeset` and your preset class:
+次に、レンダリングされたマークダウンを `typeset` とプリセット クラスでラップします。
 
 ```tsx
 <div className="typeset typeset-docs">
@@ -66,13 +66,13 @@ Then wrap your rendered markdown with `typeset` and your preset class:
 </div>
 ```
 
-`typeset` turns the styles on. `typeset-docs` is the preset you created in the builder.
+`typeset` はスタイルをオンにします。 `typeset-docs` は、ビルダーで作成したプリセットです。
 
 ---
 
-## Custom Typesets
+## カスタム タイプセット
 
-The file includes defaults, so you can use `typeset` by itself. Most of the reading rhythm comes from three values:
+ファイルにはデフォルトが含まれているため、`typeset` を単独で使用できます。読書リズムのほとんどは、次の 3 つの値から決まります。
 
 ```css
 .typeset {
@@ -86,15 +86,15 @@ The file includes defaults, so you can use `typeset` by itself. Most of the read
 }
 ```
 
-- **`--typeset-size`** sets the base text size. `1em` follows the surrounding layout. On smaller screens, Typeset bumps it up a little.
-- **`--typeset-leading`** sets the space between lines.
-- **`--typeset-flow`** sets the space between blocks. Headings and other elements derive their spacing from it.
+- **`--typeset-size`** は、基本テキスト サイズを設定します。 `1em` は周囲のレイアウトに従います。小さい画面では、Typeset を使用すると少し大きくなります。
+- **`--typeset-leading`** は行間のスペースを設定します。
+- **`--typeset-flow`** はブロック間のスペースを設定します。見出しやその他の要素の間隔はそこから導き出されます。
 
-The font variables tell Typeset which families to use. Leave them alone and it follows your app. Colors and radius come from your theme too.
+フォント変数は、どのファミリを使用するかを Typeset に指示します。放っておけば、アプリに従います。色と半径もテーマから決まります。
 
-Typeset doesn't set a maximum width. Your layout owns that. The Measure control in the builder adds a `max-width` to the wrapper instead of hiding it in the stylesheet.
+タイプセットは最大幅を設定しません。あなたのレイアウトがそれを所有しています。ビルダーの Measure コントロールは、スタイルシート内で `max-width` を非表示にするのではなく、ラッパーに `max-width` を追加します。
 
-You can keep more than one preset in the same app. Here is a tighter one for chat and a roomier one for docs:
+同じアプリ内に複数のプリセットを保持できます。以下はチャット用に狭いもの、ドキュメント用に広いものです。
 
 ```css
 .typeset-chat {
@@ -113,7 +113,7 @@ You can keep more than one preset in the same app. Here is a tighter one for cha
 <article className="typeset typeset-docs">{page}</article>
 ```
 
-For a one-off change, skip the preset and set a value on the container:
+1 回限りの変更の場合は、プリセットをスキップして、コンテナーに値を設定します。
 
 ```tsx
 <article className="typeset [--typeset-flow:1.75em]">...</article>
@@ -121,9 +121,9 @@ For a one-off change, skip the preset and set a value on the container:
 
 ---
 
-## Custom Themes
+## カスタムテーマ
 
-A preset can change the whole feel of the content, not just the spacing. You can give readers a serif reading mode, a compact UI mode, or any other style that fits your product.
+プリセットは、間隔だけでなく、コンテンツ全体の雰囲気を変えることができます。読者にセリフ読み取りモード、コンパクト UI モード、または製品に適したその他のスタイルを提供できます。
 
 ```css
 /* Reading: serif, larger type, roomy rhythm. */
@@ -147,9 +147,9 @@ A preset can change the whole feel of the content, not just the spacing. You can
 
 ---
 
-## Accessibility and Dark Mode
+## アクセシビリティとダークモード
 
-For readers who prefer larger type and more space, create a roomier typeset and expose it as a setting:
+より大きな活字とより多くのスペースを好む読者の場合は、より広々としたタイプセットを作成し、それを設定として公開します。
 
 ```css
 .typeset-large {
@@ -159,7 +159,7 @@ For readers who prefer larger type and more space, create a roomier typeset and 
 }
 ```
 
-Dark mode already follows your theme colors. If the text feels a little tight on a dark surface, you can loosen the leading there:
+ダークモードはすでにテーマカラーに従っています。暗い表面上でテキストが少しきつく感じる場合は、その部分の行送りを緩めることができます。
 
 ```css
 .dark .typeset {
@@ -169,9 +169,9 @@ Dark mode already follows your theme colors. If the text feels a little tight on
 
 ---
 
-## Responsive Table
+## レスポンシブテーブル
 
-Tables stay real tables and wrap to fit. To scroll a wide one horizontally instead, wrap it in `typeset-scroll`:
+テーブルは実際のテーブルのままで、ぴったりと収まるように折り返されます。幅の広いものを水平方向にスクロールするには、それを `typeset-scroll` で囲みます。
 
 ```tsx
 <div className="typeset-scroll">
@@ -179,13 +179,13 @@ Tables stay real tables and wrap to fit. To scroll a wide one horizontally inste
 </div>
 ```
 
-Do this in your renderer's table component or a small rehype plugin. It works for any wide block, not just tables.
+これをレンダラーのテーブル コンポーネントまたは小さな rehype プラグインで実行します。テーブルだけでなく、あらゆるワイドブロックに対して機能します。
 
 ---
 
-## Overrides
+## オーバーライド
 
-Typeset lives in the `components` layer and uses `:where()` for its element selectors. Tailwind utilities on an element win without `!important`:
+Typeset は `components` レイヤーに存在し、要素セレクターに `:where()` を使用します。要素の Tailwind ユーティリティは、`!important` なしで勝ちます。
 
 ```tsx
 <div className="typeset typeset-docs">
@@ -193,13 +193,13 @@ Typeset lives in the `components` layer and uses `:where()` for its element sele
 </div>
 ```
 
-Plain CSS can override Typeset with a normal selector too.
+プレーン CSS は、通常のセレクターで Typeset をオーバーライドすることもできます。
 
 ---
 
-## Opting Out
+## オプトアウトする
 
-To keep a component out of Typeset, add `not-typeset` or `data-not-typeset`:
+コンポーネントをタイプセットから除外するには、`not-typeset` または `data-not-typeset` を追加します。
 
 ```tsx
 <div className="typeset">
@@ -208,35 +208,35 @@ To keep a component out of Typeset, add `not-typeset` or `data-not-typeset`:
 </div>
 ```
 
-Both options cover the component and everything inside it. Another `typeset` container inside that subtree stays opted out too.
+どちらのオプションも、コンポーネントとその内部のすべてをカバーします。そのサブツリー内の別の `typeset` コンテナもオプトアウトされたままになります。
 
 ---
 
-## Streaming
+## ストリーミング
 
-Typeset is written so that adding a new block does not change the styles of the blocks already on screen.
+タイプセットは、新しいブロックを追加しても、すでに画面上にあるブロックのスタイルが変更されないように書かれています。
 
-- No forward-looking selectors. `:last-child`, `:has()`, and `:empty` are left out of layout rules because their matches can change as content is added.
-- Spacing flows in one direction, using `margin-block-start` only. A new block adds its own space.
-- Table separators live on the cells being added, so a new row does not restyle the row above it.
+- 将来を見据えたセレクターはありません。 `:last-child`、`:has()`、および `:empty` は、コンテンツが追加されると一致が変わる可能性があるため、レイアウト ルールから除外されます。
+- スペースは一方向に流れます。`margin-block-start` のみを使用します。新しいブロックは独自のスペースを追加します。
+- テーブル区切り記号は追加されるセルに存在するため、新しい行によってその上の行のスタイルが変更されることはありません。
 
-Text that is still streaming can grow and wrap normally. Typeset just avoids restyling the blocks that came before it.
+ストリーミング中のテキストは、通常どおり拡大したり折り返すことができます。 Typeset は、その前にあるブロックのスタイル変更を回避するだけです。
 
 ---
 
-## Prior Art
+## 従来技術
 
-The `prose` class from `@tailwindcss/typography` is excellent at what it was built for: adding beautiful typographic defaults to plain HTML, including content rendered from Markdown or a CMS.
+`@tailwindcss/typography` の `prose` クラスは、Markdown や CMS からレンダリングされたコンテンツを含む、プレーンな HTML に美しい文字体裁のデフォルトを追加するという目的で構築された点で優れています。
 
-Typeset takes a different approach with container-aware sizing, app theme tokens, presets for different contexts, and streaming stability. Here's where they differ:
+Typeset は、コンテナーを意識したサイジング、アプリのテーマ トークン、さまざまなコンテキストのプリセット、ストリーミングの安定性に関して、異なるアプローチを採用しています。異なる点は次のとおりです。
 
-|              | @tailwindcss/typography                      | Typeset                                          |
+|              | @tailwindcss/タイポグラフィ |タイプセット |
 | ------------ | -------------------------------------------- | ------------------------------------------------ |
-| Sizing       | Fixed `rem` scale, `prose-sm` to `prose-2xl` | Relative to the container, any size              |
-| Dark mode    | `prose-invert`, a second palette             | Your tokens flip, nothing to add                 |
-| Theming      | Prose color variables; scale baked in        | Your theme tokens, plus font and rhythm controls |
-| Overrides    | `prose-a:`, `prose-headings:` modifier API   | Plain utilities and CSS win                      |
-| Streaming    | No append-stability contract                 | Designed for stable appends                      |
-| Distribution | npm plugin, generated CSS                    | One CSS file you own                             |
+|サイズ | `rem` スケール、`prose-sm` から `prose-2xl` を修正 |コンテナーに対して、任意のサイズ |
+|ダークモード | `prose-invert`、2 番目のパレット |トークンが反転します。何も追加する必要はありません |
+|テーマ |散文の色の変数。焼き付けられたスケール |テーマ トークン、フォントおよびリズム コントロール |
+|オーバーライド | `prose-a:`、`prose-headings:` 修飾子 API |普通のユーティリティと CSS が勝利 |
+|ストリーミング |追加安定性契約なし |安定した追加用に設計 |
+|配布 | npm プラグイン、生成された CSS |あなたが所有する 1 つの CSS ファイル |
 
-Typeset borrows the two best ideas from the plugin: the zero-specificity `:where()` guard pattern, and the escape-hatch class (`not-typeset`, in the spirit of `not-prose`).
+Typeset は、プラグインから 2 つの最良のアイデアを借用しています。1 つは特異性ゼロの `:where()` ガード パターン、もう 1 つはエスケープ ハッチ クラス (`not-prose` の精神に基づく `not-typeset`) です。

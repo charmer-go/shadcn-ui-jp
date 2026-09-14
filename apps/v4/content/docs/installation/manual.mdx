@@ -1,29 +1,29 @@
 ---
-title: Manual Installation
-description: Add dependencies to your project manually.
+title: 手動インストール
+description: 依存関係をプロジェクトに手動で追加します。
 ---
 
 <Steps>
 
-### Add Tailwind CSS
+### Tailwind CSS の追加
 
-Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
+コンポーネントは Tailwind CSS を使用してスタイル設定されます。プロジェクトに Tailwind CSS をインストールする必要があります。
 
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
+[開始するには、Tailwind CSS のインストール手順に従ってください。](https://tailwindcss.com/docs/installation)
 
-### Add dependencies
+### 依存関係の追加
 
-Add the following dependencies to your project:
+次の依存関係をプロジェクトに追加します。
 
 ```bash
 npm install shadcn class-variance-authority cn lucide-react tw-animate-css
 ```
 
-### Configure import aliases
+### インポート エイリアスの構成
 
-Choose one of the following alias setups.
+次のエイリアス設定のいずれかを選択します。
 
-#### Option A: `tsconfig.json` paths
+#### オプション A: `tsconfig.json` パス
 
 ```json {3-6} title="tsconfig.json" showLineNumbers
 {
@@ -36,7 +36,7 @@ Choose one of the following alias setups.
 }
 ```
 
-#### Option B: `package.json#imports`
+#### オプション B: `package.json#imports`
 
 ```json title="package.json" showLineNumbers
 {
@@ -57,14 +57,15 @@ Choose one of the following alias setups.
 }
 ```
 
-The `@` alias is a preference. You can use other aliases if you want. If you
-use `package.json#imports`, keep the matching alias roots in `components.json`.
-See the <Link href="/docs/package-imports">package imports guide</Link> for
-framework-specific setup.
+`@` エイリアスが優先されます。必要に応じて、他のエイリアスも使用できます。
+`package.json#imports` を使用する場合は、対応するエイリアスのルートを
+`components.json` に保持してください。
+<Link href="/docs/package-imports">package インポート ガイド</Link>を参照して、
+フレームワーク固有のセットアップを行ってください。
 
-### Configure styles
+### スタイルを構成する
 
-Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
+以下をstyles/globals.cssファイルに追加します。テーマに CSS 変数を使用する方法について詳しくは、[テーマ セクション](/docs/theming) をご覧ください。
 
 <CodeCollapsibleWrapper>
 
@@ -198,17 +199,17 @@ Add the following to your styles/globals.css file. You can learn more about usin
 
 </CodeCollapsibleWrapper>
 
-### Add a cn helper
+### cn ヘルパーの追加
 
-Components import `cn` directly from the `cn` package. Re-export it from `lib/utils.ts` so your own code has a single place to import helpers from.
+コンポーネントは `cn` パッケージから `cn` を直接インポートします。 `lib/utils.ts` から再エクスポートすると、独自のコードがヘルパーをインポートする単一の場所になります。
 
 ```ts showLineNumbers title="lib/utils.ts"
 export { cn } from "cn"
 ```
 
-### Create a `components.json` file
+### `components.json` ファイルの作成
 
-Create a `components.json` file in the root of your project.
+プロジェクトのルートに `components.json` ファイルを作成します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -248,8 +249,8 @@ If you're using `package.json#imports`, use the corresponding `#...` aliases ins
 }
 ```
 
-### That's it
+### 以上です
 
-You can now start adding components to your project.
+これで、プロジェクトへのコンポーネントの追加を開始できます。
 
 </Steps>

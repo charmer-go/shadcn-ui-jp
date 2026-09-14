@@ -1,6 +1,6 @@
 ---
-title: Resizable
-description: Accessible resizable panel groups and layouts with keyboard support.
+title: サイズ変更可能
+description: キーボードサポートを備えた、サイズ変更可能なパネルグループとレイアウトにアクセス可能。
 base: radix
 component: true
 links:
@@ -14,17 +14,17 @@ links:
   previewClassName="h-80"
 />
 
-## About
+## 概要
 
-The `Resizable` component is built on top of [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) by [bvaughn](https://github.com/bvaughn).
+`Resizable` コンポーネントは、[bvaughn](https://github.com/bvaughn) によって [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) の上に構築されています。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -38,13 +38,13 @@ npx shadcn@latest add resizable
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-resizable-panels
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="resizable"
@@ -52,7 +52,7 @@ npm install react-resizable-panels
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -60,7 +60,7 @@ npm install react-resizable-panels
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -78,9 +78,9 @@ import {
 </ResizablePanelGroup>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `ResizablePanelGroup`:
+次の構成を使用して、`ResizablePanelGroup` を構築します。
 
 ```text
 ResizablePanelGroup
@@ -89,48 +89,48 @@ ResizablePanelGroup
 └── ResizablePanel
 ```
 
-## Vertical
+## 垂直
 
-Use `orientation="vertical"` for vertical resizing.
+垂直方向のサイズ変更には `orientation="vertical"` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="resizable-vertical" />
 
-## Handle
+## ハンドル
 
-Use the `withHandle` prop on `ResizableHandle` to show a visible handle.
+`ResizableHandle` の `withHandle` プロップを使用して、表示されるハンドルを表示します。
 
 <ComponentPreview styleName="radix-nova" name="resizable-handle" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="resizable-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
-See the [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) documentation.
+[react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) ドキュメントを参照してください。
 
-## Changelog
+## 変更ログ
 
 ### 2025-02-02 `react-resizable-panels` v4
 
-Updated to `react-resizable-panels` v4. See the [v4.0.0 release notes](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0) for full details.
+`react-resizable-panels` v4 に更新されました。詳細については、[v4.0.0 リリース ノート](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0) を参照してください。
 
 If you're using `react-resizable-panels` primitives directly, note the following changes:
 
 | v3                           | v4                      |
 | ---------------------------- | ----------------------- |
-| `PanelGroup`                 | `Group`                 |
-| `PanelResizeHandle`          | `Separator`             |
+| `PanelGroup` | `Group` |
+| `PanelResizeHandle` | `Separator` |
 | `direction` prop             | `orientation` prop      |
 | `defaultSize={50}`           | `defaultSize="50%"`     |
 | `onLayout`                   | `onLayoutChange`        |
-| `ImperativePanelHandle`      | `PanelImperativeHandle` |
+| `ImperativePanelHandle` | `PanelImperativeHandle` |
 | `ref` prop on Panel          | `panelRef` prop         |
-| `data-panel-group-direction` | `aria-orientation`      |
+| `data-panel-group-direction` | `aria-orientation` |
 
 <Callout>
-  The shadcn/ui wrapper components (`ResizablePanelGroup`, `ResizablePanel`,
-  `ResizableHandle`) remain unchanged.
+  shadcn/ui ラッパー コンポーネント (`ResizablePanelGroup`、`ResizablePanel`、名前付きプログレスバーとしての
+  `ResizableHandle`) は変更されません。
 </Callout>

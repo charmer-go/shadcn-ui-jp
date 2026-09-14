@@ -1,20 +1,20 @@
 ---
-title: July 2026 - Introducing shadcn/typeset
-description: A complete typography system for HTML, from blog posts to streaming chat. One CSS file you own.
+title: 2026 年 7 月 - shadcn/typeset の紹介
+description: ブログ投稿からストリーミング チャットまで、HTML 用の完全なタイポグラフィ システム。あなたが所有する 1 つの CSS ファイル。
 date: 2026-07-10
 ---
 
-Today we're releasing **shadcn/typeset**: a styling system for HTML and rendered markdown, in one CSS file.
+本日、**shadcn/typeset** をリリースします。これは、HTML とレンダリングされたマークダウンのスタイル システムを 1 つの CSS ファイルでまとめたものです。
 
-Your app renders the same HTML elements everywhere: headings, paragraphs, lists, tables, and code. You style them for your blog, then your docs, and now chat. Typeset lets you style them once, then tune the rhythm for each context.
+アプリは、見出し、段落、リスト、表、コードなど、あらゆる場所で同じ HTML 要素をレンダリングします。ブログ用にスタイルを設定し、次にドキュメント用にスタイルを設定し、次にチャット用にスタイルを設定します。 Typeset を使用すると、一度スタイルを設定すれば、各コンテキストに合わせてリズムを調整できます。
 
 ```tsx
 <div className="typeset">{content}</div>
 ```
 
-Add one class and everything inside gets styled. Typeset follows the size of its container, uses your theme, and gives you three controls: size, leading, and flow.
+クラスを 1 つ追加すると、内部のすべてがスタイル設定されます。 Typeset はコンテナのサイズに従い、テーマを使用して、サイズ、行送り、フローの 3 つのコントロールを提供します。
 
-You can create as many typesets as you need. Use a tighter rhythm for chat and a roomier one for docs:
+必要なだけタイプセットを作成できます。チャットにはタイトなリズムを使用し、ドキュメントにはゆったりとしたリズムを使用します。
 
 ```css
 .typeset-chat {
@@ -34,19 +34,19 @@ You can create as many typesets as you need. Use a tighter rhythm for chat and a
 <article className="typeset typeset-docs">{page}</article>
 ```
 
-It's also designed for streaming, so new blocks don't restyle earlier ones. The file lives in your project. There's no package or config layer to work around.
+また、ストリーミング用に設計されているため、新しいブロックが以前のブロックのスタイルを変更することはありません。ファイルはプロジェクト内に存在します。回避策となるパッケージや構成レイヤーはありません。
 
-Open the [typeset builder](/typeset) to create yours, or read the [Typeset docs](/docs/typeset) for the full guide.
+[タイプセット ビルダー](/typeset) を開いてタイプセットを作成するか、完全なガイドについては [タイプセット ドキュメント](/docs/typeset) をお読みください。
 
 <div className="flex gap-2">
   <Button asChild size="sm">
     <Link href="/typeset" className="mt-6 no-underline!">
-      Build your typeset
+      タイプセットを構築する
     </Link>
   </Button>
   <Button asChild size="sm" variant="outline">
     <Link href="/docs/typeset" className="mt-6 no-underline!">
-      Read the docs
+      ドキュメントを読む
     </Link>
   </Button>
 </div>

@@ -1,6 +1,6 @@
 ---
-title: Item
-description: A versatile component for displaying content with media, title, description, and actions.
+title: アイテム
+description: メディア、タイトル、説明、アクションを含むコンテンツを表示するための多用途コンポーネント。
 base: aria
 component: true
 links:
@@ -10,15 +10,15 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="item-demo" />
 
-The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
+`Item` コンポーネントは、ほぼすべての種類のコンテンツを格納できる簡単なフレックス コンテナーです。タイトル、説明、アクションを表示するために使用します。これを `ItemGroup` コンポーネントとグループ化して、項目のリストを作成します。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -32,13 +32,13 @@ npx shadcn@latest add item
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="item"
@@ -46,7 +46,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -54,7 +54,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -82,9 +82,9 @@ import {
 </Item>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `Item`:
+次の構成を使用して `Item` を構築します。
 
 ```text
 ItemGroup
@@ -98,15 +98,15 @@ ItemGroup
     └── ItemFooter
 ```
 
-## Item vs Field
+## 項目とフィールド
 
 Use `Field` if you need to display a form input such as a checkbox, input, radio, or select.
 
 If you only need to display content such as a title, description, and actions, use `Item`.
 
-## Variant
+## バリエーション
 
-Use the `variant` prop to change the visual style of the item.
+`variant` プロップを使用して、項目の視覚スタイルを変更します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -114,9 +114,9 @@ Use the `variant` prop to change the visual style of the item.
   previewClassName="h-96"
 />
 
-## Size
+## サイズ
 
-Use the `size` prop to change the size of the item. Available sizes are `default`, `sm`, and `xs`.
+項目のサイズを変更するには、`size` プロップを使用します。利用可能なサイズは `default`、`sm`、`xs` です。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -124,25 +124,25 @@ Use the `size` prop to change the size of the item. Available sizes are `default
   previewClassName="h-96"
 />
 
-## Icon
+## アイコン
 
 Use `ItemMedia` with `variant="icon"` to display an icon.
 
 <ComponentPreview styleName="aria-nova" name="item-icon" />
 
-## Avatar
+## アバター
 
-You can use `ItemMedia` with `variant="avatar"` to display an avatar.
+`ItemMedia` を `variant="avatar"` と組み合わせて使用​​すると、アバターを表示できます。
 
 <ComponentPreview styleName="aria-nova" name="item-avatar" />
 
-## Image
+## 画像
 
-Use `ItemMedia` with `variant="image"` to display an image.
+画像を表示するには、`ItemMedia` を `variant="image"` と組み合わせて使用​​します。
 
 <ComponentPreview styleName="aria-nova" name="item-image" />
 
-## Group
+## グループ
 
 Use `ItemGroup` to group related items together.
 
@@ -152,9 +152,9 @@ Use `ItemGroup` to group related items together.
   previewClassName="h-96"
 />
 
-## Header
+## ヘッダー
 
-Use `ItemHeader` to add a header above the item content.
+`ItemHeader` を使用して、項目コンテンツの上にヘッダーを追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -162,9 +162,9 @@ Use `ItemHeader` to add a header above the item content.
   previewClassName="h-96"
 />
 
-## Link
+## リンク
 
-Use the `render` prop to render the item as a link. The hover and focus states will be applied to the anchor element.
+`render` プロップを使用して項目をリンクとしてレンダリングします。ホバー状態とフォーカス状態はアンカー要素に適用されます。
 
 <ComponentPreview styleName="aria-nova" name="item-link" />
 
@@ -180,19 +180,19 @@ Use the `render` prop to render the item as a link. The hover and focus states w
 </Item>
 ```
 
-## Dropdown
+## ドロップダウン
 
 <ComponentPreview styleName="aria-nova" name="item-dropdown" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="item-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-### Item
+### アイテム
 
 The main component for displaying content with media, title, description, and actions.
 
@@ -200,11 +200,11 @@ The main component for displaying content with media, title, description, and ac
 | --------- | ----------------------------------- | ----------- |
 | `variant` | `"default" \| "outline" \| "muted"` | `"default"` |
 | `size`    | `"default" \| "sm" \| "xs"`         | `"default"` |
-| `render`  | `React.ReactElement`                |             |
+| `render` | `React.ReactElement` |             |
 
 ### ItemGroup
 
-A container that groups related items together with consistent styling.
+関連項目を一貫したスタイルでグループ化するコンテナー。
 
 ```tsx
 <ItemGroup>
@@ -215,7 +215,7 @@ A container that groups related items together with consistent styling.
 
 ### ItemSeparator
 
-A separator between items in a group.
+グループ内の項目間の区切り文字。
 
 ```tsx
 <ItemGroup>
@@ -225,9 +225,9 @@ A separator between items in a group.
 </ItemGroup>
 ```
 
-### ItemMedia
+### アイテムメディア
 
-Use `ItemMedia` to display media content such as icons, images, or avatars.
+`ItemMedia` を使用して、アイコン、画像、アバターなどのメディア コンテンツを表示します。
 
 | Prop      | Type                             | Default     |
 | --------- | -------------------------------- | ----------- |
@@ -247,7 +247,7 @@ Use `ItemMedia` to display media content such as icons, images, or avatars.
 
 ### ItemContent
 
-Wraps the title and description of the item.
+項目のタイトルと説明を折り返します。
 
 ```tsx
 <ItemContent>
@@ -258,15 +258,15 @@ Wraps the title and description of the item.
 
 ### ItemTitle
 
-Displays the title of the item.
+項目のタイトルを表示します。
 
 ```tsx
 <ItemTitle>Item Title</ItemTitle>
 ```
 
-### ItemDescription
+### 項目説明
 
-Displays the description of the item.
+項目の説明を表示します。
 
 ```tsx
 <ItemDescription>Item description</ItemDescription>
@@ -274,7 +274,7 @@ Displays the description of the item.
 
 ### ItemActions
 
-Container for action buttons or other interactive elements.
+アクション ボタンまたはその他のインタラクティブ要素のコンテナー。
 
 ```tsx
 <ItemActions>
@@ -295,7 +295,7 @@ Displays a header above the item content.
 
 ### ItemFooter
 
-Displays a footer below the item content.
+にはなりません。項目コンテンツの下にフッターが表示されます。
 
 ```tsx
 <Item>

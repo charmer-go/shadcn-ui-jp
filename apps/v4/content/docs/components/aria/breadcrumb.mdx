@@ -1,6 +1,6 @@
 ---
-title: Breadcrumb
-description: Displays the path to the current resource using a hierarchy of links.
+title: パンくずリスト
+description: リンクの階層を使用して現在のリソースへのパスを表示します。
 base: aria
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="p-2"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -32,7 +32,7 @@ npx shadcn@latest add breadcrumb
 
 <TabsContent value="manual">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
@@ -40,7 +40,7 @@ npm install react-aria-components
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="breadcrumb"
@@ -48,7 +48,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -84,9 +84,9 @@ import {
 </Breadcrumb>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Breadcrumb`:
+次の構成を使用して、`Breadcrumb` を構築します。
 
 ```text
 Breadcrumb
@@ -99,27 +99,27 @@ Breadcrumb
         └── BreadcrumbPage
 ```
 
-## Basic
+## 基本
 
-A basic breadcrumb with a home link and a components link.
+ホーム リンクとコンポーネント リンクを含む基本的なブレッドクラム。
 
 <ComponentPreview styleName="aria-nova" name="breadcrumb-basic" />
 
-## Custom separator
+## カスタム区切り文字
 
-Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
+カスタム コンポーネントを `<BreadcrumbSeparator />` の `children` として使用して、カスタム セパレーターを作成します。
 
 <ComponentPreview styleName="aria-nova" name="breadcrumb-separator" />
 
-## Dropdown
+## 落ちる
 
-You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+`<BreadcrumbItem />` を `<DropdownMenu />` と組み合わせて、パンくずリストにドロップダウンを作成できます。
 
 <ComponentPreview styleName="aria-nova" name="breadcrumb-dropdown" />
 
-## Collapsed
+## 折りたたまれた
 
-We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.
+ブレッドクラムが長すぎる場合に折りたたまれた状態を表示する `<BreadcrumbEllipsis />` コンポーネントを提供します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -127,15 +127,15 @@ We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when t
   previewClassName="p-2"
 />
 
-## Link component
+## リンクコンポーネント
 
-To use a custom link component from your routing library, you can use the `render` prop on `<BreadcrumbLink />`.
+ルーティング ライブラリのカスタム リンク コンポーネントを使用するには、`<BreadcrumbLink />` で `render` プロパティを使用できます。
 
 <ComponentPreview styleName="aria-nova" name="breadcrumb-link" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -144,54 +144,54 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="p-2"
 />
 
-## API Reference
+## API リファレンス
 
-### Breadcrumb
+### ブレッドクラム
 
-The `Breadcrumb` component is the root navigation element that wraps all breadcrumb components.
+`Breadcrumb` コンポーネントは、すべてのブレッドクラム コンポーネントをラップするルート ナビゲーション要素です。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### BreadcrumbList
+### ブレッドクラムリスト
 
-The `BreadcrumbList` component displays the ordered list of breadcrumb items.
+`BreadcrumbList` コンポーネントは、ブレッドクラム項目の順序付きリストを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### BreadcrumbItem
+### ブレッドクラム項目
 
-The `BreadcrumbItem` component wraps individual breadcrumb items.
+`BreadcrumbItem` コンポーネントは、個々のブレッドクラム項目をラップします。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### BreadcrumbLink
+### ブレッドクラムリンク
 
-The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
+`BreadcrumbLink` コンポーネントは、パンくずリストにクリック可能なリンクを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### BreadcrumbPage
+### ブレッドクラムページ
 
-The `BreadcrumbPage` component displays the current page in the breadcrumb (non-clickable).
+`BreadcrumbPage` コンポーネントは、ブレッドクラムに現在のページを表示します (クリック不可)。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### BreadcrumbEllipsis
+### ブレッドクラム省略記号
 
-The `BreadcrumbEllipsis` component displays an ellipsis indicator for collapsed breadcrumb items.
+`BreadcrumbEllipsis` コンポーネントは、折りたたまれたブレッドクラム項目の省略記号インジケーターを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-For more information, see the [React Aria documentation](https://react-aria.adobe.com/Breadcrumbs#api).
+詳細については、[React Aria ドキュメント](https://react-aria.adobe.com/Breadcrumbs#api) を参照してください。

@@ -1,35 +1,35 @@
 ---
-title: Blocks
-description: Contribute components to the blocks library.
+title: ブロック
+description: コンポーネントをブロック ライブラリに提供します。
 ---
 
-We are inviting the community to contribute to the [blocks library](/blocks). Share your components and blocks with other developers and help build a library of high-quality, reusable components.
+[ブロック ライブラリ](/blocks) に貢献するコミュニティを募集しています。コンポーネントとブロックを他の開発者と共有し、高品質で再利用可能なコンポーネントのライブラリの構築に役立ちます。
 
-We'd love to see all types of blocks: applications, marketing, products, and more.
+アプリケーション、マーケティング、製品など、あらゆる種類のブロックを見てみたいと思っています。
 
-## Setup your workspace
+## ワークスペースをセットアップする
 
 <Steps>
 
-### Fork the repository
+### リポジトリをフォークする
 
 ```bash
 git clone https://github.com/shadcn-ui/ui.git
 ```
 
-### Create a new branch
+### 新しいブランチを作成する
 
 ```bash
 git checkout -b username/my-new-block
 ```
 
-### Install dependencies
+### 依存関係をインストールする
 
 ```bash
 pnpm install
 ```
 
-### Start the dev server
+### 開発サーバーを起動します
 
 ```bash
 pnpm www:dev
@@ -37,15 +37,15 @@ pnpm www:dev
 
 </Steps>
 
-## Add a block
+## ブロックを追加する
 
-A block can be a single component (eg. a variation of a ui component) or a complex component (eg. a dashboard) with multiple components, hooks, and utils.
+ブロックは、単一のコンポーネント (例: ui コンポーネントのバリエーション)、または複数のコンポーネント、フック、ユーティリティを含む複合コンポーネント (例: ダッシュボード) の場合があります。
 
 <Steps>
 
-### Create a new block
+### 新しいブロックを作成する
 
-Create a new folder in the `apps/www/registry/new-york/blocks` directory. Make sure the folder is named in kebab-case and under `new-york`.
+`apps/www/registry/new-york/blocks` ディレクトリに新しいフォルダーを作成します。フォルダーの名前がケバブケースで、`new-york` の下にあることを確認してください。
 
 ```txt
 apps
@@ -58,13 +58,13 @@ apps
 
 <Callout className="mt-6">
 
-**Note:** The build script will take care of building the block for the `default` style.
+**注意:** ビルド スクリプトは、`default` スタイルのブロックのビルドを処理します。
 
 </Callout>
 
-### Add your block files
+### ブロック ファイルを追加します
 
-Add your files to the block folder. Here is an example of a block with a page, components, hooks, and utils.
+ファイルをブロック フォルダーに追加します。以下は、ページ、コンポーネント、フック、ユーティリティを含むブロックの例です。
 
 ```txt
 dashboard-01
@@ -80,21 +80,21 @@ dashboard-01
 
 <Callout className="mt-6">
 
-**Note:** You can start with one file and add more files later.
+**注意:** 1 つのファイルから始めて、後でさらにファイルを追加できます。
 
 </Callout>
 
 </Steps>
 
-## Add your block to the registry
+## ブロックをレジストリに追加します
 
 <Steps>
 
-### Add your block definition to `registry-blocks.tsx`
+### ブロック定義を `registry-blocks.tsx` に追加します。
 
-To add your block to the registry, you need to add your block definition to `registry-blocks.ts`.
+ブロックをレジストリに追加するには、ブロック定義を `registry-blocks.ts` に追加する必要があります。
 
-This follows the registry schema at [https://ui.shadcn.com/schema/registry-item.json](https://ui.shadcn.com/schema/registry-item.json).
+これは、[https://ui.shadcn.com/schema/registry-item.json](https://ui.shadcn.com/schema/registry-item.json] のレジストリ スキーマに従います。
 
 ```tsx title="apps/www/registry/registry-blocks.tsx" showLineNumbers
 export const blocks = [
@@ -135,9 +135,9 @@ export const blocks = [
 ]
 ```
 
-Make sure you add a name, description, type, registryDependencies, dependencies, files, and categories. We'll go over each of these in more detail in the schema docs (coming soon).
+名前、説明、タイプ、registryDependency、依存関係、ファイル、およびカテゴリを必ず追加してください。これらのそれぞれについては、スキーマ ドキュメント (近日公開予定) で詳しく説明します。
 
-### Run the build script
+### ビルド スクリプトを実行する
 
 ```bash
 pnpm registry:build
@@ -145,50 +145,50 @@ pnpm registry:build
 
 <Callout className="mt-6">
 
-**Note:** you do not need to run this script for every change. You only need to run it when you update the block definition.
+**注意:** 変更のたびにこのスクリプトを実行する必要はありません。ブロック定義を更新する場合にのみ実行する必要があります。
 
 </Callout>
 
-### View your block
+### ブロックを表示する
 
-Once the build script is finished, you can view your block at `http://localhost:3333/blocks/[CATEGORY]` or a full screen preview at `http://localhost:3333/view/styles/new-york/dashboard-01`.
+ビルド スクリプトが完了すると、`http://localhost:3333/blocks/[CATEGORY]` でブロックを表示するか、`http://localhost:3333/view/styles/new-york/dashboard-01` で全画面プレビューを表示できます。
 
 <Image
   src="/images/block-preview-light.png"
   width="1432"
   height="960"
-  alt="Block preview"
+  alt="ブロックのプレビュー"
   className="mt-6 w-full overflow-hidden rounded-2xl border dark:hidden"
 />
 <Image
   src="/images/block-preview-dark.png"
   width="1432"
   height="960"
-  alt="Block preview"
+  alt="ブロックのプレビュー"
   className="mt-6 hidden w-full overflow-hidden rounded-2xl border shadow-sm dark:block"
 />
 
-### Build your block
+### ブロックを構築する
 
-You can now build your block by editing the files in the block folder and viewing the changes in the browser.
+これで、ブロック フォルダー内のファイルを編集し、ブラウザーで変更を表示することで、ブロックを構築できるようになります。
 
-If you add more files, make sure to add them to the `files` array in the block definition.
+さらにファイルを追加する場合は、必ずブロック定義の `files` 配列に追加してください。
 
 </Steps>
 
-## Publish your block
+## ブロックを公開する
 
-Once you're ready to publish your block, you can submit a pull request to the main repository.
+ブロックを公開する準備ができたら、メイン リポジトリにプル リクエストを送信できます。
 
 <Steps>
 
-### Run the build script
+### ビルド スクリプトを実行する
 
 ```bash
 pnpm registry:build
 ```
 
-### Capture a screenshot
+### スクリーンショットをキャプチャする
 
 ```bash
 pnpm registry:capture
@@ -196,25 +196,25 @@ pnpm registry:capture
 
 <Callout className="mt-6">
 
-**Note:** If you've run the capture script before, you might need to delete the existing screenshots (both light and dark) at `apps/www/public/r/styles/new-york` and run the script again.
+**注意:** 以前にキャプチャ スクリプトを実行したことがある場合は、`apps/www/public/r/styles/new-york` にある既存のスクリーンショット (明るい部分と暗い部分の両方) を削除して、スクリプトを再度実行する必要がある場合があります。
 
 </Callout>
 
-### Submit a pull request
+### プルリクエストを送信する
 
-Commit your changes and submit a pull request to the main repository.
+変更をコミットし、メイン リポジトリにプル リクエストを送信します。
 
-Your block will be reviewed and merged. Once merged it will be published to the website and available to be installed via the CLI.
+あなたのブロックはレビューされ、マージされます。マージされると、Web サイトに公開され、CLI 経由でインストールできるようになります。
 
 </Steps>
 
-## Categories
+## カテゴリ
 
-The `categories` property is used to organize your block in the registry.
+`categories` プロパティは、レジストリ内のブロックを整理するために使用されます。
 
-### Add a category
+### カテゴリを追加する
 
-If you need to add a new category, you can do so by adding it to the `registryCategories` array in `apps/www/registry/registry-categories.ts`.
+新しいカテゴリを追加する必要がある場合は、それを `apps/www/registry/registry-categories.ts` の `registryCategories` 配列に追加します。
 
 ```tsx title="apps/www/registry/registry-categories.ts" showLineNumbers
 export const registryCategories = [
@@ -227,12 +227,12 @@ export const registryCategories = [
 ]
 ```
 
-## Guidelines
+## ガイドライン
 
-Here are some guidelines to follow when contributing to the blocks library.
+ブロック ライブラリに貢献する際に従うべきガイドラインをいくつか示します。
 
-- The following properties are required for the block definition: `name`, `description`, `type`, `files`, and `categories`.
-- Make sure to list all registry dependencies in `registryDependencies`. A registry dependency is the name of the component in the registry eg. `input`, `button`, `card`, etc.
-- Make sure to list all dependencies in `dependencies`. A dependency is the name of the package in the registry eg. `zod`, `sonner`, etc.
-- If your block has a page (optional), it should be the first entry in the `files` array and it should have a `target` property. This helps the CLI place the page in the correct location for file-based routing.
-- **Imports should always use the `@/registry` path.** eg. `import { Input } from "@/registry/new-york/input"`
+- ブロック定義には次のプロパティが必要です: `name`、`description`、`type`、`files`、および `categories`。
+- 必ずすべてのレジストリ依存関係を `registryDependencies` にリストしてください。レジストリの依存関係は、レジストリ内のコンポーネントの名前です。 `input`、`button`、`card`など
+- 必ずすべての依存関係を `dependencies` にリストしてください。依存関係は、レジストリ内のパッケージの名前です。 `zod`、`sonner`など
+- ブロックにページ (オプション) がある場合、それは `files` 配列の最初のエントリであり、`target` プロパティを持つ必要があります。これは、CLI がファイルベースのルーティングの正しい場所にページを配置するのに役立ちます。
+- **インポートでは常に `@/registry` パスを使用する必要があります。** 例: `import { Input } from "@/registry/new-york/input"`

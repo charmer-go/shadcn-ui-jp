@@ -1,6 +1,6 @@
 ---
-title: Collapsible
-description: An interactive component which expands/collapses a panel.
+title: 折りたたみ可能
+description: に設定します。 パネルを展開/縮小する対話型コンポーネント。
 base: aria
 component: true
 featured: true
@@ -11,13 +11,13 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="collapsible-demo" align="start" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,13 +31,13 @@ npx shadcn@latest add collapsible
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="collapsible"
@@ -45,7 +45,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -53,7 +53,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -73,9 +73,9 @@ import {
 </Collapsible>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Collapsible`:
+次の構成を使用して `Collapsible` を作成します。
 
 ```text
 Collapsible
@@ -83,9 +83,9 @@ Collapsible
 └── CollapsibleContent
 ```
 
-## Controlled State
+## 制御状態
 
-Use the `isExpanded` and `onExpandedChange` props to control the state.
+`isExpanded` および `onExpandedChange` プロパティを使用して状態を制御します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -102,7 +102,7 @@ export function Example() {
 }
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="aria-nova"
@@ -110,15 +110,15 @@ export function Example() {
   align="start"
 />
 
-## Settings Panel
+## 設定パネル
 
-Use a trigger button to reveal additional settings.
+追加の設定を表示するには、トリガー ボタンを使用します。
 
 <ComponentPreview styleName="aria-nova" name="collapsible-settings" />
 
-## File Tree
+## ファイル ツリー
 
-Use nested collapsibles to build a file tree.
+ネストされた折りたたみ可能を使用してファイル ツリーを構築します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -128,7 +128,7 @@ Use nested collapsibles to build a file tree.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -137,6 +137,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   align="start"
 />
 
-## API Reference
+## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/Disclosure#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/Disclosure#api) ドキュメントを参照してください。

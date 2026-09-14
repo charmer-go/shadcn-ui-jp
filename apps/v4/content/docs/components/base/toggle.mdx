@@ -1,6 +1,6 @@
 ---
-title: Toggle
-description: A two-state button that can be either on or off.
+title: トグル
+description: オンまたはオフの 2 状態ボタン。
 base: base
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="base-nova" name="toggle-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add toggle
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="toggle"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Toggle } from "@/components/ui/toggle"
@@ -62,32 +62,32 @@ import { Toggle } from "@/components/ui/toggle"
 <Toggle>Toggle</Toggle>
 ```
 
-## Outline
+## 概要
 
-Use `variant="outline"` for an outline style.
+アウトライン スタイルには `variant="outline"` を使用します。
 
 <ComponentPreview styleName="base-nova" name="toggle-outline" />
 
-## With Text
+## タイプ
 
 <ComponentPreview styleName="base-nova" name="toggle-text" />
 
-## Size
+## サイズ
 
-Use the `size` prop to change the size of the toggle.
+トグルのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview styleName="base-nova" name="toggle-sizes" />
 
-## Disabled
+## 無効
 
 <ComponentPreview styleName="base-nova" name="toggle-disabled" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="toggle-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI Toggle](https://base-ui.com/react/components/toggle#api-reference) documentation.
+[Base UI Toggle](https://base-ui.com/react/components/toggle#api-reference) ドキュメントを参照してください。

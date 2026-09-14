@@ -1,28 +1,28 @@
 ---
-title: shimmer
-description: Utilities for adding a shimmer effect to text elements.
+title: Shimmer
+description: テキスト要素にシマー効果を追加するユーティリティ。
 ---
 
 <ComponentPreview styleName="base-rhea" name="shimmer-demo" />
 
-## Installation
+## インストール
 
-If your project was set up with `npx shadcn@latest init`, you already have `shimmer`. It ships with the `shadcn` package, which the CLI imports in your global CSS file.
+`npx shadcn@latest init` でプロジェクトを設定している場合は、すでに `shimmer` を利用できます。`shadcn` パッケージに含まれており、CLI がグローバル CSS ファイルにインポートします。
 
-Otherwise, install the `shadcn` package:
+それ以外の場合は、`shadcn` パッケージをインストールします。
 
 ```bash
 npm install shadcn
 ```
 
-Then import the shared utilities in your global CSS file:
+次に、共有ユーティリティをグローバル CSS ファイルにインポートします。
 
 ```css
 @import "tailwindcss";
 @import "shadcn/tailwind.css";
 ```
 
-## Usage
+## 使い方
 
 | Class                         | Styles                                                                                               |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -38,23 +38,23 @@ Then import the shared utilities in your global CSS file:
 | `shimmer-spread-[<value>]`    | `--shimmer-spread: <value>;`                                                                         |
 | `shimmer-angle-<number>`      | `--shimmer-angle: calc(<number> * 1deg);`                                                            |
 
-Add `shimmer` to a text element.
+`shimmer` をテキスト要素に追加します。
 
 ```tsx
 <p className="shimmer text-muted-foreground">Generating response&hellip;</p>
 ```
 
-The shimmer is built on `currentColor`, so it adapts to the element:
+シマーは `currentColor` に基づいて構築されるため、次の要素に適応します。
 
-- The highlight is derived from the text color, with no configuration needed.
-- It works on any color, from `text-muted-foreground` to brand colors.
-- In dark mode, the highlight automatically brightens to stay visible.
+- ハイライトはテキストの色から派生し、構成は必要ありません。
+- `text-muted-foreground` からブランドカラーまで、あらゆる色に対応します。
+- ダーク モードでは、ハイライトが自動的に明るくなり、視認性が維持されます。
 
-The effect is pure CSS. The text is painted with `background-clip: text`, and the highlight sweeps across it in a seamless loop.
+効果は純粋な CSS で実現されています。テキストは `background-clip: text` で描画され、ハイライトが継ぎ目なくループして横切ります。
 
-## With Marker
+## マーカー付き
 
-The shimmer composes with any component that renders text. A common pattern is a [Marker](/docs/components/marker) showing a live status while the assistant is working:
+シマーはテキストを描画する任意のコンポーネントと組み合わせられます。よくあるパターンは、アシスタントの処理中にライブ状態を表示する [Marker](/docs/components/marker) です。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-marker" />
 
@@ -67,9 +67,9 @@ The shimmer composes with any component that renders text. A common pattern is a
 </Marker>
 ```
 
-## Color
+## カラー
 
-Use `shimmer-color-<color>` to set the highlight color explicitly. It accepts theme colors with an optional opacity modifier, or any arbitrary color value.
+`shimmer-color-<color>` を使うとハイライト色を明示的に設定できます。任意の不透明度修飾子付きテーマ色や、任意の色の値を受け取ります。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-color" />
 
@@ -78,7 +78,7 @@ Use `shimmer-color-<color>` to set the highlight color explicitly. It accepts th
 <p className="shimmer shimmer-color-[#378ADD]">Generating response&hellip;</p>
 ```
 
-## Duration
+## 期間
 
 Use `shimmer-duration-<number>` to set the duration of one sweep in milliseconds. The default is `2000`, i.e. `2s`.
 
@@ -88,9 +88,9 @@ Use `shimmer-duration-<number>` to set the duration of one sweep in milliseconds
 <p className="shimmer shimmer-duration-1000">Generating response&hellip;</p>
 ```
 
-## Spread
+## 広がり
 
-Use `shimmer-spread-<number>` to set the width of the highlight band using the spacing scale. The default is `calc(3ch + 40px)`: a fixed base plus a `3ch` term that scales with the font size.
+`shimmer-spread-<number>` を使用して、間隔スケールを使用してハイライト バンドの幅を設定します。デフォルトは `calc(3ch + 40px)` です。固定ベースにフォント サイズに応じて拡大縮小される `3ch` 用語を加えたものです。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-spread" />
 
@@ -98,15 +98,15 @@ Use `shimmer-spread-<number>` to set the width of the highlight band using the s
 <p className="shimmer shimmer-spread-24">Generating response&hellip;</p>
 ```
 
-For one-off values, use an arbitrary length or percentage:
+一度だけ使う値には、任意の長さまたはパーセンテージを指定します。
 
 ```tsx
 <p className="shimmer shimmer-spread-[5rem]">Generating response&hellip;</p>
 ```
 
-## Angle
+## 角度
 
-Use `shimmer-angle-<number>` to set the tilt of the highlight band in degrees. The default is `20`.
+`shimmer-angle-<number>` を使用して、ハイライト バンドの傾きを度単位で設定します。デフォルトは `20` です。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-angle" />
 
@@ -114,17 +114,17 @@ Use `shimmer-angle-<number>` to set the tilt of the highlight band in degrees. T
 <p className="shimmer shimmer-angle-45">Generating response&hellip;</p>
 ```
 
-## Reverse
+## 反転
 
-Use `shimmer-reverse` to sweep the highlight in the opposite direction. In RTL layouts the sweep already follows the reading direction. See [RTL](#rtl).
+`shimmer-reverse` を使用して、ハイライトを反対方向にスイープします。 RTL レイアウトでは、スイープはすでに読み取り方向に従います。 [RTL](#rtl) を参照してください。
 
 ```tsx
 <p className="shimmer shimmer-reverse">Generating response&hellip;</p>
 ```
 
-## Play Once
+## 1 回だけ再生する
 
-Use `shimmer-once` to play a single sweep instead of looping, useful as a reveal when streaming completes. Pair it with `shimmer-duration-<number>` to control how long the sweep takes.
+`shimmer-once` を使用すると、ループの代わりに単一のスイープを再生できます。これは、ストリーミング完了時のリビールとして役立ちます。 `shimmer-duration-<number>` と組み合わせて、スイープにかかる時間を制御します。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-once" />
 
@@ -134,9 +134,9 @@ Use `shimmer-once` to play a single sweep instead of looping, useful as a reveal
 </p>
 ```
 
-## Disabling the Shimmer
+## シマーを無効にする
 
-Use `shimmer-none` to turn the effect off and render the text normally. It works in any class order, so the typical use is responsive or stateful:
+`shimmer-none` を使うと効果を無効にし、テキストを通常どおり描画します。クラスの順序に関係なく動作するため、レスポンシブまたは状態に応じた使い方ができます。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-none" />
 
@@ -144,9 +144,9 @@ Use `shimmer-none` to turn the effect off and render the text normally. It works
 <p className="shimmer md:shimmer-none">Generating response&hellip;</p>
 ```
 
-## Fallback
+## フォールバック
 
-The shimmer is built on modern color features, [relative color syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors) and `color-mix()`, which are available in all current browsers. In older browsers without support, the highlight gradient is dropped and the text can render transparent. If you target older browsers, apply `shimmer` conditionally with a `supports-*` variant:
+シマーは、現在のすべてのブラウザで利用できる最新のカラー機能、[相対カラー構文](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_colors/Relative_colors) および `color-mix()` に基づいて構築されています。サポートされていない古いブラウザでは、ハイライトのグラデーションが削除され、テキストが透明になる可能性があります。古いブラウザを対象とする場合は、`supports-*` バリアントを使用して `shimmer` を条件付きで適用します。
 
 ```tsx
 <p className="supports-[color:oklch(from_white_l_c_h)]:shimmer">
@@ -154,14 +154,14 @@ The shimmer is built on modern color features, [relative color syntax](https://d
 </p>
 ```
 
-## Reduced Motion
+## 視覚効果を減らす
 
-When the user prefers reduced motion, the animation is disabled automatically and the text renders normally. There is nothing to configure.
+ユーザーが動きを減らしたい場合、アニメーションは自動的に無効になり、テキストは通常​​どおり表示されます。設定するものは何もありません。
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
-The sweep follows the reading direction, left to right in LTR and right to left in RTL, with no extra classes. Use `shimmer-reverse` to flip the direction manually.
+スイープは読み取り方向 (LTR では左から右、RTL では右から左) に従います。追加のクラスはありません。方向を手動で反転するには、`shimmer-reverse` を使用します。
 
 <ComponentPreview styleName="base-rhea" name="shimmer-rtl" />

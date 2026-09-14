@@ -1,23 +1,23 @@
 ---
-title: January 2026 - Inline Start and End Styles
-description: We've updated the styles for Base UI components to support inline-start and inline-end side values.
+title: 2026 年 1 月 - インラインの開始スタイルと終了スタイル
+description: inline-start および inline-end サイド値をサポートするために、Base UI コンポーネントのスタイルを更新しました。
 date: 2026-01-23
 ---
 
-We've updated the styles for Base UI components to support `inline-start` and `inline-end` side values. The following components now support these values:
+`inline-start` および `inline-end` サイド値をサポートするために、ベース UI コンポーネントのスタイルを更新しました。次のコンポーネントがこれらの値をサポートするようになりました。
 
-- Tooltip
-- Popover
-- Combobox
-- Context Menu
-- Dropdown Menu
-- Hover Card
-- Menubar
-- Select
+- ツールチップ
+- ポップオーバー
+- コンボボックス
+- コンテキストメニュー
+- ドロップダウンメニュー
+- ホバーカード
+- メニューバー
+- 選択
 
-### What Changed
+### 何が変わったのか
 
-We added new Tailwind classes to handle the logical side values:
+論理側の値を処理するために新しい Tailwind クラスを追加しました。
 
 ```diff
 <PopoverPrimitive.Popup
@@ -33,7 +33,7 @@ We added new Tailwind classes to handle the logical side values:
 />
 ```
 
-### Usage
+### 使用法
 
 ```tsx
 <Popover>
@@ -44,9 +44,9 @@ We added new Tailwind classes to handle the logical side values:
 </Popover>
 ```
 
-### LLM Prompt
+### LLM プロンプト
 
-Ask your LLM to update your components by running the following prompt:
+次のプロンプトを実行して、LLM にコンポーネントを更新するように依頼します。
 
 ```txt showLineNumbers
 Add inline-start and inline-end support to my shadcn/ui components. Add the following Tailwind classes to each component:

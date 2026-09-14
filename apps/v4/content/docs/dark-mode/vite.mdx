@@ -1,9 +1,9 @@
 ---
 title: Vite
-description: Adding dark mode to your Vite app.
+description: Vite アプリにダークモードを追加します。
 ---
 
-## Create a theme provider
+## テーマプロバイダーを作成する
 
 ```tsx title="components/theme-provider.tsx" showLineNumbers
 import { createContext, useContext, useEffect, useState } from "react"
@@ -81,9 +81,9 @@ export const useTheme = () => {
 }
 ```
 
-## Wrap your root layout
+## ルートレイアウトをラップする
 
-Add the `ThemeProvider` to your root layout.
+ルートレイアウトに `ThemeProvider` を追加します。
 
 ```tsx {1,5-7} title="App.tsx" showLineNumbers
 import { ThemeProvider } from "@/components/theme-provider"
@@ -99,9 +99,9 @@ function App() {
 export default App
 ```
 
-## Add a mode toggle
+## モード切り替えを追加する
 
-Place a mode toggle on your site to toggle between light and dark mode.
+サイトにモード切り替えを配置して、ライトモードとダークモードを切り替えられるようにします。
 
 ```tsx title="components/mode-toggle.tsx" showLineNumbers
 import { Moon, Sun } from "lucide-react"

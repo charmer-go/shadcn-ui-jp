@@ -1,25 +1,25 @@
 ---
-title: June 2023 - New CLI, Styles and more
-description: Complete CLI rewrite with new styles, theming options, and more.
+title: 2023 年 6 月 - 新しい CLI、スタイルなど
+description: 新しいスタイル、テーマ オプションなどを使用して CLI を完全に書き直しました。
 date: 2023-06-22
 ---
 
-I have a lot of updates to share with you today:
+今日は皆さんにお伝えしたい最新情報がたくさんあります。
 
-- [**New CLI**](#new-cli) - Rewrote the CLI from scratch. You can now add components, dependencies and configure import paths.
-- [**Theming**](#theming-with-css-variables-or-tailwind-colors) - Choose between using CSS variables or Tailwind CSS utility classes for theming.
-- [**Base color**](#base-color) - Configure the base color for your project. This will be used to generate the default color palette for your components.
-- [**React Server Components**](#react-server-components) - Opt out of using React Server Components. The CLI will automatically append or remove the `use client` directive.
-- [**Styles**](#styles) - Introducing a new concept called _Style_. A style comes with its own set of components, animations, icons and more.
-- [**Exit animations**](#exit-animations) - Added exit animations to all components.
-- [**Other updates**](#other-updates) - New `icon` button size, updated `sheet` component and more.
-- [**Updating your project**](#updating-your-project) - How to update your project to get the latest changes.
+- [**新しい CLI**](#new-cli) - CLI を最初から書き直しました。コンポーネント、依存関係を追加し、インポート パスを構成できるようになりました。
+- [**Theming**](#theming-with-css-variables-or-tailwind-colors) - テーマに CSS 変数を使用するか、Tailwind CSS ユーティリティ クラスを使用するかを選択します。
+- [**ベースカラー**](#base-color) - プロジェクトのベースカラーを構成します。これは、コンポーネントのデフォルトのカラー パレットを生成するために使用されます。
+- [**React Server Components**](#react-server-components) - React サーバー コンポーネントの使用をオプトアウトします。 CLI は、`use client` ディレクティブを自動的に追加または削除します。
+- [**Styles**](#styles) - _Style_ と呼ばれる新しいコンセプトを導入します。スタイルには、コンポーネント、アニメーション、アイコンなどの独自のセットが付属しています。
+- [**終了アニメーション**](#exit-animations) - すべてのコンポーネントに終了アニメーションを追加しました。
+- [**その他の更新**](#other-updates) - 新しい `icon` ボタン サイズ、更新された `sheet` コンポーネントなど。
+- [**プロジェクトの更新**](#updating-your-project) - プロジェクトを更新して最新の変更を取得する方法。
 
 ---
 
-### New CLI
+### 新しい CLI
 
-I've been working on a new CLI for the past few weeks. It's a complete rewrite. It comes with a lot of new features and improvements.
+私はここ数週間、新しい CLI の開発に取り組んできました。完全な書き直しです。多くの新機能と改良が加えられています。
 
 ### `init`
 
@@ -27,7 +27,7 @@ I've been working on a new CLI for the past few weeks. It's a complete rewrite. 
 npx shadcn@latest init
 ```
 
-When you run the `init` command, you will be asked a few questions to configure `components.json`:
+`init` コマンドを実行すると、`components.json` を構成するためのいくつかの質問が表示されます。
 
 ```txt showLineNumbers
 Which style would you like to use? › Default
@@ -40,9 +40,9 @@ Configure the import alias for utils: › @/lib/utils
 Are you using React Server Components? › no / yes
 ```
 
-This file contains all the information about your components: where to install them, the import paths, how they are styled...etc.
+このファイルには、コンポーネントのインストール場所、インポート パス、スタイル設定など、コンポーネントに関するすべての情報が含まれています。
 
-You can use this file to change the import path of a component, set a baseColor or change the styling method.
+このファイルを使用して、コンポーネントのインポート パスの変更、baseColor の設定、またはスタイル設定方法の変更を行うことができます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -61,7 +61,7 @@ You can use this file to change the import path of a component, set a baseColor 
 }
 ```
 
-This means you can now use the CLI with any directory structure including `src` and `app` directories.
+これは、`src` ディレクトリや `app` ディレクトリを含む任意のディレクトリ構造で CLI を使用できることを意味します。
 
 ### `add`
 
@@ -69,21 +69,21 @@ This means you can now use the CLI with any directory structure including `src` 
 npx shadcn@latest add
 ```
 
-The `add` command is now much more capable. You can now add UI components but also import more complex components (coming soon).
+`add` コマンドの機能が大幅に向上しました。 UI コンポーネントを追加できるようになりましたが、より複雑なコンポーネントをインポートすることもできます (近日公開予定)。
 
-The CLI will automatically resolve all components and dependencies, format them based on your custom config and add them to your project.
+CLI はすべてのコンポーネントと依存関係を自動的に解決し、カスタム構成に基づいてフォーマットし、プロジェクトに追加します。
 
-### `diff` (experimental)
+### `diff` (実験的)
 
 ```bash
 npx shadcn diff
 ```
 
-We're also introducing a new `diff` command to help you keep track of upstream updates.
+また、アップストリームの更新を追跡できるように、新しい `diff` コマンドも導入しています。
 
-You can use this command to see what has changed in the upstream repository and update your project accordingly.
+このコマンドを使用すると、アップストリーム リポジトリで何が変更されたかを確認し、それに応じてプロジェクトを更新できます。
 
-Run the `diff` command to get a list of components that have updates available:
+`diff` コマンドを実行して、更新が利用可能なコンポーネントのリストを取得します。
 
 ```bash
 npx shadcn diff
@@ -98,7 +98,7 @@ The following components have updates available:
   - /path/to/my-app/components/ui/toaster.tsx
 ```
 
-Then run `diff [component]` to see the changes:
+次に、`diff [component]` を実行して変更を確認します。
 
 ```bash
 npx shadcn diff alert
@@ -113,19 +113,19 @@ const alertVariants = cva(
 
 ---
 
-### Theming with CSS Variables or Tailwind Colors
+### CSS 変数または追い風カラーを使用したテーマ設定
 
-You can choose between using CSS variables or Tailwind CSS utility classes for theming.
+テーマに CSS 変数を使用するか、Tailwind CSS ユーティリティ クラスを使用するかを選択できます。
 
-When you add new components, the CLI will automatically use the correct theming methods based on your `components.json` configuration.
+新しいコンポーネントを追加すると、CLI は `components.json` 構成に基づいて正しいテーマ設定メソッドを自動的に使用します。
 
-#### Utility classes
+#### ユーティリティ クラス
 
 ```tsx /bg-zinc-950/ /text-zinc-50/ /dark:bg-white/ /dark:text-zinc-950/
 <div className="bg-zinc-950 dark:bg-white" />
 ```
 
-To use utility classes for theming set `tailwind.cssVariables` to `false` in your `components.json` file.
+テーマ設定にユーティリティ クラスを使用するには、`components.json` ファイルで `tailwind.cssVariables` を `false` に設定します。
 
 ```json {6} title="components.json" showLineNumbers
 {
@@ -138,13 +138,13 @@ To use utility classes for theming set `tailwind.cssVariables` to `false` in you
 }
 ```
 
-#### CSS Variables
+#### CSS 変数
 
 ```tsx /bg-background/ /text-foreground/
 <div className="bg-background text-foreground" />
 ```
 
-To use CSS variables classes for theming set `tailwind.cssVariables` to `true` in your `components.json` file.
+テーマに CSS 変数クラスを使用するには、`components.json` ファイルで `tailwind.cssVariables` を `true` に設定します。
 
 ```json {6} title="components.json" showLineNumbers
 {
@@ -159,9 +159,9 @@ To use CSS variables classes for theming set `tailwind.cssVariables` to `true` i
 
 ---
 
-### Base color
+### ベースカラー
 
-You can now configure the base color for your project. This will be used to generate the default color palette for your components.
+これで、プロジェクトの基本色を構成できるようになりました。これは、コンポーネントのデフォルトのカラー パレットを生成するために使用されます。
 
 ```json {5} title="components.json" showLineNumbers
 {
@@ -174,15 +174,15 @@ You can now configure the base color for your project. This will be used to gene
 }
 ```
 
-Choose between `gray`, `neutral`, `slate`, `stone` or `zinc`.
+`gray`、`neutral`、`slate`、`stone`、または `zinc` から選択します。
 
-If you have `cssVariables` set to `true`, we will set the base colors as CSS variables in your `globals.css` file. If you have `cssVariables` set to `false`, we will inline the Tailwind CSS utility classes in your components.
+`cssVariables` を `true` に設定している場合、基本色は `globals.css` ファイル内の CSS 変数として設定されます。 `cssVariables` を `false` に設定している場合、Tailwind CSS ユーティリティ クラスがコンポーネントにインライン化されます。
 
 ---
 
-### React Server Components
+### React サーバー コンポーネント
 
-If you're using a framework that does not support React Server Components, you can now opt out by setting `rsc` to `false`. We will automatically append or remove the `use client` directive when adding components.
+React Server Components をサポートしないフレームワークを使用している場合は、`rsc` を `false` に設定することでオプトアウトできるようになりました。コンポーネントを追加するときに、`use client` ディレクティブが自動的に追加または削除されます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -192,27 +192,27 @@ If you're using a framework that does not support React Server Components, you c
 
 ---
 
-### Styles
+### スタイル
 
-We are introducing a new concept called _Style_.
+_Style_ と呼ばれる新しいコンセプトを導入します。
 
-_You can think of style as the visual foundation: shapes, icons, animations & typography._ A style comes with its own set of components, animations, icons and more.
+_スタイルは、図形、アイコン、アニメーション、タイポグラフィなどの視覚的な基盤と考えることができます。_ スタイルには、独自のコンポーネント、アニメーション、アイコンなどのセットが付属しています。
 
-We are shipping two styles: `default` and `new-york` (with more coming soon).
+`default` と `new-york` の 2 つのスタイルを出荷しています (さらに多くのスタイルが近々登場します)。
 
 <Image
   src="/images/style.jpg"
   width="716"
   height="402"
-  alt="Default vs New York style"
+  alt="デフォルトとNew Yorkスタイルの比較"
   className="mt-6 overflow-hidden rounded-2xl border"
 />
 
-The `default` style is the one you are used to. It's the one we've been using since the beginning of this project. It uses `lucide-react` for icons and `tailwindcss-animate` for animations.
+`default` スタイルは、使い慣れたものです。このプロジェクトの当初から使用しているものです。アイコンには `lucide-react` を、アニメーションには `tailwindcss-animate` を使用します。
 
-The `new-york` style is a new style. It ships with smaller buttons, cards with shadows and a new set of icons from [Radix Icons](https://icons.radix-ui.com).
+`new-york`スタイルは新しいスタイルです。小さいボタン、影付きのカード、[Radix Icons](https://icons.radix-ui.com) の新しいアイコン セットが付属しています。
 
-When you run the `init` command, you will be asked which style you would like to use. This is saved in your `components.json` file.
+`init` コマンドを実行すると、どのスタイルを使用するかを尋ねられます。これは `components.json` ファイルに保存されます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -220,23 +220,23 @@ When you run the `init` command, you will be asked which style you would like to
 }
 ```
 
-### Theming
+### テーマ
 
-Start with a style as the base then theme using CSS variables or Tailwind CSS utility classes to completely change the look of your components.
+ベースとしてスタイルから始めて、CSS 変数または Tailwind CSS ユーティリティ クラスを使用してテーマを作成し、コンポーネントの外観を完全に変更します。
 
 <Image
   src="/images/style-with-theming.jpg"
   width="716"
   height="402"
-  alt="Style with theming"
+  alt="テーマを適用したスタイル"
   className="mt-6 overflow-hidden rounded-2xl border"
 />
 
 ---
 
-### Exit animations
+### 終了アニメーション
 
-I added exit animations to all components. Click on the combobox below to see the subtle exit animation.
+すべてのコンポーネントに終了アニメーションを追加しました。下のコンボボックスをクリックすると、微妙な終了アニメーションが表示されます。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -244,42 +244,42 @@ I added exit animations to all components. Click on the combobox below to see th
   className="[&_.preview]:items-start"
 />
 
-The animations can be customized using utility classes.
+アニメーションはユーティリティ クラスを使用してカスタマイズできます。
 
 ---
 
-### Other updates
+### その他のアップデート
 
-### Button
+### ボタン
 
-- Added a new button size `icon`:
+- 新しいボタン サイズ `icon` を追加しました。
 
 <ComponentPreview styleName="new-york-v4" name="button-icon" />
 
-### Sheet
+###シート
 
-- Renamed `position` to `side` to match the other elements.
+- 他の要素と一致するように、名前を `position` から `side` に変更しました。
 
 <ComponentPreview styleName="new-york-v4" name="sheet-side" />
 
-- Removed the `size` props. Use `className="w-[200px] md:w-[450px]"` for responsive sizing.
+- `size` 小道具を削除しました。レスポンシブなサイジングには `className="w-[200px] md:w-[450px]"` を使用します。
 
 ---
 
-### Updating your project
+### プロジェクトを更新する
 
-Since we follow a copy and paste approach, you will need to manually update your project to get the latest changes.
+コピーアンドペーストのアプローチに従っているため、最新の変更を取得するにはプロジェクトを手動で更新する必要があります。
 
 <Callout className="mt-4">
-  Note: we are working on a [`diff`](#diff-experimental) command to help you
-  keep track of upstream updates.
+注: 私たちはあなたを助けるために [`diff`](#diff-experimental) コマンドに取り組んでいます。
+アップストリームの更新を追跡します。
 </Callout>
 
 <Steps>
 
-### Add `components.json`
+### `components.json` を追加
 
-Creating a `components.json` file at the root:
+ルートに `components.json` ファイルを作成します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -298,11 +298,11 @@ Creating a `components.json` file at the root:
 }
 ```
 
-Update the values for `tailwind.css` and `aliases` to match your project structure.
+プロジェクト構造に一致するように、`tailwind.css` および `aliases` の値を更新します。
 
-### Button
+### ボタン
 
-Add the `icon` size to the `buttonVariants`:
+`icon` サイズを `buttonVariants` に追加します。
 
 ```tsx {7} title="components/ui/button.tsx" showLineNumbers
 const buttonVariants = cva({
@@ -317,9 +317,9 @@ const buttonVariants = cva({
 })
 ```
 
-### Sheet
+###シート
 
-1. Replace the content of `sheet.tsx` with the following:
+1. `sheet.tsx` の内容を次のものに置き換えます。
 
 ```tsx title="components/ui/sheet.tsx" showLineNumbers
 "use client"
@@ -468,7 +468,7 @@ export {
 }
 ```
 
-2. Rename `position` to `side`
+2. `position` の名前を `side` に変更します
 
 ```diff /position/ /side/
 - <Sheet position="right" />
@@ -477,6 +477,6 @@ export {
 
 </Steps>
 
-### Thank you
+### ありがとう
 
-I'd like to thank everyone who has been using this project, providing feedback and contributing to it. I really appreciate it. Thank you.
+このプロジェクトを利用し、フィードバックを提供し、貢献してくださった皆様に感謝いたします。本当に感謝しています。ありがとう。

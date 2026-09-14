@@ -1,23 +1,22 @@
 ---
 title: React Hook Form
-description: Build forms in React using React Hook Form and Zod.
+description: React Hook Form と Zod を使用して React でフォームを構築します。
 links:
   doc: https://react-hook-form.com
 ---
 
 import { InfoIcon } from "lucide-react"
 
-In this guide, we will take a look at building forms with React Hook Form. We'll cover building forms with the `<Field />` component, adding schema validation using Zod, error handling, accessibility, and more.
+このガイドでは、React Hook Form を使用してフォームを構築する方法を見ていきます。 `<Field />` コンポーネントを使用したフォームの構築、Zod を使用したスキーマ検証の追加、エラー処理、アクセシビリティなどについて説明します。
 
-## Demo
+## デモ
 
-We are going to build the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+次のフォームを構築します。単純なテキスト入力とテキストエリアがあります。送信時にフォーム データを検証し、エラーがあれば表示します。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in React Hook
-  Form. It is recommended to add basic browser validation in your production
-  code.
+  **注:** このデモのために、ブラウザ 検証を有効にして、React Hook Form
+  でスキーマ検証とフォーム エラーがどのように機能するかを示します。
+  本番コードでは、基本的なブラウザー検証も追加することをおすすめします。
 </Callout>
 
 <ComponentPreview
@@ -27,18 +26,18 @@ We are going to build the following form. It has a simple text input and a texta
   chromeLessOnMobile
 />
 
-## Approach
+## アプローチ
 
-This form leverages React Hook Form for performant, flexible form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+このフォームは、React Hook Form を利用して、パフォーマンスが高く柔軟なフォーム処理を実現します。 `<Field />` コンポーネントを使用してフォームを構築します。これにより、**マークアップとスタイルを完全に柔軟に行うことができます**。
 
-- Uses React Hook Form's `useForm` hook for form state management.
-- `<Controller />` component for controlled inputs.
-- `<Field />` components for building accessible forms.
-- Client-side validation using Zod with `zodResolver`.
+- フォームの状態管理に React Hook Form の `useForm` フックを使用します。
+- 制御された入力には `<Controller />` コンポーネントを使います。
+- アクセシブルなフォームの構築には `<Field />` コンポーネントを使います。
+- `zodResolver` で Zod を使用したクライアント側の検証。
 
-## Anatomy
+## 構成
 
-Here's a basic example of a form using the `<Controller />` component from React Hook Form and the `<Field />` component.
+React Hook Form の `<Controller />` コンポーネントと `<Field />` コンポーネントを使った基本的なフォームの例です。
 
 ```tsx showLineNumbers {5-18}
 <Controller
@@ -63,16 +62,15 @@ Here's a basic example of a form using the `<Controller />` component from React
 />
 ```
 
-## Form
+## フォーム
 
-### Create a form schema
+### フォーム スキーマを作成する
 
-We'll start by defining the shape of our form using a Zod schema.
+まず、Zod スキーマを使用してフォームの形状を定義します。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** This example uses `zod v3` for schema validation, but you can
-  replace it with any other Standard Schema validation library supported by
-  React Hook Form.
+  **注:** この例では、スキーマ検証に `zod v3` を使用していますが、 React Hook
+  Form では、スキーマを `resolver` に渡して検証します。
 </Callout>
 
 ```tsx showLineNumbers title="form.tsx"
@@ -90,9 +88,9 @@ const formSchema = z.object({
 })
 ```
 
-### Set up the form
+### フォームのセットアップ
 
-Next, we'll use the `useForm` hook from React Hook Form to create our form instance. We'll also add the Zod resolver to validate the form data.
+次に、React Hook Form の `useForm` フックを使用してフォーム インスタンスを作成します。フォーム データを検証するために Zod リゾルバーも追加します。
 
 ```tsx showLineNumbers title="form.tsx" {17-23}
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -134,26 +132,26 @@ export function BugReportForm() {
 }
 ```
 
-### Build the form
+### フォームの構築
 
-We can now build the form using the `<Controller />` component from React Hook Form and the `<Field />` component.
+これで、React Hook Form の `<Controller />` コンポーネントと `<Field />` コンポーネントを使ってフォームを構築できます。
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-rhf-demo.tsx"
   title="form.tsx"
 />
 
-### Done
+### 完了
 
-That's it. You now have a fully accessible form with client-side validation.
+以上です。これで、クライアント側の検証を備えた完全にアクセス可能なフォームが完成しました。
 
-When you submit the form, the `onSubmit` function will be called with the validated form data. If the form data is invalid, React Hook Form will display the errors next to each field.
+フォームを送信すると、検証されたフォーム データを使用して `onSubmit` 関数が呼び出されます。フォームデータが無効な場合、React Hook Form は各フィールドの横にエラーを表示します。
 
-## Validation
+## バリデーション
 
-### Client-side Validation
+### クライアント側検証
 
-React Hook Form validates your form data using the Zod schema. Define a schema and pass it to the `resolver` option of the `useForm` hook.
+React Hook Form は、Zod スキーマを使用してフォーム データを検証します。スキーマを定義し、それを `useForm` フックの `resolver` オプションに渡します。
 
 ```tsx showLineNumbers title="example-form.tsx" {5-8,12}
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -176,9 +174,9 @@ export function ExampleForm() {
 }
 ```
 
-### Validation Modes
+### 検証モード
 
-React Hook Form supports different validation modes.
+React Hook Form はさまざまな検証モードをサポートしています。
 
 ```tsx showLineNumbers title="form.tsx" {3}
 const form = useForm<z.infer<typeof formSchema>>({
@@ -187,20 +185,20 @@ const form = useForm<z.infer<typeof formSchema>>({
 })
 ```
 
-| Mode          | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| `"onChange"`  | Validation triggers on every change.                     |
-| `"onBlur"`    | Validation triggers on blur.                             |
-| `"onSubmit"`  | Validation triggers on submit (default).                 |
-| `"onTouched"` | Validation triggers on first blur, then on every change. |
-| `"all"`       | Validation triggers on blur and change.                  |
+| モード        | 説明                                                                           |
+| ------------- | ------------------------------------------------------------------------------ |
+| `"onChange"`  | 変更が行われるたびに検証がトリガーされます。                                   |
+| `"onBlur"`    | ブラー時に検証がトリガーされます。                                             |
+| `"onSubmit"`  | 検証は送信時にトリガーされます (デフォルト)。                                  |
+| `"onTouched"` | 検証は最初のブラー時にトリガーされ、その後はすべての変更時にトリガーされます。 |
+| `"all"`       | 検証はブラーと変更時にトリガーされます。                                       |
 
-## Displaying Errors
+## エラーの表示
 
-Display errors next to the field using `<FieldError />`. For styling and accessibility:
+`<FieldError />` を使用してフィールドの横にエラーを表示します。スタイルとアクセシビリティについて:
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `data-invalid` プロパティを `<Field />` コンポーネントに追加します。
+- `<Input />`、`<SelectTrigger />`、`<Checkbox />` などのフォーム コントロールに `aria-invalid` プロパティを追加します。
 
 ```tsx showLineNumbers title="form.tsx" {5,11,13}
 <Controller
@@ -221,12 +219,12 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-## Working with Different Field Types
+## さまざまなフィールド タイプの操作
 
-### Input
+### 入力
 
-- For input fields, spread the `field` object onto the `<Input />` component.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- を意図的に無効にしています。入力フィールドの場合は、`field` オブジェクトを `<Input />` コンポーネントに展開します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Input />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -235,7 +233,7 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
   chromeLessOnMobile
 />
 
-For simple text inputs, spread the `field` object onto the input.
+単純なテキスト入力では、`field` オブジェクトを入力に展開します。
 
 ```tsx showLineNumbers title="form.tsx" {5,7,8}
 <Controller
@@ -253,8 +251,8 @@ For simple text inputs, spread the `field` object onto the input.
 
 ### Textarea
 
-- For textarea fields, spread the `field` object onto the `<Textarea />` component.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- テキストエリア フィールドの場合は、`field` オブジェクトを `<Textarea />` コンポーネントに展開します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Textarea />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -263,7 +261,7 @@ For simple text inputs, spread the `field` object onto the input.
   chromeLessOnMobile
 />
 
-For textarea fields, spread the `field` object onto the textarea.
+テキストエリア フィールドでは、`field` オブジェクトをテキストエリアに展開します。
 
 ```tsx showLineNumbers title="form.tsx" {5,10,18}
 <Controller
@@ -289,10 +287,10 @@ For textarea fields, spread the `field` object onto the textarea.
 />
 ```
 
-### Select
+### 選択
 
-- For select components, use `field.value` and `field.onChange` on the `<Select />` component.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- コンポーネントを選択するには、`<Select />` コンポーネントで `field.value` および `field.onChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<SelectTrigger />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -338,11 +336,11 @@ For textarea fields, spread the `field` object onto the textarea.
 />
 ```
 
-### Checkbox
+### チェックボックス
 
-- For checkbox arrays, use `field.value` and `field.onChange` with array manipulation.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- チェックボックス配列の場合は、配列操作で `field.value` および `field.onChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Checkbox />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
+- 適切なスタイルと間隔を確保するには、必ず `data-slot="checkbox-group"` を `<FieldGroup />` コンポーネントに追加してください。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -395,10 +393,10 @@ For textarea fields, spread the `field` object onto the textarea.
 />
 ```
 
-### Radio Group
+### ラジオ グループ
 
-- For radio groups, use `field.value` and `field.onChange` on the `<RadioGroup />` component.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- 無線グループの場合は、`<RadioGroup />` コンポーネントで `field.value` および `field.onChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<RadioGroupItem />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -444,10 +442,10 @@ For textarea fields, spread the `field` object onto the textarea.
 />
 ```
 
-### Switch
+### スイッチ
 
-- For switches, use `field.value` and `field.onChange` on the `<Switch />` component.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- スイッチでは、`<Switch />` コンポーネントで `field.value` と `field.onChange` を使います。
+- エラーを表示するには、`aria-invalid` プロパティを `<Switch />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -483,9 +481,9 @@ For textarea fields, spread the `field` object onto the textarea.
 />
 ```
 
-### Complex Forms
+### 複雑なフォーム
 
-Here is an example of a more complex form with multiple fields and validation.
+複数のフィールドと検証を含む、より複雑なフォームの例です。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -494,9 +492,9 @@ Here is an example of a more complex form with multiple fields and validation.
   chromeLessOnMobile
 />
 
-## Resetting the Form
+## フォームをリセット
 
-Use `form.reset()` to reset the form to its default values.
+`form.reset()` を使用してフォームをデフォルト値にリセットします。
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => form.reset()}>
@@ -504,9 +502,9 @@ Use `form.reset()` to reset the form to its default values.
 </Button>
 ```
 
-## Array Fields
+## 配列フィールド
 
-React Hook Form provides a `useFieldArray` hook for managing dynamic array fields. This is useful when you need to add or remove fields dynamically.
+React Hook Form は、動的配列フィールドを管理するための `useFieldArray` フックを提供します。これは、フィールドを動的に追加または削除する必要がある場合に便利です。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -515,9 +513,9 @@ React Hook Form provides a `useFieldArray` hook for managing dynamic array field
   chromeLessOnMobile
 />
 
-### Using useFieldArray
+### useFieldArray を使う
 
-Use the `useFieldArray` hook to manage array fields. It provides `fields`, `append`, and `remove` methods.
+`useFieldArray` フックを使用して、配列フィールドを管理します。 `fields`、`append`、および `remove` メソッドが提供されます。
 
 ```tsx showLineNumbers title="form.tsx" {8-11}
 import { useFieldArray, useForm } from "react-hook-form"
@@ -534,9 +532,9 @@ export function ExampleForm() {
 }
 ```
 
-### Array Field Structure
+### 配列フィールド構造
 
-Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldDescription />`.
+配列フィールドを `<FieldLegend />` と `<FieldDescription />` で `<FieldSet />` でラップします。
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
@@ -548,9 +546,9 @@ Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldD
 </FieldSet>
 ```
 
-### Controller Pattern for Array Items
+### 配列項目のコントローラー パターン
 
-Map over the `fields` array and use `<Controller />` for each item. **Make sure to use `field.id` as the key**.
+`fields` 配列をマップし、各項目に `<Controller />` を使います。**キーには必ず `field.id` を使ってください。**
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -582,9 +580,9 @@ Map over the `fields` array and use `<Controller />` for each item. **Make sure 
 }
 ```
 
-### Adding Items
+### アイテムの追加
 
-Use the `append` method to add new items to the array.
+`append` メソッドを使用して、新しい項目を配列に追加します。
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -598,9 +596,9 @@ Use the `append` method to add new items to the array.
 </Button>
 ```
 
-### Removing Items
+### 項目の削除
 
-Use the `remove` method to remove items from the array. Add the remove button conditionally.
+`remove` メソッドを使用して、配列から項目を削除します。条件付きで削除ボタンを追加します。
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -620,9 +618,9 @@ Use the `remove` method to remove items from the array. Add the remove button co
 }
 ```
 
-### Array Validation
+### 配列の検証
 
-Use Zod's `array` method to validate array fields.
+Zod の `array` メソッドを使って配列フィールドを検証します。
 
 ```tsx showLineNumbers title="form.tsx"
 const formSchema = z.object({

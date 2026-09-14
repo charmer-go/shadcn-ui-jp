@@ -1,6 +1,6 @@
 ---
-title: Field
-description: Combine labels, controls, and help text to compose accessible form fields and grouped inputs.
+title: フィールド
+description: ラベル、コントロール、ヘルプテキストを組み合わせて、アクセシブルなフォームフィールドとグループ化された入力を構成します。
 base: aria
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="h-[800px] p-6 md:h-[850px]"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add field
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="field"
@@ -39,7 +39,7 @@ npx shadcn@latest add field
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add field
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -87,7 +87,7 @@ import {
 </FieldSet>
 ```
 
-## Composition
+## 構成
 
 ### Field
 
@@ -120,7 +120,7 @@ FieldGroup
 
 ### FieldSet
 
-Semantic grouping with a legend and description, usually containing a `FieldGroup`.
+凡例と説明を含むセマンティック グループ。通常は `FieldGroup` が含まれます。
 
 ```text
 FieldSet
@@ -137,7 +137,7 @@ FieldSet
         └── Input / Textarea / Switch / Select
 ```
 
-## Anatomy
+## 解剖学
 
 The `Field` family is designed for composing accessible forms. A typical field is structured as follows:
 
@@ -151,34 +151,34 @@ The `Field` family is designed for composing accessible forms. A typical field i
 ```
 
 - `Field` is the core wrapper for a single field.
-- `FieldContent` is a flex column that groups label and description. Not required if you have no description.
-- Wrap related fields with `FieldGroup`, and use `FieldSet` with `FieldLegend` for semantic grouping.
+- `FieldContent` は、ラベルと説明をグループ化するフレックス列です。記載がない場合は不要です。
+- 関連フィールドを `FieldGroup` でラップし、セマンティック グループ化には `FieldSet` を `FieldLegend` とともに使用します。
 
-## Form
+## 形式
 
 See the [Form](/docs/forms) documentation for building forms with the `Field` component and [React Hook Form](/docs/forms/react-hook-form) or [Tanstack Form](/docs/forms/tanstack-form), or [Formisch](/docs/forms/formisch).
 
-## Input
+## を選択
 
 <ComponentPreview styleName="aria-nova" name="field-input" />
 
-## Textarea
+## テキストエリア
 
 <ComponentPreview styleName="aria-nova" name="field-textarea" />
 
-## Select
+## 選択
 
 <ComponentPreview styleName="aria-nova" name="field-select" />
 
-## Slider
+## スライダー
 
 <ComponentPreview styleName="aria-nova" name="field-slider" />
 
-## Fieldset
+## FieldSet
 
 <ComponentPreview styleName="aria-nova" name="field-fieldset" />
 
-## Checkbox
+## チェックボックス
 
 <ComponentPreview
   styleName="aria-nova"
@@ -186,21 +186,21 @@ See the [Form](/docs/forms) documentation for building forms with the `Field` co
   previewClassName="h-[32rem]"
 />
 
-## Radio
+## ラジオ
 
 <ComponentPreview styleName="aria-nova" name="field-radio" />
 
-## Switch
+## スイッチ
 
 <ComponentPreview styleName="aria-nova" name="field-switch" />
 
-## Choice Card
+## 選択カード
 
-Wrap `Field` components inside `FieldLabel` to create selectable field groups. This works with `RadioItem`, `Checkbox` and `Switch` components.
+`Field` コンポーネントを `FieldLabel` 内にラップして、選択可能なフィールド グループを作成します。これは、`RadioItem`、`Checkbox`、および `Switch` コンポーネントで機能します。
 
 <ComponentPreview styleName="aria-nova" name="field-choice-card" />
 
-## Field Group
+## フィールドグループ
 
 Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
 
@@ -212,7 +212,7 @@ Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -221,10 +221,10 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-auto p-6"
 />
 
-## Responsive Layout
+## レスポンシブ レイアウト
 
 - **Vertical fields:** Default orientation stacks label, control, and helper text—ideal for mobile-first layouts.
-- **Horizontal fields:** Set `orientation="horizontal"` on `Field` to align the label and control side-by-side. Pair with `FieldContent` to keep descriptions aligned.
+- **水平フィールド:** ラベルとコントロールを並べて配置するには、`Field` に `orientation="horizontal"` を設定します。 `FieldContent` と組み合わせて説明を統一します。
 - **Responsive fields:** Set `orientation="responsive"` for automatic column layouts inside container-aware parents. Apply `@container/field-group` classes on `FieldGroup` to switch orientations at specific breakpoints.
 
 <ComponentPreview
@@ -233,10 +233,10 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-[650px] p-6 md:h-[500px] md:p-10"
 />
 
-## Validation and Errors
+## 検証とエラー
 
-- Add `data-invalid` to `Field` to switch the entire block into an error state.
-- Add `aria-invalid` on the input itself for assistive technologies.
+- `data-invalid` を `Field` に追加して、ブロック全体をエラー状態に切り替えます。
+- 支援技術の入力自体に `aria-invalid` を追加します。
 - Render `FieldError` immediately after the control or inside `FieldContent` to keep error messages aligned with the field.
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
@@ -247,13 +247,13 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 </Field>
 ```
 
-## Accessibility
+## 基本 UI API へのアクセシビリティ
 
 - `FieldSet` and `FieldLegend` keep related controls grouped for keyboard and assistive tech users.
 - `Field` outputs `role="group"` so nested controls inherit labeling from `FieldLabel` and `FieldLegend` when combined.
 - Apply `FieldSeparator` sparingly to ensure screen readers encounter clear section boundaries.
 
-## API Reference
+## API リファレンス
 
 ### FieldSet
 
@@ -274,7 +274,7 @@ Container that renders a semantic `fieldset` with spacing presets.
 
 Legend element for a `FieldSet`. Switch to the `label` variant to align with label sizing.
 
-| Prop        | Type                  | Default    |
+|小道具 |タイプ |デフォルト |
 | ----------- | --------------------- | ---------- |
 | `variant`   | `"legend" \| "label"` | `"legend"` |
 | `className` | `string`              |            |
@@ -304,7 +304,7 @@ Layout wrapper that stacks `Field` components and enables container queries for 
 
 The core wrapper for a single field. Provides orientation control, invalid state styling, and spacing.
 
-| Prop           | Type                                         | Default      |
+|小道具 |タイプ |デフォルト |
 | -------------- | -------------------------------------------- | ------------ |
 | `orientation`  | `"vertical" \| "horizontal" \| "responsive"` | `"vertical"` |
 | `className`    | `string`                                     |              |
@@ -374,9 +374,9 @@ Helper text slot that automatically balances long lines in horizontal layouts.
 <FieldDescription>We never share your email with anyone.</FieldDescription>
 ```
 
-### FieldSeparator
+### などの属性も公開します FieldSeparator
 
-Visual divider to separate sections inside a `FieldGroup`. Accepts optional inline content.
+`FieldGroup` 内のセクションを区切る視覚的な区切り線。オプションのインライン コンテンツを受け入れます。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -390,7 +390,7 @@ Visual divider to separate sections inside a `FieldGroup`. Accepts optional inli
 
 Accessible error container that accepts children or an `errors` array (e.g., from `react-hook-form`).
 
-| Prop        | Type                                       | Default |
+に 1 対 1 の置換がありません。小道具 |タイプ |デフォルト |
 | ----------- | ------------------------------------------ | ------- |
 | `errors`    | `Array<{ message?: string } \| undefined>` |         |
 | `className` | `string`                                   |         |

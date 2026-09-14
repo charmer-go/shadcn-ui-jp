@@ -1,10 +1,10 @@
 ---
-title: January 2026 - Base UI Documentation
-description: Full documentation for Base UI components.
+title: 2026 年 1 月 - 基本 UI ドキュメント
+description: Base UI コンポーネントの完全なドキュメント。
 date: 2026-01-20
 ---
 
-We've shipped full documentation for Base UI components.
+Base UI コンポーネントの完全なドキュメントを出荷しました。
 
 <div className="mt-6 flex w-full items-center justify-center rounded-lg border bg-muted/50 py-32">
   <svg width="17" height="24" viewBox="0 0 17 24" className="size-12">
@@ -19,27 +19,27 @@ We've shipped full documentation for Base UI components.
   </svg>
 </div>
 
-When we launched `npx shadcn create` in December, we introduced the ability to choose between Radix and Base UI as your component library. Today, we're following up with complete documentation for all Base UI components.
+12 月に `npx shadcn create` をリリースしたとき、コンポーネント ライブラリとして Radix と Base UI のどちらかを選択できる機能を導入しました。現在、すべての Base UI コンポーネントの完全なドキュメントをフォローアップしています。
 
-### What's New
+### 新着情報
 
-- **Full Base UI docs** - Every component now has dedicated documentation for Base UI, covering usage, props, and examples.
-- **Rebuilt examples** - All component examples have been rebuilt for both Radix and Base UI. Switch between them to see the implementation differences.
-- **Side-by-side comparison** - The docs make it easy to compare how components work across both libraries.
+- **完全なベース UI ドキュメント** - すべてのコンポーネントに、使用法、小道具、例をカバーするベース UI 専用のドキュメントが含まれるようになりました。
+- **再構築されたサンプル** - すべてのコンポーネントのサンプルは、Radix UI と Base UI の両方に対して再構築されています。それらを切り替えて実装の違いを確認してください。
+- **並べて比較** - このドキュメントを使用すると、両方のライブラリ間でコンポーネントがどのように動作するかを簡単に比較できます。
 
-### Same Abstraction, Different Primitives
+### 同じ抽象化、異なるプリミティブ
 
-The goal remains the same: give you a consistent API regardless of which primitive library you choose. The components look and behave the same way. Only the underlying implementation changes.
+目標は変わりません。どのプリミティブ ライブラリを選択しても、一貫した API を提供します。コンポーネントは同じように見え、同じように動作します。基礎となる実装のみが変更されます。
 
 ```tsx
 // Works the same whether you're using Radix or Base UI.
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 ```
 
-If you're starting a new project, run `npx shadcn create` and pick your preferred library. The CLI handles the rest.
+新しいプロジェクトを開始する場合は、`npx shadcn create` を実行して、好みのライブラリを選択します。残りは CLI が処理します。
 
 <Button asChild size="sm">
   <Link href="/create" className="mt-6 no-underline!">
-    Try shadcn/create
+    shadcn/create を試してください
   </Link>
 </Button>

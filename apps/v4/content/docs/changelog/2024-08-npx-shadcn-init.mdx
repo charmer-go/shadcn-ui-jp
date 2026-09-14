@@ -1,29 +1,29 @@
 ---
-title: August 2024 - npx shadcn init
-description: Complete CLI rewrite with support for all major React frameworks.
+title: 2024年8月 - npx shadcn init
+description: すべての主要な React フレームワークをサポートする完全な CLI の書き換えです。
 date: 2024-08-31
 ---
 
-The new CLI is now available. It's a complete rewrite with a lot of new features and improvements. You can now install components, themes, hooks, utils and more using `npx shadcn add`.
+これは、多くの新機能と改善を加えて完全に書き直されました。 `npx shadcn add` を使用して、コンポーネント、テーマ、フック、ユーティリティなどをインストールできるようになりました。
 
-This is a major step towards distributing code that you and your LLMs can access and use.
+これは、あなたとあなたの LLM がアクセスして使用できるコードを配布するための大きな一歩です。
 
-1. First up, the CLI now has support for all major React frameworks out of the box. Next.js, Remix, Vite and Laravel. And when you init into a new app, we update your existing Tailwind files instead of overriding.
-2. A component now ships its own dependencies. Take the accordion for example, it can define its Tailwind keyframes. When you add it to your project, we'll update your tailwind.config.ts file accordingly.
-3. You can also install remote components using url. `npx shadcn add https://acme.com/registry/navbar.json`.
-4. We have also improved the init command. It does framework detection and can even init a brand new Next.js app in one command. `npx shadcn init`.
-5. We have created a new schema that you can use to ship your own component registry. And since it has support for urls, you can even use it to distribute private components.
-6. And a few more updates like better error handling and monorepo support.
+1. まず、CLI は、とりあえずすべての主要な React フレームワークをサポートするようになりました。 Next.js、LiMix、Vite、Laravel。新しいアプリを開始すると、既存の Tailwind ファイルが上書きされるのではなく更新されます。
+2. コンポーネントは独自の依存関係を配布するようになりました。アコーディオンの例に挙げると、Tailwind キーフレームを定義できます。これをプロジェクトに追加すると、応じて tailwind.config.ts ファイルが更新されます。
+3. URL を使用してリモートコンポーネントをインストールすることもできます。
+4. init コマンドも改善されました。フレームワークの検出を行い、1 つのコマンドで新しい Next.js アプリを開始することもできます。
+5. 独自のコンポーネント レジストリを配布するために使用できる新しいスキーマを作成しました。 URL もサポートされているため、プライベートコンポーネントの配布にも使用できます。
+6. さらに、エラー処理の改善やモノリポジトリのサポートなど、いくつかの更新が加えられています。
 
-You can try the new cli today.
+新しい cli を今すぐお試しいただけます。
 
 ```bash
 npx shadcn init sidebar-01 login-01
 ```
 
-### Update Your Project
+### プロジェクトを更新する
 
-To update an existing project to use the new CLI, update your `components.json` file to include import aliases for your **components**, **utils**, **ui**, **lib** and **hooks**.
+新しい CLI を使用するためにこのプロジェクトを更新するには、**components**、**utils**、**ui**、**lib**、**hooks** のインポート エイリアスを含めて `components.json` ファイルを更新します。
 
 ```json showLineNumbers {7-13} title="components.json"
 {
@@ -42,4 +42,4 @@ To update an existing project to use the new CLI, update your `components.json` 
 }
 ```
 
-If you're using a different import alias prefix, e.g. `~`, replace `@` with your prefix.
+別のインポート エイリアス プレフィックスを使用している場合、たとえば`~`、`@` をプレフィックスに置き換えます。

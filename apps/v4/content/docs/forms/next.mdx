@@ -1,15 +1,15 @@
 ---
 title: Next.js
-description: Build forms in React using useActionState and Server Actions.
+description: useActionState とサーバー アクションを使用して React でフォームを構築します。
 ---
 
 import { InfoIcon } from "lucide-react"
 
-In this guide, we will take a look at building forms with Next.js using `useActionState` and Server Actions. We'll cover building forms, validation, pending states, accessibility, and more.
+このガイドでは、`useActionState` とサーバー アクションを使用して Next.js でフォームを構築する方法を見ていきます。フォームの構築、検証、保留状態、アクセシビリティなどについて説明します。
 
-## Demo
+## デモ
 
-We are going to build the following form with a simple text input and a textarea. On submit, we'll use a server action to validate the form data and update the form state.
+単純なテキスト入力とテキストエリアを備えた次のフォームを構築します。送信時に、サーバー アクションを使用してフォーム データを検証し、フォームの状態を更新します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -18,24 +18,24 @@ We are going to build the following form with a simple text input and a textarea
 />
 
 <Callout icon={<InfoIcon />}>
-  **Note:** The examples on this page intentionally disable browser validation
-  to show how schema validation and form errors work in server actions.
+  **注:** このページの例では、ブラウザー検証を意図的に無効にしています
+  では、サーバー アクションでスキーマ検証とフォーム エラーがどのように機能するかを示します。
 </Callout>
 
-## Approach
+## アプローチ
 
-This form leverages Next.js and React's built-in capabilities for form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+このフォームは、Next.js と React の組み込み機能を利用してフォームを処理します。 `<Field />` コンポーネントを使用してフォームを構築します。これにより、**マークアップとスタイルを完全に柔軟に行うことができます**。
 
-- Uses Next.js `<Form />` component for navigation and progressive enhancement.
-- `<Field />` components for building accessible forms.
-- `useActionState` for managing form state and errors.
-- Handles loading states with the pending prop.
-- Server Actions for handling form submissions.
-- Server-side validation using Zod.
+- ナビゲーションと段階的な機能強化に Next.js の `<Form />` コンポーネントを使います。
+- アクセシブルなフォームの構築に `<Field />` コンポーネントを使います。
+- `useActionState` フォームの状態とエラーを管理します。
+- 保留中のプロパティを使用してロード状態を処理します。
+- フォーム送信の処理にサーバー アクションを使います。
+- Zod を使用したサーバー側の検証。
 
-## Anatomy
+## 構成
 
-Here's a basic example of a form using the `<Field />` component.
+`<Field />` コンポーネントを使用したフォームの基本的な例を次に示します。
 
 ```tsx showLineNumbers
 <Form action={formAction}>
@@ -63,16 +63,15 @@ Here's a basic example of a form using the `<Field />` component.
 </Form>
 ```
 
-## Usage
+## 使い方
 
-### Create a form schema
+### フォーム スキーマを作成する
 
-We'll start by defining the shape of our form using a Zod schema in a `schema.ts` file.
+まず、`schema.ts` ファイル内の Zod スキーマを使用してフォームの形状を定義します。Zod は、標準スキーマでサポートされている他のスキーマ検証ライブラリに置き換えられます。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** This example uses `zod v3` for schema validation, but you can
-  replace it with any other schema validation library. Make sure your schema
-  library conforms to the Standard Schema specification.
+  **注:** この例では、スキーマ検証に `zod v3` を使用していますが、
+  Zod は他のスキーマ検証ライブラリに置き換えられます。スキーマ ライブラリが標準スキーマ仕様に準拠していることを確認してください。
 </Callout>
 
 ```tsx showLineNumbers title="schema.ts"
@@ -90,9 +89,9 @@ export const formSchema = z.object({
 })
 ```
 
-### Define the form state type
+### フォーム状態の型を定義する
 
-Next, we'll create a type for our form state that includes values, errors, and success status. This will be used to type the form state on the client and server.
+次に、値、エラー、成功状態を含むフォーム状態の型を作成します。この型はクライアントとサーバーのフォーム状態に使用します。
 
 ```tsx showLineNumbers title="schema.ts"
 import { z } from "zod"
@@ -104,39 +103,39 @@ export type FormState = {
 }
 ```
 
-**Important:** We define the schema and the `FormState` type in a separate file so we can import them into both the client and server components.
+**重要:** スキーマと `FormState` タイプを別のファイルで定義して、それらをクライアント コンポーネントとサーバー コンポーネントの両方にインポートできるようにします。
 
-### Create the Server Action
+### サーバー アクションを作成する
 
-A server action is a function that runs on the server and can be called from the client. We'll use it to validate the form data and update the form state.
+サーバー アクションはサーバー上で実行され、クライアントから呼び出せる関数です。フォーム データの検証とフォーム状態の更新に使います。
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-next-demo-action.ts"
   title="actions.ts"
 />
 
-**Note:** We're returning `values` for error cases. This is because we want to keep the user submitted values in the form state. For success cases, we're returning empty values to reset the form.
+**注:** エラーの場合は `values` を返します。これは、ユーザーが送信した値をフォームの状態に維持したいためです。成功した場合は、空の値を返してフォームをリセットします。
 
-### Build the form
+### フォームの構築
 
-We can now build the form using the `<Field />` component. We'll use the `useActionState` hook to manage the form state, server action, and pending state.
+`<Field />` コンポーネントを使用してフォームを構築できるようになりました。 `useActionState` フックを使用して、フォームの状態、サーバー アクション、および保留状態を管理します。
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-next-demo.tsx"
   title="form.tsx"
 />
 
-### Done
+### 完了
 
-That's it. You now have a fully accessible form with client and server-side validation.
+これで、クライアント側とサーバー側の検証を備えた、完全にアクセシブルなフォームが完成しました。
 
-When you submit the form, the `formAction` function will be called on the server. The server action will validate the form data and update the form state.
+フォームを送信すると、`formAction` 関数がサーバー上で呼び出されます。サーバー アクションはフォーム データを検証し、フォームの状態を更新します。
 
-If the form data is invalid, the server action will return the errors to the client. If the form data is valid, the server action will return the success status and update the form state.
+フォーム データが無効な場合、サーバー アクションはエラーをクライアントに返します。有効な場合は成功状態を返し、フォーム状態を更新します。
 
-## Pending States
+## 保留中の状態
 
-Use the `pending` prop from `useActionState` to show loading indicators and disable form inputs.
+`useActionState` の `pending` プロパティを使用して、読み込みインジケーターを表示し、フォーム入力を無効にします。
 
 ```tsx showLineNumbers {11,26-34}
 "use client"
@@ -175,11 +174,11 @@ export function BugReportForm() {
 }
 ```
 
-## Disabled States
+## 無効な状態
 
-### Submit Button
+### 送信ボタン
 
-To disable the submit button, use the `pending` prop on the button's `disabled` prop.
+送信ボタンを無効にするには、ボタンの `disabled` プロップで `pending` プロップを使用します。
 
 ```tsx showLineNumbers
 <Button type="submit" disabled={pending}>
@@ -187,9 +186,9 @@ To disable the submit button, use the `pending` prop on the button's `disabled` 
 </Button>
 ```
 
-### Field
+### フィールド
 
-To apply a disabled state and styling to a `<Field />` component, use the `data-disabled` prop on the `<Field />` component.
+`<Field />` コンポーネントに無効な状態とスタイルを適用するには、`<Field />` コンポーネントで `data-disabled` プロパティを使用します。
 
 ```tsx showLineNumbers
 <Field data-disabled={pending}>
@@ -198,11 +197,11 @@ To apply a disabled state and styling to a `<Field />` component, use the `data-
 </Field>
 ```
 
-## Validation
+## バリデーション
 
-### Server-side Validation
+### サーバー側検証
 
-Use `safeParse()` on your schema in your server action to validate the form data.
+サーバー アクションのスキーマで `safeParse()` を使用して、フォーム データを検証します。
 
 ```tsx showLineNumbers title="actions.ts" {12-20}
 "use server"
@@ -233,11 +232,11 @@ export async function bugReportFormAction(
 }
 ```
 
-### Business Logic Validation
+### ビジネス ロジックの検証
 
-You can add additional custom validation logic in your server action.
+サーバー アクションにカスタム検証ロジックを追加できます。
 
-Make sure to return the values on validation errors. This is to ensure that the form state maintains the user's input.
+検証エラーが発生した場合は必ず値を返します。これは、フォームの状態がユーザーの入力を確実に維持するためです。 TanStack でのスキーマ検証とフォーム エラーがどのように機能するかを示す
 
 ```tsx showLineNumbers title="actions.ts" {22-35}
 "use server"
@@ -283,9 +282,9 @@ export async function bugReportFormAction(
 }
 ```
 
-## Displaying Errors
+## エラーの表示
 
-Display errors next to the field using `<FieldError />`. Make sure to add the `data-invalid` prop to the `<Field />` component and `aria-invalid` prop to the input.
+`<FieldError />` を使用してフィールドの横にエラーを表示します。 `data-invalid` プロパティを `<Field />` コンポーネントに追加し、`aria-invalid` プロパティを入力に追加してください。
 
 ```tsx showLineNumbers
 <Field data-invalid={!!formState.errors?.email?.length}>
@@ -302,13 +301,13 @@ Display errors next to the field using `<FieldError />`. Make sure to add the `d
 </Field>
 ```
 
-## Resetting the Form
+## フォームをリセット
 
-When you submit a form with a server action, React will automatically reset the form state to the initial values.
+サーバー アクションを使用してフォームを送信すると、React はフォームの状態を自動的に初期値にリセットします。
 
-### Reset on Success
+### 成功時にリセットする
 
-To reset the form on success, you can omit the `values` from the server action and React will automatically reset the form state to the initial values. This is standard React behavior.
+成功時にフォームをリセットするには、サーバー アクションから `values` を省略すると、React がフォームの状態を自動的に初期値にリセットします。これは標準的な React の動作です。
 
 ```tsx showLineNumbers title="actions.ts" {22-26}
 export async function demoFormAction(
@@ -340,9 +339,9 @@ export async function demoFormAction(
 }
 ```
 
-### Preserve on Validation Errors
+### 検証エラー時に保持する
 
-To prevent the form from being reset on failure, you can return the values in the server action. This is to ensure that the form state maintains the user's input.
+失敗時にフォームがリセットされないようにするには、サーバー アクションで値を返すことができます。これは、フォームの状態がユーザーの入力を確実に維持するためです。
 
 ```tsx showLineNumbers title="actions.ts" {12-17}
 export async function demoFormAction(
@@ -366,32 +365,32 @@ export async function demoFormAction(
 }
 ```
 
-## Complex Forms
+## 複雑なフォーム
 
-Here is an example of a more complex form with multiple fields and validation.
+複数のフィールドと検証を含む、より複雑なフォームの例です。
 
 <ComponentPreview
   styleName="new-york-v4"
   name="form-next-complex"
   className="[&_.preview]:h-[1100px] [&_pre]:h-[1100px]!"
-  hideCode
+  HideCode
 />
 
-### Schema
+### スキーマ
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-next-complex-schema.ts"
   title="schema.ts"
 />
 
-### Form
+### フォーム
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-next-complex.tsx"
   title="form.tsx"
 />
 
-### Server Action
+### サーバー アクション
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-next-complex-action.ts"

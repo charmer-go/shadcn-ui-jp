@@ -1,6 +1,6 @@
 ---
-title: Dialog
-description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+title: ベース UI API へのダイアログ
+description: に 1 対 1 の置換がありません。 プライマリ ウィンドウまたは別のダイアログ ウィンドウに重ねて表示されるウィンドウで、その下のコンテンツは不活性になります。
 featured: true
 base: base
 component: true
@@ -12,16 +12,16 @@ links:
 <ComponentPreview
   styleName="base-nova"
   name="dialog-demo"
-  description="A dialog for editing profile details."
+  description="プロファイルの詳細を編集するためのダイアログ。"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add dialog
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="dialog"
@@ -49,7 +49,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -85,9 +85,9 @@ import {
 </Dialog>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Dialog`:
+次の構成を使用して `Dialog` を構築します。
 
 ```text
 Dialog
@@ -99,25 +99,25 @@ Dialog
     └── DialogFooter
 ```
 
-## Custom Close Button
+## カスタム閉じるボタン
 
 Replace the default close control with your own button.
 
 <ComponentPreview styleName="base-nova" name="dialog-close-button" />
 
-## No Close Button
+## 閉じるボタンがありません
 
 Use `showCloseButton={false}` to hide the close button.
 
 <ComponentPreview styleName="base-nova" name="dialog-no-close-button" />
 
-## Sticky Footer
+## スティッキー フッター
 
-Keep actions visible while the content scrolls.
+コンテンツがスクロールしている間、アクションを表示したままにします。
 
 <ComponentPreview styleName="base-nova" name="dialog-sticky-footer" />
 
-## Scrollable Content
+## スクロール可能なコンテンツ
 
 Long content can scroll while the header stays in view.
 
@@ -125,10 +125,10 @@ Long content can scroll while the header stays in view.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="dialog-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI](https://base-ui.com/react/components/dialog#api-reference) documentation for more information.
+詳細については、[ベース UI](https://base-ui.com/react/components/dialog#api-reference) ドキュメントを参照してください。

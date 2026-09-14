@@ -1,6 +1,6 @@
 ---
-title: Slider
-description: An input where the user selects a value from within a given range.
+title: スライダー
+description: 指定した範囲からユーザーが値を選択する入力。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="slider-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add slider
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="slider"
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import { Slider } from "@/components/ui/slider"
@@ -74,17 +74,17 @@ Use an array with multiple values for multiple thumbs.
 
 <ComponentPreview styleName="radix-nova" name="slider-multiple" />
 
-## Vertical
+## 垂直
 
 Use `orientation="vertical"` for a vertical slider.
 
 <ComponentPreview styleName="radix-nova" name="slider-vertical" />
 
-## Controlled
+## 制御
 
 <ComponentPreview styleName="radix-nova" name="slider-controlled" />
 
-## Disabled
+## 無効
 
 Use the `disabled` prop to disable the slider.
 
@@ -92,10 +92,10 @@ Use the `disabled` prop to disable the slider.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="slider-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
 See the [Radix UI Slider](https://www.radix-ui.com/docs/primitives/components/slider#api-reference) documentation.

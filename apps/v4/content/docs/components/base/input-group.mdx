@@ -1,6 +1,6 @@
 ---
-title: Input Group
-description: Add addons, buttons, and helper content to inputs.
+title: 入力グループ
+description: アドオン、ボタン、ヘルパー コンテンツを入力に追加します。
 base: base
 component: true
 ---
@@ -13,13 +13,13 @@ import { IconInfoCircle } from "@tabler/icons-react"
   previewClassName="h-[26rem]"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,7 +33,7 @@ npx shadcn@latest add input-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="input-group"
@@ -41,7 +41,7 @@ npx shadcn@latest add input-group
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -49,7 +49,7 @@ npx shadcn@latest add input-group
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -71,9 +71,9 @@ import {
 </InputGroup>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `InputGroup`:
+次の構成を使用して `InputGroup` を構築します:
 
 ```text
 InputGroup
@@ -83,19 +83,19 @@ InputGroup
 └── InputGroupText
 ```
 
-## Align
+## 整列
 
-Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.
+`InputGroupAddon` の `align` プロパティを使用して、入力を基準にしてアドオンを配置します。
 
 <Callout>
   For proper focus management, `InputGroupAddon` should always be placed after
-  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to
-  visually position the addon.
+  `InputGroupInput` または `InputGroupTextarea`。
+  アドオンを視覚的に配置します。
 </Callout>
 
-### inline-start
+### インラインスタート
 
-Use `align="inline-start"` to position the addon at the start of the input. This is the default.
+`align="inline-start"` を使用して、アドオンを入力の先頭に配置します。これがデフォルトです。
 
 <ComponentPreview
   styleName="base-nova"
@@ -105,7 +105,7 @@ Use `align="inline-start"` to position the addon at the start of the input. This
 
 ### inline-end
 
-Use `align="inline-end"` to position the addon at the end of the input.
+`align="inline-end"` を使用してアドオンを入力の最後に配置します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -113,9 +113,9 @@ Use `align="inline-end"` to position the addon at the end of the input.
   previewClassName="h-48"
 />
 
-### block-start
+### ブロックスタート
 
-Use `align="block-start"` to position the addon above the input.
+`align="block-start"` を使用してアドオンを入力の上に配置します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -123,9 +123,9 @@ Use `align="block-start"` to position the addon above the input.
   previewClassName="h-96"
 />
 
-### block-end
+### ブロックエンド
 
-Use `align="block-end"` to position the addon below the input.
+の入力を作成します `align="block-end"` を使用してアドオンを入力の下に配置します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -133,7 +133,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-[26rem]"
 />
 
-## Icon
+## アイコン
 
 <ComponentPreview
   styleName="base-nova"
@@ -141,7 +141,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-80"
 />
 
-## Text
+## テキスト
 
 <ComponentPreview
   styleName="base-nova"
@@ -149,7 +149,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-80"
 />
 
-## Button
+## ボタン
 
 <ComponentPreview
   styleName="base-nova"
@@ -165,7 +165,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-40"
 />
 
-## Dropdown
+## ドロップダウン
 
 <ComponentPreview
   styleName="base-nova"
@@ -173,7 +173,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-56"
 />
 
-## Spinner
+## スピナー
 
 <ComponentPreview
   styleName="base-nova"
@@ -181,7 +181,7 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-80"
 />
 
-## Textarea
+## テキストエリア
 
 <ComponentPreview
   styleName="base-nova"
@@ -189,11 +189,11 @@ Use `align="block-end"` to position the addon below the input.
   previewClassName="h-96"
 />
 
-## Custom Input
+## カスタム入力
 
-Add the `data-slot="input-group-control"` attribute to your custom input for automatic focus state handling.
+自動フォーカス状態処理のために、`data-slot="input-group-control"` 属性をカスタム入力に追加します。
 
-Here's an example of a custom resizable textarea from a third-party library.
+これは、サードパーティ ライブラリからのカスタムのサイズ変更可能なテキストエリアの例です。
 
 <ComponentPreview
   styleName="base-nova"
@@ -203,7 +203,7 @@ Here's an example of a custom resizable textarea from a third-party library.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -212,13 +212,13 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-[30rem]"
 />
 
-## API Reference
+## API リファレンス
 
-### InputGroup
+### 入力グループ
 
-The main component that wraps inputs and addons.
+入力とアドオンをラップするメインコンポーネント。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
@@ -229,19 +229,19 @@ The main component that wraps inputs and addons.
 </InputGroup>
 ```
 
-### InputGroupAddon
+### 入力グループ アドオン
 
-Displays icons, text, buttons, or other content alongside inputs.
+入力とともにアイコン、テキスト、ボタン、またはその他のコンテンツを表示します。
 
-<Callout icon={<IconInfoCircle />} title="Focus Navigation">
+<Callout icon={<IconInfoCircle />} title="フォーカス ナビゲーション">
   For proper focus navigation, the `InputGroupAddon` component should be placed
-  after the input. Set the `align` prop to position the addon.
+  。 `align` プロパティを設定してアドオンを配置します。
 </Callout>
 
-| Prop        | Type                                                             | Default          |
+|小道具 |タイプ |デフォルト |
 | ----------- | ---------------------------------------------------------------- | ---------------- |
-| `align`     | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` |
-| `className` | `string`                                                         |                  |
+| `align` | `"inline-start" \| "inline-end" \| "block-start" \| "block-end"` | `"inline-start"` |
+| `className` | `string` |                  |
 
 ```tsx
 <InputGroupAddon align="inline-end">
@@ -249,9 +249,9 @@ Displays icons, text, buttons, or other content alongside inputs.
 </InputGroupAddon>
 ```
 
-**For `<InputGroupInput />`, use the `inline-start` or `inline-end` alignment. For `<InputGroupTextarea />`, use the `block-start` or `block-end` alignment.**
+**`<InputGroupInput />` の場合は、`inline-start` または `inline-end` の配置を使用します。 `<InputGroupTextarea />` の場合は、`block-start` または `block-end` 配置を使用します。**
 
-The `InputGroupAddon` component can have multiple `InputGroupButton` components and icons.
+`InputGroupAddon` コンポーネントには、複数の `InputGroupButton` コンポーネントとアイコンを含めることができます。
 
 ```tsx
 <InputGroupAddon>
@@ -262,13 +262,13 @@ The `InputGroupAddon` component can have multiple `InputGroupButton` components 
 
 ### InputGroupButton
 
-Displays buttons within input groups.
+入力グループ内のボタンを表示します。
 
-| Prop        | Type                                                                          | Default   |
+|小道具 |タイプ |デフォルト |
 | ----------- | ----------------------------------------------------------------------------- | --------- |
-| `size`      | `"xs" \| "icon-xs" \| "sm" \| "icon-sm"`                                      | `"xs"`    |
-| `variant`   | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` |
-| `className` | `string`                                                                      |           |
+| `size` | `"xs" \| "icon-xs" \| "sm" \| "icon-sm"` | `"xs"` |
+| `variant` | `"default" \| "destructive" \| "outline" \| "secondary" \| "ghost" \| "link"` | `"ghost"` |
+| `className` | `string` |           |
 
 ```tsx
 <InputGroupButton>Button</InputGroupButton>
@@ -279,13 +279,13 @@ Displays buttons within input groups.
 
 ### InputGroupInput
 
-Replacement for `<Input />` when building input groups. This component has the input group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+入力グループを構築するときの `<Input />` の置き換え。このコンポーネントには入力グループ スタイルが事前に適用されており、フォーカス状態の処理に統合 `data-slot="input-group-control"` を使用します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
-All other props are passed through to the underlying `<Input />` component.
+他のすべてのプロパティは、基礎となる `<Input />` コンポーネントに渡されます。
 
 ```tsx
 <InputGroup>
@@ -296,15 +296,15 @@ All other props are passed through to the underlying `<Input />` component.
 </InputGroup>
 ```
 
-### InputGroupTextarea
+### 入力グループテキストエリア
 
-Replacement for `<Textarea />` when building input groups. This component has the textarea group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+入力グループを構築するときの `<Textarea />` の置き換え。このコンポーネントにはテキストエリア グループ スタイルが事前に適用されており、フォーカス状態の処理に統一された `data-slot="input-group-control"` を使用します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
-All other props are passed through to the underlying `<Textarea />` component.
+他のすべてのプロパティは、基礎となる `<Textarea />` コンポーネントに渡されます。
 
 ```tsx
 <InputGroup>

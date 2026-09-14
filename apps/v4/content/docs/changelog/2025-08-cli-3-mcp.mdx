@@ -1,28 +1,28 @@
 ---
-title: August 2025 - shadcn CLI 3.0 and MCP Server
-description: Namespaced registries, advanced authentication, new commands and a completely rewritten registry engine.
+title: 2025 年 8 月 - shadcn CLI 3.0 と MCP サーバー
+description: 名前空間付きレジストリ、高度な認証、新しいコマンド、および完全に書き直されたレジストリ エンジン。
 date: 2025-08-27
 ---
 
-We just shipped shadcn CLI 3.0 with support for namespaced registries, advanced authentication, new commands and a completely rewritten registry engine.
+名前空間レジストリ、高度な認証、新しいコマンド、および完全に直に書き込まれたレジストリ エンジンのサポートを備えた shadcn CLI 3.0 を出荷しました。
 
-### What's New
+### 新着情報
 
-- [Namespaced Registries](#namespaced-registries) - Install components using `@registry/name` format.
-- [Private Registries](#private-registries) - Secure your registry with advanced authentication.
-- [Search & Discovery](#search--discovery) - New commands to find and view code before installing.
-- [MCP Server](#mcp-server) - MCP server for all registries.
-- [Faster Everything](#faster-everything) - Completely rewritten registry resolution.
-- [Improved Error Handling](#improved-error-handling) - Better error messages for users and LLMs.
-- [Upgrade Guide](#upgrade-guide) - Migration notes for existing users.
+- [名前空間レジストリ](#namespaced-registries) - `@registry/name` 形式を使用してコンポーネントをインストールします。
+- [プライベートレジストリ](#private-registries) - 高度な認証を使用してレジストリを保護します。
+- [検索と検出](#search--discovery) - インストール前にコードを検索して表示するための新しいコマンド。
+- [MCP サーバー](#mcp-server) - すべてのレジストリの MCP サーバー。
+- [より高速なすべて](#faster-everything) - レジストリ解像度を完全に書き換えました。
+- [エラー処理の改善](#improved-error-handling) - ユーザーと LLM に対するエラー メッセージが改善されました。
+- [アップグレード ガイド](#upgrade-guide) - ユーザー以外の移行向けメモ。
 
-### Namespaced Registries
+### 名前空間レジストリ
 
-The biggest change in 3.0 is namespaced registries. You can now install components from registries: a community registry, your company's private registry or internal registry, using the `@registry/name` format.
+3.0 の最大の変更点は、名前空間レジストリです。 `@registry/name` 形式を使用して、レジストリ (コミュニティレジストリ、会社のプライベートレジストリ、または内部レジストリ) からコンポーネントをインストールできるようになりました。
 
-This makes it easier to distribute code across teams and projects.
+これにより、チームやプロジェクト間でコードを配布することが容易になります。
 
-Configure registries in your `components.json`:
+`components.json`でレジストリを構成します。
 
 ```json title="components.json"
 {
@@ -38,13 +38,13 @@ Configure registries in your `components.json`:
 }
 ```
 
-Then use the `@registry/name` format to install components:
+次に、`@registry/name` 形式を使用してコンポーネントをインストールします。
 
 ```bash
 npx shadcn add @acme/button @internal/auth-system
 ```
 
-It's completely decentralized. There's no central registrar. Create any namespace you want and organize components however makes sense for your team.
+完全に分散化されています。中央の登録機関はありません。必要な名前空間を作成し、コンポーネントを整理しますが、チームにとっては意味があります。
 
 ```json title="components.json" showLineNumbers
 {
@@ -56,7 +56,7 @@ It's completely decentralized. There's no central registrar. Create any namespac
 }
 ```
 
-Components can even depend on resources from different registries. Everything gets resolved and installed automatically from the right sources.
+コンポーネントは、異なるレジストリのリソースに依存することもあります。すべてが適切なソースから自動的に解決され、インストールされます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -72,9 +72,9 @@ Components can even depend on resources from different registries. Everything ge
 }
 ```
 
-### Private Registries
+### プライベートレジストリ
 
-Need to keep your components private? We've got you covered. Configure authentication with tokens, API keys, or custom headers:
+コンポーネントを非公開にしておく必要がありますか?ご対応させて頂きます。ついでに、API キー、またはカスタムヘッダーを使用して認証を構成します。
 
 ```json title="components.json"
 {
@@ -89,37 +89,37 @@ Need to keep your components private? We've got you covered. Configure authentic
 }
 ```
 
-Your private components stay private. Perfect for enterprise teams with proprietary UI libraries.
+プライベートコンポーネントは非公開のままです。独自の UI ライブラリを備えたエンタープライズ チームに最適です。
 
-We support all major authentication methods: basic auth, bearer token, API key query params and custom headers.
+基本認証、ベアラーに関して、API キー入力パラメータ、カスタムヘッダーなど、すべての主要な認証方法をサポートしています。
 
-See the [authentication docs](/docs/registry/authentication) for more details.
+については、[認証ドキュメント](/docs/registry/authentication) を参照してください。
 
-### Search & Discovery
+### 検索と発見
 
-Three new commands make it easy to find exactly what you need:
+3 つの新しいコマンドにより、必要なものを簡単に見つけることができます。
 
-1. View items from the registry before installing
+1. インストールする前にレジストリの項目を表示する
 
 ```bash
 npx shadcn view @acme/auth-system
 ```
 
-2. Search items from registries
+2. レジストリから項目を検索する
 
 ```bash
 npx shadcn search @tweakcn -q "dark"
 ```
 
-3. List all items from a registry
+3. レジストリのすべての項目をリストします。
 
 ```bash
 npx shadcn list @acme
 ```
 
-Preview components before installing them. Search across multiple registries. See the code and all dependencies upfront.
+コンポーネントをインストールする前にプレビューします。複数のレジストリを横断して検索します。事前にコードとすべての依存関係を確認してください。
 
-### MCP Server
+### MCP サーバー
 
 <Image
   src="/images/mcp.jpeg"
@@ -129,36 +129,36 @@ Preview components before installing them. Search across multiple registries. Se
   className="mt-6 w-full overflow-hidden rounded-2xl border"
 />
 
-Back in April, we [introduced](https://x.com/shadcn/status/1917597228513853603) the first version of the MCP server. Since then, we've taken everything we learned and built a better MCP server.
+4 月に遡って、MCP サーバーの最初のバージョンを[導入](https://x.com/shadcn/status/1917597228513853603)しました。 それ以来、私たちが学んだすべてを知って、より優れた MCP サーバーを構築してきました。
 
-Here's what's new:
+新機能は次のとおりです。
 
-- Works with all registries. Zero config
-- One command to add to your favorite MCP clients
-- We improved the underlying tools
-- Better integration with the CLI and registries
-- Support for multiple registries in the same project
+- すべてのレジストリで動作します。ゼロ構成
+- お気に入りのMCPクライアントに追加する 1つのコマンド
+- 基盤となるツールを改善しました
+- CLIおよびレジストリとの統合の向上
+- 同じプロジェクト内の複数のレジストリのサポート
 
-Add the MCP server to your project:
+MCPサーバーをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest mcp init
 ```
 
-See the [docs](/docs/mcp) for more details.
+詳細については、[docs](/docs/mcp) を参照してください。
 
-### Faster Everything
+### すべてをより速く
 
-We completely rewrote the registry resolution engine from scratch. It's faster, smarter, and handles even the trickiest dependency trees.
+レジストリ解決エンジンを最初から完全に書き直しました。より高速かつスマートで、最も扱いにくい依存関係ツリーも処理します。
 
-- Up to 3x faster dependency resolution
-- Smarter file deduplication and merging
-- Better monorepo support out of the box
-- Updated `build` command for registry authors
+- 最大 3 倍高速な依存関係の解決
+- よりスマートなファイルの重複排除とマージ
+- すぐに使用できるモノリポジトリのサポートの向上
+- レジストリ作成者向けの `build` コマンドを更新しました
 
-### Improved Error Handling
+### エラー処理の改善
 
-Registry developers can now provide custom error messages to help guide users (and LLMs) when things go wrong. The CLI displays helpful, actionable errors for common issues:
+レジストリ開発者は、問題が発生したときにユーザー (および LLM) をガイドするためにカスタム エラー メッセージを提供できるようになりました。 CLI には、一般的な問題に対して、対処可能なエラーが表示されます。
 
 ```txt
 Unknown registry "@acme". Make sure it is defined in components.json as follows:
@@ -169,7 +169,7 @@ Unknown registry "@acme". Make sure it is defined in components.json as follows:
 }
 ```
 
-Missing environment variables? The CLI tells you exactly what's needed:
+環境変数はありませんか? CLIは必要なものを正確に示します。
 
 ```txt
 Registry "@private" requires the following environment variables:
@@ -178,7 +178,7 @@ Registry "@private" requires the following environment variables:
 Set the required environment variables in your .env or .env.local file.
 ```
 
-Registry authors can provide custom error messages in their responses to help users and AI agents understand and fix issues quickly.
+レジストリ作成者は、ユーザーや AI エージェントが問題を迅速に理解して修正できるように、応答にカスタム エラー メッセージを提供できます。
 
 ```txt
 Error:
@@ -188,19 +188,19 @@ Message:
 [Unauthorized] Your API key has expired. Renew it at https://example.com/api/renew-key.
 ```
 
-### Upgrade Guide
+### アップグレードガイド
 
-Here's the best part: there are no breaking changes for users. Your existing `components.json` works exactly the same. All your installed components work exactly the same.
+ここが最も良い点です。ユーザーにとって重要な変更はありません。既存の `components.json` はまったく同じように機能します。インストールされているすべての要素はまったく同じように動作します。
 
-For developers, if you're using the programmatic APIs directly, we've deprecated a few functions in favor of better ones:
+開発者向けに、プログラム API を直接使用している場合、より良い関数を優先していくつかの関数を非推奨にしました。
 
 - `fetchRegistry` → `getRegistry`
 - `resolveRegistryTree` → `resolveRegistryItems`
-- Schema moved from `shadcn/registry` to `shadcn/schema` package
+- スキーマが `shadcn/registry` から `shadcn/schema` パッケージに移動しました
 
 ```diff
 - import { registryItemSchema } from "shadcn/registry"
 + import { registryItemSchema } from "shadcn/schema"
 ```
 
-That's it. Seriously. Everything else just works.
+それでおしまい。真剣に。それ以外はすべて正常に機能します。

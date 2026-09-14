@@ -1,6 +1,6 @@
 ---
-title: Hover Card
-description: A popover that appears on hover, focus, or long press to preview content available behind a link.
+title: ホバー カード
+description: ホバー、フォーカス、または長押しすると表示されるポップオーバーで、リンクの背後にある利用可能なコンテンツをプレビューします。
 base: aria
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-80"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add hover-card
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="hover-card"
@@ -48,7 +48,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { HoverCard, HoverCardTrigger } from "@/components/ui/hover-card"
@@ -71,9 +71,9 @@ import { HoverCard, HoverCardTrigger } from "@/components/ui/hover-card"
 </HoverCardTrigger>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `HoverCard`:
+次の構成を使用して `HoverCard` を構築します。
 
 ```text
 HoverCardTrigger
@@ -81,10 +81,10 @@ HoverCardTrigger
 └── HoverCard
 ```
 
-## Trigger Delays
+## トリガー遅延
 
-Use `delay` and `closeDelay` on the `HoverCardTrigger` to control when the card
-opens and closes.
+`HoverCardTrigger` で `delay` および `closeDelay` を使用して、カード
+が開閉します。
 
 ```tsx showLineNumbers
 <HoverCardTrigger delay={100} closeDelay={200}>
@@ -93,9 +93,9 @@ opens and closes.
 </HoverCardTrigger>
 ```
 
-## Positioning
+## 位置
 
-Use the `placement` prop on `HoverCard` to control placement.
+`HoverCard` の `placement` プロップを使用して配置を制御します。
 
 ```tsx showLineNumbers
 <HoverCardTrigger>
@@ -104,7 +104,7 @@ Use the `placement` prop on `HoverCard` to control placement.
 </HoverCardTrigger>
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="aria-nova"
@@ -112,7 +112,7 @@ Use the `placement` prop on `HoverCard` to control placement.
   previewClassName="h-80"
 />
 
-## Sides
+## サイド
 
 <ComponentPreview
   styleName="aria-nova"
@@ -122,7 +122,7 @@ Use the `placement` prop on `HoverCard` to control placement.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -131,6 +131,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80"
 />
 
-## API Reference
+## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/PreviewTrigger#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/PreviewTrigger#api) ドキュメントを参照してください。

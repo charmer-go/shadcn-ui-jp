@@ -1,6 +1,6 @@
 ---
-title: Sidebar
-description: A composable, themeable and customizable sidebar component.
+title: サイドバー
+description: 組み合わせ可能で、テーマ設定とカスタマイズに対応したサイドバー コンポーネント。
 base: aria
 component: true
 ---
@@ -27,13 +27,13 @@ Customizable.
 
 [Browse the Blocks Library](/blocks).
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -47,13 +47,13 @@ npx shadcn@latest add sidebar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="sidebar"
@@ -61,7 +61,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -69,7 +69,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers title="app/layout.tsx"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
@@ -111,7 +111,7 @@ export function AppSidebar() {
 }
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Sidebar` layout:
 
@@ -176,7 +176,7 @@ SidebarProvider
 
 The `SidebarProvider` component is used to provide the sidebar context to the `Sidebar` component. You should always wrap your application in a `SidebarProvider` component.
 
-### Props
+### プロパティ
 
 | Name           | Type                      | Description                                  |
 | -------------- | ------------------------- | -------------------------------------------- |
@@ -220,7 +220,7 @@ const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 
 The main `Sidebar` component used to render a collapsible sidebar.
 
-### Props
+### プロパティ
 
 | Property      | Type                              | Description                       |
 | ------------- | --------------------------------- | --------------------------------- |
@@ -544,7 +544,7 @@ We use the following CSS variables to theme the sidebar.
 }
 ```
 
-## Styling
+## スタイリング
 
 Here are some tips for styling the sidebar based on different states.
 
@@ -565,14 +565,14 @@ Here are some tips for styling the sidebar based on different states.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 {/* prettier-ignore */}
 <Button asChild size="sm" className="mt-6">
   <a href="/view/aria-nova/sidebar-rtl" target="_blank">View RTL Sidebar <ExternalLinkIcon /></a>
 </Button>
 
-## Changelog
+## 変更履歴
 
 ### RTL Support
 

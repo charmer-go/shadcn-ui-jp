@@ -1,17 +1,17 @@
 ---
-title: May 2026 - Package Imports and Target Aliases
-description: Configure shadcn/ui with package.json imports and portable registry target aliases.
+title: 2026 年 5 月 - パッケージのインポートとターゲット エイリアス
+description: package.json インポートとポータブル レジストリ ターゲット エイリアスを使用して shadcn/ui を構成します。
 date: 2026-05-05
 ---
 
-We've added support for package imports and aliases in `files.target` in `shadcn@4.7.0`.
+`shadcn@4.7.0` の `files.target` でのパッケージのインポートとエイリアスのサポートを追加しました。
 
-## Package imports
+## パッケージのインポート
 
-The `shadcn` CLI now supports `package.json#imports` for installing components,
-rewriting imports, and resolving third-party registries. You can use private
-`#...` import aliases from your `package.json` instead of relying only on
-`compilerOptions.paths` in `tsconfig.json`.
+`shadcn` CLI は、コンポーネントのインストール用に `package.json#imports` をサポートするようになりました。
+インポートの書き換え、およびサードパーティのレジストリの解決。プライベートでも使えます
+`#...` のみに依存するのではなく、`package.json` からエイリアスをインポートします。
+`tsconfig.json`の`compilerOptions.paths`。
 
 ```json title="package.json" showLineNumbers
 {
@@ -23,7 +23,7 @@ rewriting imports, and resolving third-party registries. You can use private
 }
 ```
 
-Then use the same roots in `components.json`:
+次に、`components.json` で同じルートを使用します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -37,15 +37,15 @@ Then use the same roots in `components.json`:
 }
 ```
 
-This also works in monorepos where app-local files use package imports and
-shared UI files are imported from workspace package exports.
+これは、アプリのローカル ファイルがパッケージ インポートを使用するモノリポジトリでも機能します。
+共有 UI ファイルは、ワークスペース パッケージのエクスポートからインポートされます。
 
-See the [package imports guide](/docs/package-imports) for setup details.
+セットアップの詳細については、[パッケージ インポート ガイド](/docs/package-imports) を参照してください。
 
-## Target aliases
+## ターゲットのエイリアス
 
-Registry items can now use target aliases in `files[].target` to install files
-under the user's configured shadcn directories. For example, the following registry item will install the `prompt-input.tsx` file under the `ui/ai` directory.
+レジストリ項目は、`files[].target` のターゲット エイリアスを使用してファイルをインストールできるようになりました
+ユーザーが構成した shadcn ディレクトリの下にあります。たとえば、次のレジストリ項目は、`ui/ai` ディレクトリに `prompt-input.tsx` ファイルをインストールします。
 
 ```json title="example.json" showLineNumbers
 {
@@ -59,5 +59,5 @@ under the user's configured shadcn directories. For example, the following regis
 }
 ```
 
-See the [registry examples](/docs/registry/examples#target-placeholders) for
-more details.
+[レジストリの例](/docs/registry/examples#target-placeholders) を参照してください。
+さらに詳しく。

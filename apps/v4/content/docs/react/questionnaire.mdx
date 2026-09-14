@@ -1,34 +1,31 @@
 ---
 title: Questionnaire
-description: Build accessible, multi-step questionnaires with single, multiple, freeform, and intentionally skipped answers.
+description: 単一選択、複数選択、自由入力、意図的なスキップに対応した、アクセシブルな複数ステップのアンケートを構築します。
 ---
 
-`Questionnaire` is an unstyled form primitive for presenting one question at a
-time. It manages answers, progress, validation, and navigation.
+`Questionnaire` は、質問を 1 つずつ表示するためのスタイルなしフォーム プリミティブです。
+回答、進捗、バリデーション、ナビゲーションを管理します。
 
-It works well for agent clarification prompts, onboarding, surveys, intake
-forms, and configuration.
+エージェントへの確認プロンプト、オンボーディング、アンケート、受付フォーム、設定などに適しています。
 
-The unstyled package gives you full control over markup and styles. For the
-styled version and themed examples, see
+スタイルなしパッケージでは、マークアップとスタイルを完全に制御できます。スタイル付きバージョンとテーマ付きの例については、
 [Questionnaire](/docs/components/base/questionnaire).
 
-## Installation
+## インストール
 
 ```bash
 npm install @shadcn/react
 ```
 
-## Import
+## インポート
 
 ```tsx
 import { Questionnaire } from "@shadcn/react/questionnaire"
 ```
 
-`Questionnaire` exports its parts from one namespace. Each part accepts the
-native props for its default element.
+`Questionnaire` は 1 つの名前空間から各パーツをエクスポートします。各パーツは既定要素のネイティブ props を受け取ります。
 
-## Anatomy
+## 構成
 
 ```tsx
 <Questionnaire.Root>
@@ -53,12 +50,12 @@ native props for its default element.
 </Questionnaire.Root>
 ```
 
-`Root` renders a form. Each `Item` is a fieldset, with `Title` as its legend.
-`ChoiceInput` renders a native radio or checkbox.
+`Root` はフォームを描画します。各 `Item` は `fieldset` で、`Title` がその legend になります。
+`ChoiceInput` はネイティブのラジオボタンまたはチェックボックスを描画します。
 
-## Styled version
+## スタイル付きバージョン
 
-The styled registry component uses flat component names:
+スタイル付きレジストリ コンポーネントでは、フラットなコンポーネント名を使用します。
 
 | Styled component                                                                         | Unstyled part                                                                                |
 | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -71,16 +68,16 @@ The styled registry component uses flat component names:
 | `QuestionnaireChoice`                                                                    | `Questionnaire.Choice` with `ChoiceInput`, `ChoiceLabel`, and `ChoiceShortcut`               |
 | `QuestionnaireInput`                                                                     | `Questionnaire.Input`                                                                        |
 | `QuestionnaireError`                                                                     | `Questionnaire.Error`                                                                        |
-| `QuestionnaireActions`                                                                   | None. Layout only; use your own container.                                                   |
+| `QuestionnaireActions`                                                                   | なし。レイアウト専用です。独自のコンテナを使用してください。                                 |
 | `QuestionnairePrevious`, `QuestionnaireSkip`, `QuestionnaireNext`, `QuestionnaireSubmit` | `Questionnaire.Previous`, `Questionnaire.Skip`, `Questionnaire.Next`, `Questionnaire.Submit` |
 
-The styled `QuestionnaireChoice` composes the input, label, shortcut, and visual
-indicator for you. With the unstyled package, compose those parts yourself.
+スタイル付きの `QuestionnaireChoice` は、入力、ラベル、ショートカット、視覚的インジケーターをまとめて提供します。
+スタイルなしパッケージでは、これらのパーツを自分で構成します。
 
-## Basic usage
+## 基本的な使い方
 
-Each `Item` is one step. Its `name` identifies the step and becomes the form
-field name for its answers. `Choice.value` is the submitted answer.
+各 `Item` は 1 つのステップです。`name` でステップを識別し、回答用フォーム フィールドの名前になります。
+`Choice.value` が送信される回答です。
 
 <ComponentPreview
   align="end"
@@ -188,15 +185,13 @@ export function ProjectQuestionnaire() {
 }
 ```
 
-Pass the same `items` collection to `Root` that you render as `Item` and
-`Choice` parts. This makes item order, progress, action visibility, and answer
-shortcuts available in the server-rendered HTML.
+`Item` と `Choice` パーツとして描画するものと同じ `items` コレクションを `Root` に渡します。
+これにより、項目の順序、進捗、アクションの表示、回答ショートカットをサーバーでレンダリングした HTML から利用できます。
 
-## Multiple selection
+## 複数選択
 
-`multiple` turns an item's fixed choices into native checkboxes. Read the answers with
-`FormData.getAll()`. Keep `multiple` in your application data and pass it to
-the rendered `Item`.
+`multiple` を指定すると、項目の固定選択肢がネイティブのチェックボックスになります。回答は `FormData.getAll()` で読み取ります。
+アプリケーション データに `multiple` を保持し、描画する `Item` に渡してください。
 
 <ComponentPreview
   align="end"
@@ -253,9 +248,9 @@ items.map((question) => (
 const signals = new FormData(form).getAll("signals").map(String)
 ```
 
-## Freeform answers
+## 自由入力の回答
 
-`Input` adds a freeform answer and renders a native text input.
+`Input` は自由入力の回答を追加し、ネイティブのテキスト入力を描画します。
 
 <ComponentPreview
   align="end"
@@ -309,11 +304,10 @@ items.map((question) => (
 ))
 ```
 
-## Explicit skip
+## 明示的なスキップ
 
-`Skip` records that an optional item was intentionally left unanswered. Use
-`onStatusChange` when your application needs to distinguish a skipped answer
-from a missing one.
+`Skip` は、任意項目を意図的に未回答のままにしたことを記録します。アプリケーションでスキップされた回答と
+回答がない状態を区別する必要がある場合は、`onStatusChange` を使います。
 
 <ComponentPreview
   align="end"
@@ -381,11 +375,10 @@ export function PlanningQuestionnaire() {
 }
 ```
 
-## Answer shortcuts
+## 回答ショートカット
 
-Use `shortcuts="letters"` or `shortcuts="numbers"` to assign a key to each
-enabled fixed choice, following the `items` order when it is provided. Compose
-`ChoiceShortcut` wherever its hint should appear.
+`shortcuts="letters"` または `shortcuts="numbers"` を使うと、有効な固定選択肢にキーを割り当てられます。
+`items` が指定されている場合はその順序に従います。ヒントを表示したい場所に `ChoiceShortcut` を配置します。
 
 <ComponentPreview
   align="end"
@@ -415,24 +408,20 @@ enabled fixed choice, following the `items` order when it is provided. Compose
 </Questionnaire.Root>
 ```
 
-`"letters"` assigns `A` through `Z`; `"numbers"` assigns `1` through `9`.
-Disabled choices are skipped. Selecting an answer by shortcut does not advance
-to the next item.
+`"letters"` は `A` から `Z` を、`"numbers"` は `1` から `9` を割り当てます。
+無効な選択肢はスキップされます。ショートカットで回答を選択しても、次の項目には進みません。
 
-## Validation
+## バリデーション
 
-Questionnaire validates the active item before moving forward and validates all
-enabled items when the form submits.
+Questionnaire は先へ進む前にアクティブな項目を検証し、フォーム送信時には有効なすべての項目を検証します。
 
-- A required item is valid after it has an answer.
-- An optional item is valid after it has an answer or is explicitly skipped.
-- Disabled items and answers are ignored.
+- 必須項目は回答されると有効になります。
+- 任意項目は回答されるか、明示的にスキップされると有効になります。
+- 無効な項目と回答は無視されます。
 
-`required` does not add visible “Required” text. Say it in the `Title` or
-`Description`.
+`required` は「必須」という表示テキストを追加しません。必要に応じて `Title` または `Description` に記述してください。
 
-When validation fails, Questionnaire keeps or opens the invalid item and
-focuses an answer. Add `Error` to show a message.
+検証に失敗すると、Questionnaire は無効な項目を表示したままにするか開き、回答へフォーカスします。メッセージを表示するには `Error` を追加します。
 
 ```tsx
 <Questionnaire.Item name="scope" required>
@@ -444,18 +433,16 @@ focuses an answer. Add `Error` to show a message.
 </Questionnaire.Item>
 ```
 
-`Error` remains hidden until the item is invalid. Pass children to replace its
-default message.
+`Error` は項目が無効になるまで非表示です。既定メッセージを置き換えるには children を渡します。
 
 ```tsx
 <Questionnaire.Error>Please choose a project scope.</Questionnaire.Error>
 ```
 
-Validation still works without `Error`. When rendered, the message is announced
-to screen readers.
+`Error` がなくても検証は動作します。描画されると、メッセージはスクリーン リーダーに通知されます。
 
-For Zod or another external validator, set `Item.invalid`, render the message in
-`Error`, and move `Root.item` to the first invalid item.
+Zod などの外部バリデーターを使う場合は、`Item.invalid` を設定し、`Error` にメッセージを描画して、
+`Root.item` を最初の無効な項目へ移動します。
 
 <ComponentPreview
   align="end"
@@ -475,9 +462,9 @@ For Zod or another external validator, set `Item.invalid`, render the message in
 </Questionnaire.Root>
 ```
 
-## Controlled navigation
+## ナビゲーションの制御
 
-Pass `item` and `onItemChange` to control the active item.
+アクティブな項目を制御するには、`item` と `onItemChange` を渡します。
 
 <ComponentPreview
   align="end"
@@ -503,9 +490,9 @@ const [item, setItem] = React.useState("scope")
 </Questionnaire.Root>
 ```
 
-## Resume with defaults
+## 既定値から再開する
 
-Restore a saved draft with `defaultItem`, `defaultChecked`, and `defaultValue`.
+`defaultItem`、`defaultChecked`、`defaultValue` を使って保存済みの下書きを復元します。
 
 <ComponentPreview
   align="end"
@@ -537,10 +524,9 @@ Restore a saved draft with `defaultItem`, `defaultChecked`, and `defaultValue`.
 </Questionnaire.Root>
 ```
 
-## Conditional items
+## 条件付き項目
 
-Set `disabled` to remove an item from the current flow. Disabled items are
-excluded from progress, navigation, validation, and submission.
+`disabled` を設定すると、現在のフローから項目を除外できます。無効な項目は進捗、ナビゲーション、検証、送信から除外されます。
 
 <ComponentPreview
   align="end"
@@ -583,11 +569,10 @@ const [runtime, setRuntime] = React.useState("local")
 </Questionnaire.Root>
 ```
 
-## Navigation state
+## ナビゲーション状態
 
-Navigation actions stay enabled by default so activating Next or Submit can
-show a validation error. Use the render state when you want to disable an
-action yourself.
+ナビゲーション アクションは既定で有効です。そのため、次へまたは送信を実行すると検証エラーを表示できます。
+アクションを自分で無効にしたい場合は、レンダー状態を使います。
 
 <ComponentPreview
   align="end"
@@ -607,8 +592,8 @@ action yourself.
 </Questionnaire.Next>
 ```
 
-The render state contains `visible`, `disabled`, `shortcut`, and the active
-item's `status`. To change only the appearance, target `data-status` instead:
+レンダー状態には `visible`、`disabled`、`shortcut`、アクティブな項目の `status` が含まれます。
+見た目だけを変更する場合は、代わりに `data-status` を対象にします。
 
 ```tsx
 <Questionnaire.Next data-navigation-action>Next</Questionnaire.Next>
@@ -620,10 +605,9 @@ item's `status`. To change only the appearance, target `data-status` instead:
 }
 ```
 
-## Custom progress
+## カスタム進捗
 
-`Progress` renders `Question {current} of {total}` by default. Use `render` to
-change its element or format.
+`Progress` は既定で `Question {current} of {total}` を描画します。要素や形式を変更するには `render` を使います。
 
 <ComponentPreview
   align="end"
@@ -644,12 +628,11 @@ change its element or format.
 />
 ```
 
-The render state contains `current`, `total`, `first`, and `last`. Pass a
-localized `aria-label` when needed.
+レンダー状態には `current`、`total`、`first`、`last` が含まれます。必要に応じてローカライズした `aria-label` を渡してください。
 
-## Animated items
+## アニメーション付き項目
 
-Animate the active item while keeping progress and navigation stationary.
+進捗とナビゲーションを固定したまま、アクティブな項目をアニメーションさせます。
 
 <ComponentPreview
   align="end"
@@ -672,13 +655,12 @@ const itemClassName =
 </Questionnaire.Item>
 ```
 
-Inactive items hide immediately, so animate the entry only.
+非アクティブな項目はすぐに非表示になるため、表示時だけアニメーションさせます。
 
-## Card composition
+## カードとの構成
 
-Place the root around a card and render `Title` and `Description` into the
-card header. Give the title an `id` and connect it with the item's
-`aria-labelledby` since it replaces the default legend.
+カードの周囲にルートを配置し、`Title` と `Description` をカード ヘッダーに描画します。
+既定の legend を置き換えるため、タイトルに `id` を付けて項目の `aria-labelledby` と関連付けます。
 
 <ComponentPreview
   align="end"
@@ -718,10 +700,9 @@ const titleId = React.useId()
 </Questionnaire.Root>
 ```
 
-## Dialog composition
+## ダイアログとの構成
 
-Keep dialog dismissal separate from `Skip`: closing cancels the flow, while
-skipping records an intentional unanswered item.
+ダイアログの終了と `Skip` は分けて扱います。閉じる操作はフローをキャンセルし、スキップは意図的な未回答項目として記録します。
 
 <ComponentPreview
   align="end"
@@ -761,83 +742,72 @@ const titleId = React.useId()
 </Dialog>
 ```
 
-## Custom render targets
+## カスタム描画先
 
-Use `render` to replace a part's default element. Pass an element, or use a
-function when you need its state.
+`render` を使って、パーツの既定要素を置き換えます。要素を渡すか、状態が必要な場合は関数を使います。
 
 ```tsx
 <Questionnaire.Next render={<Button />}>Next</Questionnaire.Next>
 ```
 
-`Root` and `Item` always render a `form` and `fieldset`. If `Title` no longer
-renders a `legend`, give it an `id` and pass that ID to `Item` with
-`aria-labelledby`.
+`Root` と `Item` は常に `form` と `fieldset` を描画します。`Title` が `legend` を描画しなくなる場合は、
+`id` を付け、その ID を `aria-labelledby` で `Item` に渡してください。
 
-The primitive does not emit `data-slot`. Styled wrappers own slots and visual
-indicators.
+プリミティブは `data-slot` を出力しません。スロットと視覚的インジケーターはスタイル付きラッパーが管理します。
 
-## Native forms
+## ネイティブフォーム
 
-`Root` always renders a native form and supports `onSubmit`, `onReset`, `action`,
-and the other form props. Do not nest a Questionnaire inside another form.
+`Root` は常にネイティブ フォームを描画し、`onSubmit`、`onReset`、`action`、その他のフォーム props をサポートします。
+Questionnaire を別のフォームの中にネストしないでください。
 
-Answers serialize through native controls:
+回答はネイティブ コントロールを通じてシリアライズされます。
 
-- `FormData.get(itemName)` reads a single answer.
-- `FormData.getAll(itemName)` reads multiple answers.
-- Skipped items are absent from `FormData`.
-- Use `Item.onStatusChange` to distinguish a skip from a missing answer.
+- `FormData.get(itemName)` は単一の回答を読み取ります。
+- `FormData.getAll(itemName)` は複数の回答を読み取ります。
+- スキップされた項目は `FormData` に含まれません。
+- スキップと未回答を区別するには `Item.onStatusChange` を使います。
 
-`Root` sets `noValidate` by default so validation uses `Questionnaire.Error`
-instead of the browser's constraint validation UI.
+`Root` は既定で `noValidate` を設定するため、ブラウザーの制約検証 UI ではなく `Questionnaire.Error` を使って検証します。
 
-`form.reset()` restores the initial item, default answers, skip state, and
-validation state.
+`form.reset()` は初期項目、既定の回答、スキップ状態、検証状態を復元します。
 
-## Keyboard navigation
+## キーボード操作
 
-Questionnaire builds on native radio, checkbox, input, and button behavior.
+Questionnaire はネイティブのラジオボタン、チェックボックス、入力、ボタンの動作を基盤にしています。
 
-| Key                      | Behavior                                                                                                                        |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| `Tab`                    | Moves focus between answer controls and visible actions.                                                                        |
-| `Shift` + `Tab`          | Moves focus to the previous control or action.                                                                                  |
-| `ArrowUp`                | Moves to the previous answer from the item, a fixed answer, or an empty text-like freeform input. Native radios also select it. |
-| `ArrowDown`              | Moves to the next answer from the item, a fixed answer, or an empty text-like freeform input. Native radios also select it.     |
-| `ArrowLeft`              | Moves to the previous item when focus is outside a radio or text entry control.                                                 |
-| `ArrowRight`             | Moves to the next item when the active item is answered or skipped and focus is outside a radio or text entry control.          |
-| `Space`                  | Selects a radio, toggles a checkbox, or activates a focused action.                                                             |
-| `Enter`                  | Continues from a selected choice or selected, filled input; activates a focused action.                                         |
-| `Command/Ctrl` + `Enter` | Validates and continues from anywhere inside the questionnaire, or submits the final item.                                      |
+| キー                     | 動作                                                                                                                     |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| `Tab`                    | 回答コントロールと表示中のアクション間でフォーカスを移動します。                                                         |
+| `Shift` + `Tab`          | 前のコントロールまたはアクションへフォーカスを移動します。                                                               |
+| `ArrowUp`                | 項目、固定回答、空のテキスト形式の自由入力から前の回答へ移動します。ネイティブ ラジオでは選択も行います。                |
+| `ArrowDown`              | 項目、固定回答、空のテキスト形式の自由入力から次の回答へ移動します。ネイティブ ラジオでは選択も行います。                |
+| `ArrowLeft`              | ラジオやテキスト入力の外側にフォーカスがある場合、前の項目へ移動します。                                                 |
+| `ArrowRight`             | アクティブな項目が回答済みまたはスキップ済みで、ラジオやテキスト入力の外側にフォーカスがある場合、次の項目へ移動します。 |
+| `Space`                  | ラジオを選択、チェックボックスを切り替え、またはフォーカス中のアクションを実行します。                                   |
+| `Enter`                  | 選択済みの選択肢または入力済みの入力から続行し、フォーカス中のアクションを実行します。                                   |
+| `Command/Ctrl` + `Enter` | アンケート内のどこからでも検証して続行するか、最後の項目を送信します。                                                   |
 
-Shortcuts and arrow navigation pause while you type in a text field.
-Preventing the root `onKeyDown` event turns off questionnaire key handling.
+テキスト フィールドへの入力中はショートカットと矢印ナビゲーションが一時停止します。
+ルートの `onKeyDown` イベントを preventDefault すると、アンケートのキー処理が無効になります。
 
-Navigation actions stay enabled by default so an attempted action can reveal
-validation feedback. See [Navigation state](#navigation-state) to disable or
-restyle an unanswered action.
+ナビゲーション アクションは既定で有効なため、操作を試みると検証フィードバックを表示できます。
+未回答のアクションを無効化または再スタイルするには、[ナビゲーション状態](#ナビゲーション状態)を参照してください。
 
-## Accessibility
+## アクセシビリティ
 
-- `Item` renders a `fieldset`.
-- `Title` renders the fieldset `legend` by default. If it uses a custom render
-  target, connect its `id` to the item with `aria-labelledby`.
-- `Description` and the active `Error` are connected with
-  `aria-describedby`.
-- Invalid items and answer controls expose `aria-invalid`.
-- `Progress` renders a named progressbar with current, minimum, maximum, and
-  text values.
-- Fixed choices use native radios and checkboxes.
-- Assigned shortcut keys and available navigation are exposed with
-  `aria-keyshortcuts`.
-- Inactive items and actions are hidden and inert.
-- Navigation focuses the newly active fieldset.
-- Validation focuses the first available answer control.
-- Disabled items are omitted from progress and navigation.
+- `Item` は `fieldset` を描画します。
+- `Title` は既定で fieldset の `legend` を描画します。カスタム描画先を使う場合は、`id` を `aria-labelledby` で項目に関連付けます。
+- `Description` とアクティブな `Error` は `aria-describedby` で関連付けられます。
+- 無効な項目と回答コントロールは `aria-invalid` を公開します。
+- `Progress` は現在値、最小値、最大値、テキスト値を持つ名前付き progressbar を描画します。
+- 固定選択肢にはネイティブのラジオボタンとチェックボックスを使います。
+- 割り当てられたショートカット キーと利用可能なナビゲーションは `aria-keyshortcuts` で公開されます。
+- 非アクティブな項目とアクションは非表示かつ inert です。
+- ナビゲーションでは、新しくアクティブになった fieldset にフォーカスします。
+- 検証では、最初に利用可能な回答コントロールにフォーカスします。
+- 無効な項目は進捗とナビゲーションから除外されます。
 
-Always give `Input` an accessible name. Use an explicit `id` with a visible
-label:
+`Input` には常にアクセシブルな名前を付けます。明示的な `id` と表示ラベルを使います。
 
 ```tsx
 <Label htmlFor="other-answer">Other answer</Label>
@@ -847,7 +817,7 @@ label:
 />
 ```
 
-When the design has no visible label, use `aria-label` or `aria-labelledby`:
+デザイン上表示ラベルがない場合は、`aria-label` または `aria-labelledby` を使います。
 
 ```tsx
 <Questionnaire.Input
@@ -856,101 +826,97 @@ When the design has no visible label, use `aria-label` or `aria-labelledby`:
 />
 ```
 
-A placeholder is not a label.
+プレースホルダーはラベルではありません。
 
-## Data attributes
+## データ属性
 
-Use these attributes for styling. Boolean attributes are present when true and
-absent when false.
+これらの属性をスタイル設定に使います。真偽値属性は true のときに存在し、false のときは存在しません。
 
-### Root and Progress
+### Root と Progress
 
-| Data attribute   | Value                                            |
-| ---------------- | ------------------------------------------------ |
-| `data-current`   | One-based active item position.                  |
-| `data-total`     | Number of enabled items.                         |
-| `data-first`     | Present on the first item.                       |
-| `data-last`      | Present on the last item.                        |
-| `data-shortcuts` | `"letters"` \| `"numbers"` on Root when enabled. |
+| Data attribute   | Value                                                |
+| ---------------- | ---------------------------------------------------- |
+| `data-current`   | アクティブな項目の 1 始まりの位置。                  |
+| `data-total`     | 有効な項目の数。                                     |
+| `data-first`     | 最初の項目に存在します。                             |
+| `data-last`      | 最後の項目に存在します。                             |
+| `data-shortcuts` | Root で有効な場合の `"letters"` または `"numbers"`。 |
 
 ### Item
 
-| Data attribute  | Value                                         |
-| --------------- | --------------------------------------------- |
-| `data-active`   | Present when active.                          |
-| `data-status`   | `"unanswered"` \| `"answered"` \| `"skipped"` |
-| `data-required` | Present when required.                        |
-| `data-multiple` | Present when multiple.                        |
-| `data-disabled` | Present when disabled.                        |
-| `data-invalid`  | Present after failed validation.              |
+| Data attribute  | Value                                                  |
+| --------------- | ------------------------------------------------------ |
+| `data-active`   | アクティブなときに存在します。                         |
+| `data-status`   | `"unanswered"`、`"answered"`、`"skipped"` のいずれか。 |
+| `data-required` | 必須のときに存在します。                               |
+| `data-multiple` | 複数選択のときに存在します。                           |
+| `data-disabled` | 無効なときに存在します。                               |
+| `data-invalid`  | 検証に失敗した後に存在します。                         |
 
 ### Choice
 
-| Data attribute   | Value                             |
-| ---------------- | --------------------------------- |
-| `data-type`      | `"radio"` \| `"checkbox"`         |
-| `data-checked`   | Present when selected.            |
-| `data-unchecked` | Present when not selected.        |
-| `data-disabled`  | Present when disabled.            |
-| `data-invalid`   | Present when its item is invalid. |
-| `data-shortcut`  | Assigned letter or number.        |
+| Data attribute   | Value                              |
+| ---------------- | ---------------------------------- |
+| `data-type`      | `"radio"` または `"checkbox"`。    |
+| `data-checked`   | 選択されているときに存在します。   |
+| `data-unchecked` | 選択されていないときに存在します。 |
+| `data-disabled`  | 無効なときに存在します。           |
+| `data-invalid`   | 項目が無効なときに存在します。     |
+| `data-shortcut`  | 割り当てられた文字または数字。     |
 
 ### Choices
 
-| Data attribute   | Value                                    |
-| ---------------- | ---------------------------------------- |
-| `data-shortcuts` | `"letters"` \| `"numbers"` when enabled. |
+| Data attribute   | Value                                         |
+| ---------------- | --------------------------------------------- |
+| `data-shortcuts` | 有効な場合の `"letters"` または `"numbers"`。 |
 
 ### Input
 
-| Data attribute  | Value                                      |
-| --------------- | ------------------------------------------ |
-| `data-filled`   | Present when the input has non-empty text. |
-| `data-empty`    | Present when the input has no answer text. |
-| `data-disabled` | Present when disabled.                     |
-| `data-invalid`  | Present when its item is invalid.          |
+| Data attribute  | Value                                          |
+| --------------- | ---------------------------------------------- |
+| `data-filled`   | 入力に空でないテキストがあるときに存在します。 |
+| `data-empty`    | 入力に回答テキストがないときに存在します。     |
+| `data-disabled` | 無効なときに存在します。                       |
+| `data-invalid`  | 項目が無効なときに存在します。                 |
 
 ### Error
 
-| Data attribute | Value                              |
-| -------------- | ---------------------------------- |
-| `data-invalid` | Present while the error is active. |
+| Data attribute | Value                                |
+| -------------- | ------------------------------------ |
+| `data-invalid` | エラーがアクティブな間に存在します。 |
 
-### Previous, Skip, Next, and Submit
+### Previous、Skip、Next、Submit
 
-| Data attribute  | Value                                                      |
-| --------------- | ---------------------------------------------------------- |
-| `data-visible`  | Present when the action applies to the active item.        |
-| `data-hidden`   | Present when the action does not apply.                    |
-| `data-disabled` | Present when disabled.                                     |
-| `data-shortcut` | `"Enter"` on an enabled, visible Next or Submit.           |
-| `data-status`   | Active item: `"unanswered"`, `"answered"`, or `"skipped"`. |
+| Data attribute  | Value                                                                 |
+| --------------- | --------------------------------------------------------------------- |
+| `data-visible`  | アクションがアクティブな項目に適用されるときに存在します。            |
+| `data-hidden`   | アクションが適用されないときに存在します。                            |
+| `data-disabled` | 無効なときに存在します。                                              |
+| `data-shortcut` | 有効で表示中の Next または Submit における `"Enter"`。                |
+| `data-status`   | アクティブな項目の `"unanswered"`、`"answered"`、または `"skipped"`。 |
 
-`Title` and `Description` have no state attributes. The headless parts do not
-emit `data-slot`.
+`Title` と `Description` に状態属性はありません。スタイルなしパーツは `data-slot` を出力しません。
 
-## API Reference
+## APIリファレンス
 
 ### Questionnaire.Root
 
-The form and coordination root.
+フォームと調整を担うルートです。
 
-| Prop           | Type                                     | Default            | Description                                                              |
-| -------------- | ---------------------------------------- | ------------------ | ------------------------------------------------------------------------ |
-| `item`         | `string`                                 | -                  | Controlled active item name.                                             |
-| `defaultItem`  | `string`                                 | first enabled item | Initially active item name.                                              |
-| `items`        | `readonly QuestionnaireItemDefinition[]` | -                  | Optional item data for server rendering and item order.                  |
-| `onItemChange` | `(item: string) => void`                 | -                  | Called when navigation requests a different item.                        |
-| `shortcuts`    | `"letters" \| "numbers"`                 | -                  | Assigns scoped answer shortcuts in definition or rendered DOM order.     |
-| `noValidate`   | `boolean`                                | `true`             | Disables native constraint UI while preserving questionnaire validation. |
-| `onSubmit`     | `FormEventHandler<HTMLFormElement>`      | -                  | Native form submission handler after every item validates.               |
-| `onReset`      | `FormEventHandler<HTMLFormElement>`      | -                  | Native reset handler. Prevent default to stop questionnaire reset.       |
+| Prop           | Type                                     | Default            | Description                                                                                   |
+| -------------- | ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------------------- |
+| `item`         | `string`                                 | -                  | アクティブな項目名を制御します。                                                              |
+| `defaultItem`  | `string`                                 | first enabled item | 初期状態でアクティブにする項目名です。                                                        |
+| `items`        | `readonly QuestionnaireItemDefinition[]` | -                  | サーバー レンダリングと項目順序に使う任意の項目データです。                                   |
+| `onItemChange` | `(item: string) => void`                 | -                  | ナビゲーションで別の項目が要求されたときに呼び出します。                                      |
+| `shortcuts`    | `"letters" \| "numbers"`                 | -                  | 定義または描画された DOM の順序で、範囲付きの回答ショートカットを割り当てます。               |
+| `noValidate`   | `boolean`                                | `true`             | アンケートの検証を維持しながら、ネイティブの制約検証 UI を無効にします。                      |
+| `onSubmit`     | `FormEventHandler<HTMLFormElement>`      | -                  | すべての項目の検証後に実行されるネイティブ フォーム送信ハンドラーです。                       |
+| `onReset`      | `FormEventHandler<HTMLFormElement>`      | -                  | ネイティブのリセット ハンドラーです。アンケートのリセットを止めるには preventDefault します。 |
 
-Root exposes `current`, `total`, `first`, `last`, and `shortcuts` through data
-attributes.
+Root は `current`、`total`、`first`、`last`、`shortcuts` をデータ属性で公開します。
 
-The optional collection types are exported from
-`@shadcn/react/questionnaire`:
+任意のコレクション型は `@shadcn/react/questionnaire` からエクスポートされます。
 
 ```ts
 type QuestionnaireChoiceDefinition = {
@@ -968,140 +934,130 @@ type QuestionnaireItemDefinition = {
 
 ### Questionnaire.Progress
 
-Position within the enabled item collection.
+有効な項目コレクション内の位置です。
 
-| Prop         | Type                                             | Default                         | Description                               |
-| ------------ | ------------------------------------------------ | ------------------------------- | ----------------------------------------- |
-| `children`   | `React.ReactNode`                                | `Question {current} of {total}` | Custom progress content.                  |
-| `aria-label` | `string`                                         | `Questionnaire progress`        | Accessible progressbar name.              |
-| `render`     | `ReactElement \| (props, state) => ReactElement` | `<div>`                         | Custom render target with progress state. |
+| Prop         | Type                                             | Default                         | Description                            |
+| ------------ | ------------------------------------------------ | ------------------------------- | -------------------------------------- |
+| `children`   | `React.ReactNode`                                | `Question {current} of {total}` | 進捗コンテンツをカスタマイズします。   |
+| `aria-label` | `string`                                         | `Questionnaire progress`        | progressbar のアクセシブルな名前です。 |
+| `render`     | `ReactElement \| (props, state) => ReactElement` | `<div>`                         | 進捗状態を持つカスタム描画先です。     |
 
-The render state contains `current`, `total`, `first`, and `last`.
+レンダー状態には `current`、`total`、`first`、`last` が含まれます。
 
 ### Questionnaire.Item
 
-One questionnaire step.
+アンケートの 1 つのステップです。
 
-| Prop             | Type                                        | Default  | Description                                                     |
-| ---------------- | ------------------------------------------- | -------- | --------------------------------------------------------------- |
-| `name`           | `string`                                    | required | Unique item identifier and native form field name.              |
-| `invalid`        | `boolean`                                   | `false`  | Marks the item invalid from an external validator.              |
-| `required`       | `boolean`                                   | `false`  | Requires an answer and prevents Skip.                           |
-| `multiple`       | `boolean`                                   | `false`  | Renders fixed choices as checkboxes.                            |
-| `disabled`       | `boolean`                                   | `false`  | Omits the item from progress and navigation.                    |
-| `onStatusChange` | `(status: QuestionnaireItemStatus) => void` | -        | Observes `"unanswered"`, `"answered"`, and `"skipped"` changes. |
+| Prop             | Type                                        | Default  | Description                                                    |
+| ---------------- | ------------------------------------------- | -------- | -------------------------------------------------------------- |
+| `name`           | `string`                                    | required | 一意な項目識別子であり、ネイティブ フォーム フィールド名です。 |
+| `invalid`        | `boolean`                                   | `false`  | 外部バリデーターによって項目を無効としてマークします。         |
+| `required`       | `boolean`                                   | `false`  | 回答を必須にし、Skip を無効にします。                          |
+| `multiple`       | `boolean`                                   | `false`  | 固定選択肢をチェックボックスとして描画します。                 |
+| `disabled`       | `boolean`                                   | `false`  | 項目を進捗とナビゲーションから除外します。                     |
+| `onStatusChange` | `(status: QuestionnaireItemStatus) => void` | -        | `"unanswered"`、`"answered"`、`"skipped"` の変化を監視します。 |
 
-Item exposes `active`, `disabled`, `invalid`, `multiple`, `required`, and
-`status` through data attributes.
+Item は `active`、`disabled`、`invalid`、`multiple`、`required`、`status` をデータ属性で公開します。
 
-Item names must be unique within a Root. The name belongs to the answer
-controls, not the fieldset.
+Item 名は Root 内で一意でなければなりません。名前は fieldset ではなく回答コントロールに属します。
 
 ### Questionnaire.Title
 
-The item title. Renders a semantic `legend` by default.
+項目のタイトルです。既定ではセマンティックな `legend` を描画します。
 
-| Prop     | Type                              | Default    | Description                                                            |
-| -------- | --------------------------------- | ---------- | ---------------------------------------------------------------------- |
-| `render` | `ReactElement \| render function` | `<legend>` | Custom render target. Pair its `id` with the item’s `aria-labelledby`. |
+| Prop     | Type                              | Default    | Description                                                                 |
+| -------- | --------------------------------- | ---------- | --------------------------------------------------------------------------- |
+| `render` | `ReactElement \| render function` | `<legend>` | カスタム描画先です。その `id` を項目の `aria-labelledby` と組み合わせます。 |
 
 ### Questionnaire.Description
 
-Supporting text connected to the item with `aria-describedby`.
+`aria-describedby` で項目に関連付ける補足テキストです。
 
-| Prop     | Type                              | Default | Description           |
-| -------- | --------------------------------- | ------- | --------------------- |
-| `render` | `ReactElement \| render function` | `<p>`   | Custom render target. |
+| Prop     | Type                              | Default | Description          |
+| -------- | --------------------------------- | ------- | -------------------- |
+| `render` | `ReactElement \| render function` | `<p>`   | カスタム描画先です。 |
 
 ### Questionnaire.Choices
 
-A layout container for fixed and freeform answers.
+固定回答と自由入力回答のレイアウト コンテナです。
 
-| Prop     | Type                              | Default | Description           |
-| -------- | --------------------------------- | ------- | --------------------- |
-| `render` | `ReactElement \| render function` | `<div>` | Custom render target. |
+| Prop     | Type                              | Default | Description          |
+| -------- | --------------------------------- | ------- | -------------------- |
+| `render` | `ReactElement \| render function` | `<div>` | カスタム描画先です。 |
 
-The render state contains `shortcuts`.
+レンダー状態には `shortcuts` が含まれます。
 
 ### Questionnaire.Choice
 
-A fixed-answer container. Compose one `ChoiceInput`, one `ChoiceLabel`, and an
-optional `ChoiceShortcut` inside it. The default `<label>` keeps the whole row
-associated with its native control.
+固定回答のコンテナです。中に `ChoiceInput`、`ChoiceLabel`、必要に応じて `ChoiceShortcut` を 1 つずつ配置します。
+既定の `<label>` により、行全体がネイティブ コントロールに関連付けられます。
 
-| Prop             | Type                                             | Default   | Description                             |
-| ---------------- | ------------------------------------------------ | --------- | --------------------------------------- |
-| `value`          | `string`                                         | required  | Native answer value.                    |
-| `checked`        | `boolean`                                        | -         | Controlled checked state.               |
-| `defaultChecked` | `boolean`                                        | `false`   | Initial checked state.                  |
-| `disabled`       | `boolean`                                        | `false`   | Disables the native answer control.     |
-| `onChange`       | `ChangeEventHandler<HTMLInputElement>`           | -         | Native input change handler.            |
-| `render`         | `ReactElement \| (props, state) => ReactElement` | `<label>` | Custom render target with choice state. |
+| Prop             | Type                                             | Default   | Description                                |
+| ---------------- | ------------------------------------------------ | --------- | ------------------------------------------ |
+| `value`          | `string`                                         | required  | ネイティブ回答値です。                     |
+| `checked`        | `boolean`                                        | -         | 選択状態を制御します。                     |
+| `defaultChecked` | `boolean`                                        | `false`   | 初期選択状態です。                         |
+| `disabled`       | `boolean`                                        | `false`   | ネイティブ回答コントロールを無効にします。 |
+| `onChange`       | `ChangeEventHandler<HTMLInputElement>`           | -         | ネイティブ入力の変更ハンドラーです。       |
+| `render`         | `ReactElement \| (props, state) => ReactElement` | `<label>` | 選択状態を持つカスタム描画先です。         |
 
-The render state contains `checked`, `disabled`, `invalid`, `shortcut`, and
-`type`.
+レンダー状態には `checked`、`disabled`、`invalid`、`shortcut`、`type` が含まれます。
 
 ### Questionnaire.ChoiceInput
 
-The native radio or checkbox for its containing `Choice`. Questionnaire supplies
-the props needed for selection, form submission, validation, and keyboard
-interaction. It also accepts `className`, `id`, `ref`, `render`, and other
-non-conflicting native input props.
+所属する `Choice` のネイティブ ラジオボタンまたはチェックボックスです。Questionnaire が選択、フォーム送信、検証、
+キーボード操作に必要な props を提供します。`className`、`id`、`ref`、`render`、その他競合しないネイティブ入力 props も受け取ります。
 
-`ChoiceInput` must be used inside `Choice`. Its render state matches `Choice`.
+`ChoiceInput` は `Choice` の内部で使う必要があります。レンダー状態は `Choice` と同じです。
 
 ### Questionnaire.ChoiceLabel
 
-The visible label content for a fixed choice. It renders a `<span>` inside the
-`Choice` label and accepts native span props and `render`.
+固定選択肢の表示ラベル コンテンツです。`Choice` のラベル内に `<span>` を描画し、ネイティブ span props と `render` を受け取ります。
 
 ### Questionnaire.ChoiceShortcut
 
-The visible shortcut for a fixed choice. It renders a `<span>` containing the
-assigned letter or number and remains hidden when the choice has no shortcut.
-It accepts native span props and `render`; its render state contains `shortcut`.
+固定選択肢の表示ショートカットです。割り当てられた文字または数字を含む `<span>` を描画し、選択肢にショートカットがない場合は非表示のままです。
+ネイティブ span props と `render` を受け取り、レンダー状態には `shortcut` が含まれます。
 
 ### Questionnaire.Input
 
-A freeform answer. Its native `name` is managed by the containing item.
+自由入力の回答です。ネイティブの `name` は所属する項目が管理します。
 
-| Prop           | Type                                             | Default   | Description                                                   |
-| -------------- | ------------------------------------------------ | --------- | ------------------------------------------------------------- |
-| `value`        | `string \| number \| readonly string[]`          | -         | Controlled native input value.                                |
-| `defaultValue` | `string \| number \| readonly string[]`          | -         | Initial native input value.                                   |
-| `disabled`     | `boolean`                                        | `false`   | Disables the input.                                           |
-| `onChange`     | `ChangeEventHandler<HTMLInputElement>`           | -         | Native input change handler.                                  |
-| `type`         | `QuestionnaireInputType`                         | `"text"`  | A text-entry type such as `"email"`, `"number"`, or `"date"`. |
-| `render`       | `ReactElement \| (props, state) => ReactElement` | `<input>` | Custom render target with input state.                        |
+| Prop           | Type                                             | Default   | Description                                                |
+| -------------- | ------------------------------------------------ | --------- | ---------------------------------------------------------- |
+| `value`        | `string \| number \| readonly string[]`          | -         | ネイティブ入力値を制御します。                             |
+| `defaultValue` | `string \| number \| readonly string[]`          | -         | 初期ネイティブ入力値です。                                 |
+| `disabled`     | `boolean`                                        | `false`   | 入力を無効にします。                                       |
+| `onChange`     | `ChangeEventHandler<HTMLInputElement>`           | -         | ネイティブ入力の変更ハンドラーです。                       |
+| `type`         | `QuestionnaireInputType`                         | `"text"`  | `"email"`、`"number"`、`"date"` などのテキスト入力型です。 |
+| `render`       | `ReactElement \| (props, state) => ReactElement` | `<input>` | 入力状態を持つカスタム描画先です。                         |
 
-The render state contains `disabled`, `filled`, and `invalid`.
+レンダー状態には `disabled`、`filled`、`invalid` が含まれます。
 
 ### Questionnaire.Error
 
-The validation message. It is hidden until its item fails validation.
+検証メッセージです。項目の検証に失敗するまで非表示です。
 
-| Prop       | Type                                             | Default            | Description                              |
-| ---------- | ------------------------------------------------ | ------------------ | ---------------------------------------- |
-| `children` | `React.ReactNode`                                | contextual message | Custom validation message.               |
-| `render`   | `ReactElement \| (props, state) => ReactElement` | `<p>`              | Custom render target with invalid state. |
+| Prop       | Type                                             | Default            | Description                        |
+| ---------- | ------------------------------------------------ | ------------------ | ---------------------------------- |
+| `children` | `React.ReactNode`                                | contextual message | カスタム検証メッセージです。       |
+| `render`   | `ReactElement \| (props, state) => ReactElement` | `<p>`              | 無効状態を持つカスタム描画先です。 |
 
-### Navigation actions
+### ナビゲーション アクション
 
-`Previous`, `Skip`, `Next`, and `Submit` render native buttons and stay mounted
-while their visibility changes.
+`Previous`、`Skip`、`Next`、`Submit` はネイティブ ボタンを描画し、表示状態が変わってもマウントされたままです。
 
-| Part       | Default type | Visible when             | Disabled when             |
-| ---------- | ------------ | ------------------------ | ------------------------- |
-| `Previous` | `"button"`   | Not on the first item.   | Consumer sets `disabled`. |
-| `Skip`     | `"button"`   | Active item is optional. | Consumer sets `disabled`. |
-| `Next`     | `"button"`   | Not on the last item.    | Consumer sets `disabled`. |
-| `Submit`   | `"submit"`   | On the last item.        | Consumer sets `disabled`. |
+| Part       | Default type | Visible when                   | Disabled when                      |
+| ---------- | ------------ | ------------------------------ | ---------------------------------- |
+| `Previous` | `"button"`   | 最初の項目ではないとき。       | 利用側が `disabled` を設定します。 |
+| `Skip`     | `"button"`   | アクティブな項目が任意のとき。 | 利用側が `disabled` を設定します。 |
+| `Next`     | `"button"`   | 最後の項目ではないとき。       | 利用側が `disabled` を設定します。 |
+| `Submit`   | `"submit"`   | 最後の項目のとき。             | 利用側が `disabled` を設定します。 |
 
-Each accepts native button props and:
+各パーツはネイティブ ボタン props と次の props を受け取ります。
 
-| Prop     | Type                                             | Description                                 |
-| -------- | ------------------------------------------------ | ------------------------------------------- |
-| `render` | `ReactElement \| (props, state) => ReactElement` | Custom render target with navigation state. |
+| Prop     | Type                                             | Description                                  |
+| -------- | ------------------------------------------------ | -------------------------------------------- |
+| `render` | `ReactElement \| (props, state) => ReactElement` | ナビゲーション状態を持つカスタム描画先です。 |
 
-The render state contains `visible`, `disabled`, `shortcut`, and the active
-item's `status`.
+レンダー状態には `visible`、`disabled`、`shortcut`、アクティブな項目の `status` が含まれます。

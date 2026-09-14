@@ -1,6 +1,6 @@
 ---
-title: Context Menu
-description: Displays a menu of actions triggered by a right click.
+title: コンテキスト メニュー
+description: 右クリックによってトリガーされるアクションのメニューを表示します。
 base: aria
 component: true
 links:
@@ -11,16 +11,16 @@ links:
 <ComponentPreview
   styleName="aria-nova"
   name="context-menu-demo"
-  description="A context menu with sub menu items."
+  description="サブメニュー項目を含むコンテキスト メニュー。"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add context-menu
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="context-menu"
@@ -48,7 +48,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { Pressable } from "react-aria-components"
@@ -82,9 +82,9 @@ import {
 </ContextMenuTrigger>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `ContextMenu`:
+次の構成を使用して `ContextMenu` を作成します。
 
 ```text
 ContextMenuTrigger
@@ -107,63 +107,63 @@ ContextMenuTrigger
                 └── ContextMenuItem
 ```
 
-## Basic
+## 基本
 
-A simple context menu with a few actions.
+いくつかのアクションを備えたシンプルなコンテキスト メニュー。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-basic" />
 
-## Submenu
+## サブメニュー
 
-Use `ContextMenuSub` to nest secondary actions.
+二次アクションをネストするには `ContextMenuSub` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-submenu" />
 
-## Shortcuts
+## ショートカット
 
-Add `ContextMenuShortcut` to show keyboard hints.
+キーボード ヒントを表示するには、`ContextMenuShortcut` を追加します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-shortcuts" />
 
-## Groups
+## グループ
 
-Group related actions and separate them with dividers.
+関連するアクションをグループ化し、区切り線で区切ります。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-groups" />
 
-## Icons
+## アイコン
 
-Combine icons with labels for quick scanning.
+アイコンとラベルを組み合わせて、すばやくスキャンします。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-icons" />
 
-## Checkboxes
+## チェックボックス
 
-Use `selectionMode="multiple"` for toggles.
+切り替えには `selectionMode="multiple"` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-checkboxes" />
 
-## Radio
+## ラジオ
 
-Use `selectionMode="single"` for exclusive choices.
+排他的な選択には `selectionMode="single"` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-radio" />
 
-## Destructive
+## 破壊的
 
-Use `variant="destructive"` to style the menu item as destructive.
+`variant="destructive"` を使用して、メニュー項目を破壊的なスタイルに設定します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-destructive" />
 
-## Placement
+## 配置
 
-Control submenu placement with the `placement` prop.
+`placement` プロパティを使用してサブメニューの配置を制御します。
 
 <ComponentPreview styleName="aria-nova" name="context-menu-sides" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -171,7 +171,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-Use `placement="end"` to place the menu on the logical end side of the trigger.
+`placement="end"` を使用して、トリガの論理終了側にメニューを配置します。
 
 ```tsx showLineNumbers
 <ContextMenuTrigger>
@@ -187,6 +187,6 @@ Use `placement="end"` to place the menu on the logical end side of the trigger.
 </ContextMenuTrigger>
 ```
 
-## API Reference
+## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/Menu#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/Menu#api) ドキュメントを参照してください。

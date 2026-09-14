@@ -1,9 +1,9 @@
 ---
 title: React Router
-description: Install and configure shadcn/ui for React Router.
+description: React Router 用に shadcn/ui をインストールして構成します。
 ---
 
-Choose the setup that matches your starting point.
+開始点と一致するセットアップを選択します。
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
@@ -12,7 +12,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset and generate a React Router project.
+      を使用する プリセットを構築し、React Router プロジェクトを生成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -21,7 +21,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Scaffold a new React Router project directly from the terminal.
+      新しい React Router プロジェクトをターミナルから直接スキャフォールディングします。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -30,19 +30,19 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Existing Project</div>
     <div className="leading-relaxed text-muted-foreground">
-      Configure shadcn/ui manually in an existing React Router project.
+      既存の React Router プロジェクトで shadcn/ui を手動で構成します。
     </div>
   </LinkedCard>
 </div>
 
 <div id="scaffold-with-create" className="scroll-mt-24" />
-## Use shadcn/create
+## shadcn/create
 
 <Steps>
 
-### Build Your Preset
+### プリセットのビルド
 
-Open [shadcn/create](/create?template=react-router) and build your preset visually. Choose your style, colors, fonts, icons, and more.
+[shadcn/create](/create?template=react-router) を開いて、プリセットを視覚的に構築します。スタイル、色、フォント、アイコンなどを選択します。
 
 <Button asChild size="sm">
   <Link
@@ -51,25 +51,25 @@ Open [shadcn/create](/create?template=react-router) and build your preset visual
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    を使用します shadcn/create
   </Link>
 </Button>
 
-### Create Project
+### プロジェクトの作成
 
-Click `Create Project`, choose your package manager, and copy the generated command.
+`Create Project` をクリックし、パッケージ マネージャーを選択し、生成されたコマンドをコピーします。
 
-The generated command will look similar to this:
+生成されるコマンドは次のようになります。
 
 ```bash
 npx shadcn@latest init --preset [CODE] --template react-router
 ```
 
-The exact command will include your selected options such as `--base`, `--monorepo`, or `--rtl`.
+正確なコマンドには、`--base`、`--monorepo`、`--rtl` などの選択したオプションが含まれます。
 
-### Add Components
+### コンポーネントの追加
 
-Add the `Card` component to your project:
+`Card` コンポーネントをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add card
@@ -81,7 +81,7 @@ If you created a monorepo, run the command from `apps/web` or specify the worksp
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上記のコマンドは、`Card` コンポーネントをプロジェクトに追加します。次に、次のようにインポートできます:
 
 ```tsx showLineNumbers title="app/routes/home.tsx"
 import {
@@ -114,27 +114,27 @@ If you created a monorepo, update `apps/web/app/routes/home.tsx` and import from
 </Steps>
 
 <div id="scaffold-with-cli" className="scroll-mt-24" />
-## Use the CLI
+## CLI
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
-Run the `init` command to scaffold a new React Router project. Follow the prompts to configure your project: base, preset, monorepo, and more.
+を開きます `init` コマンドを実行して、新しい React Router プロジェクトをスキャフォールディングします。プロンプトに従って、ベース、プリセット、モノリポジトリなどのプロジェクトを構成します。
 
 ```bash
 npx shadcn@latest init -t react-router
 ```
 
-**For a monorepo project, use `--monorepo` flag:**
+**モノリポ プロジェクトの場合は、`--monorepo` フラグを使用します。**
 
 ```bash
 npx shadcn@latest init -t react-router --monorepo
 ```
 
-### Add Components
+### コンポーネントの追加
 
-Add the `Card` component to your project:
+`Card` コンポーネントをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add card
@@ -146,7 +146,7 @@ If you created a monorepo, run the command from `apps/web` or specify the worksp
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上記のコマンドは、`Card` コンポーネントをプロジェクトに追加します。次に、次のようにインポートできます:
 
 ```tsx showLineNumbers title="app/routes/home.tsx"
 import {
@@ -183,7 +183,7 @@ If you created a monorepo, update `apps/web/app/routes/home.tsx` and import from
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
 If you need a new React Router project, create one first. Otherwise, skip this step.
 
@@ -191,25 +191,25 @@ If you need a new React Router project, create one first. Otherwise, skip this s
 npm create react-router@latest
 ```
 
-`create-react-router` already configures Tailwind CSS and the default `~/*` import alias for you. If you're adding shadcn/ui to an older or custom React Router app, make sure both are configured before continuing.
+`create-react-router` はすでに Tailwind CSS とデフォルトの `~/*` インポート エイリアスを構成しています。 shadcn/ui を古いまたはカスタム React Router アプリに追加する場合は、続行する前に両方が構成されていることを確認してください。
 
-### Run the CLI
+### CLI を実行します
 
-Run the `shadcn` init command to set up shadcn/ui in your project.
+`shadcn` init コマンドを実行して、プロジェクトに shadcn/ui をセットアップします。
 
 ```bash
 npx shadcn@latest init
 ```
 
-### Add Components
+### コンポーネントの追加
 
-You can now start adding components to your project.
+これで、プロジェクトへのコンポーネントの追加を開始できます。
 
 ```bash
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+上記のコマンドは、`Button` コンポーネントをプロジェクトに追加します。次に、次のようにインポートできます:
 
 ```tsx showLineNumbers title="app/routes/home.tsx"
 import { Button } from "~/components/ui/button"

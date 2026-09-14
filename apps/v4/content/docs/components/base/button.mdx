@@ -1,6 +1,6 @@
 ---
 title: Button
-description: Displays a button or a component that looks like a button.
+description: ボタンまたはボタンに似たコンポーネントを表示します。
 featured: true
 base: base
 component: true
@@ -8,13 +8,13 @@ component: true
 
 <ComponentPreview styleName="base-nova" name="button-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -28,13 +28,13 @@ npx shadcn@latest add button
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="button"
@@ -42,7 +42,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -50,7 +50,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Button } from "@/components/ui/button"
@@ -60,7 +60,7 @@ import { Button } from "@/components/ui/button"
 <Button variant="outline">Button</Button>
 ```
 
-## Cursor
+## カーソル
 
 Tailwind v4 [switched](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor) from `cursor: pointer` to `cursor: default` for the button component.
 
@@ -77,65 +77,65 @@ You can also enable this during project setup with `npx shadcn@latest init --poi
 }
 ```
 
-## Size
+## サイズ
 
-Use the `size` prop to change the size of the button.
+ボタンのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview styleName="base-nova" name="button-size" />
 
-## Default
+## デフォルト
 
 <ComponentPreview styleName="base-nova" name="button-default" />
 
-## Outline
+## アウトライン
 
 <ComponentPreview styleName="base-nova" name="button-outline" />
 
-## Secondary
+## セカンダリ
 
 <ComponentPreview styleName="base-nova" name="button-secondary" />
 
-## Ghost
+## ゴースト
 
 <ComponentPreview styleName="base-nova" name="button-ghost" />
 
-## Destructive
+## 破壊的
 
 <ComponentPreview styleName="base-nova" name="button-destructive" />
 
-## Link
+## リンク
 
 <ComponentPreview styleName="base-nova" name="button-link" />
 
-## Icon
+## アイコン
 
 <ComponentPreview styleName="base-nova" name="button-icon" />
 
-## With Icon
+## アイコン付き
 
-Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the icon for the correct spacing.
+正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をアイコンに追加してください。
 
 <ComponentPreview styleName="base-nova" name="button-with-icon" />
 
-## Rounded
+## 丸み
 
-Use the `rounded-full` class to make the button rounded.
+`rounded-full` クラスを使用してボタンを丸くします。
 
 <ComponentPreview styleName="base-nova" name="button-rounded" />
 
-## Spinner
+## スピナー
 
-Render a `<Spinner />` component inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.
+ボタン内に `<Spinner />` コンポーネントをレンダリングして、読み込み状態を表示します。正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をスピナーに追加してください。
 
 <ComponentPreview styleName="base-nova" name="button-spinner" />
 
-## Button Group
+## ボタングループ
 
 To create a button group, use the `ButtonGroup` component. See the [Button Group](/docs/components/base/button-group) documentation for more details.
 
 <ComponentPreview styleName="base-nova" name="button-group-demo" />
 
-## As Link
+## リンクとして
 
 You can use the `buttonVariants` helper to make a link look like a button.
 
@@ -145,17 +145,17 @@ You can use the `buttonVariants` helper to make a link look like a button.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="base-nova" name="button-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 ### Button
 
 The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
 
-| Prop      | Type                                                                                 | Default     |
+|小道具 |タイプ |デフォルト |
 | --------- | ------------------------------------------------------------------------------------ | ----------- |
 | `variant` | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"`        | `"default"` |
-| `size`    | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` |
+| `size` | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` |

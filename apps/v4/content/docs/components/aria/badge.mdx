@@ -1,19 +1,19 @@
 ---
-title: Badge
-description: Displays a badge or a component that looks like a badge.
+title: バッジ
+description: バッジまたはバッジに似たコンポーネントを表示します。
 base: aria
 component: true
 ---
 
 <ComponentPreview styleName="aria-nova" name="badge-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,7 +27,7 @@ npx shadcn@latest add badge
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="badge"
@@ -35,7 +35,7 @@ npx shadcn@latest add badge
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add badge
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Badge } from "@/components/ui/badge"
@@ -53,49 +53,49 @@ import { Badge } from "@/components/ui/badge"
 <Badge variant="default | outline | secondary | destructive">Badge</Badge>
 ```
 
-## Variants
+## バリアント
 
-Use the `variant` prop to change the variant of the badge.
+`variant` プロップを使用して、バッジのバリアントを変更します。
 
 <ComponentPreview styleName="aria-nova" name="badge-variants" />
 
-## With Icon
+## アイコン付き
 
-You can render an icon inside the badge. Use `data-icon="inline-start"` to render the icon on the left and `data-icon="inline-end"` to render the icon on the right.
+バッジ内にアイコンをレンダリングできます。左側のアイコンをレンダリングするには `data-icon="inline-start"` を使用し、右側のアイコンをレンダリングするには `data-icon="inline-end"` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="badge-icon" />
 
-## With Spinner
+## スピナー付き
 
-You can render a spinner inside the badge. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` prop to the spinner.
+バッジ内にスピナーをレンダリングできます。 `data-icon="inline-start"` または `data-icon="inline-end"` プロップをスピナーに忘れずに追加してください。
 
 <ComponentPreview styleName="aria-nova" name="badge-spinner" />
 
-## Link
+## リンク
 
-Use the `render` prop to render a link as a badge.
+リンクをバッジとしてレンダリングするには、`render` プロップを使用します。
 
 <ComponentPreview styleName="aria-nova" name="badge-link" />
 
-## Custom Colors
+## カスタムカラー
 
-You can customize the colors of a badge by adding custom classes such as `bg-green-50 dark:bg-green-800` to the `Badge` component.
+`bg-green-50 dark:bg-green-800` などのカスタム クラスを `Badge` コンポーネントに追加することで、バッジの色をカスタマイズできます。
 
 <ComponentPreview styleName="aria-nova" name="badge-colors" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="badge-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-### Badge
+### バッジ
 
-The `Badge` component displays a badge or a component that looks like a badge.
+`Badge` コンポーネントは、バッジまたはバッジのように見えるコンポーネントを表示します。
 
-| Prop        | Type                                                                          | Default     |
+|小道具 |タイプ |デフォルト |
 | ----------- | ----------------------------------------------------------------------------- | ----------- |
-| `variant`   | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` |
-| `className` | `string`                                                                      | -           |
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` |
+| `className` | `string` | - |

@@ -1,6 +1,6 @@
 ---
-title: Tooltip
-description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+title: ツールチップ
+description: 要素がキーボード フォーカスを受けるか、マウス ホバーされたときに関連情報を表示するポップアップ。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="tooltip-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -52,13 +52,13 @@ export default function RootLayout({ children }) {
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="tooltip"
@@ -66,7 +66,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 <Step>Add the `TooltipProvider` to the root of your app.</Step>
 
@@ -90,7 +90,7 @@ export default function RootLayout({ children }) {
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -109,7 +109,7 @@ import {
 </Tooltip>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Tooltip`:
 
@@ -119,7 +119,7 @@ Tooltip
 └── TooltipContent
 ```
 
-## Side
+## サイド
 
 Use the `side` prop to change the position of the tooltip.
 
@@ -137,10 +137,10 @@ Show a tooltip on a disabled button by wrapping it with a span.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="tooltip-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
 See the [Radix Tooltip](https://www.radix-ui.com/docs/primitives/components/tooltip#api-reference) documentation.

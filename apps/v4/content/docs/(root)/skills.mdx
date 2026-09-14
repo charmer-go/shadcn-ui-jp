@@ -1,71 +1,71 @@
 ---
-title: Skills
-description: Give your AI assistant deep knowledge of shadcn/ui components, patterns, and best practices.
+title: スキル
+description: AI アシスタントに shadcn/ui コンポーネント、パターン、ベスト プラクティスに関する深い知識を与えます。
 ---
 
-Skills give AI assistants like Claude Code project-aware context about shadcn/ui. When installed, your AI assistant knows how to find, install, compose, and customize components using the correct APIs and patterns for your project.
+スキルは、Claude Code のような AI アシスタントに shadcn/ui に関するプロジェクト認識コンテキストを提供します。インストールすると、AI アシスタントは、プロジェクトに適切な API とパターンを使用してコンポーネントを検索、インストール、構成、カスタマイズする方法を認識します。
 
-For example, you can ask your AI assistant to:
+たとえば、AI アシスタントに次のことを依頼できます。
 
-- _"Add a login form with email and password fields."_
-- _"Create a settings page with a form for updating profile information."_
-- _"Build a dashboard with a sidebar, stats cards, and a data table."_
-- _"Switch to --preset [CODE]"_
-- _"Can you add a hero from @tailark?"_
+- _「電子メールとパスワードのフィールドを含むログイン フォームを追加します。」_
+- _「プロフィール情報を更新するためのフォームを含む設定ページを作成します。」_
+- _「サイドバー、統計カード、データ テーブルを備えたダッシュボードを構築します。」_
+- _「--preset [コード]に切り替える」_
+- _「@tailark からヒーローを追加できますか?」_
 
-The skill reads your project's `components.json` and provides the assistant with your framework, aliases, installed components, icon library, and base library so it can generate correct code on the first try.
+スキルはプロジェクトの `components.json` を読み取り、フレームワーク、エイリアス、インストールされているコンポーネント、アイコン ライブラリ、およびベース ライブラリをアシスタントに提供するため、最初の試行で正しいコードを生成できます。
 
 ---
 
-## Install
+## インストール
 
 ```bash
 npx skills add shadcn/ui
 ```
 
-This installs the shadcn skill into your project. Once installed, your AI assistant automatically loads it when working with shadcn/ui components.
+これにより、shadcn スキルがプロジェクトにインストールされます。インストールされると、AI アシスタントは shadcn/ui コンポーネントを操作するときに自動的にロードされます。
 
-Learn more about skills at [skills.sh](https://skills.sh).
-
----
-
-## What's Included
-
-The skill provides your AI assistant with the following knowledge:
-
-### Project Context
-
-On every interaction, the skill runs `shadcn info --json` to get your project's configuration: framework, Tailwind version, aliases, base library (`base`, `radix`, or `aria`), icon library, installed components, and resolved file paths.
-
-### CLI Commands
-
-Full reference for all CLI commands: `init`, `add`, `search`, `view`, `docs`, `diff`, `info`, and `build`. Includes flags, dry-run mode, smart merge workflows, presets, and templates.
-
-### Theming and Customization
-
-How CSS variables, OKLCH colors, dark mode, custom colors, border radius, and component variants work. Includes guidance for both Tailwind v3 and v4.
-
-### Registry Authoring
-
-How to build and publish custom component registries: `registry.json` format, item types, file objects, dependencies, CSS variables, building, hosting, and user configuration.
-
-### MCP Server
-
-Setup and tools for the shadcn MCP server, which lets AI assistants search, browse, and install components from registries.
+スキルの詳細については、[skills.sh](https://skills.sh) をご覧ください。
 
 ---
 
-## How It Works
+## 含まれるもの
 
-1. **Project detection** — The skill activates when it finds a `components.json` file in your project.
-2. **Context injection** — It runs `shadcn info --json` to read your project configuration and injects the result into the assistant's context.
-3. **Pattern enforcement** — The assistant follows shadcn/ui composition rules: using `FieldGroup` for forms, `ToggleGroup` for option sets, semantic colors, and correct base-specific APIs.
-4. **Component discovery** — The assistant uses `shadcn docs`, `shadcn search`, or MCP tools to find components and their documentation before generating code.
+このスキルは、AI アシスタントに次の知識を提供します。
 
-## Learn More
+### プロジェクトのコンテキスト
 
-- [CLI](/docs/cli) — Full CLI command reference
-- [MCP Server](/docs/mcp) — Connect the MCP server for registry access
-- [Theming](/docs/theming) — CSS variables and customization
-- [Registry](/docs/registry) — Building and publishing custom registries
-- [skills.sh](https://skills.sh) — Learn more about AI skills
+インタラクションごとに、スキルは `shadcn info --json` を実行して、プロジェクトの構成 (フレームワーク、Tailwind バージョン、エイリアス、ベース ライブラリ (`base`、`radix`、または `aria`)、アイコン ライブラリ、インストールされているコンポーネント、解決されたファイル パス) を取得します。
+
+### CLI コマンド
+
+すべての CLI コマンドの完全なリファレンス: `init`、`add`、`search`、`view`、`docs`、`diff`、`info`、および `build`。フラグ、ドライラン モード、スマート マージ ワークフロー、プリセット、テンプレートが含まれます。
+
+### テーマとカスタマイズ
+
+CSS 変数、OKLCH カラー、ダーク モード、カスタム カラー、境界線の半径、およびコンポーネントのバリアントがどのように機能するか。 Tailwind v3 と v4 の両方のガイダンスが含まれています。
+
+### レジストリのオーサリング
+
+カスタム コンポーネント レジストリを構築および公開する方法: `registry.json` 形式、項目タイプ、ファイル オブジェクト、依存関係、CSS 変数、構築、ホスティング、およびユーザー構成。
+
+### MCP サーバー
+
+AI アシスタントがレジストリからコンポーネントを検索、参照、インストールできるようにする shadcn MCP サーバーのセットアップとツール。
+
+---
+
+## 仕組み
+
+1. **プロジェクト検出** — プロジェクト内で `components.json` ファイルが見つかると、スキルがアクティブになります。
+2. **コンテキスト挿入** — `shadcn info --json` を実行してプロジェクト構成を読み取り、結果をアシスタントのコンテキストに挿入します。
+3. **パターンの強制** — アシスタントは shadcn/ui 構成ルールに従います。フォームには `FieldGroup`、オプション セットには `ToggleGroup`、セマンティック カラー、および正しいベース固有 API を使用します。
+4. **コンポーネントの検出** — アシスタントは、`shadcn docs`、`shadcn search`、または MCP ツールを使用して、コードを生成する前にコンポーネントとそのドキュメントを検索します。
+
+## もっと詳しく知る
+
+- [CLI](/docs/cli) — 完全な CLI コマンド リファレンス
+- [MCP サーバー](/docs/mcp) — レジストリ アクセスのために MCP サーバーに接続します
+- [Theming](/docs/theming) — CSS 変数とカスタマイズ
+- [レジストリ](/docs/registry) — カスタム レジストリの構築と公開
+- [skills.sh](https://skills.sh) — AI スキルについて詳しく学ぶ

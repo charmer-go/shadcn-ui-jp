@@ -1,6 +1,6 @@
 ---
-title: Popover
-description: Displays rich content in a portal, triggered by a button.
+title: ポップオーバー
+description: ボタンによってトリガーされて、ポータルにリッチ コンテンツを表示します。
 base: base
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="base-nova" name="popover-demo" />
 
-## Installation
+## 名前付きプログレスバーとしてのインストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add popover
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="popover"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>を使用 プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -79,9 +79,9 @@ import {
 </Popover>
 ```
 
-## Composition
+## を使用するには 構成
 
-Use the following composition to build a `Popover`:
+次の構成を使用して `Popover` を作成します。
 
 ```text
 Popover
@@ -89,30 +89,30 @@ Popover
 └── PopoverContent
 ```
 
-## Basic
+## 基本
 
-A simple popover with a header, title, and description.
+ヘッダー、タイトル、説明を含むシンプルなポップオーバー。
 
 <ComponentPreview styleName="base-nova" name="popover-basic" />
 
-## Align
+## 整列
 
-Use the `align` prop on `PopoverContent` to control the horizontal alignment.
+`PopoverContent` の `align` プロパティを使用して、水平方向の配置を制御します。
 
 <ComponentPreview styleName="base-nova" name="popover-alignments" />
 
-## With Form
+## フォーム
 
-A popover with form fields inside.
+内部にフォーム フィールドを含むポップオーバー。
 
 <ComponentPreview styleName="base-nova" name="popover-form" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="popover-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI Popover](https://base-ui.com/react/components/popover#api-reference) documentation.
+[ベース UI ポップオーバー](https://base-ui.com/react/components/popover#api-reference) ドキュメントを参照してください。

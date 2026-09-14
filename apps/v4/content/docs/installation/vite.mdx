@@ -1,9 +1,9 @@
 ---
 title: Vite
-description: Install and configure shadcn/ui for Vite.
+description: Vite 用に shadcn/ui をインストールして構成します。
 ---
 
-Choose the setup that matches your starting point.
+開始地点に合うセットアップ方法を選択してください。
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
@@ -12,7 +12,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset and generate a Vite project command.
+      プリセットを作成し、Vite プロジェクトのコマンドを生成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -21,7 +21,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Scaffold a new Vite project directly from the terminal.
+      ターミナルから新しい Vite プロジェクトを直接作成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -30,7 +30,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Existing Project</div>
     <div className="leading-relaxed text-muted-foreground">
-      Configure shadcn/ui manually in an existing Vite project.
+      既存の Vite プロジェクトで shadcn/ui を手動構成します。
     </div>
   </LinkedCard>
 </div>
@@ -40,9 +40,9 @@ Choose the setup that matches your starting point.
 
 <Steps>
 
-### Build Your Preset
+### プリセットを作成する
 
-Open [shadcn/create](/create?template=vite) and build your preset visually. Choose your style, colors, fonts, icons, and more.
+ [shadcn/create](/create?template=vite)を開き、プリセットを視覚的に作成します。スタイル、色、フォント、アイコンなどを選択してください。
 
 <Button asChild size="sm">
   <Link
@@ -51,37 +51,37 @@ Open [shadcn/create](/create?template=vite) and build your preset visually. Choo
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    shadcn/create を開く
   </Link>
 </Button>
 
-### Create Project
+### プロジェクトを作成する
 
-Click `Create Project`, choose your package manager, and copy the generated command.
+`Create Project` をクリックし、パッケージ マネージャーを選択して、生成されたコマンドをコピーします。
 
-The generated command will look similar to this:
+生成されたコマンドは次のようになります。
 
 ```bash
 npx shadcn@latest init --preset [CODE] --template vite
 ```
 
-The exact command will include your selected options such as `--base`, `--monorepo`, or `--rtl`.
+実際のコマンドには、選択した `--base`、`--monorepo`、`--rtl` などのオプションが含まれます。
 
-### Add Components
+### コンポーネントを追加する
 
-Add the `Card` component to your project:
+プロジェクトに `Card` コンポーネントを追加します。
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+モノレポを作成した場合は `apps/web` からコマンドを実行するか、リポジトリのルートからワークスペースを指定します。
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上のコマンドで `Card` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```tsx showLineNumbers title="src/App.tsx"
 import {
@@ -96,13 +96,13 @@ function App() {
   return (
     <Card className="max-w-sm">
       <CardHeader>
-        <CardTitle>Project Overview</CardTitle>
+        <CardTitle>プロジェクト概要</CardTitle>
         <CardDescription>
-          Track progress and recent activity for your Vite app.
+          Vite アプリの進捗と最近のアクティビティを確認します。
         </CardDescription>
       </CardHeader>
       <CardContent>
-        Your design system is ready. Start building your next component.
+        デザイン システムの準備ができました。次のコンポーネントの構築を始めましょう。
       </CardContent>
     </Card>
   )
@@ -111,7 +111,7 @@ function App() {
 export default App
 ```
 
-If you created a monorepo, update `apps/web/src/App.tsx` and import from `@workspace/ui/components/card` instead.
+モノレポを作成した場合は `apps/web/src/App.tsx` を更新し、代わりに `@workspace/ui/components/card` からインポートします。
 
 </Steps>
 
@@ -120,35 +120,35 @@ If you created a monorepo, update `apps/web/src/App.tsx` and import from `@works
 
 <Steps>
 
-### Create Project
+### プロジェクトを作成する
 
-Run the `init` command to scaffold a new Vite project. Follow the prompts to configure your project: base, preset, monorepo, and more.
+`init` コマンドを実行して新しい Vite プロジェクトを作成します。プロンプトに従って、ベース、プリセット、モノレポなどを構成します。
 
 ```bash
 npx shadcn@latest init -t vite
 ```
 
-**For a monorepo project, use `--monorepo` flag:**
+**モノレポ プロジェクトでは `--monorepo` フラグを使います。**
 
 ```bash
 npx shadcn@latest init -t vite --monorepo
 ```
 
-### Add Components
+### コンポーネントを追加する
 
-Add the `Card` component to your project:
+プロジェクトに `Card` コンポーネントを追加します。
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+モノレポを作成した場合は `apps/web` からコマンドを実行するか、リポジトリのルートからワークスペースを指定します。
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+上のコマンドで `Card` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```tsx showLineNumbers title="src/App.tsx"
 import {
@@ -163,13 +163,13 @@ function App() {
   return (
     <Card className="max-w-sm">
       <CardHeader>
-        <CardTitle>Project Overview</CardTitle>
+        <CardTitle>プロジェクト概要</CardTitle>
         <CardDescription>
-          Track progress and recent activity for your Vite app.
+          Vite アプリの進捗と最近のアクティビティを確認します。
         </CardDescription>
       </CardHeader>
       <CardContent>
-        Your design system is ready. Start building your next component.
+        デザイン システムの準備ができました。次のコンポーネントの構築を始めましょう。
       </CardContent>
     </Card>
   )
@@ -178,7 +178,7 @@ function App() {
 export default App
 ```
 
-If you created a monorepo, update `apps/web/src/App.tsx` and import from `@workspace/ui/components/card` instead.
+モノレポを作成した場合は `apps/web/src/App.tsx` を更新し、代わりに `@workspace/ui/components/card` からインポートします。
 
 </Steps>
 
@@ -187,33 +187,33 @@ If you created a monorepo, update `apps/web/src/App.tsx` and import from `@works
 
 <Steps>
 
-### Create Project
+### プロジェクトを作成する
 
-If you need a new Vite project, create one first and select the **React + TypeScript** template. Otherwise, skip this step.
+新しい Vite プロジェクトが必要な場合は、先に作成して **React + TypeScript** テンプレートを選択します。既存のプロジェクトがある場合は、この手順を省略してください。
 
 ```bash
 npm create vite@latest
 ```
 
-### Add Tailwind CSS
+### Tailwind CSS を追加する
 
-If your project already has Tailwind CSS configured, skip this step.
+プロジェクトに Tailwind CSS がすでに構成されている場合は、この手順を省略してください。
 
 ```bash
 npm install tailwindcss @tailwindcss/vite
 ```
 
-Replace everything in `src/index.css` with the following:
+`src/index.css` の内容を次のものに置き換えます。
 
 ```css title="src/index.css"
 @import "tailwindcss";
 ```
 
-### Edit tsconfig.json file
+### tsconfig.json を編集する
 
-If your project already has the `@/*` alias configured, skip this step.
+プロジェクトに `@/*` エイリアスがすでに構成されている場合は、この手順を省略してください。
 
-Vite splits TypeScript configuration across multiple files. Add the `baseUrl` and `paths` properties to the `compilerOptions` section of `tsconfig.json` and `tsconfig.app.json`:
+Vite は TypeScript の構成を複数のファイルに分割します。`tsconfig.json` と `tsconfig.app.json` の `compilerOptions` セクションに、`baseUrl` と `paths` プロパティを追加します。
 
 ```ts title="tsconfig.json" {11-16} showLineNumbers
 {
@@ -235,9 +235,9 @@ Vite splits TypeScript configuration across multiple files. Add the `baseUrl` an
 }
 ```
 
-### Edit tsconfig.app.json file
+### tsconfig.app.json を編集する
 
-Add the same alias to `tsconfig.app.json` so your editor can resolve imports:
+エディターがインポートを解決できるよう、同じエイリアスを `tsconfig.app.json` に追加します。
 
 ```ts title="tsconfig.app.json" {4-9} showLineNumbers
 {
@@ -254,9 +254,9 @@ Add the same alias to `tsconfig.app.json` so your editor can resolve imports:
 }
 ```
 
-### Update vite.config.ts
+### vite.config.ts を更新する
 
-Install `@types/node` and update `vite.config.ts` so Vite can resolve the `@` alias:
+`@types/node` をインストールし、Vite が `@` エイリアスを解決できるよう `vite.config.ts` を更新します。
 
 ```bash
 npm install -D @types/node
@@ -279,23 +279,23 @@ export default defineConfig({
 })
 ```
 
-### Run the CLI
+### CLI を実行する
 
-Run the `shadcn` init command to set up shadcn/ui in your project:
+`shadcn` の init コマンドを実行して、プロジェクトに shadcn/ui を設定します。
 
 ```bash
 npx shadcn@latest init
 ```
 
-### Add Components
+### コンポーネントを追加する
 
-You can now start adding components to your project.
+これでプロジェクトにコンポーネントを追加できるようになりました。
 
 ```bash
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+上のコマンドで `Button` コンポーネントがプロジェクトに追加されます。次のようにインポートできます。
 
 ```tsx showLineNumbers title="src/App.tsx"
 import { Button } from "@/components/ui/button"
@@ -303,7 +303,7 @@ import { Button } from "@/components/ui/button"
 function App() {
   return (
     <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
+      <Button>クリック</Button>
     </div>
   )
 }

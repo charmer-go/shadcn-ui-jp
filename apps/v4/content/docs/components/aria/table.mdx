@@ -1,6 +1,6 @@
 ---
-title: Table
-description: A responsive table component.
+title: テーブル
+description: レスポンシブなテーブル コンポーネント。
 base: aria
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-[30rem]"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add table
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="table"
@@ -48,7 +48,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -90,7 +90,7 @@ import {
 <TableCaption>A list of your recent invoices.</TableCaption>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Table`:
 
@@ -119,17 +119,17 @@ Table
 
 ## Footer
 
-Use the `<TableFooter />` component to add a footer to the table.
+`<TableFooter />`コンポーネントを使用して、表にフッターを追加します。
 
 <ComponentPreview styleName="aria-nova" name="table-footer" />
 
-## Actions
+## アクション
 
 A table showing actions for each row using a `<DropdownMenu />` component.
 
 <ComponentPreview styleName="aria-nova" name="table-actions" />
 
-## Data Table
+## データテーブル
 
 You can use the `<Table />` component to build more complex data tables. Combine it with [@tanstack/react-table](https://tanstack.com/table/latest) to create tables with sorting, filtering and pagination.
 
@@ -139,7 +139,7 @@ You can also see an example of a data table in the [Tasks](/examples/tasks) demo
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -148,6 +148,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-auto"
 />
 
-## API Reference
+## APIリファレンス
 
 See the [React Aria Table](https://react-aria.adobe.com/Table#api) documentation.

@@ -1,9 +1,9 @@
 ---
 title: Astro
-description: Adding dark mode to your astro app.
+description: Astro アプリにダーク モードを追加します。
 ---
 
-## Create an inline theme script
+## インライン テーマ スクリプトの作成
 
 ```astro title="src/pages/index.astro"
 ---
@@ -36,7 +36,7 @@ import '../styles/globals.css'
 </html>
 ```
 
-## Add a mode toggle
+## モード切り替えの追加
 
 ```tsx title="src/components/ModeToggle.tsx"
 import * as React from "react"
@@ -93,9 +93,9 @@ export function ModeToggle() {
 }
 ```
 
-## Display the mode toggle
+## モード切り替えの表示
 
-Place a mode toggle on your site to toggle between light and dark mode.
+サイトにモード切り替えスイッチを配置して、ライト モードとダーク モードを切り替えます。
 
 ```astro title="src/pages/index.astro"
 ---

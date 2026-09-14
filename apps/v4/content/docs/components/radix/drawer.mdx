@@ -1,6 +1,6 @@
 ---
-title: Drawer
-description: A drawer component for React.
+title: ドロワー
+description: React 用のドロワー コンポーネント。
 base: radix
 component: true
 links:
@@ -9,17 +9,17 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="drawer-demo" />
 
-## About
+## 概要
 
-Drawer is built on top of [Vaul](https://github.com/emilkowalski/vaul) by [emilkowalski](https://twitter.com/emilkowalski).
+ドロワーは、[emilkowalski](https://twitter.com/emilkowalski) によって [Vaul](https://github.com/emilkowalski/vaul) の上に構築されています。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,13 +33,13 @@ npx shadcn@latest add drawer
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install vaul
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="drawer"
@@ -47,7 +47,7 @@ npm install vaul
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -55,7 +55,7 @@ npm install vaul
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -88,9 +88,9 @@ import {
 </Drawer>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Drawer`:
+次の構成を使用して `Drawer` を構築します。
 
 ```text
 Drawer
@@ -102,15 +102,15 @@ Drawer
     └── DrawerFooter
 ```
 
-## Scrollable Content
+## スクロール可能なコンテンツ
 
-Keep actions visible while the content scrolls.
+コンテンツがスクロールしている間、アクションを表示したままにします。
 
 <ComponentPreview styleName="radix-nova" name="drawer-scrollable-content" />
 
-## Sides
+## 側面
 
-Use the `direction` prop to set the side of the drawer. Available options are `top`, `right`, `bottom`, and `left`.
+`direction` プロップを使用して引き出しの側面を設定します。使用可能なオプションは、`top`、`right`、`bottom`、および `left` です。
 
 <ComponentPreview styleName="radix-nova" name="drawer-sides" />
 
@@ -122,10 +122,10 @@ You can combine the `Dialog` and `Drawer` components to create a responsive dial
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="drawer-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 See the [Vaul documentation](https://vaul.emilkowal.ski/getting-started) for the full API reference.

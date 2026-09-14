@@ -1,6 +1,6 @@
 ---
-title: Navigation Menu
-description: A collection of links for navigating websites.
+title: ナビゲーション メニュー
+description: Web サイト内を移動するためのリンクのコレクション。
 base: radix
 component: true
 links:
@@ -15,13 +15,13 @@ links:
   className="overflow-visible"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add navigation-menu
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   styleName="radix-nova"
@@ -49,7 +49,7 @@ npm install radix-ui
   title="components/ui/navigation-menu.tsx"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -83,9 +83,9 @@ import {
 </NavigationMenu>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `NavigationMenu`:
+`NavigationMenu` を構築するには、次の構成を使用します。
 
 ```text
 NavigationMenu
@@ -100,9 +100,9 @@ NavigationMenu
 └── NavigationMenuIndicator
 ```
 
-## Link Component
+## リンク コンポーネント
 
-Use the `asChild` prop to compose a custom link component such as Next.js `Link`.
+`asChild` プロパティを使用して、Next.js `Link` などのカスタム リンク コンポーネントを作成します。
 
 ```tsx showLineNumbers
 import Link from "next/link"
@@ -126,7 +126,7 @@ export function NavigationMenuDemo() {
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -136,6 +136,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   className="overflow-visible"
 />
 
-## API Reference
+## API リファレンス
 
-See the [Radix UI Navigation Menu](https://www.radix-ui.com/docs/primitives/components/navigation-menu#api-reference) documentation for more information.
+詳細については、[Radix UI ナビゲーション メニュー](https://www.radix-ui.com/docs/primitives/components/navigation-menu#api-reference) ドキュメントを参照してください。

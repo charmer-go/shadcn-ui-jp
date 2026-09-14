@@ -1,21 +1,21 @@
 ---
 title: shadcn
-description: Use the shadcn CLI to add components to your project.
+description: shadcn CLI を使用してコンポーネントをプロジェクトに追加します。
 ---
 
 import { TriangleAlertIcon } from "lucide-react"
 
-## init
+## Tailwind CSS v3 プロジェクトでは、init
 
-Use the `init` command to initialize configuration and dependencies for an existing project, or create a new project with `--name`.
+`init` コマンドを使用して、既存のプロジェクトの構成と依存関係を初期化するか、`--name` で新しいプロジェクトを作成します。
 
-The `init` command installs dependencies, adds the `cn` util and configures CSS variables for the project.
+に追加します。 `init` コマンドは、依存関係をインストールし、`cn` ユーティリティを追加し、プロジェクトの CSS 変数を構成します。
 
 ```bash
 npx shadcn@latest init
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn init [options] [components...]
@@ -48,7 +48,7 @@ Options:
   -h, --help                 display help for command
 ```
 
-The `create` command is an alias for `init`:
+`create` コマンドは `init` のエイリアスです。
 
 ```bash
 npx shadcn@latest create
@@ -58,13 +58,13 @@ npx shadcn@latest create
 
 ## add
 
-Use the `add` command to add components and dependencies to your project.
+`add` コマンドを使用して、コンポーネントと依存関係をプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add [component]
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn add [options] [components...]
@@ -91,21 +91,21 @@ Options:
 
 ## apply
 
-Use the `apply` command to apply a preset to an existing project.
+`apply` コマンドを使って既存のプロジェクトにプリセットを適用します。
 
 ```bash
 npx shadcn@latest apply a2r6bw
 ```
 
-You can apply only the theme or fonts from a preset without reinstalling UI components:
+を移行する UI コンポーネントを再インストールせずに、プリセットのテーマまたはフォントのみを適用できます。
 
 ```bash
 npx shadcn@latest apply a2r6bw --only theme
 ```
 
-Supported values for `--only` are `theme` and `font`.
+`--only` でサポートされている値は `theme` と `font` です。
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn apply [options] [preset]
@@ -126,9 +126,9 @@ Options:
 
 ---
 
-## preset
+## プリセット
 
-Use the `preset` command to inspect preset codes and resolve the preset for an existing project.
+`preset` コマンドを使用して、プリセット コードを検査し、既存のプロジェクトのプリセットを解決します。
 
 ```bash
 npx shadcn@latest preset decode a2r6bw
@@ -136,13 +136,13 @@ npx shadcn@latest preset decode a2r6bw
 
 ### preset decode
 
-Use `preset decode` to decode a preset code.
+`preset decode` を使用してプリセット コードをデコードします。
 
 ```bash
 npx shadcn@latest preset decode a2r6bw
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn preset decode [options] <code>
@@ -157,21 +157,21 @@ Options:
   -h, --help  display help for command
 ```
 
-### preset resolve
+### プリセット解決
 
-Use `preset resolve` to resolve the preset from the current project.
+`preset resolve` を使って現在のプロジェクトからプリセットを解決します。
 
 ```bash
 npx shadcn@latest preset resolve
 ```
 
-The `preset info` command is an alias for `preset resolve`:
+`preset info` コマンドは `preset resolve` のエイリアスです。
 
 ```bash
 npx shadcn@latest preset info
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn preset resolve|info [options]
@@ -184,15 +184,15 @@ Options:
   -h, --help        display help for command
 ```
 
-### preset url
+### プリセット URL
 
-Use `preset url` to print the create URL for a preset code.
+`preset url` を使用して、プリセット コードの作成 URL を出力します。
 
 ```bash
 npx shadcn@latest preset url a2r6bw
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn preset url [options] <code>
@@ -206,15 +206,15 @@ Options:
   -h, --help  display help for command
 ```
 
-### preset open
+### プリセット オープン
 
-Use `preset open` to open a preset code in the browser.
+`preset open` を使用して、ブラウザでプリセット コードを開きます。
 
 ```bash
 npx shadcn@latest preset open a2r6bw
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn preset open [options] <code>
@@ -232,25 +232,25 @@ Options:
 
 ## view
 
-Use the `view` command to view items from the registry before installing them.
+`view` コマンドを使用して、インストール前にレジストリの項目を表示します。
 
 ```bash
 npx shadcn@latest view [item]
 ```
 
-You can view multiple items at once:
+複数の項目を一度に表示できます。
 
 ```bash
 npx shadcn@latest view button card dialog
 ```
 
-Or view items from namespaced registries:
+または、名前空間レジストリの項目を表示します。
 
 ```bash
 npx shadcn@latest view @acme/auth @v0/dashboard
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn view [options] <items...>
@@ -267,33 +267,33 @@ Options:
 
 ---
 
-## search
+## 検索
 
-Use the `search` command to search for items from registries.
+を意味します。 `search` コマンドを使用して、レジストリから項目を検索します。アプリの
 
 ```bash
 npx shadcn@latest search [registry]
 ```
 
-You can search with a query:
+クエリを指定して検索できます。
 
 ```bash
 npx shadcn@latest search @shadcn -q "button"
 ```
 
-Or search multiple registries at once:
+複数のレジストリを一度に検索することもできます。
 
 ```bash
 npx shadcn@latest search @shadcn @v0 @acme
 ```
 
-The `list` command is an alias for `search`:
+`list` コマンドは `search` のエイリアスです。
 
 ```bash
 npx shadcn@latest list @acme
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn search|list [options] <registries...>
@@ -314,17 +314,17 @@ Options:
 
 ---
 
-## build
+## ビルド
 
-Use the `build` command to generate the registry JSON files.
+`build` コマンドを使用して、レジストリ JSON ファイルを生成します。
 
 ```bash
 npx shadcn@latest build
 ```
 
-This command reads the `registry.json` file and generates the registry JSON files in the `public/r` directory.
+このコマンドは、`registry.json` ファイルを読み取り、`public/r` ディレクトリにレジストリ JSON ファイルを生成します。
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn build [options] [registry]
@@ -340,7 +340,7 @@ Options:
   -h, --help           display help for command
 ```
 
-To customize the output directory, use the `--output` option.
+出力ディレクトリをカスタマイズするには、`--output` オプションを使用します。
 
 ```bash
 npx shadcn@latest build --output ./public/registry
@@ -350,13 +350,13 @@ npx shadcn@latest build --output ./public/registry
 
 ## docs
 
-Use the `docs` command to fetch documentation and API references for components.
+`docs` コマンドを使ってコンポーネントのドキュメントと API リファレンスを取得します。
 
 ```bash
 npx shadcn@latest docs [component]
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn docs [options] [component]
@@ -375,15 +375,15 @@ Options:
 
 ---
 
-## info
+## 情報
 
-Use the `info` command to get information about your project.
+`info` コマンドを使ってプロジェクトの情報を取得します。
 
 ```bash
 npx shadcn@latest info
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn info [options]
@@ -398,25 +398,25 @@ Options:
 
 ---
 
-## migrate
+## 移行
 
-Use the `migrate` command to run migrations on your project.
+`migrate` コマンドを使用して、プロジェクトで移行を実行します。
 
 ```bash
 npx shadcn@latest migrate [migration]
 ```
 
-**Available Migrations**
+**利用可能な移行**
 
-| Migration    | Description                                             |
+|移行 |説明 |
 | ------------ | ------------------------------------------------------- |
-| `cn`         | Migrate `clsx` and `tailwind-merge` to `cn`.            |
-| `icons`      | Migrate your UI components to a different icon library. |
-| `base-color` | Migrate your theme to a different base color.           |
-| `radix`      | Migrate to radix-ui.                                    |
-| `rtl`        | Migrate your components to support RTL (right-to-left). |
+| `cn` | `clsx` と `tailwind-merge` を `cn` に移行します。            |
+| `icons`      | UI コンポーネントを別のアイコン ライブラリに移行します。 |
+| `base-color` | テーマを別の基本色に移行します。           |
+| `radix` | radix-ui に移行します。                                    |
+| `rtl`        | RTL（右から左）の言語に対応するようコンポーネントを移行します。 |
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn migrate [options] [migration] [path]
@@ -438,24 +438,24 @@ Options:
 
 ---
 
-### migrate cn
+### 移行 cn
 
-The `cn` migration replaces `clsx`, `tailwind-merge` and `cnfast` with [`cn`](https://github.com/shadcn-ui/cn).
+`cn` 移行は `clsx`、`tailwind-merge`、`cnfast` を [`cn`](https://github.com/shadcn-ui/cn) に置き換えます。
 
 ```bash
 npx shadcn@latest migrate cn
 ```
 
-Unlike the other migrations, `migrate cn` does not require a `components.json` file. You can run it in any JavaScript or TypeScript package project using Tailwind CSS v4.
+他の移行とは異なり、`migrate cn` には `components.json` ファイルは必要ありません。 Tailwind CSS v4 を使用して、任意の JavaScript または TypeScript パッケージ プロジェクトで実行できます。
 
-This will:
+これは次のことを行います:
 
-1. Rewrite imports from `clsx`, `clsx/lite`, `tailwind-merge` and `cnfast`.
-2. Replace `twMerge(clsx(...))` compositions with direct `cn(...)` calls.
-3. Replace the standard shadcn utility with a direct re-export.
-4. Install `cn` and remove the old packages when no references remain.
+1. `clsx`、`clsx/lite`、`tailwind-merge`、`cnfast` からのインポートを書き換えます。
+2. `twMerge(clsx(...))` 構成を直接 `cn(...)` 呼び出しに置き換えます。
+3. 標準の shadcn ユーティリティを直接再エクスポートに置き換えます。
+4. `cn` をインストールし、参照が残っていなければ古いパッケージを削除します。
 
-**Before**
+**変更前**
 
 ```tsx
 import { clsx, type ClassValue } from "clsx"
@@ -466,13 +466,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-**After**
+**後**
 
 ```tsx
 export { cn } from "cn"
 ```
 
-The migration also preserves separate APIs when they are used independently:
+に対してオープンなままです。 移行では、個別に使用される場合も個別の API が保持されます。
 
 ```diff
 - import { clsx } from "clsx"
@@ -480,14 +480,14 @@ The migration also preserves separate APIs when they are used independently:
 + import { clsx, twMerge } from "cn"
 ```
 
-Because `cnfast` has the same root API, its module specifiers are replaced directly:
+`cnfast` は同じルート API を持っているため、そのモジュール指定子は直接置き換えられます。
 
 ```diff
 - import { cn } from "cnfast"
 + import { cn } from "cn"
 ```
 
-Custom configuration APIs are moved to `cn/config`. Existing local names are preserved when an export was renamed:
+カスタム構成 API は `cn/config` に移動されました。エクスポートの名前が変更された場合、既存のローカル名は保持されます。
 
 ```diff
 - import { createTailwindMerge, getDefaultConfig } from "tailwind-merge"
@@ -498,14 +498,14 @@ Custom configuration APIs are moved to `cn/config`. Existing local names are pre
 ```
 
 <Callout icon={<TriangleAlertIcon />}>
-  The `cn` merge engine supports Tailwind CSS v4, like `tailwind-merge` v3.
-  Projects using Tailwind CSS v3 should continue using `tailwind-merge` v2. A
-  `clsx`-only migration is safe in a Tailwind CSS v3 project.
+`cn` のマージ エンジンは `tailwind-merge` v3 と同様に Tailwind CSS v4 に対応しています。
+  Tailwind CSS v3 を使用するプロジェクトは、引き続き `tailwind-merge` v2 を使用する必要があります。 A
+  `clsx` のみの移行が安全です。
 </Callout>
 
-**Migrate specific files**
+を移行します **特定のファイルを移行します**
 
-You can migrate a file, directory or glob pattern:
+ではありません。 ファイル、ディレクトリ、またはグロブ パターンを移行できます。
 
 ```bash
 # Migrate a specific file.
@@ -515,35 +515,35 @@ npx shadcn@latest migrate cn src/lib/utils.ts
 npx shadcn@latest migrate cn "src/**/*.{ts,tsx}"
 ```
 
-Scoped migrations install `cn` but keep `clsx`, `tailwind-merge` and `cnfast` in `package.json`, because files outside the selected path may still use them.
+対象を限定した移行では `cn` をインストールしますが、選択したパスの外にあるファイルが使用している可能性があるため、`package.json` の `clsx`、`tailwind-merge`、`cnfast` は残します。
 
-The command leaves unsupported imports unchanged and reports them for manual review. This includes `experimentalParseClassName`, namespace imports, dynamic import shapes, direct calls to `validators` and variadic `createTailwindMerge` calls that cannot be migrated safely. An old dependency is retained whenever one of its references remains.
+このコマンドは、サポートされていないインポートを変更せずに残し、手動レビューのためにレポートします。これには、`experimentalParseClassName`、名前空間インポート、動的インポート形状、`validators` への直接呼び出し、および安全に移行できない可変引数 `createTailwindMerge` 呼び出しが含まれます。古い依存関係は、その参照の 1 つが残っている場合は常に保持されます。
 
 ---
 
-### migrate icons
+### アイコン
 
-The `icons` migration moves your components from one icon library to another.
+`icons` 移行はコンポーネントをあるアイコン ライブラリから別のライブラリへ移行します。
 
 ```bash
 npx shadcn@latest migrate icons
 ```
 
-This will prompt you for the source and target libraries, rewrite icon imports and JSX usage in your `ui` directory, install the target library and update `iconLibrary` in your `components.json` so future `npx shadcn add` installs use the new library.
+移行元と移行先のライブラリを尋ね、`ui` ディレクトリのアイコン インポートと JSX の使用箇所を書き換え、移行先ライブラリをインストールします。また、今後の `npx shadcn add` で新しいライブラリが使われるよう `components.json` の `iconLibrary` を更新します。
 
-The following libraries are supported: `lucide`, `tabler`, `hugeicons`, `phosphor`, `remixicon` and `radix` (legacy).
+次のライブラリに対応しています: `lucide`、`tabler`、`hugeicons`、`phosphor`、`remixicon`、`radix`（レガシー）。
 
-**Non-interactive**
+**非対話モード**
 
-Use `--from` and `--to` to skip the prompts:
+`--from` および `--to` を使用して、プロンプトをスキップします。
 
 ```bash
 npx shadcn@latest migrate icons --from lucide --to phosphor --yes
 ```
 
-**Migrate specific files**
+を移行します **特定のファイルを移行します**
 
-You can migrate specific files or use glob patterns. Scoped runs do not update `components.json`.
+特定のファイルを移行したり、glob パターンを使用したりできます。対象を限定した実行では `components.json` は更新されません。
 
 ```bash
 # Migrate a specific file.
@@ -553,51 +553,51 @@ npx shadcn@latest migrate icons src/components/ui/button.tsx --from lucide --to 
 npx shadcn@latest migrate icons "src/components/**" --from lucide --to tabler
 ```
 
-Icons without an equivalent in the target library are left untouched and reported at the end of the migration.
+ターゲット ライブラリに同等のアイコンがないアイコンはそのまま残され、移行の終了時に報告されます。
 
 ---
 
-### migrate base-color
+### ベースカラー
 
-The `base-color` migration switches your theme from one base color to another.
+`base-color` の移行により、テーマがある基本色から別の基本色に切り替わります。
 
 ```bash
 npx shadcn@latest migrate base-color
 ```
 
-This will prompt you for the source and target base colors, rewrite the theme CSS variables (the CSS file configured by `tailwind.css` in your `components.json`) and update `baseColor` so future `npx shadcn add` installs use the new base color.
+これにより、ソースとターゲットの基本色の入力を求められ、テーマの CSS 変数 (`components.json` 内の `tailwind.css` によって構成された CSS ファイル) を書き換えて、将来の `npx shadcn add` のインストールで新しい基本色が使用されるように `baseColor` を更新します。
 
-The following base colors are supported: `neutral`, `zinc`, `stone`, `mauve`, `olive`, `mist` and `taupe`.
+次の基本色に対応しています: `neutral`、`zinc`、`stone`、`mauve`、`olive`、`mist`、`taupe`。
 
-**Non-interactive**
+**非対話モード**
 
-Use `--to` to migrate from the current `baseColor` in your `components.json`, or pass both `--from` and `--to` explicitly.
+`components.json` の現在の `baseColor` から移行するには `--to` を使うか、`--from` と `--to` の両方を明示的に渡します。
 
 ```bash
 npx shadcn@latest migrate base-color --to zinc --yes
 ```
 
-Theme tokens that no longer match the source base color are left untouched and reported at the end of the migration.
+ソースのベース カラーと一致しなくなったテーマ トークンはそのまま残され、移行の最後にレポートされます。
 
 ---
 
-### migrate rtl
+### 移行 rtl
 
-The `rtl` migration transforms your components to support RTL (right-to-left) languages.
+`rtl` 移行は RTL（右から左）の言語に対応するようコンポーネントを変換します。
 
 ```bash
 npx shadcn@latest migrate rtl
 ```
 
-This will:
+これは次のことを行います:
 
-1. Update `components.json` to set `rtl: true`
-2. Transform physical CSS properties to logical equivalents (e.g., `ml-4` → `ms-4`, `text-left` → `text-start`)
-3. Add `rtl:` variants where needed (e.g., `space-x-4` → `space-x-4 rtl:space-x-reverse`)
+1. `components.json` を更新して `rtl: true` を設定します。
+2. 物理的な CSS プロパティを論理的な同等のプロパティに変換します (例: `ml-4` → `ms-4`、`text-left` → `text-start`)
+3. 必要に応じて `rtl:` バリアントを追加します (例: `space-x-4` → `space-x-4 rtl:space-x-reverse`)
 
-**Migrate specific files**
+を移行します **特定のファイルを移行します**
 
-You can migrate specific files or use glob patterns:
+特定のファイルを移行したり、glob パターンを使用したりできます。
 
 ```bash
 # Migrate a specific file
@@ -607,37 +607,37 @@ npx shadcn@latest migrate rtl src/components/ui/button.tsx
 npx shadcn@latest migrate rtl "src/components/ui/**"
 ```
 
-If no path is provided, the migration will transform all files in your `ui` directory (from `components.json`).
+パスを指定しない場合、`components.json` の `ui` ディレクトリにあるすべてのファイルを変換します。
 
 ---
 
-### migrate radix
+### 基数
 
-The `radix` migration updates your imports from individual `@radix-ui/react-*` packages to the unified `radix-ui` package.
+`radix` の移行により、個別のインポートが更新されます。 `@radix-ui/react-*` パッケージを統合 `radix-ui` パッケージに変更します。
 
 ```bash
 npx shadcn@latest migrate radix
 ```
 
-This will:
+これは次のことを行います:
 
-1. Transform imports from `@radix-ui/react-*` to `radix-ui`
-2. Add the `radix-ui` package to your `package.json`
+1. `@radix-ui/react-*` から `radix-ui` へインポートを変換します。
+2. `radix-ui` パッケージを `package.json`
 
-**Before**
+**変更前**
 
 ```tsx
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import * as SelectPrimitive from "@radix-ui/react-select"
 ```
 
-**After**
+**後**
 
 ```tsx
 import { Dialog as DialogPrimitive, Select as SelectPrimitive } from "radix-ui"
 ```
 
-**Migrate specific files**
+を移行します **特定のファイルを移行します**
 
 You can migrate specific files or use glob patterns:
 
@@ -649,28 +649,28 @@ npx shadcn@latest migrate radix src/components/ui/dialog.tsx
 npx shadcn@latest migrate radix "src/components/ui/**"
 ```
 
-If no path is provided, the migration will transform all files in your `ui` directory (from `components.json`).
+パスを指定しない場合、`components.json` の `ui` ディレクトリにあるすべてのファイルを変換します。
 
-Once complete, you can remove any unused `@radix-ui/react-*` packages from your `package.json`.
+完了したら、未使用の `@radix-ui/react-*` パッケージを `package.json` から削除できます。
 
 ---
 
 ## eject
 
-When you run `init`, shadcn adds `@import "shadcn/tailwind.css"` to your global CSS file. This import provides shared Tailwind v4 utilities such as custom variants (`data-open:`, `data-closed:`, etc.) and accordion animations.
+`init` を実行すると、shadcn は `@import "shadcn/tailwind.css"` をグローバル CSS ファイルに追加します。このインポートは、カスタム バリアント (`data-open:`、`data-closed:` など) やアコーディオン アニメーションなどの共有 Tailwind v4 ユーティリティを提供します。
 
-Use the `eject` command to inline `shadcn/tailwind.css` into your global CSS file and remove the `shadcn` dependency from your project.
+`eject` コマンドを使用して、`shadcn/tailwind.css` をグローバル CSS ファイルにインライン化し、プロジェクトから `shadcn` 依存関係を削除します。
 
 <Callout icon={<TriangleAlertIcon />}>
-  **Note: This action is irreversible.** After ejecting, future shadcn CLI
-  updates to `shadcn/tailwind.css` will not apply automatically.
+  を移行します。 **注: この操作は元に戻すことができません。** 取り出した後、将来の shadcn CLI
+  `shadcn/tailwind.css` への更新は自動的には適用されません。
 </Callout>
 
 ```bash
 npx shadcn@latest eject
 ```
 
-**Before**
+**変更前**
 
 ```css
 @import "tailwindcss";
@@ -678,7 +678,7 @@ npx shadcn@latest eject
 @import "shadcn/tailwind.css";
 ```
 
-**After**
+**後**
 
 ```css
 @import "tailwindcss";
@@ -717,13 +717,13 @@ npx shadcn@latest eject
 
 **Monorepo**
 
-In a monorepo, run the command from the workspace that contains your `components.json` and global CSS file:
+モノリポジトリでは、`components.json` およびグローバル CSS ファイルを含むワークスペースからコマンドを実行します。
 
 ```bash
 npx shadcn@latest eject -c packages/ui
 ```
 
-**Options**
+**オプション**
 
 ```bash
 Usage: shadcn eject [options]

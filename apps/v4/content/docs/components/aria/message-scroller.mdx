@@ -1,6 +1,6 @@
 ---
-title: Message Scroller
-description: A chat scroll container that anchors turns, opens saved transcripts, follows streamed responses, loads history without jumping, and jumps to any message.
+title: メッセージスクローラー
+description: ターンを固定し、保存済みのトランスクリプトを開き、ストリーミング応答に追従し、ジャンプせずに履歴を読み込み、任意のメッセージへ移動できるチャットスクロール コンテナです。
 base: aria
 component: true
 ---
@@ -12,63 +12,59 @@ component: true
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-## What Makes a Great Streaming Chat Experience
+## 優れたストリーミングチャット体験とは
 
-Building a chat interface used to be simple. You create an inverted list with
-an input. Type a message, it appends at the bottom. When a reply comes in, the
-list grows and scrolls. Done.
+チャット インターフェースの構築は、以前は簡単でした。入力欄と逆順リストを作り、
+メッセージを入力すると下部に追加され、返信が届くとリストが伸びてスクロールします。これで完了です。
 
-Streaming breaks that model. Messages arrive in chunks while you may still be
-reading, scrolling, or looking somewhere else entirely.
+ストリーミングでは、このモデルが崩れます。まだ読んでいたり、スクロールしていたり、
+まったく別の場所を見ている間にも、メッセージが分割されて届くためです。
 
-Now the challenge is preserving the reader's place while the conversation keeps
-changing. Get that wrong and the experience feels jumpy: people are pulled to
-the bottom, lose context, and have to find their way back.
+ここでの課題は、会話が変化し続ける間も読者の位置を保つことです。これを誤ると、読者が下部へ引き寄せられ、
+文脈を失い、元の位置を探し直すことになって、体験が不安定になります。
 
-In practice, this comes down to scroll: when to follow, when to hold, and when
-to let the reader decide. A great streaming chat should:
+実際には、これはスクロールの制御に集約されます。追従するタイミング、停止するタイミング、
+そして読者に判断を委ねるタイミングです。優れたストリーミング チャットは次のように動作します。
 
-1. **Move only when the reader asked to move.** If someone is reading, don’t pull them somewhere else. Auto-scroll should never be the default.
-2. **Follow only while they’re following.** If they’re at the live edge, keep the stream in view. If they scroll away, leave them there.
-3. **Every interaction is a signal.** Scrolling is not the only one. Selecting text, using the keyboard, opening a link, or searching should all stop the interface from moving.
-4. **Start a new turn near the top of the viewport.** This gives the new turn somewhere it can be read from the beginning.
-5. **Then stream in the answer.** The answer should grow into the screen, not immediately push everything away.
-6. **Keep part of the previous conversation in context.** The prompt and reply should stay visually connected, and enough of the previous turn should remain visible so the reader knows where they are.
-7. **Let new content arrive offscreen.** The conversation can keep streaming without changing what the reader is looking at.
-8. **Show what’s happening out of view.** Make it clear when a response is still streaming or when new messages have arrived.
-9. **Make it easy to return to the latest reply.** A “Jump to latest” action should bring the reader back and resume following.
-10. **Let people jump anywhere in the conversation.** Long threads need message links, search, unread markers, and direct navigation.
-11. **Reopen where the reader left off.** A saved conversation should open at the last meaningful turn. Often this is the last user message. Not the absolute bottom.
-12. **Keep the reader’s place when layout changes.** Images load. Markdown expands. Code blocks render. Older messages appear above. None of that should make the reader lose their place.
-13. **Handle interruptions without stealing position.** Stopping, retrying, regenerating, branching, or errors should not unexpectedly move the conversation.
-14. **Stay responsive in long threads.** Streaming text, markdown, code, images, and long history should still feel responsive.
-15. **Be accessible without the noise.** Keep the transcript navigable, preserve keyboard focus, and announce important events at a comfortable pace.
+1. **読者が移動を求めたときだけ移動する。** 読んでいる人を別の場所へ引っ張らない。自動スクロールを既定にしない。
+2. **読者が追従している間だけ追従する。** ライブ エッジにいる間はストリームを表示し、離れたらその位置に留める。
+3. **すべての操作をシグナルとして扱う。** スクロールだけではない。テキスト選択、キーボード操作、リンクの表示、検索もインターフェースの移動を止めるべきです。
+4. **新しいターンをビューポート上部付近から始める。** これにより、新しいターンを冒頭から読める場所ができます。
+5. **その後で回答をストリーミングする。** 回答は画面内へ伸びていくべきで、すべてをすぐに押し流してはいけません。
+6. **前の会話の一部を文脈として残す。** プロンプトと返信を視覚的につなげ、読者が現在位置を把握できるよう前のターンを十分に表示します。
+7. **新しい内容を画面外に到着させる。** 読者が見ている場所を変えずに、会話をストリーミングし続けられます。
+8. **見えていない場所で起きていることを示す。** 返信のストリーミング中や新しいメッセージの到着を明確にします。
+9. **最新の返信へ戻りやすくする。** 「最新へ移動」操作で読者を戻し、追従を再開できるようにします。
+10. **会話内のどこへでも移動できるようにする。** 長いスレッドにはメッセージ リンク、検索、未読マーカー、直接ナビゲーションが必要です。
+11. **読者が離れた場所から再開する。** 保存済みの会話は最後に意味のあるターンから開きます。多くの場合は最後のユーザー メッセージで、絶対的な末尾ではありません。
+12. **レイアウトが変わっても読者の位置を保つ。** 画像、Markdown、コード ブロック、上部に現れる古いメッセージがあっても位置を失わせません。
+13. **位置を奪わずに中断を処理する。** 停止、再試行、再生成、分岐、エラーによって会話を予期せず移動させません。
+14. **長いスレッドでも応答性を保つ。** ストリーミング テキスト、Markdown、コード、画像、長い履歴でも軽快に動作させます。
+15. **ノイズを増やさずアクセシブルにする。** トランスクリプトを操作可能にし、キーボード フォーカスを保ち、重要なイベントを無理のない速度で通知します。
 
-**Never move the reader against their intent.**
+**読者の意図に反して移動させないでください。**
 
 ## MessageScroller
 
-MessageScroller is a chat transcript scroller built for these behaviors.
-`MessageScrollerProvider` owns the scroll state and transcript-row behavior:
-opening position, streamed output, new-turn anchoring, prepended history,
-visibility, and scroll controls. `MessageScroller` is the styled frame that
-renders inside it.
+MessageScroller は、これらの動作のために作られたチャット トランスクリプト用スクローラーです。
+`MessageScrollerProvider` がスクロール状態とトランスクリプト行の動作（開始位置、ストリーミング出力、
+新しいターンの固定、先頭への履歴追加、表示状態、スクロール コントロール）を管理します。
+`MessageScroller` はその内部に描画されるスタイル付きフレームです。
 
-MessageScroller is scoped to the scroll viewport. It does not own messages, AI state,
-transport, persistence, branching, or model state. Your product code stays
-focused on composing messages, markers, tools, attachments, and prompt inputs.
+MessageScroller の責務はスクロール ビューポートに限定されます。メッセージ、AI の状態、トランスポート、
+永続化、分岐、モデルの状態は管理しません。製品側のコードは、メッセージ、マーカー、ツール、添付ファイル、
+プロンプト入力の構成に集中できます。
 
-It gives you the scroll behavior that chat needs, without taking over the rest
-of the chat UI. And it stays fast, even in long conversations with rich
-markdown.
+チャットに必要なスクロール動作を提供しつつ、チャット UI の他の部分を引き取りません。
+リッチな Markdown を含む長い会話でも高速に動作します。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -82,13 +78,13 @@ npx shadcn@latest add message-scroller
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @shadcn/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="message-scroller"
@@ -96,7 +92,7 @@ npm install @shadcn/react
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -104,7 +100,7 @@ npm install @shadcn/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import { Message } from "@/components/ui/message"
@@ -150,7 +146,7 @@ container.
 </div>
 ```
 
-## Composition
+## 構成
 
 ```tsx
 <MessageScrollerProvider>
@@ -169,32 +165,26 @@ container.
 </MessageScrollerProvider>
 ```
 
-- **`MessageScrollerProvider`** — the headless root. Owns scroll state and the
-  behavior props for opening position, auto-scroll, anchoring, scroll commands,
-  and visibility tracking.
-- **`MessageScroller`** — the styled frame. Lays out the viewport, content, and
-  controls inside the provider.
-- **`MessageScrollerViewport`** — the scrollable element. Receives native scroll
-  events and preserves the visible row when older messages are prepended.
-- **`MessageScrollerContent`** — the transcript container. Holds the rows and
-  provides the live-region defaults for new messages.
-- **`MessageScrollerItem`** — the transcript row boundary. Wrap every direct
-  child of the content so the scroller can measure, anchor, preserve position,
-  track visibility, and jump to it. An item can be a message, marker, typing
-  indicator, separator, join/leave event, or "load earlier" row.
-- **`MessageScrollerButton`** — the scroll control. Scrolls to the start or end of the transcript and is inert until there is content in its direction.
+- **`MessageScrollerProvider`** — スタイルを持たないルートです。開始位置、自動スクロール、アンカー、スクロール コマンド、表示状態追跡のための props とスクロール状態を管理します。
+- **`MessageScroller`** — スタイル付きフレームです。プロバイダー内でビューポート、コンテンツ、コントロールを配置します。
+- **`MessageScrollerViewport`** — スクロール可能な要素です。ネイティブのスクロール イベントを受け取り、古いメッセージが先頭に追加されたときも表示中の行を保持します。
+- **`MessageScrollerContent`** — トランスクリプト コンテナです。行を保持し、新しいメッセージ向けのライブ リージョンの既定値を提供します。
+- **`MessageScrollerItem`** — トランスクリプト行の境界です。コンテンツの直接の子要素をすべてこれでラップすると、
+  スクローラーがサイズを測定し、固定、位置の保持、表示状態の追跡、移動を行えます。メッセージ、マーカー、入力中インジケーター、
+  区切り、参加・退出イベント、「前を読み込む」行などに使えます。
+- **`MessageScrollerButton`** — スクロール コントロールです。トランスクリプトの先頭または末尾へ移動し、
+  その方向にコンテンツがあるまで操作不能になります。
 
-## Core Concepts
+## 基本概念
 
-### Anchoring Turns
+### ターンを固定する
 
-A turn is the part of the conversation that starts a new exchange. In a simple
-AI chat, that is usually the user's message and the assistant reply that follows.
+ターンとは、新しいやり取りを開始する会話の一部分です。単純な AI チャットでは、通常はユーザーの
+メッセージと、それに続くアシスタントの返信を指します。
 
-An anchor is the row the viewport should treat as the start of that turn. Mark
-that row with `scrollAnchor`. When a new anchor is appended, the viewport moves
-it near the top and keeps a peek of the previous item above it, so the new turn
-does not feel detached from its context.
+アンカーとは、ビューポートがそのターンの開始位置として扱う行です。その行に `scrollAnchor` を付けます。
+新しいアンカーが追加されると、ビューポートはそれを上部付近へ移動し、直前の項目を一部だけ上に残します。
+これにより、新しいターンが文脈から切り離されたように見えません。
 
 ```tsx
 // This tells the scroller to anchor the user's message for the next turn.
@@ -204,12 +194,12 @@ does not feel detached from its context.
 />
 ```
 
-Scroll anchors are not tied to message role. You can turn any row into an anchor:
-a user message, a system marker, a handoff event, or anything else that starts a
-meaningful turn. `MessageScroller` only needs to know which row should anchor the
-viewport.
+スクロール アンカーはメッセージのロールに結びついていません。ユーザー メッセージ、システム マーカー、
+引き継ぎイベントなど、意味のあるターンを開始する任意の行をアンカーにできます。
+`MessageScroller` が必要とするのは、どの行をビューポートの基準にするかという情報だけです。
 
-In the following example, the user's message is anchored. When you send a new message, the viewport anchors it near the top and appends the assistant reply below it. Toggle the anchor to the assistant's message to see the difference.
+次の例では、ユーザーのメッセージをアンカーにしています。新しいメッセージを送信すると、ビューポートはそれを上部付近に固定し、
+その下にアシスタントの返信を追加します。アンカーをアシスタントのメッセージに切り替えて違いを確認してください。
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -218,14 +208,12 @@ In the following example, the user's message is anchored. When you send a new me
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-### Group Chat
+### グループチャット
 
-In a group chat, the turn boundary is more specific than "the user message". It is often
-the message that asks the model to respond, or a marker like "Marcus joined the
-chat". Typing indicators and history controls usually should not anchor.
+グループ チャットでは、ターンの境界は「ユーザー メッセージ」より具体的です。多くの場合、モデルに返信を求めるメッセージや、
+「Marcus がチャットに参加しました」のようなマーカーが境界になります。入力中インジケーターや履歴コントロールは通常、アンカーにしません。
 
-Because anchoring is role-independent, you can anchor a marker just as easily as
-a message.
+アンカーはロールに依存しないため、メッセージと同じようにマーカーも簡単にアンカーにできます。
 
 ```tsx
 <MessageScrollerItem messageId="marcus-joined" scrollAnchor>
@@ -242,12 +230,10 @@ a message.
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-### Keeping Context Visible
+### コンテキストを表示し続ける
 
-When a new turn starts, it should still feel like part of the same continuous
-thread. `scrollPreviousItemPeek` keeps a slice of the previous item visible
-above the anchor, so the reader keeps their context instead of feeling like the
-conversation restarted on a blank page.
+新しいターンが始まっても、同じ連続したスレッドの一部として感じられるべきです。
+`scrollPreviousItemPeek` はアンカーの上に直前の項目を一部表示し、会話が白紙のページで再開したように感じさせず、読者の文脈を保ちます。
 
 ```tsx
 // Keep 64px of the previous turn visible above the newly anchored row.
@@ -256,7 +242,7 @@ conversation restarted on a blank page.
 </MessageScrollerProvider>
 ```
 
-Adjust the peek amount in the example below to see how it affects the conversation.
+下の例で表示量を調整し、会話に与える影響を確認してください。
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -265,13 +251,11 @@ Adjust the peek amount in the example below to see how it affects the conversati
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-### Following the Live Edge
+### ライブエッジに追従する
 
-When the reader is at the live edge, either because they stayed there or
-returned there, `autoScroll` keeps streamed replies in view as they grow.
-Scrolling away from the live edge releases the view, whether by wheel, touch,
-keyboard scroll keys, or dragging the scrollbar. An explicit message jump
-releases it too. New chunks can then arrive without moving the reader.
+読者がその場に留まっているか、戻ってきたことでライブ エッジにいる場合、`autoScroll` はストリーミング中の返信が伸びても表示範囲に保ちます。
+ホイール、タッチ、キーボードのスクロール キー、スクロールバーのドラッグでライブ エッジから離れると、追従を解除します。
+明示的なメッセージ移動でも解除されます。その後は、読者を移動させずに新しいチャンクを受け取れます。
 
 ```tsx
 <MessageScrollerProvider autoScroll>
@@ -286,22 +270,16 @@ releases it too. New chunks can then arrive without moving the reader.
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Calling `scrollToEnd`, or pressing `MessageScrollerButton`, re-engages
-follow-output when `autoScroll` is enabled, so a reader who scrolled away can
-return to the live edge and keep following. The root and viewport expose
-`data-autoscrolling` while that programmatic scroll to the latest message runs,
-so you can conditionally apply styles during the transition.
+`autoScroll` が有効な場合、`scrollToEnd` の呼び出しや `MessageScrollerButton` の押下で出力追従が再開します。
+そのため、離れた読者もライブ エッジへ戻って追従を続けられます。最新メッセージへのプログラムによるスクロール中は、
+ルートとビューポートに `data-autoscrolling` が公開されるため、遷移中だけ条件付きでスタイルを適用できます。
 
-### Opening Saved Threads
+### 保存済みスレッドを開く
 
-It can seem reasonable to reopen a saved thread at the absolute end of the
-transcript, but that often drops the reader into the conversation without enough
-context. A better default is `"last-anchor"`: show the last meaningful turn,
-like the user's latest message, with the reply below it.
+保存済みスレッドをトランスクリプトの絶対的な末尾で開くのは合理的に思えますが、多くの場合、十分な文脈がないまま会話の途中へ読者を置くことになります。
+よりよい既定値は `"last-anchor"` です。最後に意味のあるターン（たとえばユーザーの最新メッセージ）と、その下の返信を表示します。
 
-That gives the reader an immediate place in the thread. They can see what they
-asked, where the answer starts, and continue from there without reconstructing
-the conversation from the bottom edge.
+これにより、読者はスレッド内の位置をすぐに把握できます。何を尋ねたか、回答がどこから始まるかを確認でき、末尾から会話を組み立て直すことなく読み進められます。
 
 ```tsx
 <MessageScrollerProvider defaultScrollPosition="last-anchor">
@@ -317,27 +295,17 @@ the conversation from the bottom edge.
   hideCode
 />
 
-`"last-anchor"` is keyed on `scrollAnchor`, not message role. If no anchor
-exists, or the last anchored turn already fits in the viewport, it falls back to
-`"end"`.
+`"last-anchor"` はメッセージのロールではなく `scrollAnchor` を基準にします。アンカーが存在しない場合や、最後に固定したターンがすでにビューポートに収まっている場合は、`"end"` にフォールバックします。
 
-Use `"start"` when you want to resume at the beginning of a conversation, or
-`"end"` when the absolute latest message is the right place to land.
+会話の先頭から再開したい場合は `"start"` を、絶対的な最新メッセージへ移動するのが適切な場合は `"end"` を使います。
 
-### Avoiding a Flash on Reload
+### 再読み込み時のちらつきを防ぐ
 
-A scroll container always opens at the top. HTML has no way to set `scrollTop`,
-so a server-rendered transcript shows the oldest messages first. After
-JavaScript runs, `defaultScrollPosition` moves the view, and you see a jump.
+スクロール コンテナは常に上部から開きます。HTML には `scrollTop` を設定する方法がないため、サーバーでレンダリングされたトランスクリプトでは最も古いメッセージが先に表示されます。JavaScript の実行後に `defaultScrollPosition` が表示位置を移動させるため、ジャンプが見えてしまいます。
 
-When `defaultScrollPosition` is `"end"` or `"last-anchor"`, the viewport has
-`data-pending-scroll` until that position is applied. The styled viewport stays
-hidden while the attribute is present, so you see the frame instead of the jump.
-`"start"` does not need this.
+`defaultScrollPosition` が `"end"` または `"last-anchor"` の場合、位置が適用されるまでビューポートに `data-pending-scroll` が付きます。この属性がある間はスタイル付きビューポートが非表示になるため、ジャンプではなくフレームが表示されます。`"start"` では必要ありません。
 
-If you want `"end"` visible on first paint, add an inline script right after the
-viewport. Give the viewport an `id`, scroll it to the bottom, and remove
-`data-pending-scroll`.
+初回描画から `"end"` を表示したい場合は、ビューポートの直後にインライン スクリプトを追加します。ビューポートに `id` を付けて末尾へスクロールし、`data-pending-scroll` を削除します。
 
 ```tsx
 const scrollToEndScript = `(function () {
@@ -358,21 +326,17 @@ const scrollToEndScript = `(function () {
 </MessageScroller>
 ```
 
-Put the script in your page, not in the scroller. It only works for `"end"`, and
-only when the messages are already in the HTML. Add `suppressHydrationWarning` on
-the viewport. If you use a Content Security Policy, pass a `nonce`.
+スクリプトはスクローラーではなくページに配置します。これは `"end"` の場合だけ、かつメッセージがすでに HTML にある場合だけ動作します。
+ビューポートに `suppressHydrationWarning` を追加してください。Content Security Policy を使う場合は `nonce` を渡します。
 
-Do not use this script with `"last-anchor"`. Skip it when messages load on the
-client.
+このスクリプトを `"last-anchor"` と組み合わせないでください。メッセージをクライアントで読み込む場合は省略します。
 
-### Loading Earlier Messages
+### 以前のメッセージを読み込む
 
-Loading earlier messages should not move the conversation the reader is already
-looking at. When older rows are prepended above the current transcript,
-`MessageScrollerViewport` preserves the visible row so the reader stays in the
-same place while history loads above them.
+以前のメッセージを読み込んでも、読者が見ている会話を移動させてはいけません。現在のトランスクリプトの上に古い行を追加すると、
+`MessageScrollerViewport` は表示中の行を保持し、上に履歴を読み込んでも読者を同じ位置に留めます。
 
-This is enabled by default through `preserveScrollOnPrepend`.
+これは `preserveScrollOnPrepend` によって既定で有効になります。
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -381,19 +345,16 @@ This is enabled by default through `preserveScrollOnPrepend`.
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Use stable `messageId` values for message rows. That gives the scroller a
-specific row to preserve instead of guessing from whichever pixel happens to sit
-at the viewport edge.
+メッセージ行には安定した `messageId` 値を使います。これにより、ビューポート端にたまたまあるピクセルから推測せず、
+保持する具体的な行をスクローラーが特定できます。
 
-### Animating New Messages
+### 新しいメッセージをアニメーション表示する
 
-`MessageScrollerItem` can be animated directly. Create a motion version of the
-item, keep `messageId` and `scrollAnchor` on it, and use transform and opacity
-for the entrance.
+`MessageScrollerItem` は直接アニメーションできます。項目のモーション版を作成し、そこに `messageId` と `scrollAnchor` を保持して、
+表示時には transform と opacity を使います。
 
-A common chat pattern is to animate the user's message when it is sent, then let
-the assistant reply stream into a regular row below it. Start the user row below
-its final position so it feels like it rises from the live edge of the viewport.
+チャットでよくあるパターンは、送信時にユーザーのメッセージをアニメーションさせ、その下の通常の行へアシスタントの返信をストリーミングする方法です。
+ユーザー行を最終位置より下から開始すると、ビューポートのライブ エッジから浮かび上がるように見えます。
 
 ```tsx
 const MotionMessageScrollerItem = motion.create(MessageScrollerItem)
@@ -406,17 +367,14 @@ const MotionMessageScrollerItem = motion.create(MessageScrollerItem)
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Avoid animating height, margin, or padding for row entrances; those changes can
-fight the scroller's positioning work. If the reader prefers reduced motion,
-skip the entrance animation and keep the scroll behavior the same.
+行の表示時に height、margin、padding をアニメーションさせないでください。これらの変更はスクローラーの位置調整と競合する可能性があります。
+読者がモーション低減を設定している場合は表示アニメーションを省略し、スクロール動作は同じにします。
 
-### Jumping to Messages
+### メッセージへ移動する
 
-Search results, permalinks, outline items, and toolbar buttons often need to
-drive the transcript from outside the message list. Use `useMessageScroller` for
-those controls. Because the hooks read from `MessageScrollerProvider`, they work
-in any component inside the provider, including controls rendered outside the
-`MessageScroller` frame.
+検索結果、パーマリンク、アウトライン項目、ツールバー ボタンから、メッセージ リストの外側でトランスクリプトを操作したいことがあります。
+そのようなコントロールには `useMessageScroller` を使います。フックは `MessageScrollerProvider` から読み取るため、
+`MessageScroller` フレームの外側に描画したコントロールを含め、プロバイダー内の任意のコンポーネントで動作します。
 
 ```tsx
 import { useMessageScroller } from "@/components/ui/message-scroller"
@@ -434,20 +392,16 @@ const { scrollToMessage, scrollToEnd, scrollToStart } = useMessageScroller()
   hideCode
 />
 
-`scrollToMessage` targets the `messageId` on `MessageScrollerItem`, so rows that
-need to be addressable should have stable ids. `scrollToMessage` returns `false`
-when the target is not mounted and cannot be queued.
+`scrollToMessage` は `MessageScrollerItem` の `messageId` を対象にするため、移動対象の行には安定した ID を付けます。
+対象がマウントされておらずキューにも追加できない場合、`scrollToMessage` は `false` を返します。
 
-`scrollToMessage` can queue a target before items exist, which covers
-client-resolved permalinks while the transcript mounts. After rows have mounted,
-a missing id returns `false` instead of starting a guessed retry loop. A `true`
-result means the scroll ran or was queued, not that the row is already in view.
+`scrollToMessage` は項目が存在する前でも対象をキューに追加できるため、トランスクリプトのマウント中にクライアントで解決されるパーマリンクにも対応します。
+行がマウントされた後に ID が見つからない場合は、推測による再試行ループを開始せず `false` を返します。
+`true` はスクロールが実行されたかキューに追加されたことを示し、行がすでに表示中であることは示しません。
 
-### Tracking the Reader's Position
+### 読者の位置を追跡する
 
-Use `useMessageScrollerVisibility` to track the reader's position in the
-conversation. A common example is a table-of-contents or a jump menu that
-highlights the current anchored turn.
+`useMessageScrollerVisibility` を使って、会話内の読者の位置を追跡します。目次やジャンプ メニューで、現在のアンカー ターンを強調表示するのが一般的な例です。
 
 ```tsx
 import { useMessageScrollerVisibility } from "@/components/ui/message-scroller"
@@ -465,21 +419,17 @@ const { currentAnchorId, visibleMessageIds } = useMessageScrollerVisibility()
   hideCode
 />
 
-`currentAnchorId` answers "where am I" by reporting the current anchored turn,
-and it stays set after that anchor scrolls above the viewport. `visibleMessageIds`
-answers "what is on screen", in document order.
+`currentAnchorId` は現在のアンカー ターンを返して「自分はどこにいるか」に答えます。アンカーがビューポートの上へスクロールされた後も値は保持されます。
+`visibleMessageIds` はドキュメント順で「画面に何があるか」に答えます。
 
-Visibility is pay-for-what-you-use. Tracking only runs while something
-subscribes to `useMessageScrollerVisibility`, and rows need a `messageId` to
-participate.
+表示状態の追跡は、利用時だけコストが発生します。何かが `useMessageScrollerVisibility` を購読している間だけ追跡が実行され、
+行が参加するには `messageId` が必要です。
 
-### Reading Scroll State
+### スクロール状態を読み取る
 
-Use `useMessageScrollerScrollable` when you need scroll state in JavaScript, such
-as a status indicator or a custom "jump to latest" control. It reports which
-edges the viewport can still scroll toward; "at the start/end" is the negation
-(`!start` / `!end`), and "scrollable at all" is `start || end`. For styling the
-scroller itself, prefer the `data-scrollable` attribute.
+ステータス インジケーターやカスタムの「最新へ移動」コントロールなど、JavaScript でスクロール状態が必要な場合は `useMessageScrollerScrollable` を使います。
+ビューポートがまだスクロールできる方向を返します。「先頭／末尾にいる」は否定（`!start` / `!end`）で表し、
+「どちらかにスクロール可能」は `start || end` です。スクローラー自体のスタイルには `data-scrollable` 属性を優先してください。
 
 ```tsx
 import { useMessageScrollerScrollable } from "@/components/ui/message-scroller"
@@ -496,38 +446,27 @@ const { start, end } = useMessageScrollerScrollable()
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-## Performance
+## パフォーマンス
 
-`MessageScroller` is benchmarked against large transcripts with markdown and
-composed message rows.
+`MessageScroller` は、Markdown と複合的なメッセージ行を含む大規模なトランスクリプトでベンチマークしています。
 
-Our performance goal for `MessageScroller` is to keep the scroll hot path outside of React state: no React rerenders for
-transcript rows, no forced layout on every scroll, and as little off-screen paint
-work as the browser can avoid.
+`MessageScroller` のパフォーマンス目標は、スクロールのホットパスを React の状態の外に保つことです。
+トランスクリプト行の React 再レンダリングを発生させず、スクロールごとの強制レイアウトを避け、ブラウザーが省略できる画面外の描画処理を最小限にします。
 
-Scroll position, anchoring, and follow-output are tracked imperatively and mirrored onto the root and viewport through `data-*` attributes, so scrolling and streaming do not rerender transcript rows.
+スクロール位置、アンカー、出力追従は命令的に追跡し、`data-*` 属性を通じてルートとビューポートへ反映します。そのため、スクロールやストリーミングでトランスクリプト行が再レンダリングされません。
 
-The styled `MessageScrollerItem` also ships with `content-visibility: auto` and
-`contain-intrinsic-size`. Rows stay in the DOM for selection, copy,
-find-in-page, SSR, and assistive tech, but the browser can skip rendering work
-for rows far outside the viewport.
+スタイル付きの `MessageScrollerItem` には `content-visibility: auto` と `contain-intrinsic-size` も設定されています。
+選択、コピー、ページ内検索、SSR、支援技術のために行は DOM に残りますが、ブラウザーはビューポートから遠く離れた行の描画処理を省略できます。
 
-Visibility tracking is pay-for-what-you-use. A jump menu or active
-turn indicator costs nothing until something subscribes to
-`useMessageScrollerVisibility`.
+表示状態の追跡は利用時だけコストが発生します。何かが `useMessageScrollerVisibility` を購読するまで、ジャンプ メニューやアクティブ ターン インジケーターのためのコストはかかりません。
 
-This is comfortable for the expected range of a chat transcript: hundreds to low
-thousands of turns, including messages with markdown and composed components.
+これは、Markdown や複合コンポーネントを含む数百から数千ターン程度という、一般的なチャット トランスクリプトの範囲に適しています。
 
-## Virtualization
+## 仮想化
 
-Virtualization is intentionally left outside the primitive. `MessageScroller`
-renders real DOM rows and stays fast well into the thousands of turns (see
-[Performance](#performance)), so most transcripts never need it.
+仮想化は意図的にプリミティブの外側に残しています。`MessageScroller` は実際の DOM 行を描画し、数千ターンでも高速に動作するため（[パフォーマンス](#パフォーマンス)を参照）、多くのトランスクリプトでは不要です。
 
-When a transcript is large enough to need virtualization, use
-`MessageScrollerViewport` as the scroll element and let the virtualizer own the
-rows.
+仮想化が必要なほどトランスクリプトが大きい場合は、`MessageScrollerViewport` をスクロール要素として使い、行の管理を仮想化ライブラリに任せます。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -588,18 +527,15 @@ function VirtualizedTranscript({
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
-`MessageScroller` keeps the scroll container keyboard reachable and the
-transcript announceable without forcing a specific message UI.
+`MessageScroller` は特定のメッセージ UI を強制せずに、スクロール コンテナをキーボードで操作可能にし、トランスクリプトを通知可能にします。
 
-`MessageScrollerViewport` is a labelled, keyboard-focusable scroll region by
-default. It uses `role="region"`, `aria-label="Messages"`, and `tabIndex={0}`,
-so keyboard users can focus the transcript and scroll it directly.
+`MessageScrollerViewport` は既定でラベル付きのキーボード フォーカス可能なスクロール領域です。
+`role="region"`、`aria-label="Messages"`、`tabIndex={0}` を使うため、キーボード ユーザーはトランスクリプトにフォーカスして直接スクロールできます。
 
-`MessageScrollerContent` marks the transcript as a live region with
-`role="log"` and `aria-relevant="additions"`. New rows can be announced, but
-streamed text mutations do not have to be announced token by token.
+`MessageScrollerContent` は `role="log"` と `aria-relevant="additions"` によってトランスクリプトをライブ リージョンとしてマークします。
+新しい行は通知できますが、ストリーミング中のテキスト変更をトークンごとに通知する必要はありません。
 
 ```tsx
 <MessageScrollerContent aria-busy={status === "streaming"}>
@@ -607,21 +543,17 @@ streamed text mutations do not have to be announced token by token.
 </MessageScrollerContent>
 ```
 
-Pass `aria-busy` while a turn streams if announcements should wait for the
-completed message row.
+メッセージ行が完成するまで通知を待たせたい場合は、ターンのストリーミング中に `aria-busy` を渡します。
 
-`MessageScrollerButton` renders a real button. When there is nothing to scroll
-toward, it sets `inert`, uses `tabIndex={-1}`, and exposes `data-active="false"`
-so inactive scroll controls do not create extra focus stops.
+`MessageScrollerButton` は実際のボタンを描画します。スクロール先がない場合は `inert` を設定し、`tabIndex={-1}` を使い、
+`data-active="false"` を公開します。これにより、非アクティブなスクロール コントロールが余分なフォーカス停止位置を作りません。
 
-## Unstyled
+## スタイルなし
 
-The behavior in `MessageScroller` comes from the `@shadcn/react` package. To use
-it directly with your own markup and styles, see
-[Message Scroller](/docs/react/message-scroller) under @shadcn/react.
+`MessageScroller` の動作は `@shadcn/react` パッケージから提供されます。独自のマークアップとスタイルで直接使う方法は、
+`@shadcn/react` の [Message Scroller](/docs/react/message-scroller) を参照してください。
 
-## API Reference
+## API リファレンス
 
-The props, data attributes, and hooks for every part are documented on the
-[@shadcn/react Message Scroller](/docs/react/message-scroller#api-reference) page.
-They are identical for the styled component and the unstyled parts.
+各パーツの props、データ属性、フックについては、[@shadcn/react Message Scroller](/docs/react/message-scroller#api-reference) のページに記載しています。
+スタイル付きコンポーネントとスタイルなしパーツで内容は同じです。

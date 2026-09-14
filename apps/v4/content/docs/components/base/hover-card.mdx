@@ -1,6 +1,6 @@
 ---
 title: Hover Card
-description: For sighted users to preview content available behind a link.
+description: 晴眼者の場合、リンクの背後にあるコンテンツをプレビューできます。
 base: base
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-80"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add hover-card
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="hover-card"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -75,7 +75,7 @@ import {
 </HoverCard>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `HoverCard`:
 
@@ -87,8 +87,8 @@ HoverCard
 
 ## Trigger Delays
 
-Use `delay` and `closeDelay` on the trigger to control when the card opens and
-closes.
+トリガーで `delay` および `closeDelay` を使用して、カードが開くタイミングを制御し、
+が閉じます。
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -101,7 +101,7 @@ closes.
 
 ## Positioning
 
-Use the `side` and `align` props on `HoverCardContent` to control placement.
+`HoverCardContent` の `side` および `align` プロパティを使用して配置を制御します。
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -112,7 +112,7 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
 </HoverCard>
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="base-nova"
@@ -130,7 +130,7 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -139,6 +139,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80"
 />
 
-## API Reference
+## API リファレンス
 
 See the [Base UI](https://base-ui.com/react/components/hover-card#api-reference) documentation for more information.

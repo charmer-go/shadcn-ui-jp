@@ -1,6 +1,6 @@
 ---
-title: Command
-description: Command menu for search and quick actions.
+title: コマンド
+description: 検索およびクイック アクション用のコマンド メニュー。
 base: radix
 component: true
 links:
@@ -14,17 +14,17 @@ links:
   previewClassName="h-[24.5rem]"
 />
 
-## About
+## 概要
 
-The `<Command />` component uses the [`cmdk`](https://github.com/dip/cmdk) component by [Dip](https://www.dip.org/).
+`<Command />` コンポーネントは、[Dip](https://www.dip.org/) による [`cmdk`](https://github.com/dip/cmdk) コンポーネントを使用します。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -38,13 +38,13 @@ npx shadcn@latest add command
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install cmdk
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="command"
@@ -52,7 +52,7 @@ npm install cmdk
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -60,7 +60,7 @@ npm install cmdk
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -96,9 +96,9 @@ import {
 </Command>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Command`:
+次の構成を使用して、`Command` を構築します。
 
 ```text
 Command
@@ -114,31 +114,31 @@ Command
         └── CommandItem
 ```
 
-## Basic
+## 基本
 
-A simple command menu in a dialog.
+ダイアログ内の単純なコマンド メニュー。
 
 <ComponentPreview styleName="radix-nova" name="command-basic" />
 
-## Shortcuts
+## ショートカット
 
 <ComponentPreview styleName="radix-nova" name="command-shortcuts" />
 
-## Groups
+## グループ
 
-A command menu with groups, icons and separators.
+グループ、アイコン、区切り文字を含むコマンド メニュー。
 
 <ComponentPreview styleName="radix-nova" name="command-groups" />
 
-## Scrollable
+## スクロール可能
 
-Scrollable command menu with multiple items.
+複数の項目を含むスクロール可能なコマンド メニュー。
 
 <ComponentPreview styleName="radix-nova" name="command-scrollable" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -148,6 +148,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-[24.5rem]"
 />
 
-## API Reference
+## API リファレンス
 
-See the [cmdk](https://github.com/dip/cmdk) documentation for more information.
+詳細については、[cmdk](https://github.com/dip/cmdk) のドキュメントを参照してください。

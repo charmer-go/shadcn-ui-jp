@@ -1,19 +1,19 @@
 ---
 title: Next.js
-description: Adding dark mode to your Next.js app.
+description: Next.js アプリにダーク モードを追加します。
 ---
 
 <Steps>
 
-## Install next-themes
+## 次のテーマをインストール
 
-Start by installing `next-themes`:
+まずは `next-themes` をインストールします。
 
 ```bash
 npm install next-themes
 ```
 
-## Create a theme provider
+## テーマプロバイダーの作成
 
 ```tsx title="components/theme-provider.tsx" showLineNumbers
 "use client"
@@ -29,9 +29,9 @@ export function ThemeProvider({
 }
 ```
 
-## Wrap your root layout
+## ルート レイアウトをラップ
 
-Add the `ThemeProvider` to your root layout and add the `suppressHydrationWarning` prop to the `html` tag.
+`ThemeProvider` をルート レイアウトに追加し、`suppressHydrationWarning` プロパティを `html` タグに追加します。
 
 ```tsx {1,6,9-14,16} title="app/layout.tsx" showLineNumbers
 import { ThemeProvider } from "@/components/theme-provider"
@@ -57,9 +57,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
 }
 ```
 
-## Add a mode toggle
+## モード切り替えの追加
 
-Place a mode toggle on your site to toggle between light and dark mode.
+サイトにモード切り替えスイッチを配置して、ライト モードとダーク モードを切り替えます。
 
 <ComponentPreview
   styleName="new-york-v4"

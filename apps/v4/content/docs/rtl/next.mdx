@@ -1,27 +1,27 @@
 ---
 title: Next.js
-description: Create a new Next.js project with RTL support.
+description: RTL サポートを備えた新しい Next.js プロジェクトを作成します。
 ---
 
 <Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
 
-**Starting a new project?** Use [shadcn/create](/create?template=next&base=base&rtl=true) for a fully configured Next.js app with custom themes, Base UI or Radix, and icon libraries.
+**新しいプロジェクトを開始しますか?** カスタム テーマ、Base UI または Radix、およびアイコン ライブラリを備えた完全に構成された Next.js アプリには、[shadcn/create](/create?template=next&base=base&rtl=true) を使用します。
 
 </Callout>
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
-Create a new project using the `--rtl` flag and the `next` template.
+`--rtl` フラグと `next` テンプレートを使用して新しいプロジェクトを作成します。
 
-**You can skip this step if you have already created a project using [shadcn/create](/create?template=next&base=base&rtl=true).**
+**[shadcn/create](/create?template=next&base=base&rtl=true) を使ってプロジェクトを作成済みの場合、この手順は省略できます。**
 
 ```bash
 npx shadcn@latest create --template next --rtl
 ```
 
-This will create a `components.json` file with the `rtl: true` flag.
+これにより、`rtl: true` フラグを持つ `components.json` ファイルが作成されます。
 
 ```json title="components.json" showLineNumbers {4}
 {
@@ -31,11 +31,11 @@ This will create a `components.json` file with the `rtl: true` flag.
 }
 ```
 
-### Add DirectionProvider
+### DirectionProvider の追加
 
-Wrap your application with the `DirectionProvider` component with the `direction="rtl"` prop.
+`direction="rtl"` prop を持つ `DirectionProvider` コンポーネントでアプリケーションをラップします。
 
-Then add the `dir="rtl"` and `lang="ar"` attributes to the `html` tag. Update `lang="ar"` to your target language.
+次に、`html` タグへ `dir="rtl"` と `lang="ar"` 属性を追加します。`lang="ar"` は対象言語に更新してください。
 
 ```tsx title="app/layout.tsx" showLineNumbers {1,9-13}
 import { DirectionProvider } from "@/components/ui/direction"
@@ -55,9 +55,9 @@ export default function RootLayout({
 }
 ```
 
-### Add Font
+### フォントを追加する
 
-For the best RTL experience, we recommend using fonts that have proper support for your target language. [Noto](https://fonts.google.com/noto) is a great font family for this and it pairs well with Inter and Geist.
+最適な RTL 体験のため、対象言語を適切にサポートするフォントの使用を推奨します。[Noto](https://fonts.google.com/noto) はこの用途に適したフォント ファミリーで、Inter や Geist ともよく合います。
 
 ```tsx title="app/layout.tsx" showLineNumbers {1,5-8,16}
 import { Noto_Sans_Arabic } from "next/font/google"
@@ -84,11 +84,11 @@ export default function RootLayout({
 }
 ```
 
-For other languages, eg. Hebrew, you can use the `Noto_Sans_Hebrew` font.
+その他の言語、たとえばヘブライ語には `Noto_Sans_Hebrew` フォントを使えます。
 
-### Add Components
+### コンポーネントの追加
 
-You are now ready to add components to your project. The CLI will take care of handling RTL support for you.
+これで、プロジェクトにコンポーネントを追加する準備ができました。 CLI は、RTL サポートの処理を処理します。
 
 ```bash
 npx shadcn@latest add item

@@ -1,22 +1,20 @@
 ---
 title: Formisch
-description: Build forms in React using Formisch and Valibot.
+description: Formisch と Valibot を使用して React でフォームを構築します。
 links:
   doc: https://formisch.dev
 ---
 
 import { InfoIcon } from "lucide-react"
 
-This guide covers building forms with [Formisch](https://formisch.dev), the lightweight, schema-first, and fully type-safe form library for React. We'll create forms with the `<Field />` component, validate them with Valibot schemas, handle errors, and ensure accessibility.
+このガイドでは、軽量でスキーマファースト、完全に型安全な React 用フォーム ライブラリ [Formisch](https://formisch.dev) を使ってフォームを構築します。`<Field />` コンポーネントでフォームを作成し、Valibot スキーマで検証し、エラーを処理し、アクセシビリティを確保します。
 
-## Demo
+## デモ
 
-We'll build the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+次のフォームを構築します。単純なテキスト入力とテキストエリアを備えています。送信時にフォーム データを検証し、エラーを表示します。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in Formisch. It
-  is recommended to add basic browser validation in your production code.
+  **注:** このデモでは、スキーマ検証とフォーム エラーが Formisch でどのように動作するかを示すため、意図的にブラウザー検証を無効にしています。本番コードでは基本的なブラウザー検証を追加することを推奨します。
 </Callout>
 
 <ComponentPreview
@@ -26,25 +24,25 @@ We'll build the following form. It has a simple text input and a textarea. On su
   chromeLessOnMobile
 />
 
-## Approach
+## アプローチ
 
-This form leverages Formisch for headless, schema-first form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+このフォームでは、スタイルを持たないスキーマファーストのフォーム処理に Formisch を利用します。**マークアップとスタイルを完全に柔軟に制御できる** `<Field />` コンポーネントでフォームを構築します。
 
-- Uses Formisch's `useForm` hook for form state management.
-- `<Form />` component to wrap the native `<form>` element with submit handling.
-- `<Field />` render-prop component for controlled inputs.
-- Schema validation using [Valibot](https://valibot.dev).
-- Type-safe field paths inferred from the schema.
+- フォーム状態の管理に Formisch の `useForm` フックを使います。
+- ネイティブの `<form>` 要素を送信処理付きでラップする `<Form />` コンポーネントを使います。
+- 制御された入力に `<Field />` の render prop コンポーネントを使います。
+- [Valibot](https://valibot.dev) でスキーマ検証を行います。
+- スキーマから型安全なフィールド パスを推論します。
 
-## Form Methods
+## フォーム メソッド
 
-Formisch exposes form operations as **top-level functions** rather than methods on a form object. Import only what you need:
+Formisch はフォーム オブジェクトのメソッドではなく、**トップレベル関数**としてフォーム操作を公開します。必要なものだけをインポートします。
 
 ```ts
 import { getInput, insert, reset, submit } from "@formisch/react"
 ```
 
-Every method follows the same signature: the **first parameter is always the form store**, and the **second parameter (if necessary) is always a config object**.
+すべてのメソッドは同じシグネチャに従います。**最初のパラメーターは常にフォーム ストア**で、**2 番目のパラメーター（必要な場合）は常に設定オブジェクト**です。
 
 ```ts
 // Read a field value
@@ -57,11 +55,11 @@ reset(form, { initialInput: { email: "", password: "" } })
 move(form, { path: ["items"], from: 0, to: 3 })
 ```
 
-This design keeps the API flexible and consistent across all methods. You'll see the same `(form, config)` shape used throughout this guide for reading state (`getInput`, `getErrors`), writing state (`setInput`, `setErrors`), form control (`submit`, `validate`, `focus`), and array operations (`insert`, `remove`, `move`, `swap`, `replace`). See the [full methods reference](https://formisch.dev/react/guides/form-methods) for details.
+この設計により、すべてのメソッドで API の柔軟性と一貫性が保たれます。このガイド全体で、状態の読み取り（`getInput`、`getErrors`）、状態の書き込み（`setInput`、`setErrors`）、フォーム制御（`submit`、`validate`、`focus`）、配列操作（`insert`、`remove`、`move`、`swap`、`replace`）に同じ `(form, config)` 形式を使います。詳しくは[メソッドの完全なリファレンス](https://formisch.dev/react/guides/form-methods)を参照してください。
 
-## Anatomy
+## 構成
 
-Here's a basic example of a form using the `<Field />` component from Formisch and the shadcn `<Field />` component.
+Formisch の `<Field />` コンポーネントと shadcn の `<Field />` コンポーネントを使った、基本的なフォームの例です。
 
 ```tsx showLineNumbers {3-21}
 <Form of={form} onSubmit={handleSubmit}>
@@ -92,17 +90,14 @@ Here's a basic example of a form using the `<Field />` component from Formisch a
 ```
 
 <Callout icon={<InfoIcon />}>
-  **Note:** Formisch ships its own `Field` component. To avoid a name clash with
-  the shadcn `Field`, the examples below import the Formisch one as
-  `FormischField` and keep the shadcn `Field` under its original name. In your
-  own code you can alias either side — just be consistent.
+  **注:** Formisch には独自の `Field` コンポーネントがあります。shadcn の `Field` との名前の衝突を避けるため、以下の例では Formisch 版を `FormischField` としてインポートし、shadcn の `Field` は元の名前を維持しています。自分のコードではどちら側にも別名を付けられますが、一貫して使用してください。
 </Callout>
 
-## Form
+## フォーム
 
-### Create a form schema
+### フォーム スキーマを作成する
 
-We'll start by defining the shape of our form using a Valibot schema. Formisch infers all input and output types directly from this schema.
+Valibot スキーマでフォームの形を定義することから始めます。Formisch はこのスキーマからすべての入力型と出力型を直接推論します。
 
 ```tsx showLineNumbers title="form.tsx"
 import * as v from "valibot"
@@ -121,9 +116,9 @@ const FormSchema = v.object({
 })
 ```
 
-### Set up the form
+### フォームを設定する
 
-Next, we'll use the `useForm` hook from Formisch to create our form instance. The schema is passed directly to `useForm` — there is no resolver step.
+次に、Formisch の `useForm` フックを使ってフォーム インスタンスを作成します。スキーマは `useForm` に直接渡すため、resolver の手順はありません。
 
 ```tsx showLineNumbers title="form.tsx" {1-2,21-25}
 import { Form, Field as FormischField, useForm } from "@formisch/react"
@@ -167,28 +162,28 @@ export function BugReportForm() {
 }
 ```
 
-The `<Form />` component wraps a native `<form>` element. It calls `event.preventDefault()`, runs validation, and only invokes `onSubmit` when the data is valid. The `output` you receive is fully typed from the schema.
+`<Form />` コンポーネントはネイティブの `<form>` 要素をラップします。`event.preventDefault()` を呼び出して検証を実行し、データが有効な場合だけ `onSubmit` を呼び出します。受け取る `output` はスキーマから完全に型付けされます。
 
-### Build the form
+### フォームを構築する
 
-We can now build the form using the `<Field />` component from Formisch and the shadcn `<Field />` component.
+これで、Formisch の `<Field />` コンポーネントと shadcn の `<Field />` コンポーネントを使ってフォームを構築できます。
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-formisch-demo.tsx"
   title="form.tsx"
 />
 
-### Done
+### 完了
 
-That's it. You now have a fully accessible form with client-side validation.
+以上で、クライアント側検証を備えた完全にアクセシブルなフォームが完成しました。
 
-When you submit the form, the `handleSubmit` function will be called with the validated form data. If the form data is invalid, Formisch will populate `field.errors` for each invalid field and the UI will display them.
+フォームを送信すると、検証済みのフォーム データを引数に `handleSubmit` 関数が呼び出されます。フォーム データが無効な場合、Formisch は無効な各フィールドの `field.errors` を設定し、UI に表示します。
 
-## Validation
+## バリデーション
 
-### Client-side Validation
+### クライアント側検証
 
-Formisch validates your form data using the Valibot schema you pass to `useForm`. There is no resolver — the schema is the single source of truth for both runtime validation and static types.
+Formisch は `useForm` に渡した Valibot スキーマを使ってフォーム データを検証します。resolver はありません。実行時検証と静的型の両方で、スキーマが唯一の信頼できる情報源になります。
 
 ```tsx showLineNumbers title="form.tsx" {1,3-6,11}
 import { useForm } from "@formisch/react"
@@ -209,9 +204,9 @@ export function ExampleForm() {
 }
 ```
 
-### Validation Modes
+### 検証モード
 
-Formisch separates the **first** validation from **subsequent** validations. You configure them with the `validate` and `revalidate` options on `useForm`.
+Formisch は**最初の**検証と**その後の**検証を分けます。`useForm` の `validate` と `revalidate` オプションで設定します。
 
 ```tsx showLineNumbers title="form.tsx" {3-4}
 const form = useForm({
@@ -223,20 +218,20 @@ const form = useForm({
 
 | Option       | Value       | Description                                                     |
 | ------------ | ----------- | --------------------------------------------------------------- |
-| `validate`   | `"submit"`  | Validate on form submission (default).                          |
-| `validate`   | `"blur"`    | Validate when a field loses focus.                              |
-| `validate`   | `"input"`   | Validate on every input change.                                 |
-| `validate`   | `"initial"` | Validate immediately on form creation.                          |
-| `revalidate` | `"input"`   | Revalidate on every input change after the first run (default). |
-| `revalidate` | `"blur"`    | Revalidate on blur after the first run.                         |
-| `revalidate` | `"submit"`  | Revalidate only on form submission.                             |
+| `validate`   | `"submit"`  | フォーム送信時に検証します（既定）。 |
+| `validate`   | `"blur"`    | フィールドがフォーカスを失ったときに検証します。 |
+| `validate`   | `"input"`   | 入力が変更されるたびに検証します。 |
+| `validate`   | `"initial"` | フォーム作成時にすぐ検証します。 |
+| `revalidate` | `"input"`   | 初回検証後、入力が変更されるたびに再検証します（既定）。 |
+| `revalidate` | `"blur"`    | 初回検証後、フォーカスを失ったときに再検証します。 |
+| `revalidate` | `"submit"`  | フォーム送信時だけ再検証します。 |
 
-## Displaying Errors
+## エラーの表示
 
-Display errors next to the field using `<FieldError />`. Formisch returns errors as an array of strings, so map them to the shape `<FieldError />` expects. For styling and accessibility:
+`<FieldError />` を使ってフィールドの隣にエラーを表示します。Formisch はエラーを文字列配列として返すため、`<FieldError />` が受け取る形にマッピングします。スタイルとアクセシビリティのために次を行います。
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `<Field />` コンポーネントに `data-invalid` prop を追加します。
+- `<Input />`、`<SelectTrigger />`、`<Checkbox />` などのフォーム コントロールに `aria-invalid` prop を追加します。
 
 ```tsx showLineNumbers title="form.tsx" {3,10,12-14}
 <FormischField of={form} path={["email"]}>
@@ -258,17 +253,17 @@ Display errors next to the field using `<FieldError />`. Formisch returns errors
 </FormischField>
 ```
 
-## Working with Different Field Types
+## 異なるフィールド型を扱う
 
-Formisch exposes two ways to bind a field to an element:
+Formisch では、フィールドを要素にバインドする方法が 2 つあります。
 
-- **Native HTML elements** (like `<Input />` and `<Textarea />`) — spread `field.props` and provide `value={field.input}`. Formisch wires up `name`, `ref`, `onChange`, `onBlur`, and `onFocus` for you.
-- **Component-library inputs** (like Radix-based `<Select />`, `<Checkbox />`, `<RadioGroup />`, `<Switch />`) — read the value from `field.input` and call `field.onChange(value)` to update it.
+- **ネイティブ HTML 要素**（`<Input />` や `<Textarea />` など）— `field.props` を展開し、`value={field.input}` を渡します。Formisch が `name`、`ref`、`onChange`、`onBlur`、`onFocus` を設定します。
+- **コンポーネント ライブラリの入力**（Radix ベースの `<Select />`、`<Checkbox />`、`<RadioGroup />`、`<Switch />` など）— `field.input` から値を読み取り、`field.onChange(value)` を呼び出して更新します。
 
-### Input
+### 入力
 
-- For input fields, spread `field.props` and provide `value={field.input}`.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- 入力フィールドでは `field.props` を展開し、`value={field.input}` を渡します。
+- エラーを表示するには、`<Input />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -296,10 +291,10 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Textarea
+### テキストエリア
 
-- For textarea fields, spread `field.props` and provide `value={field.input}`.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- テキストエリア フィールドでは `field.props` を展開し、`value={field.input}` を渡します。
+- エラーを表示するには、`<Textarea />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -333,10 +328,10 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Select
+### セレクト
 
-- For select components, read `field.input` and call `field.onChange` from `<Select />`'s `onValueChange`.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- select コンポーネントでは `field.input` を読み取り、`<Select />` の `onValueChange` から `field.onChange` を呼び出します。
+- エラーを表示するには、`<SelectTrigger />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -376,11 +371,11 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Checkbox
+### チェックボックス
 
-- For checkbox arrays, read `field.input` and update it from `onCheckedChange` using `field.onChange`.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- チェックボックス配列では `field.input` を読み取り、`field.onChange` を使って `onCheckedChange` から更新します。
+- エラーを表示するには、`<Checkbox />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
+- 適切なスタイルと間隔のため、`<FieldGroup />` コンポーネントに `data-slot="checkbox-group"` を追加してください。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -434,10 +429,10 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Radio Group
+### ラジオ グループ
 
-- For radio groups, read `field.input` and call `field.onChange` from `onValueChange`.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- ラジオ グループでは `field.input` を読み取り、`onValueChange` から `field.onChange` を呼び出します。
+- エラーを表示するには、`<RadioGroupItem />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -482,10 +477,10 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Switch
+### スイッチ
 
-- For switches, read `field.input` and call `field.onChange` from `onCheckedChange`.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- スイッチでは `field.input` を読み取り、`onCheckedChange` から `field.onChange` を呼び出します。
+- エラーを表示するには、`<Switch />` コンポーネントに `aria-invalid` prop、`<Field />` コンポーネントに `data-invalid` prop を追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -520,9 +515,9 @@ Formisch exposes two ways to bind a field to an element:
 </FormischField>
 ```
 
-### Complex Forms
+### 複雑なフォーム
 
-Here is an example of a more complex form with multiple fields and validation.
+複数のフィールドと検証を含む、より複雑なフォームの例です。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -531,9 +526,9 @@ Here is an example of a more complex form with multiple fields and validation.
   chromeLessOnMobile
 />
 
-## Resetting the Form
+## フォームをリセットする
 
-Formisch exposes a top-level `reset` function. Pass the form store to reset it to its initial input.
+Formisch はトップレベルの `reset` 関数を公開します。フォーム ストアを渡すと初期入力へリセットできます。
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => reset(form)}>
@@ -541,7 +536,7 @@ Formisch exposes a top-level `reset` function. Pass the form store to reset it t
 </Button>
 ```
 
-You can also reset to new initial values, or reset while keeping the user's current input:
+新しい初期値へリセットしたり、ユーザーの現在の入力を保持したままリセットしたりすることもできます。
 
 ```tsx showLineNumbers
 // Reset to a fresh set of initial values
@@ -551,9 +546,9 @@ reset(form, { initialInput: { title: "", description: "" } })
 reset(form, { initialInput: serverData, keepInput: true })
 ```
 
-## Array Fields
+## 配列フィールド
 
-Formisch provides a `<FieldArray />` component and a set of helper functions for managing dynamic array fields. Use it whenever you need to add, remove, or reorder items.
+Formisch は動的な配列フィールドを管理するための `<FieldArray />` コンポーネントとヘルパー関数群を提供します。項目の追加、削除、並べ替えが必要な場合に使用します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -562,9 +557,9 @@ Formisch provides a `<FieldArray />` component and a set of helper functions for
   chromeLessOnMobile
 />
 
-### Using FieldArray
+### FieldArray を使う
 
-`<FieldArray />` follows the same render-prop pattern as `<Field />`. Its `items` array contains a stable key per item that you should use as the React `key`.
+`<FieldArray />` は `<Field />` と同じ render prop パターンに従います。`items` 配列には各項目の安定したキーが含まれるため、React の `key` として使います。
 
 ```tsx showLineNumbers title="form.tsx" {1,7-22}
 import {
@@ -597,9 +592,9 @@ export function ExampleForm() {
 }
 ```
 
-### Array Field Structure
+### 配列フィールドの構造
 
-Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldDescription />`.
+配列フィールドを `<FieldLegend />` と `<FieldDescription />` を持つ `<FieldSet />` でラップします。
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
@@ -611,9 +606,9 @@ Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldD
 </FieldSet>
 ```
 
-### Adding Items
+### 項目を追加する
 
-Use the `insert` function to add new items to the array. By default new items are appended to the end. You can also pass an `at` index to insert at a specific position.
+`insert` 関数を使って配列に新しい項目を追加します。既定では末尾に追加されます。`at` インデックスを渡すと特定の位置に挿入できます。
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -629,9 +624,9 @@ Use the `insert` function to add new items to the array. By default new items ar
 </Button>
 ```
 
-### Removing Items
+### 項目を削除する
 
-Use the `remove` function with an `at` index to remove items from the array.
+`at` インデックスを指定した `remove` 関数を使って配列から項目を削除します。
 
 ```tsx showLineNumbers title="form.tsx"
 import { remove } from "@formisch/react"
@@ -653,11 +648,11 @@ import { remove } from "@formisch/react"
 }
 ```
 
-Formisch also exposes `move`, `swap`, and `replace` for reordering and replacing items. They follow the same `(form, config)` signature.
+Formisch は項目の並べ替えと置換のために `move`、`swap`、`replace` も公開します。これらも同じ `(form, config)` シグネチャに従います。
 
-### Array Validation
+### 配列の検証
 
-Use Valibot's `array` and pipeline validators to constrain array fields.
+Valibot の `array` とパイプライン バリデーターを使って、配列フィールドを制約します。
 
 ```tsx showLineNumbers title="form.tsx"
 const FormSchema = v.object({

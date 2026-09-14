@@ -1,6 +1,6 @@
 ---
-title: Bubble
-description: Displays conversational content in a message bubble. Supports variants, alignment, grouping, reactions, and collapsible content.
+title: バブル
+description: 会話内容をメッセージバブルに表示します。バリアント、配置、グループ化、反応、折りたたみ可能なコンテンツをサポートします。
 base: base
 component: true
 ---
@@ -11,17 +11,17 @@ component: true
   previewClassName="h-auto theme-blue"
 />
 
-The `Bubble` component displays framed conversational content. Use it for chat text, short structured output, quoted replies, suggestions, and reactions.
+`Bubble` コンポーネントは、フレーム化された会話コンテンツを表示します。チャット テキスト、短い構造化された出力、引用された返信、提案、反応に使用します。
 
 For full-featured chat interfaces, use the [`Message`](/docs/components/message) component. `Bubble` is intentionally scoped to the bubble surface. Place avatars, names, timestamps, metadata, and message-level actions in [`Message`](/docs/components/message).
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,7 +35,7 @@ npx shadcn@latest add bubble
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="bubble"
@@ -43,7 +43,7 @@ npx shadcn@latest add bubble
   styleName="base-rhea"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -51,7 +51,7 @@ npx shadcn@latest add bubble
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Bubble, BubbleContent, BubbleReactions } from "@/components/ui/bubble"
@@ -68,7 +68,7 @@ import { Bubble, BubbleContent, BubbleReactions } from "@/components/ui/bubble"
 </Bubble>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a bubble:
 
@@ -88,16 +88,16 @@ BubbleGroup
     └── BubbleContent
 ```
 
-## Features
+## 機能
 
-- Seven visual variants, from a strong primary bubble to unframed ghost content
-- Start and end alignment for sender and receiver bubbles
-- Reactions that anchor to the bubble edge with configurable side and alignment
+- 強力なプライマリ バブルからフレームなしのゴースト コンテンツまで、7 つのビジュアル バリアント
+- 送信者バブルと受信者バブルの開始位置と終了位置の調整
+- 構成可能な側面と配置でバブル エッジに固定されるリアクション
 - Bubbles size to their content, up to 80% of the container width
-- Polymorphic content via `render` for link and button bubbles
+- リンクとボタンのバブル用の `render` によるポリモーフィック コンテンツ
 - Customizable styling through the `className` prop on every part
 
-## Variants
+## バリエーション
 
 Use `variant` to change the visual treatment of the bubble.
 
@@ -115,13 +115,13 @@ Use `variant` to change the visual treatment of the bubble.
 | `tinted`      | A subtle primary-tinted bubble.                        |
 | `outline`     | A bordered bubble for secondary or rich content.       |
 | `ghost`       | Unframed content for assistant text or rich content.   |
-| `destructive` | A destructive bubble for error or failed actions.      |
+| `destructive` |エラーまたは失敗したアクションの破壊的なバブル。      |
 
 A bubble sizes to its content, up to 80% of the container width. The `ghost` variant removes the max-width so assistant text and rich content can span the full row.
 
-## Alignment
+## 配置
 
-Use `align` on `Bubble` to align the bubble to the start or end of the conversation.
+`Bubble` で `align` を使用して、バブルを会話の開始または終了に合わせます。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -176,7 +176,7 @@ export function BubbleLinkDemo() {
 }
 ```
 
-## Reactions
+## 反応
 
 Use `BubbleReactions` for bubble reactions. You can use it to display reactions or quick action buttons. Use `side` and `align` to position the row — `side="top"` anchors it to the upper edge. Reactions overlap the bubble edge, so leave vertical space between rows — the examples below use a larger `gap` for this reason.
 
@@ -186,9 +186,9 @@ Use `BubbleReactions` for bubble reactions. You can use it to display reactions 
   previewClassName="h-auto theme-blue"
 />
 
-## Show More / Collapsible
+## 詳細を表示 / 折りたたみ可能
 
-Long bubble content can be composed with [`Collapsible`](/docs/components/collapsible) to allow for a show more or show less interaction. Use the `CollapsibleTrigger` component to trigger the collapsible content.
+長いバブル コンテンツは、[`Collapsible`](/docs/components/collapsible) で構成して、より多くの表示またはより少ない表示のインタラクションを可能にすることができます。 `CollapsibleTrigger` コンポーネントを使用して、折りたたみ可能なコンテンツをトリガーします。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -196,7 +196,7 @@ Long bubble content can be composed with [`Collapsible`](/docs/components/collap
   previewClassName="h-auto theme-blue"
 />
 
-## Tooltip
+## ツールチップ
 
 Wrap a bubble in a [`Tooltip`](/docs/components/tooltip) to reveal metadata on hover, such as when a message was read.
 
@@ -206,7 +206,7 @@ Wrap a bubble in a [`Tooltip`](/docs/components/tooltip) to reveal metadata on h
   previewClassName="h-auto theme-blue"
 />
 
-## Popover
+## ポップオーバー
 
 Pair a bubble with a [`Popover`](/docs/components/popover) to surface more information on demand, such as the full error message for a failed action.
 
@@ -216,7 +216,7 @@ Pair a bubble with a [`Popover`](/docs/components/popover) to surface more infor
   previewClassName="h-auto theme-blue"
 />
 
-## Accessibility
+## アクセシビリティ
 
 `Bubble` renders the presentational message surface. Keep conversation-level semantics on the surrounding container and follow the guidelines below.
 
@@ -244,7 +244,7 @@ When reactions are interactive, render buttons instead and give icon-only button
 
 ### Interactive Bubbles
 
-When a bubble is clickable, render it as a real `<button>` or `<a>` with the `render` prop so it is focusable and exposes the correct role. `BubbleContent` ships a visible focus ring for interactive elements, and the accessible name comes from the bubble text. No extra label is needed.
+バブルをクリックできる場合、`render` プロップを使用して実際の `<button>` または `<a>` としてレンダリングして、フォーカス可能にして正しい役割を公開します。 `BubbleContent` にはインタラクティブ要素用の可視フォーカス リングが同梱されており、アクセス可能な名前はバブル テキストに由来しています。追加のラベルは必要ありません。
 
 ```tsx showLineNumbers
 <Bubble variant="muted" align="end">
@@ -258,9 +258,9 @@ When a bubble is clickable, render it as a real `<button>` or `<a>` with the `re
 
 Bubble variants signal role and tone with color. Pair them with text, alignment, or icons so meaning is not conveyed by color alone. For a `destructive` bubble, keep the error context in the message text rather than relying on the color treatment.
 
-## API Reference
+## API リファレンス
 
-### Bubble
+### バブル
 
 The root bubble wrapper.
 
@@ -277,13 +277,13 @@ The bubble content wrapper.
 | Prop        | Type                       | Default | Description                                               |
 | ----------- | -------------------------- | ------- | --------------------------------------------------------- |
 | `render`    | `ReactElement \| function` | -       | Render the content as a different element such as a link. |
-| `className` | `string`                   | -       | Additional classes to apply to the content element.       |
+| `className` | `string` | - |コンテンツ要素に適用する追加のクラス。       |
 
 ### BubbleReactions
 
 Displays overlapped reactions for a bubble.
 
-| Prop        | Type                | Default    | Description                                      |
+|小道具 |タイプ |デフォルト |説明 |
 | ----------- | ------------------- | ---------- | ------------------------------------------------ |
 | `side`      | `"top" \| "bottom"` | `"bottom"` | The side of the bubble to anchor the reactions.  |
 | `align`     | `"start" \| "end"`  | `"end"`    | The inline alignment of the reactions.           |
@@ -295,4 +295,4 @@ Groups consecutive bubbles from the same sender.
 
 | Prop        | Type     | Default | Description                                    |
 | ----------- | -------- | ------- | ---------------------------------------------- |
-| `className` | `string` | -       | Additional classes to apply to the group root. |
+| `className` | `string` | - |グループ ルートに適用する追加のクラス。 |

@@ -1,16 +1,16 @@
 ---
-title: August 2026 - Human in the Loop
-description: Mock paused tool calls, approvals, and continuations for the AI SDK with @shadcn/helpers.
+title: 2026 年 8 月 - ループ内の人間
+description: "@shadcn/helpers を使用して、AI SDK の一時停止されたツール呼び出し、承認、継続を模擬します。"
 date: 2026-08-12
 ---
 
-**@shadcn/helpers** can now mock human-in-the-loop flows for the AI SDK. A
-scripted conversation can pause for real user input, wait for an approval, and
-continue with whatever the user decided.
+**@shadcn/helpers** は、AI SDK の人間参加フローをモックできるようになりました。あ
+スクリプト化された会話は、実際のユーザー入力のために一時停止したり、承認を待ったりすることができます。
+ユーザーが決定した内容をそのまま続行します。
 
-Everything streams through the real
-`useChat` lifecycle, so your tool cards, approval prompts, and question flows
-behave exactly as they would in production.
+すべてが現実を流れていく
+`useChat` ライフサイクル、つまりツール カード、承認プロンプト、質問フロー
+本番環境とまったく同じように動作します。
 
 ```ts showLineNumbers
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -30,8 +30,8 @@ const chat = createChat<ChatMessage>()
   })
 ```
 
-Pass `needsApproval` to pause behind the user's decision. The scripted output
-streams after approval, and denial streams automatically.
+ユーザーの決定を待って一時停止するには、`needsApproval` を渡します。スクリプト化された出力
+承認後にストリーミングされ、拒否は自動的にストリーミングされます。
 
 ```ts showLineNumbers
 chat
@@ -56,7 +56,7 @@ chat
       href="/docs/helpers/ai-sdk#human-in-the-loop"
       className="mt-6 no-underline!"
     >
-      Read the Docs
+      ドキュメントを読む
     </Link>
   </Button>
 </div>

@@ -1,14 +1,14 @@
 ---
-title: April 2026 - shadcn preset
-description: Decode, share, open, and resolve preset codes from the shadcn CLI.
+title: 2026 年 4 月 - shadcn プリセット
+description: shadcn CLI からのプリセット コードをデコード、共有、オープン、および解決します。
 date: 2026-04-28
 ---
 
-We added `shadcn preset` commands for working with preset codes.
+プリセット コードを操作するための `shadcn preset` コマンドを追加しました。
 
-## Decode a preset
+## プリセットをデコードする
 
-You can decode a preset code to see exactly what it contains:
+プリセット コードをデコードして、その内容を正確に確認できます。
 
 ```bash
 npx shadcn@latest preset decode b5owWMfJ8l
@@ -31,9 +31,9 @@ Preset
   url          https://ui.shadcn.com/create?preset=b5owWMfJ8l
 ```
 
-## Resolve from a project
+## プロジェクトから解決する
 
-Use `preset resolve` in an existing project to see the preset that matches your current configuration.
+現在の構成に一致するプリセットを確認するには、既存のプロジェクトで `preset resolve` を使用します。
 
 ```bash
 npx shadcn@latest preset resolve
@@ -56,15 +56,15 @@ Preset
   url          https://ui.shadcn.com/create?preset=b5Kc6P0Vc
 ```
 
-It works with monorepos too:
+モノリポジトリでも動作します。
 
 ```bash
 npx shadcn@latest preset resolve -c apps/web
 ```
 
-## Share or open
+## 共有またはオープン
 
-Use `preset url` when you need a shareable link:
+共有可能なリンクが必要な場合は、`preset url` を使用します。
 
 ```bash
 npx shadcn@latest preset url b5owWMfJ8l
@@ -74,7 +74,7 @@ npx shadcn@latest preset url b5owWMfJ8l
 https://ui.shadcn.com/create?preset=b5owWMfJ8l
 ```
 
-Use `preset open` to open the preset on shadcn/create for customization:
+`preset open` を使用して、カスタマイズのために shadcn/create でプリセットを開きます。
 
 ```bash
 npx shadcn@latest preset open b5owWMfJ8l
@@ -84,10 +84,10 @@ npx shadcn@latest preset open b5owWMfJ8l
 Opening https://ui.shadcn.com/create?preset=b5owWMfJ8l in your browser.
 ```
 
-This makes presets easier to inspect, share, and hand off to coding agents without manually decoding codes or building URLs.
+これにより、手動でコードをデコードしたり URL を構築したりすることなく、プリセットの検査、共有、コーディング エージェントへの引き渡しが容易になります。
 
 <Button asChild size="sm">
   <Link href="/create" className="mt-6 no-underline!">
-    Try a Preset
+    プリセットを試してみる
   </Link>
 </Button>

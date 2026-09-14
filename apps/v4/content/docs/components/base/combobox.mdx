@@ -1,6 +1,6 @@
 ---
 title: Combobox
-description: Autocomplete input with a list of suggestions.
+description: 候補リスト付きのオートコンプリート入力。
 base: base
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   description="A combobox with a list of frameworks."
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,13 +33,13 @@ npx shadcn@latest add combobox
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="combobox"
@@ -47,7 +47,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -55,7 +55,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -90,11 +90,11 @@ export function ExampleCombobox() {
 }
 ```
 
-## Composition
+## 構成
 
-### Simple
+### シンプル
 
-A single-line input and a flat list (see [Basic](#basic)).
+単一行入力とフラット リスト ([Basic](#basic) を参照)。
 
 ```text
 Combobox
@@ -195,7 +195,7 @@ export function ExampleComboboxCustomItems() {
 }
 ```
 
-## Multiple Selection
+## 複数選択
 
 Use `multiple` with chips for multi-select behavior.
 
@@ -250,25 +250,25 @@ export function ExampleComboboxMultiple() {
 }
 ```
 
-## Basic
+## 基本
 
 A simple combobox with a list of frameworks.
 
 <ComponentPreview styleName="base-nova" name="combobox-basic" />
 
-## Multiple
+## 複数の
 
 A combobox with multiple selection using `multiple` and `ComboboxChips`.
 
 <ComponentPreview styleName="base-nova" name="combobox-multiple" />
 
-## Clear Button
+## クリア ボタン
 
 Use the `showClear` prop to show a clear button.
 
 <ComponentPreview styleName="base-nova" name="combobox-clear" />
 
-## Groups
+## グループ
 
 Use `ComboboxGroup` and `ComboboxSeparator` to group items.
 
@@ -280,13 +280,13 @@ You can render a custom component inside `ComboboxItem`.
 
 <ComponentPreview styleName="base-nova" name="combobox-custom" />
 
-## Invalid
+## 無効な
 
 Use the `aria-invalid` prop to make the combobox invalid.
 
 <ComponentPreview styleName="base-nova" name="combobox-invalid" />
 
-## Disabled
+## 無効化
 
 Use the `disabled` prop to disable the combobox.
 
@@ -304,15 +304,15 @@ You can trigger the combobox from a button or any other component by using the `
 
 <ComponentPreview styleName="base-nova" name="combobox-popup" />
 
-## Input Group
+## 入力グループ
 
-You can add an addon to the combobox by using the `InputGroupAddon` component inside the `ComboboxInput`.
+`ComboboxInput` 内の `InputGroupAddon` コンポーネントを使用して、コンボボックスにアドオンを追加できます。
 
 <ComponentPreview styleName="base-nova" name="combobox-input-group" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -321,6 +321,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   align="start"
 />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI](https://base-ui.com/react/components/combobox#api-reference) documentation for more information.
+を使用します。詳細については、[Base UI](https://base-ui.com/react/components/combobox#api-reference) ドキュメントを参照してください。

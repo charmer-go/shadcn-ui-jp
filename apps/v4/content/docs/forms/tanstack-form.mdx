@@ -1,23 +1,22 @@
 ---
 title: TanStack Form
-description: Build forms in React using TanStack Form and Zod.
+description: TanStack Form と Zod を使用して React でフォームを構築します。
 links:
   doc: https://tanstack.com/form
 ---
 
 import { InfoIcon } from "lucide-react"
 
-This guide explores how to build forms using TanStack Form. You'll learn to create forms with the `<Field />` component, implement schema validation with Zod, handle errors, and ensure accessibility.
+このガイドでは、TanStack Form を使用してフォームを構築する方法を説明します。 `<Field />` コンポーネントを使用してフォームを作成し、Zod を使用してスキーマ検証を実装し、エラーを処理し、アクセシビリティを確保する方法を学びます。
 
-## Demo
+## デモ
 
-We'll start by building the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+まずは次のフォームを構築します。単純なテキスト入力とテキストエリアがあります。送信時にフォーム データを検証し、エラーがあれば表示します。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in TanStack
-  Form. It is recommended to add basic browser validation in your production
-  code.
+  **注:** このデモのために、ブラウザ
+  検証
+  フォーム。本番コードでは、基本的なブラウザー検証も追加することをおすすめします。
 </Callout>
 
 <ComponentPreview
@@ -27,19 +26,19 @@ We'll start by building the following form. It has a simple text input and a tex
   chromeLessOnMobile
 />
 
-## Approach
+## アプローチ
 
-This form leverages TanStack Form for powerful, headless form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+このフォームは TanStack Form を利用して、強力なヘッドレス フォーム処理を実現します。 `<Field />` コンポーネントを使用してフォームを構築します。これにより、**マークアップとスタイルを完全に柔軟に行うことができます**。
 
-- Uses TanStack Form's `useForm` hook for form state management.
-- `form.Field` component with render prop pattern for controlled inputs.
-- `<Field />` components for building accessible forms.
-- Client-side validation using Zod.
-- Real-time validation feedback.
+- TanStack Form の `useForm` フックをフォーム状態管理に使用します。
+- 制御された入力のレンダー プロップ パターンを備えた `form.Field` コンポーネント。
+- アクセシブルなフォームの構築に `<Field />` コンポーネントを使います。
+- Zod を使用したクライアント側の検証。
+- リアルタイム検証フィードバック。
 
-## Anatomy
+## 構成
 
-Here's a basic example of a form using TanStack Form with the `<Field />` component.
+`<Field />` コンポーネントで TanStack Form を使用するフォームの基本的な例を次に示します。
 
 ```tsx showLineNumbers {15-31}
 <form
@@ -80,16 +79,14 @@ Here's a basic example of a form using TanStack Form with the `<Field />` compon
 </form>
 ```
 
-## Form
+## フォーム
 
-### Create a schema
+### スキーマを作成する
 
-We'll start by defining the shape of our form using a Zod schema.
+まず、Zod スキーマを使用してフォームの形状を定義します。
 
 <Callout icon={<InfoIcon />}>
-  **Note:** This example uses `zod v3` for schema validation. TanStack Form
-  integrates seamlessly with Zod and other Standard Schema validation libraries
-  through its validators API.
+  **注:** この例ではスキーマ検証に `zod v3` を使用します。TanStack Form は validators API を通じて、Zod やその他の Standard Schema 検証ライブラリとシームレスに連携します。
 </Callout>
 
 ```tsx showLineNumbers title="form.tsx"
@@ -107,9 +104,9 @@ const formSchema = z.object({
 })
 ```
 
-### Set up the form
+### フォームのセットアップ
 
-Use the `useForm` hook from TanStack Form to create your form instance with Zod validation.
+TanStack Form の `useForm` フックを使って、Zod 検証付きのフォーム インスタンスを作成します。
 
 ```tsx showLineNumbers title="form.tsx" {10-21}
 import { useForm } from "@tanstack/react-form"
@@ -147,28 +144,28 @@ export function BugReportForm() {
 }
 ```
 
-We are using `onSubmit` to validate the form data here. TanStack Form supports other validation modes, which you can read about in the [documentation](https://tanstack.com/form/latest/docs/framework/react/guides/dynamic-validation).
+ここでは `onSubmit` を使用してフォーム データを検証します。 TanStack Form は他の検証モードをサポートしています。詳細については、[ドキュメント](https://tanstack.com/form/latest/docs/framework/react/guides/dynamic-validation) を参照してください。
 
-### Build the form
+### フォームの構築
 
-We can now build the form using the `form.Field` component from TanStack Form and the `<Field />` component.
+TanStack Form の `form.Field` コンポーネントと `<Field />` コンポーネントを使用してフォームを構築できるようになりました。
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-tanstack-demo.tsx"
   title="form.tsx"
 />
 
-### Done
+### 完了
 
-That's it. You now have a fully accessible form with client-side validation.
+以上です。これで、クライアント側の検証を備えた完全にアクセス可能なフォームが完成しました。
 
-When you submit the form, the `onSubmit` function will be called with the validated form data. If the form data is invalid, TanStack Form will display the errors next to each field.
+フォームを送信すると、検証されたフォーム データを使用して `onSubmit` 関数が呼び出されます。フォーム データが無効な場合、TanStack Form は各フィールドの横にエラーを表示します。
 
-## Validation
+## バリデーション
 
-### Client-side Validation
+### クライアント側検証
 
-TanStack Form validates your form data using the Zod schema. Validation happens in real-time as the user types.
+TanStack Form は Zod スキーマを使ってフォーム データを検証します。ユーザーの入力中にリアルタイムで検証されます。
 
 ```tsx showLineNumbers title="form.tsx" {13-15}
 import { useForm } from "@tanstack/react-form"
@@ -195,15 +192,15 @@ export function BugReportForm() {
 }
 ```
 
-### Validation Modes
+### 検証モード
 
-TanStack Form supports different validation strategies through the `validators` option:
+TanStack Form は、`validators` オプションを通じてさまざまな検証戦略をサポートしています。
 
-| Mode         | Description                          |
+|モード |説明 |
 | ------------ | ------------------------------------ |
-| `"onChange"` | Validation triggers on every change. |
-| `"onBlur"`   | Validation triggers on blur.         |
-| `"onSubmit"` | Validation triggers on submit.       |
+| `"onChange"` | 変更のたびに検証が実行されます。 |
+| `"onBlur"` | フォーカスが外れたときに検証が実行されます。 |
+| `"onSubmit"` |送信時に検証がトリガーされます。       |
 
 ```tsx showLineNumbers title="form.tsx" {6-9}
 const form = useForm({
@@ -219,12 +216,12 @@ const form = useForm({
 })
 ```
 
-## Displaying Errors
+## エラーの表示
 
-Display errors next to the field using `<FieldError />`. For styling and accessibility:
+`<FieldError />` を使用してフィールドの横にエラーを表示します。スタイルとアクセシビリティについて:
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `data-invalid` プロパティを `<Field />` コンポーネントに追加します。
+- `<Input />`、`<SelectTrigger />`、`<Checkbox />` などのフォーム コントロールに `aria-invalid` プロパティを追加します。
 
 ```tsx showLineNumbers title="form.tsx" {4,18}
 <form.Field
@@ -251,12 +248,12 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-## Working with Different Field Types
+## さまざまなフィールド タイプの操作
 
-### Input
+### 入力
 
-- For input fields, use `field.state.value` and `field.handleChange` on the `<Input />` component.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- 入力フィールドには、`<Input />` コンポーネントの `field.state.value` および `field.handleChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Input />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -294,10 +291,10 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Textarea
+### テキストエリア
 
-- For textarea fields, use `field.state.value` and `field.handleChange` on the `<Textarea />` component.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- テキストエリア フィールドの場合は、`<Textarea />` コンポーネントの `field.state.value` および `field.handleChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Textarea />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -337,10 +334,10 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Select
+### 選択
 
-- For select components, use `field.state.value` and `field.handleChange` on the `<Select />` component.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- コンポーネントを選択するには、`<Select />` コンポーネントで `field.state.value` および `field.handleChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<SelectTrigger />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -388,12 +385,12 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Checkbox
+### チェックボックス
 
-- For checkbox, use `field.state.value` and `field.handleChange` on the `<Checkbox />` component.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- For checkbox arrays, use `mode="array"` on the `<form.Field />` component and TanStack Form's array helpers.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- チェックボックスには、`<Checkbox />` コンポーネントの `field.state.value` および `field.handleChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<Checkbox />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
+- チェックボックス配列の場合は、`<form.Field />` コンポーネントと TanStack Form の配列ヘルパーで `mode="array"` を使用します。
+- 適切なスタイルと間隔を確保するには、必ず `data-slot="checkbox-group"` を `<FieldGroup />` コンポーネントに追加してください。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -453,10 +450,10 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Radio Group
+### ラジオ グループ
 
-- For radio groups, use `field.state.value` and `field.handleChange` on the `<RadioGroup />` component.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- 無線グループの場合は、`<RadioGroup />` コンポーネントで `field.state.value` および `field.handleChange` を使用します。
+- エラーを表示するには、`aria-invalid` プロパティを `<RadioGroupItem />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -507,10 +504,10 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Switch
+### スイッチ
 
-- For switches, use `field.state.value` and `field.handleChange` on the `<Switch />` component.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- スイッチでは、`<Switch />` コンポーネントで `field.state.value` と `field.handleChange` を使います。
+- エラーを表示するには、`aria-invalid` プロパティを `<Switch />` コンポーネントに追加し、`data-invalid` プロパティを `<Field />` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -548,9 +545,9 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 />
 ```
 
-### Complex Forms
+### 複雑なフォーム
 
-Here is an example of a more complex form with multiple fields and validation.
+複数のフィールドと検証を含む、より複雑なフォームの例です。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -559,9 +556,9 @@ Here is an example of a more complex form with multiple fields and validation.
   chromeLessOnMobile
 />
 
-## Resetting the Form
+## フォームをリセット
 
-Use `form.reset()` to reset the form to its default values.
+`form.reset()` を使用してフォームをデフォルト値にリセットします。
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => form.reset()}>
@@ -569,9 +566,9 @@ Use `form.reset()` to reset the form to its default values.
 </Button>
 ```
 
-## Array Fields
+## 配列フィールド
 
-TanStack Form provides powerful array field management with `mode="array"`. This allows you to dynamically add, remove, and update array items with full validation support.
+TanStack Form は、`mode="array"` を使用した強力な配列フィールド管理を提供します。これにより、完全な検証サポートを使用して配列項目を動的に追加、削除、更新できるようになります。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -580,11 +577,11 @@ TanStack Form provides powerful array field management with `mode="array"`. This
   chromeLessOnMobile
 />
 
-This example demonstrates managing multiple email addresses with array fields. Users can add up to 5 email addresses, remove individual addresses, and each address is validated independently.
+この例では、配列フィールドを使用して複数の電子メール アドレスを管理する方法を示します。ユーザーは最大 5 つの電子メール アドレスを追加したり、個々のアドレスを削除したりできます。各アドレスは個別に検証されます。
 
-### Array Field Structure
+### 配列フィールド構造
 
-Use `mode="array"` on the parent field to enable array field management.
+配列フィールド管理を有効にするには、親フィールドで `mode="array"` を使用します。
 
 ```tsx showLineNumbers title="form.tsx" {3,12-14}
 <form.Field
@@ -608,9 +605,9 @@ Use `mode="array"` on the parent field to enable array field management.
 />
 ```
 
-### Nested Fields
+### ネストされたフィールド
 
-Access individual array items using bracket notation: `fieldName[index].propertyName`. This example uses `InputGroup` to display the remove button inline with the input.
+ブラケット記法（`fieldName[index].propertyName`）で配列の個別項目にアクセスします。この例では `InputGroup` を使い、入力欄の横に削除ボタンを表示します。
 
 ```tsx showLineNumbers title="form.tsx"
 <form.Field
@@ -656,9 +653,9 @@ Access individual array items using bracket notation: `fieldName[index].property
 />
 ```
 
-### Adding Items
+### アイテムの追加
 
-Use `field.pushValue(item)` to add items to an array field. You can disable the button when the array reaches its maximum length.
+`field.pushValue(item)` を使って配列フィールドに項目を追加します。配列が最大長に達したらボタンを無効にできます。
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -672,9 +669,9 @@ Use `field.pushValue(item)` to add items to an array field. You can disable the 
 </Button>
 ```
 
-### Removing Items
+### 項目の削除
 
-Use `field.removeValue(index)` to remove items from an array field. You can conditionally show the remove button only when there's more than one item.
+`field.removeValue(index)` を使用して、配列フィールドから項目を削除します。複数の項目がある場合にのみ、条件付きで削除ボタンを表示できます。
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -689,9 +686,9 @@ Use `field.removeValue(index)` to remove items from an array field. You can cond
 }
 ```
 
-### Array Validation
+### 配列の検証
 
-Validate array fields using Zod's array methods.
+Zod の配列メソッドを使って配列フィールドを検証します。
 
 ```tsx showLineNumbers title="form.tsx"
 const formSchema = z.object({

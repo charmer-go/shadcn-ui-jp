@@ -1,6 +1,6 @@
 ---
-title: Carousel
-description: A carousel with motion and swipe built using Embla.
+title: カルーセル
+description: Embra を使用して構築されたモーションとスワイプを備えたカルーセル。
 base: aria
 component: true
 links:
@@ -14,17 +14,17 @@ links:
   previewClassName="h-80 sm:h-[32rem]"
 />
 
-## About
+## 概要
 
-The carousel component is built using the [Embla Carousel](https://www.embla-carousel.com/) library.
+カルーセル コンポーネントは、[Embla Carousel](https://www.embla-carousel.com/) ライブラリを使用して構築されます。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -39,13 +39,13 @@ npx shadcn@latest add carousel
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install embla-carousel-react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="carousel"
@@ -53,7 +53,7 @@ npm install embla-carousel-react
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -61,7 +61,7 @@ npm install embla-carousel-react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -85,9 +85,9 @@ import {
 </Carousel>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Carousel`:
+次の構成を使用して `Carousel` を作成します。
 
 ```text
 Carousel
@@ -98,9 +98,9 @@ Carousel
 └── CarouselNext
 ```
 
-## Sizes
+## サイズ
 
-To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
+項目のサイズを設定するには、`<CarouselItem />` の `basis` ユーティリティ クラスを使用できます。
 
 <ComponentPreview styleName="aria-nova" name="carousel-size" />
 
@@ -126,9 +126,9 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 </Carousel>
 ```
 
-## Spacing
+## 間隔
 
-To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
+項目間の間隔を設定するには、`<CarouselItem />` では `pl-[VALUE]` ユーティリティを使用し、`<CarouselContent />` では負の `-ml-[VALUE]` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="carousel-spacing" />
 
@@ -152,9 +152,9 @@ To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<Car
 </Carousel>
 ```
 
-## Orientation
+## 方向
 
-Use the `orientation` prop to set the orientation of the carousel.
+`orientation` プロップを使用して、カルーセルの方向を設定します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -172,9 +172,9 @@ Use the `orientation` prop to set the orientation of the carousel.
 </Carousel>
 ```
 
-## Options
+## オプション
 
-You can pass options to the carousel using the `opts` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/docs/api/options) for more information.
+`opts` プロパティを使用して、カルーセルにオプションを渡すことができます。詳細については、[Embla Carousel ドキュメント](https://www.embla-carousel.com/docs/api/options) を参照してください。
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -193,7 +193,7 @@ You can pass options to the carousel using the `opts` prop. See the [Embla Carou
 
 ## API
 
-Use a state and the `setApi` props to get an instance of the carousel API.
+状態と `setApi` プロパティを使用して、カルーセル API のインスタンスを取得します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -234,9 +234,9 @@ export function Example() {
 }
 ```
 
-## Events
+## イベント
 
-You can listen to events using the api instance from `setApi`.
+`setApi` の API インスタンスを使用してイベントをリッスンできます。
 
 ```tsx showLineNumbers {1,4-14,16}
 import { type CarouselApi } from "@/components/ui/carousel"
@@ -266,11 +266,11 @@ export function Example() {
 }
 ```
 
-See the [Embla Carousel docs](https://www.embla-carousel.com/docs/api/events) for more information on using events.
+イベントの使用方法の詳細については、[Embla Carousel docs](https://www.embla-carousel.com/docs/api/events) を参照してください。
 
-## Plugins
+## プラグイン
 
-You can use the `plugins` prop to add plugins to the carousel.
+`plugins` プロパティを使用して、カルーセルにプラグインを追加できます。
 
 ```ts showLineNumbers {1,6-10}
 import Autoplay from "embla-carousel-autoplay"
@@ -298,7 +298,7 @@ export function Example() {
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -307,7 +307,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80 sm:h-[32rem]"
 />
 
-When localizing the carousel for RTL languages, you need to set the `direction` option in the `opts` prop to match the text direction. This ensures the carousel scrolls in the correct direction.
+RTL 言語用にカルーセルをローカライズする場合、テキストの方向と一致するように `opts` プロパティの `direction` オプションを設定する必要があります。これにより、カルーセルが正しい方向にスクロールするようになります。
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -326,8 +326,8 @@ When localizing the carousel for RTL languages, you need to set the `direction` 
 </Carousel>
 ```
 
-The `direction` option accepts `"ltr"` or `"rtl"` and should match the `dir` prop value. You may also want to rotate the navigation buttons using the `rtl:rotate-180` class to ensure they point in the correct direction.
+`direction` オプションは `"ltr"` または `"rtl"` を受け入れ、`dir` プロパティ値と一致する必要があります。また、`rtl:rotate-180` クラスを使用してナビゲーション ボタンを回転して、ボタンが正しい方向を向くようにすることもできます。
 
-## API Reference
+## API リファレンス
 
-See the [Embla Carousel docs](https://www.embla-carousel.com/docs/api/plugins) for more information on props and plugins.
+プロップとプラグインの詳細については、[Embla Carousel docs](https://www.embla-carousel.com/docs/api/plugins) を参照してください。

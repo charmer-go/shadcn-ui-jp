@@ -1,6 +1,6 @@
 ---
-title: Avatar
-description: An image element with a fallback for representing the user.
+title: アバター
+description: ユーザーを表すフォールバック付きの画像要素。
 base: base
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-72"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add avatar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="avatar"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -69,7 +69,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 </Avatar>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build an `Avatar`:
 
@@ -95,7 +95,7 @@ AvatarGroup
 └── AvatarGroupCount
 ```
 
-## Basic
+## 基本
 
 A basic avatar component with an image and a fallback.
 
@@ -123,7 +123,7 @@ You can also use an icon inside `<AvatarBadge>`.
 
 <ComponentPreview styleName="base-nova" name="avatar-badge-icon" />
 
-## Avatar Group
+## アバター グループ
 
 Use the `AvatarGroup` component to add a group of avatars.
 
@@ -141,7 +141,7 @@ You can also use an icon inside `<AvatarGroupCount>`.
 
 <ComponentPreview styleName="base-nova" name="avatar-group-count-icon" />
 
-## Sizes
+## サイズ
 
 Use the `size` prop to change the size of the avatar.
 
@@ -149,13 +149,13 @@ Use the `size` prop to change the size of the avatar.
 
 ## Dropdown
 
-You can use the `Avatar` component as a trigger for a dropdown menu.
+`Avatar` コンポーネントをドロップダウン メニューのトリガーとして使用できます。
 
 <ComponentPreview styleName="base-nova" name="avatar-dropdown" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -164,20 +164,20 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-72"
 />
 
-## API Reference
+## API リファレンス
 
 ### Avatar
 
 The `Avatar` component is the root component that wraps the avatar image and fallback.
 
-| Prop        | Type                        | Default     |
+|小道具 |タイプ |デフォルト |
 | ----------- | --------------------------- | ----------- |
 | `size`      | `"default" \| "sm" \| "lg"` | `"default"` |
-| `className` | `string`                    | -           |
+| `className` | `string` | - |
 
 ### AvatarImage
 
-The `AvatarImage` component displays the avatar image. It accepts all Base UI Avatar Image props.
+`AvatarImage` コンポーネントはアバター画像を表示します。すべてのベース UI アバター画像プロパティを受け入れます。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -187,7 +187,7 @@ The `AvatarImage` component displays the avatar image. It accepts all Base UI Av
 
 ### AvatarFallback
 
-The `AvatarFallback` component displays a fallback when the image fails to load. It accepts all Base UI Avatar Fallback props.
+`AvatarFallback` コンポーネントは、画像のロードに失敗した場合にフォールバックを表示します。すべてのベース UI アバター フォールバック プロップを受け入れます。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
