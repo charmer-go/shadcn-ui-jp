@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-icon",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-icon.tsx",
+      "content": "import { CircleFadingArrowUpIcon } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\n\r\nexport default function ButtonIcon() {\r\n  return (\r\n    <Button variant=\"outline\" size=\"icon\">\r\n      <CircleFadingArrowUpIcon />\r\n    </Button>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

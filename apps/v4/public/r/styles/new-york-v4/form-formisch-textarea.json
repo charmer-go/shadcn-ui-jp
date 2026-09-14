@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-formisch-textarea",
+  "dependencies": [
+    "@formisch/react",
+    "valibot"
+  ],
+  "registryDependencies": [
+    "field",
+    "textarea",
+    "button",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/form-formisch-textarea.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { Form, Field as FormischField, reset, useForm } from \"@formisch/react\"\r\nimport type { SubmitHandler } from \"@formisch/react\"\r\nimport { toast } from \"sonner\"\r\nimport * as v from \"valibot\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/new-york-v4/ui/card\"\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldGroup,\r\n  FieldLabel,\r\n} from \"@/registry/new-york-v4/ui/field\"\r\nimport { Textarea } from \"@/registry/new-york-v4/ui/textarea\"\r\n\r\nconst FormSchema = v.object({\r\n  about: v.pipe(\r\n    v.string(),\r\n    v.minLength(10, \"Please provide at least 10 characters.\"),\r\n    v.maxLength(200, \"Please keep it under 200 characters.\")\r\n  ),\r\n})\r\n\r\nexport default function FormFormischTextarea() {\r\n  const form = useForm({\r\n    schema: FormSchema,\r\n    initialInput: {\r\n      about: \"\",\r\n    },\r\n  })\r\n\r\n  const handleSubmit: SubmitHandler<typeof FormSchema> = (output) => {\r\n    toast(\"You submitted the following values:\", {\r\n      description: (\r\n        <pre className=\"mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground\">\r\n          <code>{JSON.stringify(output, null, 2)}</code>\r\n        </pre>\r\n      ),\r\n      position: \"bottom-right\",\r\n      classNames: {\r\n        content: \"flex flex-col gap-2\",\r\n      },\r\n      style: {\r\n        \"--border-radius\": \"calc(var(--radius)  + 4px)\",\r\n      } as React.CSSProperties,\r\n    })\r\n  }\r\n\r\n  return (\r\n    <Card className=\"w-full sm:max-w-md\">\r\n      <CardHeader>\r\n        <CardTitle>Personalization</CardTitle>\r\n        <CardDescription>\r\n          Customize your experience by telling us more about yourself.\r\n        </CardDescription>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <Form of={form} id=\"form-formisch-textarea\" onSubmit={handleSubmit}>\r\n          <FieldGroup>\r\n            <FormischField of={form} path={[\"about\"]}>\r\n              {(field) => (\r\n                <Field data-invalid={field.errors !== null}>\r\n                  <FieldLabel htmlFor=\"form-formisch-textarea-about\">\r\n                    More about you\r\n                  </FieldLabel>\r\n                  <Textarea\r\n                    {...field.props}\r\n                    id=\"form-formisch-textarea-about\"\r\n                    value={field.input ?? \"\"}\r\n                    aria-invalid={field.errors !== null}\r\n                    placeholder=\"I'm a software engineer...\"\r\n                    className=\"min-h-[120px]\"\r\n                  />\r\n                  <FieldDescription>\r\n                    Tell us more about yourself. This will be used to help us\r\n                    personalize your experience.\r\n                  </FieldDescription>\r\n                  {field.errors && (\r\n                    <FieldError\r\n                      errors={field.errors.map((message) => ({ message }))}\r\n                    />\r\n                  )}\r\n                </Field>\r\n              )}\r\n            </FormischField>\r\n          </FieldGroup>\r\n        </Form>\r\n      </CardContent>\r\n      <CardFooter>\r\n        <Field orientation=\"horizontal\">\r\n          <Button type=\"button\" variant=\"outline\" onClick={() => reset(form)}>\r\n            Reset\r\n          </Button>\r\n          <Button type=\"submit\" form=\"form-formisch-textarea\">\r\n            Save\r\n          </Button>\r\n        </Field>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

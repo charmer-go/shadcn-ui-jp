@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-rounded",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-rounded.tsx",
+      "content": "import { ArrowUpIcon } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\n\r\nexport default function ButtonRounded() {\r\n  return (\r\n    <div className=\"flex flex-col gap-8\">\r\n      <Button variant=\"outline\" size=\"icon\" className=\"rounded-full\">\r\n        <ArrowUpIcon />\r\n      </Button>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

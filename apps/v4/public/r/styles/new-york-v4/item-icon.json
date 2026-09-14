@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-icon",
+  "registryDependencies": [
+    "item"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/item-icon.tsx",
+      "content": "import { ShieldAlertIcon } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  Item,\r\n  ItemActions,\r\n  ItemContent,\r\n  ItemDescription,\r\n  ItemMedia,\r\n  ItemTitle,\r\n} from \"@/registry/new-york-v4/ui/item\"\r\n\r\nexport default function ItemIcon() {\r\n  return (\r\n    <div className=\"flex w-full max-w-lg flex-col gap-6\">\r\n      <Item variant=\"outline\">\r\n        <ItemMedia variant=\"icon\">\r\n          <ShieldAlertIcon />\r\n        </ItemMedia>\r\n        <ItemContent>\r\n          <ItemTitle>Security Alert</ItemTitle>\r\n          <ItemDescription>\r\n            New login detected from unknown device.\r\n          </ItemDescription>\r\n        </ItemContent>\r\n        <ItemActions>\r\n          <Button size=\"sm\" variant=\"outline\">\r\n            Review\r\n          </Button>\r\n        </ItemActions>\r\n      </Item>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

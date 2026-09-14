@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-split",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-group-split.tsx",
+      "content": "import { IconPlus } from \"@tabler/icons-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  ButtonGroup,\r\n  ButtonGroupSeparator,\r\n} from \"@/registry/new-york-v4/ui/button-group\"\r\n\r\nexport default function ButtonGroupSplit() {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"secondary\">Button</Button>\r\n      <ButtonGroupSeparator />\r\n      <Button size=\"icon\" variant=\"secondary\">\r\n        <IconPlus />\r\n      </Button>\r\n    </ButtonGroup>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

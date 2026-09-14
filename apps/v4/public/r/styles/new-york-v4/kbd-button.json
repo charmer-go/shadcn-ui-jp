@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "kbd-button",
+  "registryDependencies": [
+    "kbd",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/kbd-button.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport { Kbd } from \"@/registry/new-york-v4/ui/kbd\"\r\n\r\nexport default function KbdButton() {\r\n  return (\r\n    <div className=\"flex flex-wrap items-center gap-4\">\r\n      <Button variant=\"outline\" size=\"sm\" className=\"pr-2\">\r\n        Accept <Kbd>⏎</Kbd>\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"sm\" className=\"pr-2\">\r\n        Cancel <Kbd>Esc</Kbd>\r\n      </Button>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

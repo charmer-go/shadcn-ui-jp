@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-separator",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-group-separator.tsx",
+      "content": "import { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  ButtonGroup,\r\n  ButtonGroupSeparator,\r\n} from \"@/registry/new-york-v4/ui/button-group\"\r\n\r\nexport default function ButtonGroupSeparatorDemo() {\r\n  return (\r\n    <ButtonGroup>\r\n      <Button variant=\"secondary\" size=\"sm\">\r\n        Copy\r\n      </Button>\r\n      <ButtonGroupSeparator />\r\n      <Button variant=\"secondary\" size=\"sm\">\r\n        Paste\r\n      </Button>\r\n    </ButtonGroup>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

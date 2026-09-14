@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "input-group-dropdown",
+  "registryDependencies": [
+    "input-group",
+    "dropdown-menu",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/input-group-dropdown.tsx",
+      "content": "import { ChevronDownIcon, MoreHorizontal } from \"lucide-react\"\r\n\r\nimport {\r\n  DropdownMenu,\r\n  DropdownMenuContent,\r\n  DropdownMenuItem,\r\n  DropdownMenuTrigger,\r\n} from \"@/registry/new-york-v4/ui/dropdown-menu\"\r\nimport {\r\n  InputGroup,\r\n  InputGroupAddon,\r\n  InputGroupButton,\r\n  InputGroupInput,\r\n} from \"@/registry/new-york-v4/ui/input-group\"\r\n\r\nexport default function InputGroupDropdown() {\r\n  return (\r\n    <div className=\"grid w-full max-w-sm gap-4\">\r\n      <InputGroup>\r\n        <InputGroupInput placeholder=\"Enter file name\" />\r\n        <InputGroupAddon align=\"inline-end\">\r\n          <DropdownMenu>\r\n            <DropdownMenuTrigger asChild>\r\n              <InputGroupButton\r\n                variant=\"ghost\"\r\n                aria-label=\"More\"\r\n                size=\"icon-xs\"\r\n              >\r\n                <MoreHorizontal />\r\n              </InputGroupButton>\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align=\"end\">\r\n              <DropdownMenuItem>Settings</DropdownMenuItem>\r\n              <DropdownMenuItem>Copy path</DropdownMenuItem>\r\n              <DropdownMenuItem>Open location</DropdownMenuItem>\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </InputGroupAddon>\r\n      </InputGroup>\r\n      <InputGroup className=\"[--radius:1rem]\">\r\n        <InputGroupInput placeholder=\"Enter search query\" />\r\n        <InputGroupAddon align=\"inline-end\">\r\n          <DropdownMenu>\r\n            <DropdownMenuTrigger asChild>\r\n              <InputGroupButton variant=\"ghost\" className=\"pr-1.5! text-xs\">\r\n                Search In... <ChevronDownIcon className=\"size-3\" />\r\n              </InputGroupButton>\r\n            </DropdownMenuTrigger>\r\n            <DropdownMenuContent align=\"end\" className=\"[--radius:0.95rem]\">\r\n              <DropdownMenuItem>Documentation</DropdownMenuItem>\r\n              <DropdownMenuItem>Blog Posts</DropdownMenuItem>\r\n              <DropdownMenuItem>Changelog</DropdownMenuItem>\r\n            </DropdownMenuContent>\r\n          </DropdownMenu>\r\n        </InputGroupAddon>\r\n      </InputGroup>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

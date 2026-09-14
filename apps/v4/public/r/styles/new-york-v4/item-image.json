@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-image",
+  "registryDependencies": [
+    "item"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/item-image.tsx",
+      "content": "import Image from \"next/image\"\r\n\r\nimport {\r\n  Item,\r\n  ItemContent,\r\n  ItemDescription,\r\n  ItemGroup,\r\n  ItemMedia,\r\n  ItemTitle,\r\n} from \"@/registry/new-york-v4/ui/item\"\r\n\r\nconst music = [\r\n  {\r\n    title: \"Midnight City Lights\",\r\n    artist: \"Neon Dreams\",\r\n    album: \"Electric Nights\",\r\n    duration: \"3:45\",\r\n  },\r\n  {\r\n    title: \"Coffee Shop Conversations\",\r\n    artist: \"The Morning Brew\",\r\n    album: \"Urban Stories\",\r\n    duration: \"4:05\",\r\n  },\r\n  {\r\n    title: \"Digital Rain\",\r\n    artist: \"Cyber Symphony\",\r\n    album: \"Binary Beats\",\r\n    duration: \"3:30\",\r\n  },\r\n]\r\n\r\nexport default function ItemImage() {\r\n  return (\r\n    <div className=\"flex w-full max-w-md flex-col gap-6\">\r\n      <ItemGroup className=\"gap-4\">\r\n        {music.map((song) => (\r\n          <Item key={song.title} variant=\"outline\" asChild role=\"listitem\">\r\n            <a href=\"#\">\r\n              <ItemMedia variant=\"image\">\r\n                <Image\r\n                  src={`https://avatar.vercel.sh/${song.title}`}\r\n                  alt={song.title}\r\n                  width={32}\r\n                  height={32}\r\n                  className=\"object-cover grayscale\"\r\n                />\r\n              </ItemMedia>\r\n              <ItemContent>\r\n                <ItemTitle className=\"line-clamp-1\">\r\n                  {song.title} -{\" \"}\r\n                  <span className=\"text-muted-foreground\">{song.album}</span>\r\n                </ItemTitle>\r\n                <ItemDescription>{song.artist}</ItemDescription>\r\n              </ItemContent>\r\n              <ItemContent className=\"flex-none text-center\">\r\n                <ItemDescription>{song.duration}</ItemDescription>\r\n              </ItemContent>\r\n            </a>\r\n          </Item>\r\n        ))}\r\n      </ItemGroup>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}
