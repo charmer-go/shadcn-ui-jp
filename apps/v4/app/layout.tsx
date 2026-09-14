@@ -6,16 +6,14 @@ import { META_THEME_COLORS, siteConfig } from "@/lib/config"
 import { DOCS_SIDEBAR_SCROLL_RESTORE_SCRIPT } from "@/lib/docs-sidebar-scroll"
 import { fontVariables } from "@/lib/fonts"
 import { ActiveThemeProvider } from "@/components/active-theme"
-import { Analytics } from "@/components/analytics"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
-import { TooltipProvider as BaseTooltipProvider } from "@/registry/bases/base/ui/tooltip"
-import { Toaster } from "@/registry/bases/radix/ui/sonner"
-import { TooltipProvider as RadixTooltipProvider } from "@/registry/bases/radix/ui/tooltip"
-import { Toaster as BaseToaster } from "@/styles/base-nova/ui/toast"
+import { TooltipProvider as BaseTooltipProvider } from "@/components/ui/base/tooltip"
+import { Toaster } from "@/components/ui/radix/sonner"
+import { TooltipProvider as RadixTooltipProvider } from "@/components/ui/radix/tooltip"
+import { Toaster as BaseToaster } from "@/components/ui/base/toast"
 
 import "@/app/globals.css"
-import "@/app/(app)/(typeset)/typeset.css"
+import "@/app/docs-typeset.css"
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +32,7 @@ export const metadata: Metadata = {
   creator: "shadcn",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "ja_JP",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -75,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ja"
       suppressHydrationWarning
       className={cn(
         fontVariables,
@@ -117,8 +115,6 @@ export default function RootLayout({
                 </RadixTooltipProvider>
               </BaseTooltipProvider>
             </NuqsAdapter>
-            <TailwindIndicator />
-            <Analytics />
           </ActiveThemeProvider>
         </ThemeProvider>
       </body>
