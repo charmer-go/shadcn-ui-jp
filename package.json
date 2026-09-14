@@ -16,9 +16,6 @@
     "typecheck": "pnpm --filter=v4 typecheck",
     "format:write": "pnpm --filter=v4 format:write",
     "format:check": "pnpm --filter=v4 format:check",
-    "registry:build": "pnpm --filter=v4 registry:build",
-    "registry:capture": "pnpm --filter=v4 registry:capture",
-    "explore:capture": "pnpm --filter=v4 explore:capture",
     "preview": "pnpm --filter=v4 preview",
     "check": "pnpm lint && pnpm typecheck && pnpm format:check"
   },
