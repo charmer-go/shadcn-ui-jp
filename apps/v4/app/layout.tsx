@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       url: "https://shadcn.com",
     },
   ],
-  creator: "shadcn",
+  creator: "Charmers",
   openGraph: {
     type: "website",
     locale: "ja_JP",
