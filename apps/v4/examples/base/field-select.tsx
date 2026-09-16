@@ -13,21 +13,21 @@ import {
 } from "@/components/ui/base/select"
 
 const items = [
-  { label: "Choose department", value: null },
-  { label: "Engineering", value: "engineering" },
-  { label: "Design", value: "design" },
-  { label: "Marketing", value: "marketing" },
-  { label: "Sales", value: "sales" },
-  { label: "Customer Support", value: "support" },
-  { label: "Human Resources", value: "hr" },
-  { label: "Finance", value: "finance" },
-  { label: "Operations", value: "operations" },
+  { label: "部門を選択", value: null },
+  { label: "エンジニアリング", value: "engineering" },
+  { label: "デザイン", value: "design" },
+  { label: "マーケティング", value: "marketing" },
+  { label: "営業", value: "sales" },
+  { label: "カスタマーサポート", value: "support" },
+  { label: "人事", value: "hr" },
+  { label: "財務", value: "finance" },
+  { label: "オペレーション", value: "operations" },
 ]
 
 export default function FieldSelect() {
   return (
     <Field className="w-full max-w-xs">
-      <FieldLabel>Department</FieldLabel>
+      <FieldLabel>部門</FieldLabel>
       <Select items={items}>
         <SelectTrigger>
           <SelectValue />
@@ -43,7 +43,7 @@ export default function FieldSelect() {
         </SelectContent>
       </Select>
       <FieldDescription>
-        Select your department or area of work.
+        所属部門または業務領域を選択してください。
       </FieldDescription>
     </Field>
   )

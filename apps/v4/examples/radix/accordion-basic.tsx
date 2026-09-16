@@ -8,21 +8,21 @@ import {
 const items = [
   {
     value: "item-1",
-    trigger: "How do I reset my password?",
+    trigger: "パスワードをリセットするにはどうすればよいですか？",
     content:
-      "Click on 'Forgot Password' on the login page, enter your email address, and we'll send you a link to reset your password. The link will expire in 24 hours.",
+      "ログインページで「パスワードをお忘れですか？」をクリックし、メールアドレスを入力してください。パスワードをリセットするためのリンクをお送りします。リンクの有効期限は24時間です。",
   },
   {
     value: "item-2",
-    trigger: "Can I change my subscription plan?",
+    trigger: "サブスクリプションプランを変更できますか？",
     content:
-      "Yes, you can upgrade or downgrade your plan at any time from your account settings. Changes will be reflected in your next billing cycle.",
+      "はい、アカウント設定からいつでもプランのアップグレードやダウングレードができます。変更内容は次回の請求サイクルに反映されます。",
   },
   {
     value: "item-3",
-    trigger: "What payment methods do you accept?",
+    trigger: "どのお支払い方法に対応していますか？",
     content:
-      "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our payment partners.",
+      "主要なクレジットカード、PayPal、銀行振込に対応しています。すべてのお支払いは決済パートナーを通じて安全に処理されます。",
   },
 ]
 

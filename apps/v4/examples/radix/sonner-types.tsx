@@ -7,36 +7,36 @@ import { Button } from "@/components/ui/radix/button"
 export function SonnerTypes() {
   return (
     <div className="flex flex-wrap gap-2">
-      <Button variant="outline" onClick={() => toast("Event has been created")}>
-        Default
+      <Button variant="outline" onClick={() => toast("イベントが作成されました")}>
+        デフォルト
       </Button>
       <Button
         variant="outline"
-        onClick={() => toast.success("Event has been created")}
+        onClick={() => toast.success("イベントが作成されました")}
       >
-        Success
-      </Button>
-      <Button
-        variant="outline"
-        onClick={() =>
-          toast.info("Be at the area 10 minutes before the event time")
-        }
-      >
-        Info
+        成功
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast.warning("Event start time cannot be earlier than 8am")
+          toast.info("イベント開始10分前には会場にお越しください")
         }
       >
-        Warning
+        情報
       </Button>
       <Button
         variant="outline"
-        onClick={() => toast.error("Event has not been created")}
+        onClick={() =>
+          toast.warning("イベント開始時刻は午前8時より前には設定できません")
+        }
       >
-        Error
+        警告
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => toast.error("イベントを作成できませんでした")}
+      >
+        エラー
       </Button>
       <Button
         variant="outline"
@@ -44,12 +44,12 @@ export function SonnerTypes() {
           toast.promise<{ name: string }>(
             () =>
               new Promise((resolve) =>
-                setTimeout(() => resolve({ name: "Event" }), 2000)
+                setTimeout(() => resolve({ name: "イベント" }), 2000)
               ),
             {
-              loading: "Loading...",
-              success: (data) => `${data.name} has been created`,
-              error: "Error",
+              loading: "読み込み中...",
+              success: (data) => `${data.name}を作成しました`,
+              error: "エラー",
             }
           )
         }}

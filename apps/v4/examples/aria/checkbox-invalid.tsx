@@ -11,7 +11,7 @@ export function CheckboxInvalid() {
           isInvalid
         />
         <FieldLabel htmlFor="terms-checkbox-invalid">
-          Accept terms and conditions
+          利用規約に同意する
         </FieldLabel>
       </Field>
     </FieldGroup>

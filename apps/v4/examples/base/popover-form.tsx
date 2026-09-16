@@ -15,25 +15,25 @@ export function PopoverForm() {
     <>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" />}>
-          Open Popover
+          ポップオーバーを開く
         </PopoverTrigger>
         <PopoverContent className="w-64" align="start">
           <PopoverHeader>
-            <PopoverTitle>Dimensions</PopoverTitle>
+            <PopoverTitle>寸法</PopoverTitle>
             <PopoverDescription>
-              Set the dimensions for the layer.
+              レイヤーの寸法を設定します。
             </PopoverDescription>
           </PopoverHeader>
           <FieldGroup className="gap-4">
             <Field orientation="horizontal">
               <FieldLabel htmlFor="width" className="w-1/2">
-                Width
+                幅
               </FieldLabel>
               <Input id="width" defaultValue="100%" />
             </Field>
             <Field orientation="horizontal">
               <FieldLabel htmlFor="height" className="w-1/2">
-                Height
+                高さ
               </FieldLabel>
               <Input id="height" defaultValue="25px" />
             </Field>

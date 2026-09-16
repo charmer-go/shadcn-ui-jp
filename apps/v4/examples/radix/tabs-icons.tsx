@@ -8,11 +8,11 @@ export function TabsIcons() {
       <TabsList>
         <TabsTrigger value="preview">
           <AppWindowIcon />
-          Preview
+          プレビュー
         </TabsTrigger>
         <TabsTrigger value="code">
           <CodeIcon />
-          Code
+          コード
         </TabsTrigger>
       </TabsList>
     </Tabs>

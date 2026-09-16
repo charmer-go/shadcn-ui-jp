@@ -22,7 +22,7 @@ export function BreadcrumbDropdown() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/" />}>ホーム</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <DotIcon />
@@ -32,13 +32,13 @@ export function BreadcrumbDropdown() {
             <DropdownMenuTrigger
               render={<button className="flex items-center gap-1" />}
             >
-              Components
+              コンポーネント
               <ChevronDownIcon data-icon="inline-end" className="size-3.5" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>ドキュメント</DropdownMenuItem>
+                <DropdownMenuItem>テーマ</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
@@ -48,7 +48,7 @@ export function BreadcrumbDropdown() {
           <DotIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

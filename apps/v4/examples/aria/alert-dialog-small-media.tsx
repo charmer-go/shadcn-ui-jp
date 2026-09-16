@@ -16,20 +16,20 @@ import { Button } from "@/components/ui/aria/button"
 export function AlertDialogSmallWithMedia() {
   return (
     <AlertDialogTrigger>
-      <Button variant="outline">Show Dialog</Button>
+      <Button variant="outline">ダイアログを表示</Button>
       <AlertDialog size="sm">
         <AlertDialogHeader>
           <AlertDialogMedia>
             <BluetoothIcon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
+          <AlertDialogTitle>アクセサリの接続を許可しますか?</AlertDialogTitle>
           <AlertDialogDescription>
-            Do you want to allow the USB accessory to connect to this device?
+            このデバイスへのUSBアクセサリの接続を許可しますか?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Don&apos;t allow</AlertDialogCancel>
-          <AlertDialogAction>Allow</AlertDialogAction>
+          <AlertDialogCancel>許可しない</AlertDialogCancel>
+          <AlertDialogAction>許可</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialog>
     </AlertDialogTrigger>

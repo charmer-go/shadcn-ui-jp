@@ -17,7 +17,7 @@ export function DatePickerSimple() {
 
   return (
     <Field className="mx-auto w-44">
-      <FieldLabel htmlFor="date-picker-simple">Date</FieldLabel>
+      <FieldLabel htmlFor="date-picker-simple">日付</FieldLabel>
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -25,7 +25,7 @@ export function DatePickerSimple() {
             id="date-picker-simple"
             className="justify-start font-normal"
           >
-            {date ? format(date, "PPP") : <span>Pick a date</span>}
+            {date ? format(date, "PPP") : <span>日付を選択</span>}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">

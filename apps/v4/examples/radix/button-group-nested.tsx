@@ -24,14 +24,14 @@ export function ButtonGroupNested() {
       </ButtonGroup>
       <ButtonGroup>
         <InputGroup>
-          <InputGroupInput placeholder="Send a message..." />
+          <InputGroupInput placeholder="メッセージを送信..." />
           <Tooltip>
             <TooltipTrigger asChild>
               <InputGroupAddon align="inline-end">
                 <AudioLinesIcon />
               </InputGroupAddon>
             </TooltipTrigger>
-            <TooltipContent>Voice Mode</TooltipContent>
+            <TooltipContent>音声モード</TooltipContent>
           </Tooltip>
         </InputGroup>
       </ButtonGroup>

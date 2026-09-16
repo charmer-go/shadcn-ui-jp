@@ -19,7 +19,7 @@ export function MessageGroupDemo() {
           <MessageAvatar />
           <MessageContent>
             <Bubble variant="muted">
-              <BubbleContent>I checked the registry addresses.</BubbleContent>
+              <BubbleContent>レジストリのアドレスを確認しました。</BubbleContent>
             </Bubble>
           </MessageContent>
         </Message>
@@ -33,7 +33,7 @@ export function MessageGroupDemo() {
           <MessageContent>
             <Bubble variant="muted">
               <BubbleContent>
-                The component and example JSON now live under the UI registry.
+                コンポーネントとサンプルのJSONは、UIレジストリ配下に置かれるようになりました。
               </BubbleContent>
             </Bubble>
           </MessageContent>

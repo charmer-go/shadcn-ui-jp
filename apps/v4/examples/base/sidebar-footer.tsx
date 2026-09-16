@@ -36,7 +36,7 @@ export default function AppSidebar() {
                     <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground" />
                   }
                 >
-                  Username
+                  ユーザー名
                   <ChevronUpIcon className="ml-auto" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent
@@ -44,13 +44,13 @@ export default function AppSidebar() {
                   className="w-(--radix-popper-anchor-width)"
                 >
                   <DropdownMenuItem>
-                    <span>Account</span>
+                    <span>アカウント</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <span>Billing</span>
+                    <span>請求</span>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <span>Sign out</span>
+                    <span>ログアウト</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

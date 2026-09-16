@@ -46,7 +46,7 @@ function ContextMenu({
       offset={offset}
       crossOffset={crossOffset}
       className={cn(
-        "cn-context-menu-content-aria cn-menu-target cn-menu-translucent cn-menu-translucent-aria z-50 w-(--trigger-width) origin-(--trigger-anchor-point) overflow-x-hidden overflow-y-auto outline-none data-exiting:overflow-hidden",
+        "cn-menu-target cn-menu-translucent z-50 w-(--trigger-width) min-w-36 origin-(--trigger-anchor-point) overflow-x-hidden overflow-y-auto rounded-lg bg-popover p-1 text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 outline-none data-entering:animate-in data-entering:fade-in-0 data-entering:zoom-in-95 data-exiting:animate-out data-exiting:overflow-hidden data-exiting:fade-out-0 data-exiting:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2 **:data-[slot$=-item]:data-focused:bg-foreground/10",
         className
       )}
     >
@@ -91,7 +91,10 @@ function ContextMenuLabel({
     <HeaderPrimitive
       data-slot="context-menu-label"
       data-inset={inset}
-      className={cn("cn-context-menu-label", className)}
+      className={cn(
+        "px-1.5 py-1 text-xs font-medium text-muted-foreground data-inset:pl-7",
+        className
+      )}
       {...props}
     />
   )
@@ -102,9 +105,11 @@ const contextMenuItemVariants = cva(
   {
     variants: {
       selectionMode: {
-        none: "cn-context-menu-item",
-        single: "cn-context-menu-radio-item",
-        multiple: "cn-context-menu-checkbox-item",
+        none: "gap-1.5 rounded-md px-1.5 py-1 text-sm focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 [&_svg:not([class*='size-'])]:size-4 focus:*:[svg]:text-accent-foreground data-[variant=destructive]:*:[svg]:text-destructive",
+        single:
+          "gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm focus:bg-accent focus:text-accent-foreground data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4",
+        multiple:
+          "gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm focus:bg-accent focus:text-accent-foreground data-inset:pl-7 [&_svg:not([class*='size-'])]:size-4",
       },
     },
   }
@@ -137,7 +142,7 @@ function ContextMenuItem({
           <>
             {selectionMode !== "none" ? (
               <span
-                className="cn-context-menu-item-indicator pointer-events-none"
+                className="pointer-events-none absolute right-2"
                 data-slot={
                   selectionMode === "single"
                     ? "context-menu-radio-item-indicator"
@@ -183,7 +188,7 @@ function ContextMenuSubTrigger({
       data-inset={inset}
       textValue={typeof children === "string" ? children : props.textValue}
       className={cn(
-        "cn-context-menu-sub-trigger flex cursor-default items-center outline-hidden select-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground data-inset:pl-7 data-open:bg-accent data-open:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -216,7 +221,7 @@ function ContextMenuSubContent({
     <ContextMenu
       data-slot="context-menu-sub-content"
       className={cn(
-        "cn-context-menu-sub-content-aria cn-menu-target cn-menu-translucent w-auto",
+        "cn-menu-target cn-menu-translucent w-auto min-w-32 rounded-lg border bg-popover p-1 text-popover-foreground shadow-lg duration-100",
         className
       )}
       placement={placement}
@@ -234,7 +239,7 @@ function ContextMenuSeparator({
   return (
     <SeparatorPrimitive
       data-slot="context-menu-separator"
-      className={cn("cn-context-menu-separator", className)}
+      className={cn("-mx-1 my-1 h-px bg-border", className)}
       {...props}
     />
   )
@@ -247,7 +252,10 @@ function ContextMenuShortcut({
   return (
     <span
       data-slot="context-menu-shortcut"
-      className={cn("cn-context-menu-shortcut", className)}
+      className={cn(
+        "ml-auto text-xs tracking-widest text-muted-foreground group-focus/context-menu-item:text-accent-foreground",
+        className
+      )}
       {...props}
     />
   )

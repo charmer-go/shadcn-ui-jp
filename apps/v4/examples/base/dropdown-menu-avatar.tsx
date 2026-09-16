@@ -37,21 +37,21 @@ export function DropdownMenuAvatar() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <BadgeCheckIcon />
-            Account
+            アカウント
           </DropdownMenuItem>
           <DropdownMenuItem>
             <CreditCardIcon />
-            Billing
+            請求
           </DropdownMenuItem>
           <DropdownMenuItem>
             <BellIcon />
-            Notifications
+            通知
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogOutIcon />
-          Sign Out
+          ログアウト
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

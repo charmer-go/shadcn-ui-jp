@@ -29,20 +29,20 @@ export function BreadcrumbDropdown() {
               "href" in props ? <Link {...props} /> : <span {...props} />
             }
           >
-            Home
+            ホーム
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
           <DropdownMenuTrigger>
             <Button className="flex items-center gap-1">
-              Components
+              コンポーネント
               <ChevronDownIcon data-icon="inline-end" className="size-3.5" />
             </Button>
             <DropdownMenu placement="bottom start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>ドキュメント</DropdownMenuItem>
+                <DropdownMenuItem>テーマ</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenu>
@@ -50,7 +50,7 @@ export function BreadcrumbDropdown() {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

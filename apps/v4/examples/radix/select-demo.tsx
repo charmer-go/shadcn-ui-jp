@@ -12,16 +12,16 @@ export function SelectDemo() {
   return (
     <Select>
       <SelectTrigger className="w-full max-w-48">
-        <SelectValue placeholder="Select a fruit" />
+        <SelectValue placeholder="フルーツを選択" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
-          <SelectItem value="grapes">Grapes</SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          <SelectLabel>フルーツ</SelectLabel>
+          <SelectItem value="apple">リンゴ</SelectItem>
+          <SelectItem value="banana">バナナ</SelectItem>
+          <SelectItem value="blueberry">ブルーベリー</SelectItem>
+          <SelectItem value="grapes">ぶどう</SelectItem>
+          <SelectItem value="pineapple">パイナップル</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

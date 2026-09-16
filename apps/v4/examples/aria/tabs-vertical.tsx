@@ -4,9 +4,9 @@ export function TabsVertical() {
   return (
     <Tabs defaultSelectedKey="account" orientation="vertical">
       <TabsList>
-        <TabsTrigger id="account">Account</TabsTrigger>
-        <TabsTrigger id="password">Password</TabsTrigger>
-        <TabsTrigger id="notifications">Notifications</TabsTrigger>
+        <TabsTrigger id="account">アカウント</TabsTrigger>
+        <TabsTrigger id="password">パスワード</TabsTrigger>
+        <TabsTrigger id="notifications">通知</TabsTrigger>
       </TabsList>
     </Tabs>
   )

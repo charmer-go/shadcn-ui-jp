@@ -7,7 +7,7 @@ import {
 export function ProgressWithLabel() {
   return (
     <Progress value={56} className="w-full max-w-sm">
-      <ProgressLabel>Upload progress</ProgressLabel>
+      <ProgressLabel>アップロードの進行状況</ProgressLabel>
       <ProgressValue />
     </Progress>
   )

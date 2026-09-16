@@ -8,7 +8,7 @@ export default function ButtonRender() {
       href="#"
       className={buttonVariants({ variant: "secondary", size: "sm" })}
     >
-      Login
+      ログイン
     </a>
   )
 }

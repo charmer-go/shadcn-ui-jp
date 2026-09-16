@@ -33,8 +33,8 @@ export function QuestionnaireAnimated() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Agent workflow saved", {
-      description: `Task: ${formData.get("task") ?? "None"} · Review: ${formData.get("review") ?? "None"} · Delivery: ${formData.get("delivery") ?? "None"}`,
+    toast("エージェントワークフローを保存しました", {
+      description: `タスク: ${formData.get("task") ?? "なし"} ・ レビュー: ${formData.get("review") ?? "なし"} ・ 納品: ${formData.get("delivery") ?? "なし"}`,
     })
   }
 
@@ -48,19 +48,19 @@ export function QuestionnaireAnimated() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem className={itemClassName} name="task" required>
-        <QuestionnaireTitle>What should the agent do?</QuestionnaireTitle>
+        <QuestionnaireTitle>エージェントは何をすべきですか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the task for this run.
+          この実行のタスクを選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="implement">
-            Implement the requested change
+            依頼された変更を実装する
           </QuestionnaireChoice>
           <QuestionnaireChoice value="debug">
-            Debug the current behavior
+            現在の動作をデバッグする
           </QuestionnaireChoice>
           <QuestionnaireChoice value="review">
-            Review the implementation
+            実装をレビューする
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -68,20 +68,20 @@ export function QuestionnaireAnimated() {
 
       <QuestionnaireItem className={itemClassName} name="review" required>
         <QuestionnaireTitle>
-          How should the work be reviewed?
+          作業はどのようにレビューされるべきですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Select the verification depth.
+          検証の深さを選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="targeted">
-            Targeted checks
+            対象を絞ったチェック
           </QuestionnaireChoice>
           <QuestionnaireChoice value="complete">
-            Complete test suite
+            テストスイート全体
           </QuestionnaireChoice>
           <QuestionnaireChoice value="manual">
-            Tests and manual QA
+            テストと手動QA
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -89,20 +89,20 @@ export function QuestionnaireAnimated() {
 
       <QuestionnaireItem className={itemClassName} name="delivery" required>
         <QuestionnaireTitle>
-          How should the result be delivered?
+          結果はどのように納品されるべきですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the final handoff format.
+          最終的な引き渡し形式を選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="summary">
-            Concise summary
+            簡潔な要約
           </QuestionnaireChoice>
           <QuestionnaireChoice value="diff">
-            Summary and changed files
+            要約と変更ファイル
           </QuestionnaireChoice>
           <QuestionnaireChoice value="handoff">
-            Detailed review handoff
+            詳細なレビュー引き渡し
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -110,8 +110,8 @@ export function QuestionnaireAnimated() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save workflow</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>ワークフローを保存</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

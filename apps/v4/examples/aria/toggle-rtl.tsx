@@ -34,7 +34,7 @@ export function ToggleRtl() {
   const { dir, t } = useTranslation(translations, "ar")
 
   return (
-    <Toggle aria-label="Toggle bookmark" size="sm" variant="outline" dir={dir}>
+    <Toggle aria-label="ブックマークを切り替え" size="sm" variant="outline" dir={dir}>
       <BookmarkIcon className="group-aria-pressed/toggle:fill-foreground" />
       {t.label}
     </Toggle>

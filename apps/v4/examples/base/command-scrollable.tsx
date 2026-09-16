@@ -46,132 +46,132 @@ export function CommandManyItems() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        メニューを開く
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="コマンドを入力または検索…" />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Navigation">
+            <CommandEmpty>結果が見つかりません。</CommandEmpty>
+            <CommandGroup heading="ナビゲーション">
               <CommandItem>
                 <HomeIcon />
-                <span>Home</span>
+                <span>ホーム</span>
                 <CommandShortcut>⌘H</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <InboxIcon />
-                <span>Inbox</span>
+                <span>受信箱</span>
                 <CommandShortcut>⌘I</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <FileTextIcon />
-                <span>Documents</span>
+                <span>ドキュメント</span>
                 <CommandShortcut>⌘D</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <FolderIcon />
-                <span>Folders</span>
+                <span>フォルダー</span>
                 <CommandShortcut>⌘F</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Actions">
+            <CommandGroup heading="操作">
               <CommandItem>
                 <PlusIcon />
-                <span>New File</span>
+                <span>新しいファイル</span>
                 <CommandShortcut>⌘N</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <FolderPlusIcon />
-                <span>New Folder</span>
+                <span>新しいフォルダー</span>
                 <CommandShortcut>⇧⌘N</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <CopyIcon />
-                <span>Copy</span>
+                <span>コピー</span>
                 <CommandShortcut>⌘C</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <ScissorsIcon />
-                <span>Cut</span>
+                <span>切り取り</span>
                 <CommandShortcut>⌘X</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <ClipboardPasteIcon />
-                <span>Paste</span>
+                <span>貼り付け</span>
                 <CommandShortcut>⌘V</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <TrashIcon />
-                <span>Delete</span>
+                <span>削除</span>
                 <CommandShortcut>⌫</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="View">
+            <CommandGroup heading="表示">
               <CommandItem>
                 <LayoutGridIcon />
-                <span>Grid View</span>
+                <span>グリッド表示</span>
               </CommandItem>
               <CommandItem>
                 <ListIcon />
-                <span>List View</span>
+                <span>リスト表示</span>
               </CommandItem>
               <CommandItem>
                 <ZoomInIcon />
-                <span>Zoom In</span>
+                <span>ズームイン</span>
                 <CommandShortcut>⌘+</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <ZoomOutIcon />
-                <span>Zoom Out</span>
+                <span>ズームアウト</span>
                 <CommandShortcut>⌘-</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Account">
+            <CommandGroup heading="アカウント">
               <CommandItem>
                 <UserIcon />
-                <span>Profile</span>
+                <span>プロフィール</span>
                 <CommandShortcut>⌘P</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <CreditCardIcon />
-                <span>Billing</span>
+                <span>請求</span>
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <SettingsIcon />
-                <span>Settings</span>
+                <span>設定</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <BellIcon />
-                <span>Notifications</span>
+                <span>通知</span>
               </CommandItem>
               <CommandItem>
                 <HelpCircleIcon />
-                <span>Help & Support</span>
+                <span>ヘルプとサポート</span>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Tools">
+            <CommandGroup heading="ツール">
               <CommandItem>
                 <CalculatorIcon />
-                <span>Calculator</span>
+                <span>計算機</span>
               </CommandItem>
               <CommandItem>
                 <CalendarIcon />
-                <span>Calendar</span>
+                <span>カレンダー</span>
               </CommandItem>
               <CommandItem>
                 <ImageIcon />
-                <span>Image Editor</span>
+                <span>画像エディター</span>
               </CommandItem>
               <CommandItem>
                 <CodeIcon />
-                <span>Code Editor</span>
+                <span>コードエディター</span>
               </CommandItem>
             </CommandGroup>
           </CommandList>

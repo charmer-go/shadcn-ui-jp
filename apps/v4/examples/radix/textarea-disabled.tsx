@@ -4,10 +4,10 @@ import { Textarea } from "@/components/ui/radix/textarea"
 export function TextareaDisabled() {
   return (
     <Field data-disabled>
-      <FieldLabel htmlFor="textarea-disabled">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-disabled">メッセージ</FieldLabel>
       <Textarea
         id="textarea-disabled"
-        placeholder="Type your message here."
+        placeholder="ここにメッセージを入力してください。"
         disabled
       />
     </Field>

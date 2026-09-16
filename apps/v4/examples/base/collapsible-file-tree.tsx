@@ -107,8 +107,8 @@ export function CollapsibleFileTree() {
       <CardHeader>
         <Tabs defaultValue="explorer">
           <TabsList className="w-full">
-            <TabsTrigger value="explorer">Explorer</TabsTrigger>
-            <TabsTrigger value="settings">Outline</TabsTrigger>
+            <TabsTrigger value="explorer">エクスプローラー</TabsTrigger>
+            <TabsTrigger value="settings">アウトライン</TabsTrigger>
           </TabsList>
         </Tabs>
       </CardHeader>

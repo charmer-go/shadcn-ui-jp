@@ -11,26 +11,26 @@ export function PopoverAlignments() {
       <div className="flex gap-6">
         <Popover>
           <PopoverTrigger render={<Button variant="outline" size="sm" />}>
-            Start
+            開始
           </PopoverTrigger>
           <PopoverContent align="start" className="w-40">
-            Aligned to start
+            開始位置に整列
           </PopoverContent>
         </Popover>
         <Popover>
           <PopoverTrigger render={<Button variant="outline" size="sm" />}>
-            Center
+            中央
           </PopoverTrigger>
           <PopoverContent align="center" className="w-40">
-            Aligned to center
+            中央に整列
           </PopoverContent>
         </Popover>
         <Popover>
           <PopoverTrigger render={<Button variant="outline" size="sm" />}>
-            End
+            終了
           </PopoverTrigger>
           <PopoverContent align="end" className="w-40">
-            Aligned to end
+            終了位置に整列
           </PopoverContent>
         </Popover>
       </div>

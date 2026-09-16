@@ -12,32 +12,32 @@ export default function InputGroupSpinner() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Searching..." />
+        <InputGroupInput placeholder="検索中..." />
         <InputGroupAddon align="inline-end">
           <Spinner />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Processing..." />
+        <InputGroupInput placeholder="処理中..." />
         <InputGroupAddon>
           <Spinner />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Saving changes..." />
+        <InputGroupInput placeholder="変更を保存中..." />
         <InputGroupAddon align="inline-end">
-          <InputGroupText>Saving...</InputGroupText>
+          <InputGroupText>保存中...</InputGroupText>
           <Spinner />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Refreshing data..." />
+        <InputGroupInput placeholder="データを更新中..." />
         <InputGroupAddon>
           <LoaderIcon className="animate-spin" />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">
           <InputGroupText className="text-muted-foreground">
-            Please wait...
+            しばらくお待ちください...
           </InputGroupText>
         </InputGroupAddon>
       </InputGroup>

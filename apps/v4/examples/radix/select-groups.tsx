@@ -13,21 +13,21 @@ export function SelectGroups() {
   return (
     <Select>
       <SelectTrigger className="w-full max-w-48">
-        <SelectValue placeholder="Select a fruit" />
+        <SelectValue placeholder="フルーツを選択" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
+          <SelectLabel>フルーツ</SelectLabel>
+          <SelectItem value="apple">リンゴ</SelectItem>
+          <SelectItem value="banana">バナナ</SelectItem>
+          <SelectItem value="blueberry">ブルーベリー</SelectItem>
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
-          <SelectItem value="carrot">Carrot</SelectItem>
-          <SelectItem value="broccoli">Broccoli</SelectItem>
-          <SelectItem value="spinach">Spinach</SelectItem>
+          <SelectLabel>野菜</SelectLabel>
+          <SelectItem value="carrot">にんじん</SelectItem>
+          <SelectItem value="broccoli">ブロッコリー</SelectItem>
+          <SelectItem value="spinach">ほうれん草</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

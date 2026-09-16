@@ -25,28 +25,28 @@ export default function ButtonGroupPopover() {
       </Button>
       <Popover>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="icon" aria-label="Open Popover">
+          <Button variant="outline" size="icon" aria-label="ポップオーバーを開く">
             <ChevronDownIcon />
           </Button>
         </PopoverTrigger>
         <PopoverContent align="end" className="rounded-xl text-sm">
           <PopoverHeader>
-            <PopoverTitle>Start a new task with Copilot</PopoverTitle>
+            <PopoverTitle>Copilotで新しいタスクを開始</PopoverTitle>
             <PopoverDescription>
-              Describe your task in natural language.
+              自然言語でタスクを説明してください。
             </PopoverDescription>
           </PopoverHeader>
           <Field>
             <FieldLabel htmlFor="task" className="sr-only">
-              Task Description
+              タスクの説明
             </FieldLabel>
             <Textarea
               id="task"
-              placeholder="I need to..."
+              placeholder="やりたいことは..."
               className="resize-none"
             />
             <FieldDescription>
-              Copilot will open a pull request for review.
+              Copilotがレビュー用のプルリクエストを作成します。
             </FieldDescription>
           </Field>
         </PopoverContent>

@@ -14,12 +14,12 @@ export function DrawerScrollableContent() {
   return (
     <Drawer direction="right">
       <DrawerTrigger asChild>
-        <Button variant="outline">Scrollable Content</Button>
+        <Button variant="outline">スクロール可能なコンテンツ</Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Move Goal</DrawerTitle>
-          <DrawerDescription>Set your daily activity goal.</DrawerDescription>
+          <DrawerTitle>目標を変更</DrawerTitle>
+          <DrawerDescription>1日の活動目標を設定してください。</DrawerDescription>
         </DrawerHeader>
         <div className="no-scrollbar overflow-y-auto px-4">
           {Array.from({ length: 10 }).map((_, index) => (
@@ -27,20 +27,18 @@ export function DrawerScrollableContent() {
               key={index}
               className="mb-4 leading-normal style-lyra:mb-2 style-lyra:leading-relaxed"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              これはサンプルのテキストです。ドロワーの内容が長くなった場合に、
+              スクロールがどのように機能するかを確認するためのダミーコンテンツです。
+              実際のアプリケーションでは、ここに本文やリスト、フォームなど
+              任意のコンテンツを配置できます。内容が画面の高さを超える場合、
+              このエリアだけが独立してスクロールします。
             </p>
           ))}
         </div>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>送信</Button>
           <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
+            <Button variant="outline">キャンセル</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

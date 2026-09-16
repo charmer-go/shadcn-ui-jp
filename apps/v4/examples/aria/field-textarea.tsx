@@ -12,14 +12,14 @@ export default function FieldTextarea() {
     <FieldSet className="w-full max-w-xs">
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="feedback">Feedback</FieldLabel>
+          <FieldLabel htmlFor="feedback">フィードバック</FieldLabel>
           <Textarea
             id="feedback"
-            placeholder="Your feedback helps us improve..."
+            placeholder="サービス改善のため、ご意見をお聞かせください..."
             rows={4}
           />
           <FieldDescription>
-            Share your thoughts about our service.
+            サービスについてのご感想をお聞かせください。
           </FieldDescription>
         </Field>
       </FieldGroup>

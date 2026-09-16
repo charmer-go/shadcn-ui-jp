@@ -32,58 +32,58 @@ export default function ButtonGroupDemo() {
   return (
     <ButtonGroup>
       <ButtonGroup className="hidden sm:flex">
-        <Button variant="outline" size="icon" aria-label="Go Back">
+        <Button variant="outline" size="icon" aria-label="戻る">
           <ArrowLeftIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Archive</Button>
-        <Button variant="outline">Report</Button>
+        <Button variant="outline">アーカイブ</Button>
+        <Button variant="outline">報告</Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Snooze</Button>
+        <Button variant="outline">スヌーズ</Button>
         <DropdownMenuTrigger>
-          <Button variant="outline" size="icon" aria-label="More Options">
+          <Button variant="outline" size="icon" aria-label="その他のオプション">
             <MoreHorizontalIcon />
           </Button>
           <DropdownMenu placement="bottom end" className="w-40">
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <MailCheckIcon />
-                Mark as Read
+                既読にする
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <ArchiveIcon />
-                Archive
+                アーカイブ
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <ClockIcon />
-                Snooze
+                スヌーズ
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CalendarPlusIcon />
-                Add to Calendar
+                カレンダーに追加
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <ListFilterIcon />
-                Add to List
+                リストに追加
               </DropdownMenuItem>
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   <TagIcon />
-                  Label As...
+                  ラベルを付ける...
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent
                   selectionMode="single"
                   selectedKeys={[label]}
                   onSelectionChange={(keys) => setLabel([...keys][0] as string)}
                 >
-                  <DropdownMenuItem id="personal">Personal</DropdownMenuItem>
-                  <DropdownMenuItem id="work">Work</DropdownMenuItem>
-                  <DropdownMenuItem id="other">Other</DropdownMenuItem>
+                  <DropdownMenuItem id="personal">個人</DropdownMenuItem>
+                  <DropdownMenuItem id="work">仕事</DropdownMenuItem>
+                  <DropdownMenuItem id="other">その他</DropdownMenuItem>
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
             </DropdownMenuGroup>
@@ -91,7 +91,7 @@ export default function ButtonGroupDemo() {
             <DropdownMenuGroup>
               <DropdownMenuItem variant="destructive">
                 <Trash2Icon />
-                Trash
+                ゴミ箱
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenu>

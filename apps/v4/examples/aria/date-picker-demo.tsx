@@ -23,7 +23,7 @@ export function DatePickerDemo() {
             .toDate(getLocalTimeZone())
             .toLocaleDateString(undefined, { dateStyle: "long" })
         ) : (
-          <span>Pick a date</span>
+          <span>日付を選択</span>
         )}
         <ChevronDownIcon data-icon="inline-end" />
       </Button>

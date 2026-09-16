@@ -18,25 +18,25 @@ export function DropdownMenuIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">開く</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
           <UserIcon />
-          Profile
+          プロフィール
         </DropdownMenuItem>
         <DropdownMenuItem>
           <CreditCardIcon />
-          Billing
+          請求
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SettingsIcon />
-          Settings
+          設定
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
           <LogOutIcon />
-          Log out
+          ログアウト
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

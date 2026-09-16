@@ -24,7 +24,7 @@ export function BreadcrumbDemo() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="#">Home</Link>
+            <Link href="#">ホーム</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
@@ -33,13 +33,13 @@ export function BreadcrumbDemo() {
             <DropdownMenuTrigger asChild>
               <Button size="icon-sm" variant="ghost">
                 <BreadcrumbEllipsis />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">メニューを切り替え</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>ドキュメント</DropdownMenuItem>
+                <DropdownMenuItem>テーマ</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
@@ -48,12 +48,12 @@ export function BreadcrumbDemo() {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="#">Components</Link>
+            <Link href="#">コンポーネント</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

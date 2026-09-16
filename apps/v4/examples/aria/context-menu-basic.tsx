@@ -18,18 +18,18 @@ export function ContextMenuBasic() {
           className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
         >
           <span className="hidden pointer-fine:inline-block">
-            Right click here
+            右クリックしてください
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press here
+            長押ししてください
           </span>
         </div>
       </Pressable>
       <ContextMenu>
         <ContextMenuGroup>
-          <ContextMenuItem>Back</ContextMenuItem>
-          <ContextMenuItem isDisabled>Forward</ContextMenuItem>
-          <ContextMenuItem>Reload</ContextMenuItem>
+          <ContextMenuItem>戻る</ContextMenuItem>
+          <ContextMenuItem isDisabled>進む</ContextMenuItem>
+          <ContextMenuItem>再読み込み</ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenu>
     </ContextMenuTrigger>

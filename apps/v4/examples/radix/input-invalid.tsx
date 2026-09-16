@@ -8,10 +8,10 @@ import { Input } from "@/components/ui/radix/input"
 export function InputInvalid() {
   return (
     <Field data-invalid>
-      <FieldLabel htmlFor="input-invalid">Invalid Input</FieldLabel>
-      <Input id="input-invalid" placeholder="Error" aria-invalid />
+      <FieldLabel htmlFor="input-invalid">無効な入力</FieldLabel>
+      <Input id="input-invalid" placeholder="エラー" aria-invalid />
       <FieldDescription>
-        This field contains validation errors.
+        この項目には入力エラーがあります。
       </FieldDescription>
     </Field>
   )

@@ -22,7 +22,7 @@ export function BreadcrumbEllipsisDemo() {
               "href" in props ? <Link {...props} /> : <span {...props} />
             }
           >
-            Home
+            ホーム
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -37,12 +37,12 @@ export function BreadcrumbEllipsisDemo() {
               "href" in props ? <Link {...props} /> : <span {...props} />
             }
           >
-            Components
+            コンポーネント
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

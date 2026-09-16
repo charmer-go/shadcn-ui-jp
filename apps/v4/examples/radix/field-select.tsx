@@ -15,26 +15,26 @@ import {
 export default function FieldSelect() {
   return (
     <Field className="w-full max-w-xs">
-      <FieldLabel>Department</FieldLabel>
+      <FieldLabel>部門</FieldLabel>
       <Select>
         <SelectTrigger>
-          <SelectValue placeholder="Choose department" />
+          <SelectValue placeholder="部門を選択" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectItem value="engineering">Engineering</SelectItem>
-            <SelectItem value="design">Design</SelectItem>
-            <SelectItem value="marketing">Marketing</SelectItem>
-            <SelectItem value="sales">Sales</SelectItem>
-            <SelectItem value="support">Customer Support</SelectItem>
-            <SelectItem value="hr">Human Resources</SelectItem>
-            <SelectItem value="finance">Finance</SelectItem>
-            <SelectItem value="operations">Operations</SelectItem>
+            <SelectItem value="engineering">エンジニアリング</SelectItem>
+            <SelectItem value="design">デザイン</SelectItem>
+            <SelectItem value="marketing">マーケティング</SelectItem>
+            <SelectItem value="sales">営業</SelectItem>
+            <SelectItem value="support">カスタマーサポート</SelectItem>
+            <SelectItem value="hr">人事</SelectItem>
+            <SelectItem value="finance">財務</SelectItem>
+            <SelectItem value="operations">オペレーション</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>
       <FieldDescription>
-        Select your department or area of work.
+        所属部門または業務領域を選択してください。
       </FieldDescription>
     </Field>
   )

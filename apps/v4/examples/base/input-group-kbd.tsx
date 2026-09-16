@@ -10,7 +10,7 @@ import { Kbd } from "@/components/ui/base/kbd"
 export function InputGroupKbd() {
   return (
     <InputGroup className="max-w-sm">
-      <InputGroupInput placeholder="Search..." />
+      <InputGroupInput placeholder="検索..." />
       <InputGroupAddon>
         <SearchIcon className="text-muted-foreground" />
       </InputGroupAddon>

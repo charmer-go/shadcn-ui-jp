@@ -23,10 +23,10 @@ export function ContextMenuCheckboxes() {
           className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
         >
           <span className="hidden pointer-fine:inline-block">
-            Right click here
+            右クリックしてください
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press here
+            長押ししてください
           </span>
         </div>
       </Pressable>
@@ -37,11 +37,11 @@ export function ContextMenuCheckboxes() {
           onSelectionChange={setSelectedKeys}
         >
           <ContextMenuItem id="bookmarks-bar">
-            Show Bookmarks Bar
+            ブックマークバーを表示
           </ContextMenuItem>
-          <ContextMenuItem>Show Full URLs</ContextMenuItem>
+          <ContextMenuItem>完全なURLを表示</ContextMenuItem>
           <ContextMenuItem id="developer-tools">
-            Show Developer Tools
+            デベロッパーツールを表示
           </ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenu>

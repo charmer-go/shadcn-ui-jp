@@ -46,7 +46,7 @@ export function DatePickerInput() {
 
   return (
     <Field className="mx-auto w-48">
-      <FieldLabel htmlFor="date-required">Subscription Date</FieldLabel>
+      <FieldLabel htmlFor="date-required">サブスクリプション日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-required"
@@ -75,12 +75,12 @@ export function DatePickerInput() {
                   id="date-picker"
                   variant="ghost"
                   size="icon-xs"
-                  aria-label="Select date"
+                  aria-label="日付を選択"
                 />
               }
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">日付を選択</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"

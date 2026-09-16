@@ -18,31 +18,30 @@ export function DialogDemo() {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
+          <Button variant="outline">ダイアログを開く</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-sm">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>プロフィールを編集</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              プロフィールを編集します。完了したら保存をクリックしてください。
             </DialogDescription>
           </DialogHeader>
           <FieldGroup>
             <Field>
-              <Label htmlFor="name-1">Name</Label>
+              <Label htmlFor="name-1">名前</Label>
               <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
             </Field>
             <Field>
-              <Label htmlFor="username-1">Username</Label>
+              <Label htmlFor="username-1">ユーザー名</Label>
               <Input id="username-1" name="username" defaultValue="@peduarte" />
             </Field>
           </FieldGroup>
           <DialogFooter>
             <DialogClose asChild>
-              <Button variant="outline">Cancel</Button>
+              <Button variant="outline">キャンセル</Button>
             </DialogClose>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit">変更を保存</Button>
           </DialogFooter>
         </DialogContent>
       </form>

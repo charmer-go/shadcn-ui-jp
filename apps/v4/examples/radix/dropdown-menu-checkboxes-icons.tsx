@@ -23,11 +23,11 @@ export function DropdownMenuCheckboxesIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Notifications</Button>
+        <Button variant="outline">通知</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
+          <DropdownMenuLabel>通知設定</DropdownMenuLabel>
           <DropdownMenuCheckboxItem
             checked={notifications.email}
             onCheckedChange={(checked) =>
@@ -35,7 +35,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MailIcon />
-            Email notifications
+            メール通知
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.sms}
@@ -44,7 +44,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MessageSquareIcon />
-            SMS notifications
+            SMS通知
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.push}
@@ -53,7 +53,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <BellIcon />
-            Push notifications
+            プッシュ通知
           </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

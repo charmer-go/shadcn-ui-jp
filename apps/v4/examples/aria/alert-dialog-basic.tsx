@@ -13,18 +13,17 @@ import { Button } from "@/components/ui/aria/button"
 export function AlertDialogBasic() {
   return (
     <AlertDialogTrigger>
-      <Button variant="outline">Show Dialog</Button>
+      <Button variant="outline">ダイアログを表示</Button>
       <AlertDialog>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>本当によろしいですか?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            この操作は取り消せません。アカウントが完全に削除され、サーバーからデータが削除されます。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogCancel>キャンセル</AlertDialogCancel>
+          <AlertDialogAction>続行</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialog>
     </AlertDialogTrigger>

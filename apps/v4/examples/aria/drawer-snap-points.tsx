@@ -18,21 +18,20 @@ export function DrawerSnapPoints() {
   return (
     <Drawer snapPoints={SNAP_POINTS} showSwipeHandle>
       <DrawerTrigger render={<Button variant="outline" />}>
-        Open Snap Drawer
+        スナップドロワーを開く
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Snap points</DrawerTitle>
+          <DrawerTitle>スナップポイント</DrawerTitle>
           <DrawerDescription>
-            Drag the drawer to snap between a compact peek and a near
-            full-height view.
+            ドロワーをドラッグすると、コンパクト表示とほぼ全画面表示の間でスナップします。
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 p-4">
           <div className="rounded-2xl bg-muted group-data-[swipe-axis=x]/drawer-popup:size-full group-data-[swipe-axis=y]/drawer-popup:h-80 group-data-[swipe-axis=y]/drawer-popup:w-full" />
         </div>
         <DrawerFooter>
-          <DrawerClose render={<Button />}>Close</DrawerClose>
+          <DrawerClose render={<Button />}>閉じる</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

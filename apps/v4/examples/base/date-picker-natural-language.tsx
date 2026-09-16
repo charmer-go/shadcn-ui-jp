@@ -39,7 +39,7 @@ export function DatePickerNaturalLanguage() {
 
   return (
     <Field className="mx-auto max-w-xs">
-      <FieldLabel htmlFor="date-optional">Schedule Date</FieldLabel>
+      <FieldLabel htmlFor="date-optional">予定日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-optional"
@@ -67,12 +67,12 @@ export function DatePickerNaturalLanguage() {
                   id="date-picker"
                   variant="ghost"
                   size="icon-xs"
-                  aria-label="Select date"
+                  aria-label="日付を選択"
                 />
               }
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">日付を選択</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"
@@ -95,8 +95,8 @@ export function DatePickerNaturalLanguage() {
         </InputGroupAddon>
       </InputGroup>
       <div className="px-1 text-sm text-muted-foreground">
-        Your post will be published on{" "}
-        <span className="font-medium">{formatDate(date)}</span>.
+        投稿は
+        <span className="font-medium">{formatDate(date)}</span>に公開されます。
       </div>
     </Field>
   )

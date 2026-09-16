@@ -4,9 +4,9 @@ export function TabsDisabled() {
   return (
     <Tabs defaultValue="home">
       <TabsList>
-        <TabsTrigger value="home">Home</TabsTrigger>
+        <TabsTrigger value="home">ホーム</TabsTrigger>
         <TabsTrigger value="settings" disabled>
-          Disabled
+          無効
         </TabsTrigger>
       </TabsList>
     </Tabs>

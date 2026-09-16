@@ -27,27 +27,27 @@ import {
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "デザインエンジニアリング",
     url: "#",
     icon: FrameIcon,
   },
   {
-    name: "Sales & Marketing",
+    name: "セールス＆マーケティング",
     url: "#",
     icon: PieChartIcon,
   },
   {
-    name: "Travel",
+    name: "旅行",
     url: "#",
     icon: MapIcon,
   },
   {
-    name: "Support",
+    name: "サポート",
     url: "#",
     icon: LifeBuoyIcon,
   },
   {
-    name: "Feedback",
+    name: "フィードバック",
     url: "#",
     icon: SendIcon,
   },
@@ -61,7 +61,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {projects.map((project) => (
@@ -85,7 +85,7 @@ export default function AppSidebar() {
             variant="ghost"
           >
             {open ? <PanelLeftCloseIcon /> : <PanelLeftOpenIcon />}
-            <span>{open ? "Close" : "Open"} Sidebar</span>
+            <span>サイドバーを{open ? "閉じる" : "開く"}</span>
           </Button>
         </header>
       </SidebarInset>

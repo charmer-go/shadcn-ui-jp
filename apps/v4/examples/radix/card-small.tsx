@@ -12,20 +12,20 @@ export function CardSmall() {
   return (
     <Card size="sm" className="mx-auto w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Small Card</CardTitle>
+        <CardTitle>小さいカード</CardTitle>
         <CardDescription>
-          This card uses the small size variant.
+          このカードは小さいサイズのバリアントを使用しています。
         </CardDescription>
       </CardHeader>
       <CardContent>
         <p>
-          The card component supports a size prop that can be set to
-          &quot;sm&quot; for a more compact appearance.
+          カードコンポーネントはsizeプロパティに対応しており、
+          &quot;sm&quot;を指定するとよりコンパクトな見た目になります。
         </p>
       </CardContent>
       <CardFooter>
         <Button variant="outline" size="sm" className="w-full">
-          Action
+          アクション
         </Button>
       </CardFooter>
     </Card>

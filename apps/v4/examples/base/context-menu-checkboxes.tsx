@@ -11,20 +11,20 @@ export function ContextMenuCheckboxes() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuCheckboxItem defaultChecked>
-            Show Bookmarks Bar
+            ブックマークバーを表示
           </ContextMenuCheckboxItem>
-          <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem>完全なURLを表示</ContextMenuCheckboxItem>
           <ContextMenuCheckboxItem defaultChecked>
-            Show Developer Tools
+            デベロッパーツールを表示
           </ContextMenuCheckboxItem>
         </ContextMenuGroup>
       </ContextMenuContent>

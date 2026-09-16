@@ -15,7 +15,7 @@ import {
 
 const timezones = [
   {
-    value: "Americas",
+    value: "アメリカ",
     items: [
       "(GMT-5) New York",
       "(GMT-8) Los Angeles",
@@ -26,7 +26,7 @@ const timezones = [
     ],
   },
   {
-    value: "Europe",
+    value: "ヨーロッパ",
     items: [
       "(GMT+0) London",
       "(GMT+1) Paris",
@@ -37,7 +37,7 @@ const timezones = [
     ],
   },
   {
-    value: "Asia/Pacific",
+    value: "アジア太平洋",
     items: [
       "(GMT+9) Tokyo",
       "(GMT+8) Shanghai",
@@ -51,12 +51,12 @@ const timezones = [
 
 export function ComboboxWithGroupsAndSeparator() {
   return (
-    <Combobox allowsEmptyCollection aria-label="Timezone">
-      <ComboboxInput placeholder="Select a timezone" />
+    <Combobox allowsEmptyCollection aria-label="タイムゾーン">
+      <ComboboxInput placeholder="タイムゾーンを選択" />
       <ComboboxContent>
         <ComboboxList
           renderEmptyState={() => (
-            <ComboboxEmpty>No timezones found.</ComboboxEmpty>
+            <ComboboxEmpty>タイムゾーンが見つかりません。</ComboboxEmpty>
           )}
         >
           {timezones.map((group, index) => (

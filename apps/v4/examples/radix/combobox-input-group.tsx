@@ -17,7 +17,7 @@ import { InputGroupAddon } from "@/components/ui/radix/input-group"
 
 const timezones = [
   {
-    value: "Americas",
+    value: "アメリカ",
     items: [
       "(GMT-5) New York",
       "(GMT-8) Los Angeles",
@@ -28,7 +28,7 @@ const timezones = [
     ],
   },
   {
-    value: "Europe",
+    value: "ヨーロッパ",
     items: [
       "(GMT+0) London",
       "(GMT+1) Paris",
@@ -39,7 +39,7 @@ const timezones = [
     ],
   },
   {
-    value: "Asia/Pacific",
+    value: "アジア太平洋",
     items: [
       "(GMT+9) Tokyo",
       "(GMT+8) Shanghai",
@@ -54,13 +54,13 @@ const timezones = [
 export function ComboxboxInputGroup() {
   return (
     <Combobox items={timezones}>
-      <ComboboxInput placeholder="Select a timezone">
+      <ComboboxInput placeholder="タイムゾーンを選択">
         <InputGroupAddon>
           <GlobeIcon />
         </InputGroupAddon>
       </ComboboxInput>
       <ComboboxContent alignOffset={-28} className="w-60">
-        <ComboboxEmpty>No timezones found.</ComboboxEmpty>
+        <ComboboxEmpty>タイムゾーンが見つかりません。</ComboboxEmpty>
         <ComboboxList>
           {(group) => (
             <ComboboxGroup key={group.value} items={group.items}>

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/radix/button"
 export default function ButtonWithIcon() {
   return (
     <Button variant="outline" size="sm">
-      <IconGitBranch /> New Branch
+      <IconGitBranch /> 新しいブランチ
     </Button>
   )
 }

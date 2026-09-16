@@ -8,14 +8,14 @@ import { Input } from "@/components/ui/aria/input"
 export function InputField() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-field-username">Username</FieldLabel>
+      <FieldLabel htmlFor="input-field-username">ユーザー名</FieldLabel>
       <Input
         id="input-field-username"
         type="text"
-        placeholder="Enter your username"
+        placeholder="ユーザー名を入力してください"
       />
       <FieldDescription>
-        Choose a unique username for your account.
+        アカウントで使用する一意のユーザー名を選択してください。
       </FieldDescription>
     </Field>
   )

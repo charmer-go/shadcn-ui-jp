@@ -21,12 +21,12 @@ import {
 import { Switch } from "@/components/ui/base/switch"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
-  { label: "Grapes", value: "grapes" },
-  { label: "Pineapple", value: "pineapple" },
+  { label: "フルーツを選択", value: null },
+  { label: "リンゴ", value: "apple" },
+  { label: "バナナ", value: "banana" },
+  { label: "ブルーベリー", value: "blueberry" },
+  { label: "ぶどう", value: "grapes" },
+  { label: "パイナップル", value: "pineapple" },
 ]
 
 export function SelectAlignItem() {
@@ -36,9 +36,9 @@ export function SelectAlignItem() {
     <FieldGroup className="w-full max-w-xs">
       <Field orientation="horizontal">
         <FieldContent>
-          <FieldLabel htmlFor="align-item">Align Item</FieldLabel>
+          <FieldLabel htmlFor="align-item">アイテムの位置揃え</FieldLabel>
           <FieldDescription>
-            Toggle to align the item with the trigger.
+            トリガーに合わせてアイテムの位置を揃えます。
           </FieldDescription>
         </FieldContent>
         <Switch

@@ -42,14 +42,14 @@ export function QuestionnaireDialog() {
     const formData = new FormData(event.currentTarget)
 
     setOpen(false)
-    toast("Clarification sent", {
-      description: `Scope: ${formData.get("scope") ?? "None"} · Verification: ${formData.get("tests") ?? "None"}`,
+    toast("確認事項を送信しました", {
+      description: `スコープ: ${formData.get("scope") ?? "なし"} ・ 検証: ${formData.get("tests") ?? "なし"}`,
     })
   }
 
   return (
     <DialogTrigger isOpen={open} onOpenChange={setOpen}>
-      <Button variant="outline">Open clarification</Button>
+      <Button variant="outline">確認事項を開く</Button>
       <Dialog>
         <Questionnaire
           defaultItem="scope"
@@ -60,21 +60,21 @@ export function QuestionnaireDialog() {
             <DialogHeader>
               <QuestionnaireProgress />
               <QuestionnaireTitle render={<DialogTitle />}>
-                Which files are in scope?
+                どのファイルが対象範囲ですか？
               </QuestionnaireTitle>
               <QuestionnaireDescription render={<DialogDescription />}>
-                Choose how broadly the agent can update the workspace.
+                エージェントがワークスペースを更新できる範囲を選択してください。
               </QuestionnaireDescription>
             </DialogHeader>
             <QuestionnaireChoices>
               <QuestionnaireChoice value="component">
-                Component only
+                コンポーネントのみ
               </QuestionnaireChoice>
               <QuestionnaireChoice value="feature">
-                Complete feature directory
+                機能ディレクトリ全体
               </QuestionnaireChoice>
               <QuestionnaireChoice value="workspace">
-                Any related workspace file
+                関連するワークスペースファイル全般
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -84,21 +84,21 @@ export function QuestionnaireDialog() {
             <DialogHeader>
               <QuestionnaireProgress />
               <QuestionnaireTitle render={<DialogTitle />}>
-                How much verification is needed?
+                どの程度の検証が必要ですか？
               </QuestionnaireTitle>
               <QuestionnaireDescription render={<DialogDescription />}>
-                Choose the checks the agent should run before handoff.
+                引き渡し前にエージェントが実行すべきチェックを選択してください。
               </QuestionnaireDescription>
             </DialogHeader>
             <QuestionnaireChoices>
               <QuestionnaireChoice value="targeted">
-                Targeted tests
+                対象を絞ったテスト
               </QuestionnaireChoice>
               <QuestionnaireChoice value="package">
-                Package tests
+                パッケージテスト
               </QuestionnaireChoice>
               <QuestionnaireChoice value="full">
-                Full workspace verification
+                ワークスペース全体の検証
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -106,12 +106,12 @@ export function QuestionnaireDialog() {
 
           <DialogFooter>
             <DialogClose type="button" variant="outline">
-              Cancel
+              キャンセル
             </DialogClose>
             <QuestionnaireActions>
               <QuestionnairePrevious />
-              <QuestionnaireNext>Next</QuestionnaireNext>
-              <QuestionnaireSubmit>Send answer</QuestionnaireSubmit>
+              <QuestionnaireNext>次へ</QuestionnaireNext>
+              <QuestionnaireSubmit>回答を送信</QuestionnaireSubmit>
             </QuestionnaireActions>
           </DialogFooter>
         </Questionnaire>

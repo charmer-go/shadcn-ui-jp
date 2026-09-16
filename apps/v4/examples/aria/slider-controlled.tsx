@@ -11,13 +11,13 @@ export function SliderControlled() {
   return (
     <div className="mx-auto grid w-full max-w-xs gap-3">
       <div className="flex items-center justify-between gap-2">
-        <Label htmlFor="slider-demo-temperature">Temperature</Label>
+        <Label htmlFor="slider-demo-temperature">温度</Label>
         <span className="text-sm text-muted-foreground">
           {value.join(", ")}
         </span>
       </div>
       <Slider
-        aria-label="Temperature"
+        aria-label="温度"
         id="slider-demo-temperature"
         value={value}
         onChange={(value) => setValue(value as number[])}

@@ -92,7 +92,7 @@ export function ButtonGroupRtl() {
     <div dir={dir}>
       <ButtonGroup>
         <ButtonGroup className="hidden sm:flex">
-          <Button variant="outline" size="icon" aria-label="Go Back">
+          <Button variant="outline" size="icon" aria-label="戻る">
             <ArrowLeftIcon className="rtl:rotate-180" />
           </Button>
         </ButtonGroup>
@@ -104,7 +104,7 @@ export function ButtonGroupRtl() {
           <Button variant="outline">{t.snooze}</Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="More Options">
+              <Button variant="outline" size="icon" aria-label="その他のオプション">
                 <MoreHorizontalIcon />
               </Button>
             </DropdownMenuTrigger>

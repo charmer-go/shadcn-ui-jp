@@ -12,10 +12,10 @@ export function CheckboxGroup() {
   return (
     <FieldSet>
       <FieldLegend variant="label">
-        Show these items on the desktop:
+        デスクトップに表示する項目:
       </FieldLegend>
       <FieldDescription>
-        Select the items you want to show on the desktop.
+        デスクトップに表示したい項目を選択してください。
       </FieldDescription>
       <FieldGroup className="gap-3">
         <Field orientation="horizontal">
@@ -28,7 +28,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-hard-disks-ljj-checkbox"
             className="font-normal"
           >
-            Hard disks
+            ハードディスク
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -41,7 +41,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-external-disks-1yg-checkbox"
             className="font-normal"
           >
-            External disks
+            外部ディスク
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -53,7 +53,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-cds-dvds-fzt-checkbox"
             className="font-normal"
           >
-            CDs, DVDs, and iPods
+            CD、DVD、iPod
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -65,7 +65,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-connected-servers-6l2-checkbox"
             className="font-normal"
           >
-            Connected servers
+            接続中のサーバー
           </FieldLabel>
         </Field>
       </FieldGroup>

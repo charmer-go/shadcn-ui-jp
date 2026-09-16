@@ -46,135 +46,135 @@ export function CommandManyItems() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        メニューを開く
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="コマンドを入力または検索…" />
           <CommandList
             renderEmptyState={() => (
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>結果が見つかりません。</CommandEmpty>
             )}
           >
-            <CommandGroup heading="Navigation">
-              <CommandItem textValue="Home">
+            <CommandGroup heading="ナビゲーション">
+              <CommandItem textValue="ホーム">
                 <HomeIcon />
-                <span>Home</span>
+                <span>ホーム</span>
                 <CommandShortcut>⌘H</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Inbox">
+              <CommandItem textValue="受信箱">
                 <InboxIcon />
-                <span>Inbox</span>
+                <span>受信箱</span>
                 <CommandShortcut>⌘I</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Documents">
+              <CommandItem textValue="ドキュメント">
                 <FileTextIcon />
-                <span>Documents</span>
+                <span>ドキュメント</span>
                 <CommandShortcut>⌘D</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Folders">
+              <CommandItem textValue="フォルダー">
                 <FolderIcon />
-                <span>Folders</span>
+                <span>フォルダー</span>
                 <CommandShortcut>⌘F</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Actions">
-              <CommandItem textValue="New File">
+            <CommandGroup heading="操作">
+              <CommandItem textValue="新しいファイル">
                 <PlusIcon />
-                <span>New File</span>
+                <span>新しいファイル</span>
                 <CommandShortcut>⌘N</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="New Folder">
+              <CommandItem textValue="新しいフォルダー">
                 <FolderPlusIcon />
-                <span>New Folder</span>
+                <span>新しいフォルダー</span>
                 <CommandShortcut>⇧⌘N</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Copy">
+              <CommandItem textValue="コピー">
                 <CopyIcon />
-                <span>Copy</span>
+                <span>コピー</span>
                 <CommandShortcut>⌘C</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Cut">
+              <CommandItem textValue="切り取り">
                 <ScissorsIcon />
-                <span>Cut</span>
+                <span>切り取り</span>
                 <CommandShortcut>⌘X</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Paste">
+              <CommandItem textValue="貼り付け">
                 <ClipboardPasteIcon />
-                <span>Paste</span>
+                <span>貼り付け</span>
                 <CommandShortcut>⌘V</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Delete">
+              <CommandItem textValue="削除">
                 <TrashIcon />
-                <span>Delete</span>
+                <span>削除</span>
                 <CommandShortcut>⌫</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="View">
-              <CommandItem textValue="Grid View">
+            <CommandGroup heading="表示">
+              <CommandItem textValue="グリッド表示">
                 <LayoutGridIcon />
-                <span>Grid View</span>
+                <span>グリッド表示</span>
               </CommandItem>
-              <CommandItem textValue="List View">
+              <CommandItem textValue="リスト表示">
                 <ListIcon />
-                <span>List View</span>
+                <span>リスト表示</span>
               </CommandItem>
-              <CommandItem textValue="Zoom In">
+              <CommandItem textValue="ズームイン">
                 <ZoomInIcon />
-                <span>Zoom In</span>
+                <span>ズームイン</span>
                 <CommandShortcut>⌘+</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Zoom Out">
+              <CommandItem textValue="ズームアウト">
                 <ZoomOutIcon />
-                <span>Zoom Out</span>
+                <span>ズームアウト</span>
                 <CommandShortcut>⌘-</CommandShortcut>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Account">
-              <CommandItem textValue="Profile">
+            <CommandGroup heading="アカウント">
+              <CommandItem textValue="プロフィール">
                 <UserIcon />
-                <span>Profile</span>
+                <span>プロフィール</span>
                 <CommandShortcut>⌘P</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Billing">
+              <CommandItem textValue="請求">
                 <CreditCardIcon />
-                <span>Billing</span>
+                <span>請求</span>
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Settings">
+              <CommandItem textValue="設定">
                 <SettingsIcon />
-                <span>Settings</span>
+                <span>設定</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Notifications">
+              <CommandItem textValue="通知">
                 <BellIcon />
-                <span>Notifications</span>
+                <span>通知</span>
               </CommandItem>
-              <CommandItem textValue="Help & Support">
+              <CommandItem textValue="ヘルプとサポート">
                 <HelpCircleIcon />
-                <span>Help & Support</span>
+                <span>ヘルプとサポート</span>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Tools">
-              <CommandItem textValue="Calculator">
+            <CommandGroup heading="ツール">
+              <CommandItem textValue="計算機">
                 <CalculatorIcon />
-                <span>Calculator</span>
+                <span>計算機</span>
               </CommandItem>
-              <CommandItem textValue="Calendar">
+              <CommandItem textValue="カレンダー">
                 <CalendarIcon />
-                <span>Calendar</span>
+                <span>カレンダー</span>
               </CommandItem>
-              <CommandItem textValue="Image Editor">
+              <CommandItem textValue="画像エディター">
                 <ImageIcon />
-                <span>Image Editor</span>
+                <span>画像エディター</span>
               </CommandItem>
-              <CommandItem textValue="Code Editor">
+              <CommandItem textValue="コードエディター">
                 <CodeIcon />
-                <span>Code Editor</span>
+                <span>コードエディター</span>
               </CommandItem>
             </CommandGroup>
           </CommandList>

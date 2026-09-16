@@ -29,7 +29,7 @@ export default function AppSidebar() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-                    Select Workspace
+                    ワークスペースを選択
                     <ChevronDownIcon className="ml-auto" />
                   </SidebarMenuButton>
                 </DropdownMenuTrigger>

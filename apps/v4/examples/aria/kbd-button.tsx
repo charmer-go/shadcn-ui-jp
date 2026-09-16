@@ -4,7 +4,7 @@ import { Kbd } from "@/components/ui/aria/kbd"
 export default function KbdButton() {
   return (
     <Button variant="outline">
-      Accept{" "}
+      承認{" "}
       <Kbd data-icon="inline-end" className="translate-x-0.5">
         ⏎
       </Kbd>

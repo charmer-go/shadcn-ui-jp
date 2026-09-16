@@ -28,26 +28,26 @@ export function AttachmentTriggerDemo() {
           </AttachmentMedia>
           <AttachmentContent>
             <AttachmentTitle>research-summary.pdf</AttachmentTitle>
-            <AttachmentDescription>Open preview dialog</AttachmentDescription>
+            <AttachmentDescription>プレビューダイアログを開く</AttachmentDescription>
           </AttachmentContent>
           <AttachmentActions>
-            <AttachmentAction aria-label="Copy link">
+            <AttachmentAction aria-label="リンクをコピー">
               <CopyIcon />
             </AttachmentAction>
-            <AttachmentAction aria-label="Remove research-summary.pdf">
+            <AttachmentAction aria-label="research-summary.pdfを削除">
               <XIcon />
             </AttachmentAction>
           </AttachmentActions>
           <DialogTrigger>
-            <AttachmentTrigger aria-label="Preview research-summary.pdf" />
+            <AttachmentTrigger aria-label="research-summary.pdfをプレビュー" />
           </DialogTrigger>
         </Attachment>
         <Dialog className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>research-summary.pdf</DialogTitle>
             <DialogDescription>
-              The attachment trigger fills the card and opens the dialog, while
-              the actions stay independently clickable above it.
+              添付ファイルのトリガーはカード全体を占め、ダイアログを開きます。
+              一方でアクションボタンはその上に独立してクリックできる状態のままです。
             </DialogDescription>
           </DialogHeader>
         </Dialog>

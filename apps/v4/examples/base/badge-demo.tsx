@@ -3,10 +3,10 @@ import { Badge } from "@/components/ui/base/badge"
 export default function BadgeDemo() {
   return (
     <div className="flex w-full flex-wrap justify-center gap-2">
-      <Badge>Badge</Badge>
-      <Badge variant="secondary">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
-      <Badge variant="outline">Outline</Badge>
+      <Badge>バッジ</Badge>
+      <Badge variant="secondary">セカンダリ</Badge>
+      <Badge variant="destructive">デストラクティブ</Badge>
+      <Badge variant="outline">アウトライン</Badge>
     </div>
   )
 }

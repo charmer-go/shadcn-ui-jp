@@ -15,9 +15,9 @@ import {
 } from "@/components/ui/base/select"
 
 const CURRENCIES = [
-  { label: "US Dollar", value: "$" },
-  { label: "Euro", value: "€" },
-  { label: "British Pound", value: "£" },
+  { label: "米ドル", value: "$" },
+  { label: "ユーロ", value: "€" },
+  { label: "英ポンド", value: "£" },
 ]
 
 export default function ButtonGroupSelect() {
@@ -46,7 +46,7 @@ export default function ButtonGroupSelect() {
         <Input placeholder="10.00" pattern="[0-9]*" />
       </ButtonGroup>
       <ButtonGroup>
-        <Button aria-label="Send" size="icon" variant="outline">
+        <Button aria-label="送信" size="icon" variant="outline">
           <ArrowRightIcon />
         </Button>
       </ButtonGroup>

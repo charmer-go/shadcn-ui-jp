@@ -14,59 +14,59 @@ export function ContextMenuGroups() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
-          <ContextMenuLabel>File</ContextMenuLabel>
+          <ContextMenuLabel>ファイル</ContextMenuLabel>
           <ContextMenuItem>
-            New File
+            新規ファイル
             <ContextMenuShortcut>⌘N</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Open File
+            ファイルを開く
             <ContextMenuShortcut>⌘O</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Save
+            保存
             <ContextMenuShortcut>⌘S</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
-          <ContextMenuLabel>Edit</ContextMenuLabel>
+          <ContextMenuLabel>編集</ContextMenuLabel>
           <ContextMenuItem>
-            Undo
+            元に戻す
             <ContextMenuShortcut>⌘Z</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Redo
+            やり直す
             <ContextMenuShortcut>⇧⌘Z</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem>
-            Cut
+            切り取り
             <ContextMenuShortcut>⌘X</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Copy
+            コピー
             <ContextMenuShortcut>⌘C</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Paste
+            貼り付け
             <ContextMenuShortcut>⌘V</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem variant="destructive">
-            Delete
+            削除
             <ContextMenuShortcut>⌫</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>

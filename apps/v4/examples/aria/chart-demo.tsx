@@ -17,7 +17,7 @@ import {
   type ChartConfig,
 } from "@/components/ui/aria/chart"
 
-export const description = "An interactive bar chart"
+export const description = "インタラクティブな棒グラフ"
 
 const chartData = [
   { date: "2024-04-01", desktop: 222, mobile: 150 },
@@ -54,14 +54,14 @@ const chartData = [
 
 const chartConfig = {
   views: {
-    label: "Page Views",
+    label: "ページビュー",
   },
   desktop: {
-    label: "Desktop",
+    label: "デスクトップ",
     color: "var(--chart-2)",
   },
   mobile: {
-    label: "Mobile",
+    label: "モバイル",
     color: "var(--chart-1)",
   },
 } satisfies ChartConfig
@@ -82,9 +82,9 @@ export function ChartDemo() {
     <Card className="py-0 pb-4">
       <CardHeader className="flex flex-col items-stretch border-b p-0! sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 pt-4 pb-3 sm:py-0!">
-          <CardTitle>Bar Chart - Interactive</CardTitle>
+          <CardTitle>棒グラフ - インタラクティブ</CardTitle>
           <CardDescription>
-            Showing total visitors for the last 3 months
+            過去3か月の総訪問者数を表示
           </CardDescription>
         </div>
         <div className="flex">

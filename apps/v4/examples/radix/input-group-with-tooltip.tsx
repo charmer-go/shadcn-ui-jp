@@ -51,7 +51,7 @@ export function InputGroupWithTooltip({
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="input-tooltip-20">Tooltip</FieldLabel>
+        <FieldLabel htmlFor="input-tooltip-20">ツールチップ</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-tooltip-20" />
           <InputGroupAddon align="inline-end">
@@ -61,16 +61,16 @@ export function InputGroupWithTooltip({
                   <InfoIcon />
                 </InputGroupButton>
               </TooltipTrigger>
-              <TooltipContent>This is content in a tooltip.</TooltipContent>
+              <TooltipContent>ツールチップの内容です。</TooltipContent>
             </Tooltip>
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-dropdown-21">Dropdown</FieldLabel>
+        <FieldLabel htmlFor="input-dropdown-21">ドロップダウン</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-dropdown-21" />
           <InputGroupAddon>
@@ -100,11 +100,11 @@ export function InputGroupWithTooltip({
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-secure-19">Popover</FieldLabel>
+        <FieldLabel htmlFor="input-secure-19">ポップオーバー</FieldLabel>
         <InputGroup>
           <Popover>
             <PopoverTrigger asChild>
@@ -116,9 +116,9 @@ export function InputGroupWithTooltip({
             </PopoverTrigger>
             <PopoverContent align="start">
               <PopoverHeader>
-                <PopoverTitle>Your connection is not secure.</PopoverTitle>
+                <PopoverTitle>この接続は安全ではありません。</PopoverTitle>
                 <PopoverDescription>
-                  You should not enter any sensitive information on this site.
+                  このサイトでは機密情報を入力しないでください。
                 </PopoverDescription>
               </PopoverHeader>
             </PopoverContent>
@@ -130,18 +130,18 @@ export function InputGroupWithTooltip({
           <InputGroupAddon align="inline-end">
             <InputGroupButton
               size="icon-xs"
-              onClick={() => toast("Added to favorites")}
+              onClick={() => toast("お気に入りに追加しました")}
             >
               <StarIcon />
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="url">Button Group</FieldLabel>
+        <FieldLabel htmlFor="url">ボタングループ</FieldLabel>
         <ButtonGroup>
           <ButtonGroupText>https://</ButtonGroupText>
           <InputGroup>
@@ -153,7 +153,7 @@ export function InputGroupWithTooltip({
           <ButtonGroupText>.com</ButtonGroupText>
         </ButtonGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
     </FieldGroup>

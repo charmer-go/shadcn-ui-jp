@@ -20,25 +20,25 @@ export function DropdownMenuCheckboxesIcons() {
 
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Notifications</Button>
+      <Button variant="outline">通知</Button>
       <DropdownMenu className="w-48">
         <DropdownMenuGroup
           selectionMode="multiple"
           selectedKeys={notifications}
           onSelectionChange={setNotifications}
         >
-          <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
+          <DropdownMenuLabel>通知設定</DropdownMenuLabel>
           <DropdownMenuItem id="email">
             <MailIcon />
-            Email notifications
+            メール通知
           </DropdownMenuItem>
           <DropdownMenuItem id="sms">
             <MessageSquareIcon />
-            SMS notifications
+            SMS通知
           </DropdownMenuItem>
           <DropdownMenuItem id="push">
             <BellIcon />
-            Push notifications
+            プッシュ通知
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenu>

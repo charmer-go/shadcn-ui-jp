@@ -3,11 +3,11 @@ import { Badge } from "@/components/ui/radix/badge"
 export function BadgeVariants() {
   return (
     <div className="flex flex-wrap gap-2">
-      <Badge>Default</Badge>
-      <Badge variant="secondary">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
-      <Badge variant="outline">Outline</Badge>
-      <Badge variant="ghost">Ghost</Badge>
+      <Badge>デフォルト</Badge>
+      <Badge variant="secondary">セカンダリ</Badge>
+      <Badge variant="destructive">デストラクティブ</Badge>
+      <Badge variant="outline">アウトライン</Badge>
+      <Badge variant="ghost">ゴースト</Badge>
     </div>
   )
 }

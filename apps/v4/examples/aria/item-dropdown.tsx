@@ -44,7 +44,7 @@ export function ItemDropdown() {
   return (
     <DropdownMenuTrigger>
       <Button variant="outline">
-        Select <ChevronDownIcon />
+        選択 <ChevronDownIcon />
       </Button>
       <DropdownMenu className="w-48" placement="bottom end">
         <DropdownMenuGroup>

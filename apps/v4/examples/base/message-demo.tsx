@@ -29,7 +29,7 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>Deploying to prod real quick.</BubbleContent>
+            <BubbleContent>本番環境にすぐデプロイします。</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -42,7 +42,7 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble variant="muted">
-            <BubbleContent>It&apos;s 4:55 PM. On a Friday.</BubbleContent>
+            <BubbleContent>金曜日の午後4時55分だよ。</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -55,9 +55,9 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>It&apos;s a one-line change.</BubbleContent>
+            <BubbleContent>1行だけの変更だよ。</BubbleContent>
           </Bubble>
-          <MessageFooter>Delivered</MessageFooter>
+          <MessageFooter>配信済み</MessageFooter>
         </MessageContent>
       </Message>
       <Message>
@@ -71,12 +71,12 @@ export function MessageDemo() {
           <BubbleGroup>
             <Bubble variant="muted">
               <BubbleContent>
-                It&apos;s always a one-line change 😭.
+                いつも「1行だけの変更」なんだよね 😭。
               </BubbleContent>
             </Bubble>
             <Bubble variant="muted">
-              <BubbleContent>Alright, let me take a look.</BubbleContent>
-              <BubbleReactions aria-label="Reactions: thumbs up">
+              <BubbleContent>わかった、確認するよ。</BubbleContent>
+              <BubbleReactions aria-label="リアクション：いいね">
                 <span>👍</span>
               </BubbleReactions>
             </Bubble>
@@ -85,7 +85,7 @@ export function MessageDemo() {
       </Message>
       <Marker role="status">
         <MarkerContent className="shimmer">
-          <span className="font-medium">Oliver</span> is typing...
+          <span className="font-medium">Oliver</span> が入力中...
         </MarkerContent>
       </Marker>
     </div>

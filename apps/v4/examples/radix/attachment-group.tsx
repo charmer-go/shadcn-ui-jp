@@ -58,7 +58,7 @@ export function AttachmentGroupDemo() {
                 <AttachmentDescription>{item.meta}</AttachmentDescription>
               </AttachmentContent>
               <AttachmentActions>
-                <AttachmentAction aria-label={`Remove ${item.name}`}>
+                <AttachmentAction aria-label={`${item.name}を削除`}>
                   <XIcon />
                 </AttachmentAction>
               </AttachmentActions>

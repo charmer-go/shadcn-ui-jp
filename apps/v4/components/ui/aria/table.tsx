@@ -21,10 +21,13 @@ import {
 
 function Table({ className, ...props }: TableProps) {
   return (
-    <div data-slot="table-container" className="cn-table-container">
+    <div
+      data-slot="table-container"
+      className="relative w-full overflow-x-auto"
+    >
       <TablePrimitive
         data-slot="table"
-        className={cn("cn-table", className)}
+        className={cn("w-full caption-bottom text-sm", className)}
         {...props}
       />
     </div>
@@ -35,7 +38,7 @@ function TableHeader<T>({ className, ...props }: TableHeaderProps<T>) {
   return (
     <TableHeaderPrimitive
       data-slot="table-header"
-      className={cn("cn-table-header", className)}
+      className={cn("[&_tr]:border-b", className)}
       {...props}
     />
   )
@@ -46,7 +49,7 @@ function TableBody<T>({ className, ...props }: TableBodyProps<T>) {
     <TableBodyPrimitive
       data-slot="table-body"
       className={cn(
-        "cn-table-body data-empty:h-24 data-empty:text-center",
+        "data-empty:h-24 data-empty:text-center [&_tr:last-child]:border-0",
         className
       )}
       {...props}
@@ -58,7 +61,10 @@ function TableFooter<T>({ className, ...props }: TableFooterProps<T>) {
   return (
     <TableFooterPrimitive
       data-slot="table-footer"
-      className={cn("cn-table-footer", className)}
+      className={cn(
+        "border-t bg-muted/50 font-medium [&>tr]:last:border-b-0",
+        className
+      )}
       {...props}
     />
   )
@@ -69,7 +75,7 @@ function TableRow<T>({ className, ...props }: RowProps<T>) {
     <RowPrimitive
       data-slot="table-row"
       className={cn(
-        "cn-table-row cn-table-row-aria has-aria-expanded:bg-muted/50",
+        "border-b transition-colors hover:bg-muted/50 has-aria-expanded:bg-muted/50 data-[state=selected]:bg-muted data-selected:bg-muted",
         className
       )}
       {...props}
@@ -81,7 +87,10 @@ function TableHead({ className, ...props }: ColumnProps) {
   return (
     <ColumnPrimitive
       data-slot="table-head"
-      className={cn("cn-table-head cn-table-head-aria", className)}
+      className={cn(
+        "h-10 px-2 text-left align-middle font-medium whitespace-nowrap text-foreground [&:has([data-slot=checkbox])]:pr-0 [&:has([role=checkbox])]:pr-0",
+        className
+      )}
       {...props}
     />
   )
@@ -91,7 +100,10 @@ function TableCell({ className, ...props }: CellProps) {
   return (
     <CellPrimitive
       data-slot="table-cell"
-      className={cn("cn-table-cell cn-table-cell-aria", className)}
+      className={cn(
+        "p-2 align-middle whitespace-nowrap [&:has([data-slot=checkbox])]:pr-0 [&:has([role=checkbox])]:pr-0",
+        className
+      )}
       {...props}
     />
   )
@@ -104,7 +116,10 @@ function TableCaption({
   return (
     <figcaption
       data-slot="table-caption"
-      className={cn("cn-table-caption text-center", className)}
+      className={cn(
+        "mt-4 text-center text-sm text-muted-foreground",
+        className
+      )}
       {...props}
     />
   )

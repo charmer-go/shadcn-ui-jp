@@ -27,7 +27,7 @@ export function MessageAvatarDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              The build failed during dependency installation.
+              依存関係のインストール中にビルドが失敗しました。
             </BubbleContent>
           </Bubble>
         </MessageContent>
@@ -41,7 +41,7 @@ export function MessageAvatarDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>Can you share the exact error?</BubbleContent>
+            <BubbleContent>正確なエラーを共有してもらえますか？</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -55,12 +55,11 @@ export function MessageAvatarDemo() {
         <MessageContent>
           <BubbleGroup>
             <Bubble variant="muted">
-              <BubbleContent>Here&apos;s the error from the logs</BubbleContent>
+              <BubbleContent>ログからのエラーです</BubbleContent>
             </Bubble>
             <Bubble variant="muted">
               <BubbleContent>
-                Something went wrong with the build. The libraries are not
-                installed correctly. Try running the build again.
+                ビルドで問題が発生しました。ライブラリが正しくインストールされていません。もう一度ビルドを実行してみてください。
               </BubbleContent>
             </Bubble>
           </BubbleGroup>

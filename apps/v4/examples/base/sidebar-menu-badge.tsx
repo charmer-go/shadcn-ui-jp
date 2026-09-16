@@ -23,31 +23,31 @@ import {
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "デザインエンジニアリング",
     url: "#",
     icon: FrameIcon,
     badge: "24",
   },
   {
-    name: "Sales & Marketing",
+    name: "セールス＆マーケティング",
     url: "#",
     icon: PieChartIcon,
     badge: "12",
   },
   {
-    name: "Travel",
+    name: "旅行",
     url: "#",
     icon: MapIcon,
     badge: "3",
   },
   {
-    name: "Support",
+    name: "サポート",
     url: "#",
     icon: LifeBuoyIcon,
     badge: "21",
   },
   {
-    name: "Feedback",
+    name: "フィードバック",
     url: "#",
     icon: SendIcon,
     badge: "8",
@@ -60,7 +60,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {projects.map((project) => (

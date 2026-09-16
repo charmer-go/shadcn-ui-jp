@@ -18,7 +18,7 @@ export function DatePickerWithRange() {
 
   return (
     <Field className="mx-auto w-60">
-      <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
+      <FieldLabel htmlFor="date-picker-range">日付範囲ピッカー</FieldLabel>
       <PopoverTrigger>
         <Button
           variant="outline"
@@ -34,7 +34,7 @@ export function DatePickerWithRange() {
               date.end.toDate(getLocalTimeZone())
             )
           ) : (
-            <span>Pick a date</span>
+            <span>日付を選択</span>
           )}
         </Button>
         <Popover className="w-auto p-0" placement="bottom start">

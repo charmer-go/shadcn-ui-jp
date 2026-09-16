@@ -7,11 +7,11 @@ export function TooltipDisabled() {
       <TooltipTrigger>
         <span className="inline-block w-fit">
           <Button variant="outline" isDisabled>
-            Disabled
+            無効
           </Button>
         </span>
         <Tooltip>
-          <p>This feature is currently unavailable</p>
+          <p>この機能は現在利用できません</p>
         </Tooltip>
       </TooltipTrigger>
     </>

@@ -9,13 +9,13 @@ export default function HoverCardDemo() {
   return (
     <HoverCard openDelay={10} closeDelay={100}>
       <HoverCardTrigger asChild>
-        <Button variant="link">Hover Here</Button>
+        <Button variant="link">ホバーしてみてください</Button>
       </HoverCardTrigger>
       <HoverCardContent className="flex w-64 flex-col gap-0.5">
         <div className="font-semibold">@nextjs</div>
-        <div>The React Framework – created and maintained by @vercel.</div>
+        <div>Reactフレームワーク。@vercel が開発・保守を行っています。</div>
         <div className="mt-1 text-xs text-muted-foreground">
-          Joined December 2021
+          2021年12月に参加
         </div>
       </HoverCardContent>
     </HoverCard>

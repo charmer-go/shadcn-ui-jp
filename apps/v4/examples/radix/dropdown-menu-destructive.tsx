@@ -14,24 +14,24 @@ export function DropdownMenuDestructive() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Actions</Button>
+        <Button variant="outline">操作</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <PencilIcon />
-            Edit
+            編集
           </DropdownMenuItem>
           <DropdownMenuItem>
             <ShareIcon />
-            Share
+            共有
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            削除
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

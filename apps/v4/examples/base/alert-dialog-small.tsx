@@ -15,18 +15,18 @@ export function AlertDialogSmall() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
+        render={<Button variant="outline">ダイアログを表示</Button>}
       />
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
-          <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
+          <AlertDialogTitle>アクセサリの接続を許可しますか?</AlertDialogTitle>
           <AlertDialogDescription>
-            Do you want to allow the USB accessory to connect to this device?
+            このデバイスへのUSBアクセサリの接続を許可しますか?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Don&apos;t allow</AlertDialogCancel>
-          <AlertDialogAction>Allow</AlertDialogAction>
+          <AlertDialogCancel>許可しない</AlertDialogCancel>
+          <AlertDialogAction>許可</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

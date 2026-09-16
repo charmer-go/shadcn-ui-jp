@@ -19,17 +19,17 @@ export function BubblePopoverDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4 py-12">
       <Bubble align="end">
-        <BubbleContent>Run the build script.</BubbleContent>
+        <BubbleContent>ビルドスクリプトを実行して。</BubbleContent>
       </Bubble>
       <Bubble variant="destructive">
-        <BubbleContent>Failed to run the command.</BubbleContent>
+        <BubbleContent>コマンドの実行に失敗しました。</BubbleContent>
         <BubbleReactions>
           <Popover>
             <PopoverTrigger asChild>
               <Button
                 variant="ghost"
                 size="icon-xs"
-                aria-label="Show error details"
+                aria-label="エラーの詳細を表示"
                 className="aria-expanded:text-destructive"
               >
                 <InfoIcon />
@@ -38,7 +38,7 @@ export function BubblePopoverDemo() {
             <PopoverContent>
               <PopoverHeader>
                 <PopoverTitle className="text-sm">
-                  Command failed with exit code 1
+                  コマンドが終了コード1で失敗しました
                 </PopoverTitle>
                 <PopoverDescription className="text-sm">
                   ENOENT: no such file or directory, open pnpm-lock.yaml

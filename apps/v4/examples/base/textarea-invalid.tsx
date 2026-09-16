@@ -8,13 +8,13 @@ import { Textarea } from "@/components/ui/base/textarea"
 export function TextareaInvalid() {
   return (
     <Field data-invalid>
-      <FieldLabel htmlFor="textarea-invalid">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-invalid">メッセージ</FieldLabel>
       <Textarea
         id="textarea-invalid"
-        placeholder="Type your message here."
+        placeholder="ここにメッセージを入力してください。"
         aria-invalid
       />
-      <FieldDescription>Please enter a valid message.</FieldDescription>
+      <FieldDescription>有効なメッセージを入力してください。</FieldDescription>
     </Field>
   )
 }

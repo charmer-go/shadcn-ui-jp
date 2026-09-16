@@ -57,8 +57,8 @@ export function QuestionnaireDemo() {
       timing: formData.get("timing"),
     }
 
-    toast("Agent plan saved", {
-      description: `Direction: ${answers.direction ?? "None"} · Progress signals: ${answers.signals.join(", ") || "None"} · Timing: ${answers.timing ?? "None"}`,
+    toast("エージェントプランを保存しました", {
+      description: `方向性: ${answers.direction ?? "なし"} ・ 進捗シグナル: ${answers.signals.join(", ") || "なし"} ・ タイミング: ${answers.timing ?? "なし"}`,
     })
   }
 
@@ -74,33 +74,33 @@ export function QuestionnaireDemo() {
 
       <QuestionnaireItem name="direction" required>
         <QuestionnaireTitle>
-          What should the agent build next?
+          エージェントが次に取り組むべきことは何ですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose a direction or describe another task.
+          方向性を選択するか、別のタスクを記述してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="tool-calls">
-            <span className="font-medium">Tool call timeline</span>
+            <span className="font-medium">ツール呼び出しのタイムライン</span>
             <span className="text-muted-foreground">
-              Show what the agent ran and what came back.
+              エージェントが実行した内容と返ってきた結果を表示します。
             </span>
           </QuestionnaireChoice>
           <QuestionnaireChoice value="approvals">
-            <span className="font-medium">Approval checkpoints</span>
+            <span className="font-medium">承認チェックポイント</span>
             <span className="text-muted-foreground">
-              Ask before sensitive or destructive actions.
+              機密性の高い操作や破壊的な操作の前に確認を求めます。
             </span>
           </QuestionnaireChoice>
           <QuestionnaireChoice value="handoffs">
-            <span className="font-medium">Sub-agent handoffs</span>
+            <span className="font-medium">サブエージェントへの引き渡し</span>
             <span className="text-muted-foreground">
-              Make delegated work and results easier to follow.
+              委任された作業と結果を追いやすくします。
             </span>
           </QuestionnaireChoice>
           <QuestionnaireInput
-            aria-label="Another agent feature"
-            placeholder="Describe another feature…"
+            aria-label="その他のエージェント機能"
+            placeholder="別の機能を記述してください…"
           />
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -108,32 +108,32 @@ export function QuestionnaireDemo() {
 
       <QuestionnaireItem name="signals" multiple>
         <QuestionnaireTitle>
-          What should every progress update include?
+          進捗更新には何を含めるべきですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Select all that apply, or skip this question.
+          該当するものをすべて選択するか、この質問をスキップしてください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="progress">Progress</QuestionnaireChoice>
-          <QuestionnaireChoice value="decisions">Decisions</QuestionnaireChoice>
-          <QuestionnaireChoice value="risks">Risks</QuestionnaireChoice>
-          <QuestionnaireChoice value="next-step">Next step</QuestionnaireChoice>
+          <QuestionnaireChoice value="progress">進捗</QuestionnaireChoice>
+          <QuestionnaireChoice value="decisions">決定事項</QuestionnaireChoice>
+          <QuestionnaireChoice value="risks">リスク</QuestionnaireChoice>
+          <QuestionnaireChoice value="next-step">次のステップ</QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem name="timing" required>
-        <QuestionnaireTitle>When should work begin?</QuestionnaireTitle>
+        <QuestionnaireTitle>作業はいつ開始すべきですか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose when the agent should begin the work.
+          エージェントが作業を開始するタイミングを選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="now">Start now</QuestionnaireChoice>
+          <QuestionnaireChoice value="now">今すぐ開始</QuestionnaireChoice>
           <QuestionnaireChoice value="next-cycle">
-            Next development cycle
+            次の開発サイクル
           </QuestionnaireChoice>
           <QuestionnaireChoice value="backlog">
-            Add it to the backlog
+            バックログに追加
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -142,8 +142,8 @@ export function QuestionnaireDemo() {
       <QuestionnaireActions>
         <QuestionnairePrevious />
         <QuestionnaireSkip />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save plan</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>プランを保存</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

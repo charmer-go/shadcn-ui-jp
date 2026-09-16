@@ -13,18 +13,18 @@ export default function KbdTooltip() {
       <ButtonGroup>
         <Tooltip>
           <TooltipTrigger render={<Button variant="outline" />}>
-            Save
+            保存
           </TooltipTrigger>
           <TooltipContent>
-            Save Changes <Kbd>S</Kbd>
+            変更を保存 <Kbd>S</Kbd>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger render={<Button variant="outline" />}>
-            Print
+            印刷
           </TooltipTrigger>
           <TooltipContent>
-            Print Document{" "}
+            ドキュメントを印刷{" "}
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <Kbd>P</Kbd>

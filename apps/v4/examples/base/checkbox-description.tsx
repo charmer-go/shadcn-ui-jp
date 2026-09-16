@@ -18,10 +18,10 @@ export function CheckboxDescription() {
         />
         <FieldContent>
           <FieldLabel htmlFor="terms-checkbox-desc">
-            Accept terms and conditions
+            利用規約に同意する
           </FieldLabel>
           <FieldDescription>
-            By clicking this checkbox, you agree to the terms and conditions.
+            このチェックボックスをクリックすると、利用規約に同意したことになります。
           </FieldDescription>
         </FieldContent>
       </Field>

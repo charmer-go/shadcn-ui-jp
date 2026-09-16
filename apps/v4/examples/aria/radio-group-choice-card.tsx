@@ -9,13 +9,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 export function RadioGroupChoiceCard() {
   return (
-    <RadioGroup aria-label="Plans" defaultValue="plus" className="max-w-sm">
+    <RadioGroup aria-label="プラン" defaultValue="plus" className="max-w-sm">
       <FieldLabel htmlFor="plus-plan">
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>Plus</FieldTitle>
             <FieldDescription>
-              For individuals and small teams.
+              個人および小規模チーム向け。
             </FieldDescription>
           </FieldContent>
           <RadioGroupItem value="plus" id="plus-plan" />
@@ -25,7 +25,7 @@ export function RadioGroupChoiceCard() {
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>Pro</FieldTitle>
-            <FieldDescription>For growing businesses.</FieldDescription>
+            <FieldDescription>成長中のビジネス向け。</FieldDescription>
           </FieldContent>
           <RadioGroupItem value="pro" id="pro-plan" />
         </Field>
@@ -35,7 +35,7 @@ export function RadioGroupChoiceCard() {
           <FieldContent>
             <FieldTitle>Enterprise</FieldTitle>
             <FieldDescription>
-              For large teams and enterprises.
+              大規模なチームや企業向け。
             </FieldDescription>
           </FieldContent>
           <RadioGroupItem value="enterprise" id="enterprise-plan" />

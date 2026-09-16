@@ -9,49 +9,49 @@ import {
 } from "@/components/ui/base/select"
 
 const northAmerica = [
-  { label: "Eastern Standard Time", value: "est" },
-  { label: "Central Standard Time", value: "cst" },
-  { label: "Mountain Standard Time", value: "mst" },
-  { label: "Pacific Standard Time", value: "pst" },
-  { label: "Alaska Standard Time", value: "akst" },
-  { label: "Hawaii Standard Time", value: "hst" },
+  { label: "東部標準時 (EST)", value: "est" },
+  { label: "中部標準時 (CST)", value: "cst" },
+  { label: "山地標準時 (MST)", value: "mst" },
+  { label: "太平洋標準時 (PST)", value: "pst" },
+  { label: "アラスカ標準時 (AKST)", value: "akst" },
+  { label: "ハワイ標準時 (HST)", value: "hst" },
 ]
 
 const europeAfrica = [
-  { label: "Greenwich Mean Time", value: "gmt" },
-  { label: "Central European Time", value: "cet" },
-  { label: "Eastern European Time", value: "eet" },
-  { label: "Western European Summer Time", value: "west" },
-  { label: "Central Africa Time", value: "cat" },
-  { label: "East Africa Time", value: "eat" },
+  { label: "グリニッジ標準時 (GMT)", value: "gmt" },
+  { label: "中央ヨーロッパ時間 (CET)", value: "cet" },
+  { label: "東ヨーロッパ時間 (EET)", value: "eet" },
+  { label: "西ヨーロッパ夏時間 (WEST)", value: "west" },
+  { label: "中央アフリカ時間 (CAT)", value: "cat" },
+  { label: "東アフリカ時間 (EAT)", value: "eat" },
 ]
 
 const asia = [
-  { label: "Moscow Time", value: "msk" },
-  { label: "India Standard Time", value: "ist" },
-  { label: "China Standard Time", value: "cst_china" },
-  { label: "Japan Standard Time", value: "jst" },
-  { label: "Korea Standard Time", value: "kst" },
-  { label: "Indonesia Central Standard Time", value: "ist_indonesia" },
+  { label: "モスクワ時間 (MSK)", value: "msk" },
+  { label: "インド標準時 (IST)", value: "ist" },
+  { label: "中国標準時 (CST)", value: "cst_china" },
+  { label: "日本標準時 (JST)", value: "jst" },
+  { label: "韓国標準時 (KST)", value: "kst" },
+  { label: "インドネシア中部標準時 (WITA)", value: "ist_indonesia" },
 ]
 
 const australiaPacific = [
-  { label: "Australian Western Standard Time", value: "awst" },
-  { label: "Australian Central Standard Time", value: "acst" },
-  { label: "Australian Eastern Standard Time", value: "aest" },
-  { label: "New Zealand Standard Time", value: "nzst" },
-  { label: "Fiji Time", value: "fjt" },
+  { label: "オーストラリア西部標準時 (AWST)", value: "awst" },
+  { label: "オーストラリア中部標準時 (ACST)", value: "acst" },
+  { label: "オーストラリア東部標準時 (AEST)", value: "aest" },
+  { label: "ニュージーランド標準時 (NZST)", value: "nzst" },
+  { label: "フィジー時間 (FJT)", value: "fjt" },
 ]
 
 const southAmerica = [
-  { label: "Argentina Time", value: "art" },
-  { label: "Bolivia Time", value: "bot" },
-  { label: "Brasilia Time", value: "brt" },
-  { label: "Chile Standard Time", value: "clt" },
+  { label: "アルゼンチン時間 (ART)", value: "art" },
+  { label: "ボリビア時間 (BOT)", value: "bot" },
+  { label: "ブラジリア時間 (BRT)", value: "brt" },
+  { label: "チリ標準時 (CLT)", value: "clt" },
 ]
 
 const items = [
-  { label: "Select a timezone", value: null },
+  { label: "タイムゾーンを選択", value: null },
   ...northAmerica,
   ...europeAfrica,
   ...asia,
@@ -67,7 +67,7 @@ export function SelectScrollable() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>North America</SelectLabel>
+          <SelectLabel>北米</SelectLabel>
           {northAmerica.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -75,7 +75,7 @@ export function SelectScrollable() {
           ))}
         </SelectGroup>
         <SelectGroup>
-          <SelectLabel>Europe & Africa</SelectLabel>
+          <SelectLabel>ヨーロッパ・アフリカ</SelectLabel>
           {europeAfrica.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -83,7 +83,7 @@ export function SelectScrollable() {
           ))}
         </SelectGroup>
         <SelectGroup>
-          <SelectLabel>Asia</SelectLabel>
+          <SelectLabel>アジア</SelectLabel>
           {asia.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -91,7 +91,7 @@ export function SelectScrollable() {
           ))}
         </SelectGroup>
         <SelectGroup>
-          <SelectLabel>Australia & Pacific</SelectLabel>
+          <SelectLabel>オーストラリア・太平洋</SelectLabel>
           {australiaPacific.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -99,7 +99,7 @@ export function SelectScrollable() {
           ))}
         </SelectGroup>
         <SelectGroup>
-          <SelectLabel>South America</SelectLabel>
+          <SelectLabel>南米</SelectLabel>
           {southAmerica.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}

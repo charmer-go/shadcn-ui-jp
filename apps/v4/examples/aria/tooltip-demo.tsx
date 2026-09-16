@@ -4,9 +4,9 @@ import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 export function TooltipDemo() {
   return (
     <TooltipTrigger>
-      <Button variant="outline">Hover</Button>
+      <Button variant="outline">ホバー</Button>
       <Tooltip>
-        <p>Add to library</p>
+        <p>ライブラリに追加</p>
       </Tooltip>
     </TooltipTrigger>
   )

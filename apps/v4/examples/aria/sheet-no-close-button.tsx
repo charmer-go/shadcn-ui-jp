@@ -10,13 +10,13 @@ import {
 export default function SheetNoCloseButton() {
   return (
     <SheetTrigger>
-      <Button variant="outline">Open Sheet</Button>
+      <Button variant="outline">シートを開く</Button>
       <Sheet showCloseButton={false}>
         <SheetHeader>
-          <SheetTitle>No Close Button</SheetTitle>
+          <SheetTitle>閉じるボタンなし</SheetTitle>
           <SheetDescription>
-            This sheet doesn&apos;t have a close button in the top-right corner.
-            Click outside to close.
+            このシートには右上に閉じるボタンがありません。
+            外側をクリックして閉じてください。
           </SheetDescription>
         </SheetHeader>
       </Sheet>

@@ -3,23 +3,23 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 export function RadioGroupDisabled() {
   return (
-    <RadioGroup aria-label="Radios" defaultValue="option2" className="w-fit">
+    <RadioGroup aria-label="ラジオボタン" defaultValue="option2" className="w-fit">
       <Field orientation="horizontal" data-disabled>
         <RadioGroupItem value="option1" id="disabled-1" isDisabled />
         <FieldLabel htmlFor="disabled-1" className="font-normal">
-          Disabled
+          無効
         </FieldLabel>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="option2" id="disabled-2" />
         <FieldLabel htmlFor="disabled-2" className="font-normal">
-          Option 2
+          オプション2
         </FieldLabel>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="option3" id="disabled-3" />
         <FieldLabel htmlFor="disabled-3" className="font-normal">
-          Option 3
+          オプション3
         </FieldLabel>
       </Field>
     </RadioGroup>

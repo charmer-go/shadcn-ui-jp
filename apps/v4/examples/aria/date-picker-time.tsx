@@ -17,7 +17,7 @@ export function DatePickerTime() {
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">日付</FieldLabel>
         <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
           <Button
             variant="outline"
@@ -26,7 +26,7 @@ export function DatePickerTime() {
           >
             {date
               ? date.toDate(getLocalTimeZone()).toLocaleDateString()
-              : "Select date"}
+              : "日付を選択"}
             <ChevronDownIcon data-icon="inline-end" />
           </Button>
           <Popover
@@ -45,7 +45,7 @@ export function DatePickerTime() {
         </PopoverTrigger>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">時刻</FieldLabel>
         <Input
           type="time"
           id="time-picker-optional"

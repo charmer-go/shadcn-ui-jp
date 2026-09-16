@@ -16,7 +16,7 @@ export function TooltipSides() {
             </Button>
           </TooltipTrigger>
           <TooltipContent side={side}>
-            <p>Add to library</p>
+            <p>ライブラリに追加</p>
           </TooltipContent>
         </Tooltip>
       ))}

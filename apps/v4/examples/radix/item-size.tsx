@@ -16,9 +16,9 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Default Size</ItemTitle>
+          <ItemTitle>デフォルトサイズ</ItemTitle>
           <ItemDescription>
-            The standard size for most use cases.
+            ほとんどのユースケースに適した標準サイズです。
           </ItemDescription>
         </ItemContent>
       </Item>
@@ -27,8 +27,8 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Small Size</ItemTitle>
-          <ItemDescription>A compact size for dense layouts.</ItemDescription>
+          <ItemTitle>スモールサイズ</ItemTitle>
+          <ItemDescription>密度の高いレイアウト向けのコンパクトサイズです。</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline" size="xs">
@@ -36,8 +36,8 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Extra Small Size</ItemTitle>
-          <ItemDescription>The most compact size available.</ItemDescription>
+          <ItemTitle>エクストラスモールサイズ</ItemTitle>
+          <ItemDescription>利用可能な最もコンパクトなサイズです。</ItemDescription>
         </ItemContent>
       </Item>
     </div>

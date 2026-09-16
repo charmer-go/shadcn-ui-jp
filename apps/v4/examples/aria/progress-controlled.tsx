@@ -10,9 +10,9 @@ export function ProgressControlled() {
 
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <Progress aria-label="Loading" value={value} className="w-full" />
+      <Progress aria-label="読み込み中" value={value} className="w-full" />
       <Slider
-        aria-label="Progress"
+        aria-label="進行状況"
         value={value}
         onChange={(value) => setValue(value as number)}
         minValue={0}

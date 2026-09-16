@@ -21,15 +21,15 @@ export function ContextMenuRadio() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
-          <ContextMenuLabel>People</ContextMenuLabel>
+          <ContextMenuLabel>ユーザー</ContextMenuLabel>
           <ContextMenuRadioGroup value={user} onValueChange={setUser}>
             <ContextMenuRadioItem value="pedro">
               Pedro Duarte
@@ -39,11 +39,11 @@ export function ContextMenuRadio() {
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
-          <ContextMenuLabel>Theme</ContextMenuLabel>
+          <ContextMenuLabel>テーマ</ContextMenuLabel>
           <ContextMenuRadioGroup value={theme} onValueChange={setTheme}>
-            <ContextMenuRadioItem value="light">Light</ContextMenuRadioItem>
-            <ContextMenuRadioItem value="dark">Dark</ContextMenuRadioItem>
-            <ContextMenuRadioItem value="system">System</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="light">ライト</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="dark">ダーク</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="system">システム</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuGroup>
       </ContextMenuContent>

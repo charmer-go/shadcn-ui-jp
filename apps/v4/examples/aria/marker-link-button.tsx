@@ -12,7 +12,7 @@ export function MarkerLinkButtonDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>View the pull request</MarkerContent>
+        <MarkerContent>プルリクエストを表示</MarkerContent>
       </Marker>
       <Marker
         className="transition-colors hover:text-foreground"
@@ -20,14 +20,14 @@ export function MarkerLinkButtonDemo() {
           <button
             {...props}
             type="button"
-            onClick={() => toast("You clicked the revert button")}
+            onClick={() => toast("元に戻すボタンがクリックされました")}
           />
         )}
       >
         <MarkerIcon>
           <RotateCcwIcon />
         </MarkerIcon>
-        <MarkerContent>Revert this change</MarkerContent>
+        <MarkerContent>この変更を元に戻す</MarkerContent>
       </Marker>
     </div>
   )

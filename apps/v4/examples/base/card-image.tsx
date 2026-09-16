@@ -15,21 +15,20 @@ export function CardImage() {
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <img
         src="https://avatar.vercel.sh/shadcn1"
-        alt="Event cover"
+        alt="イベントのカバー画像"
         className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader>
         <CardAction>
-          <Badge variant="secondary">Featured</Badge>
+          <Badge variant="secondary">注目</Badge>
         </CardAction>
-        <CardTitle>Design systems meetup</CardTitle>
+        <CardTitle>デザインシステム勉強会</CardTitle>
         <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
+          コンポーネントAPI、アクセシビリティ、開発スピードの向上について実践的にお話しします。
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">View Event</Button>
+        <Button className="w-full">イベントを見る</Button>
       </CardFooter>
     </Card>
   )

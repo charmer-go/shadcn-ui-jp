@@ -22,14 +22,14 @@ export function TableActions() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Product</TableHead>
-          <TableHead>Price</TableHead>
-          <TableHead className="text-right">Actions</TableHead>
+          <TableHead>商品</TableHead>
+          <TableHead>価格</TableHead>
+          <TableHead className="text-right">操作</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell className="font-medium">Wireless Mouse</TableCell>
+          <TableCell className="font-medium">ワイヤレスマウス</TableCell>
           <TableCell>$29.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -39,21 +39,21 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">メニューを開く</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>編集</DropdownMenuItem>
+                <DropdownMenuItem>複製</DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
-                  Delete
+                  削除
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Mechanical Keyboard</TableCell>
+          <TableCell className="font-medium">メカニカルキーボード</TableCell>
           <TableCell>$129.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -63,21 +63,21 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">メニューを開く</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>編集</DropdownMenuItem>
+                <DropdownMenuItem>複製</DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
-                  Delete
+                  削除
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">USB-C Hub</TableCell>
+          <TableCell className="font-medium">USB-Cハブ</TableCell>
           <TableCell>$49.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -87,14 +87,14 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">メニューを開く</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>編集</DropdownMenuItem>
+                <DropdownMenuItem>複製</DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem variant="destructive">
-                  Delete
+                  削除
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

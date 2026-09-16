@@ -16,18 +16,18 @@ import {
 export function DropdownMenuSubmenu() {
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Open</Button>
+      <Button variant="outline">開く</Button>
       <DropdownMenu>
         <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>チーム</DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>ユーザーを招待</DropdownMenuSubTrigger>
 
             <DropdownMenuSubContent>
-              <DropdownMenuItem>Email</DropdownMenuItem>
-              <DropdownMenuItem>Message</DropdownMenuItem>
+              <DropdownMenuItem>メール</DropdownMenuItem>
+              <DropdownMenuItem>メッセージ</DropdownMenuItem>
               <DropdownMenuSub>
-                <DropdownMenuSubTrigger>More options</DropdownMenuSubTrigger>
+                <DropdownMenuSubTrigger>その他のオプション</DropdownMenuSubTrigger>
 
                 <DropdownMenuSubContent>
                   <DropdownMenuItem>Calendly</DropdownMenuItem>
@@ -37,11 +37,11 @@ export function DropdownMenuSubmenu() {
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Advanced...</DropdownMenuItem>
+              <DropdownMenuItem>詳細設定...</DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
           <DropdownMenuItem>
-            New Team
+            新規チーム
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

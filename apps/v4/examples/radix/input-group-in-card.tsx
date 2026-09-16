@@ -23,13 +23,13 @@ export function InputGroupInCard() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Card with Input Group</CardTitle>
-        <CardDescription>This is a card with an input group.</CardDescription>
+        <CardTitle>入力グループ付きカード</CardTitle>
+        <CardDescription>入力グループを含むカードです。</CardDescription>
       </CardHeader>
       <CardContent>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="email-input">Email Address</FieldLabel>
+            <FieldLabel htmlFor="email-input">メールアドレス</FieldLabel>
             <InputGroup>
               <InputGroupInput
                 id="email-input"
@@ -42,7 +42,7 @@ export function InputGroupInCard() {
             </InputGroup>
           </Field>
           <Field>
-            <FieldLabel htmlFor="website-input">Website URL</FieldLabel>
+            <FieldLabel htmlFor="website-input">ウェブサイトURL</FieldLabel>
             <InputGroup>
               <InputGroupAddon>
                 <InputGroupText>https://</InputGroupText>
@@ -55,24 +55,24 @@ export function InputGroupInCard() {
           </Field>
           <Field>
             <FieldLabel htmlFor="feedback-textarea">
-              Feedback & Comments
+              フィードバック・コメント
             </FieldLabel>
             <InputGroup>
               <InputGroupTextarea
                 id="feedback-textarea"
-                placeholder="Share your thoughts..."
+                placeholder="ご意見をお聞かせください..."
                 className="min-h-[100px]"
               />
               <InputGroupAddon align="block-end">
-                <InputGroupText>0/500 characters</InputGroupText>
+                <InputGroupText>0/500文字</InputGroupText>
               </InputGroupAddon>
             </InputGroup>
           </Field>
         </FieldGroup>
       </CardContent>
       <CardFooter className="justify-end gap-2">
-        <Button variant="outline">Cancel</Button>
-        <Button>Submit</Button>
+        <Button variant="outline">キャンセル</Button>
+        <Button>送信</Button>
       </CardFooter>
     </Card>
   )

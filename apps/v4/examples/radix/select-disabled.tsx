@@ -11,17 +11,17 @@ export function SelectDisabled() {
   return (
     <Select disabled>
       <SelectTrigger className="w-full max-w-48">
-        <SelectValue placeholder="Select a fruit" />
+        <SelectValue placeholder="フルーツを選択" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectItem value="apple">Apple</SelectItem>
-          <SelectItem value="banana">Banana</SelectItem>
-          <SelectItem value="blueberry">Blueberry</SelectItem>
+          <SelectItem value="apple">リンゴ</SelectItem>
+          <SelectItem value="banana">バナナ</SelectItem>
+          <SelectItem value="blueberry">ブルーベリー</SelectItem>
           <SelectItem value="grapes" disabled>
-            Grapes
+            ぶどう
           </SelectItem>
-          <SelectItem value="pineapple">Pineapple</SelectItem>
+          <SelectItem value="pineapple">パイナップル</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

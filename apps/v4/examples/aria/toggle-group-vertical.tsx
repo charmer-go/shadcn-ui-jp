@@ -13,13 +13,13 @@ export function ToggleGroupVertical() {
       spacing={1}
       defaultSelectedKeys={["bold", "italic"]}
     >
-      <ToggleGroupItem id="bold" aria-label="Toggle bold">
+      <ToggleGroupItem id="bold" aria-label="太字を切り替え">
         <BoldIcon />
       </ToggleGroupItem>
-      <ToggleGroupItem id="italic" aria-label="Toggle italic">
+      <ToggleGroupItem id="italic" aria-label="斜体を切り替え">
         <ItalicIcon />
       </ToggleGroupItem>
-      <ToggleGroupItem id="underline" aria-label="Toggle underline">
+      <ToggleGroupItem id="underline" aria-label="下線を切り替え">
         <UnderlineIcon />
       </ToggleGroupItem>
     </ToggleGroup>

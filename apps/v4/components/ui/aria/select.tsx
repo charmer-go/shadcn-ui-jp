@@ -48,7 +48,7 @@ function SelectGroup<T extends object>({
   return (
     <ListBoxSectionPrimitive
       data-slot="select-group"
-      className={cn("cn-select-group", className)}
+      className={cn("scroll-my-1 p-1", className)}
       {...props}
     />
   )
@@ -62,7 +62,10 @@ function SelectValue<T extends object>({
   return (
     <SelectValuePrimitive
       data-slot="select-value"
-      className={cn("cn-select-value cn-select-value-aria", className)}
+      className={cn(
+        "flex flex-1 text-left data-placeholder:text-muted-foreground",
+        className
+      )}
       {...props}
     >
       {typeof children === "function"
@@ -87,7 +90,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "cn-select-trigger flex w-full items-center justify-between whitespace-nowrap outline-none disabled:cursor-not-allowed disabled:opacity-50 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "flex w-full items-center justify-between gap-1.5 rounded-lg border border-input bg-transparent py-2 pr-2 pl-2.5 text-sm whitespace-nowrap transition-colors outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-placeholder:text-muted-foreground data-[size=default]:h-8 data-[size=sm]:h-7 data-[size=sm]:rounded-[min(var(--radius-md),10px)] *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 dark:bg-input/30 dark:hover:bg-input/50 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -99,7 +102,7 @@ function SelectTrigger({
         hugeicons="UnfoldMoreIcon"
         phosphor="CaretDownIcon"
         remixicon="RiArrowDownSLine"
-        className="cn-select-trigger-icon pointer-events-none"
+        className="pointer-events-none size-4 text-muted-foreground"
       />
     </ButtonPrimitive>
   )
@@ -153,7 +156,7 @@ function SelectPopover({
       offset={offset}
       crossOffset={crossOffset}
       className={cn(
-        "cn-select-content-aria cn-menu-target cn-menu-translucent cn-menu-translucent-aria relative isolate z-50 w-(--trigger-width) origin-(--trigger-anchor-point) overflow-hidden",
+        "cn-menu-target cn-menu-translucent relative isolate z-50 w-(--trigger-width) min-w-36 origin-(--trigger-anchor-point) overflow-hidden rounded-lg bg-popover text-popover-foreground shadow-md ring-1 ring-foreground/10 duration-100 data-entering:animate-in data-entering:fade-in-0 data-entering:zoom-in-95 data-exiting:animate-out data-exiting:fade-out-0 data-exiting:zoom-out-95 data-[placement=bottom]:slide-in-from-top-2 data-[placement=left]:slide-in-from-right-2 data-[placement=right]:slide-in-from-left-2 data-[placement=top]:slide-in-from-bottom-2 **:data-[slot$=-item]:data-focused:bg-foreground/10",
         className
       )}
       {...props}
@@ -199,7 +202,7 @@ function SelectInput({ className, ...props }: SearchFieldProps) {
             hugeicons="SearchIcon"
             phosphor="MagnifyingGlassIcon"
             remixicon="RiSearchLine"
-            className="cn-command-input-icon"
+            className="size-4 shrink-0 opacity-50"
           />
         </InputGroupAddon>
       </InputGroup>
@@ -214,7 +217,7 @@ function SelectLabel({
   return (
     <HeaderPrimitive
       data-slot="select-label"
-      className={cn("cn-select-label", className)}
+      className={cn("px-1.5 py-1 text-xs text-muted-foreground", className)}
       {...props}
     />
   )
@@ -230,17 +233,17 @@ function SelectItem({
       data-slot="select-item"
       textValue={typeof children === "string" ? children : undefined}
       className={cn(
-        "cn-select-item cn-select-item-aria relative flex w-full cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-focused:bg-accent data-focused:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2",
         className
       )}
       {...props}
     >
       {composeRenderProps(children, (children, { isSelected }) => (
         <>
-          <span className="cn-select-item-text shrink-0 whitespace-nowrap">
+          <span className="flex flex-1 shrink-0 gap-2 whitespace-nowrap">
             {children}
           </span>
-          <span className="cn-select-item-indicator">
+          <span className="pointer-events-none absolute right-2 flex size-4 items-center justify-center">
             {isSelected ? (
               <IconPlaceholder
                 lucide="CheckIcon"
@@ -248,7 +251,7 @@ function SelectItem({
                 hugeicons="Tick02Icon"
                 phosphor="CheckIcon"
                 remixicon="RiCheckLine"
-                className="cn-select-item-indicator-icon pointer-events-none"
+                className="pointer-events-none"
               />
             ) : null}
           </span>
@@ -265,7 +268,7 @@ function SelectSeparator({
   return (
     <SeparatorPrimitive
       data-slot="select-separator"
-      className={cn("cn-select-separator pointer-events-none", className)}
+      className={cn("pointer-events-none -mx-1 my-1 h-px bg-border", className)}
       {...props}
     />
   )
@@ -275,7 +278,10 @@ function SelectEmpty({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="select-empty"
-      className={cn("cn-select-empty-aria", className)}
+      className={cn(
+        "hidden w-full justify-center py-2 text-center text-sm text-muted-foreground group-data-empty/select-list:flex",
+        className
+      )}
       {...props}
     />
   )

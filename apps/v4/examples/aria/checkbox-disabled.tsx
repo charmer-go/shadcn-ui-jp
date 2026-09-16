@@ -11,7 +11,7 @@ export function CheckboxDisabled() {
           isDisabled
         />
         <FieldLabel htmlFor="toggle-checkbox-disabled">
-          Enable notifications
+          通知を有効にする
         </FieldLabel>
       </Field>
     </FieldGroup>

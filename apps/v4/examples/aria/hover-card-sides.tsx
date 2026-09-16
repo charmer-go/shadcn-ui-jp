@@ -15,9 +15,9 @@ export function HoverCardSides() {
           </Button>
           <HoverCard placement={placement}>
             <div className="flex flex-col gap-1">
-              <h4 className="font-medium">Hover Card</h4>
+              <h4 className="font-medium">ホバーカード</h4>
               <p>
-                This hover card appears on the {placement} side of the trigger.
+                このホバーカードはトリガーの{placement}側に表示されます。
               </p>
             </div>
           </HoverCard>

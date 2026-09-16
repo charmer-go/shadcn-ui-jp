@@ -12,16 +12,16 @@ export default function FieldInput() {
     <FieldSet className="w-full max-w-xs">
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="username">Username</FieldLabel>
-          <Input id="username" type="text" placeholder="Max Leiter" />
+          <FieldLabel htmlFor="username">ユーザー名</FieldLabel>
+          <Input id="username" type="text" placeholder="山田 太郎" />
           <FieldDescription>
-            Choose a unique username for your account.
+            アカウント用のユニークなユーザー名を選んでください。
           </FieldDescription>
         </Field>
         <Field>
-          <FieldLabel htmlFor="password">Password</FieldLabel>
+          <FieldLabel htmlFor="password">パスワード</FieldLabel>
           <FieldDescription>
-            Must be at least 8 characters long.
+            8文字以上で入力してください。
           </FieldDescription>
           <Input id="password" type="password" placeholder="••••••••" />
         </Field>

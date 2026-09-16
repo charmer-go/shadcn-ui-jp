@@ -30,7 +30,7 @@ export function InputGroupWithAddons() {
     <FieldGroup>
       <Field>
         <FieldLabel htmlFor="input-icon-left-05">
-          Addon (inline-start)
+          アドオン（inline-start）
         </FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-icon-left-05" />
@@ -41,7 +41,7 @@ export function InputGroupWithAddons() {
       </Field>
       <Field>
         <FieldLabel htmlFor="input-icon-right-07">
-          Addon (inline-end)
+          アドオン（inline-end）
         </FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-icon-right-07" />
@@ -52,7 +52,7 @@ export function InputGroupWithAddons() {
       </Field>
       <Field>
         <FieldLabel htmlFor="input-icon-both-09">
-          Addon (inline-start and inline-end)
+          アドオン（inline-start と inline-end）
         </FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-icon-both-09" />
@@ -65,34 +65,34 @@ export function InputGroupWithAddons() {
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-addon-20">Addon (block-start)</FieldLabel>
+        <FieldLabel htmlFor="input-addon-20">アドオン（block-start）</FieldLabel>
         <InputGroup className="h-auto">
           <InputGroupInput id="input-addon-20" />
           <InputGroupAddon align="block-start">
-            <InputGroupText>First Name</InputGroupText>
+            <InputGroupText>名</InputGroupText>
             <InfoIcon className="ml-auto text-muted-foreground" />
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-addon-21">Addon (block-end)</FieldLabel>
+        <FieldLabel htmlFor="input-addon-21">アドオン（block-end）</FieldLabel>
         <InputGroup className="h-auto">
           <InputGroupInput id="input-addon-21" />
           <InputGroupAddon align="block-end">
-            <InputGroupText>20/240 characters</InputGroupText>
+            <InputGroupText>20/240文字</InputGroupText>
             <InfoIcon className="ml-auto text-muted-foreground" />
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-icon-both-10">Multiple Icons</FieldLabel>
+        <FieldLabel htmlFor="input-icon-both-10">複数アイコン</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-icon-both-10" />
           <InputGroupAddon align="inline-end">
             <StarIcon />
             <InputGroupButton
               size="icon-xs"
-              onClick={() => toast("Copied to clipboard")}
+              onClick={() => toast("クリップボードにコピーしました")}
             >
               <CopyIcon />
             </InputGroupButton>
@@ -103,7 +103,7 @@ export function InputGroupWithAddons() {
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-description-10">Description</FieldLabel>
+        <FieldLabel htmlFor="input-description-10">説明</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-description-10" />
           <InputGroupAddon align="inline-end">
@@ -111,21 +111,21 @@ export function InputGroupWithAddons() {
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-label-10">Label</FieldLabel>
+        <FieldLabel htmlFor="input-label-10">ラベル</FieldLabel>
         <InputGroup>
           <InputGroupAddon>
-            <FieldLabel htmlFor="input-label-10">Label</FieldLabel>
+            <FieldLabel htmlFor="input-label-10">ラベル</FieldLabel>
           </InputGroupAddon>
           <InputGroupInput id="input-label-10" />
         </InputGroup>
         <InputGroup>
-          <InputGroupInput id="input-optional-12" aria-label="Optional" />
+          <InputGroupInput id="input-optional-12" aria-label="任意" />
           <InputGroupAddon align="inline-end">
-            <InputGroupText>(optional)</InputGroupText>
+            <InputGroupText>（任意）</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
       </Field>

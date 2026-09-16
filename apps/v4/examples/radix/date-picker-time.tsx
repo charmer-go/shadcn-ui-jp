@@ -21,7 +21,7 @@ export function DatePickerTime() {
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">日付</FieldLabel>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -29,7 +29,7 @@ export function DatePickerTime() {
               id="date-picker-optional"
               className="w-32 justify-between font-normal"
             >
-              {date ? format(date, "PPP") : "Select date"}
+              {date ? format(date, "PPP") : "日付を選択"}
               <ChevronDownIcon />
             </Button>
           </PopoverTrigger>
@@ -48,7 +48,7 @@ export function DatePickerTime() {
         </Popover>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">時刻</FieldLabel>
         <Input
           type="time"
           id="time-picker-optional"

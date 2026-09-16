@@ -2,11 +2,11 @@ import { Markdown } from "@/components/markdown"
 import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
 import { Message, MessageContent } from "@/components/ui/base/message"
 
-const response = `Here's how to render markdown in a message:
+const response = `メッセージ内でMarkdownをレンダリングする方法は次のとおりです:
 
-1. Render assistant text through **Markdown**.
-2. Keep user messages as plain text.
-3. Use a \`ghost\` bubble so the response is unframed.
+1. アシスタントのテキストは **Markdown** を通してレンダリングします。
+2. ユーザーのメッセージはプレーンテキストのままにします。
+3. レスポンスを枠なしにするには \`ghost\` バブルを使用します。
 `
 
 export function MessageMarkdownDemo() {
@@ -16,7 +16,7 @@ export function MessageMarkdownDemo() {
         <MessageContent>
           <Bubble>
             <BubbleContent>
-              How do I render markdown in a message?
+              メッセージ内でMarkdownをレンダリングするには？
             </BubbleContent>
           </Bubble>
         </MessageContent>

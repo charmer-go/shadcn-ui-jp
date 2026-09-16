@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/base/select"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
-  { label: "Grapes", value: "grapes" },
-  { label: "Pineapple", value: "pineapple" },
+  { label: "フルーツを選択", value: null },
+  { label: "リンゴ", value: "apple" },
+  { label: "バナナ", value: "banana" },
+  { label: "ブルーベリー", value: "blueberry" },
+  { label: "ぶどう", value: "grapes" },
+  { label: "パイナップル", value: "pineapple" },
 ]
 
 export function SelectDemo() {
@@ -25,7 +25,7 @@ export function SelectDemo() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>フルーツ</SelectLabel>
           {items.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}

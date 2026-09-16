@@ -27,7 +27,7 @@ export default function InputGroupButtonExample() {
         <InputGroupInput placeholder="https://x.com/shadcn" readOnly />
         <InputGroupAddon align="inline-end">
           <InputGroupButton
-            aria-label="Copy"
+            aria-label="コピー"
             size="icon-xs"
             onClick={() => {
               copyToClipboard("https://x.com/shadcn")
@@ -48,8 +48,8 @@ export default function InputGroupButtonExample() {
             placement="bottom start"
             className="flex flex-col gap-1 rounded-xl text-sm"
           >
-            <p className="font-medium">Your connection is not secure.</p>
-            <p>You should not enter any sensitive information on this site.</p>
+            <p className="font-medium">この接続は安全ではありません。</p>
+            <p>このサイトでは機密情報を入力しないでください。</p>
           </Popover>
         </PopoverTrigger>
         <InputGroupAddon className="pl-1.5 text-muted-foreground">
@@ -69,9 +69,9 @@ export default function InputGroupButtonExample() {
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Type to search..." />
+        <InputGroupInput placeholder="検索..." />
         <InputGroupAddon align="inline-end">
-          <InputGroupButton variant="secondary">Search</InputGroupButton>
+          <InputGroupButton variant="secondary">検索</InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
     </div>

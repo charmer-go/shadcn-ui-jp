@@ -16,10 +16,10 @@ export function BubbleTooltipDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4 py-12">
       <Bubble variant="secondary">
-        <BubbleContent>Did you remove the stale route?</BubbleContent>
+        <BubbleContent>古いルートは削除した？</BubbleContent>
       </Bubble>
       <Bubble align="end">
-        <BubbleContent>Yes, removed it from the registry.</BubbleContent>
+        <BubbleContent>うん、レジストリから削除したよ。</BubbleContent>
         <BubbleReactions className="p-0">
           <Tooltip>
             <TooltipTrigger asChild>
@@ -27,7 +27,7 @@ export function BubbleTooltipDemo() {
                 <CheckIcon />
               </Button>
             </TooltipTrigger>
-            <TooltipContent>Read on Jan 5, 2026 at 4:32 PM</TooltipContent>
+            <TooltipContent>2026年1月5日 16:32に既読</TooltipContent>
           </Tooltip>
         </BubbleReactions>
       </Bubble>

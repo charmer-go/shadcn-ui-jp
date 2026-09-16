@@ -8,9 +8,9 @@ import { Input } from "@/components/ui/base/input"
 export function InputFile() {
   return (
     <Field>
-      <FieldLabel htmlFor="picture">Picture</FieldLabel>
+      <FieldLabel htmlFor="picture">写真</FieldLabel>
       <Input id="picture" type="file" />
-      <FieldDescription>Select a picture to upload.</FieldDescription>
+      <FieldDescription>アップロードする写真を選択してください。</FieldDescription>
     </Field>
   )
 }

@@ -8,15 +8,15 @@ export default function KbdTooltip() {
     <div className="flex flex-wrap gap-4">
       <ButtonGroup>
         <TooltipTrigger>
-          <Button variant="outline">Save</Button>
+          <Button variant="outline">保存</Button>
           <Tooltip>
-            Save Changes <Kbd>S</Kbd>
+            変更を保存 <Kbd>S</Kbd>
           </Tooltip>
         </TooltipTrigger>
         <TooltipTrigger>
-          <Button variant="outline">Print</Button>
+          <Button variant="outline">印刷</Button>
           <Tooltip>
-            Print Document{" "}
+            ドキュメントを印刷{" "}
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <Kbd>P</Kbd>

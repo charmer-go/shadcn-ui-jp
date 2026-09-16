@@ -34,29 +34,29 @@ import {
 
 const chat = createChat()
   .user(
-    "We're seeing activation dip after workspace creation. Can you help me find the likely step?",
+    "ワークスペース作成後にアクティベーションが落ち込んでいるようです。どのステップが原因か一緒に調べてもらえますか？",
     { id: "command-activation" }
   )
   .assistant(
-    "The sharpest drop is between creating the workspace and inviting the first teammate.\n\nWorkspace creation is still healthy, but the invite step is where users pause. That suggests the product is asking for collaboration before the user has enough confidence in the workspace."
+    "最も大きく落ち込んでいるのは、ワークスペースの作成から最初のチームメイトを招待するまでの間です。\n\nワークスペース作成自体は依然として健全ですが、招待のステップでユーザーが手を止めています。これは、ユーザーがワークスペースに十分な自信を持つ前に、プロダクトがコラボレーションを求めてしまっていることを示唆しています。"
   )
-  .user("What should I compare before we change the onboarding flow?", {
+  .user("オンボーディングフローを変更する前に、何を比較すればいいですか？", {
     id: "command-compare",
   })
   .assistant(
-    "Compare three cohorts:\n\n1. Users who choose a template before inviting teammates.\n2. Users who start from a blank workspace.\n3. Users who skip invites and return within 24 hours.\n\nIf template users invite faster, the fix is probably better first-run guidance rather than a louder invite prompt."
+    "3つのコホートを比較してください。\n\n1. チームメイトを招待する前にテンプレートを選ぶユーザー\n2. 空のワークスペースから始めるユーザー\n3. 招待をスキップして24時間以内に戻ってくるユーザー\n\nテンプレートを使ったユーザーの方が招待が早いなら、対策としてはより強い招待プロンプトよりも、初回利用時のガイダンスを改善する方が効果的でしょう。"
   )
-  .user("Can you turn that into an experiment?", {
+  .user("それを実験にできますか？", {
     id: "command-experiment",
   })
   .assistant(
-    "Yes. Create a variant that shows a short checklist after workspace creation:\n\n- Pick a template.\n- Add one project detail.\n- Invite a teammate when the workspace has context.\n\nMeasure first invite completion, 24-hour return rate, and whether teams create a second project."
+    "はい。ワークスペース作成後に短いチェックリストを表示するバリアントを作成します。\n\n- テンプレートを選ぶ\n- プロジェクトの詳細を1つ追加する\n- ワークスペースに文脈ができたらチームメイトを招待する\n\n最初の招待完了率、24時間以内の復帰率、そしてチームが2つ目のプロジェクトを作成するかどうかを測定してください。"
   )
-  .user("What's the risk if we delay the invite prompt?", {
+  .user("招待プロンプトを遅らせるとどんなリスクがありますか？", {
     id: "command-risk",
   })
   .assistant(
-    "The main risk is reducing team creation for accounts that already know who they want to invite.\n\nTo protect that path, keep the invite action visible in the header and only change the primary empty-state guidance. That gives confident teams a direct route without forcing uncertain users through the invite step too early."
+    "主なリスクは、すでに誰を招待したいか分かっているアカウントのチーム作成を減らしてしまうことです。\n\nその経路を守るために、招待アクションはヘッダーに表示し続け、変更するのはメインの空状態のガイダンスだけにしてください。そうすれば、確信を持ったチームには直接的な経路を提供しつつ、まだ迷っているユーザーを早すぎる段階で招待ステップに押し込まずに済みます。"
   )
 
 const messages = chat.get()
@@ -68,9 +68,9 @@ export function MessageScrollerCommands() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Commands</CardTitle>
+            <CardTitle>コマンド</CardTitle>
             <CardDescription>
-              Drive the transcript from outside.
+              外部からトランスクリプトを操作します。
             </CardDescription>
             <CardAction>
               <CommandMenu />
@@ -120,7 +120,7 @@ export function MessageScrollerCommands() {
           </CardContent>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          Use the controls to jump to any message in the conversation.
+          コントロールを使って、会話内の任意のメッセージへジャンプできます。
         </div>
       </div>
     </MessageScrollerProvider>
@@ -135,11 +135,11 @@ function CommandMenu() {
       <DropdownMenuTrigger
         render={<Button type="button" variant="secondary" />}
       >
-        Jump to...
+        移動先...
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" side="bottom" className="w-64">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Conversations</DropdownMenuLabel>
+          <DropdownMenuLabel>会話</DropdownMenuLabel>
           {userMessages.map((message) => (
             <DropdownMenuItem
               key={message.id}

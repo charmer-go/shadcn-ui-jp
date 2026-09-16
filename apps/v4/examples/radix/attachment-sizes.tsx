@@ -16,7 +16,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Default attachment</AttachmentTitle>
+          <AttachmentTitle>デフォルトの添付ファイル</AttachmentTitle>
           <AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
         </AttachmentContent>
       </Attachment>
@@ -25,7 +25,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Small attachment</AttachmentTitle>
+          <AttachmentTitle>小さい添付ファイル</AttachmentTitle>
           <AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
         </AttachmentContent>
       </Attachment>
@@ -34,7 +34,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Extra small attachment</AttachmentTitle>
+          <AttachmentTitle>さらに小さい添付ファイル</AttachmentTitle>
         </AttachmentContent>
       </Attachment>
     </div>

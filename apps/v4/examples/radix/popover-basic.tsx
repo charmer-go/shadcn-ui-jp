@@ -12,13 +12,13 @@ export function PopoverBasic() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open Popover</Button>
+        <Button variant="outline">ポップオーバーを開く</Button>
       </PopoverTrigger>
       <PopoverContent align="start">
         <PopoverHeader>
-          <PopoverTitle>Dimensions</PopoverTitle>
+          <PopoverTitle>寸法</PopoverTitle>
           <PopoverDescription>
-            Set the dimensions for the layer.
+            レイヤーの寸法を設定します。
           </PopoverDescription>
         </PopoverHeader>
       </PopoverContent>

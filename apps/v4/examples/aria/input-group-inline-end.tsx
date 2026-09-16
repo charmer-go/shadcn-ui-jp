@@ -14,18 +14,18 @@ import {
 export function InputGroupInlineEnd() {
   return (
     <Field className="max-w-sm">
-      <FieldLabel htmlFor="inline-end-input">Input</FieldLabel>
+      <FieldLabel htmlFor="inline-end-input">入力欄</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="inline-end-input"
           type="password"
-          placeholder="Enter password"
+          placeholder="パスワードを入力"
         />
         <InputGroupAddon align="inline-end">
           <EyeOffIcon />
         </InputGroupAddon>
       </InputGroup>
-      <FieldDescription>Icon positioned at the end.</FieldDescription>
+      <FieldDescription>アイコンは末尾に配置されます。</FieldDescription>
     </Field>
   )
 }

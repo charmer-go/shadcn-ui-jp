@@ -6,10 +6,10 @@ import { Input } from "@/components/ui/radix/input"
 export function InputButtonGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-button-group">Search</FieldLabel>
+      <FieldLabel htmlFor="input-button-group">検索</FieldLabel>
       <ButtonGroup>
-        <Input id="input-button-group" placeholder="Type to search..." />
-        <Button variant="outline">Search</Button>
+        <Input id="input-button-group" placeholder="検索キーワードを入力..." />
+        <Button variant="outline">検索</Button>
       </ButtonGroup>
     </Field>
   )

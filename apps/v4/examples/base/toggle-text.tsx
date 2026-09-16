@@ -4,9 +4,9 @@ import { Toggle } from "@/components/ui/base/toggle"
 
 export function ToggleText() {
   return (
-    <Toggle aria-label="Toggle italic">
+    <Toggle aria-label="斜体を切り替え">
       <ItalicIcon />
-      Italic
+      斜体
     </Toggle>
   )
 }

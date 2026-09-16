@@ -12,40 +12,32 @@ export function BubbleLinkButtonDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>How can I help you today?</BubbleContent>
+        <BubbleContent>今日はどのようなご用件ですか？</BubbleContent>
       </Bubble>
       <BubbleGroup>
         <Bubble variant="tinted" align="end">
-          <BubbleContent
-            render={
-              <button onClick={() => toast("You clicked forgot password")} />
-            }
-          >
-            I forgot my password
+          <BubbleContent asChild>
+            <button onClick={() => toast("「パスワードを忘れた」をクリックしました")}>
+              パスワードを忘れました
+            </button>
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
-          <BubbleContent
-            render={
-              <button
-                onClick={() => toast("You clicked help with subscription")}
-              />
-            }
-          >
-            I need help with my subscription
+          <BubbleContent asChild>
+            <button onClick={() => toast("「サブスクリプションのヘルプ」をクリックしました")}>
+              サブスクリプションについて助けが必要です
+            </button>
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
-          <BubbleContent
-            render={
-              <button
-                onClick={() =>
-                  toast("You clicked something else. Talk to a human.")
-                }
-              />
-            }
-          >
-            Something else. Talk to a human.
+          <BubbleContent asChild>
+            <button
+              onClick={() =>
+                toast("「その他」をクリックしました。担当者につなぎます。")
+              }
+            >
+              その他の用件。担当者と話したいです。
+            </button>
           </BubbleContent>
         </Bubble>
       </BubbleGroup>

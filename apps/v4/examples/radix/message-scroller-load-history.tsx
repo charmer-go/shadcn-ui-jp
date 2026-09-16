@@ -33,25 +33,25 @@ import {
 } from "@/components/ui/radix/tooltip"
 
 const chat = createChat()
-  .user("Can you summarize the incident channel?")
+  .user("インシデントチャンネルの内容を要約してもらえますか？")
   .assistant(
-    "The first alert was a delayed export job. It started backing up around 09:42 UTC and triggered the warning once the retry queue crossed the threshold.\n\nNo customer-facing checkout paths were affected, but exports for larger workspaces were running about 12 minutes behind."
+    "最初のアラートは、エクスポートジョブの遅延でした。UTC 09:42頃から滞留が始まり、リトライキューがしきい値を超えた時点で警告が発火しました。\n\n顧客向けのチェックアウト経路への影響はありませんでしたが、大規模なワークスペースのエクスポートは約12分遅れて実行されていました。"
   )
-  .user("Was checkout affected?")
+  .user("チェックアウトに影響はありましたか？")
   .assistant(
-    "No checkout errors were reported. Payment authorization, order creation, and confirmation emails stayed inside their normal latency bands.\n\nThe only elevated metric was export queue depth, which maps to analytics downloads instead of checkout."
+    "チェックアウトのエラーは報告されていません。決済の承認、注文の作成、確認メールはいずれも通常のレイテンシ範囲内で収まっていました。\n\n上昇していた指標はエクスポートキューの深さのみで、これはチェックアウトではなく分析データのダウンロードに関連するものです。"
   )
-  .user("What changed in the last deploy?")
+  .user("直前のデプロイで何が変更されましたか？")
   .assistant(
-    "Only the export queue worker changed. The deploy moved large CSV jobs onto the shared retry policy, which made each failed attempt hold a worker slot longer than before.\n\nThe app deploy did not include checkout, pricing, or billing API changes."
+    "変更されたのはエクスポートキューのワーカーだけです。このデプロイで大きなCSVジョブが共有のリトライポリシーに移されたため、失敗した試行がワーカースロットを以前より長く占有するようになりました。\n\nこのアプリのデプロイには、チェックアウト・価格設定・請求APIの変更は含まれていません。"
   )
-  .user("Do we need to roll back?")
+  .user("ロールバックは必要ですか？")
   .assistant(
-    "Not yet. Queue depth is recovering after we reduced retry concurrency, and the oldest pending job is now under five minutes old.\n\nKeep rollback ready if the queue starts climbing again, but the current trend points toward recovery."
+    "今のところは不要です。リトライの並列数を減らした後、キューの深さは回復しつつあり、最も古い保留中のジョブも5分未満になっています。\n\nキューが再び増加し始めた場合に備えてロールバックは準備しておいてください。ただ、現在の傾向は回復に向かっています。"
   )
-  .user("Keep watching for customer-visible issues.")
+  .user("顧客に見える問題がないか監視を続けてください。")
   .assistant(
-    "I will watch the queue and support tags for another 15 minutes. I am tracking export failures, delayed download requests, and any support thread that mentions missing reports.\n\nIf those stay quiet through the next batch window, we can close this as an internal degradation."
+    "あと15分、キューとサポートのタグを監視します。エクスポートの失敗、ダウンロードリクエストの遅延、レポートが見つからないと言及しているサポートスレッドを追っています。\n\n次のバッチウィンドウまでこれらが落ち着いていれば、社内的な性能劣化としてクローズできます。"
   )
 
 const history = chat.get()
@@ -68,9 +68,9 @@ export function MessageScrollerLoadHistory() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Load History</CardTitle>
+            <CardTitle>履歴の読み込み</CardTitle>
             <CardDescription>
-              Prepended messages keep your place.
+              先頭に追加されたメッセージでも現在の表示位置は保持されます。
             </CardDescription>
             <CardAction>
               <Tooltip>
@@ -79,7 +79,7 @@ export function MessageScrollerLoadHistory() {
                     type="button"
                     variant="outline"
                     size="icon"
-                    aria-label="Reset loaded messages"
+                    aria-label="読み込んだメッセージをリセット"
                     disabled={visibleCount === INITIAL_VISIBLE_COUNT}
                     onClick={() => {
                       setVisibleCount(INITIAL_VISIBLE_COUNT)
@@ -90,7 +90,7 @@ export function MessageScrollerLoadHistory() {
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>リセット</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -132,7 +132,7 @@ export function MessageScrollerLoadHistory() {
                   })}
                   <MessageScrollerItem scrollAnchor={false}>
                     <Marker variant="separator">
-                      <MarkerContent>End of Conversation</MarkerContent>
+                      <MarkerContent>会話の終わり</MarkerContent>
                     </Marker>
                   </MessageScrollerItem>
                 </MessageScrollerContent>
@@ -146,22 +146,22 @@ export function MessageScrollerLoadHistory() {
               disabled={!canLoadHistory}
               onClick={() => {
                 setVisibleCount(history.length)
-                toast("History loaded", {
-                  description: "Scroll up to see earlier messages.",
+                toast("履歴を読み込みました", {
+                  description: "上にスクロールすると以前のメッセージを確認できます。",
                 })
               }}
               className="w-full"
               variant="secondary"
             >
-              {canLoadHistory ? "Load History" : "History Loaded"}
+              {canLoadHistory ? "履歴を読み込む" : "履歴を読み込み済み"}
             </Button>
             <p className="text-xs text-muted-foreground">
-              Restore earlier messages while keeping your place.
+              現在の表示位置を保ったまま、以前のメッセージを復元します。
             </p>
           </CardFooter>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          Click Load History to load the entire conversation
+          「履歴を読み込む」をクリックすると、会話全体が読み込まれます
         </div>
       </div>
     </MessageScrollerProvider>

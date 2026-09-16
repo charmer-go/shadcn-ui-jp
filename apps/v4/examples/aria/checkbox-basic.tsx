@@ -7,7 +7,7 @@ export function CheckboxBasic() {
       <Field orientation="horizontal">
         <Checkbox id="terms-checkbox-basic" name="terms-checkbox-basic" />
         <FieldLabel htmlFor="terms-checkbox-basic">
-          Accept terms and conditions
+          利用規約に同意する
         </FieldLabel>
       </Field>
     </FieldGroup>

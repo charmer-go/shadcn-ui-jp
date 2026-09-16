@@ -25,7 +25,7 @@ const frameworks = [
 export function ComboboxMultiple() {
   return (
     <Combobox
-      aria-label="Frameworks"
+      aria-label="フレームワーク"
       selectionMode="multiple"
       defaultValue={[frameworks[0]]}
       allowsEmptyCollection
@@ -40,7 +40,7 @@ export function ComboboxMultiple() {
       <ComboboxContent>
         <ComboboxList
           renderEmptyState={() => (
-            <ComboboxEmpty>No items found.</ComboboxEmpty>
+            <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
           )}
         >
           {frameworks.map((item) => (

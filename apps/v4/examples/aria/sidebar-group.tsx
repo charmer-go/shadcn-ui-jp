@@ -20,19 +20,19 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Help</SidebarGroupLabel>
+            <SidebarGroupLabel>ヘルプ</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <LifeBuoyIcon />
-                    Support
+                    サポート
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <SendIcon />
-                    Feedback
+                    フィードバック
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

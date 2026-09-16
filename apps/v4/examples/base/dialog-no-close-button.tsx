@@ -14,14 +14,13 @@ export function DialogNoCloseButton() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>
-        No Close Button
+        閉じるボタンなし
       </DialogTrigger>
       <DialogContent showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>No Close Button</DialogTitle>
+          <DialogTitle>閉じるボタンなし</DialogTitle>
           <DialogDescription>
-            This dialog doesn&apos;t have a close button in the top-right
-            corner.
+            このダイアログには右上に閉じるボタンがありません。
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

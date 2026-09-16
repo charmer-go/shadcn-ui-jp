@@ -8,7 +8,7 @@ export function ChartTooltipDemo() {
     <div className="grid aspect-video w-full max-w-md justify-center text-foreground md:grid-cols-2 [&>div]:relative [&>div]:flex [&>div]:h-[137px] [&>div]:w-[224px] [&>div]:items-center [&>div]:justify-center [&>div]:p-4">
       <div>
         <div className="absolute top-[45px] left-[-35px] z-10 text-sm font-medium">
-          Label
+          ラベル
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,17 +31,17 @@ export function ChartTooltipDemo() {
           </defs>
         </svg>
         <TooltipDemo
-          label="Page Views"
+          label="ページビュー"
           payload={[
-            { name: "Desktop", value: 186, fill: "var(--chart-1)" },
-            { name: "Mobile", value: 80, fill: "var(--chart-2)" },
+            { name: "デスクトップ", value: 186, fill: "var(--chart-1)" },
+            { name: "モバイル", value: 80, fill: "var(--chart-2)" },
           ]}
           className="w-[8rem]"
         />
       </div>
       <div className="items-end">
         <div className="absolute top-[0px] left-[122px] z-10 text-sm font-medium">
-          Name
+          名前
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ export function ChartTooltipDemo() {
           </defs>
         </svg>
         <TooltipDemo
-          label="Browser"
+          label="ブラウザ"
           hideLabel
           payload={[
             { name: "Chrome", value: 1286, fill: "var(--chart-3)" },
@@ -76,18 +76,18 @@ export function ChartTooltipDemo() {
       </div>
       <div className="hidden! md:flex!">
         <TooltipDemo
-          label="Page Views"
-          payload={[{ name: "Desktop", value: 12486, fill: "var(--chart-3)" }]}
+          label="ページビュー"
+          payload={[{ name: "デスクトップ", value: 12486, fill: "var(--chart-3)" }]}
           className="w-[9rem]"
           indicator="line"
         />
       </div>
       <div className="items-start! justify-start!">
         <div className="absolute top-[60px] left-[50px] z-10 text-sm font-medium">
-          Indicator
+          インジケーター
         </div>
         <TooltipDemo
-          label="Browser"
+          label="ブラウザ"
           hideLabel
           payload={[{ name: "Chrome", value: 1286, fill: "var(--chart-1)" }]}
           indicator="dot"

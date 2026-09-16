@@ -27,29 +27,29 @@ import {
 } from "@/components/ui/radix/message-scroller"
 
 const chat = createChat()
-  .user("Review the incident handoff and tell me what to read first.", {
+  .user("インシデントの引き渡しを確認して、最初に読むべきものを教えてください。", {
     id: "vis-brief",
   })
   .assistant(
-    "Start with the summary and the impact section. The regression affected the upload queue, but the recovery path completed for every queued job."
+    "まずサマリーと影響範囲のセクションから読んでください。この回帰はアップロードキューに影響しましたが、キューに入っていたすべてのジョブで復旧処理は完了しています。"
   )
-  .user("What was the customer impact?", {
+  .user("顧客への影響はどの程度でしたか？", {
     id: "vis-impact",
   })
   .assistant(
-    "Impact was limited to delayed processing.\n\nNo records were dropped, and the reconciliation worker confirmed each retry batch. Support saw confusion from two customers, but there were no checkout or billing errors."
+    "影響は処理の遅延にとどまりました。\n\nレコードが失われることはなく、整合性を取るワーカーが各リトライバッチを確認済みです。サポートには2件の顧客からの問い合わせがありましたが、チェックアウトや請求のエラーはありませんでした。"
   )
-  .user("What actions are open?", {
+  .user("未対応のアクションは何ですか？", {
     id: "vis-actions",
   })
   .assistant(
-    "Keep the retry window enabled until the next deploy, then add a queue-depth alert as the long-term fix.\n\nThe alert should fire on sustained queue growth, not a single short spike."
+    "次のデプロイまではリトライウィンドウを有効にしたままにし、長期的な対策としてキューの深さに対するアラートを追加してください。\n\nこのアラートは、単発の短いスパイクではなく、持続的なキューの増加に対して発火するようにしてください。"
   )
-  .user("Give me the follow-up checklist.", {
+  .user("フォローアップのチェックリストをください。", {
     id: "vis-checklist",
   })
   .assistant(
-    "After that, compare the queue recovery graph with the deploy timeline so the handoff shows exactly when processing returned to baseline. That makes it easier for support and engineering to answer the same customer questions without re-reading the whole incident thread.\n\nI would also add a short owner note beside each follow-up item. The checklist is small, but ownership keeps the retry-window decision, alert tuning, and support macro from drifting into separate follow-up conversations.\n\nKeep the retry window enabled until the next deploy, then add a queue-depth alert as the long-term fix.\n\nThe alert should fire on sustained queue growth, not a single short spike."
+    "その後、キューの復旧グラフとデプロイのタイムラインを比較し、処理がいつベースラインに戻ったのかを引き渡しに明確に示してください。そうすれば、サポートとエンジニアリングがインシデントのスレッドを丸ごと読み直さずに、同じ顧客からの質問に答えやすくなります。\n\n各フォローアップ項目には短い担当者メモも追加するとよいでしょう。チェックリスト自体は小さいものですが、担当者を明確にしておくことで、リトライウィンドウの判断・アラートの調整・サポート用マクロがそれぞれ別のフォローアップの会話に分散してしまうのを防げます。\n\n次のデプロイまではリトライウィンドウを有効にしたままにし、長期的な対策としてキューの深さに対するアラートを追加してください。\n\nこのアラートは、単発の短いスパイクではなく、持続的なキューの増加に対して発火するようにしてください。"
   )
 
 const messages = chat.get()
@@ -62,9 +62,9 @@ export function MessageScrollerVisibility() {
         <div className="relative mx-auto w-full max-w-sm">
           <Card className="h-140 w-full gap-0">
             <CardHeader className="gap-1 border-b">
-              <CardTitle>Transcript Outline</CardTitle>
+              <CardTitle>トランスクリプトのアウトライン</CardTitle>
               <CardDescription>
-                Track the current anchored turn.
+                現在アンカーされているターンを追跡します。
               </CardDescription>
             </CardHeader>
             <CardContent className="flex-1 overflow-hidden p-0">
@@ -117,7 +117,7 @@ export function MessageScrollerVisibility() {
           </div>
         </div>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-muted-foreground">
-          Open the outline to jump between anchored turns as you read.
+          アウトラインを開くと、読み進めながらアンカーされたターン間を移動できます。
         </div>
       </div>
     </MessageScrollerProvider>
@@ -133,7 +133,7 @@ function TranscriptOutline() {
       <HoverCardTrigger asChild>
         <button
           type="button"
-          aria-label="Open transcript outline"
+          aria-label="トランスクリプトのアウトラインを開く"
           className="flex h-9 w-9 flex-col items-center justify-center gap-1 rounded-md transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
         >
           {userMessages.map((message) => (

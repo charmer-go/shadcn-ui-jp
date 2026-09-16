@@ -9,12 +9,12 @@ import {
 
 export function SelectDisabled() {
   const items = [
-    { label: "Select a fruit", value: null },
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Blueberry", value: "blueberry" },
-    { label: "Grapes", value: "grapes", disabled: true },
-    { label: "Pineapple", value: "pineapple" },
+    { label: "フルーツを選択", value: null },
+    { label: "リンゴ", value: "apple" },
+    { label: "バナナ", value: "banana" },
+    { label: "ブルーベリー", value: "blueberry" },
+    { label: "ぶどう", value: "grapes", disabled: true },
+    { label: "パイナップル", value: "pineapple" },
   ]
   return (
     <Select items={items} disabled>

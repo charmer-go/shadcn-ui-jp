@@ -8,9 +8,9 @@ import { Textarea } from "@/components/ui/aria/textarea"
 export function TextareaField() {
   return (
     <Field>
-      <FieldLabel htmlFor="textarea-message">Message</FieldLabel>
-      <FieldDescription>Enter your message below.</FieldDescription>
-      <Textarea id="textarea-message" placeholder="Type your message here." />
+      <FieldLabel htmlFor="textarea-message">メッセージ</FieldLabel>
+      <FieldDescription>以下にメッセージを入力してください。</FieldDescription>
+      <Textarea id="textarea-message" placeholder="ここにメッセージを入力してください。" />
     </Field>
   )
 }

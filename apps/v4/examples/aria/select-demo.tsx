@@ -9,22 +9,22 @@ import {
 } from "@/components/ui/aria/select"
 
 const items = [
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
-  { label: "Grapes", value: "grapes" },
-  { label: "Pineapple", value: "pineapple" },
+  { label: "リンゴ", value: "apple" },
+  { label: "バナナ", value: "banana" },
+  { label: "ブルーベリー", value: "blueberry" },
+  { label: "ぶどう", value: "grapes" },
+  { label: "パイナップル", value: "pineapple" },
 ]
 
 export function SelectDemo() {
   return (
-    <Select placeholder="Select a fruit" className="w-full max-w-48">
+    <Select placeholder="フルーツを選択" className="w-full max-w-48">
       <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>フルーツ</SelectLabel>
           {items.map((item) => (
             <SelectItem key={item.value} id={item.value}>
               {item.label}

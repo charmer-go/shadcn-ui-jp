@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/base/badge"
 export function BadgeAsLink() {
   return (
     <Badge render={<a href="#link" />}>
-      Open Link <ArrowUpRightIcon data-icon="inline-end" />
+      リンクを開く <ArrowUpRightIcon data-icon="inline-end" />
     </Badge>
   )
 }

@@ -17,19 +17,19 @@ const images = [
     name: "workspace.png",
     meta: "PNG · 820 KB",
     src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
-    alt: "Workspace",
+    alt: "ワークスペース",
   },
   {
     name: "desk-reference.jpg",
     meta: "JPG · 1.1 MB",
     src: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80",
-    alt: "Desk",
+    alt: "デスク",
   },
   {
     name: "office-reference.jpg",
     meta: "JPG · 940 KB",
     src: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80",
-    alt: "Office",
+    alt: "オフィス",
   },
 ]
 
@@ -55,10 +55,10 @@ export function AttachmentDemo() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>sales-dashboard.pdf</AttachmentTitle>
-          <AttachmentDescription>Uploading · 64%</AttachmentDescription>
+          <AttachmentDescription>アップロード中 · 64%</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Cancel upload">
+          <AttachmentAction aria-label="アップロードをキャンセル">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -72,7 +72,7 @@ export function AttachmentDemo() {
           <AttachmentDescription>TypeScript · 12 KB</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove message-renderer.tsx">
+          <AttachmentAction aria-label="message-renderer.tsxを削除">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>

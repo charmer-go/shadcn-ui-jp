@@ -23,7 +23,7 @@ export function DatePickerDemo() {
           data-empty={!date}
           className="w-[212px] justify-between text-left font-normal data-[empty=true]:text-muted-foreground"
         >
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          {date ? format(date, "PPP") : <span>日付を選択</span>}
           <ChevronDownIcon />
         </Button>
       </PopoverTrigger>

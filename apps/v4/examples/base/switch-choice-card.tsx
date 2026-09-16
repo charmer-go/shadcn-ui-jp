@@ -14,10 +14,9 @@ export function SwitchChoiceCard() {
       <FieldLabel htmlFor="switch-share">
         <Field orientation="horizontal">
           <FieldContent>
-            <FieldTitle>Share across devices</FieldTitle>
+            <FieldTitle>デバイス間で共有</FieldTitle>
             <FieldDescription>
-              Focus is shared across devices, and turns off when you leave the
-              app.
+              フォーカスはデバイス間で共有され、アプリを終了すると自動的にオフになります。
             </FieldDescription>
           </FieldContent>
           <Switch id="switch-share" />
@@ -26,9 +25,9 @@ export function SwitchChoiceCard() {
       <FieldLabel htmlFor="switch-notifications">
         <Field orientation="horizontal">
           <FieldContent>
-            <FieldTitle>Enable notifications</FieldTitle>
+            <FieldTitle>通知を有効にする</FieldTitle>
             <FieldDescription>
-              Receive notifications when focus mode is enabled or disabled.
+              フォーカスモードの有効・無効が切り替わったときに通知を受け取ります。
             </FieldDescription>
           </FieldContent>
           <Switch id="switch-notifications" defaultChecked />

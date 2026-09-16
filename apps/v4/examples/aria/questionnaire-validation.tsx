@@ -41,7 +41,7 @@ const questionnaireSchema = z
       context.addIssue({
         code: z.ZodIssueCode.custom,
         message:
-          "Public answers need enough context. Choose a complete answer.",
+          "公開する回答には十分な文脈が必要です。完全な回答を選択してください。",
         path: ["detail"],
       })
     }
@@ -88,8 +88,8 @@ export function QuestionnaireValidation() {
 
     if (result.success) {
       setErrors({})
-      toast("Agent response configured", {
-        description: `Detail: ${result.data.detail} · Audience: ${result.data.audience}`,
+      toast("エージェントの応答を設定しました", {
+        description: `詳細度: ${result.data.detail} ・ 対象: ${result.data.audience}`,
       })
       return
     }
@@ -129,10 +129,10 @@ export function QuestionnaireValidation() {
         >
           <CardHeader>
             <QuestionnaireTitle>
-              How much detail should the answer include?
+              回答にはどの程度の詳細を含めるべきですか？
             </QuestionnaireTitle>
             <QuestionnaireDescription>
-              Choose the response depth.
+              回答の詳細度を選択してください。
             </QuestionnaireDescription>
             <CardAction>
               <ValidationProgress />
@@ -144,13 +144,13 @@ export function QuestionnaireValidation() {
                 value="summary"
                 onChange={() => clearError("detail")}
               >
-                Concise summary
+                簡潔な要約
               </QuestionnaireChoice>
               <QuestionnaireChoice
                 value="complete"
                 onChange={() => clearError("detail")}
               >
-                Complete answer
+                完全な回答
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError>{errors.detail}</QuestionnaireError>
@@ -163,9 +163,9 @@ export function QuestionnaireValidation() {
           required
         >
           <CardHeader>
-            <QuestionnaireTitle>Who will read the answer?</QuestionnaireTitle>
+            <QuestionnaireTitle>誰がこの回答を読みますか？</QuestionnaireTitle>
             <QuestionnaireDescription>
-              Public answers require complete context.
+              公開する回答には完全な文脈が必要です。
             </QuestionnaireDescription>
             <CardAction>
               <ValidationProgress />
@@ -177,13 +177,13 @@ export function QuestionnaireValidation() {
                 value="team"
                 onChange={() => clearError("audience")}
               >
-                My team
+                自分のチーム
               </QuestionnaireChoice>
               <QuestionnaireChoice
                 value="public"
                 onChange={() => clearError("audience")}
               >
-                Public audience
+                一般公開
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError>{errors.audience}</QuestionnaireError>
@@ -193,8 +193,8 @@ export function QuestionnaireValidation() {
         <CardFooter>
           <QuestionnaireActions>
             <QuestionnairePrevious />
-            <QuestionnaireNext>Next</QuestionnaireNext>
-            <QuestionnaireSubmit>Validate answers</QuestionnaireSubmit>
+            <QuestionnaireNext>次へ</QuestionnaireNext>
+            <QuestionnaireSubmit>回答を検証</QuestionnaireSubmit>
           </QuestionnaireActions>
         </CardFooter>
       </Card>

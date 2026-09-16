@@ -5,7 +5,7 @@ export function ProgressWithLabel() {
   return (
     <Field className="w-full max-w-sm">
       <FieldLabel htmlFor="progress-upload">
-        <span>Upload progress</span>
+        <span>アップロードの進行状況</span>
         <span className="ml-auto">66%</span>
       </FieldLabel>
       <Progress value={66} id="progress-upload" />

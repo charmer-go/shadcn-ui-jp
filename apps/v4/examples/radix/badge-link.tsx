@@ -6,7 +6,7 @@ export function BadgeAsLink() {
   return (
     <Badge asChild>
       <a href="#link">
-        Open Link <ArrowUpRightIcon data-icon="inline-end" />
+        リンクを開く <ArrowUpRightIcon data-icon="inline-end" />
       </a>
     </Badge>
   )

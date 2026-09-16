@@ -14,29 +14,29 @@ export function InputGroupWithButtons() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="input-button-13">Button</FieldLabel>
+        <FieldLabel htmlFor="input-button-13">ボタン</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-button-13" />
           <InputGroupAddon>
-            <InputGroupButton>Default</InputGroupButton>
+            <InputGroupButton>デフォルト</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-14" />
           <InputGroupAddon>
-            <InputGroupButton variant="outline">Outline</InputGroupButton>
+            <InputGroupButton variant="outline">アウトライン</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-15" />
           <InputGroupAddon>
-            <InputGroupButton variant="secondary">Secondary</InputGroupButton>
+            <InputGroupButton variant="secondary">セカンダリ</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-16" />
           <InputGroupAddon align="inline-end">
-            <InputGroupButton variant="secondary">Button</InputGroupButton>
+            <InputGroupButton variant="secondary">ボタン</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>

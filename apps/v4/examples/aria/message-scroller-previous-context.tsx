@@ -49,30 +49,30 @@ const DEFAULT_PEEK = 64
 
 const chat = createChat()
   .user(
-    "I'm building a chat for our app and the scroll behavior is driving me nuts. Every time the AI streams a reply, the whole thread jumps around."
+    "アプリにチャットを組み込んでいるのですが、AIが返信をストリーミングするたびに会話全体が飛び回ってしまい、スクロールの挙動に困っています"
   )
   .sleep(1000)
   .assistant(
-    "That's the classic streaming scroll problem. Wrap your message list in `MessageScroller` and turn on `autoScroll` — the viewport pins to the bottom as tokens arrive, so users always see the latest text land in place.\n\nThe important part: it only auto-scrolls while the reader is already at the bottom. The moment they scroll up to read something earlier, auto-scroll backs off and their position is preserved. You get smooth streaming without fighting the user's intent."
+    "ストリーミング時によくあるスクロール問題なので、メッセージ一覧を `MessageScroller` で囲み、`autoScroll` を有効にすると、トークンが届くたび表示領域が下端に固定され、常に最新のテキストを確認できます\n\n閲覧者が下端にいるときだけ自動スクロールするため、過去の内容を読むために上へスクロールすると位置を保持し、ユーザーの操作を邪魔せず滑らかなストリーミングを実現できます"
   )
   .user(
-    "Okay, but when someone sends a new message the view still feels jarring — like the whole conversation reloads from the top."
+    "なるほど、でも新しいメッセージを送ると会話全体が先頭から再読み込みされたように大きく動いてしまいます"
   )
   .sleep(1000)
   .assistant(
-    "MessageScrollerItem fixes that with turn anchoring. Set `scrollAnchor` on the turn that should settle near the top instead of blindly snapping to the document bottom.\n\nIt also leaves a small peek of the previous exchange visible above the anchor, so context isn't lost. The reply starts in view without that disorienting jump you get from a plain overflow container."
+    "`MessageScrollerItem` のターンアンカーを使うと、ドキュメントの下端へ無条件に移動する代わりに、上部付近で固定したいターンに `scrollAnchor` を設定できます\n\nアンカーの上には直前のやり取りが少し見えるため文脈も失われず、通常のオーバーフローコンテナで起きる不自然なジャンプなしに返信を表示できます"
   )
   .user(
-    "And if they've scrolled up to re-read an older answer? I don't want to yank them back down."
+    "過去の回答を読み直すために上へスクロールした場合、下端へ強制的に戻らないようにできますか？"
   )
   .sleep(1000)
   .assistant(
-    "You won't. Auto-scroll only runs when the viewport is already pinned to the bottom, so scrolling up is a deliberate opt-out — their place in the thread stays put even as new tokens keep arriving below.\n\nWhen there is content they haven't seen yet, `MessageScrollerButton` appears at the bottom of the viewport. One tap jumps them back to the newest message and re-engages auto-scroll. Same pattern as Slack or iMessage: quiet when you're caught up, helpful when you're not."
+    "上へスクロールすると自動スクロールが解除されるため、下で新しいトークンが届き続けても読んでいる位置はそのままです\n\n未読のコンテンツがあると表示領域の下部に `MessageScrollerButton` が表示され、1回タップすれば最新のメッセージへ移動して自動スクロールを再開でき、SlackやiMessageと同じ考え方で追いついているときは静かに、必要なときだけ案内します"
   )
-  .user("Last one — does this work with assistive tech?")
+  .user("最後に、支援技術でも動作しますか？")
   .sleep(1000)
   .assistant(
-    '`MessageScrollerContent` sets `role="log"` and `aria-relevant="additions"` by default, so screen readers announce new messages as they stream in.\n\nThe scroll button is a real `<button>` with an sr-only label, and it\'s removed from the tab order when you\'re already at the bottom — no ghost focus stops.'
+    '`MessageScrollerContent` はデフォルトで `role="log"` と `aria-relevant="additions"` を設定するため、スクリーンリーダーは新しいメッセージをストリーミング中に読み上げます\n\nスクロールボタンは実際の `<button>` 要素で、スクリーンリーダー専用のラベルを備え、すでに下端にいる場合はタブ移動の対象から外れるため、意図しないフォーカス停止も起きません'
   )
 const initialMessages = chat.get(2)
 const transport = chat.transport({ delayMs: 35 })
@@ -96,16 +96,16 @@ export function MessageScrollerPreviousContext() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Keeping Context Visible</CardTitle>
+            <CardTitle>文脈を見えるままに保つ</CardTitle>
             <CardDescription>
-              New turns keep part of the previous reply in view.
+              新しいターンでも、直前の返信の一部が見えたままになります。
             </CardDescription>
             <CardAction>
               <TooltipTrigger>
                 <Button
                   variant="outline"
                   size="icon"
-                  aria-label="Reset context example"
+                  aria-label="文脈の例をリセット"
                   isDisabled={isBusy}
                   onPress={() => {
                     setMessages(initialMessages)
@@ -116,7 +116,7 @@ export function MessageScrollerPreviousContext() {
                   <RotateCwIcon />
                 </Button>
                 <Tooltip>
-                  <p>Reset</p>
+                  <p>リセット</p>
                 </Tooltip>
               </TooltipTrigger>
             </CardAction>
@@ -161,7 +161,7 @@ export function MessageScrollerPreviousContext() {
                       getMessageText(nextMessage)
                     ) : (
                       <span className="text-muted-foreground">
-                        No messages queued. Reset the context.
+                        送信待ちのメッセージはありません。文脈をリセットしてください。
                       </span>
                     )}
                   </span>
@@ -169,7 +169,7 @@ export function MessageScrollerPreviousContext() {
                 <InputGroupAddon align="block-end" className="pt-1">
                   <DropdownMenuTrigger>
                     <InputGroupButton
-                      aria-label="Add files"
+                      aria-label="ファイルを追加"
                       type="button"
                       size="icon-sm"
                       variant="outline"
@@ -179,20 +179,20 @@ export function MessageScrollerPreviousContext() {
                     <DropdownMenu placement="top start" className="w-44">
                       <DropdownMenuItem>
                         <PaperclipIcon />
-                        Add Photos & Files
+                        写真とファイルを追加
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem>
                         <ImageIcon />
-                        Create Image
+                        画像を作成
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <TelescopeIcon />
-                        Deep Research
+                        詳細リサーチ
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <GlobeIcon />
-                        Web Search
+                        Web検索
                       </DropdownMenuItem>
                     </DropdownMenu>
                   </DropdownMenuTrigger>
@@ -201,7 +201,7 @@ export function MessageScrollerPreviousContext() {
                       {peek}px
                     </span>
                     <Slider
-                      aria-label="Previous context peek"
+                      aria-label="直前の文脈のピーク"
                       value={[peek]}
                       minValue={64}
                       maxValue={128}
@@ -224,7 +224,7 @@ export function MessageScrollerPreviousContext() {
                     className="ml-auto"
                   >
                     <ArrowUpIcon />
-                    <span className="sr-only">Send</span>
+                    <span className="sr-only">送信</span>
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
@@ -232,7 +232,7 @@ export function MessageScrollerPreviousContext() {
           </CardFooter>
         </Card>
         <div className="px-0.5 text-center text-xs text-muted-foreground">
-          Adjust the slider and send. Observe the previous message peak
+          スライダーを調整して送信してください。直前のメッセージのピーク表示を確認できます
         </div>
       </div>
     </MessageScrollerProvider>

@@ -16,17 +16,17 @@ export function DropdownMenuRadioGroupDemo() {
 
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Open</Button>
+      <Button variant="outline">開く</Button>
       <DropdownMenu className="w-32">
         <DropdownMenuGroup
           selectionMode="single"
           selectedKeys={[position]}
           onSelectionChange={(keys) => setPosition([...keys][0] as string)}
         >
-          <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
-          <DropdownMenuItem id="top">Top</DropdownMenuItem>
-          <DropdownMenuItem id="bottom">Bottom</DropdownMenuItem>
-          <DropdownMenuItem id="right">Right</DropdownMenuItem>
+          <DropdownMenuLabel>パネルの位置</DropdownMenuLabel>
+          <DropdownMenuItem id="top">上</DropdownMenuItem>
+          <DropdownMenuItem id="bottom">下</DropdownMenuItem>
+          <DropdownMenuItem id="right">右</DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenu>
     </DropdownMenuTrigger>

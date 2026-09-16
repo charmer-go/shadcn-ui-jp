@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/radix/button"
 export default function ButtonAsChild() {
   return (
     <Button asChild>
-      <Link href="/login">Login</Link>
+      <Link href="/login">ログイン</Link>
     </Button>
   )
 }
