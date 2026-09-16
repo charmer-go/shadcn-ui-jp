@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "shadcn/ui",
+  name: "shadcn-ui-jp",
   url: "https://ui.shadcn.com",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
-    "組み合わせて使える、アクセシブルなコンポーネントを、考え抜かれたデフォルトで提供します。カスタマイズ、拡張し、自分のものにできるコードで、独自のコンポーネントライブラリを構築できます。",
+    "shadcn/ui の公式ドキュメントを日本語で読めるように翻訳した、 コミュニティ運営の非公式サイトです。",
   links: {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn-ui/ui",
