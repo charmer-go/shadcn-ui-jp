@@ -1,13 +1,13 @@
 # shadcn/ui
 
-A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.
+美しくデザインされたコンポーネントのセットです。カスタマイズや拡張を行い、その上に独自のものを構築できます。ここから始めて自分だけのものにカスタマイズしてください。オープンソース。オープンコード。**これを使用して独自のコンポーネントライブラリを構築してください**。
 
 ![hero](apps/v4/public/opengraph-image.png)
 
-## Documentation
+## ドキュメント
 
-Visit https://ui.shadcn.com/docs to view the documentation.
+ドキュメントを表示するには https://ui.shadcn.com/docs にアクセスしてください。
 
-## License
+## ライセンス
 
-Licensed under the [MIT license](./LICENSE.md).
+[MITライセンス](./LICENSE.md)の下でライセンスされています。
