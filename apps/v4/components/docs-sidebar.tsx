@@ -51,7 +51,13 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/changelog",
   },
 ]
-const EXCLUDED_SECTIONS = ["installation", "dark-mode", "changelog", "rtl"]
+const EXCLUDED_SECTIONS = [
+  "installation",
+  "dark-mode",
+  "changelog",
+  "rtl",
+  "shadcn-ui-jp",
+]
 const EXCLUDED_PAGES = ["/docs", "/docs/changelog", "/docs/rtl", "/docs/new"]
 
 function readScrollState() {
@@ -76,7 +82,7 @@ function saveScrollState(container: HTMLElement) {
         scrollTop: container.scrollTop,
       })
     )
-  } catch {}
+  } catch { }
 }
 
 function getActiveItem(container: HTMLElement) {
@@ -116,6 +122,9 @@ export function DocsSidebar({
   const pathname = usePathname()
   const currentBase = getCurrentBase(pathname)
   const contentRef = React.useRef<HTMLDivElement>(null)
+  const brandSection = tree.children.find(
+    (item) => item.$id === "shadcn-ui-jp"
+  )
 
   React.useLayoutEffect(() => {
     const container = contentRef.current
@@ -176,7 +185,32 @@ export function DocsSidebar({
         data-docs-sidebar-content=""
         className="w-(--sidebar-menu-width) scroll-fade scrollbar-none overflow-x-hidden pl-2.5"
       >
-        <SidebarGroup className="pt-12">
+        {brandSection?.type === "folder" && (
+          <SidebarGroup>
+            <SidebarGroupLabel className="font-medium text-muted-foreground">
+              {brandSection.name}
+            </SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu className="gap-0.5">
+                {getPagesFromFolder(brandSection, currentBase).map((page) => (
+                  <SidebarMenuItem key={page.url}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={page.url === pathname}
+                      className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
+                    >
+                      <Link href={page.url}>
+                        <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />
+                        {getPageDisplayName(page)}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
+        <SidebarGroup>
           <SidebarGroupLabel className="font-medium text-muted-foreground">
             Sections
           </SidebarGroupLabel>

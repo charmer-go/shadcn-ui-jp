@@ -72,6 +72,9 @@ export function MobileNav({
   const [open, setOpen] = React.useState(false)
   const pathname = usePathname()
   const currentBase = getCurrentBase(pathname)
+  const brandSection = tree?.children?.find(
+    (item) => item.$id === "shadcn-ui-jp"
+  )
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -125,6 +128,24 @@ export function MobileNav({
               ))}
             </div>
           </div>
+          {brandSection?.type === "folder" && (
+            <div className="flex flex-col gap-4">
+              <div className="text-sm font-medium text-muted-foreground">
+                {brandSection.name}
+              </div>
+              <div className="flex flex-col gap-3">
+                {getPagesFromFolder(brandSection, currentBase).map((page) => (
+                  <MobileLink
+                    key={page.url}
+                    href={page.url}
+                    onOpenChange={setOpen}
+                  >
+                    {getPageDisplayName(page)}
+                  </MobileLink>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="flex flex-col gap-4">
             <div className="text-sm font-medium text-muted-foreground">
               Sections
@@ -150,6 +171,9 @@ export function MobileNav({
           </div>
           <div className="flex flex-col gap-8">
             {tree?.children?.map((group, index) => {
+              if (group.$id === "shadcn-ui-jp") {
+                return null
+              }
               if (group.type === "folder") {
                 const pages = getPagesFromFolder(group, currentBase)
                 return (
