@@ -47,7 +47,7 @@ export function CommandMenu({
   const pathname =
     typeof window === "undefined" ? "/docs" : window.location.pathname
   const currentBase = getCurrentBase(pathname)
-  const { search, setSearch, query } = useDocsSearch({ type: "fetch" })
+  const { search, setSearch, query } = useDocsSearch({ type: "static" })
 
   const pageGroups = React.useMemo(
     () =>

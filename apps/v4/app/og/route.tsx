@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og"
 
+export const dynamic = "force-static"
+
 async function loadAssets(): Promise<
   { name: string; data: Buffer; weight: 400 | 600; style: "normal" }[]
 > {
@@ -35,10 +37,9 @@ async function loadAssets(): Promise<
   ]
 }
 
-export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const title = searchParams.get("title")
-  const description = searchParams.get("description")
+export async function GET() {
+  const title = "shadcn-ui-jp"
+  const description = "shadcn/ui の日本語ドキュメント"
 
   const [fonts] = await Promise.all([loadAssets()])
 
