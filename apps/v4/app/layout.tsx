@@ -22,10 +22,10 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn", "日本語"],
   authors: [
     {
-      name: "shadcn",
+      name: "Charmers",
       url: "https://shadcn.com",
     },
   ],
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/opengraph-image.png`],
-    creator: "@shadcn",
+    creator: "@charmers_run",
   },
   icons: {
     icon: "/favicon.ico",
