@@ -55,7 +55,11 @@ export default function ChangelogPage() {
                   Changelog
                 </h1>
                 <Button variant="secondary" size="sm" asChild>
-                  <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://ui.shadcn.com/rss.xml"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <IconRss />
                     RSS
                   </a>
