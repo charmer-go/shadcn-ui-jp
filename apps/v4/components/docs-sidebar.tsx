@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/sidebar"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "はじめに", href: "/docs" },
+  { name: "導入", href: "/docs" },
   {
     name: "コンポーネント",
     href: "/docs/components",

@@ -5,7 +5,7 @@ export type PageTreeFolder = Extract<PageTreeNode, { type: "folder" }>
 export type PageTreePage = Extract<PageTreeNode, { type: "page" }>
 
 const ENGLISH_PAGE_NAMES: Record<string, string> = {
-  docs: "はじめに",
+  docs: "導入",
   "ai-sdk": "AI SDK",
   accordion: "Accordion",
   alert: "Alert",
@@ -95,7 +95,7 @@ const ENGLISH_PAGE_NAMES: Record<string, string> = {
   "llms.txt": "llms.txt",
   new: "New",
   official: "Official",
-  registry: "Registry",
+  registry: "導入",
   rtl: "RTL",
   skills: "Skills",
   theming: "テーマ",
