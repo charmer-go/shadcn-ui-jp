@@ -1,0 +1,157 @@
+---
+title: MCP サーバー
+description: レジストリ開発者向けの MCP サポート
+---
+
+[shadcn MCP サーバー](/docs/mcp)は shadcn 互換のレジストリであればそのまま動作します。レジストリ側で MCP サポートを有効にするために特別な対応は不要です。
+
+---
+
+## 前提条件
+
+MCP サーバーはレジストリインデックスをリクエストして動作します。レジストリのルートに `registry` という名前のレジストリアイテムファイルがあることを確認してください。
+
+たとえば、レジストリが `https://acme.com/r/[name].json` でホストされている場合、`https://acme.com/r/registry.json` にファイルが必要です。JSON 拡張子を使わない形式の場合は `https://acme.com/r/registry` にファイルを配置してください。
+
+このファイルは[レジストリスキーマ](/docs/registry/registry-json)に準拠した有効な JSON ファイルでなければなりません。
+
+---
+
+## MCP の設定
+
+レジストリ利用者に対し、`components.json` ファイルでレジストリを設定し、shadcn MCP サーバーをインストールするよう案内してください:
+
+<Tabs defaultValue="claude">
+  <TabsList>
+    <TabsTrigger value="claude">Claude Code</TabsTrigger>
+    <TabsTrigger value="cursor">Cursor</TabsTrigger>
+    <TabsTrigger value="vscode">VS Code</TabsTrigger>
+    <TabsTrigger value="codex">Codex</TabsTrigger>
+    <TabsTrigger value="opencode">OpenCode</TabsTrigger>
+  </TabsList>
+  <TabsContent value="claude" className="mt-4">
+    `components.json` ファイルで**レジストリを設定**します:
+
+    ```json title="components.json" showLineNumbers
+    {
+      "registries": {
+        "@acme": "https://acme.com/r/{name}.json"
+      }
+    }
+    ```
+
+    プロジェクトで**以下のコマンドを実行**します:
+
+    ```bash
+    npx shadcn@latest mcp init --client claude
+    ```
+
+    **Claude Code を再起動**して、以下のプロンプトを試してください:
+       - Show me the components in the acme registry
+       - Create a landing page using items from the acme registry
+
+    **注意:** Claude Code では `/mcp` コマンドで MCP サーバーをデバッグできます。
+
+  </TabsContent>
+
+  <TabsContent value="cursor" className="mt-4">
+    `components.json` ファイルで**レジストリを設定**します:
+
+    ```json title="components.json" showLineNumbers
+    {
+      "registries": {
+        "@acme": "https://acme.com/r/{name}.json"
+      }
+    }
+    ```
+    プロジェクトで**以下のコマンドを実行**します:
+       ```bash
+       npx shadcn@latest mcp init --client cursor
+       ```
+
+    **Cursor の設定**を開いて shadcn の MCP サーバーを**有効化**します。次に以下のプロンプトを試してください:
+       - Show me the components in the acme registry
+       - Create a landing page using items from the acme registry
+
+  </TabsContent>
+
+  <TabsContent value="vscode" className="mt-4">
+    `components.json` ファイルで**レジストリを設定**します:
+
+    ```json title="components.json" showLineNumbers
+    {
+      "registries": {
+        "@acme": "https://acme.com/r/{name}.json"
+      }
+    }
+    ```
+    プロジェクトで**以下のコマンドを実行**します:
+       ```bash
+       npx shadcn@latest mcp init --client vscode
+       ```
+
+    `.vscode/mcp.json` を開いて shadcn サーバーの横にある**開始**をクリックします。次に GitHub Copilot で以下のプロンプトを試してください:
+       - Show me the components in the acme registry
+       - Create a landing page using items from the acme registry
+
+  </TabsContent>
+
+  <TabsContent value="codex" className="mt-4">
+    `components.json` ファイルで**レジストリを設定**します:
+
+    ```json title="components.json" showLineNumbers
+    {
+      "registries": {
+        "@acme": "https://acme.com/r/{name}.json"
+      }
+    }
+    ```
+
+    `~/.codex/config.toml` に**以下の設定を追加**します:
+       ```toml
+       [mcp_servers.shadcn]
+       command = "npx"
+       args = ["shadcn@latest", "mcp"]
+       ```
+
+    **Codex を再起動**して、以下のプロンプトを試してください:
+       - Show me the components in the acme registry
+       - Create a landing page using items from the acme registry
+
+  </TabsContent>
+
+  <TabsContent value="opencode" className="mt-4">
+    `components.json` ファイルで**レジストリを設定**します:
+
+    ```json title="components.json" showLineNumbers
+    {
+      "registries": {
+        "@acme": "https://acme.com/r/{name}.json"
+      }
+    }
+    ```
+
+    プロジェクトで**以下のコマンドを実行**します:
+       ```bash
+       npx shadcn@latest mcp init --client opencode
+       ```
+
+    **OpenCode を再起動**して、以下のプロンプトを試してください:
+       - Show me the components in the acme registry
+       - Create a landing page using items from the acme registry
+
+  </TabsContent>
+</Tabs>
+
+MCP サーバーの詳細は [MCP ドキュメント](/docs/mcp)をご覧ください。
+
+---
+
+## ベストプラクティス
+
+MCP 対応レジストリ向けのベストプラクティスを紹介します:
+
+1. **明確な説明**: AI アシスタントがレジストリアイテムの用途や使い方を理解できるよう、簡潔で分かりやすい説明を追加します。
+2. **適切な依存関係**: MCP が自動インストールできるよう、すべての `dependencies` を正確に列挙します。
+3. **レジストリ依存関係**: アイテム間の関係を示すために `registryDependencies` を使用します。
+4. **一貫した命名**: コンポーネント名には kebab-case を使い、レジストリ全体で一貫性を保ちます。

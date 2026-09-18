@@ -1,0 +1,435 @@
+---
+title: API リファレンス
+description: レジストリ、スキーマ、プリセットを扱うためのプログラマティック API。
+---
+
+`shadcn` パッケージは CLI に加えて、プログラマティック API を公開しています。
+これらを使うと、レジストリアイテムの取得・解決・インストール、レジストリ JSON の検証、レジストリを基盤とした独自ツールの構築ができます。
+
+各 API は専用のサブパス import で利用できます。
+
+```ts
+import { getRegistryItems } from "shadcn/registry"
+import { registryItemSchema } from "shadcn/schema"
+```
+
+<Callout className="mt-6">
+  CLI コマンド自体は公開 API の一部ではありません。以下に記載された import
+  のみが安定版として扱われます。
+</Callout>
+
+## shadcn/registry
+
+設定済みのレジストリからアイテムを取得・解決します。
+
+多くの関数はオプションオブジェクトを受け取ります。以下の2つのオプションはすべてに共通です。以降の例で `config` とはこの任意の値を指します。ビルトインレジストリを使う場合は省略してください。
+
+### config
+
+- **Type:** `Partial<Config>`
+- **Default:** ビルトインレジストリのみ
+
+使用するレジストリ設定です。`registries` フィールドで名前空間（例: `@acme`）と URL、およびアクセスに必要な認証ヘッダーや環境変数を対応付けます。プロジェクトから読み込むには [`getRegistriesConfig`](#getregistriesconfig) を使用します。
+
+```ts showLineNumbers
+import { getRegistryItems } from "shadcn/registry"
+
+const items = await getRegistryItems(["@acme/login-form"], {
+  config: {
+    registries: {
+      "@acme": "https://acme.com/r/{name}.json",
+    },
+  },
+})
+```
+
+### useCache
+
+- **Type:** `boolean`
+- **Default:** `true`
+
+レジストリのレスポンスは**プロセスの存続期間中メモリにキャッシュ**され、解決済み URL をキーとします。処理中の Promise もキャッシュされるため、同一 URL への同時リクエストは1回の fetch にまとめられます。
+
+単発のスクリプトや CLI 実行では有効のままにしてください。レジストリがリクエスト間で変化する可能性があり、毎回最新のデータが必要な長時間実行プロセス（サーバー、ウォッチャー、MCP サーバー）では `false` に設定します。
+
+```ts
+const fresh = await getRegistry("@shadcn", { useCache: false })
+```
+
+### getRegistriesConfig
+
+プロジェクトディレクトリからレジストリ設定を読み込みます。`components.json` が存在する場合はそれを読み込み、存在しない場合は `package.json` のトップレベル `registries` フィールドを読み込みます。
+
+```ts showLineNumbers
+import { getRegistriesConfig } from "shadcn/registry"
+
+const config = await getRegistriesConfig(process.cwd())
+```
+
+### getRegistry
+
+単一のレジストリを名前で取得します。
+
+```ts showLineNumbers
+import { getRegistry } from "shadcn/registry"
+
+const registry = await getRegistry("@acme", {
+  config, // optional Partial<Config>
+  useCache: true,
+})
+```
+
+### getRegistryItems
+
+1つ以上のレジストリアイテムを修飾名で取得します。
+
+```ts showLineNumbers
+import { getRegistryItems } from "shadcn/registry"
+
+const items = await getRegistryItems(["@acme/button", "@acme/card"], {
+  config,
+  useCache: true,
+})
+```
+
+レジストリアイテムの配列を返します:
+
+```json showLineNumbers
+[
+  {
+    "name": "button",
+    "type": "registry:ui",
+    "dependencies": ["@radix-ui/react-slot"],
+    "files": [
+      {
+        "path": "ui/button.tsx",
+        "type": "registry:ui",
+        "content": "..."
+      }
+    ]
+  }
+]
+```
+
+### resolveRegistryItems
+
+複数のアイテムをレジストリ依存関係とともに解決し、1つのツリーにまとめます。アイテムをリストとして返す [`getRegistryItems`](#getregistryitems) とは異なり、各アイテムの `registryDependencies` をたどり、ファイル・依存関係・CSS 変数などすべてをフラット化して1つのインストール可能なオブジェクトにまとめます。
+
+```ts showLineNumbers
+import { resolveRegistryItems } from "shadcn/registry"
+
+const tree = await resolveRegistryItems(
+  ["@acme/button", "@acme/card", "@acme/dialog"],
+  { config }
+)
+```
+
+マージ済みの単一ツリーを返します:
+
+```json showLineNumbers
+{
+  "dependencies": ["@radix-ui/react-slot", "@radix-ui/react-dialog"],
+  "files": [
+    { "path": "ui/button.tsx", "type": "registry:ui", "content": "..." },
+    { "path": "ui/card.tsx", "type": "registry:ui", "content": "..." },
+    { "path": "ui/dialog.tsx", "type": "registry:ui", "content": "..." }
+  ],
+  "cssVars": {
+    "theme": {
+      "font-heading": "Poppins, sans-serif"
+    },
+    "light": {
+      "brand": "oklch(0.205 0.015 18)"
+    },
+    "dark": {
+      "brand": "oklch(0.205 0.015 18)"
+    }
+  },
+  "docs": ""
+}
+```
+
+### addRegistryItems
+
+レジストリアイテムを解決して既存プロジェクトにインストールします。これは `shadcn add` と同等のプログラマティックな処理で、アイテムが宣言するファイル・パッケージ依存関係・環境変数・CSS・Tailwind 設定を適用します。
+
+```ts showLineNumbers
+import { addRegistryItems, getRegistriesConfig } from "shadcn/registry"
+
+const cwd = process.cwd()
+const config = await getRegistriesConfig(cwd)
+
+await addRegistryItems(["@acme/agent"], {
+  cwd,
+  config,
+  overwrite: false,
+  silent: true,
+})
+```
+
+`addRegistryItems` はプロジェクト設定ファイル自体を読み込みません。[`getRegistriesConfig`](#getregistriesconfig) の結果を渡すか、`config` を直接指定してください。要求されたすべてのアイテムと依存関係がユニバーサル（ファイルがすべて明示的なターゲットを宣言する `registry:item` または `registry:file`）である場合、`registries` のみを含む設定で十分です。それ以外のアイテムには、エイリアスや `resolvedPaths` を含む完全な解決済みプロジェクト設定が必要です。アイテムや依存関係が参照するすべてのカスタムレジストリ名前空間は `config` に含まれていなければなりません。
+
+この関数はプロセスを終了する代わりにエラーをスローし、プロンプトを表示しません。既存ファイルは `overwrite` が有効でない限りスキップされ、npm では React 19 の peer dependency 競合に対して `--force` が使われます。
+
+### getRegistries
+
+レジストリディレクトリを取得します。
+
+```ts showLineNumbers
+import { getRegistries } from "shadcn/registry"
+
+const registries = await getRegistries({ useCache: true })
+```
+
+レジストリエントリの配列を返します:
+
+```json
+[
+  {
+    "name": "@shadcn",
+    "url": "https://ui.shadcn.com/r/{name}.json",
+    "homepage": "https://ui.shadcn.com"
+  }
+]
+```
+
+### searchRegistries
+
+1つ以上のレジストリをあいまい一致で横断検索します。
+
+```ts showLineNumbers
+import { searchRegistries } from "shadcn/registry"
+
+const results = await searchRegistries(["@shadcn"], {
+  query: "button",
+  types: ["registry:component"],
+  limit: 100,
+  offset: 0,
+  config,
+  continueOnError: true, // skip (don't throw on) registries that fail to load
+})
+```
+
+ページネーションのメタデータでラップされた一致アイテムを返します:
+
+```json
+{
+  "pagination": { "total": 1, "offset": 0, "limit": 100, "hasMore": false },
+  "items": [
+    {
+      "name": "button",
+      "title": "Button",
+      "type": "registry:ui",
+      "description": "A button component.",
+      "registry": "@shadcn",
+      "addCommandArgument": "@shadcn/button"
+    }
+  ]
+}
+```
+
+### loadRegistry
+
+ディスク上のローカル `registry.json` ファイルを読み込み、`include` 参照をたどって解決し、レジストリカタログを返します。
+
+```ts showLineNumbers
+import { loadRegistry } from "shadcn/registry"
+
+const catalog = await loadRegistry({
+  cwd: process.cwd(), // defaults to process.cwd()
+  registryFile: "registry.json", // defaults to "registry.json"
+})
+```
+
+返されるカタログはすべてのアイテムを列挙しますが、**ファイル内容は省略**されます。これはビルド済み `registry.json` インデックスと同様です。
+
+<Callout className="mt-6" title="getRegistry との違いは？">
+  [`getRegistry`](#getregistry)
+  は**リモート**のレジストリをネットワーク経由で取得します（名前空間・URL・GitHub
+  アドレスで指定）。提供されるカタログはすでにフラット化されていることを前提とし、`include`
+  が残るカタログは拒否します。`loadRegistry` はディスク上の**ローカル**
+  `registry.json` を読み込み、`include` 参照を自身で解決します。
+</Callout>
+
+### loadRegistryItem
+
+ローカル `registry.json` から単一アイテムを名前で読み込みます。ファイル内容はディスクから読み込んでインライン化されます。
+
+```ts showLineNumbers
+import { loadRegistryItem } from "shadcn/registry"
+
+const item = await loadRegistryItem("login-form", { cwd: process.cwd() })
+```
+
+ファイル内容を含む完全に解決済みのレジストリアイテムを返します:
+
+```json
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-form",
+  "type": "registry:component",
+  "files": [
+    {
+      "path": "registry/new-york/login-form.tsx",
+      "type": "registry:component",
+      "content": "..."
+    }
+  ]
+}
+```
+
+<Callout className="mt-6" title="getRegistryItems との違いは？">
+  [`getRegistryItems`](#getregistryitems)
+  は**リモート**のレジストリからネットワーク経由でアイテムを解決します。`loadRegistryItem`
+  は**ローカル**のソースファイルから1つのアイテムをオンデマンドで構築し、各ファイルをディスクから読み込みます。`registry-item.json`
+  レスポンスを提供する動的ルートで使用します。
+</Callout>
+
+### エラー
+
+すべてのレジストリ関数は `RegistryError` を継承した型付きエラーをスローします。`RegistryErrorCode` enum または `instanceof` チェックで処理できます。
+
+```ts showLineNumbers
+import { RegistryError, RegistryNotFoundError } from "shadcn/registry"
+
+try {
+  await getRegistry("@unknown")
+} catch (error) {
+  if (error instanceof RegistryNotFoundError) {
+    // handle missing registry
+  }
+}
+```
+
+利用可能なエラークラス:
+
+- `RegistryError`
+- `RegistryNotFoundError`
+- `RegistryUnauthorizedError`
+- `RegistryForbiddenError`
+- `RegistryFetchError`
+- `RegistryNotConfiguredError`
+- `RegistryLocalFileError`
+- `RegistryParseError`
+- `RegistryValidationError`
+- `RegistryItemNotFoundError`
+- `RegistriesIndexParseError`
+- `RegistryMissingEnvironmentVariablesError`
+- `RegistryInvalidNamespaceError`
+
+## shadcn/schema
+
+`registry.json`、`registry-item.json`、`components.json` の検証に使う Zod スキーマです。独自ツールでレジストリデータを検証する際に便利です。
+
+```ts
+import { registryItemSchema, registrySchema } from "shadcn/schema"
+
+const result = registryItemSchema.safeParse(json)
+if (!result.success) {
+  console.error(result.error)
+}
+```
+
+主なスキーマ:
+
+- `registrySchema`
+- `registryItemSchema`
+- `registryItemFileSchema`
+- `registryItemTypeSchema`
+- `registryItemCssVarsSchema`
+- `registryItemTailwindSchema`
+- `registryBaseColorSchema`
+- `configSchema`
+- `presetSchema`
+
+推論型もあわせてエクスポートされています:
+
+- `Registry`
+- `RegistryItem`
+- `RegistryBaseItem`
+- `RegistryFontItem`
+- `Preset`
+- `ConfigJson`
+
+## shadcn/preset
+
+テーマプリセットのエンコード・デコード・検証、およびテーマエディターで使うプリセットオプション定数です。
+
+### encodePreset
+
+`Partial<PresetConfig>` を短い URL セーフなプリセットコードにエンコードします。省略したフィールドは `DEFAULT_PRESET_CONFIG` にフォールバックします。
+
+```ts showLineNumbers
+import { encodePreset } from "shadcn/preset"
+
+const code = encodePreset({
+  style: "vega",
+  baseColor: "stone",
+  theme: "blue",
+  radius: "large",
+  font: "geist",
+})
+```
+
+バージョン接頭辞付きの文字列を返します:
+
+```ts showLineNumbers
+"bJ4FLU0"
+```
+
+### decodePreset
+
+プリセットコードを完全な `PresetConfig` にデコードします。コードが存在しない、または無効な場合は `null` を返します。
+
+```ts showLineNumbers
+import { decodePreset } from "shadcn/preset"
+
+const config = decodePreset("bJ4FLU0")
+```
+
+解決済みの設定を返します（省略したフィールドはデフォルト値で補完されます）:
+
+```json
+{
+  "style": "vega",
+  "baseColor": "stone",
+  "theme": "blue",
+  "chartColor": "neutral",
+  "iconLibrary": "lucide",
+  "font": "geist",
+  "fontHeading": "inherit",
+  "radius": "large",
+  "menuAccent": "subtle",
+  "menuColor": "default"
+}
+```
+
+```ts
+decodePreset("not-a-code") // null
+```
+
+### その他のエクスポート
+
+コードの検証やランダムプリセット生成のための追加関数です:
+
+- `isPresetCode`
+- `isValidPreset`
+- `generateRandomConfig`
+- `generateRandomPreset`
+- `toBase62`
+- `fromBase62`
+
+定数:
+
+- `PRESET_BASES`
+- `PRESET_STYLES`
+- `PRESET_BASE_COLORS`
+- `PRESET_THEMES`
+- `PRESET_ICON_LIBRARIES`
+- `PRESET_FONTS`
+- `PRESET_FONT_HEADINGS`
+- `PRESET_RADII`
+- `PRESET_MENU_ACCENTS`
+- `PRESET_MENU_COLORS`
+- `PRESET_CHART_COLORS`
+- `DEFAULT_PRESET_CONFIG`

@@ -1,0 +1,165 @@
+---
+title: 動的検索
+description: 大規模レジストリ向けにサーバーサイド検索を実装します。
+---
+
+デフォルトでは、`shadcn search` は `registry.json` 全体を取得してローカルでアイテムを絞り込みます。これはほとんどのレジストリでうまく動作し、静的ファイル以外に必要なものはありません。
+
+数千件のアイテムを持つ大規模レジストリでは、代わりにレジストリサーバー側で検索を実装できます。CLI は検索パラメーターをレジストリに転送し、サーバーは一致したアイテムのみを返します。
+
+動的検索はオプトインで、完全な後方互換性があります。静的レジストリは変更なしで動作し続けます。
+
+## 仕組み
+
+`shadcn search` を実行すると、CLI はカタログリクエストに検索パラメーターを付加します:
+
+```bash
+npx shadcn@latest search @acme --query button --limit 50
+```
+
+```txt
+GET https://acme.com/r/registry.json?q=button&limit=50&offset=0
+```
+
+その後の動作はレジストリによって異なります:
+
+- **静的レジストリ**はクエリパラメーターを無視して完全な `registry.json` を返します。CLI がローカルでアイテムを絞り込みます。これがデフォルトの動作で、変更は不要です。
+- **動的レジストリ**はサーバーサイドでアイテムを絞り込み、一致したアイテムを `pagination` オブジェクトとともに返します。レスポンスに `pagination` が含まれている場合、CLI は結果が事前に絞り込まれているものとして信頼し、ローカルでの絞り込みをスキップします。
+
+レスポンスに `pagination` が存在することが、レジストリがサーバーサイドで検索を処理していることを CLI に伝えます。設定や機能ネゴシエーションは不要です。
+
+## クエリパラメーター
+
+CLI はすべての検索リクエストに以下のクエリパラメーターを付けて送信します:
+
+| Parameter | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| `q`       | 検索クエリ文字列です。                                               |
+| `type`    | カンマ区切りのアイテム種別です（例: `registry:ui,registry:block`）。 |
+| `limit`   | 返すアイテムの最大数です。                                           |
+| `offset`  | スキップするアイテム数です。                                         |
+
+すべてのパラメーターは任意です。`q` や `type` のないリクエストでは、すべてのアイテムをページ分割して返す必要があります。
+
+## レスポンス形式
+
+通常の `registry.json` の形式に `pagination` オブジェクトを追加して返します:
+
+```json title="registry.json?q=button&limit=2"
+{
+  "name": "acme",
+  "homepage": "https://acme.com",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "description": "A button component."
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "description": "A button component with an icon."
+    }
+  ],
+  "pagination": {
+    "total": 12,
+    "offset": 0,
+    "limit": 2,
+    "hasMore": true
+  }
+}
+```
+
+検索結果の各アイテムには `name`、`type`、`description` のみが必要です。`files`、`dependencies`、その他のアイテムプロパティを含める必要はありません。ユーザーが `shadcn add` を実行した際に、CLI がアイテムの完全な定義を取得します。
+
+### pagination
+
+| Property  | Type      | Description                                    |
+| --------- | --------- | ---------------------------------------------- |
+| `total`   | `number`  | クエリに一致したアイテムの総数です。           |
+| `offset`  | `number`  | スキップしたアイテム数です。                   |
+| `limit`   | `number`  | このレスポンスに含まれるアイテムの最大数です。 |
+| `hasMore` | `boolean` | このページ以降にもアイテムがあるかどうかです。 |
+
+## サーバー実装
+
+Next.js のルートハンドラーを使った例を紹介します:
+
+```typescript title="app/r/registry.json/route.ts"
+import { NextRequest, NextResponse } from "next/server"
+
+export async function GET(request: NextRequest) {
+  const { searchParams } = request.nextUrl
+
+  const query = searchParams.get("q")
+  const types = searchParams.get("type")?.split(",")
+  const limit = Number(searchParams.get("limit") ?? 100)
+  const offset = Number(searchParams.get("offset") ?? 0)
+
+  // Filter items using your database or search index.
+  const { items, total } = await searchItems({ query, types, limit, offset })
+
+  return NextResponse.json({
+    name: "acme",
+    homepage: "https://acme.com",
+    items,
+    pagination: {
+      total,
+      offset,
+      limit,
+      hasMore: offset + limit < total,
+    },
+  })
+}
+```
+
+`searchItems` の実装には何でも使えます。データベースクエリ、全文検索インデックス、外部検索サービスなどです。
+
+## 複数レジストリ
+
+単一レジストリを検索する場合、CLI はすべてのパラメーターを転送し、`pagination` レスポンスをそのまま使用します。
+
+`shadcn search @acme @lib` のように複数レジストリを同時に検索する場合、グローバルな `offset` をレジストリごとに分割できません。CLI は各レジストリに `q` と `type` を転送し、要求されたページを埋められるだけの十分な `limit`（`offset + limit`）を付けて送信します。その後、結合した結果をローカルでマージ・ページ分割します。サーバーサイドでの絞り込みは引き続き適用されるため、各レジストリは一致したアイテムのみを返します。
+
+レジストリが1レスポンスあたりのアイテム数を要求された `limit` より少なく制限している場合、CLI は深いページではそのレジストリを使い切ったものとして扱います。ページングですべての一致結果に到達できるよう、可能な限り要求された `limit` を尊重してください。
+
+## 認証
+
+動的検索はすべての[認証](/docs/registry/authentication)パターンで動作します。CLI は検索リクエストに設定済みのヘッダーとパラメーターを付けて送信するため、認証済みユーザーごとに検索結果を絞り込めます:
+
+```typescript title="app/r/registry.json/route.ts"
+export async function GET(request: NextRequest) {
+  const token = request.headers.get("authorization")?.replace("Bearer ", "")
+  const team = await getTeamFromToken(token)
+
+  // Only search items this team can access.
+  const { items, total } = await searchItems({
+    query: request.nextUrl.searchParams.get("q"),
+    team,
+  })
+
+  // ...
+}
+```
+
+## 後方互換性
+
+- **静的レジストリ**は変更不要です。静的ファイルへのクエリパラメーターはファイルサーバーに無視され、CLI はローカルでの絞り込みにフォールバックします。
+- **古い CLI バージョン**はクエリパラメーターなしでカタログを取得し、`pagination` フィールドを無視します。レジストリはパラメーターなしのリクエストに対して妥当なデフォルトレスポンス（例: アイテムの最初のページ）を返すべきです。
+- **ランキング**はサーバーに委ねられます。レジストリが事前に絞り込んだ結果を返す場合、CLI はローカルで再ランキングせず順序を保持します。
+
+## テスト
+
+`curl` で動的レジストリをテストします:
+
+```bash
+curl "https://acme.com/r/registry.json?q=button&limit=10"
+```
+
+次に CLI で確認します:
+
+```bash
+npx shadcn@latest search @acme --query button
+```
+
+サーバーサイド検索が有効であることを確認するには、レスポンスに `pagination` オブジェクトが含まれ、一致したアイテムのみが返されていることを確認してください。

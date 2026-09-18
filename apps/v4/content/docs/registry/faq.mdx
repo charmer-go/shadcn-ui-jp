@@ -1,0 +1,127 @@
+---
+title: よくある質問
+description: レジストリの運用に関するよくある質問です。
+---
+
+## よくある質問
+
+### 複雑なコンポーネントはどのような構成になりますか？
+
+以下は、ページ、2つのコンポーネント、フック、日付フォーマット用ユーティリティ、設定ファイルをインストールする複雑なコンポーネントの例です。
+
+```json showLineNumbers
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello-world",
+  "title": "Hello World",
+  "type": "registry:block",
+  "description": "A complex hello world component",
+  "files": [
+    {
+      "path": "registry/new-york/hello-world/page.tsx",
+      "type": "registry:page",
+      "target": "app/hello/page.tsx"
+    },
+    {
+      "path": "registry/new-york/hello-world/components/hello-world.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/hello-world/components/formatted-message.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "registry/new-york/hello-world/hooks/use-hello.ts",
+      "type": "registry:hook"
+    },
+    {
+      "path": "registry/new-york/hello-world/lib/format-date.ts",
+      "type": "registry:lib"
+    },
+    {
+      "path": "registry/new-york/hello-world/hello.config.ts",
+      "type": "registry:file",
+      "target": "~/hello.config.ts"
+    }
+  ]
+}
+```
+
+### 新しい Tailwind カラーを追加するにはどうすればよいですか？
+
+新しいカラーを追加するには、`cssVars` の `light` と `dark` キーの配下に追加します。
+
+```json showLineNumbers {10-18}
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello-world",
+  "title": "Hello World",
+  "type": "registry:block",
+  "description": "A complex hello world component",
+  "files": [
+    // ...
+  ],
+  "cssVars": {
+    "light": {
+      "brand-background": "oklch(0.205 0.015 18)",
+      "brand-accent": "oklch(0.205 0.015 18)"
+    },
+    "dark": {
+      "brand-background": "oklch(0.205 0.015 18)",
+      "brand-accent": "oklch(0.205 0.015 18)"
+    }
+  }
+}
+```
+
+CLI がプロジェクトの CSS ファイルを更新します。更新後、新しいカラーは `bg-brand` や `text-brand-accent` といったユーティリティクラスとして使用できるようになります。
+
+### `registryDependencies` の `button` が自分の GitHub リポジトリに解決されないのはなぜですか？
+
+ベア（短縮形）のレジストリ依存名は、従来の shadcn の動作を維持します。`button` は組み込みの shadcn の `button` アイテムを指します。
+
+GitHub リポジトリからの依存関係を指定する場合は、GitHub アイテムの完全なアドレスを使用してください。
+
+```json title="registry-item.json" showLineNumbers
+{
+  "registryDependencies": ["acme/ui/button"]
+}
+```
+
+### GitHub レジストリアイテムをピン留めするにはどうすればよいですか？
+
+GitHub アイテムのアドレスに `#ref` を追加します。ref にはブランチ、タグ、または完全なコミット SHA を指定できます。
+
+```bash
+npx shadcn@latest add acme/ui/button#v1.2.0
+```
+
+公開済みレジストリでは、タグまたは完全なコミット SHA の使用を推奨します。
+
+### GitHub レジストリアドレスでプライベートリポジトリを使用できますか？
+
+現在は対応していません。GitHub レジストリアドレスは公開された `github.com` リポジトリをサポートしています。プライベートレジストリについては、認証付き URL を使用する名前空間をご利用ください。
+
+### Tailwind のテーマ変数を追加・上書きするにはどうすればよいですか？
+
+テーマ変数を追加・上書きするには、追加・上書きしたいキーで `cssVars.theme` に追加します。
+
+```json showLineNumbers {10-15}
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hello-world",
+  "title": "Hello World",
+  "type": "registry:block",
+  "description": "A complex hello world component",
+  "files": [
+    // ...
+  ],
+  "cssVars": {
+    "theme": {
+      "text-base": "3rem",
+      "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "font-heading": "Poppins, sans-serif"
+    }
+  }
+}
+```
