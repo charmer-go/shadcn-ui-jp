@@ -1,16 +1,17 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { cn } from "cn"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
 
 import { META_THEME_COLORS, siteConfig } from "@/lib/config"
 import { DOCS_SIDEBAR_SCROLL_RESTORE_SCRIPT } from "@/lib/docs-sidebar-scroll"
 import { fontVariables } from "@/lib/fonts"
-import { ActiveThemeProvider } from "@/components/active-theme"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster as BaseToaster } from "@/components/ui/base/toast"
 import { TooltipProvider as BaseTooltipProvider } from "@/components/ui/base/tooltip"
 import { Toaster } from "@/components/ui/radix/sonner"
 import { TooltipProvider as RadixTooltipProvider } from "@/components/ui/radix/tooltip"
-import { Toaster as BaseToaster } from "@/components/ui/base/toast"
+import { ActiveThemeProvider } from "@/components/active-theme"
+import { ThemeProvider } from "@/components/theme-provider"
 
 import "@/app/globals.css"
 import "@/app/docs-typeset.css"
@@ -22,7 +23,20 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(siteConfig.url),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn", "日本語"],
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Components",
+    "shadcn",
+    "shadcn/ui",
+    "shadcn/ui 日本語",
+    "日本語ドキュメント",
+    "React UIコンポーネント",
+    "Tailwind CSS UIコンポーネント",
+    "Next.js UIコンポーネント",
+    "日本語",
+  ],
   authors: [
     {
       name: "Charmers",
@@ -81,12 +95,16 @@ export default function RootLayout({
       )}
     >
       <head>
-        <script
+        <Script
+          id="docs-sidebar-scroll-restore"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: DOCS_SIDEBAR_SCROLL_RESTORE_SCRIPT,
           }}
         />
-        <script
+        <Script
+          id="theme-color"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               try {
