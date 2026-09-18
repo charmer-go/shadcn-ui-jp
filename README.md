@@ -15,6 +15,16 @@ shadcn-ui-jp は、そのギャップを埋めるために立ち上げられた�
 ## 開発者
 Rion: https://github.com/ri0n-dev
 
+## Cloudflare Pagesへのデプロイ
+
+Cloudflare Wranglerでログインした状態で、次のコマンドを実行します。
+
+```bash
+pnpm pages:deploy
+```
+
+このコマンドは `apps/v4` を静的サイトとしてビルドし、生成された `apps/v4/out` をCloudflare Pagesの `shadcn-ui-jp` プロジェクトへデプロイします。
+
 ## ライセンス
 
 [MITライセンス](./LICENSE.md)に基づいて配布されています。
