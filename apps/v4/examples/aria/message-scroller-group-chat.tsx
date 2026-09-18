@@ -3,8 +3,8 @@
 import * as React from "react"
 import { RotateCwIcon } from "lucide-react"
 
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
-import { Button } from "@/styles/aria-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
+import { Button } from "@/components/ui/aria/button"
 import {
   Card,
   CardAction,
@@ -13,13 +13,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/aria-rhea/ui/card"
-import { Marker, MarkerContent } from "@/styles/aria-rhea/ui/marker"
+} from "@/components/ui/aria/card"
+import { Marker, MarkerContent } from "@/components/ui/aria/marker"
 import {
   Message,
   MessageContent,
   MessageHeader,
-} from "@/styles/aria-rhea/ui/message"
+} from "@/components/ui/aria/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -27,8 +27,8 @@ import {
   MessageScrollerItem,
   MessageScrollerProvider,
   MessageScrollerViewport,
-} from "@/styles/aria-rhea/ui/message-scroller"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-rhea/ui/tooltip"
+} from "@/components/ui/aria/message-scroller"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 const currentUser = "Grace"
 
@@ -38,21 +38,21 @@ const initialItems = [
     type: "message",
     sender: "Grace",
     role: "participant",
-    text: "@mary, the astrophage line keeps matching Venus energy output. Can you check my math?",
+    text: "@mary、アストロファージの数値が金星のエネルギー出力とずっと一致するの。計算を確認してもらえる？",
   },
   {
     id: "group-2",
     type: "message",
     sender: "Mary (Agent)",
     role: "assistant",
-    text: "Yes. Confirmed. The curve points to a microorganism harvesting stellar energy and breeding near carbon dioxide. If @rocky agrees, this is the clue we need.",
+    text: "うん、確認した。このカーブは、恒星のエネルギーを取り込みながら二酸化炭素の近くで増殖する微生物を示している。@rocky が同意すれば、これが探していた手がかりだ。",
   },
   {
     id: "group-3",
     type: "message",
     sender: "Grace",
     role: "participant",
-    text: "ping @rocky",
+    text: "@rocky、いる？",
     scrollAnchor: true,
   },
 ] satisfies GroupChatItem[]
@@ -60,7 +60,7 @@ const initialItems = [
 const rockyMarker = {
   id: "group-4",
   type: "event",
-  text: "Rocky has joined the chat",
+  text: "Rockyがチャットに参加しました",
   scrollAnchor: true,
 } satisfies GroupChatItem
 
@@ -69,7 +69,7 @@ const rockyMessage = {
   type: "message",
   sender: "Rocky",
   role: "participant",
-  text: "Amaze. Astrophage eats light, makes heat, goes to carbon dioxide. Rocky has fuel model. Grace is smart.",
+  text: "すごい。アストロファージ、光食べる。熱作る。二酸化炭素になる。ロッキー、燃料モデルある。グレース、賢い。",
 } satisfies GroupChatItem
 
 type GroupChatItem =
@@ -100,7 +100,7 @@ export function MessageScrollerGroupChat() {
         ? [...initialItems, rockyMarker]
         : initialItems
   const buttonLabel =
-    rockyTurn === "idle" ? "Add Rocky" : "Send Message as Rocky"
+    rockyTurn === "idle" ? "Rockyを追加" : "Rockyとしてメッセージを送信"
   const isComplete = rockyTurn === "message"
 
   return (
@@ -108,10 +108,9 @@ export function MessageScrollerGroupChat() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Group Chat</CardTitle>
+            <CardTitle>グループチャット</CardTitle>
             <CardDescription>
-              A group chat with several participants and an assistant. The
-              Marker is marked as a turn.
+              複数の参加者とアシスタントによるグループチャットです。Markerはターンとしてマークされています。
             </CardDescription>
             <CardAction>
               <TooltipTrigger>
@@ -119,7 +118,7 @@ export function MessageScrollerGroupChat() {
                   type="button"
                   variant="outline"
                   size="icon"
-                  aria-label="Reset conversation"
+                  aria-label="会話をリセット"
                   isDisabled={rockyTurn === "idle"}
                   onPress={() => {
                     setRockyTurn("idle")
@@ -129,7 +128,7 @@ export function MessageScrollerGroupChat() {
                   <RotateCwIcon />
                 </Button>
                 <Tooltip>
-                  <p>Reset</p>
+                  <p>リセット</p>
                 </Tooltip>
               </TooltipTrigger>
             </CardAction>
@@ -170,14 +169,13 @@ export function MessageScrollerGroupChat() {
             </Button>
             <p className="text-xs text-muted-foreground">
               {rockyTurn === "idle"
-                ? "This will create a marker and make it the anchor"
-                : "Now send Rocky's reply into the conversation"}
+                ? "マーカーを作成し、それをアンカーにします"
+                : "次にRockyの返信を会話に送信します"}
             </p>
           </CardFooter>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          When a user joins, a marker is created. scrollAnchor on the marker
-          marks it as the next turn
+          ユーザーが参加すると、マーカーが作成されます。マーカーの scrollAnchor が次のターンとしてマークします
         </div>
       </div>
     </MessageScrollerProvider>

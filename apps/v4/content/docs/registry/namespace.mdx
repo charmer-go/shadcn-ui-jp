@@ -1,51 +1,51 @@
 ---
-title: Namespaces
-description: Configure and use multiple resource registries with namespace support.
+title: 名前空間
+description: 名前空間サポート付きで複数のリソースレジストリを設定・使用します。
 ---
 
-Namespaced registries let you configure multiple resource sources in one project. This means you can install components, libraries, utilities, AI prompts, configuration files, and other resources from various registries, whether they're public, third-party, or your own custom private libraries.
+名前空間付きレジストリを使うと、1つのプロジェクトで複数のリソースソースを設定できます。これにより、パブリック、サードパーティ、独自のプライベートライブラリなど、さまざまなレジストリからコンポーネント、ライブラリ、ユーティリティ、AIプロンプト、設定ファイル、その他のリソースをインストールできます。
 
-## Table of Contents
+## 目次
 
-- [Overview](#overview)
-- [Decentralized Namespace System](#decentralized-namespace-system)
-- [Getting Started](#getting-started)
-- [Registry Naming Convention](#registry-naming-convention)
-- [Configuration](#configuration)
-- [Authentication & Security](#authentication--security)
-- [Versioning](#versioning)
-- [Dependency Resolution](#dependency-resolution)
-- [Built-in Registries](#built-in-registries)
-- [CLI Commands](#cli-commands)
-- [Error Handling](#error-handling)
-- [Creating Your Own Registry](#creating-your-own-registry)
-- [Example Configurations](#example-configurations)
-- [Technical Details](#technical-details)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
-
----
-
-## Overview
-
-Registry namespaces are prefixed with `@` and provide a way to organize and reference resources from different sources. Resources can be any type of content: components, libraries, utilities, hooks, AI prompts, configuration files, themes, and more. For example:
-
-- `@shadcn/button` - UI component from the shadcn registry
-- `@v0/dashboard` - Dashboard component from the v0 registry
-- `@ai-elements/input` - AI prompt input from an AI elements registry
-- `@acme/auth-utils` - Authentication utilities from your company's private registry
-- `@ai/chatbot-rules` - AI prompt rules from an AI resources registry
-- `@themes/dark-mode` - Theme configuration from a themes registry
+- [概要](#overview)
+- [分散型名前空間システム](#decentralized-namespace-system)
+- [はじめに](#getting-started)
+- [レジストリの命名規則](#registry-naming-convention)
+- [設定](#configuration)
+- [認証とセキュリティ](#authentication--security)
+- [バージョニング](#versioning)
+- [依存関係の解決](#dependency-resolution)
+- [組み込みレジストリ](#built-in-registries)
+- [CLIコマンド](#cli-commands)
+- [エラー処理](#error-handling)
+- [独自レジストリの作成](#creating-your-own-registry)
+- [設定例](#example-configurations)
+- [技術的な詳細](#technical-details)
+- [ベストプラクティス](#best-practices)
+- [トラブルシューティング](#troubleshooting)
 
 ---
 
-## Decentralized Namespace System
+## 概要
 
-We intentionally designed the namespace system to be decentralized. There is a [central open source registry index](/docs/registry/registry-index) for open source namespaces but you are free to create and use any namespace you want.
+レジストリの名前空間は `@` で始まり、異なるソースからのリソースを整理・参照する手段を提供します。リソースには、コンポーネント、ライブラリ、ユーティリティ、フック、AIプロンプト、設定ファイル、テーマなど、あらゆる種類のコンテンツが含まれます。例:
 
-This decentralized approach gives you complete flexibility to organize your resources however makes sense for your organization.
+- `@shadcn/button` - shadcnレジストリのUIコンポーネント
+- `@v0/dashboard` - v0レジストリのダッシュボードコンポーネント
+- `@ai-elements/input` - AI elementsレジストリのAIプロンプト入力
+- `@acme/auth-utils` - 自社のプライベートレジストリの認証ユーティリティ
+- `@ai/chatbot-rules` - AIリソースレジストリのAIプロンプトルール
+- `@themes/dark-mode` - テーマレジストリのテーマ設定
 
-You can create multiple registries for different purposes:
+---
+
+## 分散型名前空間システム
+
+名前空間システムは意図的に分散型として設計されています。オープンソースの名前空間向けに[中央のオープンソースレジストリインデックス](/docs/registry/registry-index)がありますが、任意の名前空間を自由に作成・使用できます。
+
+この分散型アプローチにより、組織にとって最適な方法でリソースを柔軟に整理できます。
+
+目的別に複数のレジストリを作成できます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -64,17 +64,17 @@ You can create multiple registries for different purposes:
 }
 ```
 
-This allows you to:
+これにより、次のことが可能です。
 
-- **Organize by type**: Separate UI components, documentation, AI resources, etc.
-- **Organize by team**: Different teams can maintain their own registries
-- **Organize by visibility**: Public vs. private resources
-- **Organize by version**: Stable vs. experimental registries
-- **No naming conflicts**: Since there's no central authority, you don't need to worry about namespace collisions
+- **種類別の整理**: UIコンポーネント、ドキュメント、AIリソースなどを分離します
+- **チーム別の整理**: チームごとに独自のレジストリを管理できます
+- **公開範囲別の整理**: パブリック用とプライベート用のリソースを分けます
+- **バージョン別の整理**: 安定版と実験的なレジストリを分けます
+- **命名の衝突なし**: 中央の管理者がいないため、名前空間の衝突を心配する必要がありません
 
-### Examples of Multi-Registry Setups
+### マルチレジストリ構成の例
 
-#### By Resource Type
+#### リソースの種類別
 
 ```json title="components.json" showLineNumbers
 {
@@ -85,7 +85,7 @@ This allows you to:
 }
 ```
 
-#### By Team or Department
+#### チームや部門別
 
 ```json title="components.json" showLineNumbers
 {
@@ -95,7 +95,7 @@ This allows you to:
 }
 ```
 
-#### By Stability
+#### 安定性別
 
 ```json title="components.json" showLineNumbers
 {
@@ -107,25 +107,25 @@ This allows you to:
 
 ---
 
-## Getting Started
+## はじめに
 
-### Installing Resources
+### リソースのインストール
 
-Once configured, you can install resources using the namespace syntax:
+設定が完了したら、名前空間構文を使ってリソースをインストールできます。
 
 ```bash
 npx shadcn@latest add @v0/dashboard
 ```
 
-or multiple resources at once:
+複数のリソースを一度に指定することもできます。
 
 ```bash
 npx shadcn@latest add @acme/header @lib/auth-utils @ai/chatbot-rules
 ```
 
-### Quick Configuration
+### クイック設定
 
-Add registries to your `components.json`:
+`components.json` にレジストリを追加します。
 
 ```json title="components.json"
 {
@@ -136,7 +136,7 @@ Add registries to your `components.json`:
 }
 ```
 
-Then start installing:
+その後、インストールを開始します。
 
 ```bash
 npx shadcn@latest add @acme/button
@@ -144,47 +144,45 @@ npx shadcn@latest add @acme/button
 
 ---
 
-## Registry Naming Convention
+## レジストリの命名規則
 
-Registry names must follow these rules:
+レジストリ名は次のルールに従う必要があります。
 
-- Start with `@` symbol
-- Contain only alphanumeric characters, hyphens, and underscores
-- Examples of valid names: `@v0`, `@acme-ui`, `@my_company`
+- `@` 記号で始めること
+- 英数字、ハイフン、アンダースコアのみ使用できます
+- 有効な名前の例: `@v0`、`@acme-ui`、`@my_company`
 
-The pattern for referencing resources is: `@namespace/resource-name`
+リソースの参照パターンは次のとおりです。`@namespace/resource-name`
 
 ---
 
-## GitHub and Namespaces
+## GitHubと名前空間
 
-GitHub registry addresses and namespaces solve different problems.
+GitHubレジストリのアドレスと名前空間は、それぞれ異なる課題を解決します。
 
-Use a GitHub address when the registry is a public GitHub repository and you
-want users to install without configuring `components.json`.
+レジストリがパブリックなGitHubリポジトリであり、`components.json` の設定なしでユーザーにインストールしてもらいたい場合は、GitHubアドレスを使用します。
 
 ```bash
 npx shadcn@latest add acme/ui/button
 ```
 
-Use a namespace when you want a stable alias, custom hosting, authentication,
-request headers, query parameters or private registry support.
+安定したエイリアス、カスタムホスティング、認証、リクエストヘッダー、クエリパラメーター、プライベートレジストリのサポートが必要な場合は、名前空間を使用します。
 
 ```bash
 npx shadcn@latest add @acme/button
 ```
 
-See the [GitHub registry](/docs/registry/github) docs for more information.
+詳しくは[GitHubレジストリ](/docs/registry/github)のドキュメントを参照してください。
 
 ---
 
-## Configuration
+## 設定
 
-Namespaced registries are configured in your `components.json` file under the `registries` field.
+名前空間付きレジストリは、`components.json` ファイルの `registries` フィールドで設定します。
 
-### Basic Configuration
+### 基本設定
 
-The simplest way to configure a registry is with a URL template string:
+レジストリを設定する最もシンプルな方法は、URLテンプレート文字列を使う方法です。
 
 ```json title="components.json"
 {
@@ -197,11 +195,11 @@ The simplest way to configure a registry is with a URL template string:
 }
 ```
 
-> **Note:** The `{name}` placeholder in the URL is automatically parsed and replaced with the resource name when you run `npx shadcn@latest add @namespace/resource-name`. For example, `@acme/button` becomes `https://registry.acme.com/resources/button.json`. See [URL Pattern System](#url-pattern-system) for more details.
+> **注:** URL内の `{name}` プレースホルダーは、`npx shadcn@latest add @namespace/resource-name` を実行すると自動的に解析され、リソース名に置き換えられます。たとえば、`@acme/button` は `https://registry.acme.com/resources/button.json` になります。詳しくは[URLパターンシステム](#url-pattern-system)を参照してください。
 
-### Advanced Configuration
+### 高度な設定
 
-For registries that require authentication or additional parameters, use the object format:
+認証や追加のパラメーターが必要なレジストリでは、オブジェクト形式を使用します。
 
 ```json title="components.json"
 {
@@ -221,17 +219,17 @@ For registries that require authentication or additional parameters, use the obj
 }
 ```
 
-> **Note:** Environment variables in the format `${VAR_NAME}` are automatically expanded from your environment (process.env). This works in URLs, headers, and params. For example, `${REGISTRY_TOKEN}` will be replaced with the value of `process.env.REGISTRY_TOKEN`. See [Authentication & Security](#authentication--security) for more details on using environment variables.
+> **注:** `${VAR_NAME}` 形式の環境変数は、環境（process.env）から自動的に展開されます。これはURL、ヘッダー、パラメーターで利用できます。たとえば、`${REGISTRY_TOKEN}` は `process.env.REGISTRY_TOKEN` の値に置き換えられます。環境変数の利用について詳しくは[認証とセキュリティ](#authentication--security)を参照してください。
 
 ---
 
-### URL Pattern System
+### URLパターンシステム
 
-Registry URLs support the following placeholders:
+レジストリURLでは、次のプレースホルダーがサポートされています。
 
-### `{name}` Placeholder (required)
+### `{name}` プレースホルダー（必須）
 
-The `{name}` placeholder is replaced with the resource name:
+`{name}` プレースホルダーは、リソース名に置き換えられます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -239,12 +237,12 @@ The `{name}` placeholder is replaced with the resource name:
 }
 ```
 
-When installing `@acme/button`, the URL becomes: `https://registry.acme.com/button.json`
-When installing `@acme/auth-utils`, the URL becomes: `https://registry.acme.com/auth-utils.json`
+`@acme/button` をインストールすると、URLは `https://registry.acme.com/button.json` になります。
+`@acme/auth-utils` をインストールすると、URLは `https://registry.acme.com/auth-utils.json` になります。
 
-### `{style}` Placeholder (optional)
+### `{style}` プレースホルダー（任意）
 
-The `{style}` placeholder is replaced with the current style configuration:
+`{style}` プレースホルダーは、現在のスタイル設定に置き換えられます。
 
 ```json
 {
@@ -252,17 +250,17 @@ The `{style}` placeholder is replaced with the current style configuration:
 }
 ```
 
-With style set to `new-york`, installing `@themes/card` resolves to: `https://registry.example.com/new-york/card.json`
+スタイルが `new-york` に設定されている場合、`@themes/card` のインストール先は `https://registry.example.com/new-york/card.json` になります。
 
-The style placeholder is optional. Use this when you want to serve different versions of the same resource. For example, you can serve a different version of a component for each style.
+スタイルプレースホルダーは任意です。同じリソースの異なるバージョンを提供したい場合に使用します。たとえば、スタイルごとにコンポーネントの異なるバージョンを提供できます。
 
 ---
 
-## Authentication & Security
+## 認証とセキュリティ
 
-### Environment Variables
+### 環境変数
 
-Use environment variables to securely store credentials:
+認証情報を安全に保管するために、環境変数を使用します。
 
 ```json title="components.json"
 {
@@ -277,15 +275,15 @@ Use environment variables to securely store credentials:
 }
 ```
 
-Then set the environment variable:
+次に、環境変数を設定します。
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_secret_token_here
 ```
 
-### Authentication Methods
+### 認証方式
 
-#### Bearer Token (OAuth 2.0)
+#### Bearerトークン（OAuth 2.0）
 
 ```json
 {
@@ -298,7 +296,7 @@ REGISTRY_TOKEN=your_secret_token_here
 }
 ```
 
-#### API Key in Headers
+#### ヘッダーでのAPIキー
 
 ```json title="components.json" showLineNumbers
 {
@@ -311,7 +309,7 @@ REGISTRY_TOKEN=your_secret_token_here
 }
 ```
 
-#### Basic Authentication
+#### Basic認証
 
 ```json title="components.json" showLineNumbers
 {
@@ -324,7 +322,7 @@ REGISTRY_TOKEN=your_secret_token_here
 }
 ```
 
-#### Query Parameter Authentication
+#### クエリパラメーター認証
 
 ```json title="components.json" showLineNumbers
 {
@@ -339,9 +337,9 @@ REGISTRY_TOKEN=your_secret_token_here
 }
 ```
 
-#### Multiple Authentication Methods
+#### 複数の認証方式
 
-Some registries require multiple authentication methods:
+複数の認証方式を必要とするレジストリもあります。
 
 ```json title="components.json" showLineNumbers
 {
@@ -359,27 +357,27 @@ Some registries require multiple authentication methods:
 }
 ```
 
-### Security Considerations
+### セキュリティに関する考慮事項
 
-When working with namespaced registries, especially third-party or public ones, security is paramount. Here's how we handle security:
+特にサードパーティやパブリックの名前空間付きレジストリを利用する場合、セキュリティは最も重要です。セキュリティへの対応方法は次のとおりです。
 
-### Resource Validation
+### リソースの検証
 
-All resources fetched from registries are validated against our registry item schema before installation. This ensures:
+レジストリから取得したすべてのリソースは、インストール前にレジストリアイテムスキーマに対して検証されます。これにより、以下が保証されます。
 
-- **Structure validation**: Resources must conform to the expected JSON schema
-- **Type safety**: Resource types are validated (`registry:ui`, `registry:lib`, etc.)
-- **No arbitrary code execution**: Resources are data files, not executable scripts
+- **構造の検証**: リソースは想定されたJSONスキーマに準拠する必要があります
+- **型安全性**: リソースの種類が検証されます（`registry:ui`、`registry:lib` など）
+- **任意のコードを実行しないこと**: リソースは実行可能なスクリプトではなく、データファイルです
 
-### Environment Variable Security
+### 環境変数のセキュリティ
 
-Environment variables used for authentication are:
+認証に使用される環境変数は、次のように扱われます。
 
-- **Never logged**: The CLI never logs or displays environment variable values
-- **Expanded at runtime**: Variables are only expanded when needed, not stored
-- **Isolated per registry**: Each registry maintains its own authentication context
+- **ログに出力されません**: CLIが環境変数の値をログに出力したり、表示したりすることはありません
+- **実行時に展開されます**: 変数は必要なときにのみ展開され、保存されることはありません
+- **レジストリごとに分離されます**: 各レジストリは独自の認証コンテキストを保持します
 
-Example of secure configuration:
+安全な設定の例:
 
 ```json title="components.json" showLineNumbers
 {
@@ -394,19 +392,19 @@ Example of secure configuration:
 }
 ```
 
-Never commit actual tokens to version control. Use `.env.local`:
+実際のトークンをバージョン管理にコミットしないでください。`.env.local` を使用します。
 
 ```bash title=".env.local"
 PRIVATE_REGISTRY_TOKEN=actual_token_here
 ```
 
-### HTTPS Enforcement
+### HTTPSの強制
 
-We strongly recommend using HTTPS for all registry URLs:
+すべてのレジストリURLにHTTPSを使用することを強く推奨します。
 
-- **Encrypted transport**: Prevents man-in-the-middle attacks
-- **Certificate validation**: Ensures you're connecting to the legitimate registry
-- **Credential protection**: Headers and tokens are encrypted in transit
+- **暗号化された通信**: 中間者攻撃を防ぎます
+- **証明書の検証**: 正規のレジストリに接続していることを保証します
+- **認証情報の保護**: ヘッダーやトークンは転送中に暗号化されます
 
 ```json title="components.json" showLineNumbers
 {
@@ -417,34 +415,34 @@ We strongly recommend using HTTPS for all registry URLs:
 }
 ```
 
-### Content Security
+### コンテンツのセキュリティ
 
-Resources from registries are treated as data, not code:
+レジストリからのリソースは、コードではなくデータとして扱われます。
 
-1. **JSON parsing only**: Resources must be valid JSON
-2. **Schema validation**: Must match the registry item schema
-3. **File path restrictions**: Files can only be written to configured paths
-4. **No script execution**: The CLI doesn't execute any code from registry resources
+1. **JSON解析のみ**: リソースは有効なJSONである必要があります
+2. **スキーマ検証**: レジストリアイテムスキーマに一致する必要があります
+3. **ファイルパスの制限**: ファイルは設定されたパスにのみ書き込むことができます
+4. **スクリプトを実行しないこと**: CLIはレジストリリソースからコードを実行しません
 
-### Registry Trust Model
+### レジストリのトラストモデル
 
-The namespace system operates on a trust model:
+名前空間システムは、トラストモデルに基づいて動作します。
 
-- **You trust what you install**: Only add registries you trust to your configuration
-- **Explicit configuration**: Registries must be explicitly configured in `components.json`
-- **No automatic registry discovery**: The CLI never automatically adds registries
-- **Dependency transparency**: All dependencies are clearly listed in registry items
+- **インストールするものを信頼します**: 信頼できるレジストリのみを設定に追加してください
+- **明示的な設定**: レジストリは `components.json` に明示的に設定する必要があります
+- **自動的なレジストリ検出なし**: CLIがレジストリを自動的に追加することはありません
+- **依存関係の透明性**: すべての依存関係はレジストリアイテムに明記されます
 
-### Best Practices for Registry Operators
+### レジストリ運営者向けのベストプラクティス
 
-If you're running your own registry:
+独自のレジストリを運用している場合:
 
-1. **Use HTTPS always**: Never serve registry content over HTTP
-2. **Implement authentication**: Require API keys or tokens for private registries
-3. **Rate limiting**: Protect your registry from abuse
-4. **Content validation**: Validate resources before serving them
+1. **常にHTTPSを使用します**: レジストリコンテンツをHTTPで提供しないでください
+2. **認証を実装します**: プライベートレジストリではAPIキーやトークンを必須にします
+3. **レート制限**: レジストリを不正利用から保護します
+4. **コンテンツの検証**: リソースを提供前に検証します
 
-Example secure registry setup:
+安全なレジストリ設定の例:
 
 ```json title="components.json" showLineNumbers
 {
@@ -458,23 +456,23 @@ Example secure registry setup:
 }
 ```
 
-### Inspecting Resources Before Installation
+### インストール前にリソースを確認する
 
-The CLI provides transparency about what's being installed. You can see the payload of a registry item using the following command:
+CLIを使うと、インストール内容の透明性が確保されます。次のコマンドでレジストリアイテムのペイロードを確認できます。
 
 ```bash
 npx shadcn@latest view @acme/button
 ```
 
-This will output the payload of the registry item to the console.
+このコマンドは、レジストリアイテムのペイロードをコンソールに出力します。
 
 ---
 
-## Dependency Resolution
+## 依存関係の解決
 
-### Basic Dependency Resolution
+### 基本的な依存関係の解決
 
-Resources can have dependencies across different registries:
+リソースは、異なるレジストリをまたいで依存関係を持つことができます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -490,40 +488,40 @@ Resources can have dependencies across different registries:
 }
 ```
 
-The CLI automatically resolves and installs all dependencies from their respective registries.
+CLIは、それぞれのレジストリからすべての依存関係を自動的に解決してインストールします。
 
-### Advanced Dependency Resolution
+### 高度な依存関係の解決
 
-Understanding how dependencies are resolved internally is important if you're developing registries or need to customize third-party resources.
+レジストリを開発する場合や、サードパーティのリソースをカスタマイズする必要がある場合は、依存関係が内部でどのように解決されるかを理解することが重要です。
 
-### How Resolution Works
+### 解決の仕組み
 
-When you run `npx shadcn@latest add @namespace/resource`, the CLI does the following:
+`npx shadcn@latest add @namespace/resource` を実行すると、CLIは次の処理を行います。
 
-1. **Clears registry context** to start fresh
-2. **Fetches the main resource** from the specified registry
-3. **Recursively resolves dependencies** from their respective registries
-4. **Applies topological sorting** to ensure proper installation order
-5. **Deduplicates files** based on target paths (last one wins)
-6. **Deep merges configurations** (tailwind, cssVars, css, envVars)
+1. **レジストリコンテキストをクリア**して fresh な状態から開始します
+2. **メインリソースを取得**します。指定されたレジストリから取得します
+3. **依存関係を再帰的に解決**します。それぞれのレジストリから取得します
+4. **トポロジカルソートを適用**して、正しいインストール順序を確保します
+5. **ファイルを重複排除**します。ターゲットパス基準で、後勝ちになります
+6. **設定をディープマージ**します（tailwind、cssVars、css、envVars）
 
-This means that if you run the following command:
+つまり、次のコマンドを実行した場合:
 
 ```bash
 npx shadcn@latest add @acme/auth @custom/login-form
 ```
 
-The `login-form.ts` from `@custom/login-form` will override the `login-form.ts` from `@acme/auth` because it's resolved last.
+`@custom/login-form` の `login-form.ts` は後に解決されるため、`@acme/auth` の `login-form.ts` を上書きします。
 
-### Overriding Third-Party Resources
+### サードパーティリソースのオーバーライド
 
-You can leverage the dependency resolution process to override any third-party resource by adding them to your custom resource under `registryDependencies` and overriding with your own custom values.
+依存関係の解決プロセスを活用すると、カスタムリソースの `registryDependencies` にサードパーティのリソースを追加し、独自のカスタム値で上書きできます。
 
-#### Example: Customizing a Third-Party Button
+#### 例: サードパーティのボタンをカスタマイズする
 
-Let's say you want to customize a button from a vendor registry:
+ベンダーレジストリのボタンをカスタマイズしたい場合を考えます。
 
-**1. Original vendor button** (`@vendor/button`):
+**1. 元のベンダーボタン**（`@vendor/button`）:
 
 ```json title="button.json" showLineNumbers
 {
@@ -544,7 +542,7 @@ Let's say you want to customize a button from a vendor registry:
 }
 ```
 
-**2. Create your custom override** (`@my-company/custom-button`):
+**2. カスタムオーバーライドを作成**（`@my-company/custom-button`）:
 
 ```json title="custom-button.json" showLineNumbers
 {
@@ -561,19 +559,19 @@ Let's say you want to customize a button from a vendor registry:
 }
 ```
 
-**3. Install your custom version**:
+**3. カスタムバージョンをインストール**:
 
 ```bash
 npx shadcn@latest add @my-company/custom-button
 ```
 
-This installs the original button from `@vendor/button` and then overrides the `cssVars` with your own custom values.
+このコマンドは、`@vendor/button` から元のボタンをインストールした後、`cssVars` を独自のカスタム値で上書きします。
 
-### Advanced Override Patterns
+### 高度なオーバーライドパターン
 
-#### Extending Without Replacing
+#### 置換せずに拡張する
 
-Keep the original and add extensions:
+元リソースを残したまま、拡張機能を追加します。
 
 ```json title="extended-table.json" showLineNumbers
 {
@@ -588,11 +586,11 @@ Keep the original and add extensions:
 }
 ```
 
-This will install the original table from `@vendor/table` and then add your extensions to `components/ui/table-extended.tsx`.
+この設定では、`@vendor/table` から元のテーブルをインストールした後、`components/ui/table-extended.tsx` に拡張機能を追加します。
 
-#### Partial Override (Multi-file Resources)
+#### 部分的なオーバーライド（複数ファイルのリソース）
 
-Override only specific files from a complex component:
+複雑なコンポーネントの特定ファイルのみを上書きします。
 
 ```json title="custom-auth.json" showLineNumbers
 {
@@ -610,9 +608,9 @@ Override only specific files from a complex component:
 }
 ```
 
-### Resolution Order Example
+### 解決順序の例
 
-When you install `@custom/dashboard` that depends on multiple resources:
+複数のリソースに依存する `@custom/dashboard` をインストールする場合:
 
 ```json title="dashboard.json" showLineNumbers
 {
@@ -625,25 +623,25 @@ When you install `@custom/dashboard` that depends on multiple resources:
 }
 ```
 
-Resolution order:
+解決順序:
 
-1. `@shadcn/card` - installs to `components/ui/card.tsx`
-2. `@vendor/chart` - installs to `components/ui/chart.tsx`
-3. `@custom/card` - overwrites `components/ui/card.tsx` (if same target)
+1. `@shadcn/card` - `components/ui/card.tsx` にインストールされます
+2. `@vendor/chart` - `components/ui/chart.tsx` にインストールされます
+3. `@custom/card` - `components/ui/card.tsx` を上書きします（ターゲットが同じ場合）
 
-### Key Resolution Features
+### 主な解決機能
 
-1. **Source Tracking**: Each resource knows which registry it came from, avoiding naming conflicts
-2. **Circular Dependency Prevention**: Automatically detects and prevents circular dependencies
-3. **Smart Installation Order**: Dependencies are installed first, then the resources that use them
+1. **ソース追跡**: 各リソースは取得元のレジストリを把握しているため、命名の衝突を回避できます
+2. **循環依存の防止**: 循環依存を自動的に検出して防止します
+3. **スマートなインストール順序**: 依存関係を先にインストールし、その後にそれらを使用するリソースをインストールします
 
 ---
 
-## Versioning
+## バージョニング
 
-You can implement versioning for your registry resources using query parameters. This allows users to pin specific versions or use different release channels.
+クエリパラメーターを使うと、レジストリリソースのバージョニングを実装できます。これにより、ユーザーは特定のバージョンを固定したり、異なるリリースチャネルを使い分けたりできます。
 
-### Basic Version Parameter
+### 基本的なバージョンパラメーター
 
 ```json title="components.json" showLineNumbers
 {
@@ -656,11 +654,11 @@ You can implement versioning for your registry resources using query parameters.
 }
 ```
 
-This resolves `@versioned/button` to: `https://registry.example.com/button?version=v2`
+この設定では、`@versioned/button` は `https://registry.example.com/button?version=v2` に解決されます。
 
-### Dynamic Version Selection
+### 動的なバージョン選択
 
-Use environment variables to control versions across your project:
+環境変数を使って、プロジェクト全体のバージョンを制御します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -673,14 +671,14 @@ Use environment variables to control versions across your project:
 }
 ```
 
-This allows you to:
+これにより、次のことが可能です。
 
-- Set `REGISTRY_VERSION=v1.2.3` in production
-- Override per environment (dev, staging, prod)
+- 本番環境では `REGISTRY_VERSION=v1.2.3` を設定します
+- 環境ごと（dev、staging、prod）に上書きします
 
-### Semantic Versioning
+### セマンティックバージョニング
 
-Implement semantic versioning with range support:
+範囲指定付きのセマンティックバージョニングを実装します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -694,24 +692,24 @@ Implement semantic versioning with range support:
 }
 ```
 
-### Version Resolution Best Practices
+### バージョン解決のベストプラクティス
 
-1. **Use environment variables** for version control across environments
-2. **Provide sensible defaults** using the `${VAR:-default}` syntax
-3. **Document version schemes** clearly for registry users
-4. **Support version pinning** for reproducible builds
-5. **Implement version discovery** endpoints (e.g., `/versions/{name}`)
-6. **Cache versioned resources** appropriately with proper cache headers
+1. **環境変数を使用**して、環境をまたいでバージョンを管理します
+2. **適切なデフォルト値を提供**します。`${VAR:-default}` 構文を使います
+3. **バージョンスキームを明記**して、レジストリユーザーに分かりやすくします
+4. **バージョン固定をサポート**して、再現可能なビルドを実現します
+5. **バージョン検出エンドポイントを実装**します（例: `/versions/{name}`）
+6. **バージョン付きリソースを適切にキャッシュ**します。適切なキャッシュヘッダーを使います
 
 ---
 
-## CLI Commands
+## CLIコマンド
 
-The shadcn CLI provides several commands for working with namespaced registries:
+shadcn CLIには、名前空間付きレジストリを操作するためのコマンドがいくつか用意されています。
 
-### Adding Resources
+### リソースの追加
 
-Install resources from any configured registry:
+設定済みの任意のレジストリからリソースをインストールします。
 
 ```bash
 # Install from a specific registry
@@ -727,9 +725,9 @@ npx shadcn@latest add https://registry.example.com/button.json
 npx shadcn@latest add ./local-registry/button.json
 ```
 
-### Viewing Resources
+### リソースの表示
 
-Inspect registry items before installation:
+インストール前にレジストリアイテムを確認します。
 
 ```bash
 # View a resource from a registry
@@ -742,17 +740,17 @@ npx shadcn@latest view @v0/dashboard @shadcn/card
 npx shadcn@latest view https://registry.example.com/button.json
 ```
 
-The `view` command displays:
+`view` コマンドでは、次の内容が表示されます。
 
-- Resource metadata (name, type, description)
-- Dependencies and registry dependencies
-- File contents that will be installed
-- CSS variables and Tailwind configuration
-- Required environment variables
+- リソースのメタデータ（名前、種類、説明）
+- 依存関係とレジストリ依存関係
+- インストールされるファイルの内容
+- CSS変数とTailwind設定
+- 必要な環境変数
 
-### Searching Registries
+### レジストリの検索
 
-Search for available resources in registries:
+レジストリ内の利用可能なリソースを検索します。
 
 ```bash
 # Search a specific registry
@@ -771,25 +769,25 @@ npx shadcn@latest search @v0 --limit 10 --offset 20
 npx shadcn@latest list @acme
 ```
 
-Search results include:
+検索結果には、次の内容が含まれます。
 
-- Resource name and type
-- Description
-- Registry source
+- リソース名と種類
+- 説明
+- レジストリのソース
 
 ---
 
-## Error Handling
+## エラー処理
 
-### Registry Not Configured
+### レジストリが設定されていない場合
 
-If you reference a registry that isn't configured:
+設定されていないレジストリを参照した場合:
 
 ```bash
 npx shadcn@latest add @non-existent/component
 ```
 
-Error:
+エラー:
 
 ```txt
 Unknown registry "@non-existent". Make sure it is defined in components.json as follows:
@@ -800,9 +798,9 @@ Unknown registry "@non-existent". Make sure it is defined in components.json as 
 }
 ```
 
-### Missing Environment Variables
+### 環境変数が不足している場合
 
-If required environment variables are not set:
+必要な環境変数が設定されていない場合:
 
 ```txt
 Registry "@private" requires the following environment variables:
@@ -812,7 +810,7 @@ Registry "@private" requires the following environment variables:
 Set the required environment variables to your .env or .env.local file.
 ```
 
-### Resource Not Found
+### リソースが見つからない場合
 
 404 Not Found:
 
@@ -820,13 +818,13 @@ Set the required environment variables to your .env or .env.local file.
 The item at https://registry.company.com/button.json was not found. It may not exist at the registry.
 ```
 
-This usually means:
+このエラーは通常、次を意味します。
 
-- The resource name is misspelled
-- The resource doesn't exist in the registry
-- The registry URL pattern is incorrect
+- リソース名のスペルミスがあります
+- リソースがレジストリに存在しません
+- レジストリURLパターンが正しくありません
 
-### Authentication Failures
+### 認証失敗
 
 401 Unauthorized:
 
@@ -844,19 +842,19 @@ Verify your API key has the necessary permissions.
 
 ---
 
-## Creating Your Own Registry
+## 独自レジストリの作成
 
-To make your registry compatible with the namespace system, you can serve any type of resource - components, libraries, utilities, AI prompts, themes, configurations, or any other shareable code/content:
+名前空間システムに対応したレジストリにするには、コンポーネント、ライブラリ、ユーティリティ、AIプロンプト、テーマ、設定、その他共有可能なコードやコンテンツなど、あらゆる種類のリソースを提供できます。
 
-1. **Implement the registry item schema**: Your registry must return JSON that conforms to the [registry item schema](/docs/registry/registry-item-json).
+1. **レジストリアイテムスキーマを実装します**: レジストリは[レジストリアイテムスキーマ](/docs/registry/registry-item-json)に準拠したJSONを返す必要があります。
 
-2. **Support the URL pattern**: Include `{name}` in your URL template where the resource name will be inserted.
+2. **URLパターンをサポートします**: リソース名が挿入される位置に `{name}` を含めたURLテンプレートを使用します。
 
-3. **Define resource types**: Use appropriate `type` fields to identify your resources (e.g., `registry:ui`, `registry:lib`, `registry:ai`, `registry:theme`, etc.).
+3. **リソースの種類を定義します**: リソースを識別するために適切な `type` フィールドを使用します（例: `registry:ui`、`registry:lib`、`registry:ai`、`registry:theme` など）。
 
-4. **Handle authentication** (if needed): Accept authentication via headers or query parameters.
+4. **認証を処理します**（必要な場合）: ヘッダーやクエリパラメーターによる認証を受け入れます。
 
-5. **Document your namespace**: Provide clear instructions for users to configure your registry:
+5. **名前空間を文書化します**: ユーザーがレジストリを設定するための明確な手順を提供します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -868,68 +866,68 @@ To make your registry compatible with the namespace system, you can serve any ty
 
 ---
 
-## Technical Details
+## 技術的な詳細
 
-### Parser Pattern
+### パーサーパターン
 
-The namespace parser uses the following regex pattern:
+名前空間パーサーは、次の正規表現パターンを使用します。
 
 ```regex title="namespace-parser.js"
 /^(@[a-zA-Z0-9](?:[a-zA-Z0-9-_]*[a-zA-Z0-9])?)\/(.+)$/
 ```
 
-This ensures valid namespace formatting and proper component name extraction.
+これにより、有効な名前空間形式と正しいコンポーネント名の抽出が保証されます。
 
-### Resolution Process
+### 解決プロセス
 
-1. **Parse**: Extract namespace and component name from `@namespace/component`
-2. **Lookup**: Find registry configuration for `@namespace`
-3. **Build URL**: Replace placeholders with actual values
-4. **Set Headers**: Apply authentication headers if configured
-5. **Fetch**: Retrieve component from the resolved URL
-6. **Validate**: Ensure response matches registry item schema
-7. **Resolve Dependencies**: Recursively fetch any registry dependencies
+1. **解析**: `@namespace/component` から名前空間とコンポーネント名を抽出します
+2. **照会**: `@namespace` のレジストリ設定を検索します
+3. **URL構築**: プレースホルダーを実際の値に置き換えます
+4. **ヘッダー設定**: 設定されている場合は認証ヘッダーを適用します
+5. **取得**: 解決されたURLからコンポーネントを取得します
+6. **検証**: レスポンスがレジストリアイテムスキーマに一致することを確認します
+7. **依存関係の解決**: レジストリ依存関係を再帰的に取得します
 
-### Cross-Registry Dependencies
+### レジストリをまたいだ依存関係
 
-When a component has dependencies from different registries, the resolver:
+コンポーネントが異なるレジストリからの依存関係を持つ場合、リゾルバーは次の処理を行います。
 
-1. Maintains separate authentication contexts for each registry
-2. Resolves each dependency from its respective source
-3. Deduplicates files based on target paths
-4. Merges configurations (tailwind, cssVars, etc.) from all sources
-
----
-
-## Best Practices
-
-1. **Use environment variables** for sensitive data like API keys and tokens
-2. **Namespace your registry** with a unique, descriptive name
-3. **Document authentication requirements** clearly for users
-4. **Implement proper error responses** with helpful messages
-5. **Cache registry responses** when possible to improve performance
-6. **Support style variants** if your components have multiple themes
+1. 各レジストリの認証コンテキストを個別に保持します
+2. 各依存関係をそれぞれのソースから解決します
+3. ターゲットパス基準でファイルを重複排除します
+4. すべてのソースからの設定（tailwind、cssVarsなど）をマージします
 
 ---
 
-## Troubleshooting
+## ベストプラクティス
 
-### Resources not found
+1. APIキーやトークンなどの機密データには**環境変数を使用**します
+2. レジストリには一意で分かりやすい名前で**名前空間を付け**ます
+3. 認証要件をユーザー向けに明確に**文書化**します
+4. 分かりやすいメッセージで**適切なエラーレスポンスを実装**します
+5. 可能な場合はレジストリレスポンスを**キャッシュ**してパフォーマンスを向上させます
+6. コンポーネントに複数のテーマがある場合は**スタイルバリアントをサポート**します
 
-- Verify the registry URL is correct and accessible
-- Check that the `{name}` placeholder is included in the URL
-- Ensure the resource exists in the registry
-- Confirm the resource type matches what the registry provides
+---
 
-### Authentication issues
+## トラブルシューティング
 
-- Confirm environment variables are set correctly
-- Verify API keys/tokens are valid and not expired
-- Check that headers are being sent in the correct format
+### リソースが見つかりません
 
-### Dependency conflicts
+- レジストリURLが正しく、アクセス可能であることを確認します
+- URLに `{name}` プレースホルダーが含まれていることを確認します
+- リソースがレジストリに存在することを確認します
+- リソースの種類がレジストリの提供内容と一致していることを確認します
 
-- Review resources with the same name from different registries
-- Use fully qualified names (`@namespace/resource`) to avoid ambiguity
-- Check for circular dependencies between registries
-- Ensure resource types are compatible when mixing registries
+### 認証の問題
+
+- 環境変数が正しく設定されていることを確認します
+- APIキーやトークンが有効で、有効期限が切れていないことを確認します
+- ヘッダーが正しい形式で送信されていることを確認します
+
+### 依存関係の競合
+
+- 異なるレジストリから同じ名前のリソースを確認します
+- 曖昧さを避けるために完全修飾名（`@namespace/resource`）を使用します
+- レジストリ間の循環依存を確認します
+- レジストリを混在させる場合は、リソースの種類に互換性があることを確認します

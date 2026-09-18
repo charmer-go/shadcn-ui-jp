@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, FolderIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Empty,
   EmptyContent,
@@ -8,7 +8,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/base-nova/ui/empty"
+} from "@/components/ui/base/empty"
 
 export function EmptyInCard() {
   return (
@@ -17,18 +17,17 @@ export function EmptyInCard() {
         <EmptyMedia variant="icon">
           <FolderIcon />
         </EmptyMedia>
-        <EmptyTitle>No projects yet</EmptyTitle>
+        <EmptyTitle>プロジェクトはまだありません</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          まだプロジェクトを作成していません。最初のプロジェクトを作成して始めましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <div className="flex gap-2">
           <Button render={<a href="#" />} nativeButton={false}>
-            Create project
+            プロジェクトを作成
           </Button>
-          <Button variant="outline">Import project</Button>
+          <Button variant="outline">プロジェクトをインポート</Button>
         </div>
         <Button
           variant="link"
@@ -36,7 +35,7 @@ export function EmptyInCard() {
           className="text-muted-foreground"
           nativeButton={false}
         >
-          Learn more <ArrowUpRightIcon />
+          詳細を見る <ArrowUpRightIcon />
         </Button>
       </EmptyContent>
     </Empty>

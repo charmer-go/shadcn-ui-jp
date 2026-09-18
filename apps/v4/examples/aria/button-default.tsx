@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 
 export default function ButtonDefault() {
-  return <Button>Button</Button>
+  return <Button>ボタン</Button>
 }

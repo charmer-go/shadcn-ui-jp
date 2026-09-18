@@ -7,35 +7,35 @@ import {
   ContextMenuItem,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from "@/styles/radix-nova/ui/context-menu"
+} from "@/components/ui/radix/context-menu"
 
 export function ContextMenuDestructive() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
             <PencilIcon />
-            Edit
+            編集
           </ContextMenuItem>
           <ContextMenuItem>
             <ShareIcon />
-            Share
+            共有
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            削除
           </ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenuContent>

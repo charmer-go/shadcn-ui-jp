@@ -3,21 +3,21 @@
 import * as React from "react"
 import { MaximizeIcon, MinimizeIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/radix-nova/ui/collapsible"
-import { Field, FieldGroup, FieldLabel } from "@/styles/radix-nova/ui/field"
-import { Input } from "@/styles/radix-nova/ui/input"
+} from "@/components/ui/radix/collapsible"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/radix/field"
+import { Input } from "@/components/ui/radix/input"
 
 export function CollapsibleSettings() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -25,8 +25,8 @@ export function CollapsibleSettings() {
   return (
     <Card className="mx-auto w-full max-w-xs" size="sm">
       <CardHeader>
-        <CardTitle>Radius</CardTitle>
-        <CardDescription>Set the corner radius of the element.</CardDescription>
+        <CardTitle>角の半径</CardTitle>
+        <CardDescription>要素の角の半径を設定します。</CardDescription>
       </CardHeader>
       <CardContent>
         <Collapsible
@@ -37,26 +37,26 @@ export function CollapsibleSettings() {
           <FieldGroup className="grid w-full grid-cols-2 gap-2">
             <Field>
               <FieldLabel htmlFor="radius-x" className="sr-only">
-                Radius X
+                半径X
               </FieldLabel>
               <Input id="radius" placeholder="0" defaultValue={0} />
             </Field>
             <Field>
               <FieldLabel htmlFor="radius-y" className="sr-only">
-                Radius Y
+                半径Y
               </FieldLabel>
               <Input id="radius" placeholder="0" defaultValue={0} />
             </Field>
             <CollapsibleContent className="col-span-full grid grid-cols-subgrid gap-2">
               <Field>
                 <FieldLabel htmlFor="radius-x" className="sr-only">
-                  Radius X
+                  半径X
                 </FieldLabel>
                 <Input id="radius" placeholder="0" defaultValue={0} />
               </Field>
               <Field>
                 <FieldLabel htmlFor="radius-y" className="sr-only">
-                  Radius Y
+                  半径Y
                 </FieldLabel>
                 <Input id="radius" placeholder="0" defaultValue={0} />
               </Field>

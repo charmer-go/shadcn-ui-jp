@@ -14,7 +14,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/radix-nova/ui/sidebar"
+} from "@/components/ui/radix/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -28,12 +28,12 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupAction
-              title="Add Project"
-              onClick={() => toast("You clicked the group action!")}
+              title="プロジェクトを追加"
+              onClick={() => toast("グループアクションがクリックされました！")}
             >
-              <PlusIcon /> <span className="sr-only">Add Project</span>
+              <PlusIcon /> <span className="sr-only">プロジェクトを追加</span>
             </SidebarGroupAction>
             <SidebarGroupContent>
               <SidebarMenu>
@@ -41,7 +41,7 @@ export default function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href="#">
                       <FrameIcon />
-                      <span>Design Engineering</span>
+                      <span>デザインエンジニアリング</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -49,7 +49,7 @@ export default function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href="#">
                       <PieChartIcon />
-                      <span>Sales & Marketing</span>
+                      <span>セールス＆マーケティング</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -57,7 +57,7 @@ export default function AppSidebar() {
                   <SidebarMenuButton asChild>
                     <a href="#">
                       <MapIcon />
-                      <span>Travel</span>
+                      <span>旅行</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

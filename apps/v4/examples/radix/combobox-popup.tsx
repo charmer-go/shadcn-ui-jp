@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Combobox,
   ComboboxContent,
@@ -10,58 +10,58 @@ import {
   ComboboxList,
   ComboboxTrigger,
   ComboboxValue,
-} from "@/styles/radix-nova/ui/combobox"
+} from "@/components/ui/radix/combobox"
 
 const countries = [
-  { code: "", value: "", continent: "", label: "Select country" },
+  { code: "", value: "", continent: "", label: "国を選択" },
   {
     code: "ar",
     value: "argentina",
-    label: "Argentina",
-    continent: "South America",
+    label: "アルゼンチン",
+    continent: "南アメリカ",
   },
-  { code: "au", value: "australia", label: "Australia", continent: "Oceania" },
-  { code: "br", value: "brazil", label: "Brazil", continent: "South America" },
-  { code: "ca", value: "canada", label: "Canada", continent: "North America" },
-  { code: "cn", value: "china", label: "China", continent: "Asia" },
+  { code: "au", value: "australia", label: "オーストラリア", continent: "オセアニア" },
+  { code: "br", value: "brazil", label: "ブラジル", continent: "南アメリカ" },
+  { code: "ca", value: "canada", label: "カナダ", continent: "北アメリカ" },
+  { code: "cn", value: "china", label: "中国", continent: "アジア" },
   {
     code: "co",
     value: "colombia",
-    label: "Colombia",
-    continent: "South America",
+    label: "コロンビア",
+    continent: "南アメリカ",
   },
-  { code: "eg", value: "egypt", label: "Egypt", continent: "Africa" },
-  { code: "fr", value: "france", label: "France", continent: "Europe" },
-  { code: "de", value: "germany", label: "Germany", continent: "Europe" },
-  { code: "it", value: "italy", label: "Italy", continent: "Europe" },
-  { code: "jp", value: "japan", label: "Japan", continent: "Asia" },
-  { code: "ke", value: "kenya", label: "Kenya", continent: "Africa" },
-  { code: "mx", value: "mexico", label: "Mexico", continent: "North America" },
+  { code: "eg", value: "egypt", label: "エジプト", continent: "アフリカ" },
+  { code: "fr", value: "france", label: "フランス", continent: "ヨーロッパ" },
+  { code: "de", value: "germany", label: "ドイツ", continent: "ヨーロッパ" },
+  { code: "it", value: "italy", label: "イタリア", continent: "ヨーロッパ" },
+  { code: "jp", value: "japan", label: "日本", continent: "アジア" },
+  { code: "ke", value: "kenya", label: "ケニア", continent: "アフリカ" },
+  { code: "mx", value: "mexico", label: "メキシコ", continent: "北アメリカ" },
   {
     code: "nz",
     value: "new-zealand",
-    label: "New Zealand",
-    continent: "Oceania",
+    label: "ニュージーランド",
+    continent: "オセアニア",
   },
-  { code: "ng", value: "nigeria", label: "Nigeria", continent: "Africa" },
+  { code: "ng", value: "nigeria", label: "ナイジェリア", continent: "アフリカ" },
   {
     code: "za",
     value: "south-africa",
-    label: "South Africa",
-    continent: "Africa",
+    label: "南アフリカ",
+    continent: "アフリカ",
   },
-  { code: "kr", value: "south-korea", label: "South Korea", continent: "Asia" },
+  { code: "kr", value: "south-korea", label: "韓国", continent: "アジア" },
   {
     code: "gb",
     value: "united-kingdom",
-    label: "United Kingdom",
-    continent: "Europe",
+    label: "イギリス",
+    continent: "ヨーロッパ",
   },
   {
     code: "us",
     value: "united-states",
-    label: "United States",
-    continent: "North America",
+    label: "アメリカ合衆国",
+    continent: "北アメリカ",
   },
 ]
 
@@ -80,8 +80,8 @@ export function ComboboxPopup() {
           <ComboboxValue />
         </ComboboxTrigger>
         <ComboboxContent>
-          <ComboboxInput showTrigger={false} placeholder="Search" />
-          <ComboboxEmpty>No items found.</ComboboxEmpty>
+          <ComboboxInput showTrigger={false} placeholder="検索" />
+          <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
           <ComboboxList>
             {(item) => (
               <ComboboxItem key={item.code} value={item}>

@@ -6,7 +6,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/radix-nova/ui/collapsible"
+} from "@/components/ui/radix/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -17,7 +17,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/radix-nova/ui/sidebar"
+} from "@/components/ui/radix/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -31,7 +31,7 @@ export default function AppSidebar() {
                 className="text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
                 <CollapsibleTrigger>
-                  Help
+                  ヘルプ
                   <ChevronDownIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                 </CollapsibleTrigger>
               </SidebarGroupLabel>
@@ -41,13 +41,13 @@ export default function AppSidebar() {
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <LifeBuoyIcon />
-                        Support
+                        サポート
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <SendIcon />
-                        Feedback
+                        フィードバック
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   </SidebarMenu>

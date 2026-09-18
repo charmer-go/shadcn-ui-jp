@@ -10,15 +10,15 @@ import {
 } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+} from "@/components/ui/aria/input-group"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 function formatDate(date: Date | undefined) {
   if (!date) {
@@ -51,7 +51,7 @@ export function DatePickerInput() {
 
   return (
     <Field className="mx-auto w-48">
-      <FieldLabel htmlFor="date-required">Subscription Date</FieldLabel>
+      <FieldLabel htmlFor="date-required">サブスクリプション日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-required"
@@ -78,10 +78,10 @@ export function DatePickerInput() {
               id="date-picker"
               variant="ghost"
               size="icon-xs"
-              aria-label="Select date"
+              aria-label="日付を選択"
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">日付を選択</span>
             </InputGroupButton>
             <Popover
               className="w-auto overflow-hidden p-0"

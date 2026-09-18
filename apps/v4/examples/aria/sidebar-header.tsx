@@ -6,7 +6,7 @@ import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 import {
   Sidebar,
   SidebarHeader,
@@ -16,7 +16,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/styles/aria-nova/ui/sidebar"
+} from "@/components/ui/aria/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -27,7 +27,7 @@ export default function AppSidebar() {
             <SidebarMenuItem>
               <DropdownMenuTrigger>
                 <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-                  Select Workspace
+                  ワークスペースを選択
                   <ChevronDownIcon className="ml-auto" />
                 </SidebarMenuButton>
                 <DropdownMenu className="w-(--radix-popper-anchor-width)">

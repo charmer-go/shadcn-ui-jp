@@ -10,8 +10,8 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui-rtl/field"
-import { Input } from "@/styles/base-nova/ui-rtl/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 const translations: Translations = {
   en: {

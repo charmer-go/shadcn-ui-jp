@@ -15,7 +15,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 const items = [
   { name: "scope", required: true },
@@ -30,8 +30,8 @@ export function QuestionnaireProgressExample() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Pull request plan ready", {
-      description: `Scope: ${formData.get("scope") ?? "None"} · Commits: ${formData.get("strategy") ?? "None"} · Tests: ${formData.get("tests") ?? "None"} · Delivery: ${formData.get("delivery") ?? "None"}`,
+    toast("プルリクエストプランの準備ができました", {
+      description: `範囲: ${formData.get("scope") ?? "なし"} ・ コミット: ${formData.get("strategy") ?? "なし"} ・ テスト: ${formData.get("tests") ?? "なし"} ・ 納品: ${formData.get("delivery") ?? "なし"}`,
     })
   }
 
@@ -59,21 +59,21 @@ export function QuestionnaireProgressExample() {
               ))}
             </div>
             <span>
-              Checkpoint {state.current} of {state.total}
+              チェックポイント {state.current} / {state.total}
             </span>
           </div>
         )}
       />
 
       <QuestionnaireItem name="scope" required>
-        <QuestionnaireTitle>How large is the change?</QuestionnaireTitle>
+        <QuestionnaireTitle>変更の規模はどのくらいですか？</QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="small">Small patch</QuestionnaireChoice>
+          <QuestionnaireChoice value="small">小さなパッチ</QuestionnaireChoice>
           <QuestionnaireChoice value="medium">
-            Feature-sized change
+            機能規模の変更
           </QuestionnaireChoice>
           <QuestionnaireChoice value="large">
-            Cross-package change
+            パッケージ横断の変更
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -81,33 +81,33 @@ export function QuestionnaireProgressExample() {
 
       <QuestionnaireItem name="strategy" required>
         <QuestionnaireTitle>
-          How should commits be organized?
+          コミットはどのように整理しますか？
         </QuestionnaireTitle>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="single">
-            Single commit
+            単一のコミット
           </QuestionnaireChoice>
           <QuestionnaireChoice value="logical">
-            Logical commits
+            論理的なコミット
           </QuestionnaireChoice>
           <QuestionnaireChoice value="squash">
-            Squash before review
+            レビュー前にスカッシュ
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem name="tests" required>
-        <QuestionnaireTitle>Which tests should run?</QuestionnaireTitle>
+        <QuestionnaireTitle>どのテストを実行しますか？</QuestionnaireTitle>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="targeted">
-            Targeted tests
+            対象を絞ったテスト
           </QuestionnaireChoice>
           <QuestionnaireChoice value="package">
-            Package suite
+            パッケージ単位のテスト
           </QuestionnaireChoice>
           <QuestionnaireChoice value="workspace">
-            Full workspace
+            ワークスペース全体
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -115,15 +115,15 @@ export function QuestionnaireProgressExample() {
 
       <QuestionnaireItem name="delivery" required>
         <QuestionnaireTitle>
-          How should the work be delivered?
+          作業をどのように納品しますか？
         </QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="patch">Patch only</QuestionnaireChoice>
+          <QuestionnaireChoice value="patch">パッチのみ</QuestionnaireChoice>
           <QuestionnaireChoice value="commit">
-            Committed locally
+            ローカルでコミット
           </QuestionnaireChoice>
           <QuestionnaireChoice value="branch">
-            Push a review branch
+            レビュー用ブランチをプッシュ
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -131,8 +131,8 @@ export function QuestionnaireProgressExample() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Finish plan</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>プランを完了</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

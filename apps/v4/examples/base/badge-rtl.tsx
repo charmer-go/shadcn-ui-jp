@@ -7,7 +7,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Badge } from "@/styles/base-nova/ui-rtl/badge"
+import { Badge } from "@/components/ui/base/badge"
 
 const translations: Translations = {
   en: {

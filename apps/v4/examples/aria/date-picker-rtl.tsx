@@ -9,9 +9,9 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/aria-nova/ui-rtl/button"
-import { Calendar } from "@/styles/aria-nova/ui-rtl/calendar"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui-rtl/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 const translations: Translations = {
   en: {

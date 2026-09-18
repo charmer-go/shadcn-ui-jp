@@ -1,5 +1,5 @@
 ---
-title: Breadcrumb
+title: ブレッドクラム
 description: Displays the path to the current resource using a hierarchy of links.
 base: base
 component: true
@@ -11,13 +11,13 @@ component: true
   previewClassName="p-2"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add breadcrumb
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="breadcrumb"
@@ -39,7 +39,7 @@ npx shadcn@latest add breadcrumb
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add breadcrumb
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -80,7 +80,7 @@ import {
 </Breadcrumb>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Breadcrumb`:
 
@@ -97,13 +97,13 @@ Breadcrumb
         └── BreadcrumbPage
 ```
 
-## Basic
+## 基本
 
-A basic breadcrumb with a home link and a components link.
+ホーム リンクとコンポーネント リンクを含む基本的なブレッドクラム。
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-basic" />
 
-## Custom separator
+## カスタム区切り文字
 
 Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
 
@@ -111,7 +111,7 @@ Use a custom component as `children` for `<BreadcrumbSeparator />` to create a c
 
 ## Dropdown
 
-You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+`<BreadcrumbItem />` を `<DropdownMenu />` と組み合わせて、パンくずリストにドロップダウンを作成できます。
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-dropdown" />
 
@@ -127,13 +127,13 @@ We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when t
 
 ## Link component
 
-To use a custom link component from your routing library, you can use the `render` prop on `<BreadcrumbLink />`.
+ルーティング ライブラリのカスタム リンク コンポーネントを使用するには、`<BreadcrumbLink />` で `render` プロパティを使用できます。
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-link" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -142,7 +142,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="p-2"
 />
 
-## API Reference
+## API リファレンス
 
 ### Breadcrumb
 
@@ -162,7 +162,7 @@ The `BreadcrumbList` component displays the ordered list of breadcrumb items.
 
 ### BreadcrumbItem
 
-The `BreadcrumbItem` component wraps individual breadcrumb items.
+`BreadcrumbItem` コンポーネントは、個々のブレッドクラム項目をラップします。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -186,16 +186,16 @@ The `BreadcrumbPage` component displays the current page in the breadcrumb (non-
 
 ### BreadcrumbSeparator
 
-The `BreadcrumbSeparator` component displays a separator between breadcrumb items. You can pass custom children to override the default separator icon.
+`BreadcrumbSeparator` コンポーネントは、ブレッドクラム項目間の区切り文字を表示します。カスタムの子を渡して、デフォルトの区切りアイコンをオーバーライドできます。
 
-| Prop        | Type              | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | ----------------- | ------- |
 | `children`  | `React.ReactNode` | -       |
 | `className` | `string`          | -       |
 
 ### BreadcrumbEllipsis
 
-The `BreadcrumbEllipsis` component displays an ellipsis indicator for collapsed breadcrumb items.
+`BreadcrumbEllipsis` コンポーネントは、折りたたまれたブレッドクラム項目の省略記号インジケーターを表示します。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

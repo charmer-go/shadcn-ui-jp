@@ -1,4 +1,4 @@
-import { Field, FieldError, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Field, FieldError, FieldLabel } from "@/components/ui/base/field"
 import {
   Select,
   SelectContent,
@@ -6,19 +6,19 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
+  { label: "フルーツを選択", value: null },
+  { label: "リンゴ", value: "apple" },
+  { label: "バナナ", value: "banana" },
+  { label: "ブルーベリー", value: "blueberry" },
 ]
 
 export function SelectInvalid() {
   return (
     <Field data-invalid className="w-full max-w-48">
-      <FieldLabel>Fruit</FieldLabel>
+      <FieldLabel>フルーツ</FieldLabel>
       <Select items={items}>
         <SelectTrigger aria-invalid>
           <SelectValue />
@@ -33,7 +33,7 @@ export function SelectInvalid() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <FieldError>Please select a fruit.</FieldError>
+      <FieldError>フルーツを選択してください。</FieldError>
     </Field>
   )
 }

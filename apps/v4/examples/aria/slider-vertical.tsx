@@ -1,10 +1,10 @@
-import { Slider } from "@/styles/aria-nova/ui/slider"
+import { Slider } from "@/components/ui/aria/slider"
 
 export function SliderVertical() {
   return (
     <div className="mx-auto flex w-full max-w-xs items-center justify-center gap-6">
       <Slider
-        aria-label="Vertical slider"
+        aria-label="縦向きスライダー"
         defaultValue={[50]}
         maxValue={100}
         step={1}
@@ -12,7 +12,7 @@ export function SliderVertical() {
         className="h-40"
       />
       <Slider
-        aria-label="Vertical slider"
+        aria-label="縦向きスライダー"
         defaultValue={[25]}
         maxValue={100}
         step={1}

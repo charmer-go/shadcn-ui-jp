@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, FolderIcon } from "lucide-react"
 
-import { Button, LinkButton } from "@/styles/aria-nova/ui/button"
+import { Button, LinkButton } from "@/components/ui/aria/button"
 import {
   Empty,
   EmptyContent,
@@ -8,7 +8,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/aria-nova/ui/empty"
+} from "@/components/ui/aria/empty"
 
 export function EmptyInCard() {
   return (
@@ -17,19 +17,18 @@ export function EmptyInCard() {
         <EmptyMedia variant="icon">
           <FolderIcon />
         </EmptyMedia>
-        <EmptyTitle>No projects yet</EmptyTitle>
+        <EmptyTitle>プロジェクトはまだありません</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          まだプロジェクトを作成していません。最初のプロジェクトを作成して始めましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <div className="flex gap-2">
-          <LinkButton href="#">Create project</LinkButton>
-          <Button variant="outline">Import project</Button>
+          <LinkButton href="#">プロジェクトを作成</LinkButton>
+          <Button variant="outline">プロジェクトをインポート</Button>
         </div>
         <LinkButton href="#" variant="link" className="text-muted-foreground">
-          Learn more <ArrowUpRightIcon />
+          詳細を見る <ArrowUpRightIcon />
         </LinkButton>
       </EmptyContent>
     </Empty>

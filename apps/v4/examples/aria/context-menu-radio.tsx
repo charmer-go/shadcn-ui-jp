@@ -10,7 +10,7 @@ import {
   ContextMenuLabel,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from "@/styles/aria-nova/ui/context-menu"
+} from "@/components/ui/aria/context-menu"
 
 export function ContextMenuRadio() {
   const [user, setUser] = React.useState("pedro")
@@ -24,10 +24,10 @@ export function ContextMenuRadio() {
           className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
         >
           <span className="hidden pointer-fine:inline-block">
-            Right click here
+            右クリックしてください
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press here
+            長押ししてください
           </span>
         </div>
       </Pressable>
@@ -41,7 +41,7 @@ export function ContextMenuRadio() {
             )
           }
         >
-          <ContextMenuLabel>People</ContextMenuLabel>
+          <ContextMenuLabel>ユーザー</ContextMenuLabel>
           <ContextMenuItem id="pedro">Pedro Duarte</ContextMenuItem>
           <ContextMenuItem id="colm">Colm Tuite</ContextMenuItem>
         </ContextMenuGroup>
@@ -55,10 +55,10 @@ export function ContextMenuRadio() {
             )
           }
         >
-          <ContextMenuLabel>Theme</ContextMenuLabel>
-          <ContextMenuItem id="light">Light</ContextMenuItem>
-          <ContextMenuItem id="dark">Dark</ContextMenuItem>
-          <ContextMenuItem id="system">System</ContextMenuItem>
+          <ContextMenuLabel>テーマ</ContextMenuLabel>
+          <ContextMenuItem id="light">ライト</ContextMenuItem>
+          <ContextMenuItem id="dark">ダーク</ContextMenuItem>
+          <ContextMenuItem id="system">システム</ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenu>
     </ContextMenuTrigger>

@@ -7,7 +7,7 @@ import {
   ItemGroup,
   ItemMedia,
   ItemTitle,
-} from "@/styles/aria-nova/ui/item"
+} from "@/components/ui/aria/item"
 
 export function OutlineItemGroup() {
   return (

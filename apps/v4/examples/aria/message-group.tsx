@@ -2,14 +2,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/aria-rhea/ui/avatar"
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
+} from "@/components/ui/aria/avatar"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
 import {
   Message,
   MessageAvatar,
   MessageContent,
   MessageGroup,
-} from "@/styles/aria-rhea/ui/message"
+} from "@/components/ui/aria/message"
 
 export function MessageGroupDemo() {
   return (
@@ -19,7 +19,7 @@ export function MessageGroupDemo() {
           <MessageAvatar />
           <MessageContent>
             <Bubble variant="muted">
-              <BubbleContent>I checked the registry addresses.</BubbleContent>
+              <BubbleContent>レジストリのアドレスを確認しました。</BubbleContent>
             </Bubble>
           </MessageContent>
         </Message>
@@ -33,7 +33,7 @@ export function MessageGroupDemo() {
           <MessageContent>
             <Bubble variant="muted">
               <BubbleContent>
-                The component and example JSON now live under the UI registry.
+                コンポーネントとサンプルのJSONは、UIレジストリ配下に置かれるようになりました。
               </BubbleContent>
             </Bubble>
           </MessageContent>

@@ -1,9 +1,9 @@
-import { Slider } from "@/styles/aria-nova/ui/slider"
+import { Slider } from "@/components/ui/aria/slider"
 
 export function SliderMultiple() {
   return (
     <Slider
-      aria-label="Multiple slider"
+      aria-label="複数スライダー"
       defaultValue={[10, 20, 70]}
       maxValue={100}
       step={10}

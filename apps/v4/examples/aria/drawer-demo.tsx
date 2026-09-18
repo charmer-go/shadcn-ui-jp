@@ -4,8 +4,8 @@ import * as React from "react"
 import { toast } from "sonner"
 
 import { useIsMobile } from "@/hooks/use-mobile"
-import { Badge } from "@/styles/aria-nova/ui/badge"
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Badge } from "@/components/ui/aria/badge"
+import { Button } from "@/components/ui/aria/button"
 import {
   Drawer,
   DrawerClose,
@@ -15,47 +15,47 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/aria-nova/ui/drawer"
+} from "@/components/ui/aria/drawer"
 import {
   Field,
   FieldContent,
   FieldDescription,
   FieldLabel,
   FieldTitle,
-} from "@/styles/aria-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/aria-nova/ui/radio-group"
+} from "@/components/ui/aria/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 const deliveryTimes = [
   {
     value: "asap",
     id: "delivery-asap",
-    label: "Standard delivery",
-    description: "25–35 min · Driver assigned now",
-    badge: "Fastest",
+    label: "標準配送",
+    description: "25～35分・ドライバー手配済み",
+    badge: "最速",
   },
   {
     value: "5-00",
     id: "delivery-5-00",
-    label: "5:00 PM – 5:15 PM",
-    description: "Prep starts at 4:45 PM",
+    label: "17:00～17:15",
+    description: "16:45から準備開始",
   },
   {
     value: "5-30",
     id: "delivery-5-30",
-    label: "5:30 PM – 5:45 PM",
-    description: "Good if you're heading home",
+    label: "17:30～17:45",
+    description: "帰宅時におすすめ",
   },
   {
     value: "6-00",
     id: "delivery-6-00",
-    label: "6:00 PM – 6:15 PM",
-    description: "Most popular · High demand",
+    label: "18:00～18:15",
+    description: "人気・混雑時間帯",
   },
   {
     value: "6-30",
     id: "delivery-6-30",
-    label: "6:30 PM – 6:45 PM",
-    description: "Last slot before kitchen closes",
+    label: "18:30～18:45",
+    description: "閉店前最終枠",
   },
 ]
 
@@ -72,7 +72,7 @@ export function DrawerDemo() {
     }
 
     setOpen(false)
-    toast("Delivery time confirmed", {
+    toast("配達時間が確定しました", {
       description: selected.label,
     })
   }
@@ -85,13 +85,13 @@ export function DrawerDemo() {
       swipeDirection={isMobile ? "down" : "right"}
     >
       <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
+        ドロワーを開く
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Pick a delivery time</DrawerTitle>
+          <DrawerTitle>配達時間を選択</DrawerTitle>
           <DrawerDescription>
-            We&apos;ll prepare your order as soon as possible.
+            ご注文はできるだけ早く準備いたします。
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 scroll-fade overflow-y-auto p-4">
@@ -120,10 +120,10 @@ export function DrawerDemo() {
         </div>
         <DrawerFooter>
           <Button onClick={handleConfirm} className="h-[34px]">
-            Confirm Delivery Time
+            配達時間を確定
           </Button>
           <DrawerClose render={<Button variant="outline" />}>
-            Cancel
+            キャンセル
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

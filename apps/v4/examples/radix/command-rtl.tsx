@@ -23,7 +23,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/radix-nova/ui-rtl/command"
+} from "@/components/ui/radix/command"
 
 const translations: Translations = {
   en: {

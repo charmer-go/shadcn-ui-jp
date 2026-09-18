@@ -4,11 +4,11 @@ import * as React from "react"
 import { getLocalTimeZone, type CalendarDate } from "@internationalized/date"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export function DatePickerTime() {
   const [open, setOpen] = React.useState(false)
@@ -17,7 +17,7 @@ export function DatePickerTime() {
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">日付</FieldLabel>
         <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
           <Button
             variant="outline"
@@ -26,7 +26,7 @@ export function DatePickerTime() {
           >
             {date
               ? date.toDate(getLocalTimeZone()).toLocaleDateString()
-              : "Select date"}
+              : "日付を選択"}
             <ChevronDownIcon data-icon="inline-end" />
           </Button>
           <Popover
@@ -45,7 +45,7 @@ export function DatePickerTime() {
         </PopoverTrigger>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">時刻</FieldLabel>
         <Input
           type="time"
           id="time-picker-optional"

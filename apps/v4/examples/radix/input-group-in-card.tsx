@@ -1,6 +1,6 @@
 import { ExternalLinkIcon, MailIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardContent,
@@ -8,28 +8,28 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/styles/radix-nova/ui/field"
-import { Input } from "@/styles/radix-nova/ui/input"
+} from "@/components/ui/radix/card"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/radix/field"
+import { Input } from "@/components/ui/radix/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/radix-nova/ui/input-group"
+} from "@/components/ui/radix/input-group"
 
 export function InputGroupInCard() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>Card with Input Group</CardTitle>
-        <CardDescription>This is a card with an input group.</CardDescription>
+        <CardTitle>入力グループ付きカード</CardTitle>
+        <CardDescription>入力グループを含むカードです。</CardDescription>
       </CardHeader>
       <CardContent>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="email-input">Email Address</FieldLabel>
+            <FieldLabel htmlFor="email-input">メールアドレス</FieldLabel>
             <InputGroup>
               <InputGroupInput
                 id="email-input"
@@ -42,7 +42,7 @@ export function InputGroupInCard() {
             </InputGroup>
           </Field>
           <Field>
-            <FieldLabel htmlFor="website-input">Website URL</FieldLabel>
+            <FieldLabel htmlFor="website-input">ウェブサイトURL</FieldLabel>
             <InputGroup>
               <InputGroupAddon>
                 <InputGroupText>https://</InputGroupText>
@@ -55,24 +55,24 @@ export function InputGroupInCard() {
           </Field>
           <Field>
             <FieldLabel htmlFor="feedback-textarea">
-              Feedback & Comments
+              フィードバック・コメント
             </FieldLabel>
             <InputGroup>
               <InputGroupTextarea
                 id="feedback-textarea"
-                placeholder="Share your thoughts..."
+                placeholder="ご意見をお聞かせください..."
                 className="min-h-[100px]"
               />
               <InputGroupAddon align="block-end">
-                <InputGroupText>0/500 characters</InputGroupText>
+                <InputGroupText>0/500文字</InputGroupText>
               </InputGroupAddon>
             </InputGroup>
           </Field>
         </FieldGroup>
       </CardContent>
       <CardFooter className="justify-end gap-2">
-        <Button variant="outline">Cancel</Button>
-        <Button>Submit</Button>
+        <Button variant="outline">キャンセル</Button>
+        <Button>送信</Button>
       </CardFooter>
     </Card>
   )

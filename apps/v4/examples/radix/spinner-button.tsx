@@ -1,20 +1,20 @@
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+import { Button } from "@/components/ui/radix/button"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function SpinnerButton() {
   return (
     <div className="flex flex-col items-center gap-4">
       <Button disabled size="sm">
         <Spinner data-icon="inline-start" />
-        Loading...
+        読み込み中...
       </Button>
       <Button variant="outline" disabled size="sm">
         <Spinner data-icon="inline-start" />
-        Please wait
+        お待ちください
       </Button>
       <Button variant="secondary" disabled size="sm">
         <Spinner data-icon="inline-start" />
-        Processing
+        処理中
       </Button>
     </div>
   )

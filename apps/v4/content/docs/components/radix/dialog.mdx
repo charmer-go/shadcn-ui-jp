@@ -1,6 +1,6 @@
 ---
-title: Dialog
-description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+title: ダイアログ
+description: プライマリ ウィンドウまたは別のダイアログ ウィンドウにオーバーレイされ、
 featured: true
 base: radix
 component: true
@@ -15,13 +15,13 @@ links:
   description="A dialog for editing profile details."
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add dialog
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="dialog"
@@ -49,7 +49,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -85,7 +85,7 @@ import {
 </Dialog>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Dialog`:
 
@@ -99,25 +99,25 @@ Dialog
     └── DialogFooter
 ```
 
-## Custom Close Button
+## カスタム閉じるボタン
 
-Replace the default close control with your own button.
+デフォルトの閉じるコントロールを独自のボタンに置​​き換えます。
 
 <ComponentPreview styleName="radix-nova" name="dialog-close-button" />
 
-## No Close Button
+## 閉じるボタンなし
 
-Use `showCloseButton={false}` to hide the close button.
+を使用します。 `showCloseButton={false}` を使用して、[閉じる] ボタンを非表示にします。
 
 <ComponentPreview styleName="radix-nova" name="dialog-no-close-button" />
 
-## Sticky Footer
+## スティッキー フッター
 
 Keep actions visible while the content scrolls.
 
 <ComponentPreview styleName="radix-nova" name="dialog-sticky-footer" />
 
-## Scrollable Content
+## スクロール可能なコンテンツ
 
 Long content can scroll while the header stays in view.
 
@@ -125,10 +125,10 @@ Long content can scroll while the header stays in view.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="dialog-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 See the [Radix UI](https://www.radix-ui.com/docs/primitives/components/dialog#api-reference) documentation for more information.

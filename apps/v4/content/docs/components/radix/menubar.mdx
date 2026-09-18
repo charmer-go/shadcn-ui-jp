@@ -1,6 +1,6 @@
 ---
-title: Menubar
-description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+title: メニューバー
+description: 一貫したコマンド セットへの素早いアクセスを提供する、デスクトップ アプリケーションで一般的な視覚的に永続的なメニュー。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="menubar-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add menubar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="menubar"
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -88,7 +88,7 @@ import {
 </Menubar>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Menubar`:
 
@@ -130,17 +130,17 @@ Menubar
 
 ## Checkbox
 
-Use `MenubarCheckboxItem` for toggleable options.
+切り替え可能なオプションには `MenubarCheckboxItem` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="menubar-checkbox" />
 
-## Radio
+## ラジオ
 
 Use `MenubarRadioGroup` and `MenubarRadioItem` for single-select options.
 
 <ComponentPreview styleName="radix-nova" name="menubar-radio" />
 
-## Submenu
+## サブメニュー
 
 Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
 
@@ -152,10 +152,10 @@ Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="radix-nova" name="menubar-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 See the [Radix UI Menubar](https://www.radix-ui.com/docs/primitives/components/menubar#api-reference) documentation.

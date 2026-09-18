@@ -1,4 +1,4 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Dialog,
   DialogClose,
@@ -8,25 +8,25 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/base-nova/ui/dialog"
-import { Input } from "@/styles/base-nova/ui/input"
-import { Label } from "@/styles/base-nova/ui/label"
+} from "@/components/ui/base/dialog"
+import { Input } from "@/components/ui/base/input"
+import { Label } from "@/components/ui/base/label"
 
 export function DialogCloseButton() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Share</DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" />}>共有</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Share link</DialogTitle>
+          <DialogTitle>リンクを共有</DialogTitle>
           <DialogDescription>
-            Anyone who has this link will be able to view this.
+            このリンクを知っている人は誰でも閲覧できます。
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
             <Label htmlFor="link" className="sr-only">
-              Link
+              リンク
             </Label>
             <Input
               id="link"
@@ -36,7 +36,7 @@ export function DialogCloseButton() {
           </div>
         </div>
         <DialogFooter className="sm:justify-start">
-          <DialogClose render={<Button type="button" />}>Close</DialogClose>
+          <DialogClose render={<Button type="button" />}>閉じる</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

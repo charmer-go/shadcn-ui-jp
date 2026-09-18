@@ -1,21 +1,21 @@
 ---
-title: July 2026 - Introducing @shadcn/helpers
-description: Small, focused helpers for developing apps, starting with AI SDK and TanStack AI.
+title: 2026 年 7 月 - @shadcn/helpers の紹介
+description: AI SDK と TanStack AI をはじめとする、アプリ開発のための小規模で焦点を絞ったヘルパー。
 date: 2026-07-14
 ---
 
-We are open sourcing **@shadcn/helpers**, a new package for small, focused
-helpers that make developing apps easier.
+私たちは、小規模で集中的なための新しいパッケージである **@shadcn/helpers** をオープンソース化しています。
+アプリの開発を容易にするヘルパー。
 
-Starting with a helper for AI SDK and TanStack AI. It lets you write a
-conversation in code, then run it through the real `useChat` lifecycle without
-a model, API route, network request, or API key.
+AI SDK と TanStack AI のヘルパーから始めます。それはあなたが書くことができます
+コード内で会話を実行し、その後、何もせずに実際の `useChat` ライフサイクルを通して実行します。
+モデル、API ルート、ネットワーク リクエスト、または API キー。
 
-Your UI receives native
-framework messages and streaming events, so reasoning, tool calls, loading
-states, and message components behave the same way they do in production.
+UI はネイティブを受け取ります
+フレームワーク メッセージとストリーミング イベント、つまり推論、ツール呼び出し、読み込み
+状態とメッセージ コンポーネントは実稼働環境と同じように動作します。
 
-Here is a conversation written with the AI SDK helper:
+AI SDK ヘルパーを使用して書かれた会話は次のとおりです。
 
 ```ts showLineNumbers
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -53,7 +53,7 @@ const chat = createChat()
   })
 ```
 
-Pass its messages and transport to `useChat`:
+そのメッセージを渡して `useChat` に転送します。
 
 ```tsx showLineNumbers
 import { useChat } from "@ai-sdk/react"
@@ -69,20 +69,20 @@ export function Chat() {
 }
 ```
 
-The package includes two adapters:
+パッケージには次の 2 つのアダプターが含まれています。
 
-- [`@shadcn/helpers/ai-sdk`](/docs/helpers/ai-sdk) plugs into AI SDK's `useChat`
-  as a transport.
-- [`@shadcn/helpers/tanstack-ai`](/docs/helpers/tanstack-ai) plugs into TanStack
-  AI's `useChat` as a connection and streams real AG-UI events.
+- [`@shadcn/helpers/ai-sdk`](/docs/helpers/ai-sdk) は AI SDK の `useChat` にプラグインします
+交通手段として。
+- [`@shadcn/helpers/tanstack-ai`](/docs/helpers/tanstack-ai) を TanStack にプラグインします
+AI の `useChat` を接続とし​​て使用し、実際の AG-UI イベントをストリーミングします。
 
-Use it to build components, create previews and demos, write documentation, or
-test streaming interfaces with deterministic output and no backend dependency.
+これを使用してコンポーネントを構築したり、プレビューやデモを作成したり、ドキュメントを作成したり、
+決定的な出力とバックエンド依存性のないストリーミング インターフェイスをテストします。
 
 <div className="flex flex-wrap gap-2">
   <Button asChild size="sm">
     <Link href="/docs/helpers/ai-sdk" className="mt-6 no-underline!">
-      Read the Docs
+      ドキュメントを読む
     </Link>
   </Button>
 </div>

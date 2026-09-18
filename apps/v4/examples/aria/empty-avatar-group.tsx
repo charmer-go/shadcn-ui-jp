@@ -4,8 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/aria-nova/ui/avatar"
-import { Button } from "@/styles/aria-nova/ui/button"
+} from "@/components/ui/aria/avatar"
+import { Button } from "@/components/ui/aria/button"
 import {
   Empty,
   EmptyContent,
@@ -13,7 +13,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/aria-nova/ui/empty"
+} from "@/components/ui/aria/empty"
 
 export default function EmptyAvatarGroup() {
   return (
@@ -41,15 +41,15 @@ export default function EmptyAvatarGroup() {
             </Avatar>
           </div>
         </EmptyMedia>
-        <EmptyTitle>No Team Members</EmptyTitle>
+        <EmptyTitle>チームメンバーがいません</EmptyTitle>
         <EmptyDescription>
-          Invite your team to collaborate on this project.
+          このプロジェクトで共同作業するためにチームを招待しましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button size="sm">
           <PlusIcon />
-          Invite Members
+          メンバーを招待
         </Button>
       </EmptyContent>
     </Empty>

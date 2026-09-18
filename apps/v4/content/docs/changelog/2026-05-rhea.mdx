@@ -1,45 +1,45 @@
 ---
-title: May 2026 - Introducing Rhea
-description: A more compact Luma. Smaller spacing. Denser surfaces. Built for focused product interfaces.
+title: 2026 年 5 月 - Rhea の紹介
+description: よりコンパクトな Luma。間隔が狭い。より緻密な表面。焦点を絞った製品インターフェイス向けに構築されています。
 date: 2026-05-26
 ---
 
-Introducing Rhea, a new shadcn/ui style. A more compact Luma. Smaller spacing. Denser surfaces. Built for focused product interfaces.
+新しい shadcn/ui スタイルである Rhea を紹介します。よりコンパクトなLuma。間隔が狭い。より緻密な表面。焦点を絞った製品インターフェイス向けに構築されています。
 
 <a href="/create?preset=b27GcrRo">
-  <Image
+<Image
     src="/images/rhea-light.png"
     width="3840"
     height="2160"
     alt="Rhea style preview"
     className="mt-6 w-full overflow-hidden rounded-2xl border dark:hidden"
   />
-  <Image
+<Image
     src="/images/rhea-dark.png"
     width="3840"
     height="2160"
     alt="Rhea style preview"
     className="mt-6 hidden w-full overflow-hidden rounded-2xl border shadow-sm dark:block"
   />
-  <span className="sr-only">Try Rhea in shadcn/create</span>
+  <span className="sr-only">shadcn/create で Rhea を試してみる</span>
 </a>
 
-Rhea started from a simple request we've heard a lot: Luma, but more compact. We looked at how people were using the new styles and what they were asking for, and the pattern was clear. A lot of teams wanted the softness and shape of Luma with tighter spacing, smaller controls, and more information density.
+Rhea は、私たちがよく聞いてきた単純なリクエストから始まりました。「Luma ですが、よりコンパクトです。」人々が新しいスタイルをどのように利用しているのか、何を求めているのかを調査したところ、そのパターンは明らかでした。多くのチームが、間隔が狭く、コントロールが小さく、情報密度が高い Luma の柔らかさと形状を望んでいました。
 
-Rhea keeps the same rounded foundation, but makes it more compact for product interfaces where space matters. Buttons, inputs, menus, cards, and lists all sit a little tighter so the UI can carry more without feeling crowded.
+Rhea は、同じ丸い基盤を維持しながら、スペースが重要な製品インターフェイスに合わせてよりコンパクトにします。ボタン、入力、メニュー、カード、リストはすべて少しタイトに配置されているため、UI は混雑を感じることなく、より多くのものを表示できます。
 
-## Why a new style?
+## なぜ新しいスタイルなのか?
 
-We considered making this a spacing tweak for Luma, but `--spacing` is a multiplier. Changing it would change what familiar utilities mean across your app. `p-2`, `w-4`, and `m-16` would no longer mean the same size.
+これを Luma の間隔調整にすることも検討しましたが、`--spacing` は乗数です。これを変更すると、アプリ全体での使い慣れたユーティリティの意味が変わります。 `p-2`、`w-4`、および `m-16` は同じサイズを意味しなくなりました。
 
-That tradeoff felt wrong. Compactness should not force you to relearn Tailwind's spacing scale or wonder whether a utility means something different in one style than another.
+そのトレードオフは間違っていると感じました。コンパクトさによって、Tailwind の間隔スケールを再学習したり、あるスタイルと別のスタイルでユーティリティの意味が異なるかどうか疑問に思ったりする必要はありません。
 
-So Rhea is a new style instead. It lets us adjust component sizes, gaps, and density directly while keeping the underlying utility scale predictable.
+したがって、Rhea は代わりに新しいスタイルです。これにより、基礎となるユーティリティの規模を予測可能に保ちながら、コンポーネントのサイズ、ギャップ、密度を直接調整できます。
 
-Available now in [shadcn/create](/create) for both Radix and Base UI.
+現在、[shadcn/create](/create) で Radix UI と Base UI の両方で利用可能です。
 
 <Button asChild size="sm">
   <Link href="/create?preset=b27GcrRo" className="mt-6 no-underline!">
-    Try Rhea
+    レアを試してみる
   </Link>
 </Button>

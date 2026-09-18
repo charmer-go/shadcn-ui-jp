@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Card,
   CardContent,
@@ -8,41 +8,41 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/base-nova/ui/card"
+} from "@/components/ui/base/card"
 
 export function CardSmall() {
-  const featureName = "Scheduled reports"
+  const featureName = "スケジュールレポート"
 
   return (
     <Card size="sm" className="mx-auto w-full max-w-xs">
       <CardHeader>
         <CardTitle>{featureName}</CardTitle>
         <CardDescription>
-          Weekly snapshots. No more manual exports.
+          週次スナップショット。手動でのエクスポートはもう不要です。
         </CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="grid gap-2 py-2 text-sm">
           <li className="flex gap-2">
             <ChevronRightIcon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-            <span>Choose a schedule (daily, or weekly).</span>
+            <span>スケジュールを選択（毎日または毎週）。</span>
           </li>
           <li className="flex gap-2">
             <ChevronRightIcon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-            <span>Send to channels or specific teammates.</span>
+            <span>チャンネルや特定のチームメンバーに送信。</span>
           </li>
           <li className="flex gap-2">
             <ChevronRightIcon className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-            <span>Include charts, tables, and key metrics.</span>
+            <span>グラフ、表、主要な指標を含める。</span>
           </li>
         </ul>
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button size="sm" className="w-full">
-          Set up scheduled reports
+          スケジュールレポートを設定
         </Button>
         <Button variant="outline" size="sm" className="w-full">
-          See what&apos;s new
+          新機能を見る
         </Button>
       </CardFooter>
     </Card>

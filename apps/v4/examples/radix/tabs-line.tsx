@@ -1,12 +1,12 @@
-import { Tabs, TabsList, TabsTrigger } from "@/styles/radix-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/radix/tabs"
 
 export function TabsLine() {
   return (
     <Tabs defaultValue="overview">
       <TabsList variant="line">
-        <TabsTrigger value="overview">Overview</TabsTrigger>
-        <TabsTrigger value="analytics">Analytics</TabsTrigger>
-        <TabsTrigger value="reports">Reports</TabsTrigger>
+        <TabsTrigger value="overview">概要</TabsTrigger>
+        <TabsTrigger value="analytics">分析</TabsTrigger>
+        <TabsTrigger value="reports">レポート</TabsTrigger>
       </TabsList>
     </Tabs>
   )

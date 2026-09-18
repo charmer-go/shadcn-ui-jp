@@ -4,7 +4,7 @@ import { cn } from "cn"
 import { formatCode } from "@/lib/format-code"
 import { highlightCode } from "@/lib/highlight-code"
 import { readFileFromRoot } from "@/lib/read-file"
-import { getDemoItem, getRegistryItem } from "@/lib/registry"
+import { getExampleSource } from "@/lib/examples"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
 import { CopyButton } from "@/components/copy-button"
 import { getIconForLanguageExtension } from "@/components/icons"
@@ -34,14 +34,16 @@ export async function ComponentSource({
   let code: string | undefined
 
   if (name) {
-    const item =
-      (await getDemoItem(name, styleName)) ??
-      (await getRegistryItem(name, styleName))
-    code = item?.files?.[0]?.content
+    const item = await getExampleSource(name, styleName)
+    code = item?.content
   }
 
   if (src) {
-    code = await readFileFromRoot(src)
+    if (src.startsWith("/registry/")) {
+      return null
+    }
+
+    code = (await readFileFromRoot(src)) ?? undefined
   }
 
   if (!code) {

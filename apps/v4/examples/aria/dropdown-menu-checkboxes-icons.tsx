@@ -4,14 +4,14 @@ import * as React from "react"
 import { BellIcon, MailIcon, MessageSquareIcon } from "lucide-react"
 import type { Selection } from "react-aria-components"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   DropdownMenu,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 export function DropdownMenuCheckboxesIcons() {
   const [notifications, setNotifications] = React.useState<Selection>(
@@ -20,25 +20,25 @@ export function DropdownMenuCheckboxesIcons() {
 
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Notifications</Button>
+      <Button variant="outline">通知</Button>
       <DropdownMenu className="w-48">
         <DropdownMenuGroup
           selectionMode="multiple"
           selectedKeys={notifications}
           onSelectionChange={setNotifications}
         >
-          <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
+          <DropdownMenuLabel>通知設定</DropdownMenuLabel>
           <DropdownMenuItem id="email">
             <MailIcon />
-            Email notifications
+            メール通知
           </DropdownMenuItem>
           <DropdownMenuItem id="sms">
             <MessageSquareIcon />
-            SMS notifications
+            SMS通知
           </DropdownMenuItem>
           <DropdownMenuItem id="push">
             <BellIcon />
-            Push notifications
+            プッシュ通知
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenu>

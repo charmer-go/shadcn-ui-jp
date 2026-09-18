@@ -1,18 +1,18 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   ButtonGroup,
   ButtonGroupSeparator,
-} from "@/styles/radix-nova/ui/button-group"
+} from "@/components/ui/radix/button-group"
 
 export default function ButtonGroupSeparatorDemo() {
   return (
     <ButtonGroup>
       <Button variant="secondary" size="sm">
-        Copy
+        コピー
       </Button>
       <ButtonGroupSeparator />
       <Button variant="secondary" size="sm">
-        Paste
+        貼り付け
       </Button>
     </ButtonGroup>
   )

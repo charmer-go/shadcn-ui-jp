@@ -1,33 +1,33 @@
 ---
-title: August 2026 - Private GitHub Registries
-description: Install registry items from private GitHub repositories using the GitHub CLI or a token.
+title: 2026 年 8 月 - プライベート GitHub レジストリ
+description: GitHub CLI またはトークンを使用して、プライベート GitHub リポジトリからレジストリ項目をインストールします。
 date: 2026-08-24
 ---
 
-**GitHub registries now work with private repositories.**
+**GitHub レジストリがプライベート リポジトリで動作するようになりました。**
 
-In June, we made it possible to turn any public GitHub repository into a
-registry. Teams asked for the same thing for their internal code: design
-systems, feature kits, agent rules and conventions that should not be public.
+6 月に、あらゆるパブリック GitHub リポジトリを
+レジストリ。チームは内部コードにも同じこと、つまりデザインを求めました。
+公開すべきではないシステム、機能キット、エージェントのルールおよび規約。
 
-You can now install from private repositories. If you can read the repository,
-the CLI can install from it.
+プライベート リポジトリからインストールできるようになりました。リポジトリを読み取れる場合は、
+CLI はそこからインストールできます。
 
 ```bash
 npx shadcn@latest add acme/internal-toolkit/auth-kit
 ```
 
-## Zero configuration
+## ゼロ構成
 
-If you are logged in to the GitHub CLI, there is nothing to set up.
+GitHub CLI にログインしている場合は、何も設定する必要はありません。
 
 ```bash
 gh auth login
 ```
 
-When a repository is not publicly readable, the CLI reads it through `gh` using
-your stored credentials. The token stays inside the GitHub CLI. It never enters
-the shadcn process.
+リポジトリが公開されていない場合、CLI は `gh` を使用してリポジトリを読み取ります。
+保存されている認証情報。トークンは GitHub CLI 内に残ります。それは決して入りません
+shadcn プロセス。
 
 ```txt
 ✔ Using gh credentials.
@@ -36,20 +36,20 @@ the shadcn process.
   - lib/auth.ts
 ```
 
-## CI support
+## CI サポート
 
-Where the GitHub CLI is not installed, set `GH_TOKEN` or `GITHUB_TOKEN`:
+GitHub CLI がインストールされていない場合は、`GH_TOKEN` または `GITHUB_TOKEN` を設定します。
 
 ```bash
 GH_TOKEN=github_pat_xxx npx shadcn@latest add acme/internal-toolkit/auth-kit
 ```
 
-We recommend a fine-grained personal access token scoped to the repository with
-**Contents: Read-only** access.
+リポジトリをスコープとするきめ細かい個人アクセス トークンを使用することをお勧めします。
+**コンテンツ: 読み取り専用** アクセス。
 
-## Works with every command
+## すべてのコマンドで動作します
 
-Private repositories work with the same commands as public GitHub registries.
+プライベート リポジトリは、パブリック GitHub レジストリと同じコマンドで動作します。
 
 ```bash
 npx shadcn@latest list acme/internal-toolkit
@@ -67,17 +67,17 @@ npx shadcn@latest view acme/internal-toolkit/auth-kit
 npx shadcn@latest registry validate acme/internal-toolkit
 ```
 
-## How it works
+## 仕組み
 
-- Public repositories are read anonymously, exactly as before. No credentials
-  are used and the GitHub CLI is never invoked.
-- The CLI tries anonymous access first and only uses your credentials when the
-  repository is not publicly readable.
-- Private files are read through GitHub's Contents API, pinned to the resolved
-  commit SHA.
-- A token from `GH_TOKEN` is only ever sent to `api.github.com`. Stored GitHub
-  CLI credentials are read by `gh`, not by the CLI.
+- パブリック リポジトリは、以前とまったく同様に匿名で読み取られます。資格情報がありません
+が使用され、GitHub CLI は決して呼び出されません。
+- CLI は最初に匿名アクセスを試行し、認証情報が使用されない場合にのみ使用します。
+リポジトリは公開されていません。
+- プライベート ファイルは GitHub のコンテンツ API を通じて読み取られ、解決されたファイルに固定されます。
+SHAをコミットします。
+- `GH_TOKEN` からのトークンは、`api.github.com` にのみ送信されます。保存された GitHub
+CLI 資格情報は、CLI ではなく、`gh` によって読み取られます。
 
-See the
-[Private repositories](/docs/registry/github#private-repositories) docs for
-the full guide.
+を参照してください。
+[プライベート リポジトリ](/docs/registry/github#private-repositories) のドキュメント
+完全なガイド。

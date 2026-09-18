@@ -1,6 +1,6 @@
 ---
-title: Combobox
-description: Autocomplete input with a list of suggestions.
+title: コンボボックス
+description: 候補のリストを含むオートコンプリート入力。
 base: aria
 component: true
 links:
@@ -11,16 +11,16 @@ links:
 <ComponentPreview
   styleName="aria-nova"
   name="combobox-demo"
-  description="A combobox with a list of frameworks."
+  description="フレームワークのリストが含まれるコンボボックス。"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,13 +33,13 @@ npx shadcn@latest add combobox
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="combobox"
@@ -47,7 +47,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -55,7 +55,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -93,11 +93,11 @@ export function ExampleCombobox() {
 }
 ```
 
-## Composition
+## 構成
 
-### Simple
+### シンプル
 
-A single-line input and a flat list (see [Basic](#basic)).
+単一行入力とフラット リスト ([Basic](#basic) を参照)。
 
 ```text
 Combobox
@@ -108,9 +108,9 @@ Combobox
         └── ComboboxItem
 ```
 
-### With chips
+### チップ付き
 
-Multi-select with `multiple`, chips, and a chips input (see [Multiple](#multiple)).
+`multiple`、チップ、およびチップ入力による複数選択 ([複数](#multiple) を参照)。
 
 ```text
 Combobox
@@ -124,9 +124,9 @@ Combobox
         └── ComboboxItem
 ```
 
-### With groups and collection
+### グループとコレクションを使用する
 
-Nested items per group using `ComboboxGroup`, with a separator between groups (see [Groups](#groups)).
+`ComboboxGroup` を使用してグループごとに項目をネストし、グループ間に区切り文字を付けます ([グループ](#groups) を参照)。
 
 ```text
 Combobox
@@ -144,9 +144,9 @@ Combobox
             └── ComboboxItem
 ```
 
-## Custom Items
+## カスタムアイテム
 
-Use `textValue` when your items render JSX children.
+アイテムが JSX の子をレンダリングする場合は `textValue` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -194,9 +194,9 @@ export function ExampleComboboxCustomItems() {
 }
 ```
 
-## Multiple Selection
+## 複数選択
 
-Use `multiple` with chips for multi-select behavior.
+複数選択動作のチップでは `multiple` を使用します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -250,57 +250,57 @@ export function ExampleComboboxMultiple() {
 }
 ```
 
-## Basic
+## 基本
 
-A simple combobox with a list of frameworks.
+フレームワークのリストを含む単純なコンボボックス。
 
 <ComponentPreview styleName="aria-nova" name="combobox-basic" />
 
-## Multiple
+## 複数の
 
-A combobox with multiple selection using `multiple` and `ComboboxChips`.
+`multiple` と `ComboboxChips` を使用した複数選択のコンボボックス。
 
 <ComponentPreview styleName="aria-nova" name="combobox-multiple" />
 
-## Clear Button
+## クリア ボタン
 
-Use the `showClear` prop to show a clear button.
+`showClear` プロップを使用してクリア ボタンを表示します。
 
 <ComponentPreview styleName="aria-nova" name="combobox-clear" />
 
-## Groups
+## グループ
 
-Use `ComboboxGroup` and `ComboboxSeparator` to group items.
+`ComboboxGroup` および `ComboboxSeparator` を使用して項目をグループ化します。
 
 <ComponentPreview styleName="aria-nova" name="combobox-groups" />
 
-## Custom Items
+## カスタムアイテム
 
-You can render custom component inside `ComboboxItem`.
+`ComboboxItem` 内でカスタム コンポーネントをレンダリングできます。
 
 <ComponentPreview styleName="aria-nova" name="combobox-custom" />
 
-## Invalid
+## 無効
 
-Use the `isInvalid` prop to make the combobox invalid.
+コンボボックスを無効にするには、`isInvalid` プロパティを使用します。
 
 <ComponentPreview styleName="aria-nova" name="combobox-invalid" />
 
-## Disabled
+## 無効
 
-Use the `isDisabled` prop to disable the combobox.
+`isDisabled` プロパティを使用してコンボボックスを無効にします。
 
 <ComponentPreview styleName="aria-nova" name="combobox-disabled" />
 
-## Input Group
+## 入力グループ
 
-You can add an addon to the combobox by using the `InputGroupAddon` component inside the `ComboboxInput`.
+`ComboboxInput` 内の `InputGroupAddon` コンポーネントを使用して、コンボボックスにアドオンを追加できます。
 
 <ComponentPreview styleName="aria-nova" name="combobox-input-group" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -309,6 +309,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   align="start"
 />
 
-## API Reference
+## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/ComboBox#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/ComboBox#api) ドキュメントを参照してください。

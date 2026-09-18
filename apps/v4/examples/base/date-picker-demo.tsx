@@ -4,13 +4,13 @@ import * as React from "react"
 import { format } from "date-fns"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Calendar } from "@/styles/base-nova/ui/calendar"
+import { Button } from "@/components/ui/base/button"
+import { Calendar } from "@/components/ui/base/calendar"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function DatePickerDemo() {
   const [date, setDate] = React.useState<Date>()
@@ -26,7 +26,7 @@ export function DatePickerDemo() {
           />
         }
       >
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
+        {date ? format(date, "PPP") : <span>日付を選択</span>}
         <ChevronDownIcon data-icon="inline-end" />
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

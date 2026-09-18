@@ -1,13 +1,13 @@
 ---
-title: Chart
-description: Beautiful charts. Built using Recharts. Copy and paste into your apps.
+title: チャート
+description: Recharts で構築された美しいチャート。アプリにコピーして貼り付けて使用できます。
 base: base
 component: true
 ---
 
 <Callout className="mt-4">
 
-**Updated:** The `chart` component now uses Recharts v3. If you're upgrading existing chart code, see [Updating to Recharts v3](#updating-to-recharts-v3).
+**更新:** `chart` コンポーネントは Recharts v3 を使用するようになりました。既存のチャート コードをアップグレードする場合は、[Recharts v3 への更新](#updating-to-recharts-v3) を参照してください。
 
 </Callout>
 
@@ -15,20 +15,20 @@ component: true
   styleName="base-nova"
   name="chart-demo"
   className="theme-blue [&_.preview]:h-auto [&_.preview]:p-0 [&_.preview]:lg:min-h-[404px] [&_.preview>div]:w-full [&_.preview>div]:border-none [&_.preview>div]:shadow-none"
-  hideCode
+  HideCode
 />
 
 Introducing **Charts**. A collection of chart components that you can copy and paste into your apps.
 
-Charts are designed to look great out of the box. They work well with the other components and are fully customizable to fit your project.
+チャートは、すぐに使えるように設計されています。これらは他のコンポーネントとうまく連携し、プロジェクトに合わせて完全にカスタマイズできます。
 
-[Browse the Charts Library](/charts).
+[チャート ライブラリを参照](/charts)。
 
-## Component
+## コンポーネント
 
-We use [Recharts](https://recharts.org/) under the hood.
+内部では [Recharts](https://recharts.org/) を使用しています。
 
-We designed the `chart` component with composition in mind. **You build your charts using Recharts components and only bring in custom components, such as `ChartTooltip`, when and where you need it**.
+`chart` コンポーネントは、構成を念頭に置いて設計されました。 **Recharts コンポーネントを使用してグラフを作成し、`ChartTooltip` などのカスタム コンポーネントを必要なときに必要な場所にのみ取り込みます**。
 
 ```tsx showLineNumbers /ChartContainer/ /ChartTooltipContent/
 import { Bar, BarChart } from "recharts"
@@ -49,24 +49,24 @@ export function MyChart() {
 
 We do not wrap Recharts. This means you're not locked into an abstraction. When a new Recharts version is released, you can follow the official upgrade path to upgrade your charts.
 
-**The components are yours**.
+**コンポーネントはあなたのものです**。
 
 ## Updating to Recharts v3
 
 If you're updating older chart code to Recharts v3:
 
-- Use `var(--chart-1)` instead of `hsl(var(--chart-1))` when you reference chart tokens from your CSS variables.
-- Use `ChartTooltip.defaultIndex` for initial tooltip state only. Keep persistent active shapes in your own chart state.
-- Remove `layout` from `<Bar>` when the parent `<BarChart>` already defines it.
-- Keep a height, `min-h-*`, or `aspect-*` on `ChartContainer` so `ResponsiveContainer` can measure on first render.
+- CSS 変数からチャート トークンを参照する場合は、`hsl(var(--chart-1))` の代わりに `var(--chart-1)` を使用します。
+- `ChartTooltip.defaultIndex` は、ツールチップの初期状態にのみ使用します。永続的なアクティブなシェイプを独自のチャート状態に維持します。
+- 親 `<BarChart>` が既に定義している場合は、`<Bar>` から `layout` を削除します。
+- 最初のレンダリング時に `ResponsiveContainer` が測定できるように、`ChartContainer` に高さ `min-h-*` または `aspect-*` を保持します。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -80,13 +80,13 @@ npx shadcn@latest add chart
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします:</Step>
 
 ```bash
 npm install recharts
 ```
 
-<Step>Copy and paste the following code into `components/ui/chart.tsx`.</Step>
+<Step>次のコードをコピーし、`components/ui/chart.tsx` に貼り付けます。</Step>
 
 <ComponentSource
   name="chart"
@@ -94,7 +94,7 @@ npm install recharts
   styleName="base-nova"
 />
 
-<Step>Add the following colors to your CSS file</Step>
+<Step>CSS ファイルに次の色を追加します</Step>
 
 ```css title="app/globals.css" showLineNumbers
 @layer base {
@@ -122,7 +122,7 @@ npm install recharts
 
 </CodeTabs>
 
-## Your First Chart
+## 初めてのチャート
 
 Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.
 
@@ -130,11 +130,11 @@ Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip
 
 <Step>Start by defining your data</Step>
 
-The following data represents the number of desktop and mobile users for each month.
+次のデータは、各月のデスクトップ ユーザーとモバイル ユーザーの数を表します。
 
 <Callout className="mt-4">
 
-**Note:** Your data can be in any shape. You are not limited to the shape of the data below. Use the `dataKey` prop to map your data to the chart.
+**注:** データは任意の形式にすることができます。以下のデータの形式に限定されません。 `dataKey` プロップを使用して、データをチャートにマップします。
 
 </Callout>
 
@@ -149,7 +149,7 @@ const chartData = [
 ]
 ```
 
-<Step>Define your chart config</Step>
+<Step>チャート構成</Step>
 
 The chart config holds configuration for the chart. This is where you place human-readable strings, such as labels, icons and color tokens for theming.
 
@@ -174,7 +174,7 @@ You can now build your chart using Recharts components.
 
 <Callout className="mt-4 bg-amber-50 border-amber-200 dark:bg-amber-950/50 dark:border-amber-950">
 
-**Important:** Remember to set a `min-h-[VALUE]` on the `ChartContainer` component. This is required for the chart to be responsive.
+**重要:** `ChartContainer` コンポーネントに `min-h-[VALUE]` を設定することを忘れないでください。これはチャートの応答性を高めるために必要です。
 
 </Callout>
 
@@ -192,13 +192,13 @@ Let's add a grid to the chart.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `CartesianGrid` component.</Step>
+<Step>`CartesianGrid` コンポーネントをインポートします。</Step>
 
 ```tsx /CartesianGrid/
 import { Bar, BarChart, CartesianGrid } from "recharts"
 ```
 
-<Step>Add the `CartesianGrid` component to your chart.</Step>
+<Step>`CartesianGrid` コンポーネントをチャートに追加します。</Step>
 
 ```tsx showLineNumbers {3}
 <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
@@ -218,19 +218,19 @@ import { Bar, BarChart, CartesianGrid } from "recharts"
 
 </Steps>
 
-### Add an Axis
+### 軸の追加
 
-To add an x-axis to the chart, we'll use the `XAxis` component.
+グラフに X 軸を追加するには、`XAxis` コンポーネントを使用します。
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `XAxis` component.</Step>
+<Step>`XAxis` コンポーネントをインポートします。</Step>
 
 ```tsx /XAxis/
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 ```
 
-<Step>Add the `XAxis` component to your chart.</Step>
+<Step>`XAxis` コンポーネントをチャートに追加します。</Step>
 
 ```tsx showLineNumbers {4-10}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -257,21 +257,21 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 </Steps>
 
-### Add Tooltip
+### ツールチップの追加
 
-So far we've only used components from Recharts. They look great out of the box thanks to some customization in the `chart` component.
+これまで、Recharts のコンポーネントのみを使用してきました。 `chart` コンポーネントのカスタマイズのおかげで、箱から出してすぐに見栄えがよくなります。
 
-To add a tooltip, we'll use the custom `ChartTooltip` and `ChartTooltipContent` components from `chart`.
+ツールチップを追加するには、`chart` のカスタム `ChartTooltip` コンポーネントと `ChartTooltipContent` コンポーネントを使用します。
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `ChartTooltip` and `ChartTooltipContent` components.</Step>
+<Step>`ChartTooltip` および `ChartTooltipContent` コンポーネントをインポートします。</Step>
 
 ```tsx
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 ```
 
-<Step>Add the components to your chart.</Step>
+<Step>コンポーネントをチャートに追加します。</Step>
 
 ```tsx showLineNumbers {11}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -297,23 +297,23 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
   previewClassName="h-80"
 />
 
-Hover to see the tooltips. Easy, right? Two components, and we've got a beautiful tooltip.
+カーソルを合わせるとツールチップが表示されます。簡単ですよね？ 2 つのコンポーネントで、美しいツールチップが表示されます。
 
 </Steps>
 
-### Add Legend
+### 凡例の追加
 
 We'll do the same for the legend. We'll use the `ChartLegend` and `ChartLegendContent` components from `chart`.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `ChartLegend` and `ChartLegendContent` components.</Step>
+<Step>`ChartLegend` および `ChartLegendContent` コンポーネントをインポートします。</Step>
 
 ```tsx
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 ```
 
-<Step>Add the components to your chart.</Step>
+<Step>コンポーネントをチャートに追加します。</Step>
 
 ```tsx showLineNumbers {12}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -342,17 +342,17 @@ import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 
 </Steps>
 
-Done. You've built your first chart! What's next?
+完了しました。最初のチャートが作成されました。次は何でしょうか？
 
-- [Themes and Colors](/docs/components/chart#theming)
-- [Tooltip](/docs/components/chart#tooltip)
-- [Legend](/docs/components/chart#legend)
+- [テーマと色](/docs/components/chart#theming)
+- [ツールチップ](/docs/components/chart#tooltip)
+- [凡例](/docs/components/chart#legend)
 
 ## Chart Config
 
 The chart config is where you define the labels, icons and colors for a chart.
 
-It is intentionally decoupled from chart data.
+チャート データから意図的に切り離されています。
 
 This allows you to share config and color tokens between charts. It can also work independently for cases where your data or color tokens live remotely or in a different format.
 
@@ -378,9 +378,9 @@ const chartConfig = {
 
 ## Theming
 
-Charts have built-in support for theming. You can use css variables (recommended) or color values in any color format, such as hex, hsl or oklch.
+チャートにはテーマのサポートが組み込まれています。 CSS 変数 (推奨) または任意のカラー形式 (hex、hsl、oklch など) のカラー値を使用できます。
 
-### CSS Variables
+### CSS 変数
 
 <Steps className="mb-0 pt-2">
 
@@ -400,7 +400,7 @@ Charts have built-in support for theming. You can use css variables (recommended
 }
 ```
 
-<Step>Add the color to your `chartConfig`</Step>
+<Step>`chartConfig`</Step>
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -417,9 +417,9 @@ const chartConfig = {
 
 </Steps>
 
-### hex, hsl or oklch
+### hex、hsl、または oklch
 
-You can also define your colors directly in the chart config. Use the color format you prefer.
+チャート設定で直接色を定義することもできます。好みのカラー形式を使用してください。
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -444,15 +444,15 @@ const chartConfig = {
 
 ### Using Colors
 
-To use the theme colors in your chart, reference the colors using the format `var(--color-KEY)`.
+チャートでテーマの色を使用するには、`var(--color-KEY)` の形式を使用して色を参照します。
 
-#### Components
+#### コンポーネント
 
 ```tsx
 <Bar dataKey="desktop" fill="var(--color-desktop)" />
 ```
 
-#### Chart Data
+#### チャート データ
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartData = [
@@ -467,17 +467,17 @@ const chartData = [
 <LabelList className="fill-(--color-desktop)" />
 ```
 
-## Tooltip
+## ツールチップ
 
-A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.
+チャート ツールチップには、ラベル、名前、インジケーター、および値が含まれます。これらを組み合わせて使用​​して、ツールチップをカスタマイズできます。
 
 <ComponentPreview styleName="base-nova" name="chart-tooltip" hideCode />
 
-You can turn on/off any of these using the `hideLabel`, `hideIndicator` props and customize the indicator style using the `indicator` prop.
+`hideLabel`、`hideIndicator` プロパティを使用してこれらのオン/オフを切り替え、`indicator` プロパティを使用してインジケーターのスタイルをカスタマイズできます。
 
-Use `labelKey` and `nameKey` to use a custom key for the tooltip label and name.
+ツールチップのラベルと名前にカスタム キーを使用するには、`labelKey` および `nameKey` を使用します。
 
-Chart comes with the `<ChartTooltip>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
+チャートには、`<ChartTooltip>` コンポーネントと `<ChartTooltipContent>` コンポーネントが付属しています。これら 2 つのコンポーネントを使用して、グラフにカスタム ツールチップを追加できます。
 
 ```tsx title="components/example-chart.tsx"
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -487,25 +487,25 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 <ChartTooltip content={<ChartTooltipContent />} />
 ```
 
-### Props
+### 小道具
 
 Use the following props to customize the tooltip.
 
-| Prop            | Type                     | Description                                  |
+|小道具 |タイプ |説明 |
 | :-------------- | :----------------------- | :------------------------------------------- |
 | `labelKey`      | string                   | The config or data key to use for the label. |
 | `nameKey`       | string                   | The config or data key to use for the name.  |
-| `indicator`     | `dot` `line` or `dashed` | The indicator style for the tooltip.         |
+| `indicator` | `dot` `line` または `dashed` |ツールチップのインジケーターのスタイル。         |
 | `hideLabel`     | boolean                  | Whether to hide the label.                   |
 | `hideIndicator` | boolean                  | Whether to hide the indicator.               |
 
-### Colors
+### カラーについて
 
 Colors are automatically referenced from the chart config.
 
-### Custom
+### カスタム
 
-To use a custom key for tooltip label and names, use the `labelKey` and `nameKey` props.
+ツールチップのラベルと名前にカスタム キーを使用するには、`labelKey` および `nameKey` プロパティを使用します。
 
 ```tsx showLineNumbers /browser/
 const chartData = [
@@ -534,11 +534,11 @@ const chartConfig = {
 />
 ```
 
-This will use `Total Visitors` for label and `Chrome` and `Safari` for the tooltip names.
+これにより、ラベルに `Total Visitors` が使用され、ツールチップ名に `Chrome` と `Safari` が使用されます。
 
 ## Legend
 
-You can use the custom `<ChartLegend>` and `<ChartLegendContent>` components to add a legend to your chart.
+カスタム `<ChartLegend>` および `<ChartLegendContent>` コンポーネントを使用して、グラフに凡例を追加できます。
 
 ```tsx title="components/example-chart.tsx"
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
@@ -548,11 +548,11 @@ import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 <ChartLegend content={<ChartLegendContent />} />
 ```
 
-### Colors
+### カラーについて
 
 Colors are automatically referenced from the chart config.
 
-### Custom
+### カスタム
 
 To use a custom key for legend names, use the `nameKey` prop.
 
@@ -580,11 +580,11 @@ const chartConfig = {
 
 This will use `Chrome` and `Safari` for the legend names.
 
-## Accessibility
+## アクセシビリティ
 
 You can turn on the `accessibilityLayer` prop to add an accessible layer to your chart.
 
-This prop adds keyboard access and screen reader support to your charts.
+このプロップは、チャートにキーボード アクセスとスクリーン リーダーのサポートを追加します。
 
 ```tsx title="components/example-chart.tsx"
 <LineChart accessibilityLayer />
@@ -592,7 +592,7 @@ This prop adds keyboard access and screen reader support to your charts.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"

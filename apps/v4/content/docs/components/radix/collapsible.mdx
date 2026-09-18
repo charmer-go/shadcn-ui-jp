@@ -1,6 +1,6 @@
 ---
-title: Collapsible
-description: An interactive component which expands/collapses a panel.
+title: 折りたたみ可能
+description: パネルを展開/折りたたむ対話型コンポーネント。
 base: radix
 component: true
 featured: true
@@ -15,13 +15,13 @@ links:
   align="start"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add collapsible
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="collapsible"
@@ -49,7 +49,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -77,9 +77,9 @@ import {
 </Collapsible>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Collapsible`:
+次の構成を使用して、`Collapsible` を構築します。
 
 ```text
 Collapsible
@@ -87,9 +87,9 @@ Collapsible
 └── CollapsibleContent
 ```
 
-## Controlled State
+## 制御状態
 
-Use the `open` and `onOpenChange` props to control the state.
+`open` および `onOpenChange` プロパティを使用して状態を制御します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -106,7 +106,7 @@ export function Example() {
 }
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="radix-nova"
@@ -114,15 +114,15 @@ export function Example() {
   align="start"
 />
 
-## Settings Panel
+## 設定パネル
 
-Use a trigger button to reveal additional settings.
+追加の設定を表示するには、トリガー ボタンを使用します。
 
 <ComponentPreview styleName="radix-nova" name="collapsible-settings" />
 
-## File Tree
+## ファイル ツリー
 
-Use nested collapsibles to build a file tree.
+ネストされた折りたたみ可能ファイルを使用して、ファイル ツリーを構築します。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -132,7 +132,7 @@ Use nested collapsibles to build a file tree.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -141,6 +141,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   align="start"
 />
 
-## API Reference
+## API リファレンス
 
-See the [Radix UI](https://www.radix-ui.com/docs/primitives/components/collapsible#api-reference) documentation for more information.
+詳細については、[Radix UI](https://www.radix-ui.com/docs/primitives/components/collapsible#api-reference) ドキュメントを参照してください。

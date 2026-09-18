@@ -1,16 +1,16 @@
-import { Marker, MarkerContent } from "@/styles/aria-rhea/ui/marker"
+import { Marker, MarkerContent } from "@/components/ui/aria/marker"
 
 export function MarkerSeparatorDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Marker variant="separator">
-        <MarkerContent>Today</MarkerContent>
+        <MarkerContent>今日</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Worked for 42s</MarkerContent>
+        <MarkerContent>42秒作業しました</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Conversation compacted</MarkerContent>
+        <MarkerContent>会話を圧縮しました</MarkerContent>
       </Marker>
     </div>
   )

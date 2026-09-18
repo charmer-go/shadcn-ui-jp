@@ -1,9 +1,9 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/base-nova/ui/tooltip"
+} from "@/components/ui/base/tooltip"
 
 export function TooltipSides() {
   return (
@@ -16,7 +16,7 @@ export function TooltipSides() {
             {side}
           </TooltipTrigger>
           <TooltipContent side={side}>
-            <p>Add to library</p>
+            <p>ライブラリに追加</p>
           </TooltipContent>
         </Tooltip>
       ))}

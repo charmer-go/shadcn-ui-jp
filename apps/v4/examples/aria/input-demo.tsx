@@ -2,16 +2,16 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+} from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputDemo() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-demo-api-key">API Key</FieldLabel>
+      <FieldLabel htmlFor="input-demo-api-key">APIキー</FieldLabel>
       <Input id="input-demo-api-key" type="password" placeholder="sk-..." />
       <FieldDescription>
-        Your API key is encrypted and stored securely.
+        APIキーは暗号化され、安全に保存されます。
       </FieldDescription>
     </Field>
   )

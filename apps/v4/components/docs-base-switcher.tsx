@@ -2,7 +2,12 @@ import Link from "next/link"
 import { cn } from "cn"
 
 import { source } from "@/lib/source"
-import { BASES } from "@/registry/bases"
+
+const BASES = [
+  { name: "base", title: "Base" },
+  { name: "radix", title: "Radix" },
+  { name: "aria", title: "React Aria" },
+] as const
 
 export function DocsBaseSwitcher({
   base,
@@ -15,8 +20,6 @@ export function DocsBaseSwitcher({
   hrefPrefix?: string
   className?: string
 }) {
-  const activeBase = BASES.find((baseItem) => base === baseItem.name)
-
   return (
     <div
       className={cn(
@@ -36,14 +39,6 @@ export function DocsBaseSwitcher({
           {baseItem.title}
         </Link>
       ))}
-      {activeBase?.meta?.logo && (
-        <div
-          className="ml-auto size-4 shrink-0 text-muted-foreground opacity-80 [&_svg]:size-4"
-          dangerouslySetInnerHTML={{
-            __html: activeBase.meta.logo,
-          }}
-        />
-      )}
     </div>
   )
 }

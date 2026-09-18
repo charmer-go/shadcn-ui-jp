@@ -1,77 +1,73 @@
 ---
-title: Introduction
-description: shadcn/ui is a set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks and AI models. Open Source. Open Code.
+title: 導入
+description: shadcn/ui は、美しくデザインされたアクセス可能なコンポーネントとコード配布プラットフォームのセットです。お気に入りのフレームワークや AI モデルと連携します。オープンソース。コードを開きます。
 ---
 
-**This is not a component library. It is how you build your component library.**
+**これはコンポーネントライブラリではありません。コンポーネントライブラリを構築するための方法です。**
 
-You know how most traditional component libraries work: you install a package from NPM, import the components, and use them in your app.
+一般的なコンポーネントライブラリでは、NPMからパッケージをインストールし、コンポーネントをインポートしてアプリで使います。
 
-This approach works well until you need to customize a component to fit your design system or require one that isn’t included in the library. **Often, you end up wrapping library components, writing workarounds to override styles, or mixing components from different libraries with incompatible APIs.**
+このアプローチは、設計システムに合わせてコンポーネントをカスタマイズする必要がある場合、またはライブラリに含まれていないコンポーネントが必要な場合までは、うまく機能します。 **多くの場合、ライブラリ コンポーネントをラップしたり、スタイルをオーバーライドするための回避策を作成したり、互換性のない API を備えた異なるライブラリのコンポーネントを混在させたりすることになります。**
 
-This is what shadcn/ui aims to solve. It is built around the following principles:
+これが shadcn/ui が解決しようとしている課題です。shadcn/ui は次の原則に基づいて構築されています。
 
-- **Open Code:** The top layer of your component code is open for modification.
-- **Composition:** Every component uses a common, composable interface, making them predictable.
-- **Distribution:** A flat-file schema and command-line tool make it easy to distribute components.
-- **Beautiful Defaults:** Carefully chosen default styles, so you get great design out-of-the-box.
-- **AI-Ready:** Open code for LLMs to read, understand, and improve.
+- **オープン コード:** コンポーネント コードの最上位層は変更のためにオープンです。
+- **構成:** すべてのコンポーネントは共通の構成可能なインターフェイスを使用しており、予測可能になっています。
+- **配布:** フラット ファイル スキーマとコマンド ライン ツールにより、コンポーネントの配布が簡単になります。
+- **美しいデフォルト:** 慎重に選択されたデフォルトのスタイルなので、すぐに優れたデザインを入手できます。
+- **AI 対応:** LLM が読み、理解し、改善できるオープン コード。
 
-## Open Code
+## オープンコード
 
-shadcn/ui hands you the actual component code. You have full control to customize and extend the components to your needs. This means:
+shadcn/ui は実際のコンポーネント コードを渡します。ニーズに合わせてコンポーネントをカスタマイズおよび拡張することを完全に制御できます。これはつまり：
 
-- **Full Transparency:** You see exactly how each component is built.
-- **Easy Customization:** Modify any part of a component to fit your design and functionality requirements.
-- **AI Integration:** Access to the code makes it straightforward for LLMs to read, understand, and even improve your components.
+- **完全な透明性:** 各コンポーネントがどのように構築されているかを正確に確認できます。
+- **簡単なカスタマイズ:** デザインと機能の要件に合わせてコンポーネントの任意の部分を変更します。
+- **AI 統合:** コードにアクセスできるため、LLM はコンポーネントを簡単に読み取り、理解し、さらには改善することができます。
 
-_In a typical library, if you need to change a button’s behavior, you have to override styles or wrap the component. With shadcn/ui, you simply edit the button code directly._
+_一般的なライブラリでは、ボタンの動作を変更する必要がある場合、スタイルをオーバーライドするか、コンポーネントをラップする必要があります。 shadcn/ui を使用すると、ボタン コードを直接編集するだけです。_
 
 <Accordion type="single" collapsible>
   <AccordionItem value="faq-1" className="border-none">
     <AccordionTrigger>
-      How do I pull upstream updates in an Open Code approach?
+      オープンコード方式で上流の更新を取り込むにはどうすればよいですか？
     </AccordionTrigger>
     <AccordionContent className="flex flex-col gap-4">
-      <p>
-        shadcn/ui follows a headless component architecture. This means the core
-        of your app can receive fixes by updating your dependencies, for
-        instance, @base-ui/react or input-otp.
-      </p>
-      <p>
-        The topmost layer, i.e., the one closest to your design system, is not
-        coupled with the implementation of the library. It stays open for
-        modification.
-      </p>
+      <div>
+        shadcn/ui は、@base-ui/react や input-otp などのヘッドレスコンポーネントを基盤にしたアーキテクチャに従います。
+      </div>
+      <div>
+        デザインシステムに最も近い最上位レイヤーは、ライブラリの実装と組み合わせて変更できます。コンポーネントのコードを直接編集できるため、上流の更新を取り込みながら必要なカスタマイズを維持できます。
+      </div>
     </AccordionContent>
   </AccordionItem>
 </Accordion>
 
-## Composition
+## 構成
 
-Every component in shadcn/ui shares a common, composable interface. **If a component does not exist, we bring it in, make it composable, and adjust its style to match and work with the rest of the design system.**
+shadcn/ui のすべてのコンポーネントは、共通の構成可能なインターフェイスを共有します。 **コンポーネントが存在しない場合は、コンポーネントを取り込んで構成可能にし、デザイン システムの残りの部分と一致して機能するようにそのスタイルを調整します。**
 
-_A shared, composable interface means it's predictable for both your team and LLMs. You are not learning different APIs for every new component. Even for third-party ones._
+_共有された構成可能なインターフェイスは、チームと LLM の両方にとって予測可能であることを意味します。新しいコンポーネントごとに異なる API を学習しているわけではありません。サードパーティ製のものであっても。_
 
-## Distribution
+## 分布
 
-shadcn/ui is also a code distribution system. It defines a schema for components and a CLI to distribute them.
+shadcn/ui もコード配布システムです。コンポーネントのスキーマと、それらを配布するための CLI を定義します。
 
-- **Schema:** A flat-file structure that defines the components, their dependencies, and properties.
-- **CLI:** A command-line tool to distribute and install components across projects with cross-framework support.
+- **スキーマ:** コンポーネント、その依存関係、およびプロパティを定義するフラット ファイル構造。
+- **CLI:** クロスフレームワークのサポートにより、プロジェクト間でコンポーネントを配布およびインストールするためのコマンドライン ツール。
 
-_You can use the schema to distribute your components to other projects or have AI generate completely new components based on existing schema._
+_スキーマを使用してコンポーネントを他のプロジェクトに配布したり、AI に既存のスキーマに基づいて完全に新しいコンポーネントを生成させたりすることができます。
 
-## Beautiful Defaults
+## 美しいデフォルト
 
-shadcn/ui comes with a large collection of components that have carefully chosen default styles. They are designed to look good on their own and to work well together as a consistent system:
+shadcn/ui には、デフォルトのスタイルを慎重に選択したコンポーネントの大規模なコレクションが付属しています。これらは、単独で見栄えがよく、一貫したシステムとして連携してうまく機能するように設計されています。
 
-- **Good Out-of-the-Box:** Your UI has a clean and minimal look without extra work.
-- **Unified Design:** Components naturally fit with one another. Each component is built to match the others, keeping your UI consistent.
-- **Easily Customizable:** If you want to change something, it's simple to override and extend the defaults.
+- **すぐに使える優れた機能:** 余分な作業を行わなくても、UI はすっきりとした最小限の外観になります。
+- **統一されたデザイン:** コンポーネントは互いに自然にフィットします。各コンポーネントは他のコンポーネントと一致するように構築されており、UI の一貫性が保たれます。
+- **簡単にカスタマイズ可能:** 何かを変更したい場合は、デフォルトを上書きして拡張するのが簡単です。
 
-## AI-Ready
+## AI 対応
 
-The design of shadcn/ui makes it easy for AI tools to work with your code. Its open code and consistent API allow AI models to read, understand, and even generate new components.
+shadcn/ui の設計により、AI ツールがコードを簡単に操作できるようになります。そのオープン コードと一貫した API により、AI モデルは新しいコンポーネントを読み取り、理解し、さらには生成することができます。
 
-_An AI model can learn how your components work and suggest improvements or even create new components that integrate with your existing design._
+_AI モデルは、コンポーネントがどのように機能するかを学習し、改善を提案したり、既存の設計と統合する新しいコンポーネントを作成したりすることもできます。_

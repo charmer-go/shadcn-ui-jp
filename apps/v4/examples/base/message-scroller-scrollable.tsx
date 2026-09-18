@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/base-rhea/ui/card"
+} from "@/components/ui/base/card"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -16,15 +16,15 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScrollerScrollable,
-} from "@/styles/base-rhea/ui/message-scroller"
+} from "@/components/ui/base/message-scroller"
 
 const messages = Array.from({ length: 12 }, (_, index) => ({
   id: `scrollable-${index + 1}`,
   role: index % 2 === 0 ? "user" : "assistant",
   text:
     index % 2 === 0
-      ? `Review scroll checkpoint ${index + 1}.`
-      : `Checkpoint ${index + 1} is synced. The scrollable hook updates as the viewport moves.\n\nWhen the reader is at the first message, the footer should only point them down. Once they move into the middle of the transcript, it should explain that both directions are available.\n\nAt the latest message, the footer should switch again and only point them back up.`,
+      ? `スクロールチェックポイント${index + 1}を確認してください。`
+      : `チェックポイント${index + 1}は同期済みです。表示領域が移動すると、scrollableフックが更新されます。\n\n読者が最初のメッセージにいるときは、フッターは下方向のみを示すべきです。トランスクリプトの中間に移動すると、両方向に進めることを説明する必要があります。\n\n最新のメッセージにいるときは、フッターは再び切り替わり、上方向のみを示すべきです。`,
 })) satisfies Array<{
   id: string
   role: "user" | "assistant"
@@ -36,9 +36,9 @@ export function MessageScrollerScrollable() {
     <div className="mx-auto flex w-full max-w-sm flex-col gap-4">
       <Card className="h-140 w-full gap-0 overflow-hidden">
         <CardHeader className="gap-1 border-b">
-          <CardTitle>Scroll Status</CardTitle>
+          <CardTitle>スクロールの状態</CardTitle>
           <CardDescription>
-            Where the reader can go scroll to based on current scroll position.
+            現在のスクロール位置に応じて、読者がどちらへスクロールできるかを示します。
           </CardDescription>
         </CardHeader>
         <MessageScrollerProvider defaultScrollPosition="start">
@@ -56,7 +56,7 @@ export function MessageScrollerScrollable() {
         </MessageScrollerProvider>
       </Card>
       <div className="px-0.5 text-center text-xs text-muted-foreground">
-        Scroll the transcript to see the footer update.
+        トランスクリプトをスクロールして、フッターの更新を確認してください。
       </div>
     </div>
   )
@@ -88,16 +88,16 @@ function ScrollStateFooter() {
 
 function getScrollStatus({ start, end }: { start: boolean; end: boolean }) {
   if (start && end) {
-    return "You can scroll both ways."
+    return "両方向にスクロールできます。"
   }
 
   if (end) {
-    return "You are at the top. You can only scroll down."
+    return "上端にいます。下方向にのみスクロールできます。"
   }
 
   if (start) {
-    return "You are at the bottom. You can only scroll up."
+    return "下端にいます。上方向にのみスクロールできます。"
   }
 
-  return "All messages fit in the viewport."
+  return "すべてのメッセージが表示領域内に収まっています。"
 }

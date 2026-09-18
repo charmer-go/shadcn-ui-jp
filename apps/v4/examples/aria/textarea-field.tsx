@@ -2,15 +2,15 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+} from "@/components/ui/aria/field"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export function TextareaField() {
   return (
     <Field>
-      <FieldLabel htmlFor="textarea-message">Message</FieldLabel>
-      <FieldDescription>Enter your message below.</FieldDescription>
-      <Textarea id="textarea-message" placeholder="Type your message here." />
+      <FieldLabel htmlFor="textarea-message">メッセージ</FieldLabel>
+      <FieldDescription>以下にメッセージを入力してください。</FieldDescription>
+      <Textarea id="textarea-message" placeholder="ここにメッセージを入力してください。" />
     </Field>
   )
 }

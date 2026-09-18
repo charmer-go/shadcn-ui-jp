@@ -1,13 +1,12 @@
 ---
-title: API Reference
-description: Programmatic API for working with registries, schemas and presets.
+title: API リファレンス
+description: レジストリ、スキーマ、プリセットを扱うためのプログラマティック API。
 ---
 
-The `shadcn` package exposes a set of programmatic APIs in addition to the CLI.
-You can use these to fetch, resolve, and install registry items, validate
-registry JSON, and build custom tooling on top of the registry.
+`shadcn` パッケージは CLI に加えて、プログラマティック API を公開しています。
+これらを使うと、レジストリアイテムの取得・解決・インストール、レジストリ JSON の検証、レジストリを基盤とした独自ツールの構築ができます。
 
-Each API is available under a dedicated subpath import.
+各 API は専用のサブパス import で利用できます。
 
 ```ts
 import { getRegistryItems } from "shadcn/registry"
@@ -15,27 +14,22 @@ import { registryItemSchema } from "shadcn/schema"
 ```
 
 <Callout className="mt-6">
-  The CLI commands themselves are not part of the public API. Only the imports
-  documented below are considered stable.
+  CLI コマンド自体は公開 API の一部ではありません。以下に記載された import
+  のみが安定版として扱われます。
 </Callout>
 
 ## shadcn/registry
 
-Fetch and resolve items from configured registries.
+設定済みのレジストリからアイテムを取得・解決します。
 
-Most functions accept an options object. The two options below are common to all
-of them. In the examples that follow, `config` refers to this optional value —
-omit it to use the built-in registries.
+多くの関数はオプションオブジェクトを受け取ります。以下の2つのオプションはすべてに共通です。以降の例で `config` とはこの任意の値を指します。ビルトインレジストリを使う場合は省略してください。
 
 ### config
 
 - **Type:** `Partial<Config>`
-- **Default:** built-in registries only
+- **Default:** ビルトインレジストリのみ
 
-The registry configuration to use. Its `registries` field maps a namespace
-(e.g. `@acme`) to a URL and any authentication headers or environment
-variables required to reach it. Use
-[`getRegistriesConfig`](#getregistriesconfig) to load it from your project.
+使用するレジストリ設定です。`registries` フィールドで名前空間（例: `@acme`）と URL、およびアクセスに必要な認証ヘッダーや環境変数を対応付けます。プロジェクトから読み込むには [`getRegistriesConfig`](#getregistriesconfig) を使用します。
 
 ```ts showLineNumbers
 import { getRegistryItems } from "shadcn/registry"
@@ -54,13 +48,9 @@ const items = await getRegistryItems(["@acme/login-form"], {
 - **Type:** `boolean`
 - **Default:** `true`
 
-Registry responses are cached **in memory for the lifetime of the process**,
-keyed by the resolved URL. Because the in-flight promise is cached, concurrent
-requests for the same URL are de-duplicated into a single fetch.
+レジストリのレスポンスは**プロセスの存続期間中メモリにキャッシュ**され、解決済み URL をキーとします。処理中の Promise もキャッシュされるため、同一 URL への同時リクエストは1回の fetch にまとめられます。
 
-Leave this enabled for one-off scripts and CLI runs. Set it to `false` in
-long-running processes (servers, watchers, the MCP server) where the registry
-can change between requests and you need fresh data each time.
+単発のスクリプトや CLI 実行では有効のままにしてください。レジストリがリクエスト間で変化する可能性があり、毎回最新のデータが必要な長時間実行プロセス（サーバー、ウォッチャー、MCP サーバー）では `false` に設定します。
 
 ```ts
 const fresh = await getRegistry("@shadcn", { useCache: false })
@@ -68,9 +58,7 @@ const fresh = await getRegistry("@shadcn", { useCache: false })
 
 ### getRegistriesConfig
 
-Load registry configuration from a project directory. The function reads
-`components.json` when present; otherwise it reads the top-level `registries`
-field from `package.json`.
+プロジェクトディレクトリからレジストリ設定を読み込みます。`components.json` が存在する場合はそれを読み込み、存在しない場合は `package.json` のトップレベル `registries` フィールドを読み込みます。
 
 ```ts showLineNumbers
 import { getRegistriesConfig } from "shadcn/registry"
@@ -80,7 +68,7 @@ const config = await getRegistriesConfig(process.cwd())
 
 ### getRegistry
 
-Fetch a single registry by name.
+単一のレジストリを名前で取得します。
 
 ```ts showLineNumbers
 import { getRegistry } from "shadcn/registry"
@@ -93,7 +81,7 @@ const registry = await getRegistry("@acme", {
 
 ### getRegistryItems
 
-Fetch one or more registry items by their qualified names.
+1つ以上のレジストリアイテムを修飾名で取得します。
 
 ```ts showLineNumbers
 import { getRegistryItems } from "shadcn/registry"
@@ -104,7 +92,7 @@ const items = await getRegistryItems(["@acme/button", "@acme/card"], {
 })
 ```
 
-Returns an array of registry items:
+レジストリアイテムの配列を返します:
 
 ```json showLineNumbers
 [
@@ -125,10 +113,7 @@ Returns an array of registry items:
 
 ### resolveRegistryItems
 
-Resolve multiple items together with their registry dependencies, merged into a
-single tree. Unlike [`getRegistryItems`](#getregistryitems), which returns the
-items as a list, this walks each item's `registryDependencies` and flattens
-everything — files, dependencies, CSS variables — into one installable object.
+複数のアイテムをレジストリ依存関係とともに解決し、1つのツリーにまとめます。アイテムをリストとして返す [`getRegistryItems`](#getregistryitems) とは異なり、各アイテムの `registryDependencies` をたどり、ファイル・依存関係・CSS 変数などすべてをフラット化して1つのインストール可能なオブジェクトにまとめます。
 
 ```ts showLineNumbers
 import { resolveRegistryItems } from "shadcn/registry"
@@ -139,7 +124,7 @@ const tree = await resolveRegistryItems(
 )
 ```
 
-Returns a single merged tree:
+マージ済みの単一ツリーを返します:
 
 ```json showLineNumbers
 {
@@ -166,9 +151,7 @@ Returns a single merged tree:
 
 ### addRegistryItems
 
-Resolve and install registry items into an existing project. This is the
-programmatic equivalent of `shadcn add` and applies files, package dependencies,
-environment variables, CSS, and Tailwind configuration declared by the items.
+レジストリアイテムを解決して既存プロジェクトにインストールします。これは `shadcn add` と同等のプログラマティックな処理で、アイテムが宣言するファイル・パッケージ依存関係・環境変数・CSS・Tailwind 設定を適用します。
 
 ```ts showLineNumbers
 import { addRegistryItems, getRegistriesConfig } from "shadcn/registry"
@@ -184,21 +167,13 @@ await addRegistryItems(["@acme/agent"], {
 })
 ```
 
-`addRegistryItems` does not read project configuration files itself. Pass the
-result of [`getRegistriesConfig`](#getregistriesconfig), or provide `config`
-directly. A config containing only `registries` is enough when every requested
-item and dependency is universal: a `registry:item` or `registry:file` whose
-files all declare explicit targets. Other items require a full resolved project
-config, including its aliases and `resolvedPaths`. Every custom registry
-namespace referenced by an item or dependency must be present in `config`.
+`addRegistryItems` はプロジェクト設定ファイル自体を読み込みません。[`getRegistriesConfig`](#getregistriesconfig) の結果を渡すか、`config` を直接指定してください。要求されたすべてのアイテムと依存関係がユニバーサル（ファイルがすべて明示的なターゲットを宣言する `registry:item` または `registry:file`）である場合、`registries` のみを含む設定で十分です。それ以外のアイテムには、エイリアスや `resolvedPaths` を含む完全な解決済みプロジェクト設定が必要です。アイテムや依存関係が参照するすべてのカスタムレジストリ名前空間は `config` に含まれていなければなりません。
 
-The function throws errors instead of exiting the process and never prompts.
-Existing files are skipped unless `overwrite` is enabled, and npm uses
-`--force` for React 19 peer dependency conflicts.
+この関数はプロセスを終了する代わりにエラーをスローし、プロンプトを表示しません。既存ファイルは `overwrite` が有効でない限りスキップされ、npm では React 19 の peer dependency 競合に対して `--force` が使われます。
 
 ### getRegistries
 
-Fetch the registry directory.
+レジストリディレクトリを取得します。
 
 ```ts showLineNumbers
 import { getRegistries } from "shadcn/registry"
@@ -206,7 +181,7 @@ import { getRegistries } from "shadcn/registry"
 const registries = await getRegistries({ useCache: true })
 ```
 
-Returns an array of registry entries:
+レジストリエントリの配列を返します:
 
 ```json
 [
@@ -220,7 +195,7 @@ Returns an array of registry entries:
 
 ### searchRegistries
 
-Search across one or more registries with fuzzy matching.
+1つ以上のレジストリをあいまい一致で横断検索します。
 
 ```ts showLineNumbers
 import { searchRegistries } from "shadcn/registry"
@@ -235,7 +210,7 @@ const results = await searchRegistries(["@shadcn"], {
 })
 ```
 
-Returns matching items wrapped in pagination metadata:
+ページネーションのメタデータでラップされた一致アイテムを返します:
 
 ```json
 {
@@ -255,8 +230,7 @@ Returns matching items wrapped in pagination metadata:
 
 ### loadRegistry
 
-Read and resolve a local `registry.json` file from disk, following any
-`include` references, and return the registry catalog.
+ディスク上のローカル `registry.json` ファイルを読み込み、`include` 参照をたどって解決し、レジストリカタログを返します。
 
 ```ts showLineNumbers
 import { loadRegistry } from "shadcn/registry"
@@ -267,21 +241,19 @@ const catalog = await loadRegistry({
 })
 ```
 
-The returned catalog lists every item but **omits file contents** — like a
-built `registry.json` index.
+返されるカタログはすべてのアイテムを列挙しますが、**ファイル内容は省略**されます。これはビルド済み `registry.json` インデックスと同様です。
 
-<Callout className="mt-6" title="How is this different from getRegistry?">
-  [`getRegistry`](#getregistry) fetches a **remote** registry over the network
-  (by namespace, URL or GitHub address) and expects the served catalog to
-  already be flattened — it rejects catalogs that still use `include`.
-  `loadRegistry` reads a **local** `registry.json` from disk and resolves
-  `include` references itself.
+<Callout className="mt-6" title="getRegistry との違いは？">
+  [`getRegistry`](#getregistry)
+  は**リモート**のレジストリをネットワーク経由で取得します（名前空間・URL・GitHub
+  アドレスで指定）。提供されるカタログはすでにフラット化されていることを前提とし、`include`
+  が残るカタログは拒否します。`loadRegistry` はディスク上の**ローカル**
+  `registry.json` を読み込み、`include` 参照を自身で解決します。
 </Callout>
 
 ### loadRegistryItem
 
-Read a single item from a local `registry.json` by name, with its file contents
-read from disk and inlined.
+ローカル `registry.json` から単一アイテムを名前で読み込みます。ファイル内容はディスクから読み込んでインライン化されます。
 
 ```ts showLineNumbers
 import { loadRegistryItem } from "shadcn/registry"
@@ -289,7 +261,7 @@ import { loadRegistryItem } from "shadcn/registry"
 const item = await loadRegistryItem("login-form", { cwd: process.cwd() })
 ```
 
-Returns a fully resolved registry item with file contents:
+ファイル内容を含む完全に解決済みのレジストリアイテムを返します:
 
 ```json
 {
@@ -306,17 +278,16 @@ Returns a fully resolved registry item with file contents:
 }
 ```
 
-<Callout className="mt-6" title="How is this different from getRegistryItems?">
-  [`getRegistryItems`](#getregistryitems) resolves items from a **remote**
-  registry over the network. `loadRegistryItem` builds a single item on demand
-  from your **local** source files, reading each file from disk. Use it in a
-  dynamic route that serves `registry-item.json` responses.
+<Callout className="mt-6" title="getRegistryItems との違いは？">
+  [`getRegistryItems`](#getregistryitems)
+  は**リモート**のレジストリからネットワーク経由でアイテムを解決します。`loadRegistryItem`
+  は**ローカル**のソースファイルから1つのアイテムをオンデマンドで構築し、各ファイルをディスクから読み込みます。`registry-item.json`
+  レスポンスを提供する動的ルートで使用します。
 </Callout>
 
-### Errors
+### エラー
 
-All registry functions throw typed errors that extend `RegistryError`. Use the
-`RegistryErrorCode` enum or `instanceof` checks to handle them.
+すべてのレジストリ関数は `RegistryError` を継承した型付きエラーをスローします。`RegistryErrorCode` enum または `instanceof` チェックで処理できます。
 
 ```ts showLineNumbers
 import { RegistryError, RegistryNotFoundError } from "shadcn/registry"
@@ -330,7 +301,7 @@ try {
 }
 ```
 
-Available error classes:
+利用可能なエラークラス:
 
 - `RegistryError`
 - `RegistryNotFoundError`
@@ -348,8 +319,7 @@ Available error classes:
 
 ## shadcn/schema
 
-The Zod schemas used to validate `registry.json`, `registry-item.json` and
-`components.json`. Useful for validating registry data in your own tooling.
+`registry.json`、`registry-item.json`、`components.json` の検証に使う Zod スキーマです。独自ツールでレジストリデータを検証する際に便利です。
 
 ```ts
 import { registryItemSchema, registrySchema } from "shadcn/schema"
@@ -360,7 +330,7 @@ if (!result.success) {
 }
 ```
 
-Key schemas:
+主なスキーマ:
 
 - `registrySchema`
 - `registryItemSchema`
@@ -372,7 +342,7 @@ Key schemas:
 - `configSchema`
 - `presetSchema`
 
-Inferred types are exported alongside them:
+推論型もあわせてエクスポートされています:
 
 - `Registry`
 - `RegistryItem`
@@ -383,13 +353,11 @@ Inferred types are exported alongside them:
 
 ## shadcn/preset
 
-Encode, decode and validate theme presets, plus the preset option constants used
-by the theme editor.
+テーマプリセットのエンコード・デコード・検証、およびテーマエディターで使うプリセットオプション定数です。
 
 ### encodePreset
 
-Encode a `Partial<PresetConfig>` into a short, URL-safe preset code. Any fields
-you omit fall back to `DEFAULT_PRESET_CONFIG`.
+`Partial<PresetConfig>` を短い URL セーフなプリセットコードにエンコードします。省略したフィールドは `DEFAULT_PRESET_CONFIG` にフォールバックします。
 
 ```ts showLineNumbers
 import { encodePreset } from "shadcn/preset"
@@ -403,7 +371,7 @@ const code = encodePreset({
 })
 ```
 
-Returns a version-prefixed string:
+バージョン接頭辞付きの文字列を返します:
 
 ```ts showLineNumbers
 "bJ4FLU0"
@@ -411,8 +379,7 @@ Returns a version-prefixed string:
 
 ### decodePreset
 
-Decode a preset code back into a full `PresetConfig`. Returns `null` if the code
-is missing or invalid.
+プリセットコードを完全な `PresetConfig` にデコードします。コードが存在しない、または無効な場合は `null` を返します。
 
 ```ts showLineNumbers
 import { decodePreset } from "shadcn/preset"
@@ -420,7 +387,7 @@ import { decodePreset } from "shadcn/preset"
 const config = decodePreset("bJ4FLU0")
 ```
 
-Returns the resolved config (omitted fields are filled with their defaults):
+解決済みの設定を返します（省略したフィールドはデフォルト値で補完されます）:
 
 ```json
 {
@@ -441,9 +408,9 @@ Returns the resolved config (omitted fields are filled with their defaults):
 decodePreset("not-a-code") // null
 ```
 
-### Other exports
+### その他のエクスポート
 
-Additional functions for validating codes and generating random presets:
+コードの検証やランダムプリセット生成のための追加関数です:
 
 - `isPresetCode`
 - `isValidPreset`
@@ -452,7 +419,7 @@ Additional functions for validating codes and generating random presets:
 - `toBase62`
 - `fromBase62`
 
-Constants:
+定数:
 
 - `PRESET_BASES`
 - `PRESET_STYLES`

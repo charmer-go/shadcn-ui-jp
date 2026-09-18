@@ -4,13 +4,13 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Kbd } from "@/styles/aria-nova/ui/kbd"
+} from "@/components/ui/aria/input-group"
+import { Kbd } from "@/components/ui/aria/kbd"
 
 export function InputGroupKbd() {
   return (
     <InputGroup className="max-w-sm">
-      <InputGroupInput placeholder="Search..." />
+      <InputGroupInput placeholder="検索..." />
       <InputGroupAddon>
         <SearchIcon className="text-muted-foreground" />
       </InputGroupAddon>

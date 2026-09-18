@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,24 +9,24 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 
 export function DropdownMenuBasic() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
+        開く
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
+          <DropdownMenuLabel>マイアカウント</DropdownMenuLabel>
+          <DropdownMenuItem>プロフィール</DropdownMenuItem>
+          <DropdownMenuItem>請求</DropdownMenuItem>
+          <DropdownMenuItem>設定</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>GitHub</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem>サポート</DropdownMenuItem>
         <DropdownMenuItem disabled>API</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -6,22 +6,22 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/radix-nova/ui/avatar"
-import { Button } from "@/styles/radix-nova/ui/button"
+} from "@/components/ui/radix/avatar"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 import {
   Item,
   ItemContent,
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from "@/styles/radix-nova/ui/item"
+} from "@/components/ui/radix/item"
 
 const people = [
   {
@@ -46,7 +46,7 @@ export function ItemDropdown() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          Select <ChevronDownIcon />
+          選択 <ChevronDownIcon />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48" align="end">

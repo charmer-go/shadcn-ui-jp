@@ -1,6 +1,6 @@
 import { AppWindowIcon, CodeIcon } from "lucide-react"
 
-import { Tabs, TabsList, TabsTrigger } from "@/styles/radix-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/radix/tabs"
 
 export function TabsIcons() {
   return (
@@ -8,11 +8,11 @@ export function TabsIcons() {
       <TabsList>
         <TabsTrigger value="preview">
           <AppWindowIcon />
-          Preview
+          プレビュー
         </TabsTrigger>
         <TabsTrigger value="code">
           <CodeIcon />
-          Code
+          コード
         </TabsTrigger>
       </TabsList>
     </Tabs>

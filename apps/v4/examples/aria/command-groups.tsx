@@ -10,7 +10,7 @@ import {
   UserIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Command,
   CommandDialog,
@@ -21,7 +21,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/aria-nova/ui/command"
+} from "@/components/ui/aria/command"
 
 export function CommandWithGroups() {
   const [open, setOpen] = React.useState(false)
@@ -29,45 +29,45 @@ export function CommandWithGroups() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        メニューを開く
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="コマンドを入力または検索…" />
           <CommandList
             renderEmptyState={() => (
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>結果が見つかりません。</CommandEmpty>
             )}
           >
-            <CommandGroup heading="Suggestions">
-              <CommandItem textValue="Calendar">
+            <CommandGroup heading="候補">
+              <CommandItem textValue="カレンダー">
                 <CalendarIcon />
-                <span>Calendar</span>
+                <span>カレンダー</span>
               </CommandItem>
-              <CommandItem textValue="Search Emoji">
+              <CommandItem textValue="絵文字を検索">
                 <SmileIcon />
-                <span>Search Emoji</span>
+                <span>絵文字を検索</span>
               </CommandItem>
-              <CommandItem textValue="Calculator">
+              <CommandItem textValue="計算機">
                 <CalculatorIcon />
-                <span>Calculator</span>
+                <span>計算機</span>
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Settings">
-              <CommandItem textValue="Profile">
+            <CommandGroup heading="設定">
+              <CommandItem textValue="プロフィール">
                 <UserIcon />
-                <span>Profile</span>
+                <span>プロフィール</span>
                 <CommandShortcut>⌘P</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Billing">
+              <CommandItem textValue="請求">
                 <CreditCardIcon />
-                <span>Billing</span>
+                <span>請求</span>
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
-              <CommandItem textValue="Settings">
+              <CommandItem textValue="設定">
                 <SettingsIcon />
-                <span>Settings</span>
+                <span>設定</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>
             </CommandGroup>

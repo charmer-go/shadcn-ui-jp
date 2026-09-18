@@ -1,7 +1,7 @@
 "use client"
 
 import { useIsMobile } from "@/hooks/use-mobile"
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Drawer,
   DrawerClose,
@@ -11,7 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/aria-nova/ui/drawer"
+} from "@/components/ui/aria/drawer"
 
 export function DrawerNested() {
   const isMobile = useIsMobile()
@@ -21,13 +21,13 @@ export function DrawerNested() {
   return (
     <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
       <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
+        ドロワーを開く
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Drawer</DrawerTitle>
+          <DrawerTitle>ドロワー</DrawerTitle>
           <DrawerDescription>
-            Open another drawer from the same direction.
+            同じ方向から別のドロワーを開きます。
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 p-4">
@@ -36,13 +36,13 @@ export function DrawerNested() {
         <DrawerFooter>
           <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
             <DrawerTrigger render={<Button variant="outline" />}>
-              Open Nested Drawer
+              ネストされたドロワーを開く
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
-                <DrawerTitle>Nested Drawer</DrawerTitle>
+                <DrawerTitle>ネストされたドロワー</DrawerTitle>
                 <DrawerDescription>
-                  The parent drawer stays mounted behind this one.
+                  親ドロワーはこの背後に表示されたままになります。
                 </DrawerDescription>
               </DrawerHeader>
               <div className="flex-1 p-4">
@@ -54,13 +54,13 @@ export function DrawerNested() {
                   swipeDirection={swipeDirection}
                 >
                   <DrawerTrigger render={<Button variant="outline" />}>
-                    Open Third Drawer
+                    3番目のドロワーを開く
                   </DrawerTrigger>
                   <DrawerContent>
                     <DrawerHeader>
-                      <DrawerTitle>Third Drawer</DrawerTitle>
+                      <DrawerTitle>3番目のドロワー</DrawerTitle>
                       <DrawerDescription>
-                        Two drawers are stacked behind this one.
+                        この背後に2つのドロワーが重なっています。
                       </DrawerDescription>
                     </DrawerHeader>
                     <div className="flex-1 p-4">
@@ -72,13 +72,13 @@ export function DrawerNested() {
                         swipeDirection={swipeDirection}
                       >
                         <DrawerTrigger render={<Button variant="outline" />}>
-                          Open Fourth Drawer
+                          4番目のドロワーを開く
                         </DrawerTrigger>
                         <DrawerContent>
                           <DrawerHeader>
-                            <DrawerTitle>Fourth Drawer</DrawerTitle>
+                            <DrawerTitle>4番目のドロワー</DrawerTitle>
                             <DrawerDescription>
-                              This is the frontmost drawer in the stack.
+                              スタックの中で最前面にあるドロワーです。
                             </DrawerDescription>
                           </DrawerHeader>
                           <div className="flex-1 p-4">
@@ -86,24 +86,24 @@ export function DrawerNested() {
                           </div>
                           <DrawerFooter>
                             <DrawerClose render={<Button variant="outline" />}>
-                              Close
+                              閉じる
                             </DrawerClose>
                           </DrawerFooter>
                         </DrawerContent>
                       </Drawer>
                       <DrawerClose render={<Button variant="outline" />}>
-                        Close
+                        閉じる
                       </DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>
                 </Drawer>
                 <DrawerClose render={<Button variant="outline" />}>
-                  Close
+                  閉じる
                 </DrawerClose>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
-          <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+          <DrawerClose render={<Button variant="outline" />}>閉じる</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

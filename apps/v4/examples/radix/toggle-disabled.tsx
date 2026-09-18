@@ -1,13 +1,13 @@
-import { Toggle } from "@/styles/radix-nova/ui/toggle"
+import { Toggle } from "@/components/ui/radix/toggle"
 
 export function ToggleDisabled() {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Toggle aria-label="Toggle disabled" disabled>
-        Disabled
+      <Toggle aria-label="無効なトグル" disabled>
+        無効
       </Toggle>
-      <Toggle variant="outline" aria-label="Toggle disabled outline" disabled>
-        Disabled
+      <Toggle variant="outline" aria-label="無効なトグル（アウトライン）" disabled>
+        無効
       </Toggle>
     </div>
   )

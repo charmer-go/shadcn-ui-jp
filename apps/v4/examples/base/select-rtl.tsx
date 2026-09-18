@@ -16,7 +16,7 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui-rtl/select"
+} from "@/components/ui/base/select"
 
 const translations: Translations = {
   en: {

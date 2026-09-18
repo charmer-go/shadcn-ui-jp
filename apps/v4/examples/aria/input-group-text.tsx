@@ -4,7 +4,7 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/aria-nova/ui/input-group"
+} from "@/components/ui/aria/input-group"
 
 export default function InputGroupTextExample() {
   return (
@@ -28,16 +28,16 @@ export default function InputGroupTextExample() {
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter your username" />
+        <InputGroupInput placeholder="ユーザー名を入力" />
         <InputGroupAddon align="inline-end">
           <InputGroupText>@company.com</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupTextarea placeholder="Enter your message" />
+        <InputGroupTextarea placeholder="メッセージを入力" />
         <InputGroupAddon align="block-end">
           <InputGroupText className="text-xs text-muted-foreground">
-            120 characters left
+            残り120文字
           </InputGroupText>
         </InputGroupAddon>
       </InputGroup>

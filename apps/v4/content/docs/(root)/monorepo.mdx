@@ -1,32 +1,32 @@
 ---
-title: Monorepo
-description: Using shadcn/ui components and CLI in a monorepo.
+title: モノレポ
+description: モノリポジトリでの shadcn/ui コンポーネントと CLI の使用。
 ---
 
-Until now, using shadcn/ui in a monorepo was a bit of a pain. You could add
-components using the CLI, but you had to manage where the components
-were installed and manually fix import paths.
+これまで、モノリポジトリで shadcn/ui を使用するのは少し面倒でした。追加することもできます
+CLI を使用してコンポーネントを構築できましたが、コンポーネントがどこにあるかを管理する必要がありました。
+がインストールされており、インポート パスを手動で修正しました。
 
-With the new monorepo support in the CLI, we've made it a lot easier to use
-shadcn/ui in a monorepo.
+CLI での新しいモノリポジトリのサポートにより、非常に使いやすくなりました。
+モノリポジトリの shadcn/ui。
 
-The CLI now understands the monorepo structure and will install the components,
-dependencies and registry dependencies to the correct paths and handle imports
-for you.
+CLI はモノリポジトリ構造を認識し、コンポーネントをインストールします。
+依存関係とレジストリ依存関係を正しいパスに設定し、インポートを処理します
+あなたのために。
 
-## Getting started
+## はじめる
 
 <Steps>
 
-### Create a new monorepo project
+### 新しいモノリポジトリ プロジェクトを作成する
 
-To create a new monorepo project, run the `init` command with the `--monorepo` flag.
+新しい Monorepo プロジェクトを作成するには、`--monorepo` フラグを指定して `init` コマンドを実行します。
 
 ```bash
 npx shadcn@latest init --monorepo
 ```
 
-Then select the template you want to use.
+次に、使用するテンプレートを選択します。
 
 ```bash
 ? Select a template ›
@@ -37,14 +37,14 @@ Then select the template you want to use.
     Astro
 ```
 
-This will create a new monorepo project with two workspaces: `web` and `ui`,
-and [Turborepo](https://turbo.build/repo/docs) as the build system.
+これにより、`web` と `ui` という 2 つのワークスペースを持つ新しいモノリポジトリ プロジェクトが作成されます。
+ビルド システムとして [Turborepo](https://turbo.build/repo/docs) を使用します。
 
-Everything is set up for you, so you can start adding components to your project.
+すべてがセットアップされるので、プロジェクトへのコンポーネントの追加を開始できます。
 
-### Add components to your project
+### プロジェクトにコンポーネントを追加する
 
-To add components to your project, run the `add` command **in the path of your app**.
+プロジェクトにコンポーネントを追加するには、**アプリのパス**で `add` コマンドを実行します。
 
 ```bash
 cd apps/web
@@ -54,22 +54,22 @@ cd apps/web
 npx shadcn@latest add [COMPONENT]
 ```
 
-The CLI will figure out what type of component you are adding and install the
-correct files to the correct path.
+CLI は、追加しているコンポーネントのタイプを判断し、
+正しいファイルを正しいパスに移動します。
 
-For example, if you run `npx shadcn@latest add button`, the CLI will install the button component under `packages/ui` and update the import path for components in `apps/web`.
+たとえば、`npx shadcn@latest add button` を実行すると、CLI は `packages/ui` の下にボタン コンポーネントをインストールし、`apps/web` 内のコンポーネントのインポート パスを更新します。
 
-If you run `npx shadcn@latest add login-01`, the CLI will install the `button`, `label`, `input` and `card` components under `packages/ui` and the `login-form` component under `apps/web/components`.
+`npx shadcn@latest add login-01` を実行すると、CLI は `button`、`label`、`input`、および `card` コンポーネントを `packages/ui` にインストールし、`login-form` コンポーネントを `apps/web/components` にインストールします。
 
-### Importing components
+### コンポーネントのインポート
 
-You can import components from the `@workspace/ui` package as follows:
+次のように、`@workspace/ui` パッケージからコンポーネントをインポートできます。
 
 ```tsx
 import { Button } from "@workspace/ui/components/button"
 ```
 
-You can also import hooks and utilities from the `@workspace/ui` package.
+`@workspace/ui` パッケージからフックとユーティリティをインポートすることもできます。
 
 ```tsx
 import { useTheme } from "@workspace/ui/hooks/use-theme"
@@ -78,9 +78,9 @@ import { cn } from "@workspace/ui/lib/utils"
 
 </Steps>
 
-## File Structure
+## ファイル構造
 
-When you create a new monorepo project, the CLI will create the following file structure:
+新しいモノリポジトリ プロジェクトを作成すると、CLI は次のファイル構造を作成します。
 
 ```txt
 apps
@@ -107,11 +107,11 @@ package.json
 turbo.json
 ```
 
-## Requirements
+## 要件
 
-1. Every workspace must have a `components.json` file. A `package.json` file tells npm how to install the dependencies. A `components.json` file tells the CLI how and where to install components.
+1. すべてのワークスペースに `components.json` ファイルが必要です。 `package.json` ファイルは、依存関係をインストールする方法を npm に指示します。 `components.json` ファイルは、コンポーネントをインストールする方法と場所を CLI に指示します。
 
-2. The `components.json` file must properly define aliases for the workspace. This tells the CLI how to import components, hooks, utilities, etc.
+2. `components.json` ファイルは、ワークスペースのエイリアスを適切に定義する必要があります。これにより、コンポーネント、フック、ユーティリティなどをインポートする方法が CLI に指示されます。
 
 ```json showLineNumbers title="apps/web/components.json"
 {
@@ -159,29 +159,29 @@ turbo.json
 }
 ```
 
-3. Ensure you have the same `style`, `iconLibrary` and `baseColor` in both `components.json` files.
+3. 両方の `components.json` ファイルに同じ `style`、`iconLibrary`、および `baseColor` があることを確認します。
 
-4. **For Tailwind CSS v4, leave the `tailwind` config empty in the `components.json` file.**
+4. **Tailwind CSS v4 の場合、`components.json` ファイル内の `tailwind` 設定を空のままにしておきます。**
 
-By following these requirements, the CLI will be able to install ui components, blocks, libs and hooks to the correct paths and handle imports for you.
+これらの要件に従うことで、CLI は ui コンポーネント、ブロック、ライブラリ、フックを正しいパスにインストールし、インポートを処理できるようになります。
 
 <Callout className="mt-6">
-  `package.json#imports` works well for package-local aliases inside a
-  workspace, for example inside `packages/ui`. For shared workspace imports such
-  as `@workspace/ui/components`, keep explicit aliases in `components.json`. The
-  CLI uses those aliases to route files across workspace boundaries.
+`package.json#imports` は、パッケージ内のパッケージローカルのエイリアスに対して適切に機能します。
+ワークスペース (たとえば、`packages/ui` 内)。共有ワークスペースのインポートの場合、
+`@workspace/ui/components` として、明示的なエイリアスを `components.json` に保持します。の
+CLI はこれらのエイリアスを使用して、ワークスペースの境界を越えてファイルをルーティングします。
 </Callout>
 
-## Using `package.json#imports`
+## `package.json#imports` の使用
 
-For a monorepo that uses package imports and does not rely on
-`tsconfig.json` `paths`, use:
+パッケージインポートを使用し、依存しないモノリポジトリの場合
+`tsconfig.json` `paths`、次を使用します。
 
-- local `#...` aliases for files inside each workspace
-- workspace package `exports` for shared imports such as
-  `@workspace/ui/components`
+- 各ワークスペース内のファイルのローカル `#...` エイリアス
+- 共有インポート用のワークスペース パッケージ `exports`
+`@workspace/ui/components`
 
-For example, an app workspace can use local package imports:
+たとえば、アプリのワークスペースはローカル パッケージのインポートを使用できます。
 
 ```json showLineNumbers title="apps/web/package.json"
 {
@@ -211,7 +211,7 @@ For example, an app workspace can use local package imports:
 }
 ```
 
-And the shared UI package can expose its install targets with `exports`:
+また、共有 UI パッケージは、`exports` を使用してインストール ターゲットを公開できます。
 
 ```json showLineNumbers title="packages/ui/package.json"
 {
@@ -244,11 +244,11 @@ And the shared UI package can expose its install targets with `exports`:
 }
 ```
 
-In this setup:
+この設定では:
 
-- files added from the app to the shared UI package are routed through
-  `@workspace/ui/...`
-- files added inside `packages/ui` use the package-local `#...` aliases
-- the shared package must export any path referenced by another workspace
+- アプリから共有 UI パッケージに追加されたファイルは、経由してルーティングされます。
+`@workspace/ui/...`
+- `packages/ui` 内に追加されたファイルは、パッケージローカルの `#...` エイリアスを使用します。
+- 共有パッケージは、別のワークスペースによって参照されるパスをエクスポートする必要があります
 
-For framework-specific package import setup, see the [package imports guide](/docs/package-imports).
+フレームワーク固有のパッケージ インポートの設定については、[パッケージ インポート ガイド](/docs/package-imports) を参照してください。

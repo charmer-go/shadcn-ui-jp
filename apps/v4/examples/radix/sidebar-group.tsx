@@ -12,7 +12,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/radix-nova/ui/sidebar"
+} from "@/components/ui/radix/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -20,19 +20,19 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Help</SidebarGroupLabel>
+            <SidebarGroupLabel>ヘルプ</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <LifeBuoyIcon />
-                    Support
+                    サポート
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <SendIcon />
-                    Feedback
+                    フィードバック
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

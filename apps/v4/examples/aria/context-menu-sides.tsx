@@ -7,7 +7,7 @@ import {
   ContextMenuGroup,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/styles/aria-nova/ui/context-menu"
+} from "@/components/ui/aria/context-menu"
 
 export function ContextMenuSides() {
   return (
@@ -19,18 +19,18 @@ export function ContextMenuSides() {
             className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
           >
             <span className="hidden pointer-fine:inline-block">
-              Right click (top)
+              右クリック(上)
             </span>
             <span className="hidden pointer-coarse:inline-block">
-              Long press (top)
+              長押し(上)
             </span>
           </div>
         </Pressable>
         <ContextMenu placement="top start">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>戻る</ContextMenuItem>
+            <ContextMenuItem>進む</ContextMenuItem>
+            <ContextMenuItem>再読み込み</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenu>
       </ContextMenuTrigger>
@@ -41,18 +41,18 @@ export function ContextMenuSides() {
             className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
           >
             <span className="hidden pointer-fine:inline-block">
-              Right click (right)
+              右クリック(右)
             </span>
             <span className="hidden pointer-coarse:inline-block">
-              Long press (right)
+              長押し(右)
             </span>
           </div>
         </Pressable>
         <ContextMenu placement="right top">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>戻る</ContextMenuItem>
+            <ContextMenuItem>進む</ContextMenuItem>
+            <ContextMenuItem>再読み込み</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenu>
       </ContextMenuTrigger>
@@ -63,18 +63,18 @@ export function ContextMenuSides() {
             className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
           >
             <span className="hidden pointer-fine:inline-block">
-              Right click (bottom)
+              右クリック(下)
             </span>
             <span className="hidden pointer-coarse:inline-block">
-              Long press (bottom)
+              長押し(下)
             </span>
           </div>
         </Pressable>
         <ContextMenu placement="bottom start">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>戻る</ContextMenuItem>
+            <ContextMenuItem>進む</ContextMenuItem>
+            <ContextMenuItem>再読み込み</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenu>
       </ContextMenuTrigger>
@@ -85,18 +85,18 @@ export function ContextMenuSides() {
             className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
           >
             <span className="hidden pointer-fine:inline-block">
-              Right click (left)
+              右クリック(左)
             </span>
             <span className="hidden pointer-coarse:inline-block">
-              Long press (left)
+              長押し(左)
             </span>
           </div>
         </Pressable>
         <ContextMenu placement="left top">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>戻る</ContextMenuItem>
+            <ContextMenuItem>進む</ContextMenuItem>
+            <ContextMenuItem>再読み込み</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenu>
       </ContextMenuTrigger>

@@ -1,13 +1,13 @@
 import { MinusIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { ButtonGroup } from "@/styles/radix-nova/ui/button-group"
+import { Button } from "@/components/ui/radix/button"
+import { ButtonGroup } from "@/components/ui/radix/button-group"
 
 export default function ButtonGroupOrientation() {
   return (
     <ButtonGroup
       orientation="vertical"
-      aria-label="Media controls"
+      aria-label="メディアコントロール"
       className="h-fit"
     >
       <Button variant="outline" size="icon">

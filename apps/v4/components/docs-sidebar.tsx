@@ -7,7 +7,11 @@ import { usePathname } from "next/navigation"
 import { PAGES_NEW } from "@/lib/docs"
 import { DOCS_SIDEBAR_SCROLL_STORAGE_KEY } from "@/lib/docs-sidebar-scroll"
 import { showMcpDocs } from "@/lib/flags"
-import { getCurrentBase, getPagesFromFolder } from "@/lib/page-tree"
+import {
+  getCurrentBase,
+  getPageDisplayName,
+  getPagesFromFolder,
+} from "@/lib/page-tree"
 import type { source } from "@/lib/source"
 import {
   Sidebar,
@@ -18,20 +22,20 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/registry/new-york-v4/ui/sidebar"
+} from "@/components/ui/sidebar"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "導入", href: "/docs" },
   {
-    name: "Components",
+    name: "コンポーネント",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "インストール",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "テーマ",
     href: "/docs/theming",
   },
   {
@@ -39,23 +43,21 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/cli",
   },
   {
-    name: "Typeset",
-    href: "/docs/typeset",
-  },
-  {
     name: "Skills",
     href: "/docs/skills",
   },
   {
-    name: "Registry",
-    href: "/docs/registry",
-  },
-  {
-    name: "Changelog",
+    name: "変更履歴",
     href: "/docs/changelog",
   },
 ]
-const EXCLUDED_SECTIONS = ["installation", "dark-mode", "changelog", "rtl"]
+const EXCLUDED_SECTIONS = [
+  "installation",
+  "dark-mode",
+  "changelog",
+  "rtl",
+  "shadcn-ui-jp",
+]
 const EXCLUDED_PAGES = ["/docs", "/docs/changelog", "/docs/rtl", "/docs/new"]
 
 function readScrollState() {
@@ -80,7 +82,7 @@ function saveScrollState(container: HTMLElement) {
         scrollTop: container.scrollTop,
       })
     )
-  } catch {}
+  } catch { }
 }
 
 function getActiveItem(container: HTMLElement) {
@@ -120,6 +122,9 @@ export function DocsSidebar({
   const pathname = usePathname()
   const currentBase = getCurrentBase(pathname)
   const contentRef = React.useRef<HTMLDivElement>(null)
+  const brandSection = tree.children.find(
+    (item) => item.$id === "shadcn-ui-jp"
+  )
 
   React.useLayoutEffect(() => {
     const container = contentRef.current
@@ -180,7 +185,32 @@ export function DocsSidebar({
         data-docs-sidebar-content=""
         className="w-(--sidebar-menu-width) scroll-fade scrollbar-none overflow-x-hidden pl-2.5"
       >
-        <SidebarGroup className="pt-12">
+        {brandSection?.type === "folder" && (
+          <SidebarGroup>
+            <SidebarGroupLabel className="font-medium text-muted-foreground">
+              {brandSection.name}
+            </SidebarGroupLabel>
+            <SidebarGroupContent>
+              <SidebarMenu className="gap-0.5">
+                {getPagesFromFolder(brandSection, currentBase).map((page) => (
+                  <SidebarMenuItem key={page.url}>
+                    <SidebarMenuButton
+                      asChild
+                      isActive={page.url === pathname}
+                      className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
+                    >
+                      <Link href={page.url}>
+                        <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />
+                        {getPageDisplayName(page)}
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
+        <SidebarGroup>
           <SidebarGroupLabel className="font-medium text-muted-foreground">
             Sections
           </SidebarGroupLabel>
@@ -247,9 +277,15 @@ export function DocsSidebar({
                             isActive={page.url === pathname}
                             className="relative h-[30px] w-fit overflow-visible border border-transparent text-[0.8rem] font-medium after:absolute after:inset-x-0 after:-inset-y-1 after:z-0 after:rounded-md data-[active=true]:border-accent data-[active=true]:bg-accent 3xl:fixed:w-full 3xl:fixed:max-w-48"
                           >
-                            <Link href={page.url}>
+                            <Link
+                              href={
+                                page.url === "/llms.txt"
+                                  ? "https://ui.shadcn.com/llms.txt"
+                                  : page.url
+                              }
+                            >
                               <span className="absolute inset-0 flex w-(--sidebar-menu-width) bg-transparent" />
-                              {page.name}
+                              {getPageDisplayName(page)}
                               {PAGES_NEW.includes(page.url) && (
                                 <span
                                   className="flex size-2 rounded-full bg-blue-500"

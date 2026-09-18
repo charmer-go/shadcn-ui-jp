@@ -3,8 +3,8 @@
 import * as React from "react"
 
 import { createChat, getMessageText } from "@/lib/ai"
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
-import { Button } from "@/styles/aria-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
+import { Button } from "@/components/ui/aria/button"
 import {
   Card,
   CardAction,
@@ -12,14 +12,14 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/aria-rhea/ui/card"
+} from "@/components/ui/aria/card"
 import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/styles/aria-rhea/ui/dropdown-menu"
-import { Message, MessageContent } from "@/styles/aria-rhea/ui/message"
+} from "@/components/ui/aria/dropdown-menu"
+import { Message, MessageContent } from "@/components/ui/aria/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -28,33 +28,33 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScroller,
-} from "@/styles/aria-rhea/ui/message-scroller"
+} from "@/components/ui/aria/message-scroller"
 
 const chat = createChat()
   .user(
-    "We're seeing activation dip after workspace creation. Can you help me find the likely step?",
+    "ワークスペース作成後にアクティベーションが落ち込んでいます。原因になっていそうなステップを特定するのを手伝ってもらえますか？",
     { id: "command-activation" }
   )
   .assistant(
-    "The sharpest drop is between creating the workspace and inviting the first teammate.\n\nWorkspace creation is still healthy, but the invite step is where users pause. That suggests the product is asking for collaboration before the user has enough confidence in the workspace."
+    "最も急激な低下は、ワークスペースの作成から最初のチームメイトを招待するまでの間で起きています。\n\nワークスペースの作成自体は健全ですが、招待のステップでユーザーが立ち止まっています。これは、ユーザーがワークスペースに十分な自信を持つ前に、プロダクトがコラボレーションを求めていることを示唆しています。"
   )
-  .user("What should I compare before we change the onboarding flow?", {
+  .user("オンボーディングフローを変更する前に、何を比較すべきですか？", {
     id: "command-compare",
   })
   .assistant(
-    "Compare three cohorts:\n\n1. Users who choose a template before inviting teammates.\n2. Users who start from a blank workspace.\n3. Users who skip invites and return within 24 hours.\n\nIf template users invite faster, the fix is probably better first-run guidance rather than a louder invite prompt."
+    "3つのコホートを比較してください。\n\n1. チームメイトを招待する前にテンプレートを選ぶユーザー。\n2. 空のワークスペースから始めるユーザー。\n3. 招待をスキップし、24時間以内に戻ってくるユーザー。\n\nテンプレートを使うユーザーの方が早く招待しているなら、対策はより強い招待の呼びかけではなく、初回利用時のガイダンス改善である可能性が高いです。"
   )
-  .user("Can you turn that into an experiment?", {
+  .user("それを実験に落とし込めますか？", {
     id: "command-experiment",
   })
   .assistant(
-    "Yes. Create a variant that shows a short checklist after workspace creation:\n\n- Pick a template.\n- Add one project detail.\n- Invite a teammate when the workspace has context.\n\nMeasure first invite completion, 24-hour return rate, and whether teams create a second project."
+    "できます。ワークスペース作成後に短いチェックリストを表示するバリアントを作成してください。\n\n- テンプレートを選ぶ。\n- プロジェクトの詳細を1つ追加する。\n- ワークスペースに文脈ができたらチームメイトを招待する。\n\n最初の招待完了率、24時間以内の復帰率、そしてチームが2つ目のプロジェクトを作成するかどうかを計測してください。"
   )
-  .user("What's the risk if we delay the invite prompt?", {
+  .user("招待の呼びかけを遅らせるリスクは何ですか？", {
     id: "command-risk",
   })
   .assistant(
-    "The main risk is reducing team creation for accounts that already know who they want to invite.\n\nTo protect that path, keep the invite action visible in the header and only change the primary empty-state guidance. That gives confident teams a direct route without forcing uncertain users through the invite step too early."
+    "主なリスクは、すでに誰を招待したいか分かっているアカウントのチーム作成を減らしてしまうことです。\n\nその経路を守るため、招待のアクションはヘッダーに表示したままにし、主要な空状態のガイダンスだけを変更してください。そうすれば、確信のあるチームには直接的な経路を残しつつ、まだ迷っているユーザーを招待ステップへ早すぎるタイミングで誘導せずに済みます。"
   )
 
 const messages = chat.get()
@@ -66,9 +66,9 @@ export function MessageScrollerCommands() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Commands</CardTitle>
+            <CardTitle>コマンド</CardTitle>
             <CardDescription>
-              Drive the transcript from outside.
+              外部からトランスクリプトを操作します。
             </CardDescription>
             <CardAction>
               <CommandMenu />
@@ -118,7 +118,7 @@ export function MessageScrollerCommands() {
           </CardContent>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          Use the controls to jump to any message in the conversation.
+          コントロールを使って、会話内の任意のメッセージへ移動できます。
         </div>
       </div>
     </MessageScrollerProvider>
@@ -131,10 +131,10 @@ function CommandMenu() {
   return (
     <DropdownMenuTrigger>
       <Button type="button" variant="secondary">
-        Jump to...
+        移動先...
       </Button>
       <DropdownMenu placement="bottom end" className="w-64">
-        <DropdownMenuLabel>Conversations</DropdownMenuLabel>
+        <DropdownMenuLabel>会話</DropdownMenuLabel>
         {userMessages.map((message) => (
           <DropdownMenuItem
             key={message.id}

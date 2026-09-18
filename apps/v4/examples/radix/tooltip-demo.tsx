@@ -1,18 +1,18 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export function TooltipDemo() {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="outline">Hover</Button>
+        <Button variant="outline">ホバー</Button>
       </TooltipTrigger>
       <TooltipContent>
-        <p>Add to library</p>
+        <p>ライブラリに追加</p>
       </TooltipContent>
     </Tooltip>
   )

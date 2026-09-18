@@ -1,7 +1,7 @@
 import { GitBranchIcon, SearchIcon } from "lucide-react"
 
-import { Marker, MarkerContent, MarkerIcon } from "@/styles/aria-rhea/ui/marker"
-import { Spinner } from "@/styles/aria-rhea/ui/spinner"
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/aria/marker"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export function MarkerDemo() {
   return (
@@ -10,22 +10,22 @@ export function MarkerDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>Switched to a new branch</MarkerContent>
+        <MarkerContent>新しいブランチに切り替えました</MarkerContent>
       </Marker>
       <Marker role="status">
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent className="shimmer">Thinking...</MarkerContent>
+        <MarkerContent className="shimmer">考え中...</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Conversation compacted</MarkerContent>
+        <MarkerContent>会話を圧縮しました</MarkerContent>
       </Marker>
       <Marker>
         <MarkerIcon>
           <SearchIcon />
         </MarkerIcon>
-        <MarkerContent>Explored 4 files</MarkerContent>
+        <MarkerContent>ファイルを4件調査しました</MarkerContent>
       </Marker>
     </div>
   )

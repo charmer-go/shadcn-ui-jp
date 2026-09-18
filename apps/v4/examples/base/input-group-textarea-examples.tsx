@@ -11,122 +11,122 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/base-nova/ui/input-group"
-import { Textarea } from "@/styles/base-nova/ui/textarea"
+} from "@/components/ui/base/input-group"
+import { Textarea } from "@/components/ui/base/textarea"
 
 export function InputGroupTextareaExamples() {
   return (
     <FieldGroup>
       <Field>
         <FieldLabel htmlFor="textarea-header-footer-12">
-          Default Textarea (No Input Group)
+          デフォルトのテキストエリア（入力グループなし）
         </FieldLabel>
         <Textarea
           id="textarea-header-footer-12"
-          placeholder="Enter your text here..."
+          placeholder="ここにテキストを入力..."
         />
       </Field>
       <Field>
-        <FieldLabel htmlFor="textarea-header-footer-13">Input Group</FieldLabel>
+        <FieldLabel htmlFor="textarea-header-footer-13">入力グループ</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-13"
-            placeholder="Enter your text here..."
+            placeholder="ここにテキストを入力..."
           />
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field data-invalid="true">
-        <FieldLabel htmlFor="textarea-header-footer-14">Invalid</FieldLabel>
+        <FieldLabel htmlFor="textarea-header-footer-14">不正な値</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-14"
-            placeholder="Enter your text here..."
+            placeholder="ここにテキストを入力..."
             aria-invalid="true"
           />
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field data-disabled="true">
-        <FieldLabel htmlFor="textarea-header-footer-15">Disabled</FieldLabel>
+        <FieldLabel htmlFor="textarea-header-footer-15">無効</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-15"
-            placeholder="Enter your text here..."
+            placeholder="ここにテキストを入力..."
             disabled
           />
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="prompt-31">Addon (block-start)</FieldLabel>
+        <FieldLabel htmlFor="prompt-31">アドオン（block-start）</FieldLabel>
         <InputGroup>
           <InputGroupTextarea id="prompt-31" />
           <InputGroupAddon align="block-start">
-            <InputGroupText>Ask, Search or Chat...</InputGroupText>
+            <InputGroupText>質問・検索・チャット...</InputGroupText>
             <InfoIcon className="ml-auto text-muted-foreground" />
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
       <Field>
         <FieldLabel htmlFor="textarea-header-footer-30">
-          Addon (block-end)
+          アドオン（block-end）
         </FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-30"
-            placeholder="Enter your text here..."
+            placeholder="ここにテキストを入力..."
           />
           <InputGroupAddon align="block-end">
-            <InputGroupText>0/280 characters</InputGroupText>
+            <InputGroupText>0/280文字</InputGroupText>
             <InputGroupButton
               variant="default"
               size="icon-xs"
               className="ml-auto rounded-full"
             >
               <ArrowUpIcon />
-              <span className="sr-only">Send</span>
+              <span className="sr-only">送信</span>
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="textarea-comment-31">Addon (Buttons)</FieldLabel>
+        <FieldLabel htmlFor="textarea-comment-31">アドオン（ボタン）</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-comment-31"
-            placeholder="Share your thoughts..."
+            placeholder="ご意見をお聞かせください..."
             className="min-h-[120px]"
           />
           <InputGroupAddon align="block-end">
             <InputGroupButton variant="ghost" className="ml-auto" size="sm">
-              Cancel
+              キャンセル
             </InputGroupButton>
             <InputGroupButton variant="default" size="sm">
-              Post Comment
+              コメントを投稿
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="textarea-code-32">Code Editor</FieldLabel>
+        <FieldLabel htmlFor="textarea-code-32">コードエディタ</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-code-32"
@@ -146,7 +146,7 @@ export function InputGroupTextareaExamples() {
             </InputGroupButton>
           </InputGroupAddon>
           <InputGroupAddon align="block-end" className="border-t">
-            <InputGroupText>Line 1, Column 1</InputGroupText>
+            <InputGroupText>1行目, 1列目</InputGroupText>
             <InputGroupText className="ml-auto">JavaScript</InputGroupText>
           </InputGroupAddon>
         </InputGroup>

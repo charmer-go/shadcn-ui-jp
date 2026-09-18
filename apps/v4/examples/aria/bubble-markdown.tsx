@@ -1,21 +1,21 @@
 import { Markdown } from "@/components/markdown"
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
 
 export function BubbleMarkdownDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble align="end" variant="muted">
         <BubbleContent>
-          <Markdown>{`Hello! Are you actually **thinking**?`}</Markdown>
+          <Markdown>{`こんにちは！本当に**考えて**いるの？`}</Markdown>
         </BubbleContent>
       </Bubble>
       <Bubble variant="ghost">
         <BubbleContent>
-          <Markdown>{`Ghost bubbles work for assistant text, **markdown**, and other content that should not be framed.
+          <Markdown>{`ゴーストバブルは、アシスタントのテキストや**マークダウン**など、枠で囲むべきではないコンテンツに使えます。
 
-This is perfect for assistant messages that should not have a frame and can take the full width of the container. You can also render \`code\` in it.
+枠がなく、コンテナの幅いっぱいに表示したいアシスタントのメッセージに最適です。\`コード\`もレンダリングできます。
 
-Ghost bubbles are full width and can take the full width of the container.
+ゴーストバブルは全幅表示で、コンテナの幅をいっぱいに使うことができます。
 `}</Markdown>
         </BubbleContent>
       </Bubble>

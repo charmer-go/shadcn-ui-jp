@@ -3,9 +3,9 @@
 import * as React from "react"
 import { addDays } from "date-fns"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Card, CardContent, CardFooter } from "@/styles/radix-nova/ui/card"
+import { Button } from "@/components/ui/radix/button"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Card, CardContent, CardFooter } from "@/components/ui/radix/card"
 
 export function CalendarWithPresets() {
   const [date, setDate] = React.useState<Date | undefined>(
@@ -30,11 +30,11 @@ export function CalendarWithPresets() {
       </CardContent>
       <CardFooter className="flex flex-wrap gap-2 border-t">
         {[
-          { label: "Today", value: 0 },
-          { label: "Tomorrow", value: 1 },
-          { label: "In 3 days", value: 3 },
-          { label: "In a week", value: 7 },
-          { label: "In 2 weeks", value: 14 },
+          { label: "今日", value: 0 },
+          { label: "明日", value: 1 },
+          { label: "3日後", value: 3 },
+          { label: "1週間後", value: 7 },
+          { label: "2週間後", value: 14 },
         ].map((preset) => (
           <Button
             key={preset.value}

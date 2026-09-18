@@ -1,16 +1,16 @@
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Switch } from "@/styles/base-nova/ui/switch"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
+import { Switch } from "@/components/ui/base/switch"
 
 export function SwitchSizes() {
   return (
     <FieldGroup className="w-full max-w-[10rem]">
       <Field orientation="horizontal">
         <Switch id="switch-size-sm" size="sm" />
-        <FieldLabel htmlFor="switch-size-sm">Small</FieldLabel>
+        <FieldLabel htmlFor="switch-size-sm">小</FieldLabel>
       </Field>
       <Field orientation="horizontal">
         <Switch id="switch-size-default" size="default" />
-        <FieldLabel htmlFor="switch-size-default">Default</FieldLabel>
+        <FieldLabel htmlFor="switch-size-default">デフォルト</FieldLabel>
       </Field>
     </FieldGroup>
   )

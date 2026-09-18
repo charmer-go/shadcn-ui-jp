@@ -1,38 +1,38 @@
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
-import { InputGroup, InputGroupInput } from "@/styles/aria-nova/ui/input-group"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
+import { InputGroup, InputGroupInput } from "@/components/ui/aria/input-group"
 
 export function InputGroupBasic() {
   return (
     <FieldGroup>
       <Field>
         <FieldLabel htmlFor="input-default-01">
-          Default (No Input Group)
+          デフォルト（入力グループなし）
         </FieldLabel>
-        <Input placeholder="Placeholder" id="input-default-01" />
+        <Input placeholder="プレースホルダー" id="input-default-01" />
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-group-02">Input Group</FieldLabel>
+        <FieldLabel htmlFor="input-group-02">入力グループ</FieldLabel>
         <InputGroup>
-          <InputGroupInput id="input-group-02" placeholder="Placeholder" />
+          <InputGroupInput id="input-group-02" placeholder="プレースホルダー" />
         </InputGroup>
       </Field>
       <Field data-disabled="true">
-        <FieldLabel htmlFor="input-disabled-03">Disabled</FieldLabel>
+        <FieldLabel htmlFor="input-disabled-03">無効</FieldLabel>
         <InputGroup>
           <InputGroupInput
             id="input-disabled-03"
-            placeholder="This field is disabled"
+            placeholder="このフィールドは無効になっています"
             disabled
           />
         </InputGroup>
       </Field>
       <Field data-invalid="true">
-        <FieldLabel htmlFor="input-invalid-04">Invalid</FieldLabel>
+        <FieldLabel htmlFor="input-invalid-04">不正な値</FieldLabel>
         <InputGroup>
           <InputGroupInput
             id="input-invalid-04"
-            placeholder="This field is invalid"
+            placeholder="この入力内容は無効です"
             aria-invalid="true"
           />
         </InputGroup>

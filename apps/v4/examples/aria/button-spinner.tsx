@@ -1,15 +1,15 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Spinner } from "@/styles/aria-nova/ui/spinner"
+import { Button } from "@/components/ui/aria/button"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export default function ButtonLoading() {
   return (
     <div className="flex gap-2">
       <Button variant="outline" isDisabled>
         <Spinner data-icon="inline-start" />
-        Generating
+        生成中
       </Button>
       <Button variant="secondary" isDisabled>
-        Downloading
+        ダウンロード中
         <Spinner data-icon="inline-start" />
       </Button>
     </div>

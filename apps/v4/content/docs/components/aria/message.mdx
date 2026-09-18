@@ -1,6 +1,6 @@
 ---
-title: Message
-description: Displays a message in a conversation, with optional avatar, header, footer, and alignment.
+title: メッセージ
+description: 会話内にメッセージを表示します。アバター、ヘッダー、フッター、配置はオプションです。
 base: aria
 component: true
 ---
@@ -15,13 +15,13 @@ The `Message` component lays out a single message in a conversation. It handles 
 
 For AI apps, you can render reasoning steps, tool calls and assistant messages using the `Message` component.
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,7 +35,7 @@ npx shadcn@latest add message
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="message"
@@ -43,7 +43,7 @@ npx shadcn@latest add message
   styleName="aria-rhea"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -51,7 +51,7 @@ npx shadcn@latest add message
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -80,7 +80,7 @@ Render the visible message surface inside it with
 [`Bubble`](/docs/components/aria/bubble). For the scroll container around a
 conversation, use [`MessageScroller`](/docs/components/aria/message-scroller).
 
-## Composition
+## 構成
 
 Use the following composition to build a message:
 
@@ -101,7 +101,7 @@ MessageGroup
 └── Message
 ```
 
-## Features
+## 機能
 
 - Start and end alignment for sender and receiver rows via the `align` prop
 - Avatar slot that anchors to the bottom of the message and stays clear of the footer
@@ -125,7 +125,7 @@ Use `MessageAvatar` to render an avatar next to the message. Set `align="end"` o
 | `start` | Align the message to the start of the conversation. |
 | `end`   | Align the message to the end of the conversation.   |
 
-## Group
+## グループ
 
 Use `MessageGroup` to stack consecutive messages from the same sender. Render an empty `MessageAvatar` on the earlier messages to keep them aligned with the avatar on the last one.
 
@@ -135,7 +135,7 @@ Use `MessageGroup` to stack consecutive messages from the same sender. Render an
   previewClassName="h-auto theme-blue"
 />
 
-## Header and Footer
+## ヘッダーとフッター
 
 Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a delivery or read status.
 
@@ -145,7 +145,7 @@ Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a
   previewClassName="h-auto theme-blue"
 />
 
-## Actions
+## アクション
 
 Place message-level actions in `MessageFooter`, such as copy, retry, or feedback buttons.
 
@@ -155,7 +155,7 @@ Place message-level actions in `MessageFooter`, such as copy, retry, or feedback
   previewClassName="h-auto theme-blue"
 />
 
-## Attachment
+## 添付ファイル
 
 <ComponentPreview
   styleName="aria-rhea"
@@ -163,7 +163,7 @@ Place message-level actions in `MessageFooter`, such as copy, retry, or feedback
   previewClassName="h-auto theme-blue"
 />
 
-## Accessibility
+## アクセシビリティ
 
 `Message` is a presentational layout wrapper. Accessibility comes from the content you place inside it.
 
@@ -194,7 +194,7 @@ For in-progress messages, use a [`Marker`](/docs/components/aria/marker) with `r
 </Message>
 ```
 
-## API Reference
+## APIリファレンス
 
 ### Message
 

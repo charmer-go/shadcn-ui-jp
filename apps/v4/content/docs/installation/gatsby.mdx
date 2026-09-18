@@ -1,6 +1,6 @@
 ---
 title: Gatsby
-description: Install and configure shadcn/ui for Gatsby.
+description: Gatsby 用に shadcn/ui をインストールして構成します。
 ---
 
 <Callout className="mb-6 border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950 [&_code]:bg-blue-100 dark:[&_code]:bg-blue-900">
@@ -10,7 +10,7 @@ description: Install and configure shadcn/ui for Gatsby.
 
 <Steps>
 
-### Create project
+### Create Project
 
 Start by creating a new Gatsby project using `create-gatsby`:
 
@@ -18,7 +18,7 @@ Start by creating a new Gatsby project using `create-gatsby`:
 npm init gatsby
 ```
 
-### Configure your Gatsby project to use TypeScript and Tailwind CSS
+### TypeScript と Tailwind CSS を使用するように Gatsby プロジェクトを構成する
 
 You will be asked a few questions to configure your project:
 
@@ -57,7 +57,7 @@ Add the following code to the `tsconfig.json` file to resolve paths:
 }
 ```
 
-### Create gatsby-node.ts file
+### gatsby-node.ts ファイルの作成
 
 Create a `gatsby-node.ts` file at the root of your project if it doesn’t already exist, and add the code below to the `gatsby-node` file so your app can resolve paths:
 
@@ -84,9 +84,9 @@ Run the `shadcn` init command to set up your project:
 npx shadcn@latest init
 ```
 
-### That's it
+### 以上です
 
-You can now start adding components to your project.
+これで、プロジェクトへのコンポーネントの追加を開始できます。
 
 ```bash
 npx shadcn@latest add button

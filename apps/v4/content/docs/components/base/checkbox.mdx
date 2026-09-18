@@ -1,6 +1,6 @@
 ---
-title: Checkbox
-description: A control that allows the user to toggle between checked and not checked.
+title: チェックボックス
+description: ユーザーがチェック済みとチェックなしを切り替えることができるコントロール。
 base: base
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-80"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add checkbox
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします:</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="checkbox"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Checkbox } from "@/components/ui/checkbox"
@@ -68,8 +68,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 ## Checked State
 
-Use `defaultChecked` for uncontrolled checkboxes, or `checked` and
-`onCheckedChange` to control the state.
+制御されていないチェックボックスには `defaultChecked` を使用するか、`checked` および
+`onCheckedChange` 状態を制御します。
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -81,14 +81,14 @@ export function Example() {
 }
 ```
 
-## Invalid State
+## 無効な状態
 
 Set `aria-invalid` on the checkbox and `data-invalid` on the field wrapper to
-show the invalid styles.
+は、無効なスタイルを表示します。
 
 <ComponentPreview styleName="base-nova" name="checkbox-invalid" />
 
-## Basic
+## 基本
 
 Pair the checkbox with `Field` and `FieldLabel` for proper layout and labeling.
 
@@ -100,19 +100,19 @@ Use `FieldContent` and `FieldDescription` for helper text.
 
 <ComponentPreview styleName="base-nova" name="checkbox-description" />
 
-## Disabled
+## 無効
 
-Use the `disabled` prop to prevent interaction and add the `data-disabled` attribute to the `<Field>` component for disabled styles.
+を定義します。 `disabled` プロパティを使用して相互作用を防止し、無効なスタイルの `<Field>` コンポーネントに `data-disabled` 属性を追加します。
 
 <ComponentPreview styleName="base-nova" name="checkbox-disabled" />
 
-## Group
+## グループ
 
-Use multiple fields to create a checkbox list.
+複数のフィールドを使用してチェックボックス リストを作成します。
 
 <ComponentPreview styleName="base-nova" name="checkbox-group" />
 
-## Table
+## テーブル
 
 <ComponentPreview
   styleName="base-nova"
@@ -122,7 +122,7 @@ Use multiple fields to create a checkbox list.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -131,6 +131,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80"
 />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI](https://base-ui.com/react/components/checkbox#api-reference) documentation for more information.
+詳細については、[ベース UI](https://base-ui.com/react/components/checkbox#api-reference) ドキュメントを参照してください。

@@ -2,8 +2,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/base-nova/ui/avatar"
-import { Button } from "@/styles/base-nova/ui/button"
+} from "@/components/ui/base/avatar"
+import { Button } from "@/components/ui/base/button"
 import {
   Empty,
   EmptyContent,
@@ -11,7 +11,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/base-nova/ui/empty"
+} from "@/components/ui/base/empty"
 
 export default function EmptyAvatar() {
   return (
@@ -26,14 +26,13 @@ export default function EmptyAvatar() {
             <AvatarFallback>LR</AvatarFallback>
           </Avatar>
         </EmptyMedia>
-        <EmptyTitle>User Offline</EmptyTitle>
+        <EmptyTitle>ユーザーはオフラインです</EmptyTitle>
         <EmptyDescription>
-          This user is currently offline. You can leave a message to notify them
-          or try again later.
+          このユーザーは現在オフラインです。メッセージを残して通知するか、後でもう一度お試しください。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
-        <Button size="sm">Leave Message</Button>
+        <Button size="sm">メッセージを残す</Button>
       </EmptyContent>
     </Empty>
   )

@@ -8,8 +8,8 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Badge } from "@/styles/base-nova/ui-rtl/badge"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
+import { Badge } from "@/components/ui/base/badge"
+import { Button } from "@/components/ui/base/button"
 import {
   Drawer,
   DrawerClose,
@@ -19,18 +19,18 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/base-nova/ui-rtl/drawer"
+} from "@/components/ui/base/drawer"
 import {
   Field,
   FieldContent,
   FieldDescription,
   FieldLabel,
   FieldTitle,
-} from "@/styles/base-nova/ui-rtl/field"
+} from "@/components/ui/base/field"
 import {
   RadioGroup,
   RadioGroupItem,
-} from "@/styles/base-nova/ui-rtl/radio-group"
+} from "@/components/ui/base/radio-group"
 
 const translations = {
   en: {

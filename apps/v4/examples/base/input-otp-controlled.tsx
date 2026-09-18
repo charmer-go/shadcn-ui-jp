@@ -6,7 +6,7 @@ import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/styles/base-nova/ui/input-otp"
+} from "@/components/ui/base/input-otp"
 
 export default function InputOTPControlled() {
   const [value, setValue] = React.useState("")
@@ -29,9 +29,9 @@ export default function InputOTPControlled() {
       </InputOTP>
       <div className="text-center text-sm">
         {value === "" ? (
-          <>Enter your one-time password.</>
+          <>ワンタイムパスワードを入力してください。</>
         ) : (
-          <>You entered: {value}</>
+          <>入力された値: {value}</>
         )}
       </div>
     </div>

@@ -1,9 +1,9 @@
 ---
 title: registry.json
-description: Schema for running your own component registry.
+description: 独自のコンポーネントレジストリを運用するためのスキーマです。
 ---
 
-The `registry.json` schema is used to define your custom component registry.
+`registry.json` スキーマは、カスタムコンポーネントレジストリを定義するために使用します。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -33,8 +33,7 @@ The `registry.json` schema is used to define your custom component registry.
 }
 ```
 
-You can also organize a large registry across multiple `registry.json` files
-using `include`.
+大規模なレジストリは、`include` を使用して複数の `registry.json` ファイルに分割して管理することもできます。
 
 {/* prettier-ignore */}
 ```json title="registry.json" showLineNumbers
@@ -49,18 +48,15 @@ using `include`.
 }
 ```
 
-Public GitHub repositories use the same source registry format. The CLI reads
-the root `registry.json`, resolves `include`, and installs files from the
-repository. See the [GitHub registry](/docs/registry/github) docs for more
-information.
+公開 GitHub リポジトリでは、同じソースレジストリ形式を使用します。CLI はルートの `registry.json` を読み取り、`include` を解決して、リポジトリからファイルをインストールします。詳しくは [GitHub レジストリ](/docs/registry/github)のドキュメントをご覧ください。
 
-## Definitions
+## 定義
 
-You can see the JSON Schema for `registry.json` [here](https://ui.shadcn.com/schema/registry.json).
+`registry.json` の JSON スキーマは[こちら](https://ui.shadcn.com/schema/registry.json)で確認できます。
 
 ### $schema
 
-The `$schema` property is used to specify the schema for the `registry.json` file.
+`$schema` プロパティは、`registry.json` ファイルのスキーマを指定するために使用します。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -70,7 +66,7 @@ The `$schema` property is used to specify the schema for the `registry.json` fil
 
 ### name
 
-The `name` property is used to specify the name of your registry. This is used for data attributes and other metadata.
+`name` プロパティは、レジストリの名前を指定するために使用します。データ属性やその他のメタデータに使用されます。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -80,7 +76,7 @@ The `name` property is used to specify the name of your registry. This is used f
 
 ### homepage
 
-The homepage of your registry. This is used for data attributes and other metadata.
+レジストリのホームページです。データ属性やその他のメタデータに使用されます。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -90,8 +86,7 @@ The homepage of your registry. This is used for data attributes and other metada
 
 ### include
 
-The `include` property is used to compose a registry from other `registry.json`
-files.
+`include` プロパティは、他の `registry.json` ファイルからレジストリを構成するために使用します。
 
 {/* prettier-ignore */}
 ```json title="registry.json" showLineNumbers
@@ -103,8 +98,7 @@ files.
 }
 ```
 
-Each include path must be a relative path to an explicit `registry.json` file.
-Folder shorthand is not supported.
+各 include パスは、明示的な `registry.json` ファイルへの相対パスである必要があります。フォルダーの省略記法はサポートされていません。
 
 {/* prettier-ignore */}
 ```json title="registry.json" showLineNumbers
@@ -115,8 +109,7 @@ Folder shorthand is not supported.
 }
 ```
 
-Included `registry.json` files may omit `name` and `homepage`. These fields are
-required only on the root `registry.json`.
+インクルードされる `registry.json` ファイルでは、`name` と `homepage` を省略できます。これらのフィールドは、ルートの `registry.json` でのみ必須です。
 
 ```json title="components/ui/registry.json" showLineNumbers
 {
@@ -136,16 +129,13 @@ required only on the root `registry.json`.
 }
 ```
 
-When `shadcn build` resolves includes, item file paths are read relative to the
-`registry.json` file that declares the item. The generated registry output is
-flattened and does not contain `include`.
+`shadcn build` が include を解決する際、アイテムのファイルパスは、そのアイテムを宣言している `registry.json` ファイルを基準とした相対パスとして読み取られます。生成されるレジストリ出力はフラット化され、`include` は含まれません。
 
-Registry item names must be unique across the resolved registry, including all
-included files.
+レジストリアイテムの名前は、インクルードされたすべてのファイルを含め、解決後のレジストリ全体で一意である必要があります。
 
 ### items
 
-The `items` in your registry. Each item must implement the [registry-item schema specification](https://ui.shadcn.com/schema/registry-item.json).
+レジストリ内の `items` です。各アイテムは [registry-item スキーマ仕様](https://ui.shadcn.com/schema/registry-item.json)に準拠する必要があります。
 
 ```json title="registry.json" showLineNumbers
 {
@@ -172,7 +162,6 @@ The `items` in your registry. Each item must implement the [registry-item schema
 }
 ```
 
-The root `registry.json` must define at least one of `items` or `include`. If
-`items` is omitted, it defaults to an empty array.
+ルートの `registry.json` では、`items` と `include` の少なくとも一方を定義する必要があります。`items` を省略した場合は、空の配列が既定値となります。
 
-See the [registry-item schema documentation](/docs/registry/registry-item-json) for more information.
+詳しくは [registry-item スキーマのドキュメント](/docs/registry/registry-item-json)をご覧ください。

@@ -1,26 +1,26 @@
 ---
-title: October 2025 - New Components
-description: Spinner, Kbd, Button Group, Input Group, Field, Item, and Empty components.
+title: 2025 年 10 月 - 新しいコンポーネント
+description: スピナー、Kbd、ボタン グループ、入力グループ、フィールド、項目、および空のコンポーネント。
 date: 2025-10-03
 ---
 
-For this round of components, I looked at what we build every day, the boring stuff we rebuild over and over, and made reusable abstractions you can actually use.
+このコンポーネントのラウンドでは、私たちが毎日構築しているもの、何度も再構築している退屈なものを検討し、実際に使用できる再利用可能な抽象化を作成しました。
 
-**These components work with every component library, Radix, Base UI, React Aria, you name it. Copy and paste to your projects.**
+**これらのコンポーネントは、Radix、Base UI、React Aria など、あらゆるコンポーネント ライブラリで動作します。コピーしてプロジェクトに貼り付けます。**
 
-- [Spinner](#spinner): An indicator to show a loading state.
-- [Kbd](#kbd): Display a keyboard key or group of keys.
-- [Button Group](#button-group): A group of buttons for actions and split buttons.
-- [Input Group](#input-group): Input with icons, buttons, labels and more.
-- [Field](#field): One component. All your forms.
-- [Item](#item): Display lists of items, cards, and more.
-- [Empty](#empty): Use this one for empty states.
+- [スピナー](#spinner): 読み込み状態を示すインジケーターです。
+- [Kbd](#kbd): キーボードのキーまたはキーのグループを表示します。
+- [ボタングループ](#button-group): アクションおよび分割ボタンのボタンのグループ。
+- [入力グループ](#input-group): アイコン、ボタン、ラベルなどを使用して入力します。
+- [フィールド](#field): 1 つのコンポーネント。すべてのフォーム。
+- [アイテム](#item): アイテムやカードなどのリストを表示します。
+- [Empty](#empty): 空の状態に使用します。
 
-### Spinner
+### スピナー
 
-Okay let's start with the easiest ones: **Spinner** and **Kbd**. Pretty basic. We all know what they do.
+それでは、最も簡単なもの、**Spinner** と **Kbd** から始めましょう。かなり基本的なものです。私たちは皆、彼らが何をするのか知っています。
 
-Here's how you render a spinner:
+スピナーをレンダリングする方法は次のとおりです。
 
 ```tsx
 import { Spinner } from "@/components/ui/spinner"
@@ -30,30 +30,30 @@ import { Spinner } from "@/components/ui/spinner"
 <Spinner />
 ```
 
-Here's what it looks like:
+以下にその様子を示します。
 
 <ComponentPreview styleName="new-york-v4"
   name="spinner-basic"
 
 />
 
-Here's what it looks like in a button:
+ボタンでは次のようになります。
 
 <ComponentPreview styleName="new-york-v4"
   name="spinner-button"
 
 />
 
-You can edit the code and replace it with your own spinner.
+コードを編集して、独自のスピナーに置き換えることができます。
 
 <ComponentPreview styleName="new-york-v4"
   name="spinner-custom"
 
 />
 
-### Kbd
+### KBD
 
-Kbd is a component that renders a keyboard key.
+Kbd はキーボードのキーをレンダリングするコンポーネントです。
 
 ```tsx
 import { Kbd, KbdGroup } from "@/components/ui/kbd"
@@ -63,7 +63,7 @@ import { Kbd, KbdGroup } from "@/components/ui/kbd"
 <Kbd>Ctrl</Kbd>
 ```
 
-Use `KbdGroup` to group keyboard keys together.
+`KbdGroup` を使用して、キーボードのキーをグループ化します。
 
 ```tsx showLineNumbers
 <KbdGroup>
@@ -77,18 +77,18 @@ Use `KbdGroup` to group keyboard keys together.
 
 />
 
-You can add it to buttons, tooltips, input groups, and more.
+これをボタン、ツールヒント、入力グループなどに追加できます。
 
-### Button Group
+### ボタングループ
 
-I got a lot of requests for this one: Button Group. It's a container that groups related buttons together with consistent styling. Great for action groups, split buttons, and more.
+これについては、ボタン グループについて多くのリクエストがありました。これは、関連するボタンを一貫したスタイルでグループ化するコンテナです。アクショングループ、分割ボタンなどに最適です。
 
 <ComponentPreview styleName="new-york-v4"
   name="button-group-demo"
 
 />
 
-Here's the code:
+コードは次のとおりです。
 
 ```tsx
 import { ButtonGroup } from "@/components/ui/button-group"
@@ -101,7 +101,7 @@ import { ButtonGroup } from "@/components/ui/button-group"
 </ButtonGroup>
 ```
 
-You can nest button groups to create more complex layouts with spacing.
+ボタン グループをネストして、間隔をあけてより複雑なレイアウトを作成できます。
 
 ```tsx showLineNumbers
 <ButtonGroup>
@@ -116,14 +116,14 @@ You can nest button groups to create more complex layouts with spacing.
 </ButtonGroup>
 ```
 
-Use `ButtonGroupSeparator` to create split buttons. Classic dropdown pattern.
+`ButtonGroupSeparator` を使用して分割ボタンを作成します。古典的なドロップダウン パターン。
 
 <ComponentPreview styleName="new-york-v4"
   name="button-group-dropdown"
 
 />
 
-You can also use it to add prefix or suffix buttons and text to inputs.
+これを使用して、接頭辞または接尾辞のボタンやテキストを入力に追加することもできます。
 
 <ComponentPreview styleName="new-york-v4"
   name="button-group-select"
@@ -138,9 +138,9 @@ You can also use it to add prefix or suffix buttons and text to inputs.
 </ButtonGroup>
 ```
 
-### Input Group
+### 入力グループ
 
-Input Group lets you add icons, buttons, and more to your inputs. You know, all those little bits you always need around your inputs.
+入力グループを使用すると、アイコンやボタンなどを入力に追加できます。ご存知のとおり、入力周りに常に必要となるこれらすべての小さな部分です。
 
 ```tsx
 import {
@@ -159,7 +159,7 @@ import {
 </InputGroup>
 ```
 
-Here's a preview with icons:
+アイコン付きのプレビューは次のとおりです。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -167,7 +167,7 @@ Here's a preview with icons:
   className="[&_.preview]:h-[300px] [&_pre]:h-[300px]!"
 />
 
-You can also add buttons to the input group.
+入力グループにボタンを追加することもできます。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -175,7 +175,7 @@ You can also add buttons to the input group.
   className="[&_.preview]:h-[300px] [&_pre]:h-[300px]!"
 />
 
-Or text, labels, tooltips, ...
+またはテキスト、ラベル、ツールチップなど...
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -183,7 +183,7 @@ Or text, labels, tooltips, ...
   className="[&_.preview]:h-[350px] [&_pre]:h-[350px]!"
 />
 
-It also works with textareas so you can build really complex components with lots of knobs and dials or yet another prompt form.
+また、テキストエリアとも連携できるため、多くのノブやダイヤル、または別のプロンプトフォームを備えた非常に複雑なコンポーネントを構築できます。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -191,7 +191,7 @@ It also works with textareas so you can build really complex components with lot
   className="[&_.preview]:h-[450px] [&_pre]:h-[450px]!"
 />
 
-Oh here are some cool ones with spinners:
+ああ、スピナーを使ったクールなものをいくつか紹介します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -199,11 +199,11 @@ Oh here are some cool ones with spinners:
   className="[&_.preview]:h-[350px] [&_pre]:h-[350px]!"
 />
 
-### Field
+### 分野
 
-Introducing **Field**, a component for building really complex forms. The abstraction here is beautiful.
+本当に複雑なフォームを構築するためのコンポーネントである **フィールド** を紹介します。ここの抽象化は美しいです。
 
-It took me a long time to get it right but I made it work with all your form libraries: Server Actions, React Hook Form, TanStack Form, Bring Your Own Form.
+正しく理解するまでに長い時間がかかりましたが、Server Actions、React Hook Form、TanStack Form、Bring Your Own Form など、すべてのフォーム ライブラリで動作するようにしました。
 
 ```tsx
 import {
@@ -214,7 +214,7 @@ import {
 } from "@/components/ui/field"
 ```
 
-Here's a basic field with an input:
+以下に入力を含む基本的なフィールドを示します。
 
 ```tsx showLineNumbers
 <Field>
@@ -232,7 +232,7 @@ Here's a basic field with an input:
   className="[&_.preview]:h-[350px] [&_pre]:h-[350px]!"
 />
 
-It works with all form controls. Inputs, textareas, selects, checkboxes, radios, switches, sliders, you name it. Here's a full example:
+すべてのフォーム コントロールで動作します。入力、テキストエリア、選択、チェックボックス、ラジオ、スイッチ、スライダーなど、何でもあります。完全な例を次に示します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -240,7 +240,7 @@ It works with all form controls. Inputs, textareas, selects, checkboxes, radios,
   className="[&_.preview]:h-[850px] [&_pre]:h-[850px]!"
 />
 
-Here are some checkbox fields:
+いくつかのチェックボックスフィールドを次に示します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -248,8 +248,8 @@ Here are some checkbox fields:
   className="[&_.preview]:h-[500px] [&_pre]:h-[500px]!"
 />
 
-You can group fields together using `FieldGroup` and `FieldSet`. Perfect for
-multi-section forms.
+`FieldGroup` および `FieldSet` を使用してフィールドをグループ化できます。に最適
+複数セクションのフォーム。
 
 ```tsx showLineNumbers
 <FieldSet>
@@ -267,8 +267,8 @@ multi-section forms.
   className="[&_.preview]:h-[500px] [&_pre]:h-[500px]!"
 />
 
-Making it responsive is easy. Use `orientation="responsive"` and it switches
-between vertical and horizontal layouts based on container width. Done.
+レスポンシブにするのは簡単です。 `orientation="responsive"`を使用すると切り替わります
+コンテナの幅に基づいて垂直レイアウトと水平レイアウトを切り替えます。終わり。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -276,7 +276,7 @@ between vertical and horizontal layouts based on container width. Done.
   className="[&_.preview]:h-[600px] [&_pre]:h-[600px]!"
 />
 
-Wait, here's more. Wrap your fields in `FieldLabel` to create a selectable field group. Really easy. And it looks great.
+待ってください。さらに続きがあります。フィールドを `FieldLabel` でラップして、選択可能なフィールド グループを作成します。本当に簡単です。見た目も素晴らしいです。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -284,11 +284,11 @@ Wait, here's more. Wrap your fields in `FieldLabel` to create a selectable field
   className="[&_.preview]:h-[600px] [&_pre]:h-[600px]!"
 />
 
-### Item
+### アイテム
 
-This one is a straightforward flex container that can house nearly any type of content.
+これは、ほぼすべての種類のコンテンツを格納できる単純なフレックス コンテナです。
 
-I've built this so many times that I decided to create a component for it. Now I use it all the time. I use it to display lists of items, cards, and more.
+これを何度も構築したので、コンポーネントを作成することにしました。今ではいつも使っています。アイテムやカードなどのリストを表示するために使用します。
 
 ```tsx
 import {
@@ -300,7 +300,7 @@ import {
 } from "@/components/ui/item"
 ```
 
-Here's a basic item:
+基本的な項目は次のとおりです。
 
 ```tsx showLineNumbers
 <Item>
@@ -320,7 +320,7 @@ Here's a basic item:
   className="[&_.preview]:h-[300px] [&_.preview]:p-4 [&_pre]:h-[300px]!"
 />
 
-You can add icons, avatars, or images to the item.
+アイテムにはアイコン、アバター、または画像を追加できます。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -334,7 +334,7 @@ You can add icons, avatars, or images to the item.
   className="[&_.preview]:h-[300px] [&_.preview]:p-4 [&_pre]:h-[300px]!"
 />
 
-And here's what a list of items looks like with `ItemGroup`:
+`ItemGroup` を使用した項目のリストは次のようになります。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -342,7 +342,7 @@ And here's what a list of items looks like with `ItemGroup`:
   className="[&_.preview]:h-[500px] [&_.preview]:p-4 [&_pre]:h-[500px]!"
 />
 
-Need it as a link? Use the `asChild` prop:
+リンクとして必要ですか? `asChild` プロパティを使用します。
 
 ```tsx showLineNumbers
 <Item asChild>
@@ -364,9 +364,9 @@ Need it as a link? Use the `asChild` prop:
   className="[&_.preview]:h-[400px] [&_.preview]:p-4 [&_pre]:h-[400px]!"
 />
 
-### Empty
+### 空の
 
-Okay last one: **Empty**. Use this to display empty states in your app.
+さて、最後のもの: **空**。これを使用して、アプリ内に空の状態を表示します。
 
 ```tsx
 import {
@@ -378,7 +378,7 @@ import {
 } from "@/components/ui/empty"
 ```
 
-Here's how you use it:
+使い方は次のとおりです。
 
 ```tsx showLineNumbers
 <Empty>
@@ -399,7 +399,7 @@ Here's how you use it:
   className="[&_.preview]:h-[400px] [&_.preview]:p-4 [&_pre]:h-[400px]!"
 />
 
-You can use it with avatars:
+アバターと一緒に使用できます。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -407,7 +407,7 @@ You can use it with avatars:
   className="[&_.preview]:h-[400px] [&_pre]:h-[400px]!"
 />
 
-Or with input groups for things like search results or email subscriptions:
+または、検索結果やメール購読などの入力グループを使用します。
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -415,4 +415,4 @@ Or with input groups for things like search results or email subscriptions:
   className="[&_.preview]:h-[450px] [&_pre]:h-[450px]!"
 />
 
-That's it. Seven new components. Works with all your libraries. Ready for your projects.
+それでおしまい。 7 つの新しいコンポーネント。すべてのライブラリで動作します。プロジェクトの準備は完了です。

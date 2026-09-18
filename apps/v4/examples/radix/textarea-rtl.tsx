@@ -10,8 +10,8 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui-rtl/field"
-import { Textarea } from "@/styles/radix-nova/ui-rtl/textarea"
+} from "@/components/ui/radix/field"
+import { Textarea } from "@/components/ui/radix/textarea"
 
 const translations: Translations = {
   en: {

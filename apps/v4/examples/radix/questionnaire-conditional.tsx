@@ -16,7 +16,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 export function QuestionnaireConditional() {
   const [runtime, setRuntime] = React.useState("local")
@@ -38,8 +38,8 @@ export function QuestionnaireConditional() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Execution plan saved", {
-      description: `Runtime: ${formData.get("runtime") ?? "None"} · Environment: ${formData.get("environment") ?? "Not applicable"} · Approval: ${formData.get("approval") ?? "None"}`,
+    toast("実行プランを保存しました", {
+      description: `実行場所: ${formData.get("runtime") ?? "なし"} ・ 環境: ${formData.get("environment") ?? "該当なし"} ・ 承認: ${formData.get("approval") ?? "なし"}`,
     })
   }
 
@@ -53,9 +53,9 @@ export function QuestionnaireConditional() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="runtime" required>
-        <QuestionnaireTitle>Where should the agent run?</QuestionnaireTitle>
+        <QuestionnaireTitle>エージェントはどこで実行すべきですか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Cloud runs add an environment question to this flow.
+          クラウド実行を選択すると、このフローに環境の質問が追加されます。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice
@@ -63,14 +63,14 @@ export function QuestionnaireConditional() {
             value="local"
             onChange={() => setRuntime("local")}
           >
-            Local workspace
+            ローカルワークスペース
           </QuestionnaireChoice>
           <QuestionnaireChoice
             checked={runtime === "cloud"}
             value="cloud"
             onChange={() => setRuntime("cloud")}
           >
-            Cloud workspace
+            クラウドワークスペース
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -82,13 +82,13 @@ export function QuestionnaireConditional() {
         required
       >
         <QuestionnaireTitle>
-          Which cloud environment should it use?
+          どのクラウド環境を使用すべきですか？
         </QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="preview">Preview</QuestionnaireChoice>
-          <QuestionnaireChoice value="staging">Staging</QuestionnaireChoice>
+          <QuestionnaireChoice value="preview">プレビュー</QuestionnaireChoice>
+          <QuestionnaireChoice value="staging">ステージング</QuestionnaireChoice>
           <QuestionnaireChoice value="isolated">
-            Isolated sandbox
+            分離されたサンドボックス
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -96,17 +96,17 @@ export function QuestionnaireConditional() {
 
       <QuestionnaireItem name="approval" required>
         <QuestionnaireTitle>
-          When should the agent request approval?
+          エージェントはいつ承認を求めるべきですか？
         </QuestionnaireTitle>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="writes">
-            Before writing files
+            ファイルを書き込む前
           </QuestionnaireChoice>
           <QuestionnaireChoice value="commands">
-            Before running commands
+            コマンドを実行する前
           </QuestionnaireChoice>
           <QuestionnaireChoice value="sensitive">
-            Only for sensitive actions
+            機密性の高い操作のみ
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -114,8 +114,8 @@ export function QuestionnaireConditional() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save execution plan</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>実行プランを保存</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

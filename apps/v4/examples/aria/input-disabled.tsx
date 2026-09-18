@@ -2,20 +2,20 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+} from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputDisabled() {
   return (
     <Field data-disabled>
-      <FieldLabel htmlFor="input-demo-disabled">Email</FieldLabel>
+      <FieldLabel htmlFor="input-demo-disabled">メールアドレス</FieldLabel>
       <Input
         id="input-demo-disabled"
         type="email"
-        placeholder="Email"
+        placeholder="メールアドレス"
         disabled
       />
-      <FieldDescription>This field is currently disabled.</FieldDescription>
+      <FieldDescription>この項目は現在無効になっています。</FieldDescription>
     </Field>
   )
 }

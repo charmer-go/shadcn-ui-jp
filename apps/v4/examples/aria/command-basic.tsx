@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Command,
   CommandDialog,
@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/styles/aria-nova/ui/command"
+} from "@/components/ui/aria/command"
 
 export function CommandBasic() {
   const [open, setOpen] = React.useState(false)
@@ -19,20 +19,20 @@ export function CommandBasic() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        メニューを開く
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="コマンドを入力または検索…" />
           <CommandList
             renderEmptyState={() => (
-              <CommandEmpty>No results found.</CommandEmpty>
+              <CommandEmpty>結果が見つかりません。</CommandEmpty>
             )}
           >
-            <CommandGroup heading="Suggestions">
-              <CommandItem>Calendar</CommandItem>
-              <CommandItem>Search Emoji</CommandItem>
-              <CommandItem>Calculator</CommandItem>
+            <CommandGroup heading="候補">
+              <CommandItem>カレンダー</CommandItem>
+              <CommandItem>絵文字を検索</CommandItem>
+              <CommandItem>計算機</CommandItem>
             </CommandGroup>
           </CommandList>
         </Command>

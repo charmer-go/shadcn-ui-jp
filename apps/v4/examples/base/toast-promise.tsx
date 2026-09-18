@@ -1,25 +1,25 @@
 "use client"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { toast } from "@/styles/base-nova/ui/toast"
+import { Button } from "@/components/ui/base/button"
+import { toast } from "@/components/ui/base/toast"
 
 export function ToastPromise() {
   function showToast() {
     toast.promise(
       new Promise<{ name: string }>((resolve) => {
-        window.setTimeout(() => resolve({ name: "Event" }), 2000)
+        window.setTimeout(() => resolve({ name: "イベント" }), 2000)
       }),
       {
-        loading: "Creating event…",
-        success: (data) => `${data.name} created.`,
-        error: "Could not create event.",
+        loading: "イベントを作成中…",
+        success: (data) => `${data.name}を作成しました。`,
+        error: "イベントを作成できませんでした。",
       }
     )
   }
 
   return (
     <Button variant="outline" onClick={showToast}>
-      Create Event
+      イベントを作成
     </Button>
   )
 }

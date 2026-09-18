@@ -1,11 +1,11 @@
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationNext,
   PaginationPrevious,
-} from "@/styles/base-nova/ui/pagination"
+} from "@/components/ui/base/pagination"
 import {
   Select,
   SelectContent,
@@ -13,13 +13,13 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 export function PaginationIconsOnly() {
   return (
     <div className="flex items-center justify-between gap-4">
       <Field orientation="horizontal" className="w-fit">
-        <FieldLabel htmlFor="select-rows-per-page">Rows per page</FieldLabel>
+        <FieldLabel htmlFor="select-rows-per-page">1ページあたりの行数</FieldLabel>
         <Select defaultValue="25">
           <SelectTrigger className="w-20" id="select-rows-per-page">
             <SelectValue />

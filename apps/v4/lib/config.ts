@@ -1,18 +1,14 @@
 export const siteConfig = {
-  name: "shadcn/ui",
+  name: "shadcn-ui-jp",
   url: "https://ui.shadcn.com",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
-    "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+    "shadcn/ui の公式ドキュメントを日本語で読めるように翻訳した、 コミュニティ運営の非公式サイトです。",
   links: {
-    twitter: "https://twitter.com/shadcn",
-    github: "https://github.com/shadcn-ui/ui",
+    twitter: "https://x.com/charmers_run",
+    github: "https://github.com/charmers-run",
   },
   navItems: [
-    {
-      href: "/",
-      label: "Home",
-    },
     {
       href: "/docs/installation",
       label: "Docs",
@@ -20,26 +16,6 @@ export const siteConfig = {
     {
       href: "/docs/components",
       label: "Components",
-    },
-    {
-      href: "/blocks",
-      label: "Blocks",
-    },
-    {
-      href: "/charts/area",
-      label: "Charts",
-    },
-    {
-      href: "/docs/directory",
-      label: "Directory",
-    },
-    {
-      href: "/typeset",
-      label: "Typeset",
-    },
-    {
-      href: "/create",
-      label: "Create",
     },
   ],
 }

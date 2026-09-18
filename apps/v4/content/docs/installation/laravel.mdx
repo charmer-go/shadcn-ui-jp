@@ -1,15 +1,15 @@
 ---
 title: Laravel
-description: Install and configure shadcn/ui for Laravel.
+description: Laravel 用に shadcn/ui をインストールして設定します。
 ---
 
-The shadcn CLI does not scaffold a new Laravel app. Start by creating a Laravel app with the React starter kit, then choose how you want to configure shadcn/ui.
+shadcn CLI は、新しい Laravel アプリをスキャフォールディングしません。まず、React スターター キットを使用して Laravel アプリを作成し、次に shadcn/ui を構成する方法を選択します。
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
-Create a new Laravel app using the Laravel installer:
+Laravel インストーラーを使用して新しい Laravel アプリを作成します。
 
 ```bash
 laravel new my-app
@@ -17,9 +17,9 @@ laravel new my-app
 
 If you already have a Laravel app with React and Inertia configured, skip this step.
 
-Choose the **React** starter kit when prompted. For more information, see the official [Laravel frontend documentation](https://laravel.com/docs/12.x/frontend).
+プロンプトが表示されたら、**React** スターター キットを選択します。詳細については、公式の [Laravel フロントエンド ドキュメント](https://laravel.com/docs/12.x/frontend) を参照してください。
 
-Then move into your project directory:
+次に、プロジェクト ディレクトリに移動します:
 
 ```bash
 cd my-app
@@ -32,9 +32,9 @@ cd my-app
     href="#configure-with-create"
     className="items-start gap-1 p-6 text-sm md:p-6"
   >
-    <div className="font-medium">Use shadcn/create</div>
+    <div className="font-medium">shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset visually and generate a Laravel init command.
+      プリセットを視覚的に構築し、Laravel init コマンドを生成します。
     </div>
   </LinkedCard>
   <LinkedCard
@@ -43,19 +43,19 @@ cd my-app
   >
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Configure shadcn/ui in your Laravel app directly from the terminal.
+      ターミナルから Laravel アプリで shadcn/ui を直接設定します。
     </div>
   </LinkedCard>
 </div>
 
 <div id="configure-with-create" className="scroll-mt-24" />
-## Use shadcn/create
+## shadcn/create
 
 <Steps>
 
-### Build Your Preset
+### プリセットを構築する
 
-Open [shadcn/create](/create?template=laravel) and build your preset visually. Choose your style, colors, fonts, icons, and more.
+[shadcn/create](/create?template=laravel) を開いてプリセットを視覚的に構築します。スタイル、色、フォント、アイコンなどを選択します。
 
 <Button asChild size="sm">
   <Link
@@ -64,33 +64,33 @@ Open [shadcn/create](/create?template=laravel) and build your preset visually. C
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    shadcn/create
   </Link>
 </Button>
 
-### Run the Command
+### コマンドを実行する
 
-Click `Create Project`, choose your package manager, and copy the generated command.
+`Create Project` をクリックし、パッケージ マネージャーを選択し、生成されたコマンドをコピーします。
 
-The generated command will look similar to this:
+生成されるコマンドは次のようになります。
 
 ```bash
 npx shadcn@latest init --preset [CODE] --template laravel
 ```
 
-Run the command from the root of your Laravel app.
+を使用する Laravel アプリのルートからコマンドを実行します。
 
-When asked to overwrite `components.json` and components, choose `Yes`.
+`components.json` とコンポーネントを上書きするように求められたら、`Yes` を選択します。
 
-### Add Components
+### コンポーネントの追加
 
-Add the `Switch` component to your project:
+`Switch` コンポーネントをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add switch
 ```
 
-The command above will add the `Switch` component to `resources/js/components/ui/switch.tsx`. You can then import it like this:
+上記のコマンドは、`Switch` コンポーネントを `resources/js/components/ui/switch.tsx` に追加します。次に、次のようにインポートできます。
 
 ```tsx title="resources/js/pages/index.tsx" showLineNumbers {1,6}
 import { Switch } from "@/components/ui/switch"
@@ -113,25 +113,25 @@ export default MyPage
 
 <Steps>
 
-### Run the CLI
+### CLI を実行します
 
-Run the `shadcn` init command from the root of your Laravel app:
+Laravel アプリのルートから `shadcn` init コマンドを実行します。
 
 ```bash
 npx shadcn@latest init
 ```
 
-When asked to overwrite `components.json` and components, choose `Yes`.
+`components.json` とコンポーネントを上書きするように求められたら、`Yes` を選択します。
 
-### Add Components
+### コンポーネントの追加
 
-Add the `Switch` component to your project:
+`Switch` コンポーネントをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add switch
 ```
 
-The command above will add the `Switch` component to `resources/js/components/ui/switch.tsx`. You can then import it like this:
+上記のコマンドは、`Switch` コンポーネントを `resources/js/components/ui/switch.tsx` に追加します。次に、次のようにインポートできます。
 
 ```tsx title="resources/js/pages/index.tsx" showLineNumbers {1,6}
 import { Switch } from "@/components/ui/switch"

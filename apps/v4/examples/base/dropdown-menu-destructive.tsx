@@ -2,7 +2,7 @@
 
 import { PencilIcon, ShareIcon, TrashIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,30 +10,30 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 
 export function DropdownMenuDestructive() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Actions
+        操作
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <PencilIcon />
-            Edit
+            編集
           </DropdownMenuItem>
           <DropdownMenuItem>
             <ShareIcon />
-            Share
+            共有
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            削除
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

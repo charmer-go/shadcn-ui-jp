@@ -17,7 +17,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/aria-nova/ui/questionnaire"
+} from "@/components/ui/aria/questionnaire"
 
 const items = [
   { name: "permission", required: true },
@@ -45,8 +45,8 @@ export function QuestionnaireNavigationState() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Permissions saved", {
-      description: `Permission: ${formData.get("permission") ?? "None"} · Verification: ${formData.get("verification") ?? "None"}`,
+    toast("権限を保存しました", {
+      description: `権限: ${formData.get("permission") ?? "なし"} ・ 検証: ${formData.get("tests") ?? "なし"}`,
     })
   }
 
@@ -65,17 +65,17 @@ export function QuestionnaireNavigationState() {
         required
         onStatusChange={(status) => setStatus("permission", status)}
       >
-        <QuestionnaireTitle>What may the agent modify?</QuestionnaireTitle>
+        <QuestionnaireTitle>エージェントは何を変更できますか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Next is intentionally disabled until an answer is selected.
+          回答が選択されるまで、次へボタンは意図的に無効化されています。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="files">Project files</QuestionnaireChoice>
+          <QuestionnaireChoice value="files">プロジェクトファイル</QuestionnaireChoice>
           <QuestionnaireChoice value="tests">
-            Project files and tests
+            プロジェクトファイルとテスト
           </QuestionnaireChoice>
           <QuestionnaireChoice value="config">
-            Files, tests, and configuration
+            ファイル、テスト、設定
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -87,15 +87,15 @@ export function QuestionnaireNavigationState() {
         onStatusChange={(status) => setStatus("verification", status)}
       >
         <QuestionnaireTitle>
-          What must pass before completion?
+          完了前に何をパスする必要がありますか？
         </QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="tests">Tests</QuestionnaireChoice>
+          <QuestionnaireChoice value="tests">テスト</QuestionnaireChoice>
           <QuestionnaireChoice value="types">
-            Tests and types
+            テストと型
           </QuestionnaireChoice>
           <QuestionnaireChoice value="all">
-            Tests, types, and visual QA
+            テスト、型、ビジュアルQA
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -108,10 +108,10 @@ export function QuestionnaireNavigationState() {
           disabled={unanswered}
           variant="secondary"
         >
-          Next
+          次へ
         </QuestionnaireNext>
         <QuestionnaireSubmit disabled={unanswered}>
-          Save permissions
+          権限を保存
         </QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>

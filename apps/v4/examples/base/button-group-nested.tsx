@@ -1,18 +1,18 @@
 import { AudioLinesIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { ButtonGroup } from "@/styles/base-nova/ui/button-group"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { ButtonGroup } from "@/components/ui/base/button-group"
+import { Input } from "@/components/ui/base/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/base-nova/ui/tooltip"
+} from "@/components/ui/base/tooltip"
 
 export function ButtonGroupNested() {
   return (
@@ -24,12 +24,12 @@ export function ButtonGroupNested() {
       </ButtonGroup>
       <ButtonGroup>
         <InputGroup>
-          <InputGroupInput placeholder="Send a message..." />
+          <InputGroupInput placeholder="メッセージを送信..." />
           <Tooltip>
             <TooltipTrigger render={<InputGroupAddon align="inline-end" />}>
               <AudioLinesIcon />
             </TooltipTrigger>
-            <TooltipContent>Voice Mode</TooltipContent>
+            <TooltipContent>音声モード</TooltipContent>
           </Tooltip>
         </InputGroup>
       </ButtonGroup>

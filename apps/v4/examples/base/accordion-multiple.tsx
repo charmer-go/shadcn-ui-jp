@@ -3,26 +3,26 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/styles/base-nova/ui/accordion"
+} from "@/components/ui/base/accordion"
 
 const items = [
   {
     value: "notifications",
-    trigger: "Notification Settings",
+    trigger: "通知設定",
     content:
-      "Manage how you receive notifications. You can enable email alerts for updates or push notifications for mobile devices.",
+      "通知の受け取り方法を管理します。更新情報のメール通知や、モバイル端末へのプッシュ通知を有効にできます。",
   },
   {
     value: "privacy",
-    trigger: "Privacy & Security",
+    trigger: "プライバシーとセキュリティ",
     content:
-      "Control your privacy settings and security preferences. Enable two-factor authentication, manage connected devices, review active sessions, and configure data sharing preferences. You can also download your data or delete your account.",
+      "プライバシー設定とセキュリティの環境設定を管理します。二段階認証の有効化、接続済みデバイスの管理、アクティブなセッションの確認、データ共有設定の変更が行えます。また、データのダウンロードやアカウントの削除も可能です。",
   },
   {
     value: "billing",
-    trigger: "Billing & Subscription",
+    trigger: "請求とサブスクリプション",
     content:
-      "View your current plan, payment history, and upcoming invoices. Update your payment method, change your subscription tier, or cancel your subscription.",
+      "現在のプラン、お支払い履歴、今後の請求書を確認できます。お支払い方法の更新、プランの変更、サブスクリプションの解約が行えます。",
   },
 ]
 

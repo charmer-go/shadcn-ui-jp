@@ -4,19 +4,19 @@ import * as React from "react"
 import { parseDate } from "chrono-node"
 import { CalendarIcon } from "lucide-react"
 
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/radix-nova/ui/input-group"
+} from "@/components/ui/radix/input-group"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 function formatDate(date: Date | undefined) {
   if (!date) {
@@ -39,7 +39,7 @@ export function DatePickerNaturalLanguage() {
 
   return (
     <Field className="mx-auto max-w-xs">
-      <FieldLabel htmlFor="date-optional">Schedule Date</FieldLabel>
+      <FieldLabel htmlFor="date-optional">予定日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-optional"
@@ -66,10 +66,10 @@ export function DatePickerNaturalLanguage() {
                 id="date-picker"
                 variant="ghost"
                 size="icon-xs"
-                aria-label="Select date"
+                aria-label="日付を選択"
               >
                 <CalendarIcon />
-                <span className="sr-only">Select date</span>
+                <span className="sr-only">日付を選択</span>
               </InputGroupButton>
             </PopoverTrigger>
             <PopoverContent
@@ -93,8 +93,8 @@ export function DatePickerNaturalLanguage() {
         </InputGroupAddon>
       </InputGroup>
       <div className="px-1 text-sm text-muted-foreground">
-        Your post will be published on{" "}
-        <span className="font-medium">{formatDate(date)}</span>.
+        投稿は
+        <span className="font-medium">{formatDate(date)}</span>に公開されます。
       </div>
     </Field>
   )

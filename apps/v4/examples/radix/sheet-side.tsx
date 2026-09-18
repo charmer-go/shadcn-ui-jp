@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Sheet,
   SheetClose,
@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/styles/radix-nova/ui/sheet"
+} from "@/components/ui/radix/sheet"
 
 const SHEET_SIDES = ["top", "right", "bottom", "left"] as const
 
@@ -27,10 +27,9 @@ export default function SheetSide() {
             className="data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh]"
           >
             <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
+              <SheetTitle>プロフィールを編集</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
+                ここでプロフィールを変更できます。完了したら保存をクリックしてください。
               </SheetDescription>
             </SheetHeader>
             <div className="no-scrollbar overflow-y-auto px-4">
@@ -48,9 +47,9 @@ export default function SheetSide() {
               ))}
             </div>
             <SheetFooter>
-              <Button type="submit">Save changes</Button>
+              <Button type="submit">変更を保存</Button>
               <SheetClose asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline">キャンセル</Button>
               </SheetClose>
             </SheetFooter>
           </SheetContent>

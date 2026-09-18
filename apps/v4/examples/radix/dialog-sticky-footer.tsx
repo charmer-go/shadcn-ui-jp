@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Dialog,
   DialogClose,
@@ -8,38 +8,35 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/radix-nova/ui/dialog"
+} from "@/components/ui/radix/dialog"
 
 export function DialogStickyFooter() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Sticky Footer</Button>
+        <Button variant="outline">固定フッター</Button>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Sticky Footer</DialogTitle>
+          <DialogTitle>固定フッター</DialogTitle>
           <DialogDescription>
-            This dialog has a sticky footer that stays visible while the content
-            scrolls.
+            このダイアログには、コンテンツをスクロールしても表示され続ける固定フッターがあります。
           </DialogDescription>
         </DialogHeader>
         <div className="-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4">
           {Array.from({ length: 10 }).map((_, index) => (
             <p key={index} className="mb-4 leading-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              これはサンプルのテキストです。ダイアログの内容が長くなった場合に、
+              スクロールがどのように機能するかを確認するためのダミーコンテンツです。
+              実際のアプリケーションでは、ここに本文やリスト、フォームなど
+              任意のコンテンツを配置できます。内容が画面の高さを超える場合、
+              このエリアだけが独立してスクロールします。
             </p>
           ))}
         </div>
         <DialogFooter>
           <DialogClose asChild>
-            <Button variant="outline">Close</Button>
+            <Button variant="outline">閉じる</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

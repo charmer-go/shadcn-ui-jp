@@ -3,32 +3,27 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/styles/aria-nova/ui/accordion"
+} from "@/components/ui/aria/accordion"
 
 export default function AccordionDisabled() {
   return (
     <Accordion className="w-full">
       <AccordionItem id="item-1">
-        <AccordionTrigger>Can I access my account history?</AccordionTrigger>
+        <AccordionTrigger>アカウント履歴を確認できますか？</AccordionTrigger>
         <AccordionContent>
-          Yes, you can view your complete account history including all
-          transactions, plan changes, and support tickets in the Account History
-          section of your dashboard.
+          はい、ダッシュボードの「アカウント履歴」セクションで、取引履歴、プラン変更、サポートチケットを含むすべてのアカウント履歴を確認できます。
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="item-2" isDisabled>
-        <AccordionTrigger>Premium feature information</AccordionTrigger>
+        <AccordionTrigger>プレミアム機能の情報</AccordionTrigger>
         <AccordionContent>
-          This section contains information about premium features. Upgrade your
-          plan to access this content.
+          このセクションにはプレミアム機能に関する情報が含まれています。この内容を利用するにはプランをアップグレードしてください。
         </AccordionContent>
       </AccordionItem>
       <AccordionItem id="item-3">
-        <AccordionTrigger>How do I update my email address?</AccordionTrigger>
+        <AccordionTrigger>メールアドレスを変更するにはどうすればよいですか？</AccordionTrigger>
         <AccordionContent>
-          You can update your email address in your account settings.
-          You&apos;ll receive a verification email at your new address to
-          confirm the change.
+          アカウント設定でメールアドレスを変更できます。変更を確認するため、新しいメールアドレス宛に確認メールが送信されます。
         </AccordionContent>
       </AccordionItem>
     </Accordion>

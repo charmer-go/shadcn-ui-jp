@@ -4,25 +4,23 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@/styles/aria-nova/ui/alert"
+} from "@/components/ui/aria/alert"
 
 export default function AlertDemo() {
   return (
     <div className="grid w-full max-w-md items-start gap-4">
       <Alert>
         <CheckCircle2Icon />
-        <AlertTitle>Payment successful</AlertTitle>
+        <AlertTitle>支払いが完了しました</AlertTitle>
         <AlertDescription>
-          Your payment of $29.99 has been processed. A receipt has been sent to
-          your email address.
+          $29.99のお支払いが処理されました。領収書がメールアドレスに送信されました。
         </AlertDescription>
       </Alert>
       <Alert>
         <InfoIcon />
-        <AlertTitle>New feature available</AlertTitle>
+        <AlertTitle>新機能を利用できます</AlertTitle>
         <AlertDescription>
-          We&apos;ve added dark mode support. You can enable it in your account
-          settings.
+          ダークモードのサポートを追加しました。アカウント設定から有効にできます。
         </AlertDescription>
       </Alert>
     </div>

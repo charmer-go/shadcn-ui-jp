@@ -3,20 +3,20 @@
 import { IconCheck, IconChevronDown, IconCopy } from "@tabler/icons-react"
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york-v4/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 import {
   Popover,
   PopoverAnchor,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
-import { Separator } from "@/registry/new-york-v4/ui/separator"
+} from "@/components/ui/popover"
+import { Separator } from "@/components/ui/separator"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
@@ -37,7 +37,7 @@ const menuItems = {
           fill="currentColor"
         />
       </svg>
-      View as Markdown
+      Markdownとして表示
     </a>
   ),
   v0: (url: string) => (
@@ -54,7 +54,7 @@ const menuItems = {
       >
         <path d="M56 50.203V14h14v46.156C70 65.593 65.593 70 60.156 70c-2.596 0-5.158-1-7-2.843L0 14h19.797L56 50.203ZM147 56h-14V23.953L100.953 56H133v14H96.687C85.814 70 77 61.186 77 50.312V14h14v32.156L123.156 14H91V0h36.312C138.186 0 147 8.814 147 19.688V56Z" />
       </svg>
-      <span className="-translate-x-[2px]">Open in v0</span>
+      <span className="-translate-x-[2px]">v0で開く</span>
     </a>
   ),
   chatgpt: (url: string) => (
@@ -69,7 +69,7 @@ const menuItems = {
           fill="currentColor"
         />
       </svg>
-      Open in ChatGPT
+      ChatGPTで開く
     </a>
   ),
   claude: (url: string) => (
@@ -84,7 +84,7 @@ const menuItems = {
           fill="currentColor"
         />
       </svg>
-      Open in Claude
+      Claudeで開く
     </a>
   ),
   scira: (url: string) => (
@@ -148,7 +148,7 @@ const menuItems = {
           strokeLinejoin="round"
         />
       </svg>
-      Open in Scira
+      Sciraで開く
     </a>
   ),
 }
@@ -177,7 +177,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
           onClick={() => copyToClipboard(page)}
         >
           {isCopied ? <IconCheck /> : <IconCopy />}
-          Copy Page
+          ページをコピー
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="hidden sm:flex">

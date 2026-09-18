@@ -1,12 +1,12 @@
 import { BookmarkIcon } from "lucide-react"
 
-import { Toggle } from "@/styles/base-nova/ui/toggle"
+import { Toggle } from "@/components/ui/base/toggle"
 
 export function ToggleDemo() {
   return (
-    <Toggle aria-label="Toggle bookmark" size="sm" variant="outline">
+    <Toggle aria-label="ブックマークを切り替え" size="sm" variant="outline">
       <BookmarkIcon className="group-aria-pressed/toggle:fill-foreground" />
-      Bookmark
+      ブックマーク
     </Toggle>
   )
 }

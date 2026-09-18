@@ -11,8 +11,8 @@ import {
   VolumeOffIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { ButtonGroup } from "@/styles/base-nova/ui/button-group"
+import { Button } from "@/components/ui/base/button"
+import { ButtonGroup } from "@/components/ui/base/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,12 +20,12 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 
 export default function ButtonGroupDropdown() {
   return (
     <ButtonGroup>
-      <Button variant="outline">Follow</Button>
+      <Button variant="outline">フォロー</Button>
       <DropdownMenu>
         <DropdownMenuTrigger
           render={<Button variant="outline" className="pl-2!" />}
@@ -36,34 +36,34 @@ export default function ButtonGroupDropdown() {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <VolumeOffIcon />
-              Mute Conversation
+              会話をミュート
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CheckIcon />
-              Mark as Read
+              既読にする
             </DropdownMenuItem>
             <DropdownMenuItem>
               <AlertTriangleIcon />
-              Report Conversation
+              会話を報告
             </DropdownMenuItem>
             <DropdownMenuItem>
               <UserRoundXIcon />
-              Block User
+              ユーザーをブロック
             </DropdownMenuItem>
             <DropdownMenuItem>
               <ShareIcon />
-              Share Conversation
+              会話を共有
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CopyIcon />
-              Copy Conversation
+              会話をコピー
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem variant="destructive">
               <TrashIcon />
-              Delete Conversation
+              会話を削除
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

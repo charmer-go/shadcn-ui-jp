@@ -1,5 +1,5 @@
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Checkbox } from "@/components/ui/base/checkbox"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
 
 export function CheckboxDisabled() {
   return (
@@ -11,7 +11,7 @@ export function CheckboxDisabled() {
           disabled
         />
         <FieldLabel htmlFor="toggle-checkbox-disabled">
-          Enable notifications
+          通知を有効にする
         </FieldLabel>
       </Field>
     </FieldGroup>

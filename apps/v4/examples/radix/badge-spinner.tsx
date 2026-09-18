@@ -1,15 +1,15 @@
-import { Badge } from "@/styles/radix-nova/ui/badge"
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+import { Badge } from "@/components/ui/radix/badge"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function BadgeWithSpinner() {
   return (
     <div className="flex flex-wrap gap-2">
       <Badge variant="destructive">
         <Spinner data-icon="inline-start" />
-        Deleting
+        削除中
       </Badge>
       <Badge variant="secondary">
-        Generating
+        生成中
         <Spinner data-icon="inline-end" />
       </Badge>
     </div>

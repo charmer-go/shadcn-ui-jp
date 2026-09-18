@@ -1,5 +1,5 @@
-import { Input } from "@/styles/aria-nova/ui/input"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputBasic() {
-  return <Input placeholder="Enter text" />
+  return <Input placeholder="テキストを入力" />
 }

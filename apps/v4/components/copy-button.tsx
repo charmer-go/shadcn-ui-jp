@@ -5,7 +5,7 @@ import { IconCheck, IconCopy } from "@tabler/icons-react"
 import { cn } from "cn"
 
 import { trackEvent, type Event } from "@/lib/events"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 
 function legacyCopyToClipboard(value: string) {
   const textArea = document.createElement("textarea")
@@ -114,7 +114,7 @@ export function CopyButton({
       }}
       {...props}
     >
-      <span className="sr-only">Copy</span>
+      <span className="sr-only">コピー</span>
       {hasCopied ? <IconCheck /> : <IconCopy />}
     </Button>
   )

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-select",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-group-select.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { ArrowRightIcon } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport { ButtonGroup } from \"@/registry/new-york-v4/ui/button-group\"\r\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n} from \"@/registry/new-york-v4/ui/select\"\r\n\r\nconst CURRENCIES = [\r\n  {\r\n    value: \"$\",\r\n    label: \"US Dollar\",\r\n  },\r\n  {\r\n    value: \"€\",\r\n    label: \"Euro\",\r\n  },\r\n  {\r\n    value: \"£\",\r\n    label: \"British Pound\",\r\n  },\r\n]\r\n\r\nexport default function ButtonGroupSelect() {\r\n  const [currency, setCurrency] = React.useState(\"$\")\r\n\r\n  return (\r\n    <ButtonGroup>\r\n      <ButtonGroup>\r\n        <Select value={currency} onValueChange={setCurrency}>\r\n          <SelectTrigger className=\"font-mono\">{currency}</SelectTrigger>\r\n          <SelectContent className=\"min-w-24\">\r\n            {CURRENCIES.map((currency) => (\r\n              <SelectItem key={currency.value} value={currency.value}>\r\n                {currency.value}{\" \"}\r\n                <span className=\"text-muted-foreground\">{currency.label}</span>\r\n              </SelectItem>\r\n            ))}\r\n          </SelectContent>\r\n        </Select>\r\n        <Input placeholder=\"10.00\" pattern=\"[0-9]*\" />\r\n      </ButtonGroup>\r\n      <ButtonGroup>\r\n        <Button aria-label=\"Send\" size=\"icon\" variant=\"outline\">\r\n          <ArrowRightIcon />\r\n        </Button>\r\n      </ButtonGroup>\r\n    </ButtonGroup>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

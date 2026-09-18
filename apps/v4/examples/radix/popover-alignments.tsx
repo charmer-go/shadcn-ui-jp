@@ -1,9 +1,9 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 export function PopoverAlignments() {
   return (
@@ -11,31 +11,31 @@ export function PopoverAlignments() {
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm">
-            Start
+            開始
           </Button>
         </PopoverTrigger>
         <PopoverContent align="start" className="w-40">
-          Aligned to start
+          開始位置に整列
         </PopoverContent>
       </Popover>
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm">
-            Center
+            中央
           </Button>
         </PopoverTrigger>
         <PopoverContent align="center" className="w-40">
-          Aligned to center
+          中央に整列
         </PopoverContent>
       </Popover>
       <Popover>
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm">
-            End
+            終了
           </Button>
         </PopoverTrigger>
         <PopoverContent align="end" className="w-40">
-          Aligned to end
+          終了位置に整列
         </PopoverContent>
       </Popover>
     </div>

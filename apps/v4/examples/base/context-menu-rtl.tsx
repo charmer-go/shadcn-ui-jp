@@ -22,7 +22,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/styles/base-nova/ui-rtl/context-menu"
+} from "@/components/ui/base/context-menu"
 
 const translations: Translations = {
   en: {

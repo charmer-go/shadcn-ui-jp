@@ -1,9 +1,9 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export function TooltipSides() {
   return (
@@ -16,7 +16,7 @@ export function TooltipSides() {
             </Button>
           </TooltipTrigger>
           <TooltipContent side={side}>
-            <p>Add to library</p>
+            <p>ライブラリに追加</p>
           </TooltipContent>
         </Tooltip>
       ))}

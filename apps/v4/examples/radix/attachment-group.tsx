@@ -15,7 +15,7 @@ import {
   AttachmentGroup,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/radix-rhea/ui/attachment"
+} from "@/components/ui/radix/attachment"
 
 type Item = {
   name: string
@@ -58,7 +58,7 @@ export function AttachmentGroupDemo() {
                 <AttachmentDescription>{item.meta}</AttachmentDescription>
               </AttachmentContent>
               <AttachmentActions>
-                <AttachmentAction aria-label={`Remove ${item.name}`}>
+                <AttachmentAction aria-label={`${item.name}を削除`}>
                   <XIcon />
                 </AttachmentAction>
               </AttachmentActions>

@@ -1,9 +1,9 @@
 ---
 title: registry-item.json
-description: Specification for registry items.
+description: レジストリアイテムの仕様です。
 ---
 
-The `registry-item.json` schema is used to define your custom registry items.
+`registry-item.json` スキーマは、カスタムレジストリアイテムを定義するために使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -44,16 +44,16 @@ The `registry-item.json` schema is used to define your custom registry items.
 ```
 
 <div className="mt-6 flex items-center gap-2">
-  <Link href="/docs/registry/examples">See more examples</Link>
+  <Link href="/docs/registry/examples">その他の例を見る</Link>
 </div>
 
-## Definitions
+## 定義
 
-You can see the JSON Schema for `registry-item.json` [here](https://ui.shadcn.com/schema/registry-item.json).
+`registry-item.json` の JSON スキーマは[こちら](https://ui.shadcn.com/schema/registry-item.json)で確認できます。
 
 ### $schema
 
-The `$schema` property is used to specify the schema for the `registry-item.json` file.
+`$schema` プロパティは、`registry-item.json` ファイルのスキーマを指定するために使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -63,7 +63,7 @@ The `$schema` property is used to specify the schema for the `registry-item.json
 
 ### name
 
-The name of the item. This is used to identify the item in the registry. It should be unique for your registry.
+アイテムの名前です。レジストリ内でアイテムを識別するために使用します。レジストリ内で一意である必要があります。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -73,7 +73,7 @@ The name of the item. This is used to identify the item in the registry. It shou
 
 ### title
 
-A human-readable title for your registry item. Keep it short and descriptive.
+レジストリアイテムの人間が読みやすいタイトルです。短く分かりやすくしてください。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -83,7 +83,7 @@ A human-readable title for your registry item. Keep it short and descriptive.
 
 ### description
 
-A description of your registry item. This can be longer and more detailed than the `title`.
+レジストリアイテムの説明です。`title` よりも長く、詳しく記述できます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -93,7 +93,7 @@ A description of your registry item. This can be longer and more detailed than t
 
 ### type
 
-The `type` property is used to specify the type of your registry item. This is used to determine the type and target path of the item when resolved for a project.
+`type` プロパティは、レジストリアイテムの種類を指定するために使用します。プロジェクト向けにアイテムを解決する際の種類や配置先パスの決定に使用されます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -101,28 +101,28 @@ The `type` property is used to specify the type of your registry item. This is u
 }
 ```
 
-The following types are supported:
+以下の種類がサポートされています：
 
-| Type                 | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| `registry:base`      | Use for entire design systems.                    |
-| `registry:block`     | Use for complex components with multiple files.   |
-| `registry:component` | Use for simple components.                        |
-| `registry:font`      | Use for fonts.                                    |
-| `registry:lib`       | Use for lib and utils.                            |
-| `registry:hook`      | Use for hooks.                                    |
-| `registry:ui`        | Use for UI components and single-file primitives. |
-| `registry:page`      | Use for page or file-based routes.                |
-| `registry:file`      | Use for miscellaneous files.                      |
-| `registry:style`     | Use for registry styles. eg. `new-york`.          |
-| `registry:theme`     | Use for themes.                                   |
-| `registry:item`      | Use for universal registry items.                 |
+| Type                 | Description                                                 |
+| -------------------- | ----------------------------------------------------------- |
+| `registry:base`      | デザインシステム全体に使用します。                          |
+| `registry:block`     | 複数ファイルで構成される複雑なコンポーネントに使用します。  |
+| `registry:component` | シンプルなコンポーネントに使用します。                      |
+| `registry:font`      | フォントに使用します。                                      |
+| `registry:lib`       | ライブラリやユーティリティに使用します。                    |
+| `registry:hook`      | フックに使用します。                                        |
+| `registry:ui`        | UI コンポーネントや単一ファイルのプリミティブに使用します。 |
+| `registry:page`      | ページやファイルベースのルートに使用します。                |
+| `registry:file`      | その他のファイルに使用します。                              |
+| `registry:style`     | レジストリスタイルに使用します。例：`new-york`。            |
+| `registry:theme`     | テーマに使用します。                                        |
+| `registry:item`      | 汎用レジストリアイテムに使用します。                        |
 
 ### author
 
-The `author` property is used to specify the author of the registry item.
+`author` プロパティは、レジストリアイテムの作成者を指定するために使用します。
 
-It can be unique to the registry item or the same as the author of the registry.
+レジストリアイテム固有の作成者にも、レジストリの作成者と同じ値にもできます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -132,9 +132,9 @@ It can be unique to the registry item or the same as the author of the registry.
 
 ### dependencies
 
-The `dependencies` property is used to specify the dependencies of your registry item. This is for `npm` packages.
+`dependencies` プロパティは、レジストリアイテムの依存関係を指定するために使用します。`npm` パッケージ用です。
 
-Use `@version` to specify the version of your registry item.
+パッケージのバージョンを指定する場合は `@version` を使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -149,9 +149,9 @@ Use `@version` to specify the version of your registry item.
 
 ### devDependencies
 
-The `devDependencies` property is used to specify the dev dependencies of your registry item. These are `npm` packages that are only needed during development.
+`devDependencies` プロパティは、レジストリアイテムの開発用依存関係を指定するために使用します。開発時のみ必要となる `npm` パッケージ用です。
 
-Use `@version` to specify the version of the package.
+パッケージのバージョンを指定する場合は `@version` を使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -161,13 +161,13 @@ Use `@version` to specify the version of the package.
 
 ### registryDependencies
 
-Used for registry dependencies. Each entry is an item address.
+レジストリの依存関係に使用します。各エントリはアイテムのアドレスです。
 
-- For `shadcn/ui` registry items such as `button`, `input`, `select`, etc use the name eg. `['button', 'input', 'select']`.
-- For namespaced registry items, use `@namespace/item-name` eg. `['@acme/input-form']`.
-- For GitHub registry items, use `owner/repo/item-name` eg. `['acme/ui/button']`. For published registries, prefer a tag or full commit SHA eg. `['acme/ui/button#v1.2.0']`.
-- For custom registry items use the URL of the registry item eg. `['https://example.com/r/hello-world.json']`.
-- For local registry item files use a file path eg. `['./hello-world.json']`.
+- `button`、`input`、`select` などの `shadcn/ui` レジストリアイテムの場合は、名前を使用します（例：`['button', 'input', 'select']`）。
+- 名前空間付きレジストリアイテムの場合は、`@namespace/item-name` を使用します（例：`['@acme/input-form']`）。
+- GitHub レジストリアイテムの場合は、`owner/repo/item-name` を使用します（例：`['acme/ui/button']`）。公開レジストリでは、タグまたは完全なコミット SHA の使用を推奨します（例：`['acme/ui/button#v1.2.0']`）。
+- カスタムレジストリアイテムの場合は、レジストリアイテムの URL を使用します（例：`['https://example.com/r/hello-world.json']`）。
+- ローカルのレジストリアイテムファイルの場合は、ファイルパスを使用します（例：`['./hello-world.json']`）。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -181,20 +181,17 @@ Used for registry dependencies. Each entry is an item address.
 }
 ```
 
-Note: Bare names keep their existing behavior. `button` means the built-in
-shadcn `button` item, not an item from the same GitHub repository. For
-same-repository GitHub dependencies, use the full GitHub item address.
+注意：ベアネームは従来の動作を維持します。`button` は、同じ GitHub リポジトリ内のアイテムではなく、組み込みの shadcn の `button` アイテムを指します。同じリポジトリ内の GitHub 依存関係には、完全な GitHub アイテムアドレスを使用してください。
 
-Refs are not inherited across dependencies. If a GitHub dependency should be
-reproducible, pin that dependency to its own tag or full commit SHA.
+参照は依存関係間で継承されません。GitHub の依存関係を再現可能にする場合は、その依存関係自体をタグまたは完全なコミット SHA に固定してください。
 
-See the [GitHub registry](/docs/registry/github) docs for more information.
+詳しくは [GitHub レジストリ](/docs/registry/github)のドキュメントをご覧ください。
 
 ### files
 
-The `files` property is used to specify the files of your registry item. Each file has a `path`, `type` and `target` (optional) property.
+`files` プロパティは、レジストリアイテムのファイルを指定するために使用します。各ファイルは `path`、`type`、`target`（任意）プロパティを持ちます。
 
-**The `target` property is required for `registry:page` and `registry:file` types.**
+**`target` プロパティは、`registry:page` および `registry:file` タイプでは必須です。**
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -223,25 +220,21 @@ The `files` property is used to specify the files of your registry item. Each fi
 
 #### path
 
-The `path` property is used to specify the path to the file in your registry. This path is used by the build script to parse, transform and build the registry JSON payload.
+`path` プロパティは、レジストリ内のファイルへのパスを指定するために使用します。このパスは、ビルドスクリプトがレジストリ JSON ペイロードを解析・変換・構築するために使用します。
 
 #### type
 
-The `type` property is used to specify the type of the file. See the [type](#type) section for more information.
+`type` プロパティは、ファイルの種類を指定するために使用します。詳しくは [type](#type)セクションをご覧ください。
 
 #### target
 
-The `target` property is used to indicate where the file should be placed in a project. This is optional and only required for `registry:page` and `registry:file` types.
+`target` プロパティは、ファイルをプロジェクト内のどこに配置するかを示すために使用します。任意項目で、`registry:page` および `registry:file` タイプでのみ必須です。
 
-By default, the `shadcn` cli will read a project's `components.json` file to determine the target path. For some files, such as routes or config you can specify the target path manually.
+既定では、`shadcn` CLI はプロジェクトの `components.json` ファイルを読み取って配置先パスを決定します。ルートや設定ファイルなど一部のファイルでは、配置先パスを手動で指定できます。
 
-Use `~` to refer to the root of the project e.g `~/foo.config.js`.
+プロジェクトのルートを参照するには `~` を使用します（例：`~/foo.config.js`）。
 
-You can also use registry target placeholders to place files under the
-directories configured by the user's `components.json`. These placeholders are
-only supported at the start of `target` and are independent of the project's
-import prefix. For example, `@ui/button.tsx` works whether the project imports
-components with `@/`, `#`, package imports or workspace exports.
+レジストリターゲットプレースホルダーを使用すると、ユーザーの `components.json` で設定されたディレクトリ配下にファイルを配置することもできます。これらのプレースホルダーは `target` の先頭でのみサポートされ、プロジェクトのインポートプレフィックスとは無関係です。たとえば、`@ui/button.tsx` は、プロジェクトがコンポーネントを `@/`、`#`、パッケージインポート、ワークスペースエクスポートのいずれでインポートしている場合でも動作します。
 
 | Placeholder    | Resolves to          |
 | -------------- | -------------------- |
@@ -250,11 +243,7 @@ components with `@/`, `#`, package imports or workspace exports.
 | `@lib/`        | `aliases.lib`        |
 | `@hooks/`      | `aliases.hooks`      |
 
-Use these placeholders when you want a registry item to install into the
-project's configured shadcn directories without hardcoding `components`, `src`
-or workspace package paths. Anything after the placeholder is preserved, so
-`@ui/ai/prompt-input.tsx` installs under the user's configured `ui` directory
-at `ai/prompt-input.tsx`.
+これらのプレースホルダーは、`components`、`src`、ワークスペースパッケージパスをハードコードせずに、プロジェクトで設定された shadcn ディレクトリにレジストリアイテムをインストールしたい場合に使用します。プレースホルダー以降の部分は保持されるため、`@ui/ai/prompt-input.tsx` はユーザーが設定した `ui` ディレクトリ配下の `ai/prompt-input.tsx` にインストールされます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -288,8 +277,7 @@ at `ai/prompt-input.tsx`.
 }
 ```
 
-The `target` property decides where the file is written. It can point to a
-different shadcn directory than the file `type`.
+`target` プロパティは、ファイルの書き込み先を決定します。ファイルの `type` とは異なる shadcn ディレクトリを指定することもできます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -303,21 +291,20 @@ different shadcn directory than the file `type`.
 }
 ```
 
-Unknown placeholders are treated as regular target paths. For example,
-`@foo/bar.ts` is written as `foo/bar.ts`. Embedded placeholders such as
-`components/@ui/button.tsx` are also treated as regular paths.
+不明なプレースホルダーは通常のターゲットパスとして扱われます。たとえば、`@foo/bar.ts` は `foo/bar.ts` として書き込まれます。`components/@ui/button.tsx` のような途中に埋め込まれたプレースホルダーも通常のパスとして扱われます。
 
 <Callout>
-  `@utils/` is not supported because `utils` points to a file, not a directory.
+  `@utils/` はサポートされていません。`utils`
+  はディレクトリではなくファイルを指すためです。
 </Callout>
 
 ### tailwind
 
-**DEPRECATED:** Use `cssVars.theme` instead for Tailwind v4 projects.
+**非推奨：** Tailwind v4 プロジェクトでは、代わりに `cssVars.theme` を使用してください。
 
-The `tailwind` property is used for tailwind configuration such as `theme`, `plugins` and `content`.
+`tailwind` プロパティは、`theme`、`plugins`、`content` などの Tailwind 設定に使用します。
 
-You can use the `tailwind.config` property to add colors, animations and plugins to your registry item.
+`tailwind.config` プロパティを使用して、レジストリアイテムにカラー、アニメーション、プラグインを追加できます。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -346,7 +333,7 @@ You can use the `tailwind.config` property to add colors, animations and plugins
 
 ### cssVars
 
-Use to define CSS variables for your registry item.
+レジストリアイテムの CSS 変数を定義するために使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -367,7 +354,7 @@ Use to define CSS variables for your registry item.
 
 ### css
 
-Use `css` to add new rules to the project's CSS file eg. `@layer base`, `@layer components`, `@utility`, `@keyframes`, `@plugin`, etc.
+プロジェクトの CSS ファイルに新しいルールを追加する場合は `css` を使用します（例：`@layer base`、`@layer components`、`@utility`、`@keyframes`、`@plugin` など）。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -404,7 +391,7 @@ Use `css` to add new rules to the project's CSS file eg. `@layer base`, `@layer 
 
 ### envVars
 
-Use `envVars` to add environment variables to your registry item.
+レジストリアイテムに環境変数を追加する場合は `envVars` を使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -416,17 +403,17 @@ Use `envVars` to add environment variables to your registry item.
 }
 ```
 
-Environment variables are added to the `.env.local` or `.env` file. Existing variables are not overwritten.
+環境変数は `.env.local` または `.env` ファイルに追加されます。既存の変数は上書きされません。
 
 <Callout>
 
-**IMPORTANT:** Use `envVars` to add development or example variables. Do NOT use it to add production variables.
+**重要：** `envVars` は開発用またはサンプル用の変数の追加に使用してください。本番用の変数には使用しないでください。
 
 </Callout>
 
 ### font
 
-The `font` property is required for `registry:font` items. It configures the font family, provider, import name, CSS variable, and the npm package to install for non-Next.js projects.
+`font` プロパティは `registry:font` アイテムで必須です。フォントファミリー、プロバイダー、インポート名、CSS 変数、および Next.js 以外のプロジェクト用にインストールする npm パッケージを設定します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -441,20 +428,20 @@ The `font` property is required for `registry:font` items. It configures the fon
 }
 ```
 
-| Property     | Type       | Required | Description                                                                               |
-| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------- |
-| `family`     | `string`   | Yes      | The CSS font-family value.                                                                |
-| `provider`   | `string`   | Yes      | The font provider. Currently only `google` is supported.                                  |
-| `import`     | `string`   | Yes      | The import name for the font from `next/font/google`.                                     |
-| `variable`   | `string`   | Yes      | The CSS variable name for the font (e.g., `--font-sans`, `--font-mono`).                  |
-| `weight`     | `string[]` | No       | Array of font weights to include.                                                         |
-| `subsets`    | `string[]` | No       | Array of font subsets to include.                                                         |
-| `selector`   | `string`   | No       | CSS selector to apply the font to. Defaults to `html`.                                    |
-| `dependency` | `string`   | No       | The npm package to install for non-Next.js projects (e.g., `@fontsource-variable/inter`). |
+| Property     | Type       | Required | Description                                                                                             |
+| ------------ | ---------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `family`     | `string`   | Yes      | CSS の font-family の値です。                                                                           |
+| `provider`   | `string`   | Yes      | フォントプロバイダーです。現在は `google` のみサポートされています。                                    |
+| `import`     | `string`   | Yes      | `next/font/google` からフォントをインポートする際のインポート名です。                                   |
+| `variable`   | `string`   | Yes      | フォント用の CSS 変数名です（例：`--font-sans`、`--font-mono`）。                                       |
+| `weight`     | `string[]` | No       | 含めるフォントウェイトの配列です。                                                                      |
+| `subsets`    | `string[]` | No       | 含めるフォントサブセットの配列です。                                                                    |
+| `selector`   | `string`   | No       | フォントを適用する CSS セレクターです。既定値は `html` です。                                           |
+| `dependency` | `string`   | No       | Next.js 以外のプロジェクト用にインストールする npm パッケージです（例：`@fontsource-variable/inter`）。 |
 
 ### docs
 
-Use `docs` to show custom documentation or message when installing your registry item via the CLI.
+CLI でレジストリアイテムをインストールする際にカスタムドキュメントやメッセージを表示する場合は `docs` を使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -464,7 +451,7 @@ Use `docs` to show custom documentation or message when installing your registry
 
 ### categories
 
-Use `categories` to organize your registry item.
+レジストリアイテムを整理する場合は `categories` を使用します。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -474,7 +461,7 @@ Use `categories` to organize your registry item.
 
 ### meta
 
-Use `meta` to add additional metadata to your registry item. You can add any key/value pair that you want to be available to the registry item.
+レジストリアイテムに追加のメタデータを付与する場合は `meta` を使用します。レジストリアイテムで利用可能にしたい任意のキー／値ペアを追加できます。
 
 ```json title="registry-item.json" showLineNumbers
 {

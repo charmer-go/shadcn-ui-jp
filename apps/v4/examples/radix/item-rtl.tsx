@@ -7,7 +7,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/radix-nova/ui-rtl/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Item,
   ItemActions,
@@ -15,7 +15,7 @@ import {
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from "@/styles/radix-nova/ui-rtl/item"
+} from "@/components/ui/radix/item"
 
 const translations: Translations = {
   en: {

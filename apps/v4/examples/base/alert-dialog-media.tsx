@@ -11,28 +11,28 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/base-nova/ui/alert-dialog"
-import { Button } from "@/styles/base-nova/ui/button"
+} from "@/components/ui/base/alert-dialog"
+import { Button } from "@/components/ui/base/button"
 
 export function AlertDialogWithMedia() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="outline">Share Project</Button>}
+        render={<Button variant="outline">プロジェクトを共有</Button>}
       />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogMedia>
             <CircleFadingPlusIcon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Share this project?</AlertDialogTitle>
+          <AlertDialogTitle>このプロジェクトを共有しますか?</AlertDialogTitle>
           <AlertDialogDescription>
-            Anyone with the link will be able to view and edit this project.
+            このリンクを知っている人は誰でも、このプロジェクトを閲覧・編集できます。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Share</AlertDialogAction>
+          <AlertDialogCancel>キャンセル</AlertDialogCancel>
+          <AlertDialogAction>共有</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

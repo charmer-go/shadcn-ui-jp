@@ -3,32 +3,31 @@ import {
   BubbleContent,
   BubbleGroup,
   BubbleReactions,
-} from "@/styles/radix-rhea/ui/bubble"
+} from "@/components/ui/radix/bubble"
 
 export function BubbleGroupDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>Can you tell me what&apos;s the issue?</BubbleContent>
+        <BubbleContent>何が問題なのか教えてもらえる？</BubbleContent>
       </Bubble>
       <BubbleGroup>
         <Bubble align="end">
-          <BubbleContent>You tell me!</BubbleContent>
+          <BubbleContent>それはこっちが聞きたいよ！</BubbleContent>
         </Bubble>
         <Bubble align="end">
-          <BubbleContent>It worked yesterday. You broke it!</BubbleContent>
+          <BubbleContent>昨日までは動いてたのに。あなたが壊したんでしょ！</BubbleContent>
         </Bubble>
         <Bubble align="end">
-          <BubbleContent>Find the bug and fix it.</BubbleContent>
-          <BubbleReactions aria-label="Reactions: eyes" align="start">
+          <BubbleContent>バグを見つけて直して。</BubbleContent>
+          <BubbleReactions aria-label="リアクション: 目" align="start">
             <span>👀</span>
           </BubbleReactions>
         </Bubble>
       </BubbleGroup>
       <Bubble variant="muted">
         <BubbleContent>
-          Want me to diff yesterday&apos;s you against today&apos;s you?
-          It&apos;s a bit embarrassing.
+          昨日のあなたと今日のあなたを比較してみようか？ちょっと恥ずかしいことになりそうだけど。
         </BubbleContent>
       </Bubble>
     </div>

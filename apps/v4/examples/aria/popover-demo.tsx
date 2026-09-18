@@ -1,23 +1,23 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Input } from "@/styles/aria-nova/ui/input"
-import { Label } from "@/styles/aria-nova/ui/label"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Input } from "@/components/ui/aria/input"
+import { Label } from "@/components/ui/aria/label"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export default function PopoverDemo() {
   return (
     <PopoverTrigger>
-      <Button variant="outline">Open popover</Button>
+      <Button variant="outline">ポップオーバーを開く</Button>
       <Popover className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="leading-none font-medium">Dimensions</h4>
+            <h4 className="leading-none font-medium">寸法</h4>
             <p className="text-sm text-muted-foreground">
-              Set the dimensions for the layer.
+              レイヤーの寸法を設定します。
             </p>
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
+              <Label htmlFor="width">幅</Label>
               <Input
                 id="width"
                 defaultValue="100%"
@@ -25,7 +25,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
+              <Label htmlFor="maxWidth">最大幅</Label>
               <Input
                 id="maxWidth"
                 defaultValue="300px"
@@ -33,7 +33,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
+              <Label htmlFor="height">高さ</Label>
               <Input
                 id="height"
                 defaultValue="25px"
@@ -41,7 +41,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
+              <Label htmlFor="maxHeight">最大高さ</Label>
               <Input
                 id="maxHeight"
                 defaultValue="none"

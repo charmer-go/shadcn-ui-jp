@@ -7,28 +7,28 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/styles/aria-nova/ui/select"
+} from "@/components/ui/aria/select"
 
 export function SelectGroups() {
   const fruits = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Blueberry", value: "blueberry" },
+    { label: "リンゴ", value: "apple" },
+    { label: "バナナ", value: "banana" },
+    { label: "ブルーベリー", value: "blueberry" },
   ]
   const vegetables = [
-    { label: "Carrot", value: "carrot" },
-    { label: "Broccoli", value: "broccoli" },
-    { label: "Spinach", value: "spinach" },
+    { label: "にんじん", value: "carrot" },
+    { label: "ブロッコリー", value: "broccoli" },
+    { label: "ほうれん草", value: "spinach" },
   ]
   const allItems = [...fruits, ...vegetables]
   return (
-    <Select placeholder="Select a fruit" className="w-full max-w-48">
+    <Select placeholder="フルーツを選択" className="w-full max-w-48">
       <SelectTrigger>
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>フルーツ</SelectLabel>
           {fruits.map((item) => (
             <SelectItem key={item.value} id={item.value}>
               {item.label}
@@ -37,7 +37,7 @@ export function SelectGroups() {
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
+          <SelectLabel>野菜</SelectLabel>
           {vegetables.map((item) => (
             <SelectItem key={item.value} id={item.value}>
               {item.label}

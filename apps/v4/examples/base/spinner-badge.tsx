@@ -1,20 +1,20 @@
-import { Badge } from "@/styles/base-nova/ui/badge"
-import { Spinner } from "@/styles/base-nova/ui/spinner"
+import { Badge } from "@/components/ui/base/badge"
+import { Spinner } from "@/components/ui/base/spinner"
 
 export function SpinnerBadge() {
   return (
     <div className="flex items-center gap-4 [--radius:1.2rem]">
       <Badge>
         <Spinner data-icon="inline-start" />
-        Syncing
+        同期中
       </Badge>
       <Badge variant="secondary">
         <Spinner data-icon="inline-start" />
-        Updating
+        更新中
       </Badge>
       <Badge variant="outline">
         <Spinner data-icon="inline-start" />
-        Processing
+        処理中
       </Badge>
     </div>
   )

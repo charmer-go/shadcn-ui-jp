@@ -1,14 +1,14 @@
 ---
-title: July 2026 - React Aria
-description: React Aria is now available as a component base in shadcn/ui.
+title: 2026 年 7 月 - React Aria
+description: React Aria が shadcn/ui のコンポーネント ベースとして利用できるようになりました。
 date: 2026-07-17
 ---
 
-**React Aria** is now a first-class component base in shadcn/ui.
+**React Aria** は、shadcn/ui のファーストクラスのコンポーネント ベースになりました。
 
-Build with React Aria Components alongside Base UI and Radix. Pick it in
-shadcn/create or initialize a project with `--base aria`. The CLI handles the
-dependencies, registry resolution, styles, and component installation.
+React Aria コンポーネントと Base UI および Radix を組み合わせて構築します。選んでください
+shadcn/`--base aria` を使用してプロジェクトを作成または初期化します。 CLI は、
+依存関係、レジストリ解決、スタイル、コンポーネントのインストール。
 
 <div className="mt-6 flex w-full items-center justify-center rounded-2xl bg-muted/50 py-32 text-foreground ring ring-border dark:bg-muted">
   <svg viewBox="200 206 800 790" fill="none" className="size-16">
@@ -19,37 +19,37 @@ dependencies, registry resolution, styles, and component installation.
   </svg>
 </div>
 
-## What's New
+## 新着情報
 
-- **A first-class React Aria base** - Choose React Aria anywhere you can choose
-  Base UI or Radix, including the CLI, presets, and shadcn/create.
-- **Full component documentation** - React Aria components have dedicated
-  installation, usage, composition, examples, and API reference sections.
-- **All eight styles** - Use React Aria with Vega, Nova, Maia, Lyra, Mira, Luma,
-  Rhea, or Sera.
-- **Base-specific output** - React Aria state selectors and dependencies are
-  scoped to the Aria registry. Existing Base UI and Radix components are
-  unchanged.
+- **一流の React Aria ベース** - どこでも React Aria を選択できます
+CLI、プリセット、shadcn/create を含むベース UI または Radix。
+- **完全なコンポーネント ドキュメント** - React Aria コンポーネントには専用のドキュメントがあります
+インストール、使用法、構成、例、および API リファレンスのセクション。
+- **全 8 つのスタイル** - React Aria を Vega、Nova、Maia、Lyra、Mira、Luma、
+レアとかセラとか。
+- **ベース固有の出力** - React Aria の状態セレクターと依存関係は次のとおりです。
+Aria レジストリにスコープされます。既存の Base UI および Radix コンポーネントは、
+変わらない。
 
-## Start with React Aria
+## React Aria から始めましょう
 
-Use the `aria` base when initializing a project:
+プロジェクトを初期化するときは、`aria` ベースを使用します。
 
 ```bash
 npx shadcn@latest init --base aria
 ```
 
-Or choose **React Aria** in [shadcn/create](/create?base=aria). Once the project
-is initialized, `shadcn add` installs the React Aria implementation for each
-component.
+または、[shadcn/create](/create?base=aria) で **React Aria** を選択します。プロジェクトが完了したら
+が初期化されると、`shadcn add` はそれぞれの React Aria 実装をインストールします。
+成分。
 
-Base UI remains the default, and Radix remains fully supported. Existing
-projects stay on their current base.
+Base UI はデフォルトのままで、Radix は引き続き完全にサポートされます。既存
+プロジェクトは現在のベースに留まります。
 
 <div className="flex flex-wrap gap-2">
   <Button asChild size="sm">
     <Link href="/create?base=aria" className="mt-6 no-underline!">
-      Create a React Aria project
+      React Aria プロジェクトを作成する
     </Link>
   </Button>
 </div>

@@ -1,22 +1,22 @@
 ---
-title: June 2025 - radix-ui Migration
-description: A new command to migrate to the new radix-ui package.
+title: 2025 年 6 月 - radix-ui の移行
+description: 新しい radix-ui パッケージに移行するための新しいコマンド。
 date: 2025-06-11
 ---
 
-We've added a new command to migrate to the new `radix-ui` package. This command will replace all `@radix-ui/react-*` imports with `radix-ui`.
+新しい `radix-ui` パッケージに移行するための新しいコマンドを追加しました。このコマンドは、すべての `@radix-ui/react-*` インポートを `radix-ui` に置き換えます。
 
 ```bash
 npx shadcn@latest migrate radix
 ```
 
-It will automatically update all imports in your `ui` components and install `radix-ui` as a dependency.
+`ui` コンポーネント内のすべてのインポートが自動的に更新され、`radix-ui` が依存関係としてインストールされます。
 
 ```diff showLineNumbers title="components/ui/alert-dialog.tsx"
 - import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 + import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
 ```
 
-Make sure to test your components and project after running the command.
+コマンドを実行した後は、必ずコンポーネントとプロジェクトをテストしてください。
 
-**Note:** To update imports for newly added components, run the migration command again.
+**注:** 新しく追加されたコンポーネントのインポートを更新するには、移行コマンドを再度実行します。

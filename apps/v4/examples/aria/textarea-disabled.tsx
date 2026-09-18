@@ -1,13 +1,13 @@
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export function TextareaDisabled() {
   return (
     <Field data-disabled>
-      <FieldLabel htmlFor="textarea-disabled">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-disabled">メッセージ</FieldLabel>
       <Textarea
         id="textarea-disabled"
-        placeholder="Type your message here."
+        placeholder="ここにメッセージを入力してください。"
         disabled
       />
     </Field>

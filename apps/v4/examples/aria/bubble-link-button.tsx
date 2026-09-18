@@ -6,37 +6,37 @@ import {
   Bubble,
   BubbleContent,
   BubbleGroup,
-} from "@/styles/aria-rhea/ui/bubble"
+} from "@/components/ui/aria/bubble"
 
 export function BubbleLinkButtonDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>How can I help you today?</BubbleContent>
+        <BubbleContent>今日はどのようなご用件ですか？</BubbleContent>
       </Bubble>
       <BubbleGroup>
         <Bubble variant="tinted" align="end">
           <BubbleContent
             render={(props) => (
               <button
-                onClick={() => toast("You clicked forgot password")}
+                onClick={() => toast("「パスワードを忘れた」をクリックしました")}
                 {...props}
               />
             )}
           >
-            I forgot my password
+            パスワードを忘れました
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
           <BubbleContent
             render={(props) => (
               <button
-                onClick={() => toast("You clicked help with subscription")}
+                onClick={() => toast("「サブスクリプションのヘルプ」をクリックしました")}
                 {...props}
               />
             )}
           >
-            I need help with my subscription
+            サブスクリプションについて助けが必要です
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
@@ -44,13 +44,13 @@ export function BubbleLinkButtonDemo() {
             render={(props) => (
               <button
                 onClick={() =>
-                  toast("You clicked something else. Talk to a human.")
+                  toast("「その他」をクリックしました。担当者につなぎます。")
                 }
                 {...props}
               />
             )}
           >
-            Something else. Talk to a human.
+            その他の用件。担当者と話したいです。
           </BubbleContent>
         </Bubble>
       </BubbleGroup>

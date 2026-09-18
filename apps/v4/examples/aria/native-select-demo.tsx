@@ -1,16 +1,16 @@
 import {
   NativeSelect,
   NativeSelectOption,
-} from "@/styles/aria-nova/ui/native-select"
+} from "@/components/ui/aria/native-select"
 
 export default function NativeSelectDemo() {
   return (
     <NativeSelect>
-      <NativeSelectOption value="">Select status</NativeSelectOption>
-      <NativeSelectOption value="todo">Todo</NativeSelectOption>
-      <NativeSelectOption value="in-progress">In Progress</NativeSelectOption>
-      <NativeSelectOption value="done">Done</NativeSelectOption>
-      <NativeSelectOption value="cancelled">Cancelled</NativeSelectOption>
+      <NativeSelectOption value="">ステータスを選択</NativeSelectOption>
+      <NativeSelectOption value="todo">未着手</NativeSelectOption>
+      <NativeSelectOption value="in-progress">進行中</NativeSelectOption>
+      <NativeSelectOption value="done">完了</NativeSelectOption>
+      <NativeSelectOption value="cancelled">キャンセル済み</NativeSelectOption>
     </NativeSelect>
   )
 }

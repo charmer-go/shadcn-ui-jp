@@ -1,9 +1,9 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export function TooltipDisabled() {
   return (
@@ -11,12 +11,12 @@ export function TooltipDisabled() {
       <TooltipTrigger asChild>
         <span className="inline-block w-fit">
           <Button variant="outline" disabled>
-            Disabled
+            無効
           </Button>
         </span>
       </TooltipTrigger>
       <TooltipContent>
-        <p>This feature is currently unavailable</p>
+        <p>この機能は現在利用できません</p>
       </TooltipContent>
     </Tooltip>
   )

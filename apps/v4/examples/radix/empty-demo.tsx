@@ -1,7 +1,7 @@
 import { IconFolderCode } from "@tabler/icons-react"
 import { ArrowUpRightIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Empty,
   EmptyContent,
@@ -9,7 +9,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
+} from "@/components/ui/radix/empty"
 
 export default function EmptyDemo() {
   return (
@@ -18,15 +18,14 @@ export default function EmptyDemo() {
         <EmptyMedia variant="icon">
           <IconFolderCode />
         </EmptyMedia>
-        <EmptyTitle>No Projects Yet</EmptyTitle>
+        <EmptyTitle>プロジェクトはまだありません</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          まだプロジェクトを作成していません。最初のプロジェクトを作成して始めましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="flex-row justify-center gap-2">
-        <Button>Create Project</Button>
-        <Button variant="outline">Import Project</Button>
+        <Button>プロジェクトを作成</Button>
+        <Button variant="outline">プロジェクトをインポート</Button>
       </EmptyContent>
       <Button
         variant="link"
@@ -35,7 +34,7 @@ export default function EmptyDemo() {
         size="sm"
       >
         <a href="#">
-          Learn More <ArrowUpRightIcon />
+          詳細を見る <ArrowUpRightIcon />
         </a>
       </Button>
     </Empty>

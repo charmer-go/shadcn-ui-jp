@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio-group",
+  "dependencies": [
+    "cn",
+    "radix-ui"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/ui/radio-group.tsx",
+      "content": "\"use client\"\r\n\r\nimport * as React from \"react\"\r\nimport { cn } from \"cn\"\r\nimport { CircleIcon } from \"lucide-react\"\r\nimport { RadioGroup as RadioGroupPrimitive } from \"radix-ui\"\r\n\r\nfunction RadioGroup({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof RadioGroupPrimitive.Root>) {\r\n  return (\r\n    <RadioGroupPrimitive.Root\r\n      data-slot=\"radio-group\"\r\n      className={cn(\"grid gap-3\", className)}\r\n      {...props}\r\n    />\r\n  )\r\n}\r\n\r\nfunction RadioGroupItem({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof RadioGroupPrimitive.Item>) {\r\n  return (\r\n    <RadioGroupPrimitive.Item\r\n      data-slot=\"radio-group-item\"\r\n      className={cn(\r\n        \"aspect-square size-4 shrink-0 rounded-full border border-input text-primary shadow-xs transition-[color,box-shadow] outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:bg-input/30 dark:aria-invalid:ring-destructive/40\",\r\n        className\r\n      )}\r\n      {...props}\r\n    >\r\n      <RadioGroupPrimitive.Indicator\r\n        data-slot=\"radio-group-indicator\"\r\n        className=\"relative flex items-center justify-center\"\r\n      >\r\n        <CircleIcon className=\"absolute top-1/2 left-1/2 size-2 -translate-x-1/2 -translate-y-1/2 fill-primary\" />\r\n      </RadioGroupPrimitive.Indicator>\r\n    </RadioGroupPrimitive.Item>\r\n  )\r\n}\r\n\r\nexport { RadioGroup, RadioGroupItem }\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

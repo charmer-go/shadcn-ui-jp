@@ -2,7 +2,7 @@
 
 import { Bar, BarChart, CartesianGrid } from "recharts"
 
-import { ChartContainer, type ChartConfig } from "@/styles/base-nova/ui/chart"
+import { ChartContainer, type ChartConfig } from "@/components/ui/base/chart"
 
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
@@ -15,11 +15,11 @@ const chartData = [
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
+    label: "デスクトップ",
     color: "#2563eb",
   },
   mobile: {
-    label: "Mobile",
+    label: "モバイル",
     color: "#60a5fa",
   },
 } satisfies ChartConfig

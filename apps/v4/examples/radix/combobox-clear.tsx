@@ -7,7 +7,7 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
-} from "@/styles/radix-nova/ui/combobox"
+} from "@/components/ui/radix/combobox"
 
 const frameworks = [
   "Next.js",
@@ -20,9 +20,9 @@ const frameworks = [
 export function ComboboxWithClear() {
   return (
     <Combobox items={frameworks} defaultValue={frameworks[0]}>
-      <ComboboxInput placeholder="Select a framework" showClear />
+      <ComboboxInput placeholder="フレームワークを選択" showClear />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

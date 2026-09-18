@@ -3,13 +3,13 @@ import { Link2Icon } from "lucide-react"
 import {
   ButtonGroup,
   ButtonGroupText,
-} from "@/styles/radix-nova/ui/button-group"
+} from "@/components/ui/radix/button-group"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/radix-nova/ui/input-group"
-import { Label } from "@/styles/radix-nova/ui/label"
+} from "@/components/ui/radix/input-group"
+import { Label } from "@/components/ui/radix/label"
 
 export default function InputGroupButtonGroup() {
   return (

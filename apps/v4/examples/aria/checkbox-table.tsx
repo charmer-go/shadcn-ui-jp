@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Checkbox } from "@/styles/aria-nova/ui/checkbox"
+import { Checkbox } from "@/components/ui/aria/checkbox"
 import {
   Table,
   TableBody,
@@ -10,38 +10,38 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/aria-nova/ui/table"
+} from "@/components/ui/aria/table"
 
 const tableData = [
   {
     id: "1",
     name: "Sarah Chen",
     email: "sarah.chen@example.com",
-    role: "Admin",
+    role: "管理者",
   },
   {
     id: "2",
     name: "Marcus Rodriguez",
     email: "marcus.rodriguez@example.com",
-    role: "User",
+    role: "ユーザー",
   },
   {
     id: "3",
     name: "Priya Patel",
     email: "priya.patel@example.com",
-    role: "User",
+    role: "ユーザー",
   },
   {
     id: "4",
     name: "David Kim",
     email: "david.kim@example.com",
-    role: "Editor",
+    role: "編集者",
   },
 ]
 
 export function CheckboxInTable() {
   return (
-    <Table aria-label="Users" selectionMode="multiple">
+    <Table aria-label="ユーザー" selectionMode="multiple">
       <TableHeader>
         <TableHead className="w-8">
           <Checkbox
@@ -50,9 +50,9 @@ export function CheckboxInTable() {
             slot="selection"
           />
         </TableHead>
-        <TableHead isRowHeader>Name</TableHead>
-        <TableHead>Email</TableHead>
-        <TableHead>Role</TableHead>
+        <TableHead isRowHeader>名前</TableHead>
+        <TableHead>メールアドレス</TableHead>
+        <TableHead>役割</TableHead>
       </TableHeader>
       <TableBody>
         {tableData.map((row) => (

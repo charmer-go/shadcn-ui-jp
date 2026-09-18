@@ -4,8 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/radix-nova/ui/avatar"
-import { Button } from "@/styles/radix-nova/ui/button"
+} from "@/components/ui/radix/avatar"
+import { Button } from "@/components/ui/radix/button"
 import {
   Item,
   ItemActions,
@@ -13,7 +13,7 @@ import {
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from "@/styles/radix-nova/ui/item"
+} from "@/components/ui/radix/item"
 
 export function ItemAvatar() {
   return (
@@ -27,14 +27,14 @@ export function ItemAvatar() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Evil Rabbit</ItemTitle>
-          <ItemDescription>Last seen 5 months ago</ItemDescription>
+          <ItemDescription>最終ログイン: 5か月前</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button
             size="icon-sm"
             variant="outline"
             className="rounded-full"
-            aria-label="Invite"
+            aria-label="招待"
           >
             <Plus />
           </Button>
@@ -64,14 +64,14 @@ export function ItemAvatar() {
           </div>
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>No Team Members</ItemTitle>
+          <ItemTitle>チームメンバーはいません</ItemTitle>
           <ItemDescription>
-            Invite your team to collaborate on this project.
+            このプロジェクトで共同作業するためにチームを招待しましょう。
           </ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button size="sm" variant="outline">
-            Invite
+            招待
           </Button>
         </ItemActions>
       </Item>

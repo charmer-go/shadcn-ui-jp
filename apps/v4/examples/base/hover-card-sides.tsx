@@ -1,9 +1,9 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/styles/base-nova/ui/hover-card"
+} from "@/components/ui/base/hover-card"
 
 const HOVER_CARD_SIDES = ["left", "top", "bottom", "right"] as const
 
@@ -21,8 +21,8 @@ export function HoverCardSides() {
           </HoverCardTrigger>
           <HoverCardContent side={side}>
             <div className="flex flex-col gap-1">
-              <h4 className="font-medium">Hover Card</h4>
-              <p>This hover card appears on the {side} side of the trigger.</p>
+              <h4 className="font-medium">ホバーカード</h4>
+              <p>このホバーカードはトリガーの{side}側に表示されます。</p>
             </div>
           </HoverCardContent>
         </HoverCard>

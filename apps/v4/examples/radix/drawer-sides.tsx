@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Drawer,
   DrawerClose,
@@ -8,7 +8,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/radix-nova/ui/drawer"
+} from "@/components/ui/radix/drawer"
 
 const DRAWER_SIDES = ["top", "right", "bottom", "left"] as const
 
@@ -29,9 +29,9 @@ export function DrawerWithSides() {
           </DrawerTrigger>
           <DrawerContent className="data-[vaul-drawer-direction=bottom]:max-h-[50vh] data-[vaul-drawer-direction=top]:max-h-[50vh]">
             <DrawerHeader>
-              <DrawerTitle>Move Goal</DrawerTitle>
+              <DrawerTitle>目標を変更</DrawerTitle>
               <DrawerDescription>
-                Set your daily activity goal.
+                1日の活動目標を設定してください。
               </DrawerDescription>
             </DrawerHeader>
             <div className="no-scrollbar overflow-y-auto px-4">
@@ -40,21 +40,18 @@ export function DrawerWithSides() {
                   key={index}
                   className="mb-4 leading-normal style-lyra:mb-2 style-lyra:leading-relaxed"
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  これはサンプルのテキストです。ドロワーの内容が長くなった場合に、
+                  スクロールがどのように機能するかを確認するためのダミーコンテンツです。
+                  実際のアプリケーションでは、ここに本文やリスト、フォームなど
+                  任意のコンテンツを配置できます。内容が画面の高さを超える場合、
+                  このエリアだけが独立してスクロールします。
                 </p>
               ))}
             </div>
             <DrawerFooter>
-              <Button>Submit</Button>
+              <Button>送信</Button>
               <DrawerClose asChild>
-                <Button variant="outline">Cancel</Button>
+                <Button variant="outline">キャンセル</Button>
               </DrawerClose>
             </DrawerFooter>
           </DrawerContent>

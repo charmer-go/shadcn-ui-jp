@@ -3,21 +3,21 @@
 import * as React from "react"
 import { ArrowRightIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { ButtonGroup } from "@/styles/base-nova/ui/button-group"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { ButtonGroup } from "@/components/ui/base/button-group"
+import { Input } from "@/components/ui/base/input"
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectTrigger,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 const CURRENCIES = [
-  { label: "US Dollar", value: "$" },
-  { label: "Euro", value: "€" },
-  { label: "British Pound", value: "£" },
+  { label: "米ドル", value: "$" },
+  { label: "ユーロ", value: "€" },
+  { label: "英ポンド", value: "£" },
 ]
 
 export default function ButtonGroupSelect() {
@@ -46,7 +46,7 @@ export default function ButtonGroupSelect() {
         <Input placeholder="10.00" pattern="[0-9]*" />
       </ButtonGroup>
       <ButtonGroup>
-        <Button aria-label="Send" size="icon" variant="outline">
+        <Button aria-label="送信" size="icon" variant="outline">
           <ArrowRightIcon />
         </Button>
       </ButtonGroup>

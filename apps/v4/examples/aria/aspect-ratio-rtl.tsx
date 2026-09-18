@@ -7,7 +7,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { AspectRatio } from "@/styles/aria-nova/ui-rtl/aspect-ratio"
+import { AspectRatio } from "@/components/ui/aria/aspect-ratio"
 
 const translations: Translations = {
   en: {

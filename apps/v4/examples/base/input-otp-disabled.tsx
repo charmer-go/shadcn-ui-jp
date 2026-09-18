@@ -1,10 +1,10 @@
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/styles/base-nova/ui/input-otp"
+} from "@/components/ui/base/input-otp"
 
 export function InputOTPDisabled() {
   return (

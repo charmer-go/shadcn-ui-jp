@@ -2,14 +2,14 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Button } from "@/components/ui/radix/button"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 export function DatePickerSimple() {
   const [open, setOpen] = React.useState(false)
@@ -17,7 +17,7 @@ export function DatePickerSimple() {
 
   return (
     <Field className="mx-auto w-44">
-      <FieldLabel htmlFor="date">Date of birth</FieldLabel>
+      <FieldLabel htmlFor="date">生年月日</FieldLabel>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
           <Button
@@ -25,7 +25,7 @@ export function DatePickerSimple() {
             id="date"
             className="justify-start font-normal"
           >
-            {date ? date.toLocaleDateString() : "Select date"}
+            {date ? date.toLocaleDateString() : "日付を選択"}
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-auto overflow-hidden p-0" align="start">

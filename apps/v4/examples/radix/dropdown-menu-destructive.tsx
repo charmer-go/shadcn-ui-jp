@@ -1,6 +1,6 @@
 import { PencilIcon, ShareIcon, TrashIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,30 +8,30 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function DropdownMenuDestructive() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Actions</Button>
+        <Button variant="outline">操作</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <PencilIcon />
-            Edit
+            編集
           </DropdownMenuItem>
           <DropdownMenuItem>
             <ShareIcon />
-            Share
+            共有
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            削除
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

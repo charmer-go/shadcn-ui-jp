@@ -1,6 +1,6 @@
 ---
-title: Input
-description: A text input component for forms and user data entry with built-in styling and accessibility features.
+title: 入力
+description: スタイル機能とアクセシビリティ機能が組み込まれたフォームおよびユーザー データ入力用のテキスト入力コンポーネント。
 base: base
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="*:max-w-xs"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add input
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="input"
@@ -39,7 +39,7 @@ npx shadcn@latest add input
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add input
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Input } from "@/components/ui/input"
@@ -57,7 +57,7 @@ import { Input } from "@/components/ui/input"
 <Input />
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="base-nova"
@@ -65,10 +65,10 @@ import { Input } from "@/components/ui/input"
   previewClassName="*:max-w-xs"
 />
 
-## Field
+## フィールド
 
-Use `Field`, `FieldLabel`, and `FieldDescription` to create an input with a
-label and description.
+`Field`、`FieldLabel`、`FieldDescription` を使用して
+ラベルと説明。
 
 <ComponentPreview
   styleName="base-nova"
@@ -76,9 +76,9 @@ label and description.
   previewClassName="*:max-w-xs"
 />
 
-## Field Group
+## フィールド グループ
 
-Use `FieldGroup` to show multiple `Field` blocks and to build forms.
+`FieldGroup` を使用して、複数の `Field` ブロックを表示し、フォームを構築します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -86,9 +86,9 @@ Use `FieldGroup` to show multiple `Field` blocks and to build forms.
   previewClassName="*:max-w-xs"
 />
 
-## Disabled
+## 無効
 
-Use the `disabled` prop to disable the input. To style the disabled state, add the `data-disabled` attribute to the `Field` component.
+`disabled` プロパティを使用して入力を無効にします。無効な状態のスタイルを設定するには、`data-disabled` 属性を `Field` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -96,9 +96,9 @@ Use the `disabled` prop to disable the input. To style the disabled state, add t
   previewClassName="*:max-w-xs"
 />
 
-## Invalid
+## 無効
 
-Use the `aria-invalid` prop to mark the input as invalid. To style the invalid state, add the `data-invalid` attribute to the `Field` component.
+`aria-invalid` プロパティを使用して、入力を無効としてマークします。無効な状態のスタイルを設定するには、`data-invalid` 属性を `Field` コンポーネントに追加します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -106,9 +106,9 @@ Use the `aria-invalid` prop to mark the input as invalid. To style the invalid s
   previewClassName="*:max-w-xs"
 />
 
-## File
+## ファイル
 
-Use the `type="file"` prop to create a file input.
+`type="file"` プロパティを使用してファイル入力を作成します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -116,10 +116,10 @@ Use the `type="file"` prop to create a file input.
   previewClassName="*:max-w-xs"
 />
 
-## Inline
+## インライン
 
-Use `Field` with `orientation="horizontal"` to create an inline input.
-Pair with `Button` to create a search input with a button.
+インライン入力を作成するには、`Field` を `orientation="horizontal"` とともに使用します。
+`Button` と組み合わせて、ボタン付きの検索入力を作成します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -127,9 +127,9 @@ Pair with `Button` to create a search input with a button.
   previewClassName="*:max-w-xs"
 />
 
-## Grid
+## グリッド
 
-Use a grid layout to place multiple inputs side by side.
+グリッド レイアウトを使用して、複数の入力を並べて配置します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -137,9 +137,9 @@ Use a grid layout to place multiple inputs side by side.
   previewClassName="p-6"
 />
 
-## Required
+## 必須
 
-Use the `required` attribute to indicate required inputs.
+`required` 属性を使用して、必須の入力を示します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -147,9 +147,9 @@ Use the `required` attribute to indicate required inputs.
   previewClassName="*:max-w-xs"
 />
 
-## Badge
+## バッジ
 
-Use `Badge` in the label to highlight a recommended field.
+推奨フィールドを強調表示するには、ラベルで `Badge` を使用します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -157,9 +157,9 @@ Use `Badge` in the label to highlight a recommended field.
   previewClassName="*:max-w-xs"
 />
 
-## Input Group
+## 入力グループ
 
-To add icons, text, or buttons inside an input, use the `InputGroup` component. See the [Input Group](/docs/components/input-group) component for more examples.
+入力内にアイコン、テキスト、またはボタンを追加するには、`InputGroup` コンポーネントを使用します。その他の例については、[入力グループ](/docs/components/input-group) コンポーネントを参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -167,9 +167,9 @@ To add icons, text, or buttons inside an input, use the `InputGroup` component. 
   previewClassName="*:max-w-xs"
 />
 
-## Button Group
+## ボタン グループ
 
-To add buttons to an input, use the `ButtonGroup` component. See the [Button Group](/docs/components/button-group) component for more examples.
+入力にボタンを追加するには、`ButtonGroup` コンポーネントを使用します。その他の例については、[ボタングループ](/docs/components/button-group) コンポーネントを参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -177,9 +177,9 @@ To add buttons to an input, use the `ButtonGroup` component. See the [Button Gro
   previewClassName="*:max-w-xs"
 />
 
-## Form
+## フォーム
 
-A full form example with multiple inputs, a select, and a button.
+複数の入力、選択、ボタンを含む完全なフォームの例。
 
 <ComponentPreview
   styleName="base-nova"
@@ -189,7 +189,7 @@ A full form example with multiple inputs, a select, and a button.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"

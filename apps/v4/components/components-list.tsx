@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { PAGES_NEW } from "@/lib/docs"
 import {
+  getPageDisplayName,
   getPagesFromFolder,
   type PageTreeFolder,
   type PageTreePage,
@@ -21,7 +22,7 @@ function ComponentLink({
       href={component.url}
       className="inline-flex items-center gap-2 text-lg font-medium underline-offset-4 hover:underline md:text-base"
     >
-      {component.name}
+      {getPageDisplayName(component)}
       {isNew && (
         <>
           <span className="sr-only">New</span>

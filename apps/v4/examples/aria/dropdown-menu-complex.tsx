@@ -30,7 +30,7 @@ import {
 } from "lucide-react"
 import type { Selection } from "react-aria-components"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   DropdownMenu,
   DropdownMenuGroup,
@@ -42,7 +42,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 export function DropdownMenuComplex() {
   const [notifications, setNotifications] = React.useState<Selection>(
@@ -52,28 +52,28 @@ export function DropdownMenuComplex() {
 
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Complex Menu</Button>
+      <Button variant="outline">複合メニュー</Button>
       <DropdownMenu className="w-44">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>File</DropdownMenuLabel>
+          <DropdownMenuLabel>ファイル</DropdownMenuLabel>
           <DropdownMenuItem>
             <FileIcon />
-            New File
+            新規ファイル
             <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <FolderIcon />
-            New Folder
+            新規フォルダ
             <DropdownMenuShortcut>⇧⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <FolderOpenIcon />
-              Open Recent
+              最近使った項目を開く
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuGroup>
-                <DropdownMenuLabel>Recent Projects</DropdownMenuLabel>
+                <DropdownMenuLabel>最近のプロジェクト</DropdownMenuLabel>
                 <DropdownMenuItem>
                   <FileCodeIcon />
                   Project Alpha
@@ -85,7 +85,7 @@ export function DropdownMenuComplex() {
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
                     <MoreHorizontalIcon />
-                    More Projects
+                    その他のプロジェクト
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent>
                     <DropdownMenuItem>
@@ -103,7 +103,7 @@ export function DropdownMenuComplex() {
               <DropdownMenuGroup>
                 <DropdownMenuItem>
                   <FolderSearchIcon />
-                  Browse...
+                  参照...
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuSubContent>
@@ -111,12 +111,12 @@ export function DropdownMenuComplex() {
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <SaveIcon />
-            Save
+            保存
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <DownloadIcon />
-            Export
+            エクスポート
             <DropdownMenuShortcut>⇧⌘E</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -126,19 +126,19 @@ export function DropdownMenuComplex() {
           selectedKeys={notifications}
           onSelectionChange={setNotifications}
         >
-          <DropdownMenuLabel>View</DropdownMenuLabel>
+          <DropdownMenuLabel>表示</DropdownMenuLabel>
           <DropdownMenuItem id="email">
             <EyeIcon />
-            Show Sidebar
+            サイドバーを表示
           </DropdownMenuItem>
           <DropdownMenuItem id="sms">
             <LayoutIcon />
-            Show Status Bar
+            ステータスバーを表示
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <PaletteIcon />
-              Theme
+              テーマ
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuGroup
@@ -146,18 +146,18 @@ export function DropdownMenuComplex() {
                 selectedKeys={[theme]}
                 onSelectionChange={(keys) => setTheme([...keys][0] as string)}
               >
-                <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+                <DropdownMenuLabel>外観</DropdownMenuLabel>
                 <DropdownMenuItem id="light">
                   <SunIcon />
-                  Light
+                  ライト
                 </DropdownMenuItem>
                 <DropdownMenuItem id="dark">
                   <MoonIcon />
-                  Dark
+                  ダーク
                 </DropdownMenuItem>
                 <DropdownMenuItem id="system">
                   <MonitorIcon />
-                  System
+                  システム
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuSubContent>
@@ -165,36 +165,36 @@ export function DropdownMenuComplex() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Account</DropdownMenuLabel>
+          <DropdownMenuLabel>アカウント</DropdownMenuLabel>
           <DropdownMenuItem>
             <UserIcon />
-            Profile
+            プロフィール
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <CreditCardIcon />
-            Billing
+            請求
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <SettingsIcon />
-              Settings
+              設定
             </DropdownMenuSubTrigger>
             <DropdownMenuSubContent>
               <DropdownMenuGroup>
-                <DropdownMenuLabel>Preferences</DropdownMenuLabel>
+                <DropdownMenuLabel>環境設定</DropdownMenuLabel>
                 <DropdownMenuItem>
                   <KeyboardIcon />
-                  Keyboard Shortcuts
+                  キーボードショートカット
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <LanguagesIcon />
-                  Language
+                  言語
                 </DropdownMenuItem>
                 <DropdownMenuSub>
                   <DropdownMenuSubTrigger>
                     <BellIcon />
-                    Notifications
+                    通知
                   </DropdownMenuSubTrigger>
                   <DropdownMenuSubContent>
                     <DropdownMenuGroup
@@ -202,14 +202,14 @@ export function DropdownMenuComplex() {
                       selectedKeys={notifications}
                       onSelectionChange={setNotifications}
                     >
-                      <DropdownMenuLabel>Notification Types</DropdownMenuLabel>
+                      <DropdownMenuLabel>通知の種類</DropdownMenuLabel>
                       <DropdownMenuItem id="push">
                         <BellIcon />
-                        Push Notifications
+                        プッシュ通知
                       </DropdownMenuItem>
                       <DropdownMenuItem id="email">
                         <MailIcon />
-                        Email Notifications
+                        メール通知
                       </DropdownMenuItem>
                     </DropdownMenuGroup>
                   </DropdownMenuSubContent>
@@ -219,7 +219,7 @@ export function DropdownMenuComplex() {
               <DropdownMenuGroup>
                 <DropdownMenuItem>
                   <ShieldIcon />
-                  Privacy & Security
+                  プライバシーとセキュリティ
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuSubContent>
@@ -229,18 +229,18 @@ export function DropdownMenuComplex() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <HelpCircleIcon />
-            Help & Support
+            ヘルプとサポート
           </DropdownMenuItem>
           <DropdownMenuItem>
             <FileTextIcon />
-            Documentation
+            ドキュメント
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <LogOutIcon />
-            Sign Out
+            ログアウト
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

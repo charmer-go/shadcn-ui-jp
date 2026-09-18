@@ -3,38 +3,38 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/aria-nova/ui/radio-group"
+} from "@/components/ui/aria/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 export function RadioGroupDescription() {
   return (
     <RadioGroup
-      aria-label="Density"
+      aria-label="密度"
       defaultValue="comfortable"
       className="w-fit"
     >
       <Field orientation="horizontal">
         <RadioGroupItem value="default" id="desc-r1" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r1">Default</FieldLabel>
+          <FieldLabel htmlFor="desc-r1">デフォルト</FieldLabel>
           <FieldDescription>
-            Standard spacing for most use cases.
+            ほとんどの用途に適した標準的な間隔です。
           </FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="comfortable" id="desc-r2" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r2">Comfortable</FieldLabel>
-          <FieldDescription>More space between elements.</FieldDescription>
+          <FieldLabel htmlFor="desc-r2">ゆったり</FieldLabel>
+          <FieldDescription>要素間の間隔を広くします。</FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="compact" id="desc-r3" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r3">Compact</FieldLabel>
+          <FieldLabel htmlFor="desc-r3">コンパクト</FieldLabel>
           <FieldDescription>
-            Minimal spacing for dense layouts.
+            密度の高いレイアウト向けの最小限の間隔です。
           </FieldDescription>
         </FieldContent>
       </Field>

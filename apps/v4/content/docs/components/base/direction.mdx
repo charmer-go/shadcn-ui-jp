@@ -1,6 +1,6 @@
 ---
-title: Direction
-description: A provider component that sets the text direction for your application.
+title: 方向
+description: アプリケーションのテキスト方向を設定するプロバイダー コンポーネント。
 base: base
 component: true
 links:
@@ -8,25 +8,25 @@ links:
   api: https://base-ui.com/react/utils/direction-provider#api-reference
 ---
 
-The `DirectionProvider` component is used to set the text direction (`ltr` or `rtl`) for your application. This is essential for supporting right-to-left languages like Arabic, Hebrew, and Persian.
+`DirectionProvider` コンポーネントは、アプリケーションのテキスト方向 (`ltr` または `rtl`) を設定するために使用されます。これは、アラビア語、ヘブライ語、ペルシア語などの右から左に記述する言語をサポートするために不可欠です。
 
-Here's a preview of the component in RTL mode. Use the language selector to switch the language. To see more examples, look for the RTL section on components pages.
+RTL モードでのコンポーネントのプレビューを次に示します。言語を切り替えるには、言語セレクターを使用します。さらに例を参照するには、コンポーネント ページの RTL セクションを探してください。
 
 <ComponentPreview
   styleName="base-nova"
   name="card-rtl"
   direction="rtl"
   previewClassName="h-auto"
-  hideCode
+  スワイプおよび遷移状態の HideCode
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -41,13 +41,13 @@ npx shadcn@latest add direction
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="direction"
@@ -55,7 +55,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -63,7 +63,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { DirectionProvider } from "@/components/ui/direction"
@@ -79,7 +79,7 @@ import { DirectionProvider } from "@/components/ui/direction"
 </html>
 ```
 
-## useDirection
+## 使用方向
 
 The `useDirection` hook is used to get the current direction of the application.
 

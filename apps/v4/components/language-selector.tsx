@@ -10,7 +10,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 export type Language = "en" | "ar" | "he"
 
@@ -28,9 +28,9 @@ export type Translations<
 >
 
 export const languageOptions = [
-  { value: "en", label: "English" },
-  { value: "ar", label: "Arabic (العربية)" },
-  { value: "he", label: "Hebrew (עברית)" },
+  { value: "en", label: "英語" },
+  { value: "ar", label: "アラビア語（العربية）" },
+  { value: "he", label: "ヘブライ語（עברית）" },
 ] as const
 
 type LanguageContextType = {

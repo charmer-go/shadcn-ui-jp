@@ -8,26 +8,25 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/base-nova/ui/alert-dialog"
-import { Button } from "@/styles/base-nova/ui/button"
+} from "@/components/ui/base/alert-dialog"
+import { Button } from "@/components/ui/base/button"
 
 export function AlertDialogBasic() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
+        render={<Button variant="outline">ダイアログを表示</Button>}
       />
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>本当によろしいですか?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            この操作は取り消せません。アカウントが完全に削除され、サーバーからデータが削除されます。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogCancel>キャンセル</AlertDialogCancel>
+          <AlertDialogAction>続行</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

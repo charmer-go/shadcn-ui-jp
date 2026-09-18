@@ -1,5 +1,5 @@
-import { Checkbox } from "@/styles/aria-nova/ui/checkbox"
-import { Field, FieldGroup, FieldLabel } from "@/styles/aria-nova/ui/field"
+import { Checkbox } from "@/components/ui/aria/checkbox"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/aria/field"
 
 export function CheckboxDisabled() {
   return (
@@ -11,7 +11,7 @@ export function CheckboxDisabled() {
           isDisabled
         />
         <FieldLabel htmlFor="toggle-checkbox-disabled">
-          Enable notifications
+          通知を有効にする
         </FieldLabel>
       </Field>
     </FieldGroup>

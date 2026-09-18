@@ -19,7 +19,7 @@ import {
   QuestionnaireSkip,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/base-nova/ui/questionnaire"
+} from "@/components/ui/base/questionnaire"
 
 const items = [
   { name: "task", required: true },
@@ -42,12 +42,12 @@ export function QuestionnaireSkipExample() {
       review: formData.get("review"),
     }
 
-    toast("Agent brief submitted", {
-      description: `Task: ${answers.task ?? "None"} · Constraints: ${
+    toast("エージェントブリーフを送信しました", {
+      description: `タスク: ${answers.task ?? "なし"} ・ 制約: ${
         answers.constraintStatus === "skipped"
-          ? "Skipped"
-          : (answers.constraints ?? "None")
-      } · Review: ${answers.review ?? "None"}`,
+          ? "スキップ"
+          : (answers.constraints ?? "なし")
+      } ・ レビュー: ${answers.review ?? "なし"}`,
     })
   }
 
@@ -61,14 +61,16 @@ export function QuestionnaireSkipExample() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="task" required>
-        <QuestionnaireTitle>What kind of change is this?</QuestionnaireTitle>
+        <QuestionnaireTitle>どのような変更ですか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the category that best describes the work.
+          作業内容を最もよく表すカテゴリーを選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="feature">New feature</QuestionnaireChoice>
-          <QuestionnaireChoice value="fix">Bug fix</QuestionnaireChoice>
-          <QuestionnaireChoice value="refactor">Refactor</QuestionnaireChoice>
+          <QuestionnaireChoice value="feature">新機能</QuestionnaireChoice>
+          <QuestionnaireChoice value="fix">バグ修正</QuestionnaireChoice>
+          <QuestionnaireChoice value="refactor">
+            リファクタリング
+          </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
@@ -77,45 +79,43 @@ export function QuestionnaireSkipExample() {
         name="constraints"
         onStatusChange={setConstraintStatus}
       >
-        <QuestionnaireTitle>
-          Are there any implementation constraints?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>実装上の制約はありますか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Answer if needed, or intentionally skip this question.
+          必要であれば回答するか、意図的にこの質問をスキップしてください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="no-dependencies">
-            Do not add dependencies
+            依存関係を追加しない
           </QuestionnaireChoice>
           <QuestionnaireChoice value="no-migrations">
-            Do not change the database
+            データベースを変更しない
           </QuestionnaireChoice>
           <QuestionnaireChoice value="preserve-api">
-            Preserve the public API
+            公開APIを維持する
           </QuestionnaireChoice>
           <QuestionnaireInput
-            aria-label="Another implementation constraint"
-            placeholder="Describe another constraint…"
+            aria-label="その他の実装上の制約"
+            placeholder="その他の制約を記述してください…"
           />
         </QuestionnaireChoices>
       </QuestionnaireItem>
 
       <QuestionnaireItem name="review" required>
         <QuestionnaireTitle>
-          How should the work be reviewed?
+          作業はどのようにレビューされるべきですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the checks the agent should complete before handoff.
+          エージェントが引き渡し前に完了すべきチェックを選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="tests">
-            Run the test suite
+            テストスイートを実行する
           </QuestionnaireChoice>
           <QuestionnaireChoice value="diff">
-            Review the final diff
+            最終的な差分をレビューする
           </QuestionnaireChoice>
           <QuestionnaireChoice value="both">
-            Tests and diff review
+            テストと差分レビューの両方
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -124,8 +124,8 @@ export function QuestionnaireSkipExample() {
       <QuestionnaireActions>
         <QuestionnairePrevious />
         <QuestionnaireSkip />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Submit brief</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>ブリーフを送信</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

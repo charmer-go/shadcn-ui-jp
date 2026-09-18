@@ -1,13 +1,13 @@
 ---
 title: TanStack Start
-description: Adding dark mode to your TanStack Start app.
+description: TanStack Start アプリにダークモードを追加します。
 ---
 
 <Steps>
 
-### Create a theme provider
+### テーマプロバイダーを作成する
 
-TanStack Start uses `ScriptOnce` from `@tanstack/react-router` to inject a script that runs before React hydrates, preventing flash of unstyled content (FOUC).
+TanStack Start は `@tanstack/react-router` の `ScriptOnce` を使用して、React のハイドレーション前に実行されるスクリプトを挿入し、スタイル未適用コンテンツのちらつき（FOUC）を防ぎます。
 
 ```tsx title="components/theme-provider.tsx" showLineNumbers
 import { createContext, useContext, useEffect, useState } from "react"
@@ -106,9 +106,9 @@ export function useTheme() {
 }
 ```
 
-### Wrap your root layout
+### ルートレイアウトをラップする
 
-Add the `ThemeProvider` to your root layout and add the `suppressHydrationWarning` prop to the `html` tag.
+ルートレイアウトに `ThemeProvider` を追加し、`html` タグに `suppressHydrationWarning` プロップを追加します。
 
 ```tsx {8,19,24-26} title="src/routes/__root.tsx" showLineNumbers
 import {
@@ -144,9 +144,9 @@ function RootComponent() {
 }
 ```
 
-### Add a mode toggle
+### モード切り替えを追加する
 
-Place a mode toggle on your site to toggle between light and dark mode.
+サイトにモード切り替えを配置して、ライトモードとダークモードを切り替えられるようにします。
 
 ```tsx title="components/mode-toggle.tsx" showLineNumbers
 import { Moon, Sun } from "lucide-react"

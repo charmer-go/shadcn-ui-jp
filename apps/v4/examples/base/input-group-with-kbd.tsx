@@ -5,21 +5,21 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
-import { Kbd, KbdGroup } from "@/styles/base-nova/ui/kbd"
-import { Spinner } from "@/styles/base-nova/ui/spinner"
+} from "@/components/ui/base/input-group"
+import { Kbd, KbdGroup } from "@/components/ui/base/kbd"
+import { Spinner } from "@/components/ui/base/spinner"
 
 export function InputGroupWithKbd() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="input-kbd-22">Input Group with Kbd</FieldLabel>
+        <FieldLabel htmlFor="input-kbd-22">Kbd付き入力グループ</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-kbd-22" />
           <InputGroupAddon>
@@ -35,9 +35,9 @@ export function InputGroupWithKbd() {
         <InputGroup>
           <InputGroupInput
             id="input-search-apps-24"
-            placeholder="Search for Apps..."
+            placeholder="アプリを検索..."
           />
-          <InputGroupAddon align="inline-end">Ask AI</InputGroupAddon>
+          <InputGroupAddon align="inline-end">AIに質問</InputGroupAddon>
           <InputGroupAddon align="inline-end">
             <Kbd>Tab</Kbd>
           </InputGroupAddon>
@@ -45,7 +45,7 @@ export function InputGroupWithKbd() {
         <InputGroup>
           <InputGroupInput
             id="input-search-type-25"
-            placeholder="Type to search..."
+            placeholder="入力して検索..."
           />
           <InputGroupAddon align="inline-start">
             <SparklesIcon />
@@ -59,7 +59,7 @@ export function InputGroupWithKbd() {
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-username-26">Username</FieldLabel>
+        <FieldLabel htmlFor="input-username-26">ユーザー名</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-username-26" defaultValue="shadcn" />
           <InputGroupAddon align="inline-end">
@@ -69,44 +69,44 @@ export function InputGroupWithKbd() {
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription className="text-green-700">
-          This username is available.
+          このユーザー名は使用可能です。
         </FieldDescription>
       </Field>
       <InputGroup>
         <InputGroupInput
           id="input-search-docs-27"
-          placeholder="Search documentation..."
+          placeholder="ドキュメントを検索..."
         />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>
-        <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+        <InputGroupAddon align="inline-end">12件の結果</InputGroupAddon>
       </InputGroup>
       <InputGroup data-disabled="true">
         <InputGroupInput
           id="input-search-disabled-28"
-          placeholder="Search documentation..."
+          placeholder="ドキュメントを検索..."
           disabled
         />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>
-        <InputGroupAddon align="inline-end">Disabled</InputGroupAddon>
+        <InputGroupAddon align="inline-end">無効</InputGroupAddon>
       </InputGroup>
       <FieldGroup className="grid grid-cols-2 gap-4">
         <Field>
-          <FieldLabel htmlFor="input-group-11">First Name</FieldLabel>
+          <FieldLabel htmlFor="input-group-11">名</FieldLabel>
           <InputGroup>
-            <InputGroupInput id="input-group-11" placeholder="First Name" />
+            <InputGroupInput id="input-group-11" placeholder="名" />
             <InputGroupAddon align="inline-end">
               <InfoIcon />
             </InputGroupAddon>
           </InputGroup>
         </Field>
         <Field>
-          <FieldLabel htmlFor="input-group-12">Last Name</FieldLabel>
+          <FieldLabel htmlFor="input-group-12">姓</FieldLabel>
           <InputGroup>
-            <InputGroupInput id="input-group-12" placeholder="Last Name" />
+            <InputGroupInput id="input-group-12" placeholder="姓" />
             <InputGroupAddon align="inline-end">
               <InfoIcon />
             </InputGroupAddon>
@@ -115,7 +115,7 @@ export function InputGroupWithKbd() {
       </FieldGroup>
       <Field data-disabled="true">
         <FieldLabel htmlFor="input-group-29">
-          Loading (&quot;data-disabled=&quot;true&quot;)
+          読み込み中（&quot;data-disabled=&quot;true&quot;）
         </FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-group-29" disabled defaultValue="shadcn" />
@@ -124,7 +124,7 @@ export function InputGroupWithKbd() {
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          This is a description of the input group.
+          入力グループの説明です。
         </FieldDescription>
       </Field>
     </FieldGroup>

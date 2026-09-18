@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Empty,
   EmptyContent,
@@ -6,8 +6,8 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
-import { Spinner } from "@/styles/radix-nova/ui/spinner"
+} from "@/components/ui/radix/empty"
+import { Spinner } from "@/components/ui/radix/spinner"
 
 export function SpinnerEmpty() {
   return (
@@ -16,14 +16,14 @@ export function SpinnerEmpty() {
         <EmptyMedia variant="icon">
           <Spinner />
         </EmptyMedia>
-        <EmptyTitle>Processing your request</EmptyTitle>
+        <EmptyTitle>リクエストを処理しています</EmptyTitle>
         <EmptyDescription>
-          Please wait while we process your request. Do not refresh the page.
+          リクエストの処理が完了するまでしばらくお待ちください。ページを更新しないでください。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline" size="sm">
-          Cancel
+          キャンセル
         </Button>
       </EmptyContent>
     </Empty>

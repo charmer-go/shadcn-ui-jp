@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-import { AspectRatio } from "@/styles/radix-nova/ui/aspect-ratio"
+import { AspectRatio } from "@/components/ui/radix/aspect-ratio"
 
 export function AspectRatioPortrait() {
   return (
@@ -8,7 +8,7 @@ export function AspectRatioPortrait() {
       <AspectRatio ratio={9 / 16} className="rounded-lg bg-muted">
         <Image
           src="https://avatar.vercel.sh/shadcn1"
-          alt="Photo"
+          alt="写真"
           fill
           className="rounded-lg object-cover grayscale dark:brightness-20"
         />

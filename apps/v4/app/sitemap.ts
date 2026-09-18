@@ -1,19 +1,16 @@
 import type { MetadataRoute } from "next"
 
-import { registryCategories } from "@/lib/categories"
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 
-const chartTypes = ["area", "bar", "line", "pie", "radar", "radial", "tooltip"]
+export const dynamic = "force-static"
 
-const staticRoutes = ["/", "/blocks", "/colors", "/create", "/sera", "/typeset"]
+const staticRoutes = ["/docs"]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const urls = [
     ...staticRoutes,
     ...source.getPages().map((page) => page.url),
-    ...registryCategories.map((category) => `/blocks/${category.slug}`),
-    ...chartTypes.map((type) => `/charts/${type}`),
   ]
 
   return [...new Set(urls)].map((path) => ({

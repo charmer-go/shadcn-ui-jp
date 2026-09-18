@@ -3,18 +3,16 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Switch } from "@/styles/base-nova/ui/switch"
+} from "@/components/ui/base/field"
+import { Switch } from "@/components/ui/base/switch"
 
 export function SwitchDescription() {
   return (
     <Field orientation="horizontal" className="max-w-sm">
       <FieldContent>
-        <FieldLabel htmlFor="switch-focus-mode">
-          Share across devices
-        </FieldLabel>
+        <FieldLabel htmlFor="switch-focus-mode">デバイス間で共有</FieldLabel>
         <FieldDescription>
-          Focus is shared across devices, and turns off when you leave the app.
+          フォーカスはデバイス間で共有され、アプリを終了すると自動的にオフになります。
         </FieldDescription>
       </FieldContent>
       <Switch id="switch-focus-mode" />

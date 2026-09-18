@@ -7,7 +7,7 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
-} from "@/styles/aria-nova/ui/combobox"
+} from "@/components/ui/aria/combobox"
 
 const frameworks = [
   "Next.js",
@@ -19,12 +19,12 @@ const frameworks = [
 
 export default function ComboboxBasic() {
   return (
-    <Combobox allowsEmptyCollection aria-label="Framework">
-      <ComboboxInput placeholder="Select a framework" />
+    <Combobox allowsEmptyCollection aria-label="フレームワーク">
+      <ComboboxInput placeholder="フレームワークを選択" />
       <ComboboxContent>
         <ComboboxList
           renderEmptyState={() => (
-            <ComboboxEmpty>No items found.</ComboboxEmpty>
+            <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
           )}
         >
           {frameworks.map((item) => (

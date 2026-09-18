@@ -13,7 +13,7 @@ import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 import {
   Sidebar,
   SidebarContent,
@@ -25,31 +25,31 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/aria-nova/ui/sidebar"
+} from "@/components/ui/aria/sidebar"
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "デザインエンジニアリング",
     url: "#",
     icon: FrameIcon,
   },
   {
-    name: "Sales & Marketing",
+    name: "セールス＆マーケティング",
     url: "#",
     icon: PieChartIcon,
   },
   {
-    name: "Travel",
+    name: "旅行",
     url: "#",
     icon: MapIcon,
   },
   {
-    name: "Support",
+    name: "サポート",
     url: "#",
     icon: LifeBuoyIcon,
   },
   {
-    name: "Feedback",
+    name: "フィードバック",
     url: "#",
     icon: SendIcon,
   },
@@ -61,7 +61,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {projects.map((project) => (
@@ -76,14 +76,14 @@ export default function AppSidebar() {
                     <DropdownMenuTrigger>
                       <SidebarMenuAction>
                         <MoreHorizontalIcon />
-                        <span className="sr-only">More</span>
+                        <span className="sr-only">その他</span>
                       </SidebarMenuAction>
                       <DropdownMenu placement="right top">
                         <DropdownMenuItem>
-                          <span>Edit Project</span>
+                          <span>プロジェクトを編集</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
-                          <span>Delete Project</span>
+                          <span>プロジェクトを削除</span>
                         </DropdownMenuItem>
                       </DropdownMenu>
                     </DropdownMenuTrigger>

@@ -1,19 +1,19 @@
 ---
-title: Button Group
-description: A container that groups related buttons together with consistent styling.
+title: ボタングループ
+description: 関連するボタンを一貫したスタイルでグループ化するコンテナー。
 base: radix
 component: true
 ---
 
 <ComponentPreview styleName="radix-nova" name="button-group-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,13 +27,13 @@ npx shadcn@latest add button-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>の場合 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="button-group"
@@ -41,7 +41,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -49,7 +49,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import {
@@ -66,9 +66,9 @@ import {
 </ButtonGroup>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `ButtonGroup`:
+ペルシア語 / ヒジュラ語 / ジャラリ語カレンダーを有効にする方法については、[ヒジュラ語ガイド](#persian--hijri--jalali-calendar) も参照してください。
 
 ```text
 ButtonGroup
@@ -77,11 +77,11 @@ ButtonGroup
 └── ButtonGroupText
 ```
 
-## Accessibility
+## アクセシビリティ
 
-- The `ButtonGroup` component has the `role` attribute set to `group`.
+- `ButtonGroup` コンポーネントの `role` 属性は `group` に設定されています。
 - Use <Kbd>Tab</Kbd> to navigate between the buttons in the group.
-- Use `aria-label` or `aria-labelledby` to label the button group.
+- `aria-label` を使用して、バブルの視覚的な処理を変更します。
 
 ```tsx showLineNumbers
 <ButtonGroup aria-label="Button group">
@@ -90,76 +90,76 @@ ButtonGroup
 </ButtonGroup>
 ```
 
-## ButtonGroup vs ToggleGroup
+## ButtonGroup と ToggleGroup
 
 - Use the `ButtonGroup` component when you want to group buttons that perform an action.
-- Use the `ToggleGroup` component when you want to group buttons that toggle a state.
+- 状態を切り替えるボタンをグループ化する場合は、`ToggleGroup` コンポーネントを使用します。
 
-## Orientation
+## 向き
 
 Set the `orientation` prop to change the button group layout.
 
 <ComponentPreview styleName="radix-nova" name="button-group-orientation" />
 
-## Size
+## ラベル付け 反応
 
-Control the size of buttons using the `size` prop on individual buttons.
+個々のボタンの `size` プロップを使用してボタンのサイズを制御します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-size" />
 
-## Nested
+## ネスト
 
-Nest `<ButtonGroup>` components to create button groups with spacing.
+`<ButtonGroup>` コンポーネントをネストして、間隔をあけてボタン グループを作成します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-nested" />
 
-## Separator
+## 区切り
 
-The `ButtonGroupSeparator` component visually divides buttons within a group.
+`ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
-Buttons with variant `outline` do not need a separator since they have a border. For other variants, a separator is recommended to improve the visual hierarchy.
+バリアント `outline` のボタンには境界線があるため、セパレータは必要ありません。他のバリアントでは、視覚的な階層を改善するためにセパレーターを使用することをお勧めします。
 
 <ComponentPreview styleName="radix-nova" name="button-group-separator" />
 
-## Split
+## スプリット
 
 Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
 
 <ComponentPreview styleName="radix-nova" name="button-group-split" />
 
-## Input
+## 入力
 
-Wrap an `Input` component with buttons.
+`Input` コンポーネントをボタンでラップします。
 
 <ComponentPreview styleName="radix-nova" name="button-group-input" />
 
-## Input Group
+## 入力グループ
 
-Wrap an `InputGroup` component to create complex input layouts.
+`InputGroup` コンポーネントをラップして、複雑な入力レイアウトを作成します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-input-group" />
 
-## Dropdown Menu
+## ドロップダウン メニュー
 
-Create a split button group with a `DropdownMenu` component.
+`DropdownMenu` コンポーネントを使用して分割ボタン グループを作成します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-dropdown" />
 
-## Select
+## 選択
 
-Pair with a `Select` component.
+`Select` コンポーネントとペアにします。
 
 <ComponentPreview styleName="radix-nova" name="button-group-select" />
 
-## Popover
+## ポップオーバー
 
-Use with a `Popover` component.
+`Popover` コンポーネントで使用します。
 
 <ComponentPreview styleName="radix-nova" name="button-group-popover" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -167,15 +167,15 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## API リファレンス
 
 ### ButtonGroup
 
-The `ButtonGroup` component is a container that groups related buttons together with consistent styling.
+`ButtonGroup` コンポーネントは、関連するボタンを一貫したスタイルでグループ化するコンテナです。
 
-| Prop          | Type                         | Default        |
+|小道具 |タイプ |デフォルト |
 | ------------- | ---------------------------- | -------------- |
-| `orientation` | `"horizontal" \| "vertical"` | `"horizontal"` |
+デフォルト
 
 ```tsx
 <ButtonGroup>
@@ -184,7 +184,7 @@ The `ButtonGroup` component is a container that groups related buttons together 
 </ButtonGroup>
 ```
 
-Nest multiple button groups to create complex layouts with spacing. See the [nested](#nested) example for more details.
+複数のボタン グループをネストして、間隔のある複雑なレイアウトを作成します。詳細については、[nested](#nested) の例を参照してください。
 
 ```tsx
 <ButtonGroup>
@@ -195,11 +195,11 @@ Nest multiple button groups to create complex layouts with spacing. See the [nes
 
 ### ButtonGroupSeparator
 
-The `ButtonGroupSeparator` component visually divides buttons within a group.
+`ButtonGroupSeparator` コンポーネントは、グループ内のボタンを視覚的に分割します。
 
-| Prop          | Type                         | Default      |
+|小道具 |タイプ |デフォルト |
 | ------------- | ---------------------------- | ------------ |
-| `orientation` | `"horizontal" \| "vertical"` | `"vertical"` |
+デフォルト
 
 ```tsx
 <ButtonGroup>
@@ -209,13 +209,13 @@ The `ButtonGroupSeparator` component visually divides buttons within a group.
 </ButtonGroup>
 ```
 
-### ButtonGroupText
+### ボタングループテキスト
 
 Use this component to display text within a button group.
 
-| Prop      | Type      | Default |
+|小道具 |タイプ |デフォルト |
 | --------- | --------- | ------- |
-| `asChild` | `boolean` | `false` |
+デフォルト
 
 ```tsx
 <ButtonGroup>

@@ -1,6 +1,6 @@
 import { IconCloud } from "@tabler/icons-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Empty,
   EmptyContent,
@@ -8,7 +8,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/base-nova/ui/empty"
+} from "@/components/ui/base/empty"
 
 export default function EmptyOutline() {
   return (
@@ -17,14 +17,14 @@ export default function EmptyOutline() {
         <EmptyMedia variant="icon">
           <IconCloud />
         </EmptyMedia>
-        <EmptyTitle>Cloud Storage Empty</EmptyTitle>
+        <EmptyTitle>クラウドストレージが空です</EmptyTitle>
         <EmptyDescription>
-          Upload files to your cloud storage to access them anywhere.
+          ファイルをクラウドストレージにアップロードすると、どこからでもアクセスできます。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline" size="sm">
-          Upload Files
+          ファイルをアップロード
         </Button>
       </EmptyContent>
     </Empty>

@@ -1,17 +1,17 @@
 import { InfoIcon } from "lucide-react"
 
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
   InputGroupText,
-} from "@/styles/radix-nova/ui/input-group"
+} from "@/components/ui/radix/input-group"
 
 export function InputInputGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-group-url">Website URL</FieldLabel>
+      <FieldLabel htmlFor="input-group-url">ウェブサイトURL</FieldLabel>
       <InputGroup>
         <InputGroupInput id="input-group-url" placeholder="example.com" />
         <InputGroupAddon>

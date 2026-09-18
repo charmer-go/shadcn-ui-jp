@@ -1,6 +1,6 @@
 ---
-title: June 2026 - Components for Chat Interfaces
-description: MessageScroller, Message, Bubble, Attachment, and Marker. Components for building chat interfaces.
+title: 2026 年 6 月 - チャット インターフェイスのコンポーネント
+description: MessageScroller、メッセージ、バブル、添付ファイル、およびマーカー。チャット インターフェイスを構築するためのコンポーネント。
 date: 2026-06-26
 ---
 
@@ -11,60 +11,60 @@ date: 2026-06-26
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Today, we’re releasing a new set of components for building chat interfaces:
-[**MessageScroller**](/docs/components/message-scroller),
-[**Message**](/docs/components/message), [**Bubble**](/docs/components/bubble),
-[**Attachment**](/docs/components/attachment), and
-[**Marker**](/docs/components/marker).
+本日、チャット インターフェイスを構築するための新しいコンポーネント セットをリリースします。
+[**MessageScroller**](/docs/components/message-scroller)、
+[**メッセージ**](/docs/components/message)、[**バブル**](/docs/components/bubble)、
+[**添付ファイル**](/docs/components/attachment)、および
+[**マーカー**](/docs/components/marker)。
 
-This is the first phase of the chat components work. We’re taking it one piece at a time, reimagining the abstraction behind each part, and shipping them as shadcn/ui components you can copy, compose, and adapt to your product.
+これは、チャット コンポーネントの作業の最初のフェーズです。私たちはそれを一度に 1 つずつ取り上げ、各部分の背後にある抽象化を再考し、コピー、構成、製品に適応できる shadcn/ui コンポーネントとして出荷します。
 
-We are starting with the conversation layer: scrolling, message rows, bubbles, attachments, and markers.
+スクロール、メッセージ行、バブル、添付ファイル、マーカーなどの会話レイヤーから始めます。
 
-We asked ourselves: what makes a great streaming chat experience? Then we abstracted the core rules into a set of primitives: `MessageScroller`.
+私たちは、何が優れたストリーミング チャット エクスペリエンスを実現するのか、と自問しました。次に、コア ルールをプリミティブのセット (`MessageScroller`) に抽象化しました。
 
 ```bash
 npx shadcn@latest add message-scroller message bubble attachment marker
 ```
 
-## MessageScroller
+## メッセージスクローラー
 
-`MessageScroller` is the scroll container for a conversation. It handles the
-parts that are easy to get wrong: anchored turns, streamed replies, saved thread
-restore, prepended history, jump-to-message, scroll controls, and visibility
-tracking.
+`MessageScroller` は、会話のスクロール コンテナーです。それは、
+間違いやすい部分: アンカーされたターン、ストリームされた返信、保存されたスレッド
+復元、先頭に追加された履歴、メッセージへのジャンプ、スクロール コントロール、および可視性
+トラッキング。
 
-`MessageScroller` owns that behavior without owning your messages, AI state,
-transport, persistence, or model state. You bring the content renderer.
+`MessageScroller` は、メッセージ、AI 状態、
+トランスポート、永続性、またはモデルの状態。コンテンツ レンダラーを持ち込んでください。
 
-The `MessageScroller` is also available as an unstyled headless component in `@shadcn/react`.
+`MessageScroller` は、`@shadcn/react` のスタイルなしのヘッドレス コンポーネントとしても使用できます。
 
-## Message, Bubble, Attachment, and Marker
+## メッセージ、バブル、添付ファイル、およびマーカー
 
-The rest of the components cover the everyday pieces you need around the
-scroller.
+残りのコンポーネントは、日常的に必要な部品をカバーします。
+スクローラー。
 
-- `Message` lays out a row in the conversation with avatar, alignment, header,
-  content, footer, and grouped messages.
-- `Bubble` renders the message surface, with variants, alignment, reactions,
-  links, buttons, and collapsible content.
-- `Attachment` renders files and images with media, metadata, upload state,
-  actions, and a full-card trigger that keeps actions separately clickable.
-- `Marker` renders status updates, system notes, bordered rows, and labeled
-  separators for things like streaming state, tool activity, and date breaks.
+- `Message` は、アバター、配置、ヘッダーを含む会話の行をレイアウトします。
+コンテンツ、フッター、グループ化されたメッセージ。
+- `Bubble` は、バリアント、配置、反応、
+リンク、ボタン、折りたたみ可能なコンテンツ。
+- `Attachment` は、メディア、メタデータ、アップロード状態を含むファイルと画像をレンダリングします。
+アクション、およびアクションを個別にクリックできるようにするフルカード トリガー。
+- `Marker` は、ステータスの更新、システム ノート、枠線付きの行、およびラベル付きをレンダリングします。
+ストリーミング状態、ツールアクティビティ、日付区切りなどの区切り文字。
 
-They are intentionally small. Compose them together for AI chats, support
-inboxes, team threads, group chats, and product-specific conversations.
+意図的に小さくしてあります。 AI チャット、サポート用にそれらを組み合わせます
+受信トレイ、チーム スレッド、グループ チャット、製品固有の会話など。
 
-## scroll-fade and shimmer
+## スクロールフェードとシマー
 
-We also added two new CSS utilities for the details that make chat interfaces
-feel better.
+また、チャット インターフェイスを作成するための 2 つの新しい CSS ユーティリティも追加しました。
+気分が良くなります。
 
-[`scroll-fade`](/docs/utils/scroll-fade) adds scroll-aware edge fades to scroll
-containers. Use it on `MessageScroller`, `ScrollArea`, attachment rows, and any
-long list where you want to hint at more content without adding overlays or
-scroll listeners.
+[`scroll-fade`](/docs/utils/scroll-fade) スクロールにスクロール対応のエッジ フェードを追加します
+コンテナ。 `MessageScroller`、`ScrollArea`、添付ファイル行などで使用します。
+オーバーレイやオーバーレイを追加せずに、より多くのコンテンツをヒントしたい長いリスト
+スクロールリスナー。
 
 <ComponentPreview
   styleName="radix-rhea"
@@ -72,46 +72,46 @@ scroll listeners.
   previewClassName="h-auto"
 />
 
-[`shimmer`](/docs/utils/shimmer) adds a text shimmer for live status. Use it
-for things like "Thinking…", "Generating response…", running tools, and
-streaming markers.
+[`shimmer`](/docs/utils/shimmer) ライブ ステータスのテキストのきらめきを追加します。使ってください
+「考え中…」、「応答を生成中…」、実行中のツール、
+ストリーミングマーカー。
 
 <ComponentPreview styleName="radix-rhea" name="shimmer-demo" />
 
-Both utilities ship with `shadcn/tailwind.css`, so projects initialized with
-`npx shadcn@latest init` already have them.
+どちらのユーティリティも `shadcn/tailwind.css` とともに出荷されるため、プロジェクトは次のように初期化されます。
+`npx shadcn@latest init` はすでにそれらを持っています。
 
-## @shadcn/react
+## @shadcn/反応
 
-We also created `@shadcn/react`, a new package for unstyled, headless React
-components.
+また、スタイルのないヘッドレス React 用の新しいパッケージ `@shadcn/react` も作成しました。
+コンポーネント。
 
-The first primitive is `@shadcn/react/message-scroller`. The registry component
-wraps it with shadcn/ui styles, but the scroll behavior lives in the package:
-anchoring, auto-follow, prepend preservation, scroll commands, and visibility.
+最初のプリミティブは `@shadcn/react/message-scroller` です。レジストリコンポーネント
+これを shadcn/ui スタイルでラップしますが、スクロール動作はパッケージ内にあります。
+アンカー、自動フォロー、先頭保存、スクロール コマンド、可視性。
 
-This lets us ship behavior without locking it to a visual style. You still get
-copy-and-paste components that match your project, and the hard interaction
-logic stays tested in one place.
+これにより、動作を視覚的なスタイルに固定することなく出荷できるようになります。まだ得られます
+プロジェクトに一致するコンポーネントのコピーアンドペースト、およびハードなインタラクション
+ロジックは 1 か所でテストされたままになります。
 
-Available now for Radix and Base UI.
+現在、Radix および Base UI で利用可能です。
 
-## AI Elements
+## AI 要素
 
-This does not replace [AI Elements](https://ai-sdk.dev/elements/overview). You
-can keep using AI Elements for AI interface components and patterns. This
-release is about bringing the core pieces of chat into shadcn/ui, one component
-at a time.
+これは [AI Elements](https://ai-sdk.dev/elements/overview) に代わるものではありません。あなた
+AI インターフェイス コンポーネントとパターンに AI 要素を使い続けることができます。これ
+リリースは、チャットのコア部分を 1 つのコンポーネントである shadcn/ui に取り込むことです。
+一度に。
 
-If you are already using a component from AI Elements, you do not need to
-rewrite your app. Keep what works. Try the shadcn/ui version when you want the
-newer abstraction, the updated styling, or support across Radix and Base UI.
+すでに AI Elements のコンポーネントを使用している場合は、次の操作を行う必要はありません。
+アプリを書き換えます。機能するものはそのままにしておきます。必要な場合は、shadcn/ui バージョンを試してください。
+新しい抽象化、更新されたスタイル、または Radix と Base UI にわたるサポート。
 
-The goal is to make these pieces easy to adopt independently. Replace one part,
-compose it with what you already have, and keep building.
+目標は、これらの要素を独立して簡単に導入できるようにすることです。一部の部品を交換して、
+すでに持っているもので構成し、構築し続けます。
 
 <Button asChild size="sm">
   <Link href="/docs/components" className="mt-6 no-underline!">
-    View Components
+    コンポーネントの表示
   </Link>
 </Button>

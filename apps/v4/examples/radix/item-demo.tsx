@@ -1,6 +1,6 @@
 import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Item,
   ItemActions,
@@ -8,21 +8,21 @@ import {
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from "@/styles/radix-nova/ui/item"
+} from "@/components/ui/radix/item"
 
 export function ItemDemo() {
   return (
     <div className="flex w-full max-w-md flex-col gap-6">
       <Item variant="outline">
         <ItemContent>
-          <ItemTitle>Basic Item</ItemTitle>
+          <ItemTitle>基本項目</ItemTitle>
           <ItemDescription>
-            A simple item with title and description.
+            タイトルと説明を持つシンプルなアイテムです。
           </ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Action
+            アクション
           </Button>
         </ItemActions>
       </Item>
@@ -32,7 +32,7 @@ export function ItemDemo() {
             <BadgeCheckIcon className="size-5" />
           </ItemMedia>
           <ItemContent>
-            <ItemTitle>Your profile has been verified.</ItemTitle>
+            <ItemTitle>プロフィールが確認されました。</ItemTitle>
           </ItemContent>
           <ItemActions>
             <ChevronRightIcon className="size-4" />

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Card, CardContent } from "@/styles/radix-nova/ui/card"
+import { Card, CardContent } from "@/components/ui/radix/card"
 import {
   Carousel,
   CarouselContent,
@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/styles/radix-nova/ui/carousel"
+} from "@/components/ui/radix/carousel"
 
 export default function CarouselDApiDemo() {
   const [api, setApi] = React.useState<CarouselApi>()
@@ -48,7 +48,7 @@ export default function CarouselDApiDemo() {
         <CarouselNext />
       </Carousel>
       <div className="py-2 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
+        スライド {current} / {count}
       </div>
     </div>
   )

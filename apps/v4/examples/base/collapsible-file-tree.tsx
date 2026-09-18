@@ -1,13 +1,13 @@
 import { ChevronRightIcon, FileIcon, FolderIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Card, CardContent, CardHeader } from "@/styles/base-nova/ui/card"
+import { Button } from "@/components/ui/base/button"
+import { Card, CardContent, CardHeader } from "@/components/ui/base/card"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/base-nova/ui/collapsible"
-import { Tabs, TabsList, TabsTrigger } from "@/styles/base-nova/ui/tabs"
+} from "@/components/ui/base/collapsible"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/base/tabs"
 
 type FileTreeItem = { name: string } | { name: string; items: FileTreeItem[] }
 
@@ -107,8 +107,8 @@ export function CollapsibleFileTree() {
       <CardHeader>
         <Tabs defaultValue="explorer">
           <TabsList className="w-full">
-            <TabsTrigger value="explorer">Explorer</TabsTrigger>
-            <TabsTrigger value="settings">Outline</TabsTrigger>
+            <TabsTrigger value="explorer">エクスプローラー</TabsTrigger>
+            <TabsTrigger value="settings">アウトライン</TabsTrigger>
           </TabsList>
         </Tabs>
       </CardHeader>

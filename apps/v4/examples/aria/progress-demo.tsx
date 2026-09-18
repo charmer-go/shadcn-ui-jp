@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Progress } from "@/styles/aria-nova/ui/progress"
+import { Progress } from "@/components/ui/aria/progress"
 
 export default function ProgressDemo() {
   const [progress, setProgress] = React.useState(13)
@@ -12,5 +12,5 @@ export default function ProgressDemo() {
     return () => clearTimeout(timer)
   }, [])
 
-  return <Progress aria-label="Loading" value={progress} className="w-[60%]" />
+  return <Progress aria-label="読み込み中" value={progress} className="w-[60%]" />
 }

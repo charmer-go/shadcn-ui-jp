@@ -2,35 +2,35 @@ import {
   NativeSelect,
   NativeSelectOptGroup,
   NativeSelectOption,
-} from "@/styles/aria-nova/ui/native-select"
+} from "@/components/ui/aria/native-select"
 
 export default function NativeSelectGroups() {
   return (
     <NativeSelect>
-      <NativeSelectOption value="">Select department</NativeSelectOption>
-      <NativeSelectOptGroup label="Engineering">
-        <NativeSelectOption value="frontend">Frontend</NativeSelectOption>
-        <NativeSelectOption value="backend">Backend</NativeSelectOption>
+      <NativeSelectOption value="">部署を選択</NativeSelectOption>
+      <NativeSelectOptGroup label="エンジニアリング">
+        <NativeSelectOption value="frontend">フロントエンド</NativeSelectOption>
+        <NativeSelectOption value="backend">バックエンド</NativeSelectOption>
         <NativeSelectOption value="devops">DevOps</NativeSelectOption>
       </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Sales">
-        <NativeSelectOption value="sales-rep">Sales Rep</NativeSelectOption>
+      <NativeSelectOptGroup label="営業">
+        <NativeSelectOption value="sales-rep">営業担当</NativeSelectOption>
         <NativeSelectOption value="account-manager">
-          Account Manager
+          アカウントマネージャー
         </NativeSelectOption>
         <NativeSelectOption value="sales-director">
-          Sales Director
+          営業部長
         </NativeSelectOption>
       </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Operations">
+      <NativeSelectOptGroup label="運用">
         <NativeSelectOption value="support">
-          Customer Support
+          カスタマーサポート
         </NativeSelectOption>
         <NativeSelectOption value="product-manager">
-          Product Manager
+          プロダクトマネージャー
         </NativeSelectOption>
         <NativeSelectOption value="ops-manager">
-          Operations Manager
+          運用マネージャー
         </NativeSelectOption>
       </NativeSelectOptGroup>
     </NativeSelect>

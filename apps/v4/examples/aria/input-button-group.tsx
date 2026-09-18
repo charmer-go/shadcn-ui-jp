@@ -1,15 +1,15 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { ButtonGroup } from "@/styles/aria-nova/ui/button-group"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+import { Button } from "@/components/ui/aria/button"
+import { ButtonGroup } from "@/components/ui/aria/button-group"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputButtonGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-button-group">Search</FieldLabel>
+      <FieldLabel htmlFor="input-button-group">検索</FieldLabel>
       <ButtonGroup>
-        <Input id="input-button-group" placeholder="Type to search..." />
-        <Button variant="outline">Search</Button>
+        <Input id="input-button-group" placeholder="検索キーワードを入力..." />
+        <Button variant="outline">検索</Button>
       </ButtonGroup>
     </Field>
   )

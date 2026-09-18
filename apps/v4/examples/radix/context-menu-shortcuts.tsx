@@ -6,42 +6,42 @@ import {
   ContextMenuSeparator,
   ContextMenuShortcut,
   ContextMenuTrigger,
-} from "@/styles/radix-nova/ui/context-menu"
+} from "@/components/ui/radix/context-menu"
 
 export function ContextMenuShortcuts() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
-            Back
+            戻る
             <ContextMenuShortcut>⌘[</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem disabled>
-            Forward
+            進む
             <ContextMenuShortcut>⌘]</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Reload
+            再読み込み
             <ContextMenuShortcut>⌘R</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem>
-            Save
+            保存
             <ContextMenuShortcut>⌘S</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Save As...
+            名前を付けて保存...
             <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>

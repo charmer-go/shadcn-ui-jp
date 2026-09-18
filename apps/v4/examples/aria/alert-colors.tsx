@@ -4,16 +4,16 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@/styles/aria-nova/ui/alert"
+} from "@/components/ui/aria/alert"
 
 export default function AlertColors() {
   return (
     <Alert className="max-w-md border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50">
       <AlertTriangleIcon />
-      <AlertTitle>Your subscription will expire in 3 days.</AlertTitle>
+      <AlertTitle>サブスクリプションの有効期限が3日後に切れます。</AlertTitle>
       <AlertDescription>
-        Renew now to avoid service interruption or upgrade to a paid plan to
-        continue using the service.
+        サービスの中断を避けるには今すぐ更新するか、有料プランにアップグレードして
+        ご利用を継続してください。
       </AlertDescription>
     </Alert>
   )

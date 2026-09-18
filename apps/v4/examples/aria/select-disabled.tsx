@@ -5,18 +5,18 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/aria-nova/ui/select"
+} from "@/components/ui/aria/select"
 
 export function SelectDisabled() {
   const items = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Blueberry", value: "blueberry" },
-    { label: "Grapes", value: "grapes", disabled: true },
-    { label: "Pineapple", value: "pineapple" },
+    { label: "リンゴ", value: "apple" },
+    { label: "バナナ", value: "banana" },
+    { label: "ブルーベリー", value: "blueberry" },
+    { label: "ぶどう", value: "grapes", disabled: true },
+    { label: "パイナップル", value: "pineapple" },
   ]
   return (
-    <Select isDisabled placeholder="Select a fruit" className="w-full max-w-48">
+    <Select isDisabled placeholder="フルーツを選択" className="w-full max-w-48">
       <SelectTrigger>
         <SelectValue />
       </SelectTrigger>

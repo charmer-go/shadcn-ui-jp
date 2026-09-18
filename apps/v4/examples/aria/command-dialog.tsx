@@ -19,7 +19,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@/styles/aria-nova/ui/command"
+} from "@/components/ui/aria/command"
 
 export function CommandDialogDemo() {
   const [open, setOpen] = React.useState(false)
@@ -45,41 +45,41 @@ export function CommandDialogDemo() {
         </kbd>
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="コマンドを入力または検索…" />
         <CommandList
           renderEmptyState={() => (
-            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandEmpty>結果が見つかりません。</CommandEmpty>
           )}
         >
-          <CommandGroup heading="Suggestions">
-            <CommandItem textValue="Calendar">
+          <CommandGroup heading="候補">
+            <CommandItem textValue="カレンダー">
               <Calendar />
-              <span>Calendar</span>
+              <span>カレンダー</span>
             </CommandItem>
-            <CommandItem textValue="Search Emoji">
+            <CommandItem textValue="絵文字を検索">
               <Smile />
-              <span>Search Emoji</span>
+              <span>絵文字を検索</span>
             </CommandItem>
-            <CommandItem textValue="Calculator">
+            <CommandItem textValue="計算機">
               <Calculator />
-              <span>Calculator</span>
+              <span>計算機</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem textValue="Profile">
+          <CommandGroup heading="設定">
+            <CommandItem textValue="プロフィール">
               <User />
-              <span>Profile</span>
+              <span>プロフィール</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
-            <CommandItem textValue="Billing">
+            <CommandItem textValue="請求">
               <CreditCard />
-              <span>Billing</span>
+              <span>請求</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
-            <CommandItem textValue="Settings">
+            <CommandItem textValue="設定">
               <Settings />
-              <span>Settings</span>
+              <span>設定</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>

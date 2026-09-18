@@ -1,9 +1,9 @@
 ---
 title: "RTL"
-description: "Right-to-left support for shadcn/ui components."
+description: "shadcn/ui コンポーネントの右から左へのサポート。"
 ---
 
-shadcn/ui components have first-class support for right-to-left (RTL) layouts. Text alignment, positioning, and directional styles automatically adapt for languages like Arabic, Hebrew, and Persian.
+shadcn/ui コンポーネントは、右から左へ (RTL) レイアウトの第一級のサポートを備えています。テキストの配置、位置、方向のスタイルは、アラビア語、ヘブライ語、ペルシア語などの言語に自動的に適応します。
 
 <ComponentPreview
   styleName="base-nova"
@@ -11,15 +11,15 @@ shadcn/ui components have first-class support for right-to-left (RTL) layouts. T
   direction="rtl"
   previewClassName="h-auto"
   hideCode
-  caption="A card component in RTL mode."
+  caption="RTL モードのカード コンポーネント。"
   className="mb-8"
 />
 
-When you install components, the CLI automatically transforms physical positioning classes to logical equivalents, so your components work seamlessly in both LTR and RTL contexts.
+コンポーネントをインストールすると、CLI は物理的な位置クラスを論理的に同等のものに自動的に変換するため、コンポーネントは LTR コンテキストと RTL コンテキストの両方でシームレスに動作します。
 
-## Get Started
+## 始める
 
-Select your framework to get started with RTL support.
+RTL サポートを開始するには、フレームワークを選択してください。
 
 <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-6">
   <LinkedCard href="/docs/rtl/next">
@@ -61,103 +61,103 @@ Select your framework to get started with RTL support.
   </LinkedCard>
 </div>
 
-## How it works
+## 仕組み
 
-When you add components with `rtl: true` set in your `components.json`, the shadcn CLI automatically transforms classes and props to be RTL compatible:
+`components.json` に `rtl: true` が設定されたコンポーネントを追加すると、shadcn CLI はクラスとプロパティを RTL 互換になるように自動的に変換します。
 
-- Physical positioning classes like `left-*` and `right-*` are converted to logical equivalents like `start-*` and `end-*`.
-- Directional props are updated to use logical values.
-- Text alignment and spacing classes are adjusted accordingly.
-- Supported icons are automatically flipped using `rtl:rotate-180`.
+- `left-*` や `right-*` などの物理位置クラスは、`start-*` や `end-*` などの論理同等クラスに変換されます。
+- 方向を表す props は論理値を使うように更新されます。
+- テキストの配置と間隔のクラスがそれに応じて調整されます。
+- 対応するアイコンは `rtl:rotate-180` を使って自動的に反転されます。
 
-## Try it out
+## 試してみる
 
-Click the link below to open a Next.js project with RTL support in v0.
+以下のリンクをクリックして、v0 で RTL をサポートする Next.js プロジェクトを開きます。
 
 [![Open in v0](https://v0.app/chat-static/button.svg)](https://v0.app/chat/api/open?url=https://github.com/shadcn-ui/next-template-rtl)
 
-## Supported Styles
+## サポートされるスタイル
 
-Automatic RTL transformation via the CLI is only available for projects created using `shadcn create` with the new styles (`base-nova`, `radix-nova`, etc.).
+CLI による自動 RTL 変換は、新しいスタイル (`base-nova`、`base-nova`、 `radix-nova` など)。
 
-For other styles, see the [Migration Guide](#migrating-existing-components).
+その他のスタイルについては、[移行ガイド](#既存のコンポーネントの移行)を参照してください。
 
-## Font Recommendations
+## 推奨フォント
 
-For the best RTL experience, we recommend using fonts that have proper support for your target language. [Noto](https://fonts.google.com/noto) is a great font family for this and it pairs well with Inter and Geist.
+最適な RTL 体験のため、対象言語を適切にサポートするフォントの使用を推奨します。[Noto](https://fonts.google.com/noto) はこの用途に適したフォント ファミリーで、Inter や Geist ともよく合います。
 
-See your framework's RTL guide under [Get Started](#get-started) for details on installing and configuring RTL fonts.
+RTL フォントのインストールと構成の詳細については、[Get Started](#get-started) にあるフレームワークの RTL ガイドを参照してください。
 
-## Animations
+## アニメーション
 
-The CLI also handles animation classes, automatically transforming physical directional animations to their logical equivalents. For example, `slide-in-from-right` becomes `slide-in-from-end`.
+です。 CLI はアニメーション クラスも処理し、物理的な方向性アニメーションを論理的に同等のものに自動的に変換します。たとえば、`slide-in-from-right` は `slide-in-from-end` になります。
 
-This ensures animations like dropdowns, popovers, and tooltips animate in the correct direction based on the document's text direction.
+これにより、ドロップダウン、ポップオーバー、ツールチップなどのアニメーションが、ドキュメントのテキストの方向に基づいて正しい方向にアニメーション化されます。
 
-**A note on tw-animate-css:**
+**tw-animate-css に関する注意:**
 
-There is a [known issue](https://github.com/Wombosvideo/tw-animate-css/issues/67) with the `tw-animate-css` library where the logical slide utilities are not working as expected. For now, make sure you pass in the `dir` prop to portal elements.
+`tw-animate-css` ライブラリには、論理スライド ユーティリティが期待どおりに動作しない [既知の問題](https://github.com/Wombosvideo/tw-animate-css/issues/67) があります。現時点では、必ず `dir` プロパティをポータル要素に渡してください。
 
 ```tsx showLineNumbers /dir="rtl"/
 <Popover>
-  <PopoverTrigger>Open</PopoverTrigger>
+  <PopoverTrigger>開く</PopoverTrigger>
   <PopoverContent dir="rtl">
-    <div>Content</div>
+    <div>コンテンツ</div>
   </PopoverContent>
 </Popover>
 ```
 
 ```tsx showLineNumbers /dir="rtl"/
 <Tooltip>
-  <TooltipTrigger>Open</TooltipTrigger>
+  <TooltipTrigger>開く</TooltipTrigger>
   <TooltipContent dir="rtl">
-    <div>Content</div>
+    <div>コンテンツ</div>
   </TooltipContent>
 </Tooltip>
 ```
 
-## Migrating existing components
+## 既存のコンポーネントの移行
 
-If you have existing components installed before enabling RTL, you can migrate them using the CLI as follows:
+RTL を有効にする前にインストールした既存コンポーネントは、次のように CLI で移行できます。
 
 <Steps>
 
-<Step>Run the migrate command</Step>
+<Step>移行コマンドを実行します</Step>
 
 ```bash
 npx shadcn@latest migrate rtl [path]
 ```
 
-`[path]` accepts a path or glob pattern to migrate. If you don't provide a path, it will migrate all the files in the `ui` directory.
+`[path]` には移行するパスまたは glob パターンを指定します。パスを指定しない場合は、`ui` ディレクトリ内のすべてのファイルを移行します。
 
-### Manual Migration (Optional)
+### 手動移行 (オプション)
 
-The following components are not automatically migrated by the CLI. Follow the RTL support section for each component to manually migrate them.
+次のコンポーネントは CLI によって自動的に移行されません。各コンポーネントの RTL サポート セクションに従って、コンポーネントを手動で移行します。
 
-- [Calendar](/docs/components/base/calendar#rtl-support)
-- [Pagination](/docs/components/base/pagination#rtl-support)
+- [カレンダー](/docs/components/base/calendar#rtl-support)
+- [ページネーション](/docs/components/base/pagination#rtl-support)
 - [Sidebar](/docs/components/base/sidebar#rtl-support)
 
-### Migrate Icons
+### アイコンを移行する
 
-Some icons like `ArrowRightIcon` or `ChevronLeftIcon` might need the `rtl:rotate-180` class to be flipped correctly. Add the `rtl:rotate-180` class to the icon component to flip it correctly.
+を基準にして読み取られます。`ArrowRightIcon` や `ChevronLeftIcon` などの一部のアイコンでは、`rtl:rotate-180` クラスを正しく反転する必要がある場合があります。アイコン コンポーネントを正しく反転するには、`rtl:rotate-180` クラスをアイコン コンポーネントに追加します。
 
 ```tsx showLineNumbers /rtl:rotate-180/
 <ArrowRightIcon className="rtl:rotate-180" />
 ```
 
-### Add direction component
+### Direction コンポーネントを追加する
 
-Add the direction component to your project.
+方向コンポーネントをプロジェクトに追加します。
 
 ```bash
 npx shadcn@latest add direction
 ```
 
-### Add DirectionProvider
+### DirectionProvider の追加
 
-Follow your framework's documentation for details on how to add the `DirectionProvider` component to your project.
+`DirectionProvider` コンポーネントをプロジェクトに追加する方法の詳細については、フレームワークのドキュメントに従ってください。
 
-See the [Get Started](#get-started) section for details on how to add the `DirectionProvider` component to your project.
+プロジェクトに `DirectionProvider` コンポーネントを追加する方法については、[始める](#始める)を参照してください。
 
 </Steps>

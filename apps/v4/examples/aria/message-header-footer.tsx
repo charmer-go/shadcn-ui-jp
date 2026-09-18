@@ -1,10 +1,10 @@
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
 import {
   Message,
   MessageContent,
   MessageFooter,
   MessageHeader,
-} from "@/styles/aria-rhea/ui/message"
+} from "@/components/ui/aria/message"
 
 export function MessageHeaderFooterDemo() {
   return (
@@ -13,7 +13,7 @@ export function MessageHeaderFooterDemo() {
         <MessageContent>
           <MessageHeader>Olivia</MessageHeader>
           <Bubble variant="muted">
-            <BubbleContent>I already checked the logs.</BubbleContent>
+            <BubbleContent>すでにログを確認しました。</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -21,12 +21,12 @@ export function MessageHeaderFooterDemo() {
         <MessageContent>
           <Bubble>
             <BubbleContent>
-              Send the report to the team. Ping @shadcn if you need help.
+              レポートをチームに送ってください。手伝いが必要なら @shadcn にメンションしてください。
             </BubbleContent>
           </Bubble>
           <MessageFooter>
             <div>
-              Read <span className="font-normal">Yesterday</span>
+              既読 <span className="font-normal">昨日</span>
             </div>
           </MessageFooter>
         </MessageContent>

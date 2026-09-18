@@ -2,17 +2,17 @@
 
 import * as React from "react"
 
-import { Progress } from "@/styles/aria-nova/ui/progress"
-import { Slider } from "@/styles/aria-nova/ui/slider"
+import { Progress } from "@/components/ui/aria/progress"
+import { Slider } from "@/components/ui/aria/slider"
 
 export function ProgressControlled() {
   const [value, setValue] = React.useState(50)
 
   return (
     <div className="flex w-full max-w-sm flex-col gap-4">
-      <Progress aria-label="Loading" value={value} className="w-full" />
+      <Progress aria-label="読み込み中" value={value} className="w-full" />
       <Slider
-        aria-label="Progress"
+        aria-label="進行状況"
         value={value}
         onChange={(value) => setValue(value as number)}
         minValue={0}

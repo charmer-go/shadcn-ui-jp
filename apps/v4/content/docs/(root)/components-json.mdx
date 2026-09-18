@@ -1,28 +1,28 @@
 ---
-title: components.json
-description: Configuration for your project.
+title: コンポーネント.json
+description: プロジェクトの構成。
 ---
 
-The `components.json` file holds configuration for your project.
+`components.json` ファイルには、プロジェクトの構成が保持されます。
 
-We use it to understand how your project is set up and how to generate components customized for your project.
+これは、プロジェクトがどのように設定されているか、およびプロジェクト用にカスタマイズされたコンポーネントを生成する方法を理解するために使用されます。
 
 <Callout className="mt-6" title="Note: The `components.json` file is optional">
-  It is **only required if you're using the CLI** to add components to your
-  project. If you're using the copy and paste method, you don't need this file.
+**CLI を使用してコンポーネントを追加する場合にのみ必要です**。
+プロジェクト。コピーアンドペーストの方法を使用している場合、このファイルは必要ありません。
 </Callout>
 
-You can create a `components.json` file in your project by running the following command:
+次のコマンドを実行して、プロジェクト内に `components.json` ファイルを作成できます。
 
 ```bash
 npx shadcn@latest init
 ```
 
-See the <Link href="/docs/cli">CLI section</Link> for more information.
+詳細については、「<Link href="/docs/cli">CLI」セクション「</Link>」を参照してください。
 
 ## $schema
 
-You can see the JSON Schema for `components.json` [here](https://ui.shadcn.com/schema.json).
+`components.json` の JSON スキーマは [こちら](https://ui.shadcn.com/schema.json) で確認できます。
 
 ```json title="components.json"
 {
@@ -32,7 +32,7 @@ You can see the JSON Schema for `components.json` [here](https://ui.shadcn.com/s
 
 ## style
 
-The style for your components. **This cannot be changed after initialization.**
+コンポーネントのスタイル。 **初期化後は変更できません。**
 
 ```json title="components.json"
 {
@@ -40,17 +40,17 @@ The style for your components. **This cannot be changed after initialization.**
 }
 ```
 
-The `default` style has been deprecated. Use the `new-york` style instead.
+`default` スタイルは非推奨になりました。代わりに、`new-york` スタイルを使用してください。
 
-## tailwind
+## 追い風
 
-Configuration to help the CLI understand how Tailwind CSS is set up in your project.
+CLI がプロジェクト内で Tailwind CSS がどのように設定されているかを理解するのに役立つ構成。
 
-See the <Link href="/docs/installation">installation section</Link> for how to set up Tailwind CSS.
+Tailwind CSS のセットアップ方法については、<Link href="/docs/installation"> インストール セクション </Link> を参照してください。
 
 ### tailwind.config
 
-Path to where your `tailwind.config.js` file is located. **For Tailwind CSS v4, leave this blank.**
+`tailwind.config.js` ファイルが配置されている場所へのパス。 **Tailwind CSS v4 の場合は、空白のままにしておきます。**
 
 ```json title="components.json"
 {
@@ -62,7 +62,7 @@ Path to where your `tailwind.config.js` file is located. **For Tailwind CSS v4, 
 
 ### tailwind.css
 
-Path to the CSS file that imports Tailwind CSS into your project.
+Tailwind CSS をプロジェクトにインポートする CSS ファイルへのパス。
 
 ```json title="components.json"
 {
@@ -74,7 +74,7 @@ Path to the CSS file that imports Tailwind CSS into your project.
 
 ### tailwind.baseColor
 
-This is used to generate the default theme tokens for your components. **This cannot be changed after initialization.**
+これは、コンポーネントのデフォルトのテーマ トークンを生成するために使用されます。 **初期化後は変更できません。**
 
 ```json title="components.json"
 {
@@ -86,9 +86,9 @@ This is used to generate the default theme tokens for your components. **This ca
 
 ### tailwind.cssVariables
 
-We use and recommend CSS variables for theming.
+テーマには CSS 変数を使用し、推奨します。
 
-Set `tailwind.cssVariables` to `true` to generate semantic theme tokens like `background`, `foreground`, and `primary`. Set it to `false` to generate inline Tailwind color utilities instead.
+`tailwind.cssVariables` を `true` に設定して、`background`、`foreground`、`primary` などのセマンティック テーマ トークンを生成します。代わりにインライン Tailwind カラー ユーティリティを生成するには、これを `false` に設定します。
 
 ```json title="components.json"
 {
@@ -98,13 +98,13 @@ Set `tailwind.cssVariables` to `true` to generate semantic theme tokens like `ba
 }
 ```
 
-For more information, see the <Link href="/docs/theming">theming docs</Link>.
+詳細については、<Link href="/docs/theming">テーマに関するドキュメント</Link>を参照してください。
 
-**This cannot be changed after initialization.** To switch between CSS variables and utility classes, you'll have to delete and re-install your components.
+**初期化後は変更できません。** CSS 変数とユーティリティ クラスを切り替えるには、コンポーネントを削除して再インストールする必要があります。
 
 ### tailwind.prefix
 
-The prefix to use for your Tailwind CSS utility classes. Components will be added with this prefix.
+Tailwind CSS ユーティリティ クラスに使用するプレフィックス。コンポーネントはこのプレフィックスを付けて追加されます。
 
 ```json title="components.json"
 {
@@ -114,11 +114,11 @@ The prefix to use for your Tailwind CSS utility classes. Components will be adde
 }
 ```
 
-## rsc
+## RSC
 
-Whether or not to enable support for React Server Components.
+React サーバー コンポーネントのサポートを有効にするかどうか。
 
-The CLI automatically adds a `use client` directive to client components when set to `true`.
+`true` に設定すると、CLI は `use client` ディレクティブをクライアント コンポーネントに自動的に追加します。
 
 ```json title="components.json"
 {
@@ -126,11 +126,11 @@ The CLI automatically adds a `use client` directive to client components when se
 }
 ```
 
-## tsx
+## tsx の依存関係を更新することで修正を受け取ることができます。
 
-Choose between TypeScript or JavaScript components.
+TypeScript コンポーネントと JavaScript コンポーネントのどちらかを選択します。
 
-Setting this option to `false` allows components to be added as JavaScript with the `.jsx` file extension.
+このオプションを `false` に設定すると、コンポーネントを `.jsx` ファイル拡張子を持つ JavaScript として追加できるようになります。
 
 ```json title="components.json"
 {
@@ -138,25 +138,25 @@ Setting this option to `false` allows components to be added as JavaScript with 
 }
 ```
 
-## aliases
+## エイリアス
 
-The CLI uses these values to place generated components in the correct location and rewrite imports.
+CLI はこれらの値を使用して、生成されたコンポーネントを正しい場所に配置し、インポートを再書き込みします。
 
-You can back these aliases with either:
+これらのエイリアスは次のいずれかを使用してバックアップできます。
 
-1. `compilerOptions.paths` in your `tsconfig.json` or `jsconfig.json`
-2. `package.json#imports` with TypeScript package import resolution enabled
+1. `tsconfig.json` または `jsconfig.json` の `compilerOptions.paths`
+2. TypeScript パッケージのインポート解決が有効になっている `package.json#imports`
 
-The aliases in `components.json` are still required when using the CLI. They tell the CLI which import roots map to `components`, `ui`, `lib`, `hooks`, and `utils`.
+CLI を使用する場合は、`components.json` のエイリアスが引き続き必要です。これらは、どのインポート ルートが `components`、`ui`、`lib`、`hooks`、および `utils` にマップされるかを CLI に指示します。
 
 <Callout className="mt-6">
-  **Important:** If you're using package imports, enable
-  `resolvePackageJsonImports` and use `moduleResolution: "bundler"` in your
-  `tsconfig.json`. If you're using `paths`, make sure your aliases include the
-  `src` directory when applicable.
+**重要:** パッケージのインポートを使用している場合は、有効にしてください。
+`resolvePackageJsonImports` と `moduleResolution: "bundler"` を使用してください。
+`tsconfig.json`。 `paths` を使用している場合は、エイリアスに次のものが含まれていることを確認してください。
+該当する場合、`src` ディレクトリ。
 </Callout>
 
-### Using `tsconfig` or `jsconfig` paths
+### `tsconfig` または `jsconfig` パスの使用
 
 ```json title="tsconfig.json"
 {
@@ -169,9 +169,9 @@ The aliases in `components.json` are still required when using the CLI. They tel
 }
 ```
 
-### Using `package.json#imports`
+### `package.json#imports` の使用
 
-Recommended setup for a single-package app:
+単一パッケージ アプリの推奨設定:
 
 ```json title="package.json"
 {
@@ -204,30 +204,30 @@ Recommended setup for a single-package app:
 }
 ```
 
-The aliases in `components.json` still tell the CLI where to place
-`components`, `ui`, `lib`, `hooks`, and `utils`. `package.json#imports`
-provides the runtime and TypeScript resolution for those `#...` specifiers.
+`components.json` のエイリアスは、CLI にどこに配置するかを指示します。
+`components`、`ui`、`lib`、`hooks`、および `utils`。 `package.json#imports`
+は、これらの `#...` 指定子のランタイムと TypeScript 解決を提供します。
 
-The matched `imports` target also controls whether generated `#...` imports keep
-file extensions:
+一致する `imports` ターゲットは、生成された `#...` インポートを保持するかどうかも制御します
+ファイル拡張子:
 
-- `"#components/*": "./src/components/*"` preserves source extensions and can
-  generate imports like
-  `#components/button.tsx`
-- `"#components/*": "./src/components/*.tsx"` strips source extensions and
-  generates imports like
-  `#components/button`
+- `"#components/*": "./src/components/*"` はソース拡張子を保持し、
+次のようなインポートを生成します
+`#components/button.tsx`
+- `"#components/*": "./src/components/*.tsx"` はソース拡張子を削除し、
+次のようなインポートを生成します
+`#components/button`
 
-For monorepos, see the <Link href="/docs/monorepo">monorepo docs</Link>. Local
-workspace aliases can use `package.json#imports`, while shared workspace
-imports such as `@workspace/ui/components` are resolved from the target
-package's `exports`.
+モノリポジトリについては、<Link href="/docs/monorepo">モノリポジトリのドキュメント</Link>を参照してください。地元
+ワークスペースのエイリアスは `package.json#imports` を使用できますが、ワークスペースは共有されています
+`@workspace/ui/components` などのインポートはターゲットから解決されます
+パッケージの `exports`。
 
-For framework-specific setup, see the [package imports guide](/docs/package-imports).
+フレームワーク固有の設定については、[パッケージ インポート ガイド](/docs/package-imports) を参照してください。
 
-### aliases.utils
+### エイリアス.utils
 
-Import alias for your utility functions.
+ユーティリティ関数のエイリアスをインポートします。
 
 ```json title="components.json"
 {
@@ -237,9 +237,9 @@ Import alias for your utility functions.
 }
 ```
 
-### aliases.components
+### エイリアス.components
 
-Import alias for your components.
+コンポーネントのエイリアスをインポートします。
 
 ```json title="components.json"
 {
@@ -249,11 +249,11 @@ Import alias for your components.
 }
 ```
 
-### aliases.ui
+### エイリアス.ui
 
-Import alias for `ui` components.
+`ui` コンポーネントのエイリアスをインポートします。
 
-The CLI will use the `aliases.ui` value to determine where to place your `ui` components. Use this config if you want to customize the installation directory for your `ui` components.
+CLI は、`aliases.ui` 値を使用して、`ui` コンポーネントを配置する場所を決定します。 `ui` コンポーネントのインストール ディレクトリをカスタマイズする場合は、この構成を使用します。
 
 ```json title="components.json"
 {
@@ -263,9 +263,9 @@ The CLI will use the `aliases.ui` value to determine where to place your `ui` co
 }
 ```
 
-### aliases.lib
+### エイリアス.lib
 
-Import alias for `lib` functions such as `format-date` or `generate-id`.
+`format-date` や `generate-id` などの `lib` 関数のエイリアスをインポートします。
 
 ```json title="components.json"
 {
@@ -275,9 +275,9 @@ Import alias for `lib` functions such as `format-date` or `generate-id`.
 }
 ```
 
-### aliases.hooks
+### エイリアス.フック
 
-Import alias for `hooks` such as `use-media-query` or `use-toast`.
+`use-media-query` や `use-toast` など、`hooks` のエイリアスをインポートします。
 
 ```json title="components.json"
 {
@@ -287,15 +287,15 @@ Import alias for `hooks` such as `use-media-query` or `use-toast`.
 }
 ```
 
-## registries
+## レジストリ
 
-Configure multiple resource registries for your project. This allows you to install components, libraries, utilities, and other resources from various sources including private registries.
+プロジェクト用に複数のリソース レジストリを構成します。これにより、プライベート レジストリを含むさまざまなソースからコンポーネント、ライブラリ、ユーティリティ、その他のリソースをインストールできるようになります。
 
-See the <Link href="/docs/registry/namespace">Namespaced Registries</Link> documentation for detailed information.
+詳細については、<Link href="/docs/registry/namespace">名前空間レジストリ</Link>ドキュメントを参照してください。
 
-### Basic Configuration
+### 基本構成
 
-Configure registries with URL templates:
+URL テンプレートを使用してレジストリを構成します。
 
 ```json title="components.json"
 {
@@ -307,11 +307,11 @@ Configure registries with URL templates:
 }
 ```
 
-The `{name}` placeholder is replaced with the resource name when installing.
+`{name}` プレースホルダーは、インストール時にリソース名に置き換えられます。
 
-### Advanced Configuration with Authentication
+### 認証を使用した高度な構成
 
-For private registries that require authentication:
+認証が必要なプライベート レジストリの場合:
 
 ```json title="components.json"
 {
@@ -330,11 +330,11 @@ For private registries that require authentication:
 }
 ```
 
-Environment variables in the format `${VAR_NAME}` are automatically expanded from your environment.
+`${VAR_NAME}` 形式の環境変数は、環境から自動的に展開されます。
 
-### Using Namespaced Registries
+### 名前空間レジストリの使用
 
-Once configured, install resources using the namespace syntax:
+構成が完了したら、名前空間構文を使用してリソースをインストールします。
 
 ```bash
 # Install from a configured registry
@@ -347,7 +347,7 @@ npx shadcn@latest add @private/button
 npx shadcn@latest add @acme/header @internal/auth-utils
 ```
 
-### Example: Multiple Registry Setup
+### 例: 複数のレジストリのセットアップ
 
 ```json title="components.json"
 {
@@ -370,10 +370,10 @@ npx shadcn@latest add @acme/header @internal/auth-utils
 }
 ```
 
-This configuration allows you to:
+この構成により、次のことが可能になります。
 
-- Install public components from shadcn/ui
-- Access private company UI components with authentication
-- Use team-specific resources with versioning
+- shadcn/ui からパブリック コンポーネントをインストールする
+- 認証を使用して民間企業の UI コンポーネントにアクセス
+- チーム固有のリソースをバージョン管理で使用する
 
-For more information about authentication, see the <Link href="/docs/registry/authentication">Authentication</Link> documentation.
+認証の詳細については、<Link href="/docs/registry/authentication">Authentication</Link> ドキュメントを参照してください。

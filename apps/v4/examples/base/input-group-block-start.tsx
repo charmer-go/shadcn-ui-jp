@@ -5,7 +5,7 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
+} from "@/components/ui/base/field"
 import {
   InputGroup,
   InputGroupAddon,
@@ -13,26 +13,26 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 
 export function InputGroupBlockStart() {
   return (
     <FieldGroup className="max-w-sm">
       <Field>
-        <FieldLabel htmlFor="block-start-input">Input</FieldLabel>
+        <FieldLabel htmlFor="block-start-input">入力欄</FieldLabel>
         <InputGroup className="h-auto">
           <InputGroupInput
             id="block-start-input"
-            placeholder="Enter your name"
+            placeholder="お名前を入力"
           />
           <InputGroupAddon align="block-start">
-            <InputGroupText>Full Name</InputGroupText>
+            <InputGroupText>氏名</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>Header positioned above the input.</FieldDescription>
+        <FieldDescription>ヘッダーは入力欄の上に配置されます。</FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="block-start-textarea">Textarea</FieldLabel>
+        <FieldLabel htmlFor="block-start-textarea">テキストエリア</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="block-start-textarea"
@@ -44,12 +44,12 @@ export function InputGroupBlockStart() {
             <InputGroupText className="font-mono">script.js</InputGroupText>
             <InputGroupButton size="icon-xs" className="ml-auto">
               <CopyIcon />
-              <span className="sr-only">Copy</span>
+              <span className="sr-only">コピー</span>
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          Header positioned above the textarea.
+          ヘッダーはテキストエリアの上に配置されます。
         </FieldDescription>
       </Field>
     </FieldGroup>

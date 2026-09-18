@@ -10,26 +10,26 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/aria-nova/ui/alert-dialog"
-import { Button } from "@/styles/aria-nova/ui/button"
+} from "@/components/ui/aria/alert-dialog"
+import { Button } from "@/components/ui/aria/button"
 
 export function AlertDialogWithMedia() {
   return (
     <AlertDialogTrigger>
-      <Button variant="outline">Share Project</Button>
+      <Button variant="outline">プロジェクトを共有</Button>
       <AlertDialog>
         <AlertDialogHeader>
           <AlertDialogMedia>
             <CircleFadingPlusIcon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Share this project?</AlertDialogTitle>
+          <AlertDialogTitle>このプロジェクトを共有しますか?</AlertDialogTitle>
           <AlertDialogDescription>
-            Anyone with the link will be able to view and edit this project.
+            このリンクを知っている人は誰でも、このプロジェクトを閲覧・編集できます。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Share</AlertDialogAction>
+          <AlertDialogCancel>キャンセル</AlertDialogCancel>
+          <AlertDialogAction>共有</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialog>
     </AlertDialogTrigger>

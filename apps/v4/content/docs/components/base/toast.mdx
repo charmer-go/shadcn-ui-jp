@@ -1,6 +1,6 @@
 ---
-title: Toast
-description: A succinct message that is displayed temporarily.
+title: トースト
+description: 一時的に表示される簡潔なメッセージ。
 base: base
 component: true
 links:
@@ -10,25 +10,25 @@ links:
 
 <ComponentPreview styleName="base-nova" name="toast-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
 <Steps className="mb-0 pt-2">
 
-<Step>Run the following command:</Step>
+<Step>次のコマンドを実行します。</Step>
 
 ```bash
 npx shadcn@latest add toast
 ```
 
-<Step>Add the Toaster component.</Step>
+<Step>トースター コンポーネントを追加します。</Step>
 
 ```tsx title="app/layout.tsx" {1,9} showLineNumbers
 import { Toaster } from "@/components/ui/toast"
@@ -53,13 +53,13 @@ export default function RootLayout({ children }) {
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependency:</Step>
+<Step>次の依存関係をインストールします:</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="toast"
@@ -67,9 +67,9 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
-<Step>Add the Toaster component.</Step>
+<Step>トースター コンポーネントを追加します。</Step>
 
 ```tsx title="app/layout.tsx" {1,8} showLineNumbers
 import { Toaster } from "@/components/ui/toast"
@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { toast } from "@/components/ui/toast"
@@ -105,16 +105,15 @@ toast.add({
 })
 ```
 
-## Types
+## 非同期タスクの状態
 
-Set the `type` option to render a status icon. The built-in renderer recognizes
-`success`, `info`, `warning`, `error`, and `loading`.
+ステータス アイコンを表示するには、`type` オプションを設定します。組み込みレンダラーは `success`、`info`、`warning`、`error`、`loading` を認識します。
 
 <ComponentPreview styleName="base-nova" name="toast-types" />
 
-## Action
+## アクション
 
-Pass button props with `actionProps` to render an action.
+`actionProps` を持つボタンの小道具を渡して、アクションをレンダリングします。
 
 ```tsx
 const id = toast.add({
@@ -128,15 +127,15 @@ const id = toast.add({
 })
 ```
 
-## Promise
+## 約束
 
-Use `toast.promise` to update one toast as an asynchronous task moves through
-loading, success, and error states.
+テキスト
+の読み込み、成功、およびエラーの状態。
 
 <ComponentPreview styleName="base-nova" name="toast-promise" />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI Toast documentation](https://base-ui.com/react/components/toast)
+[Base UI Toast ドキュメント](https://base-ui.com/react/components/toast) を参照してください
 for details about manager options, stacking, swipe dismissal, and the primitive
-API.
+API。

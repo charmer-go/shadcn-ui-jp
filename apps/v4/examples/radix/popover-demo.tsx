@@ -1,29 +1,29 @@
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Input } from "@/styles/radix-nova/ui/input"
-import { Label } from "@/styles/radix-nova/ui/label"
+import { Button } from "@/components/ui/radix/button"
+import { Input } from "@/components/ui/radix/input"
+import { Label } from "@/components/ui/radix/label"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 export default function PopoverDemo() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline">Open popover</Button>
+        <Button variant="outline">ポップオーバーを開く</Button>
       </PopoverTrigger>
       <PopoverContent className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="leading-none font-medium">Dimensions</h4>
+            <h4 className="leading-none font-medium">寸法</h4>
             <p className="text-sm text-muted-foreground">
-              Set the dimensions for the layer.
+              レイヤーの寸法を設定します。
             </p>
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
+              <Label htmlFor="width">幅</Label>
               <Input
                 id="width"
                 defaultValue="100%"
@@ -31,7 +31,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
+              <Label htmlFor="maxWidth">最大幅</Label>
               <Input
                 id="maxWidth"
                 defaultValue="300px"
@@ -39,7 +39,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
+              <Label htmlFor="height">高さ</Label>
               <Input
                 id="height"
                 defaultValue="25px"
@@ -47,7 +47,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
+              <Label htmlFor="maxHeight">最大高さ</Label>
               <Input
                 id="maxHeight"
                 defaultValue="none"

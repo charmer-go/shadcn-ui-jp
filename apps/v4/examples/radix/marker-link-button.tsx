@@ -7,7 +7,7 @@ import {
   Marker,
   MarkerContent,
   MarkerIcon,
-} from "@/styles/radix-rhea/ui/marker"
+} from "@/components/ui/radix/marker"
 
 export function MarkerLinkButtonDemo() {
   return (
@@ -17,19 +17,19 @@ export function MarkerLinkButtonDemo() {
           <MarkerIcon>
             <GitBranchIcon />
           </MarkerIcon>
-          <MarkerContent>View the pull request</MarkerContent>
+          <MarkerContent>プルリクエストを表示</MarkerContent>
         </a>
       </Marker>
       <Marker asChild>
         <button
           type="button"
           className="transition-colors hover:text-foreground"
-          onClick={() => toast("You clicked the revert button")}
+          onClick={() => toast("元に戻すボタンがクリックされました")}
         >
           <MarkerIcon>
             <RotateCcwIcon />
           </MarkerIcon>
-          <MarkerContent>Revert this change</MarkerContent>
+          <MarkerContent>この変更を元に戻す</MarkerContent>
         </button>
       </Marker>
     </div>

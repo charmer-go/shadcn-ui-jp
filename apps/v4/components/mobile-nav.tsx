@@ -7,27 +7,31 @@ import { cn } from "cn"
 
 import { PAGES_NEW } from "@/lib/docs"
 import { showMcpDocs } from "@/lib/flags"
-import { getCurrentBase, getPagesFromFolder } from "@/lib/page-tree"
+import {
+  getCurrentBase,
+  getPageDisplayName,
+  getPagesFromFolder,
+} from "@/lib/page-tree"
 import { type source } from "@/lib/source"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york-v4/ui/popover"
+} from "@/components/ui/popover"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "導入", href: "/docs" },
   {
-    name: "Components",
+    name: "コンポーネント",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "インストール",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "テーマ",
     href: "/docs/theming",
   },
   {
@@ -47,15 +51,11 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/mcp",
   },
   {
-    name: "Registry",
-    href: "/docs/registry",
-  },
-  {
     name: "Forms",
     href: "/docs/forms",
   },
   {
-    name: "Changelog",
+    name: "変更履歴",
     href: "/docs/changelog",
   },
 ]
@@ -72,6 +72,9 @@ export function MobileNav({
   const [open, setOpen] = React.useState(false)
   const pathname = usePathname()
   const currentBase = getCurrentBase(pathname)
+  const brandSection = tree?.children?.find(
+    (item) => item.$id === "shadcn-ui-jp"
+  )
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -125,6 +128,24 @@ export function MobileNav({
               ))}
             </div>
           </div>
+          {brandSection?.type === "folder" && (
+            <div className="flex flex-col gap-4">
+              <div className="text-sm font-medium text-muted-foreground">
+                {brandSection.name}
+              </div>
+              <div className="flex flex-col gap-3">
+                {getPagesFromFolder(brandSection, currentBase).map((page) => (
+                  <MobileLink
+                    key={page.url}
+                    href={page.url}
+                    onOpenChange={setOpen}
+                  >
+                    {getPageDisplayName(page)}
+                  </MobileLink>
+                ))}
+              </div>
+            </div>
+          )}
           <div className="flex flex-col gap-4">
             <div className="text-sm font-medium text-muted-foreground">
               Sections
@@ -150,6 +171,9 @@ export function MobileNav({
           </div>
           <div className="flex flex-col gap-8">
             {tree?.children?.map((group, index) => {
+              if (group.$id === "shadcn-ui-jp") {
+                return null
+              }
               if (group.type === "folder") {
                 const pages = getPagesFromFolder(group, currentBase)
                 return (
@@ -169,7 +193,7 @@ export function MobileNav({
                             onOpenChange={setOpen}
                             className="flex items-center gap-2"
                           >
-                            {item.name}{" "}
+                            {getPageDisplayName(item)}{" "}
                             {PAGES_NEW.includes(item.url) && (
                               <span className="flex size-2 rounded-full bg-blue-500" />
                             )}

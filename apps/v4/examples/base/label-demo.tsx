@@ -1,11 +1,11 @@
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
-import { Label } from "@/styles/base-nova/ui/label"
+import { Checkbox } from "@/components/ui/base/checkbox"
+import { Label } from "@/components/ui/base/label"
 
 export default function LabelDemo() {
   return (
     <div className="flex gap-2">
       <Checkbox id="terms" />
-      <Label htmlFor="terms">Accept terms and conditions</Label>
+      <Label htmlFor="terms">利用規約に同意する</Label>
     </div>
   )
 }

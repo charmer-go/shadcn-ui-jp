@@ -7,64 +7,64 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/styles/aria-nova/ui/table"
+} from "@/components/ui/aria/table"
 
 const invoices = [
   {
     invoice: "INV001",
-    paymentStatus: "Paid",
+    paymentStatus: "支払い済み",
     totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    paymentMethod: "クレジットカード",
   },
   {
     invoice: "INV002",
-    paymentStatus: "Pending",
+    paymentStatus: "保留中",
     totalAmount: "$150.00",
     paymentMethod: "PayPal",
   },
   {
     invoice: "INV003",
-    paymentStatus: "Unpaid",
+    paymentStatus: "未払い",
     totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
+    paymentMethod: "銀行振込",
   },
   {
     invoice: "INV004",
-    paymentStatus: "Paid",
+    paymentStatus: "支払い済み",
     totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
+    paymentMethod: "クレジットカード",
   },
   {
     invoice: "INV005",
-    paymentStatus: "Paid",
+    paymentStatus: "支払い済み",
     totalAmount: "$550.00",
     paymentMethod: "PayPal",
   },
   {
     invoice: "INV006",
-    paymentStatus: "Pending",
+    paymentStatus: "保留中",
     totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
+    paymentMethod: "銀行振込",
   },
   {
     invoice: "INV007",
-    paymentStatus: "Unpaid",
+    paymentStatus: "未払い",
     totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
+    paymentMethod: "クレジットカード",
   },
 ]
 
 export function TableFooterExample() {
   return (
     <figure className="w-full">
-      <Table aria-label="Invoices">
+      <Table aria-label="請求書一覧">
         <TableHeader>
           <TableHead isRowHeader className="w-[100px]">
-            Invoice
+            請求書
           </TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead>ステータス</TableHead>
+          <TableHead>支払い方法</TableHead>
+          <TableHead className="text-right">金額</TableHead>
         </TableHeader>
         <TableBody>
           {invoices.slice(0, 3).map((invoice) => (
@@ -80,12 +80,12 @@ export function TableFooterExample() {
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={3}>Total</TableCell>
+            <TableCell colSpan={3}>合計</TableCell>
             <TableCell className="text-right">$2,500.00</TableCell>
           </TableRow>
         </TableFooter>
       </Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>最近の請求書の一覧です。</TableCaption>
     </figure>
   )
 }

@@ -1,6 +1,6 @@
 ---
-title: Direction
-description: A provider component that sets the text direction for your application.
+title: 方向
+description: アプリケーションの文字方向を設定するプロバイダー コンポーネント。
 base: radix
 component: true
 links:
@@ -20,13 +20,13 @@ Here's a preview of the component in RTL mode. Use the language selector to swit
   hideCode
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -41,13 +41,13 @@ npx shadcn@latest add direction
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="direction"
@@ -55,7 +55,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -63,7 +63,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { DirectionProvider } from "@/components/ui/direction"
@@ -81,7 +81,7 @@ import { DirectionProvider } from "@/components/ui/direction"
 
 ## useDirection
 
-The `useDirection` hook is used to get the current direction of the application.
+`useDirection` フックは、アプリケーションの現在の方向を取得するために使用されます。
 
 ```tsx showLineNumbers
 import { useDirection } from "@/components/ui/direction"

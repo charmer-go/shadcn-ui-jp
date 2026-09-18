@@ -1,11 +1,11 @@
-import { Button } from "@/styles/radix-nova/ui/button"
-import { ButtonGroup } from "@/styles/radix-nova/ui/button-group"
-import { Kbd, KbdGroup } from "@/styles/radix-nova/ui/kbd"
+import { Button } from "@/components/ui/radix/button"
+import { ButtonGroup } from "@/components/ui/radix/button-group"
+import { Kbd, KbdGroup } from "@/components/ui/radix/kbd"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export default function KbdTooltip() {
   return (
@@ -13,18 +13,18 @@ export default function KbdTooltip() {
       <ButtonGroup>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="outline">Save</Button>
+            <Button variant="outline">保存</Button>
           </TooltipTrigger>
           <TooltipContent>
-            Save Changes <Kbd>S</Kbd>
+            変更を保存 <Kbd>S</Kbd>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button variant="outline">Print</Button>
+            <Button variant="outline">印刷</Button>
           </TooltipTrigger>
           <TooltipContent>
-            Print Document{" "}
+            ドキュメントを印刷{" "}
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <Kbd>P</Kbd>

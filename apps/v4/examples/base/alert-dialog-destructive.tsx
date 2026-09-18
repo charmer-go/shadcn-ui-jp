@@ -11,29 +11,29 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/base-nova/ui/alert-dialog"
-import { Button } from "@/styles/base-nova/ui/button"
+} from "@/components/ui/base/alert-dialog"
+import { Button } from "@/components/ui/base/button"
 
 export function AlertDialogDestructive() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="destructive">Delete Chat</Button>}
+        render={<Button variant="destructive">チャットを削除</Button>}
       />
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
             <Trash2Icon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Delete chat?</AlertDialogTitle>
+          <AlertDialogTitle>チャットを削除しますか?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete this chat conversation. View{" "}
-            <a href="#">Settings</a> delete any memories saved during this chat.
+            このチャットの会話は完全に削除されます。保存された記憶を削除するには{" "}
+            <a href="#">設定</a>をご確認ください。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel variant="outline">Cancel</AlertDialogCancel>
-          <AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+          <AlertDialogCancel variant="outline">キャンセル</AlertDialogCancel>
+          <AlertDialogAction variant="destructive">削除</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

@@ -3,18 +3,16 @@ import {
   FieldContent,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui/field"
-import { Switch } from "@/styles/radix-nova/ui/switch"
+} from "@/components/ui/radix/field"
+import { Switch } from "@/components/ui/radix/switch"
 
 export function SwitchInvalid() {
   return (
     <Field orientation="horizontal" className="max-w-sm" data-invalid>
       <FieldContent>
-        <FieldLabel htmlFor="switch-terms">
-          Accept terms and conditions
-        </FieldLabel>
+        <FieldLabel htmlFor="switch-terms">利用規約に同意する</FieldLabel>
         <FieldDescription>
-          You must accept the terms and conditions to continue.
+          続行するには利用規約に同意する必要があります。
         </FieldDescription>
       </FieldContent>
       <Switch id="switch-terms" aria-invalid />

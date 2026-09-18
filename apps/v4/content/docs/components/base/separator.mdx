@@ -1,6 +1,6 @@
 ---
-title: Separator
-description: Visually or semantically separates content.
+title: 区切り
+description: コンテンツを視覚的または意味的に分離します。
 base: base
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="base-nova" name="separator-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add separator
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="separator"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Separator } from "@/components/ui/separator"
@@ -62,19 +62,19 @@ import { Separator } from "@/components/ui/separator"
 <Separator />
 ```
 
-## Vertical
+## 垂直
 
 Use `orientation="vertical"` for a vertical separator.
 
 <ComponentPreview styleName="base-nova" name="separator-vertical" />
 
-## Menu
+## メニュー
 
 Vertical separators between menu items with descriptions.
 
 <ComponentPreview styleName="base-nova" name="separator-menu" />
 
-## List
+## リスト
 
 Horizontal separators between list items.
 
@@ -82,10 +82,10 @@ Horizontal separators between list items.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="base-nova" name="separator-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
 See the [Base UI Separator](https://base-ui.com/react/components/separator#api-reference) documentation.

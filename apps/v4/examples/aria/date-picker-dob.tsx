@@ -3,10 +3,10 @@
 import * as React from "react"
 import { getLocalTimeZone, type CalendarDate } from "@internationalized/date"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export function DatePickerSimple() {
   const [open, setOpen] = React.useState(false)
@@ -14,7 +14,7 @@ export function DatePickerSimple() {
 
   return (
     <Field className="mx-auto w-44">
-      <FieldLabel htmlFor="date">Date of birth</FieldLabel>
+      <FieldLabel htmlFor="date">生年月日</FieldLabel>
       <PopoverTrigger isOpen={open} onOpenChange={setOpen}>
         <Button
           variant="outline"
@@ -23,7 +23,7 @@ export function DatePickerSimple() {
         >
           {date
             ? date.toDate(getLocalTimeZone()).toLocaleDateString()
-            : "Select date"}
+            : "日付を選択"}
         </Button>
         <Popover
           className="w-auto overflow-hidden p-0"

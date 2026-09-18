@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { Bubble, BubbleContent } from "@/styles/aria-rhea/ui/bubble"
-import { Button } from "@/styles/aria-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/aria/bubble"
+import { Button } from "@/components/ui/aria/button"
 import {
   Card,
   CardContent,
@@ -11,8 +11,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/aria-rhea/ui/card"
-import { Message, MessageContent } from "@/styles/aria-rhea/ui/message"
+} from "@/components/ui/aria/card"
+import { Message, MessageContent } from "@/components/ui/aria/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -21,29 +21,29 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScroller,
-} from "@/styles/aria-rhea/ui/message-scroller"
-import { Tabs, TabsList, TabsTrigger } from "@/styles/aria-rhea/ui/tabs"
+} from "@/components/ui/aria/message-scroller"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/aria/tabs"
 
 const messages = [
   {
     id: "open-1",
     role: "user",
-    text: "This is the first message the user sent in the conversation.",
+    text: "これは会話の中でユーザーが最初に送信したメッセージです。",
   },
   {
     id: "open-2",
     role: "assistant",
-    text: "Workspace creation rose 8%, but first invite completion only rose 2%.",
+    text: "ワークスペースの作成は8%増加しましたが、最初の招待の完了は2%しか増えませんでした。",
   },
   {
     id: "open-3",
     role: "user",
-    text: "This is the last message the user sent in the conversation.",
+    text: "これは会話の中でユーザーが最後に送信したメッセージです。",
   },
   {
     id: "open-4",
     role: "assistant",
-    text: "Start with the invite step. Teams are creating workspaces but waiting to add collaborators.\n\nRecommended follow-up:\n\n1. Compare invite drop-off by account size.\n2. Check whether users who skip invites still return within 24 hours.\n3. Review the empty-state copy on the first project screen.\n4. Segment activation by template, since template users may not need invites right away.\n\nIf that pattern holds, the next experiment should make collaboration useful earlier instead of prompting for invites harder.",
+    text: "招待のステップから始めましょう。チームはワークスペースを作成していますが、共同作業者の追加を後回しにしています。\n\n推奨されるフォローアップ:\n\n1. アカウント規模別に招待の離脱率を比較する。\n2. 招待をスキップしたユーザーが24時間以内に戻ってくるかどうかを確認する。\n3. 最初のプロジェクト画面の空状態の文言を見直す。\n4. テンプレート別にアクティベーションを分けて見る。テンプレートを使うユーザーはすぐに招待を必要としない可能性があるため。\n\nこの傾向が続くなら、次の実験では招待を強く促すのではなく、より早い段階でコラボレーションを役立つものにするべきです。",
   },
 ] satisfies Array<{
   id: string
@@ -52,9 +52,9 @@ const messages = [
 }>
 
 const positions = [
-  { value: "start", label: "start" },
-  { value: "end", label: "end" },
-  { value: "last-anchor", label: "last-anchor" },
+  { value: "start", label: "先頭" },
+  { value: "end", label: "末尾" },
+  { value: "last-anchor", label: "直前のメッセージ" },
 ] satisfies Array<{
   value: "start" | "end" | "last-anchor"
   label: string
@@ -70,9 +70,9 @@ export function MessageScrollerOpeningPosition() {
     <div className="relative flex flex-col gap-4">
       <Card className="mx-auto h-140 w-full max-w-sm gap-0">
         <CardHeader className="gap-1 border-b">
-          <CardTitle>Opening Position</CardTitle>
+          <CardTitle>開始位置</CardTitle>
           <CardDescription>
-            Choose where a saved transcript opens.
+            保存済みのトランスクリプトをどこから開くか選択してください。
           </CardDescription>
         </CardHeader>
         <CardContent className="flex-1 overflow-hidden p-0">
@@ -109,8 +109,7 @@ export function MessageScrollerOpeningPosition() {
         </CardFooter>
       </Card>
       <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-muted-foreground">
-        Toggle the defaultScrollPosition to see where the transcript starts when
-        you open the thread
+        defaultScrollPositionを切り替えて、スレッドを開いたときにトランスクリプトがどこから始まるかを確認してください
       </div>
     </div>
   )

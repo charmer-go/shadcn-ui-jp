@@ -5,18 +5,18 @@ import { IconCheck, IconCopy, IconTerminal } from "@tabler/icons-react"
 
 import { useConfig } from "@/hooks/use-config"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/components/ui/button"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york-v4/ui/tabs"
+} from "@/components/ui/tabs"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/registry/new-york-v4/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 export function CodeBlockCommand({
   __npm__,
@@ -120,7 +120,7 @@ export function CodeBlockCommand({
         className="absolute top-2 right-2 z-10 size-7 opacity-70 hover:opacity-100 focus-visible:opacity-100"
         onClick={copyCommand}
       >
-        <span className="sr-only">Copy</span>
+        <span className="sr-only">コピー</span>
         {hasCopied ? <IconCheck /> : <IconCopy />}
       </Button>
     </div>

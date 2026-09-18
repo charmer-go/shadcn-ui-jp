@@ -1,11 +1,11 @@
-import { ChevronDownIcon } from "@/registry/icons/__lucide__"
-import { Button } from "@/styles/base-nova/ui/button"
-import { Card, CardContent } from "@/styles/base-nova/ui/card"
+import { ChevronDownIcon } from "lucide-react"
+import { Button } from "@/components/ui/base/button"
+import { Card, CardContent } from "@/components/ui/base/card"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/base-nova/ui/collapsible"
+} from "@/components/ui/base/collapsible"
 
 export function CollapsibleBasic() {
   return (
@@ -15,15 +15,14 @@ export function CollapsibleBasic() {
           <CollapsibleTrigger
             render={<Button variant="ghost" className="w-full" />}
           >
-            Product details
+            商品の詳細
             <ChevronDownIcon className="ml-auto group-data-panel-open/button:rotate-180" />
           </CollapsibleTrigger>
           <CollapsibleContent className="flex flex-col items-start gap-2 p-2.5 pt-0 text-sm">
             <div>
-              This panel can be expanded or collapsed to reveal additional
-              content.
+              このパネルは展開・折りたたみができ、追加のコンテンツを表示します。
             </div>
-            <Button size="xs">Learn More</Button>
+            <Button size="xs">詳しく見る</Button>
           </CollapsibleContent>
         </Collapsible>
       </CardContent>

@@ -1,6 +1,6 @@
 ---
-title: Aspect Ratio
-description: Displays content within a desired ratio.
+title: アスペクト比
+description: コンテンツを希望の比率で表示します。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview name="aspect-ratio-demo" styleName="radix-nova" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add aspect-ratio
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="aspect-ratio"
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { AspectRatio } from "@/components/ui/aspect-ratio"
@@ -64,15 +64,15 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 </AspectRatio>
 ```
 
-## Square
+## スクエア
 
 A square aspect ratio component using the `ratio={1 / 1}` prop. This is useful for displaying images in a square format.
 
 <ComponentPreview name="aspect-ratio-square" styleName="radix-nova" />
 
-## Portrait
+## 縦長
 
-A portrait aspect ratio component using the `ratio={9 / 16}` prop. This is useful for displaying images in a portrait format.
+`ratio={9 / 16}` プロップを使用した縦長のアスペクト比コンポーネント。これは、画像を縦長形式で表示する場合に便利です。
 
 <ComponentPreview
   name="aspect-ratio-portrait"
@@ -82,7 +82,7 @@ A portrait aspect ratio component using the `ratio={9 / 16}` prop. This is usefu
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -91,15 +91,15 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-96"
 />
 
-## API Reference
+## API リファレンス
 
-### AspectRatio
+### アスペクト比
 
 The `AspectRatio` component displays content within a desired ratio.
 
-| Prop        | Type     | Default | Required |
+|小道具 |タイプ |デフォルト |必須 |
 | ----------- | -------- | ------- | -------- |
 | `ratio`     | `number` | -       | Yes      |
-| `className` | `string` | -       | No       |
+| `className` | `string` | - |いいえ |
 
 For more information, see the [Radix UI documentation](https://www.radix-ui.com/primitives/docs/components/aspect-ratio#api-reference).

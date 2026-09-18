@@ -3,7 +3,7 @@ import {
   AvatarBadge,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/aria-nova/ui/avatar"
+} from "@/components/ui/aria/avatar"
 
 export function AvatarWithBadge() {
   return (

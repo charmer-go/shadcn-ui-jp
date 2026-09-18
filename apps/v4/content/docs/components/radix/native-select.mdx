@@ -1,6 +1,6 @@
 ---
-title: Native Select
-description: A styled native HTML select element with consistent design system integration.
+title: ネイティブ選択
+description: 一貫したデザイン システム統合を備えた、スタイル付きのネイティブ HTML 選択要素。
 base: radix
 component: true
 ---
@@ -9,18 +9,18 @@ import { InfoIcon } from "lucide-react"
 
 <Callout variant="info" icon={<InfoIcon className="translate-y-[3px]!" />}>
   For a styled select component, see the [Select](/docs/components/select)
-  component.
+  コンポーネント。
 </Callout>
 
 <ComponentPreview styleName="radix-nova" name="native-select-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,7 +34,7 @@ npx shadcn@latest add native-select
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="native-select"
@@ -42,7 +42,7 @@ npx shadcn@latest add native-select
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -50,7 +50,7 @@ npx shadcn@latest add native-select
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -70,7 +70,7 @@ import {
 </NativeSelect>
 ```
 
-## Composition
+## 構成
 
 ### Simple
 
@@ -98,19 +98,19 @@ NativeSelect
     └── NativeSelectOption
 ```
 
-## Groups
+## グループ
 
 Use `NativeSelectOptGroup` to organize options into categories.
 
 <ComponentPreview styleName="radix-nova" name="native-select-groups" />
 
-## Disabled
+## 無効
 
 Add the `disabled` prop to the `NativeSelect` component to disable the select.
 
 <ComponentPreview styleName="radix-nova" name="native-select-disabled" />
 
-## Invalid
+## 無効な状態
 
 Use `aria-invalid` to show validation errors and the `data-invalid` attribute to the `Field` component for styling.
 
@@ -118,12 +118,12 @@ Use `aria-invalid` to show validation errors and the `data-invalid` attribute to
 
 ## Native Select vs Select
 
-- Use `NativeSelect` for native browser behavior, better performance, or mobile-optimized dropdowns.
+- である間に、メッセージはまとまって到着します。ネイティブ ブラウザーの動作、パフォーマンスの向上、またはモバイルに最適化されたドロップダウンを得るには `NativeSelect` を使用してください。
 - Use `Select` for custom styling, animations, or complex interactions.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -131,11 +131,11 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## API リファレンス
 
 ### NativeSelect
 
-The main select component that wraps the native HTML select element.
+ネイティブ HTML の選択要素をラップするメインの選択コンポーネント。
 
 ```tsx
 <NativeSelect>
@@ -146,11 +146,11 @@ The main select component that wraps the native HTML select element.
 
 ### NativeSelectOption
 
-Represents an individual option within the select.
+選択内の個々のオプションを表します。
 
 | Prop       | Type      | Default |
 | ---------- | --------- | ------- |
-| `value`    | `string`  |         |
+| `value` | `string` |         |
 | `disabled` | `boolean` | `false` |
 
 ### NativeSelectOptGroup
@@ -159,7 +159,7 @@ Groups related options together for better organization.
 
 | Prop       | Type      | Default |
 | ---------- | --------- | ------- |
-| `label`    | `string`  |         |
+| `label` | `string` |         |
 | `disabled` | `boolean` | `false` |
 
 ```tsx

@@ -2,7 +2,7 @@
 
 import { toast } from "sonner"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 
 export function SonnerPosition() {
   return (
@@ -10,50 +10,50 @@ export function SonnerPosition() {
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "top-left" })
+          toast("イベントが作成されました", { position: "top-left" })
         }
       >
-        Top Left
+        左上
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "top-center" })
+          toast("イベントが作成されました", { position: "top-center" })
         }
       >
-        Top Center
+        上中央
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "top-right" })
+          toast("イベントが作成されました", { position: "top-right" })
         }
       >
-        Top Right
+        右上
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "bottom-left" })
+          toast("イベントが作成されました", { position: "bottom-left" })
         }
       >
-        Bottom Left
+        左下
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "bottom-center" })
+          toast("イベントが作成されました", { position: "bottom-center" })
         }
       >
-        Bottom Center
+        下中央
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast("Event has been created", { position: "bottom-right" })
+          toast("イベントが作成されました", { position: "bottom-right" })
         }
       >
-        Bottom Right
+        右下
       </Button>
     </div>
   )

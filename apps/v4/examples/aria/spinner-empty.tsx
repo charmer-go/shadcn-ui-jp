@@ -1,4 +1,4 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Empty,
   EmptyContent,
@@ -6,8 +6,8 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/aria-nova/ui/empty"
-import { Spinner } from "@/styles/aria-nova/ui/spinner"
+} from "@/components/ui/aria/empty"
+import { Spinner } from "@/components/ui/aria/spinner"
 
 export function SpinnerEmpty() {
   return (
@@ -16,14 +16,14 @@ export function SpinnerEmpty() {
         <EmptyMedia variant="icon">
           <Spinner />
         </EmptyMedia>
-        <EmptyTitle>Processing your request</EmptyTitle>
+        <EmptyTitle>リクエストを処理しています</EmptyTitle>
         <EmptyDescription>
-          Please wait while we process your request. Do not refresh the page.
+          リクエストの処理が完了するまでしばらくお待ちください。ページを更新しないでください。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline" size="sm">
-          Cancel
+          キャンセル
         </Button>
       </EmptyContent>
     </Empty>

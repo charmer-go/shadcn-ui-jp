@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 
 import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/styles/base-rhea/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/base-rhea/ui/dialog"
+} from "@/components/ui/base/dialog"
 import {
   Drawer,
   DrawerClose,
@@ -22,9 +22,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/base-rhea/ui/drawer"
-import { Input } from "@/styles/base-rhea/ui/input"
-import { Label } from "@/styles/base-rhea/ui/label"
+} from "@/components/ui/base/drawer"
+import { Input } from "@/components/ui/base/input"
+import { Label } from "@/components/ui/base/label"
 
 export function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false)
@@ -34,14 +34,13 @@ export function DrawerDialogDemo() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger render={<Button variant="outline" />}>
-          Edit Profile
+          プロフィールを編集
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>プロフィールを編集</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              プロフィールを編集します。完了したら保存をクリックしてください。
             </DialogDescription>
           </DialogHeader>
           <ProfileForm />
@@ -53,13 +52,13 @@ export function DrawerDialogDemo() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger render={<Button variant="outline" />}>
-        Edit Profile
+        プロフィールを編集
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Edit profile</DrawerTitle>
+          <DrawerTitle>プロフィールを編集</DrawerTitle>
           <DrawerDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
+            プロフィールを編集します。完了したら保存をクリックしてください。
           </DrawerDescription>
         </DrawerHeader>
         <ProfileForm className="p-4" />
@@ -72,14 +71,14 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
   return (
     <form className={cn("grid items-start gap-6", className)}>
       <div className="grid gap-3">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">メールアドレス</Label>
         <Input type="email" id="email" defaultValue="shadcn@example.com" />
       </div>
       <div className="grid gap-3">
-        <Label htmlFor="username">Username</Label>
+        <Label htmlFor="username">ユーザー名</Label>
         <Input id="username" defaultValue="@shadcn" />
       </div>
-      <Button type="submit">Save changes</Button>
+      <Button type="submit">変更を保存</Button>
     </form>
   )
 }

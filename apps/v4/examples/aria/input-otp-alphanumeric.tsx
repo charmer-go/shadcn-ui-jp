@@ -7,7 +7,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/styles/aria-nova/ui/input-otp"
+} from "@/components/ui/aria/input-otp"
 
 export function InputOTPAlphanumeric() {
   return (

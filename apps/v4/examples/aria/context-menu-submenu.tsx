@@ -12,7 +12,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/styles/aria-nova/ui/context-menu"
+} from "@/components/ui/aria/context-menu"
 
 export function ContextMenuSubmenu() {
   return (
@@ -23,39 +23,39 @@ export function ContextMenuSubmenu() {
           className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm"
         >
           <span className="hidden pointer-fine:inline-block">
-            Right click here
+            右クリックしてください
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press here
+            長押ししてください
           </span>
         </div>
       </Pressable>
       <ContextMenu>
         <ContextMenuGroup>
           <ContextMenuItem>
-            Copy
+            コピー
             <ContextMenuShortcut>⌘C</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Cut
+            切り取り
             <ContextMenuShortcut>⌘X</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSub>
-          <ContextMenuSubTrigger>More Tools</ContextMenuSubTrigger>
+          <ContextMenuSubTrigger>その他のツール</ContextMenuSubTrigger>
           <ContextMenuSubContent>
             <ContextMenuGroup>
-              <ContextMenuItem>Save Page...</ContextMenuItem>
-              <ContextMenuItem>Create Shortcut...</ContextMenuItem>
-              <ContextMenuItem>Name Window...</ContextMenuItem>
+              <ContextMenuItem>ページを保存...</ContextMenuItem>
+              <ContextMenuItem>ショートカットを作成...</ContextMenuItem>
+              <ContextMenuItem>ウィンドウの名前を変更...</ContextMenuItem>
             </ContextMenuGroup>
             <ContextMenuSeparator />
             <ContextMenuGroup>
-              <ContextMenuItem>Developer Tools</ContextMenuItem>
+              <ContextMenuItem>デベロッパーツール</ContextMenuItem>
             </ContextMenuGroup>
             <ContextMenuSeparator />
             <ContextMenuGroup>
-              <ContextMenuItem variant="destructive">Delete</ContextMenuItem>
+              <ContextMenuItem variant="destructive">削除</ContextMenuItem>
             </ContextMenuGroup>
           </ContextMenuSubContent>
         </ContextMenuSub>

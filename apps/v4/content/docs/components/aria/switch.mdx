@@ -1,6 +1,6 @@
 ---
-title: Switch
-description: A control that allows the user to toggle between checked and not checked.
+title: スイッチ
+description: ユーザーが選択状態と未選択状態を切り替えられるコントロール。
 base: aria
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="switch-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add switch
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="switch"
@@ -44,7 +44,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import { Switch } from "@/components/ui/switch"
@@ -66,25 +66,25 @@ import { Switch } from "@/components/ui/switch"
 
 <ComponentPreview styleName="aria-nova" name="switch-description" />
 
-## Choice Card
+## 選択カード
 
-Card-style selection where `FieldLabel` wraps the entire `Field` for a clickable card pattern.
+`FieldLabel`が`Field`全体をラップしてクリック可能なカードパターンにするカードスタイルの選択。
 
 <ComponentPreview styleName="aria-nova" name="switch-choice-card" />
 
-## Disabled
+## 無効
 
 Add the `isDisabled` prop to the `Switch` component to disable the switch. Add the `data-disabled` prop to the `Field` component for styling.
 
 <ComponentPreview styleName="aria-nova" name="switch-disabled" />
 
-## Invalid
+## 無効な状態
 
 Add the `data-invalid` prop to the `Switch` component to indicate an invalid state. Add the `data-invalid` prop to the `Field` component for styling.
 
 <ComponentPreview styleName="aria-nova" name="switch-invalid" />
 
-## Size
+## サイズ
 
 Use the `size` prop to change the size of the switch.
 
@@ -92,10 +92,10 @@ Use the `size` prop to change the size of the switch.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="switch-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
 See the [React Aria Switch](https://react-aria.adobe.com/Switch#api) documentation.

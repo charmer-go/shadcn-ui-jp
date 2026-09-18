@@ -1,14 +1,14 @@
 import { SearchIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { ButtonGroup } from "@/styles/aria-nova/ui/button-group"
-import { Input } from "@/styles/aria-nova/ui/input"
+import { Button } from "@/components/ui/aria/button"
+import { ButtonGroup } from "@/components/ui/aria/button-group"
+import { Input } from "@/components/ui/aria/input"
 
 export default function ButtonGroupInput() {
   return (
     <ButtonGroup>
-      <Input placeholder="Search..." />
-      <Button variant="outline" aria-label="Search">
+      <Input placeholder="検索..." />
+      <Button variant="outline" aria-label="検索">
         <SearchIcon />
       </Button>
     </ButtonGroup>

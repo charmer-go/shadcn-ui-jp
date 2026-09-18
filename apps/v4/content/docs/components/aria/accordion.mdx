@@ -1,6 +1,6 @@
 ---
-title: Accordion
-description: A vertically stacked set of interactive headings that each reveal a section of content.
+title: アコーディオン
+description: 垂直方向に積み重ねられたインタラクティブな見出しのセットで、それぞれがコンテンツのセクションを表示します。
 base: aria
 component: true
 links:
@@ -15,13 +15,13 @@ links:
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[300px]"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 
 <TabsContent value="cli">
@@ -36,13 +36,13 @@ npx shadcn@latest add accordion
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="accordion"
@@ -50,7 +50,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -58,7 +58,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -80,9 +80,9 @@ import {
 </Accordion>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `Accordion`:
+次の構成を使用して、`Accordion` を構築します。
 
 ```text
 Accordion
@@ -94,9 +94,9 @@ Accordion
     └── AccordionContent
 ```
 
-## Basic
+## 基本
 
-A basic accordion that shows one item at a time. The first item is open by default.
+一度に 1 つのアイテムを表示するベーシックなアコーディオン。最初の項目はデフォルトで開いています。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -105,9 +105,9 @@ A basic accordion that shows one item at a time. The first item is open by defau
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[300px]"
 />
 
-## Multiple
+## 複数
 
-Use the `allowsMultipleExpanded` prop to allow multiple items to be open at the same time.
+`allowsMultipleExpanded` プロパティを使用して、複数の項目を同時に開くことができます。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -116,9 +116,9 @@ Use the `allowsMultipleExpanded` prop to allow multiple items to be open at the 
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[450px]"
 />
 
-## Disabled
+## 無効
 
-Use the `isDisabled` prop on `AccordionItem` to disable individual items.
+個々の項目を無効にするには、`AccordionItem` で `isDisabled` プロパティを使用します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -127,9 +127,9 @@ Use the `isDisabled` prop on `AccordionItem` to disable individual items.
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[300px]"
 />
 
-## Borders
+## 境界線
 
-Add `border` to the `Accordion` and `border-b last:border-b-0` to the `AccordionItem` to add borders to the items.
+`border` を `Accordion` に、`border-b last:border-b-0` を `AccordionItem` に追加して、項目に境界線を追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -138,9 +138,9 @@ Add `border` to the `Accordion` and `border-b last:border-b-0` to the `Accordion
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[300px]"
 />
 
-## Card
+## カード
 
-Wrap the `Accordion` in a `Card` component.
+`Accordion` を `Card` コンポーネントでラップします。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -151,7 +151,7 @@ Wrap the `Accordion` in a `Card` component.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -160,6 +160,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## API リファレンス
 
-See the [React Aria](https://react-aria.adobe.com/DisclosureGroup#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/DisclosureGroup#api) ドキュメントを参照してください。

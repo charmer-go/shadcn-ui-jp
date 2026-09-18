@@ -1,6 +1,6 @@
 ---
-title: Marker
-description: Displays an inline status, system note, bordered row, or labeled separator in a conversation.
+title: マーカー
+description: 会話内にインライン ステータス、システムメモ、境界線付きの行、ラベル付き区切りを表示します。
 base: radix
 component: true
 ---
@@ -13,13 +13,13 @@ component: true
 
 The `Marker` component displays inline conversation markers such as status updates, system notes, bordered rows, and labeled separators. Compose it with [`Message`](/docs/components/message) in a conversation thread.
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,7 +33,7 @@ npx shadcn@latest add marker
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="marker"
@@ -41,7 +41,7 @@ npx shadcn@latest add marker
   styleName="radix-rhea"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -49,7 +49,7 @@ npx shadcn@latest add marker
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
@@ -64,7 +64,7 @@ import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
 </Marker>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a marker:
 
@@ -74,7 +74,7 @@ Marker
 └── MarkerContent
 ```
 
-## Features
+## 機能
 
 - Inline marker, bordered row, and labeled separator variants
 - Decorative icon slot that is hidden from assistive tech
@@ -82,7 +82,7 @@ Marker
 - Pairs with the [`shimmer`](/docs/utils/shimmer) utility for streaming status text
 - Customizable styling through the `className` prop on every part
 
-## Variants
+## バリエーション
 
 Use `variant` to switch between an inline marker, bordered row, and labeled separator.
 
@@ -98,7 +98,7 @@ Use `variant` to switch between an inline marker, bordered row, and labeled sepa
 | `border`    | A default marker with a bottom border under the row. |
 | `separator` | A centered label with divider lines on each side.    |
 
-## Status
+## ステータス
 
 Set `role="status"` and include a [`Spinner`](/docs/components/spinner) for streaming or in-progress markers so updates are announced.
 
@@ -108,7 +108,7 @@ Set `role="status"` and include a [`Spinner`](/docs/components/spinner) for stre
   previewClassName="h-auto theme-blue"
 />
 
-## Shimmer
+## シマー
 
 Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an animated streaming-text effect. The utility ships with the `shadcn` package — see the shimmer docs for installation.
 
@@ -118,7 +118,7 @@ Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an
   previewClassName="h-auto theme-blue"
 />
 
-## Separator
+## 区切り
 
 Use the `separator` variant for labeled dividers, such as dates or section breaks, in a conversation.
 
@@ -128,7 +128,7 @@ Use the `separator` variant for labeled dividers, such as dates or section break
   previewClassName="h-auto theme-blue"
 />
 
-## Border
+## 境界線
 
 Use the `border` variant for status rows that should keep the default marker alignment while separating the next row.
 
@@ -138,7 +138,7 @@ Use the `border` variant for status rows that should keep the default marker ali
   previewClassName="h-auto theme-blue"
 />
 
-## With Icon
+## アイコン付き
 
 Use `MarkerIcon` to render an icon alongside the content. Use `flex-col` to stack the icon above the content.
 
@@ -148,7 +148,7 @@ Use `MarkerIcon` to render an icon alongside the content. Use `flex-col` to stac
   previewClassName="h-auto theme-blue"
 />
 
-## Links and Buttons
+## リンクとボタン
 
 Turn a marker into a link or button with the `asChild` prop on `Marker`.
 
@@ -172,11 +172,11 @@ export function MarkerLinkDemo() {
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
 `Marker` is presentational by default. The correct semantics depend on how you use it, so choose the role based on intent rather than relying on a single default.
 
-### Status and Progress
+### ステータスと進捗
 
 For streaming or progress markers such as "Thinking..." or a running tool, set `role="status"` so assistive tech announces the update as it appears. `Marker` forwards `role` to the underlying element.
 
@@ -189,7 +189,7 @@ For streaming or progress markers such as "Thinking..." or a running tool, set `
 </Marker>
 ```
 
-### Labeled Separators
+### ラベル付き区切り
 
 A separator that carries text, such as a date or a section label, needs no role. The divider lines are decorative CSS pseudo-elements, and the text is announced as ordinary content.
 
@@ -206,7 +206,7 @@ A separator that carries text, such as a date or a section label, needs no role.
   announced. Reserve `role="separator"` for a divider with no meaningful text.
 </Callout>
 
-### Bordered Markers
+### 境界線付きマーカー
 
 A bordered marker keeps the same semantics as the default marker. The bottom border is decorative, so choose `role="status"`, `asChild`, or no role based on the marker's purpose.
 
@@ -219,7 +219,7 @@ A bordered marker keeps the same semantics as the default marker. The bottom bor
 </Marker>
 ```
 
-### Decorative Icons
+### 装飾アイコン
 
 `MarkerIcon` is decorative and hidden from assistive tech with `aria-hidden`, so the adjacent `MarkerContent` carries the meaning. For an icon-only marker, provide an `aria-label` or visible text so it is not announced as empty.
 
@@ -231,7 +231,7 @@ A bordered marker keeps the same semantics as the default marker. The bottom bor
 </Marker>
 ```
 
-### Interactive Markers
+### インタラクティブなマーカー
 
 When a marker links or triggers an action, render it as a real `<button>` or `<a>` with the `asChild` prop so it is focusable and exposes the correct role. The accessible name comes from the marker text.
 
@@ -246,7 +246,7 @@ When a marker links or triggers an action, render it as a real `<button>` or `<a
 </Marker>
 ```
 
-## API Reference
+## API リファレンス
 
 ### Marker
 

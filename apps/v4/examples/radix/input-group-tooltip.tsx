@@ -5,62 +5,62 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/radix-nova/ui/input-group"
+} from "@/components/ui/radix/input-group"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export default function InputGroupTooltip() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Enter password" type="password" />
+        <InputGroupInput placeholder="パスワードを入力" type="password" />
         <InputGroupAddon align="inline-end">
           <Tooltip>
             <TooltipTrigger asChild>
               <InputGroupButton
                 variant="ghost"
-                aria-label="Info"
+                aria-label="情報"
                 size="icon-xs"
               >
                 <InfoIcon />
               </InputGroupButton>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Password must be at least 8 characters</p>
+              <p>パスワードは8文字以上で入力してください</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Your email address" />
+        <InputGroupInput placeholder="メールアドレス" />
         <InputGroupAddon align="inline-end">
           <Tooltip>
             <TooltipTrigger asChild>
               <InputGroupButton
                 variant="ghost"
-                aria-label="Help"
+                aria-label="ヘルプ"
                 size="icon-xs"
               >
                 <HelpCircle />
               </InputGroupButton>
             </TooltipTrigger>
             <TooltipContent>
-              <p>We&apos;ll use this to send you notifications</p>
+              <p>通知の送信に使用します</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter API key" />
+        <InputGroupInput placeholder="APIキーを入力" />
         <Tooltip>
           <TooltipTrigger asChild>
             <InputGroupAddon>
               <InputGroupButton
                 variant="ghost"
-                aria-label="Help"
+                aria-label="ヘルプ"
                 size="icon-xs"
               >
                 <HelpCircle />
@@ -68,7 +68,7 @@ export default function InputGroupTooltip() {
             </InputGroupAddon>
           </TooltipTrigger>
           <TooltipContent side="left">
-            <p>Click for help with API keys</p>
+            <p>APIキーについてのヘルプはこちら</p>
           </TooltipContent>
         </Tooltip>
       </InputGroup>

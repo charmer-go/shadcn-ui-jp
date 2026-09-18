@@ -1,4 +1,4 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Drawer,
   DrawerClose,
@@ -7,23 +7,23 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/aria-nova/ui/drawer"
+} from "@/components/ui/aria/drawer"
 
 export function DrawerNonModal() {
   return (
     <Drawer modal={false} disablePointerDismissal swipeDirection="right">
       <DrawerTrigger render={<Button variant="outline" />}>
-        Non Modal
+        非モーダル
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Non Modal Drawer</DrawerTitle>
+          <DrawerTitle>非モーダルドロワー</DrawerTitle>
         </DrawerHeader>
         <div className="flex-1 p-4">
           <div className="rounded-2xl bg-muted group-data-[swipe-axis=x]/drawer-popup:size-full group-data-[swipe-axis=y]/drawer-popup:h-80 group-data-[swipe-axis=y]/drawer-popup:w-full" />
         </div>
         <DrawerFooter>
-          <DrawerClose render={<Button />}>Close</DrawerClose>
+          <DrawerClose render={<Button />}>閉じる</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

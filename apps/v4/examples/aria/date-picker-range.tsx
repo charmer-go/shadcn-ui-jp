@@ -5,10 +5,10 @@ import { CalendarDate, getLocalTimeZone } from "@internationalized/date"
 import { CalendarIcon } from "lucide-react"
 import { type DateRange } from "react-aria-components"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { RangeCalendar } from "@/styles/aria-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { RangeCalendar } from "@/components/ui/aria/calendar"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export function DatePickerWithRange() {
   const [date, setDate] = React.useState<DateRange | undefined>({
@@ -18,7 +18,7 @@ export function DatePickerWithRange() {
 
   return (
     <Field className="mx-auto w-60">
-      <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
+      <FieldLabel htmlFor="date-picker-range">日付範囲ピッカー</FieldLabel>
       <PopoverTrigger>
         <Button
           variant="outline"
@@ -34,7 +34,7 @@ export function DatePickerWithRange() {
               date.end.toDate(getLocalTimeZone())
             )
           ) : (
-            <span>Pick a date</span>
+            <span>日付を選択</span>
           )}
         </Button>
         <Popover className="w-auto p-0" placement="bottom start">

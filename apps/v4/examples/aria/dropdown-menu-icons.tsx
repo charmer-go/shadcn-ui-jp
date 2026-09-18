@@ -7,35 +7,35 @@ import {
   UserIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 export function DropdownMenuIcons() {
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Open</Button>
+      <Button variant="outline">開く</Button>
       <DropdownMenu>
         <DropdownMenuItem>
           <UserIcon />
-          Profile
+          プロフィール
         </DropdownMenuItem>
         <DropdownMenuItem>
           <CreditCardIcon />
-          Billing
+          請求
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SettingsIcon />
-          Settings
+          設定
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
           <LogOutIcon />
-          Log out
+          ログアウト
         </DropdownMenuItem>
       </DropdownMenu>
     </DropdownMenuTrigger>

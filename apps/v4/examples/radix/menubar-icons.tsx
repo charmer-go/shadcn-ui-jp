@@ -16,45 +16,45 @@ import {
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger,
-} from "@/styles/radix-nova/ui/menubar"
+} from "@/components/ui/radix/menubar"
 
 export function MenubarIcons() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>ファイル</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
             <FileIcon />
-            New File <MenubarShortcut>⌘N</MenubarShortcut>
+            新規ファイル <MenubarShortcut>⌘N</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
             <FolderIcon />
-            Open Folder
+            フォルダを開く
           </MenubarItem>
           <MenubarSeparator />
           <MenubarItem>
             <SaveIcon />
-            Save <MenubarShortcut>⌘S</MenubarShortcut>
+            保存 <MenubarShortcut>⌘S</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>More</MenubarTrigger>
+        <MenubarTrigger>その他</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
               <SettingsIcon />
-              Settings
+              設定
             </MenubarItem>
             <MenubarItem>
               <HelpCircleIcon />
-              Help
+              ヘルプ
             </MenubarItem>
             <MenubarSeparator />
             <MenubarItem variant="destructive">
               <TrashIcon />
-              Delete
+              削除
             </MenubarItem>
           </MenubarGroup>
         </MenubarContent>

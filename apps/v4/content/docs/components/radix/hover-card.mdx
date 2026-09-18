@@ -1,6 +1,6 @@
 ---
-title: Hover Card
-description: For sighted users to preview content available behind a link.
+title: ホバー カード
+description: 晴眼者の場合、リンクの背後にあるコンテンツをプレビューできます。
 base: radix
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-80"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add hover-card
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="hover-card"
@@ -48,7 +48,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -75,9 +75,9 @@ import {
 </HoverCard>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `HoverCard`:
+次の構成を使用して `HoverCard` を構築します。
 
 ```text
 HoverCard
@@ -85,10 +85,10 @@ HoverCard
 └── HoverCardContent
 ```
 
-## Trigger Delays
+## トリガー遅延
 
-Use `openDelay` and `closeDelay` on the `HoverCard` to control when the card opens and
-closes.
+について `HoverCard` で `openDelay` および `closeDelay` を使用して、カードが開くタイミングを制御し、入力グループを構築するときに
+が終了します。
 
 ```tsx showLineNumbers
 <HoverCard openDelay={100} closeDelay={200}>
@@ -97,9 +97,9 @@ closes.
 </HoverCard>
 ```
 
-## Positioning
+## 位置
 
-Use the `side` and `align` props on `HoverCardContent` to control placement.
+`HoverCardContent` の `side` および `align` プロパティを使用して配置を制御します。
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -110,7 +110,7 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
 </HoverCard>
 ```
 
-## Basic
+## 基本
 
 <ComponentPreview
   styleName="radix-nova"
@@ -118,7 +118,7 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
   previewClassName="h-80"
 />
 
-## Sides
+## サイド
 
 <ComponentPreview
   styleName="radix-nova"
@@ -128,7 +128,7 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -137,6 +137,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80"
 />
 
-## API Reference
+## API リファレンス
 
-See the [Radix UI](https://www.radix-ui.com/docs/primitives/components/hover-card#api-reference) documentation for more information.
+を持つ入力を作成します。 詳細については、[Radix UI](https://www.radix-ui.com/docs/primitives/components/hover-card#api-reference) ドキュメントを参照してください。

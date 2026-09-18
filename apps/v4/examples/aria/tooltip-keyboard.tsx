@@ -1,8 +1,8 @@
 import { SaveIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Kbd } from "@/styles/aria-nova/ui/kbd"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-nova/ui/tooltip"
+import { Button } from "@/components/ui/aria/button"
+import { Kbd } from "@/components/ui/aria/kbd"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 export function TooltipKeyboard() {
   return (
@@ -11,7 +11,7 @@ export function TooltipKeyboard() {
         <SaveIcon />
       </Button>
       <Tooltip>
-        Save Changes <Kbd>S</Kbd>
+        変更を保存 <Kbd>S</Kbd>
       </Tooltip>
     </TooltipTrigger>
   )

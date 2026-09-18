@@ -13,7 +13,7 @@ import {
   QuestionnaireItem,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 const items = [
   {
@@ -34,8 +34,8 @@ export function QuestionnaireMultiple() {
 
     const context = new FormData(event.currentTarget).getAll("context")
 
-    toast("Context selected", {
-      description: `Context: ${context.join(", ") || "None"}`,
+    toast("コンテキストを選択しました", {
+      description: `コンテキスト: ${context.join(", ") || "なし"}`,
     })
   }
 
@@ -48,30 +48,30 @@ export function QuestionnaireMultiple() {
     >
       <QuestionnaireItem name="context" multiple required>
         <QuestionnaireTitle>
-          What context should the agent inspect?
+          エージェントはどのコンテキストを確認すべきですか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Select every source that may affect the implementation.
+          実装に影響する可能性のあるソースをすべて選択してください。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="source">
-            Relevant source files
+            関連するソースファイル
           </QuestionnaireChoice>
           <QuestionnaireChoice value="tests">
-            Existing tests
+            既存のテスト
           </QuestionnaireChoice>
           <QuestionnaireChoice value="docs">
-            Architecture documentation
+            アーキテクチャドキュメント
           </QuestionnaireChoice>
           <QuestionnaireChoice value="history">
-            Recent commit history
+            最近のコミット履歴
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireActions>
-        <QuestionnaireSubmit>Share context</QuestionnaireSubmit>
+        <QuestionnaireSubmit>コンテキストを共有</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

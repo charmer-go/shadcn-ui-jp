@@ -1,6 +1,6 @@
 ---
-title: Scroll Area
-description: Augments native scroll functionality for custom, cross-browser styling.
+title: スクロール領域
+description: カスタムのクロスブラウザー スタイル用にネイティブ スクロール機能を拡張します。
 base: base
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-96"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,13 +34,13 @@ npx shadcn@latest add scroll-area
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="scroll-area"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -56,7 +56,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
@@ -68,7 +68,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
 </ScrollArea>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `ScrollArea`:
 
@@ -77,15 +77,15 @@ ScrollArea
 └── ScrollBar
 ```
 
-## Horizontal
+## 水平方向
 
-Use `ScrollBar` with `orientation="horizontal"` for horizontal scrolling.
+水平スクロールには `ScrollBar` を `orientation="horizontal"` とともに使用します。
 
 <ComponentPreview styleName="base-nova" name="scroll-area-horizontal-demo" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -94,6 +94,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-auto"
 />
 
-## API Reference
+## API リファレンス
 
 See the [Base UI Scroll Area](https://base-ui.com/react/components/scroll-area#api-reference) documentation.

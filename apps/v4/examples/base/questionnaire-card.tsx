@@ -11,7 +11,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/base-nova/ui/card"
+} from "@/components/ui/base/card"
 import {
   Questionnaire,
   QuestionnaireActions,
@@ -25,7 +25,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/base-nova/ui/questionnaire"
+} from "@/components/ui/base/questionnaire"
 
 const items = [
   {
@@ -49,8 +49,8 @@ export function QuestionnaireCard() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Agent task created", {
-      description: `Task: ${formData.get("task") ?? "None"} · Handoff: ${formData.get("output") ?? "None"}`,
+    toast("エージェントタスクを作成しました", {
+      description: `タスク: ${formData.get("task") ?? "なし"} ・ 引き渡し: ${formData.get("output") ?? "なし"}`,
     })
   }
 
@@ -66,10 +66,10 @@ export function QuestionnaireCard() {
         <QuestionnaireItem aria-labelledby={taskTitleId} name="task" required>
           <CardHeader>
             <QuestionnaireTitle id={taskTitleId} render={<CardTitle />}>
-              What should the agent work on?
+              エージェントは何に取り組むべきですか？
             </QuestionnaireTitle>
             <QuestionnaireDescription render={<CardDescription />}>
-              Choose the task that should be handled next.
+              次に処理すべきタスクを選択してください。
             </QuestionnaireDescription>
             <CardAction>
               <QuestionnaireProgress />
@@ -78,13 +78,13 @@ export function QuestionnaireCard() {
           <CardContent>
             <QuestionnaireChoices>
               <QuestionnaireChoice value="fix">
-                Fix the failing tests
+                失敗しているテストを修正する
               </QuestionnaireChoice>
               <QuestionnaireChoice value="refactor">
-                Refactor the data layer
+                データレイヤーをリファクタリングする
               </QuestionnaireChoice>
               <QuestionnaireChoice value="docs">
-                Update the integration guide
+                インテグレーションガイドを更新する
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -98,10 +98,10 @@ export function QuestionnaireCard() {
         >
           <CardHeader>
             <QuestionnaireTitle id={outputTitleId} render={<CardTitle />}>
-              What should the final handoff include?
+              最終的な引き渡しには何を含めるべきですか？
             </QuestionnaireTitle>
             <QuestionnaireDescription render={<CardDescription />}>
-              Pick the level of detail needed for review.
+              レビューに必要な詳細のレベルを選択してください。
             </QuestionnaireDescription>
             <CardAction>
               <QuestionnaireProgress />
@@ -110,13 +110,13 @@ export function QuestionnaireCard() {
           <CardContent>
             <QuestionnaireChoices>
               <QuestionnaireChoice value="summary">
-                Summary only
+                要約のみ
               </QuestionnaireChoice>
               <QuestionnaireChoice value="files">
-                Summary and changed files
+                要約と変更ファイル
               </QuestionnaireChoice>
               <QuestionnaireChoice value="review">
-                Full review handoff
+                完全なレビュー引き渡し
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -126,8 +126,8 @@ export function QuestionnaireCard() {
         <CardFooter>
           <QuestionnaireActions className="w-full">
             <QuestionnairePrevious />
-            <QuestionnaireNext>Next</QuestionnaireNext>
-            <QuestionnaireSubmit>Create task</QuestionnaireSubmit>
+            <QuestionnaireNext>次へ</QuestionnaireNext>
+            <QuestionnaireSubmit>タスクを作成</QuestionnaireSubmit>
           </QuestionnaireActions>
         </CardFooter>
       </Card>

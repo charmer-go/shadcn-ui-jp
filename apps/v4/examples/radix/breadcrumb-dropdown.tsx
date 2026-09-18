@@ -8,14 +8,14 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/styles/radix-nova/ui/breadcrumb"
+} from "@/components/ui/radix/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function BreadcrumbDropdown() {
   return (
@@ -23,7 +23,7 @@ export function BreadcrumbDropdown() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/">Home</Link>
+            <Link href="/">ホーム</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
@@ -33,14 +33,14 @@ export function BreadcrumbDropdown() {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-1">
-                Components
+                コンポーネント
                 <ChevronDownIcon className="size-3.5" />
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>ドキュメント</DropdownMenuItem>
+                <DropdownMenuItem>テーマ</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
@@ -50,7 +50,7 @@ export function BreadcrumbDropdown() {
           <DotIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

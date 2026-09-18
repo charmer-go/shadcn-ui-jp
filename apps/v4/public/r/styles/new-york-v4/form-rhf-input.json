@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-rhf-input",
+  "dependencies": [
+    "react-hook-form",
+    "@hookform/resolvers",
+    "zod"
+  ],
+  "registryDependencies": [
+    "field",
+    "input",
+    "button",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/form-rhf-input.tsx",
+      "content": "\"use client\"\r\n\r\nimport { zodResolver } from \"@hookform/resolvers/zod\"\r\nimport { Controller, useForm } from \"react-hook-form\"\r\nimport { toast } from \"sonner\"\r\nimport * as z from \"zod\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  Card,\r\n  CardContent,\r\n  CardDescription,\r\n  CardFooter,\r\n  CardHeader,\r\n  CardTitle,\r\n} from \"@/registry/new-york-v4/ui/card\"\r\nimport {\r\n  Field,\r\n  FieldDescription,\r\n  FieldError,\r\n  FieldGroup,\r\n  FieldLabel,\r\n} from \"@/registry/new-york-v4/ui/field\"\r\nimport { Input } from \"@/registry/new-york-v4/ui/input\"\r\n\r\nconst formSchema = z.object({\r\n  username: z\r\n    .string()\r\n    .min(3, \"Username must be at least 3 characters.\")\r\n    .max(10, \"Username must be at most 10 characters.\")\r\n    .regex(\r\n      /^[a-zA-Z0-9_]+$/,\r\n      \"Username can only contain letters, numbers, and underscores.\"\r\n    ),\r\n})\r\n\r\nexport default function FormRhfInput() {\r\n  const form = useForm<z.infer<typeof formSchema>>({\r\n    resolver: zodResolver(formSchema),\r\n    defaultValues: {\r\n      username: \"\",\r\n    },\r\n  })\r\n\r\n  function onSubmit(data: z.infer<typeof formSchema>) {\r\n    toast(\"You submitted the following values:\", {\r\n      description: (\r\n        <pre className=\"mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground\">\r\n          <code>{JSON.stringify(data, null, 2)}</code>\r\n        </pre>\r\n      ),\r\n      position: \"bottom-right\",\r\n      classNames: {\r\n        content: \"flex flex-col gap-2\",\r\n      },\r\n      style: {\r\n        \"--border-radius\": \"calc(var(--radius)  + 4px)\",\r\n      } as React.CSSProperties,\r\n    })\r\n  }\r\n\r\n  return (\r\n    <Card className=\"w-full sm:max-w-md\">\r\n      <CardHeader>\r\n        <CardTitle>Profile Settings</CardTitle>\r\n        <CardDescription>\r\n          Update your profile information below.\r\n        </CardDescription>\r\n      </CardHeader>\r\n      <CardContent>\r\n        <form id=\"form-rhf-input\" onSubmit={form.handleSubmit(onSubmit)}>\r\n          <FieldGroup>\r\n            <Controller\r\n              name=\"username\"\r\n              control={form.control}\r\n              render={({ field, fieldState }) => (\r\n                <Field data-invalid={fieldState.invalid}>\r\n                  <FieldLabel htmlFor=\"form-rhf-input-username\">\r\n                    Username\r\n                  </FieldLabel>\r\n                  <Input\r\n                    {...field}\r\n                    id=\"form-rhf-input-username\"\r\n                    aria-invalid={fieldState.invalid}\r\n                    placeholder=\"shadcn\"\r\n                    autoComplete=\"username\"\r\n                  />\r\n                  <FieldDescription>\r\n                    This is your public display name. Must be between 3 and 10\r\n                    characters. Must only contain letters, numbers, and\r\n                    underscores.\r\n                  </FieldDescription>\r\n                  {fieldState.invalid && (\r\n                    <FieldError errors={[fieldState.error]} />\r\n                  )}\r\n                </Field>\r\n              )}\r\n            />\r\n          </FieldGroup>\r\n        </form>\r\n      </CardContent>\r\n      <CardFooter>\r\n        <Field orientation=\"horizontal\">\r\n          <Button type=\"button\" variant=\"outline\" onClick={() => form.reset()}>\r\n            Reset\r\n          </Button>\r\n          <Button type=\"submit\" form=\"form-rhf-input\">\r\n            Save\r\n          </Button>\r\n        </Field>\r\n      </CardFooter>\r\n    </Card>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

@@ -7,38 +7,38 @@ import {
   UserIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 
 export function DropdownMenuIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
+        開く
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
           <UserIcon />
-          Profile
+          プロフィール
         </DropdownMenuItem>
         <DropdownMenuItem>
           <CreditCardIcon />
-          Billing
+          請求
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SettingsIcon />
-          Settings
+          設定
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
           <LogOutIcon />
-          Log out
+          ログアウト
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

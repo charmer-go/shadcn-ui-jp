@@ -1,14 +1,14 @@
 "use client"
 
-import { Bubble, BubbleContent } from "@/styles/base-rhea/ui/bubble"
+import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/base-rhea/ui/card"
-import { Message, MessageContent } from "@/styles/base-rhea/ui/message"
+} from "@/components/ui/base/card"
+import { Message, MessageContent } from "@/components/ui/base/message"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -17,15 +17,15 @@ import {
   MessageScrollerProvider,
   MessageScrollerViewport,
   useMessageScrollerScrollable,
-} from "@/styles/base-rhea/ui/message-scroller"
+} from "@/components/ui/base/message-scroller"
 
 const messages = Array.from({ length: 12 }, (_, index) => ({
   id: `state-${index + 1}`,
   role: index % 2 === 0 ? "user" : "assistant",
   text:
     index % 2 === 0
-      ? `Check section ${index + 1} of the transcript.`
-      : `Section ${index + 1} is ready. Scroll state updates without rerendering the rows.`,
+      ? `トランスクリプトのセクション${index + 1}を確認してください。`
+      : `セクション${index + 1}の準備ができました。スクロールの状態は行を再レンダリングせずに更新されます。`,
 })) satisfies Array<{
   id: string
   role: "user" | "assistant"
@@ -36,9 +36,9 @@ export function MessageScrollerState() {
   return (
     <Card className="mx-auto h-112 w-full max-w-md gap-0">
       <CardHeader className="border-b">
-        <CardTitle>Scroll State</CardTitle>
+        <CardTitle>スクロールの状態</CardTitle>
         <CardDescription>
-          Read scroll state in JavaScript with the state hook.
+          state用のフックを使って、スクロールの状態をJavaScriptで取得します。
         </CardDescription>
       </CardHeader>
       <CardContent className="min-h-0 flex-1 p-0">
@@ -79,10 +79,10 @@ export function MessageScrollerState() {
 function StatusBar() {
   const { start, end } = useMessageScrollerScrollable()
   const states = [
-    { label: "At top", on: !start },
-    { label: "At bottom", on: !end },
-    { label: "Older above", on: start },
-    { label: "Newer below", on: end },
+    { label: "上端にいます", on: !start },
+    { label: "下端にいます", on: !end },
+    { label: "上に過去のメッセージ", on: start },
+    { label: "下に新しいメッセージ", on: end },
   ]
 
   return (

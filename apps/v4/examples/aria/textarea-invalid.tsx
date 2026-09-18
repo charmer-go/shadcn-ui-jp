@@ -2,19 +2,19 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+} from "@/components/ui/aria/field"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export function TextareaInvalid() {
   return (
     <Field data-invalid>
-      <FieldLabel htmlFor="textarea-invalid">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-invalid">メッセージ</FieldLabel>
       <Textarea
         id="textarea-invalid"
-        placeholder="Type your message here."
+        placeholder="ここにメッセージを入力してください。"
         aria-invalid
       />
-      <FieldDescription>Please enter a valid message.</FieldDescription>
+      <FieldDescription>有効なメッセージを入力してください。</FieldDescription>
     </Field>
   )
 }

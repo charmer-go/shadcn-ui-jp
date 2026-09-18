@@ -18,59 +18,59 @@ import {
   QuestionnaireSkip,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/base-nova/ui/questionnaire"
+} from "@/components/ui/base/questionnaire"
 
 const questionnaireItems = [
   {
     choices: [
       {
-        description: "Show what the agent ran and what came back.",
-        label: "Tool call timeline",
+        description: "エージェントが実行した内容と返ってきた結果を表示します。",
+        label: "ツール呼び出しのタイムライン",
         value: "tool-calls",
       },
       {
-        description: "Ask before sensitive or destructive actions.",
-        label: "Approval checkpoints",
+        description: "機密性の高い操作や破壊的な操作の前に確認を求めます。",
+        label: "承認チェックポイント",
         value: "approvals",
       },
       {
-        description: "Make delegated work and results easier to follow.",
-        label: "Sub-agent handoffs",
+        description: "委任された作業と結果を追いやすくします。",
+        label: "サブエージェントへの引き渡し",
         value: "handoffs",
       },
     ],
-    description: "Choose a direction or describe another task.",
+    description: "方向性を選択するか、別のタスクを記述してください。",
     input: {
-      label: "Another agent feature",
-      placeholder: "Describe another feature…",
+      label: "その他のエージェント機能",
+      placeholder: "別の機能を記述してください…",
     },
     name: "direction",
     required: true,
-    title: "What should the agent build next?",
+    title: "エージェントが次に取り組むべきことは何ですか？",
   },
   {
     choices: [
-      { label: "Progress", value: "progress" },
-      { label: "Decisions", value: "decisions" },
-      { label: "Risks", value: "risks" },
-      { label: "Next step", value: "next-step" },
+      { label: "進捗", value: "progress" },
+      { label: "決定事項", value: "decisions" },
+      { label: "リスク", value: "risks" },
+      { label: "次のステップ", value: "next-step" },
     ],
-    description: "Select all that apply, or skip this question.",
+    description: "該当するものをすべて選択するか、この質問をスキップしてください。",
     multiple: true,
     name: "signals",
     required: false,
-    title: "What should every progress update include?",
+    title: "進捗更新には何を含めるべきですか？",
   },
   {
     choices: [
-      { label: "Start now", value: "now" },
-      { label: "Next development cycle", value: "next-cycle" },
-      { label: "Add it to the backlog", value: "backlog" },
+      { label: "今すぐ開始", value: "now" },
+      { label: "次の開発サイクル", value: "next-cycle" },
+      { label: "バックログに追加", value: "backlog" },
     ],
-    description: "Choose when the agent should begin the work.",
+    description: "エージェントが作業を開始するタイミングを選択してください。",
     name: "timing",
     required: true,
-    title: "When should work begin?",
+    title: "作業はいつ開始すべきですか？",
   },
 ] as const
 
@@ -85,8 +85,8 @@ export function QuestionnaireDemo() {
       timing: formData.get("timing"),
     }
 
-    toast("Agent plan saved", {
-      description: `Direction: ${answers.direction ?? "None"} · Progress signals: ${answers.signals.join(", ") || "None"} · Timing: ${answers.timing ?? "None"}`,
+    toast("エージェントプランを保存しました", {
+      description: `方向性: ${answers.direction ?? "なし"} ・ 進捗シグナル: ${answers.signals.join(", ") || "なし"} ・ タイミング: ${answers.timing ?? "なし"}`,
     })
   }
 
@@ -134,8 +134,8 @@ export function QuestionnaireDemo() {
       <QuestionnaireActions>
         <QuestionnairePrevious />
         <QuestionnaireSkip />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save plan</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>プランを保存</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

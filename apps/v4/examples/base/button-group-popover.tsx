@@ -1,12 +1,12 @@
 import { BotIcon, ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { ButtonGroup } from "@/styles/base-nova/ui/button-group"
+import { Button } from "@/components/ui/base/button"
+import { ButtonGroup } from "@/components/ui/base/button-group"
 import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
+} from "@/components/ui/base/field"
 import {
   Popover,
   PopoverContent,
@@ -14,8 +14,8 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
-import { Textarea } from "@/styles/base-nova/ui/textarea"
+} from "@/components/ui/base/popover"
+import { Textarea } from "@/components/ui/base/textarea"
 
 export default function ButtonGroupPopover() {
   return (
@@ -26,29 +26,29 @@ export default function ButtonGroupPopover() {
       <Popover>
         <PopoverTrigger
           render={
-            <Button variant="outline" size="icon" aria-label="Open Popover" />
+            <Button variant="outline" size="icon" aria-label="ポップオーバーを開く" />
           }
         >
           <ChevronDownIcon />
         </PopoverTrigger>
         <PopoverContent align="end" className="rounded-xl text-sm">
           <PopoverHeader>
-            <PopoverTitle>Start a new task with Copilot</PopoverTitle>
+            <PopoverTitle>Copilotで新しいタスクを開始</PopoverTitle>
             <PopoverDescription>
-              Describe your task in natural language.
+              自然言語でタスクを説明してください。
             </PopoverDescription>
           </PopoverHeader>
           <Field>
             <FieldLabel htmlFor="task" className="sr-only">
-              Task Description
+              タスクの説明
             </FieldLabel>
             <Textarea
               id="task"
-              placeholder="I need to..."
+              placeholder="やりたいことは..."
               className="resize-none"
             />
             <FieldDescription>
-              Copilot will open a pull request for review.
+              Copilotがレビュー用のプルリクエストを作成します。
             </FieldDescription>
           </Field>
         </PopoverContent>

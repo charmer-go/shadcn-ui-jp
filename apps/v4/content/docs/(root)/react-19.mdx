@@ -1,24 +1,24 @@
 ---
 title: Next.js 15 + React 19
-description: Using shadcn/ui with Next.js 15 and React 19.
+description: Next.js 15 および React 19 での shadcn/ui の使用。
 ---
 
 <Callout className="">
-  **Update:** We have added full support for React 19 and Tailwind v4 in the
-  `latest` release. **This guide might be outdated. Proceed with caution.**
+**更新:** React 19 と Tailwind v4 の完全なサポートを追加しました。
+`latest` リリース。 **このガイドは古い可能性があります。慎重に作業を進めてください。**
 </Callout>
 
-## TL;DR
+##TL;DR
 
-If you're using `npm`, you can install shadcn/ui dependencies with a flag. The `shadcn` CLI will prompt you to select a flag when you run it. No flags required for pnpm, bun, or yarn.
+`npm` を使用している場合は、フラグを使用して shadcn/ui 依存関係をインストールできます。 `shadcn` CLI を実行すると、フラグを選択するよう求められます。 pnpm、bun、yarn にはフラグは必要ありません。
 
-See [Upgrade Status](#upgrade-status) for the status of React 19 support for each package.
+各パッケージの React 19 サポートのステータスについては、[アップグレード ステータス](#upgrade-status) を参照してください。
 
-## What's happening?
+## 何が起こっていますか？
 
-React 19 is now [rc](https://www.npmjs.com/package/react?activeTab=versions) and is [tested and supported in the latest Next.js 15 release](https://nextjs.org/blog/next-15#react-19).
+React 19 は現在 [rc](https://www.npmjs.com/package/react?activeTab=versions) であり、[最新の Next.js 15 リリースでテストおよびサポートされています](https://nextjs.org/blog/next-15#react-19)。
 
-To support React 19, package maintainers will need to test and update their packages to include React 19 as a peer dependency. This is [already](https://github.com/radix-ui/primitives/pull/2952) [in](https://github.com/pacocoursey/cmdk/pull/318) [progress](https://github.com/emilkowalski/vaul/pull/498).
+React 19 をサポートするには、パッケージの管理者はパッケージをテストして更新し、ピアの依存関係として React 19 を含める必要があります。これは[すでに](https://github.com/radix-ui/primitives/pull/2952)[中](https://github.com/pacocoursey/cmdk/pull/318)[進行中](https://github.com/emilkowalski/vaul/pull/498)です。
 
 ```diff /^19.0/
 "peerDependencies": {
@@ -30,11 +30,11 @@ To support React 19, package maintainers will need to test and update their pack
 ```
 
 <Callout>
-  You can check if a package lists React 19 as a peer dependency by running
-  `npm info <package> peerDependencies`.
+次のコマンドを実行すると、パッケージに React 19 がピア依存関係としてリストされているかどうかを確認できます。
+`npm info <package> peerDependencies`。
 </Callout>
 
-In the meantime, if you are installing a package that **does not** list React 19 as a peer dependency, you will see an error message like this:
+それまでの間、ピアの依存関係として React 19 を**リストしていない** パッケージをインストールすると、次のようなエラー メッセージが表示されます。
 
 ```bash
 npm error code ERESOLVE
@@ -47,14 +47,14 @@ npm error   react@"19.0.0-rc-69d4b800-20241021" from the root project
 ```
 
 <Callout>
-  **Note:** This is npm only. PNPM and Bun will only show a silent warning.
+**注意:** これは npm のみです。 PNPM と Bun はサイレント警告のみを表示します。
 </Callout>
 
-## How to fix this
+## これを修正する方法
 
-### Solution 1: `--force` or `--legacy-peer-deps`
+### 解決策 1: `--force` または `--legacy-peer-deps`
 
-You can force install a package with the `--force` or the `--legacy-peer-deps` flag.
+`--force` フラグまたは `--legacy-peer-deps` フラグを使用してパッケージを強制的にインストールできます。
 
 ```bash
 npm i <package> --force
@@ -62,7 +62,7 @@ npm i <package> --force
 npm i <package> --legacy-peer-deps
 ```
 
-This will install the package and ignore the peer dependency warnings.
+これにより、パッケージがインストールされ、ピアの依存関係の警告が無視されます。
 
 <Accordion type="multiple">
   <AccordionItem value="flags">
@@ -81,26 +81,26 @@ This will install the package and ignore the peer dependency warnings.
   </AccordionItem>
 </Accordion>
 
-### Solution 2: Use React 18
+### 解決策 2: React 18 を使用する
 
-You can downgrade `react` and `react-dom` to version 18, which is compatible with the package you are installing and upgrade when the dependency is updated.
+`react` および `react-dom` をバージョン 18 にダウングレードできます。これは、インストールしているパッケージと互換性があり、依存関係が更新されたときにアップグレードできます。
 
 ```bash
 npm i react@18 react-dom@18
 ```
 
-Whichever solution you choose, make sure you test your app thoroughly to ensure
-there are no regressions.
+どちらのソリューションを選択する場合でも、アプリを徹底的にテストして、
+回帰はありません。
 
-## Using shadcn/ui on Next.js 15
+## Next.js 15 で shadcn/ui を使用する
 
-### Using pnpm, bun, or yarn
+### pnpm、bun、yarn の使用
 
-Follow the instructions in the [installation guide](/docs/installation/next) to install shadcn/ui. No flags are needed.
+[インストールガイド](/docs/installation/next) の指示に従って、shadcn/ui をインストールします。フラグは必要ありません。
 
-### Using npm
+### npm の使用
 
-When you run `npx shadcn@latest init -d`, you will be prompted to select an option to resolve the peer dependency issues.
+`npx shadcn@latest init -d` を実行すると、ピアの依存関係の問題を解決するためのオプションを選択するように求められます。
 
 ```bash
 It looks like you are using React 19.
@@ -111,43 +111,43 @@ Some packages may fail to install due to peer dependency issues (see https://ui.
     Use --legacy-peer-deps
 ```
 
-You can then run the command with the flag you choose.
+その後、選択したフラグを使用してコマンドを実行できます。
 
-## Adding components
+## コンポーネントの追加
 
-The process for adding components is the same as above. Select a flag to resolve the peer dependency issues.
+コンポーネントを追加するプロセスは上記と同じです。ピアの依存関係の問題を解決するには、フラグを選択します。
 
-**Remember to always test your app after installing new dependencies.**
+**新しい依存関係をインストールした後は、必ずアプリをテストしてください。**
 
-## Upgrade Status
+## アップグレードステータス
 
-To make it easy for you to track the progress of the upgrade, here is a table with the React 19 support status for the shadcn/ui dependencies.
+アップグレードの進行状況を簡単に追跡できるように、shadcn/ui 依存関係の React 19 サポート ステータスを示す表を次に示します。
 
-- ✅ - Works with React 19 using npm, pnpm, and bun.
-- 🚧 - Works with React 19 using pnpm and bun. Requires flag for npm. PR is in progress.
+- ✅ - npm、pnpm、bun を使用して React 19 で動作します。
+- 🚧 - pnpm と bun を使用して React 19 で動作します。 npm のフラグが必要です。 PR中です。
 
-| Package                                                                            | Status | Note                                                        |
+|パッケージ |ステータス |注 |
 | ---------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------- |
-| [radix-ui](https://www.npmjs.com/package/@radix-ui/react-icons)                    | ✅     |                                                             |
-| [lucide-react](https://www.npmjs.com/package/lucide-react)                         | ✅     |                                                             |
-| [class-variance-authority](https://www.npmjs.com/package/class-variance-authority) | ✅     | Does not list React 19 as a peer dependency.                |
-| [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate)           | ✅     | Does not list React 19 as a peer dependency.                |
-| [embla-carousel-react](https://www.npmjs.com/package/embla-carousel-react)         | ✅     |                                                             |
-| [recharts](https://www.npmjs.com/package/recharts)                                 | ✅     | See note [below](#recharts)                                 |
-| [react-hook-form](https://www.npmjs.com/package/react-hook-form)                   | ✅     |                                                             |
-| [react-resizable-panels](https://www.npmjs.com/package/react-resizable-panels)     | ✅     |                                                             |
-| [sonner](https://www.npmjs.com/package/sonner)                                     | ✅     |                                                             |
-| [react-day-picker](https://www.npmjs.com/package/react-day-picker)                 | ✅     | Works with flag for npm. Work to upgrade to v9 in progress. |
-| [input-otp](https://www.npmjs.com/package/input-otp)                               | ✅     |                                                             |
-| [vaul](https://www.npmjs.com/package/vaul)                                         | ✅     |                                                             |
-| [@radix-ui/react-icons](https://www.npmjs.com/package/@radix-ui/react-icons)       | ✅     | See [PR #194](https://github.com/radix-ui/icons/pull/194)   |
-| [cmdk](https://www.npmjs.com/package/cmdk)                                         | ✅     |                                                             |
+| [radix-ui](https://www.npmjs.com/package/@radix-ui/react-icons) | ✅ |                                                             |
+| [ルシード反応](https://www.npmjs.com/package/lucide-react) | ✅ |                                                             |
+| [クラスバリアンス権限](https://www.npmjs.com/package/class-variance-authority) | ✅ | React 19 はピア依存関係としてリストされていません。                |
+| [tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate) | ✅ | React 19 はピア依存関係としてリストされていません。                |
+| [エンブラ-カルーセル-反応](https://www.npmjs.com/package/embla-carousel-react) | ✅ |                                                             |
+| [再チャート](https://www.npmjs.com/package/recharts) | ✅ |注 [下記](#recharts) を参照してください。
+| [反応フックフォーム](https://www.npmjs.com/package/react-hook-form) | ✅ |                                                             |
+| [反応-サイズ変更可能なパネル](https://www.npmjs.com/package/react-resizable-panels) | ✅ |                                                             |
+| [ソナー](https://www.npmjs.com/package/sonner) | ✅ |                                                             |
+| [反応日ピッカー](https://www.npmjs.com/package/react-day-picker) | ✅ | npm のフラグで動作します。 v9 へのアップグレード作業が進行中です。 |
+| [入力-otp](https://www.npmjs.com/package/input-otp) | ✅ |                                                             |
+| [値](https://www.npmjs.com/package/vaul) | ✅ |                                                             |
+| [@radix-ui/react-icons](https://www.npmjs.com/package/@radix-ui/react-icons) | ✅ | [PR #194](https://github.com/radix-ui/icons/pull/194) を参照してください。
+| [cmdk](https://www.npmjs.com/package/cmdk) | ✅ |                                                             |
 
-If you have any questions, please [open an issue](https://github.com/shadcn/ui/issues) on GitHub.
+ご質問がある場合は、GitHub で [問題を開く](https://github.com/shadcn/ui/issues) してください。
 
-## Recharts
+## 再チャート
 
-To use recharts with React 19, you will need to override the `react-is` dependency.
+React 19 で recharts を使用するには、`react-is` 依存関係をオーバーライドする必要があります。
 
 <Steps>
 
@@ -159,7 +159,7 @@ To use recharts with React 19, you will need to override the `react-is` dependen
 }
 ```
 
-Note: the `react-is` version needs to match the version of React 19 you are using. The above is an example.
+注: `react-is` のバージョンは、使用している React 19 のバージョンと一致する必要があります。上記は一例です。
 
 <Step>Run `npm install --legacy-peer-deps`</Step>
 

@@ -4,14 +4,14 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
-import { Kbd } from "@/styles/base-nova/ui/kbd"
+} from "@/components/ui/base/input-group"
+import { Kbd } from "@/components/ui/base/kbd"
 
 export default function KbdInputGroup() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-6">
       <InputGroup>
-        <InputGroupInput placeholder="Search..." />
+        <InputGroupInput placeholder="検索..." />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>

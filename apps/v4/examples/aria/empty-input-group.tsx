@@ -6,27 +6,26 @@ import {
   EmptyDescription,
   EmptyHeader,
   EmptyTitle,
-} from "@/styles/aria-nova/ui/empty"
+} from "@/components/ui/aria/empty"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Kbd } from "@/styles/aria-nova/ui/kbd"
+} from "@/components/ui/aria/input-group"
+import { Kbd } from "@/components/ui/aria/kbd"
 
 export default function EmptyInputGroup() {
   return (
     <Empty>
       <EmptyHeader>
-        <EmptyTitle>404 - Not Found</EmptyTitle>
+        <EmptyTitle>404 - ページが見つかりません</EmptyTitle>
         <EmptyDescription>
-          The page you&apos;re looking for doesn&apos;t exist. Try searching for
-          what you need below.
+          お探しのページは存在しません。以下から必要な情報を検索してみてください。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <InputGroup className="sm:w-3/4">
-          <InputGroupInput placeholder="Try searching for pages..." />
+          <InputGroupInput placeholder="ページを検索..." />
           <InputGroupAddon>
             <SearchIcon />
           </InputGroupAddon>
@@ -35,7 +34,7 @@ export default function EmptyInputGroup() {
           </InputGroupAddon>
         </InputGroup>
         <EmptyDescription>
-          Need help? <a href="#">Contact support</a>
+          お困りですか？ <a href="#">サポートに問い合わせる</a>
         </EmptyDescription>
       </EmptyContent>
     </Empty>

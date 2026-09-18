@@ -3,19 +3,19 @@
 import * as React from "react"
 import { CalendarIcon } from "lucide-react"
 
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 function formatDate(date: Date | undefined) {
   if (!date) {
@@ -46,7 +46,7 @@ export function DatePickerInput() {
 
   return (
     <Field className="mx-auto w-48">
-      <FieldLabel htmlFor="date-required">Subscription Date</FieldLabel>
+      <FieldLabel htmlFor="date-required">サブスクリプション日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-required"
@@ -75,12 +75,12 @@ export function DatePickerInput() {
                   id="date-picker"
                   variant="ghost"
                   size="icon-xs"
-                  aria-label="Select date"
+                  aria-label="日付を選択"
                 />
               }
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">日付を選択</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"

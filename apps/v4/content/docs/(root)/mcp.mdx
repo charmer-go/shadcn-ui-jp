@@ -1,13 +1,13 @@
 ---
-title: MCP Server
-description: Use the shadcn MCP server to browse, search, and install components from registries.
+title: MCP サーバー
+description: shadcn MCP サーバーを使用して、レジストリからコンポーネントを参照、検索、インストールします。
 ---
 
-The shadcn MCP Server allows AI assistants to interact with items from registries. You can browse available components, search for specific ones, and install them directly into your project using natural language.
+shadcn MCP サーバーを使用すると、AI アシスタントがレジストリのアイテムと対話できるようになります。自然言語を使用して、利用可能なコンポーネントを参照し、特定のコンポーネントを検索し、プロジェクトに直接インストールできます。
 
-For example, you can ask an AI assistant to "Build a landing page using components from the acme registry" or "Find me a login form from the shadcn registry".
+たとえば、AI アシスタントに「acme レジストリのコンポーネントを使用してランディング ページを構築してください」または「shadcn レジストリからログイン フォームを見つけてください」と依頼できます。
 
-Registries are configured in your project's `components.json` file.
+レジストリはプロジェクトの `components.json` ファイルで構成されます。
 
 ```json title="components.json" showLineNumbers
 {
@@ -19,9 +19,9 @@ Registries are configured in your project's `components.json` file.
 
 ---
 
-## Quick Start
+## クイックスタート
 
-Select your MCP client and follow the instructions to configure the shadcn MCP server. If you'd like to do it manually, see the [Configuration](#configuration) section.
+MCP クライアントを選択し、指示に従って shadcn MCP サーバーを構成します。手動で行う場合は、[構成](#configuration) セクションを参照してください。
 
 <Tabs defaultValue="claude">
   <TabsList>
@@ -32,127 +32,126 @@ Select your MCP client and follow the instructions to configure the shadcn MCP s
     <TabsTrigger value="opencode">OpenCode</TabsTrigger>
   </TabsList>
   <TabsContent value="claude" className="mt-4">
-    **Run the following command** in your project:
+プロジェクトで**次のコマンドを実行**します。
        ```bash
        npx shadcn@latest mcp init --client claude
        ```
 
-    **Restart Claude Code** and try the following prompts:
-       - Show me all available components in the shadcn registry
-       - Add the button, dialog and card components to my project
-       - Create a contact form using components from the shadcn registry
+**Claude Code を再起動**し、次のプロンプトを試します。
+      - shadcn レジストリで利用可能なすべてのコンポーネントを表示して
+      - button、dialog、card コンポーネントをプロジェクトに追加して
+      - shadcn レジストリのコンポーネントを使って問い合わせフォームを作成して
 
-    **Note:** You can use `/mcp` command in Claude Code to debug the MCP server.
+**注:** Claude Code の `/mcp` コマンドで MCP サーバーをデバッグできます。
 
   </TabsContent>
 
   <TabsContent value="cursor" className="mt-4">
-    **Run the following command** in your project:
+プロジェクトで**次のコマンドを実行**します。
        ```bash
        npx shadcn@latest mcp init --client cursor
        ```
 
-    Open **Cursor Settings** and **Enable the MCP server** for shadcn. Then try the following prompts:
-       - Show me all available components in the shadcn registry
-       - Add the button, dialog and card components to my project
-       - Create a contact form using components from the shadcn registry
+**Cursor Settings** を開き、shadcn の **MCP サーバーを有効化**します。次のプロンプトを試します。
+      - shadcn レジストリで利用可能なすべてのコンポーネントを表示して
+      - button、dialog、card コンポーネントをプロジェクトに追加して
+      - shadcn レジストリのコンポーネントを使って問い合わせフォームを作成して
 
   </TabsContent>
 
   <TabsContent value="vscode" className="mt-4">
-    **Run the following command** in your project:
+プロジェクトで**次のコマンドを実行**します。
        ```bash
        npx shadcn@latest mcp init --client vscode
        ```
 
-    Open `.vscode/mcp.json` and click **Start** next to the shadcn server. Then try the following prompts with GitHub Copilot:
-       - Show me all available components in the shadcn registry
-       - Add the button, dialog and card components to my project
-       - Create a contact form using components from the shadcn registry
+`.vscode/mcp.json` を開き、shadcn サーバーの横にある **Start** をクリックします。GitHub Copilot で次のプロンプトを試します。
+      - shadcn レジストリで利用可能なすべてのコンポーネントを表示して
+      - button、dialog、card コンポーネントをプロジェクトに追加して
+      - shadcn レジストリのコンポーネントを使って問い合わせフォームを作成して
 
   </TabsContent>
 
   <TabsContent value="codex" className="mt-4">
     <Callout className="mt-0">
-      **Note:** The `shadcn` CLI cannot automatically update `~/.codex/config.toml`.
-      You'll need to add the configuration manually for Codex.
+**注:** `shadcn` CLI は `~/.codex/config.toml` を自動更新できません。Codex 用の構成を手動で追加する必要があります。
     </Callout>
 
-    **Run the following command** in your project:
+プロジェクトで**次のコマンドを実行**します。
        ```bash
        npx shadcn@latest mcp init --client codex
        ```
 
-    **Then, add the following configuration** to `~/.codex/config.toml`:
+**次の構成を** `~/.codex/config.toml` **に追加**します。
        ```toml
        [mcp_servers.shadcn]
        command = "npx"
        args = ["shadcn@latest", "mcp"]
        ```
 
-    **Restart Codex** and try the following prompts:
-       - Show me all available components in the shadcn registry
-       - Add the button, dialog and card components to my project
-       - Create a contact form using components from the shadcn registry
+**Codex を再起動**し、次のプロンプトを試します。
+      - shadcn レジストリで利用可能なすべてのコンポーネントを表示して
+      - button、dialog、card コンポーネントをプロジェクトに追加して
+      - shadcn レジストリのコンポーネントを使って問い合わせフォームを作成して
 
   </TabsContent>
 
   <TabsContent value="opencode" className="mt-4">
-    **Run the following command** in your project:
+プロジェクトで**次のコマンドを実行**します。
        ```bash
        npx shadcn@latest mcp init --client opencode
        ```
 
-    **Restart OpenCode** and try the following prompts:
-       - Show me all available components in the shadcn registry
-       - Add the button, dialog and card components to my project
-       - Create a contact form using components from the shadcn registry
+**OpenCode を再起動**し、次のプロンプトを試します。
+      - shadcn レジストリで利用可能なすべてのコンポーネントを表示して
+      - button、dialog、card コンポーネントをプロジェクトに追加して
+      - shadcn レジストリのコンポーネントを使って問い合わせフォームを作成して
 
   </TabsContent>
 </Tabs>
 
 ---
 
-## What is MCP?
+## MCP とは何ですか?
 
-[Model Context Protocol (MCP)](https://modelcontextprotocol.io) is an open protocol that enables AI assistants to securely connect to external data sources and tools. With the shadcn MCP server, your AI assistant gains direct access to:
+[モデル コンテキスト プロトコル (MCP)](https://modelcontextprotocol.io) は、AI アシスタントが外部のデータ ソースやツールに安全に接続できるようにするオープン プロトコルです。 shadcn MCP サーバーを使用すると、AI アシスタントは以下に直接アクセスできるようになります。
 
-- **Browse Components** - List all available components, blocks, and templates from any configured registry
-- **Search Across Registries** - Find specific components by name or functionality across multiple sources
-- **Install with Natural Language** - Add components using simple conversational prompts like "add a login form"
-- **Support for Multiple Registries** - Access public registries, private company libraries, and third-party sources
-
----
-
-## How It Works
-
-The MCP server acts as a bridge between your AI assistant, component registries and the shadcn CLI.
-
-1. **Registry Connection** - MCP connects to configured registries (shadcn/ui, private registries, third-party sources)
-2. **Natural Language** - You describe what you need in plain English
-3. **AI Processing** - The assistant translates your request into registry commands
-4. **Component Delivery** - Resources are fetched and installed in your project
+- **コンポーネントの参照** - 構成されたレジストリから使用可能なすべてのコンポーネント、ブロック、テンプレートをリストします。
+- **レジストリ全体を検索** - 複数のソースから名前または機能で特定のコンポーネントを検索します
+- **自然言語を使用してインストール** - 「ログイン フォームを追加する」などの単純な会話プロンプトを使用してコンポーネントを追加します
+- **複数のレジストリのサポート** - パブリック レジストリ、プライベート企業ライブラリ、サードパーティ ソースにアクセス
 
 ---
 
-## Supported Registries
+## 仕組み
 
-The shadcn MCP server works out of the box with any shadcn-compatible registry.
+MCP サーバーは、AI アシスタント、コンポーネント レジストリ、shadcn CLI の間のブリッジとして機能します。
 
-- **shadcn/ui Registry** - The default registry with all shadcn/ui components
-- **Third-Party Registries** - Any registry following the shadcn registry specification
-- **Private Registries** - Your company's internal component libraries
-- **Namespaced Registries** - Multiple registries configured with `@namespace` syntax
+1. **レジストリ接続** - MCP は、構成されたレジストリ (shadcn/ui、プライベート レジストリ、サードパーティ ソース) に接続します。
+2. **自然言語** - 必要なことを平易な英語で説明します
+3. **AI 処理** - アシスタントがリクエストをレジストリ コマンドに変換します。
+4. **コンポーネントの配信** - リソースが取得され、プロジェクトにインストールされます
 
 ---
 
-## Configuration
+## サポートされているレジストリ
 
-You can use any MCP client to interact with the shadcn MCP server. Here are the instructions for the most popular ones.
+shadcn MCP サーバーは、追加設定なしで shadcn 互換のレジストリで動作します。
 
-### Claude Code
+- **shadcn/ui レジストリ** - すべての shadcn/ui コンポーネントを含むデフォルトのレジストリ
+- **サードパーティ レジストリ** - shadcn レジストリ仕様に従う任意のレジストリ
+- **プライベート レジストリ** - 会社の内部コンポーネント ライブラリ
+- **名前空間レジストリ** - `@namespace` 構文で構成された複数のレジストリ
 
-To use the shadcn MCP server with Claude Code, add the following configuration to your project's `.mcp.json` file:
+---
+
+## 構成
+
+任意の MCP クライアントを使用して、shadcn MCP サーバーと対話できます。ここでは最も人気のあるものの説明を示します。
+
+### クロードコード
+
+クロード コードで shadcn MCP サーバーを使用するには、プロジェクトの `.mcp.json` ファイルに次の構成を追加します。
 
 ```json title=".mcp.json" showLineNumbers
 {
@@ -165,13 +164,13 @@ To use the shadcn MCP server with Claude Code, add the following configuration t
 }
 ```
 
-After adding the configuration, restart Claude Code and run `/mcp` to see the shadcn MCP server in the list. If you see `Connected`, you're good to go.
+構成を追加した後、Claude Code を再起動し、`/mcp` を実行して、リストに shadcn MCP サーバーを表示します。 `Connected` が表示されていれば問題ありません。
 
-See the [Claude Code MCP documentation](https://code.claude.com/docs/en/mcp) for more details.
+詳細については、[Claude Code MCP ドキュメント](https://code.claude.com/docs/en/mcp) を参照してください。
 
-### Cursor
+### カーソル
 
-To configure MCP in Cursor, add the shadcn server to your project's `.cursor/mcp.json` configuration file:
+Cursor で MCP を構成するには、shadcn サーバーをプロジェクトの `.cursor/mcp.json` 構成ファイルに追加します。
 
 ```json title=".cursor/mcp.json" showLineNumbers
 {
@@ -184,15 +183,15 @@ To configure MCP in Cursor, add the shadcn server to your project's `.cursor/mcp
 }
 ```
 
-After adding the configuration, enable the shadcn MCP server in Cursor Settings.
+構成を追加した後、カーソル設定で shadcn MCP サーバーを有効にします。
 
-Once enabled, you should see a green dot next to the shadcn server in the MCP server list and a list of available tools.
+有効にすると、MCP サーバー リストの shadcn サーバーの横に緑色の点と利用可能なツールのリストが表示されます。
 
-See the [Cursor MCP documentation](https://docs.cursor.com/en/context/mcp#using-mcp-json) for more details.
+詳細については、[Cursor MCP ドキュメント](https://docs.cursor.com/en/context/mcp#using-mcp-json) を参照してください。
 
-### VS Code
+### VS コード
 
-To configure MCP in VS Code with GitHub Copilot, add the shadcn server to your project's `.vscode/mcp.json` configuration file:
+GitHub Copilot を使用して VS Code で MCP を構成するには、shadcn サーバーをプロジェクトの `.vscode/mcp.json` 構成ファイルに追加します。
 
 ```json title=".vscode/mcp.json" showLineNumbers
 {
@@ -205,18 +204,18 @@ To configure MCP in VS Code with GitHub Copilot, add the shadcn server to your p
 }
 ```
 
-After adding the configuration, open `.vscode/mcp.json` and click **Start** next to the shadcn server.
+構成を追加した後、`.vscode/mcp.json` を開き、shadcn サーバーの横にある [**開始**] をクリックします。
 
-See the [VS Code MCP documentation](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) for more details.
+詳細については、[VS Code MCP ドキュメント](https://code.visualstudio.com/docs/copilot/chat/mcp-servers) を参照してください。
 
-### Codex
+### コーデックス
 
 <Callout>
-  **Note:** The `shadcn` CLI cannot automatically update `~/.codex/config.toml`.
-  You'll need to add the configuration manually.
+**注:** `shadcn` CLI は、`~/.codex/config.toml` を自動的に更新できません。
+構成を手動で追加する必要があります。
 </Callout>
 
-To configure MCP in Codex, add the shadcn server to `~/.codex/config.toml`:
+Codex で MCP を構成するには、shadcn サーバーを `~/.codex/config.toml` に追加します。
 
 ```toml title="~/.codex/config.toml" showLineNumbers
 [mcp_servers.shadcn]
@@ -224,15 +223,15 @@ command = "npx"
 args = ["shadcn@latest", "mcp"]
 ```
 
-After adding the configuration, restart Codex to load the MCP server.
+構成を追加した後、Codex を再起動して MCP サーバーをロードします。
 
 ---
 
-## Configuring Registries
+## レジストリの構成
 
-The MCP server supports multiple registries through your project's `components.json` configuration. This allows you to access components from various sources including private registries and third-party providers.
+MCP サーバーは、プロジェクトの `components.json` 構成を通じて複数のレジストリをサポートします。これにより、プライベート レジストリやサードパーティ プロバイダーなどのさまざまなソースからコンポーネントにアクセスできるようになります。
 
-Configure additional registries in your `components.json`:
+`components.json` で追加のレジストリを構成します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -249,90 +248,90 @@ Configure additional registries in your `components.json`:
 ```
 
 <Callout>
-  **Note:** No configuration is needed to access the standard shadcn/ui
-  registry.
+**注:** 標準の shadcn/ui にアクセスするために構成は必要ありません
+レジストリ。
 </Callout>
 
 ---
 
-## Authentication
+## 認証
 
-For private registries requiring authentication, set environment variables in your `.env.local`:
+認証が必要なプライベート レジストリの場合は、`.env.local` で環境変数を設定します。
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_token_here
 API_KEY=your_api_key_here
 ```
 
-For more details on registry authentication, see the [Authentication documentation](/docs/registry/authentication).
+レジストリ認証の詳細については、[認証ドキュメント](/docs/registry/authentication) を参照してください。
 
 ---
 
-## Example Prompts
+## プロンプトの例
 
-Once the MCP server is configured, you can use natural language to interact with registries. Try one of the following prompts:
+MCP サーバーが構成されたら、自然言語を使用してレジストリと対話できるようになります。次のプロンプトのいずれかを試してください。
 
-### Browse & Search
+### 参照と検索
 
-- Show me all available components in the shadcn registry
-- Find me a login form from the shadcn registry
+- shadcn レジストリ内の利用可能なコンポーネントをすべて表示します
+- shadcn レジストリからログイン フォームを見つけます
 
-### Install Items
+### アイテムをインストールする
 
-- Add the button component to my project
-- Create a login form using shadcn components
-- Install the Cursor rules from the acme registry
+- ボタンコンポーネントをプロジェクトに追加します
+- shadcn コンポーネントを使用してログイン フォームを作成する
+- acme レジストリから Cursor ルールをインストールします。
 
-### Work with Namespaces
+### 名前空間の操作
 
-- Show me components from acme registry
-- Install @internal/auth-form
-- Build me a landing page using hero, features and testimonials sections from the acme registry
-
----
-
-## Troubleshooting
-
-### MCP Not Responding
-
-If the MCP server isn't responding to prompts:
-
-1. **Check Configuration** - Verify the MCP server is properly configured and enabled in your MCP client
-2. **Restart MCP Client** - Restart your MCP client after configuration changes
-3. **Verify Installation** - Ensure `shadcn` is installed in your project
-4. **Check Network** - Confirm you can access the configured registries
-
-### Registry Access Issues
-
-If components aren't loading from registries:
-
-1. **Check components.json** - Verify registry URLs are correct
-2. **Test Authentication** - Ensure environment variables are set for private registries
-3. **Verify Registry** - Confirm the registry is online and accessible
-4. **Check Namespace** - Ensure namespace syntax is correct (`@namespace/component`)
-
-### Installation Failures
-
-If components fail to install:
-
-1. **Check Project Setup** - Ensure you have a valid `components.json` file
-2. **Verify Paths** - Confirm the target directories exist
-3. **Check Permissions** - Ensure write permissions for component directories
-4. **Review Dependencies** - Check that required dependencies are installed
-
-### No Tools or Prompts
-
-If you see the `No tools or prompts` message, try the following:
-
-1. **Clear the npx cache** - Run `npx clear-npx-cache`
-2. **Re-enable the MCP server** - Try to re-enable the MCP server in your MCP client
-3. **Check Logs** - In Cursor, you can see the logs under View -> Output and select `MCP: project-*` in the dropdown.
+- acme レジストリのコンポーネントを表示
+- @internal/auth-form をインストールする
+- acme レジストリのヒーロー、機能、紹介セクションを使用してランディング ページを作成します
 
 ---
 
-## Learn More
+## トラブルシューティング
 
-- [Registry Documentation](/docs/registry) - Complete guide to shadcn registries
-- [Namespaces](/docs/registry/namespace) - Configure multiple registry sources
-- [Authentication](/docs/registry/authentication) - Secure your private registries
-- [MCP Specification](https://modelcontextprotocol.io) - Learn about Model Context Protocol
+### MCP が応答しない
+
+MCP サーバーがプロンプトに応答しない場合:
+
+1. **構成の確認** - MCP サーバーが適切に構成され、MCP クライアントで有効になっていることを確認します。
+2. **MCP クライアントの再起動** - 設定変更後に MCP クライアントを再起動します。
+3. **インストールの確認** - `shadcn` がプロジェクトにインストールされていることを確認します
+4. **ネットワークを確認** - 構成されたレジストリにアクセスできることを確認します
+
+### レジストリ アクセスの問題
+
+コンポーネントがレジストリから読み込まれていない場合:
+
+1. **components.json を確認します** - レジストリ URL が正しいことを確認します
+2. **テスト認証** - 環境変数がプライベート レジストリに設定されていることを確認します
+3. **レジストリの確認** - レジストリがオンラインでアクセス可能であることを確認します。
+4. **名前空間の確認** - 名前空間の構文が正しいことを確認します (`@namespace/component`)
+
+### インストールの失敗
+
+コンポーネントのインストールに失敗した場合:
+
+1. **プロジェクト設定を確認** - 有効な `components.json` ファイルがあることを確認してください
+2. **パスの確認** - ターゲット ディレクトリが存在することを確認します。
+3. **権限の確認** - コンポーネント ディレクトリへの書き込み権限を確認します。
+4. **依存関係の確認** - 必要な依存関係がインストールされていることを確認します
+
+### ツールもプロンプトもありません
+
+`No tools or prompts` メッセージが表示された場合は、次のことを試してください。
+
+1. **npx キャッシュをクリアします** - `npx clear-npx-cache` を実行します
+2. **MCP サーバーを再度有効にする** - MCP クライアントで MCP サーバーを再度有効にしてみてください
+3. **ログの確認** - カーソルの [表示] -> [出力] でログを確認し、ドロップダウンで `MCP: project-*` を選択します。
+
+---
+
+## もっと詳しく知る
+
+- [レジストリ ドキュメント](/docs/registry) - shadcn レジストリの完全ガイド
+- [名前空間](/docs/registry/namespace) - 複数のレジストリ ソースを構成します
+- [認証](/docs/registry/authentication) - プライベート レジストリを保護します
+- [MCP 仕様](https://modelcontextprotocol.io) - モデル コンテキスト プロトコルについて学習します

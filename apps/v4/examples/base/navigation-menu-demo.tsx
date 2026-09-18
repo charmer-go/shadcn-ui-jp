@@ -16,43 +16,43 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/styles/base-nova/ui/navigation-menu"
+} from "@/components/ui/base/navigation-menu"
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
+    title: "アラートダイアログ",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "重要な内容を表示してユーザーの操作を促すモーダルダイアログです。",
   },
   {
-    title: "Hover Card",
+    title: "ホバーカード",
     href: "/docs/primitives/hover-card",
     description:
-      "For sighted users to preview content available behind a link.",
+      "リンク先のコンテンツを視覚的に確認するためのカードです。",
   },
   {
-    title: "Progress",
+    title: "プログレス",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "タスクの完了状況を示すインジケーターを表示します。通常は進捗バーとして表示されます。",
   },
   {
-    title: "Scroll-area",
+    title: "スクロールエリア",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "コンテンツを視覚的または意味的に分離します。",
   },
   {
-    title: "Tabs",
+    title: "タブ",
     href: "/docs/primitives/tabs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "タブパネルと呼ばれるコンテンツの層を、一度に1つずつ表示するセットです。",
   },
   {
-    title: "Tooltip",
+    title: "ツールチップ",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "キーボードフォーカスまたはマウスホバー時に、要素に関連する情報を表示するポップアップです。",
   },
 ]
 
@@ -61,23 +61,23 @@ export default function NavigationMenuDemo() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>はじめに</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built with Tailwind CSS.
+              <ListItem href="/docs" title="概要">
+                Tailwind CSSで構築された再利用可能なコンポーネント。
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/docs/installation" title="インストール">
+                依存関係をインストールしてアプリを構成する方法を説明します。
               </ListItem>
-              <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+              <ListItem href="/docs/primitives/typography" title="タイポグラフィ">
+                見出し、段落、リストなどのスタイルです。
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:flex">
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>コンポーネント</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -93,7 +93,7 @@ export default function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+          <NavigationMenuTrigger>アイコン付き</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px]">
               <li>
@@ -103,7 +103,7 @@ export default function NavigationMenuDemo() {
                   }
                 >
                   <CircleAlertIcon />
-                  Backlog
+                  バックログ
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={
@@ -111,7 +111,7 @@ export default function NavigationMenuDemo() {
                   }
                 >
                   <CircleDashedIcon />
-                  To Do
+                  未対応
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={
@@ -119,7 +119,7 @@ export default function NavigationMenuDemo() {
                   }
                 >
                   <CircleCheckIcon />
-                  Done
+                  完了
                 </NavigationMenuLink>
               </li>
             </ul>
@@ -130,7 +130,7 @@ export default function NavigationMenuDemo() {
             render={<Link href="/docs" />}
             className={navigationMenuTriggerStyle()}
           >
-            Docs
+            ドキュメント
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

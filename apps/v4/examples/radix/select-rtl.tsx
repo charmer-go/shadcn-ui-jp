@@ -15,7 +15,7 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/styles/radix-nova/ui-rtl/select"
+} from "@/components/ui/radix/select"
 
 const translations: Translations = {
   en: {

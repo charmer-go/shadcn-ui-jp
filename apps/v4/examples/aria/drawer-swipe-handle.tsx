@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Drawer,
   DrawerClose,
@@ -10,24 +10,24 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/styles/aria-nova/ui/drawer"
+} from "@/components/ui/aria/drawer"
 
 export function DrawerSwipeHandle() {
   return (
     <Drawer showSwipeHandle>
       <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
+        ドロワーを開く
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Drawer</DrawerTitle>
-          <DrawerDescription>Drawer with a swipe handle.</DrawerDescription>
+          <DrawerTitle>ドロワー</DrawerTitle>
+          <DrawerDescription>スワイプハンドル付きのドロワーです。</DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 p-4">
           <div className="rounded-2xl bg-muted group-data-[swipe-axis=x]/drawer-popup:size-full group-data-[swipe-axis=y]/drawer-popup:h-80 group-data-[swipe-axis=y]/drawer-popup:w-full" />
         </div>
         <DrawerFooter>
-          <DrawerClose render={<Button />}>Close</DrawerClose>
+          <DrawerClose render={<Button />}>閉じる</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

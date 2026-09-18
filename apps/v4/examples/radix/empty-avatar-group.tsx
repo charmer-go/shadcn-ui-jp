@@ -4,8 +4,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/radix-nova/ui/avatar"
-import { Button } from "@/styles/radix-nova/ui/button"
+} from "@/components/ui/radix/avatar"
+import { Button } from "@/components/ui/radix/button"
 import {
   Empty,
   EmptyContent,
@@ -13,7 +13,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
+} from "@/components/ui/radix/empty"
 
 export default function EmptyAvatarGroup() {
   return (
@@ -41,15 +41,15 @@ export default function EmptyAvatarGroup() {
             </Avatar>
           </div>
         </EmptyMedia>
-        <EmptyTitle>No Team Members</EmptyTitle>
+        <EmptyTitle>チームメンバーがいません</EmptyTitle>
         <EmptyDescription>
-          Invite your team to collaborate on this project.
+          このプロジェクトで共同作業するためにチームを招待しましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button size="sm">
           <PlusIcon />
-          Invite Members
+          メンバーを招待
         </Button>
       </EmptyContent>
     </Empty>

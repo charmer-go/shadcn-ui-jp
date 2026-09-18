@@ -5,13 +5,13 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
-import { Label } from "@/styles/base-nova/ui/label"
+} from "@/components/ui/base/input-group"
+import { Label } from "@/components/ui/base/label"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/base-nova/ui/tooltip"
+} from "@/components/ui/base/tooltip"
 
 export default function InputGroupLabel() {
   return (
@@ -26,14 +26,14 @@ export default function InputGroupLabel() {
         <InputGroupInput id="email-2" placeholder="shadcn@vercel.com" />
         <InputGroupAddon align="block-start">
           <Label htmlFor="email-2" className="text-foreground">
-            Email
+            メールアドレス
           </Label>
           <Tooltip>
             <TooltipTrigger
               render={
                 <InputGroupButton
                   variant="ghost"
-                  aria-label="Help"
+                  aria-label="ヘルプ"
                   className="ml-auto rounded-full"
                   size="icon-xs"
                 />
@@ -42,7 +42,7 @@ export default function InputGroupLabel() {
               <InfoIcon />
             </TooltipTrigger>
             <TooltipContent>
-              <p>We&apos;ll use this to send you notifications</p>
+              <p>通知の送信に使用します</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>

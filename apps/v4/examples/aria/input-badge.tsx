@@ -1,6 +1,6 @@
-import { Badge } from "@/styles/aria-nova/ui/badge"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+import { Badge } from "@/components/ui/aria/badge"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputBadge() {
   return (
@@ -8,7 +8,7 @@ export function InputBadge() {
       <FieldLabel htmlFor="input-badge">
         Webhook URL{" "}
         <Badge variant="secondary" className="ml-auto">
-          Beta
+          ベータ
         </Badge>
       </FieldLabel>
       <Input

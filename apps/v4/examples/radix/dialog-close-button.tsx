@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Dialog,
   DialogClose,
@@ -8,27 +8,27 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/radix-nova/ui/dialog"
-import { Input } from "@/styles/radix-nova/ui/input"
-import { Label } from "@/styles/radix-nova/ui/label"
+} from "@/components/ui/radix/dialog"
+import { Input } from "@/components/ui/radix/input"
+import { Label } from "@/components/ui/radix/label"
 
 export function DialogCloseButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">Share</Button>
+        <Button variant="outline">共有</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Share link</DialogTitle>
+          <DialogTitle>リンクを共有</DialogTitle>
           <DialogDescription>
-            Anyone who has this link will be able to view this.
+            このリンクを知っている人は誰でも閲覧できます。
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
             <Label htmlFor="link" className="sr-only">
-              Link
+              リンク
             </Label>
             <Input
               id="link"
@@ -39,7 +39,7 @@ export function DialogCloseButton() {
         </div>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
-            <Button type="button">Close</Button>
+            <Button type="button">閉じる</Button>
           </DialogClose>
         </DialogFooter>
       </DialogContent>

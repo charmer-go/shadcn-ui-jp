@@ -1,6 +1,6 @@
 ---
-title: scroll-fade
-description: Utilities for adding a fade effect to the edges of a scroll container.
+title: Scroll Fade
+description: スクロールコンテナーの端にフェード効果を追加するユーティリティ。
 ---
 
 <ComponentPreview
@@ -9,61 +9,61 @@ description: Utilities for adding a fade effect to the edges of a scroll contain
   previewClassName="h-auto"
 />
 
-## Installation
+## インストール
 
-If your project was set up with `npx shadcn@latest init`, you already have `scroll-fade`. It ships with the `shadcn` package, which the CLI imports in your global CSS file.
+`npx shadcn@latest init` でプロジェクトを設定している場合は、すでに `scroll-fade` を利用できます。`shadcn` パッケージに含まれており、CLI がグローバル CSS ファイルにインポートします。
 
-Otherwise, install the `shadcn` package:
+それ以外の場合は、`shadcn` パッケージをインストールします。
 
 ```bash
 npm install shadcn
 ```
 
-Then import the shared utilities in your global CSS file:
+次に、共有ユーティリティをグローバル CSS ファイルにインポートします。
 
 ```css
 @import "tailwindcss";
 @import "shadcn/tailwind.css";
 ```
 
-## Usage
+## 使い方
 
 | Class                             | Styles                                                                                                              |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `scroll-fade`                     | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-block));` <br /> `animation-timeline: scroll(self y);`       |
 | `scroll-fade-y`                   | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-block));` <br /> `animation-timeline: scroll(self y);`       |
 | `scroll-fade-x`                   | `mask-image: var(--scroll-fade-mask, var(--scroll-fade-inline));` <br /> `animation-timeline: scroll(self inline);` |
-| `scroll-fade-t`                   | Fade mask on the top edge. <br /> `animation-timeline: scroll(self y);`                                             |
-| `scroll-fade-b`                   | Fade mask on the bottom edge. <br /> `animation-timeline: scroll(self y);`                                          |
-| `scroll-fade-l`                   | Fade mask on the left edge. <br /> `animation-timeline: scroll(self x);`                                            |
-| `scroll-fade-r`                   | Fade mask on the right edge. <br /> `animation-timeline: scroll(self x);`                                           |
-| `scroll-fade-s`                   | Fade mask on the start edge, mirrors in RTL. <br /> `animation-timeline: scroll(self inline);`                      |
-| `scroll-fade-e`                   | Fade mask on the end edge, mirrors in RTL. <br /> `animation-timeline: scroll(self inline);`                        |
+| `scroll-fade-t`                   | 上端のフェード マスク。<br /> `animation-timeline: scroll(self y);`                                                 |
+| `scroll-fade-b`                   | 下端にフェードマスク。 <br /> `animation-timeline: scroll(self y);`                                                 |
+| `scroll-fade-l`                   | 左端にフェードマスク。 <br /> `animation-timeline: scroll(self x);`                                                 |
+| `scroll-fade-r`                   | 右端にフェードマスク。 <br /> `animation-timeline: scroll(self x);`                                                 |
+| `scroll-fade-s`                   | 開始エッジのフェードマスク、RTL のミラーリング。 <br /> `animation-timeline: scroll(self inline);`                  |
+| `scroll-fade-e`                   | 終端エッジのフェード マスク。RTL では反転します。<br /> `animation-timeline: scroll(self inline);`                  |
 | `scroll-fade-<number>`            | `--scroll-fade-size: calc(var(--spacing) * <number>);`                                                              |
 | `scroll-fade-[<value>]`           | `--scroll-fade-size: <value>;`                                                                                      |
 | `scroll-fade-{t,b,s,e}-<number>`  | `--scroll-fade-{t,b,s,e}-size: calc(var(--spacing) * <number>);`                                                    |
 | `scroll-fade-{t,b,s,e}-[<value>]` | `--scroll-fade-{t,b,s,e}-size: <value>;`                                                                            |
 | `scroll-fade-none`                | `--scroll-fade-mask: none;`                                                                                         |
 
-Add `scroll-fade` or `scroll-fade-y` to the scroll container, i.e. the element that has `overflow-y-auto`.
+`scroll-fade` または `scroll-fade-y` をスクロール コンテナー、つまり `overflow-y-auto` を持つ要素に追加します。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto">{/* ... */}</div>
 ```
 
-The fade is scroll-aware and tracks the scroll position:
+フェードはスクロールを認識し、スクロール位置を追跡します。
 
-- At rest, the top edge is crisp and the bottom edge fades to hint at more content.
-- As you scroll, a fade appears at the top and both edges stay faded mid-scroll.
-- At the end, the bottom edge sharpens to show you have reached the last item.
+- 静止時は上端が鮮明で、下端がフェードして続きのコンテンツを示します。
+- スクロールすると、上部にフェードが表示され、スクロール中は両端がフェードしたままになります。
+- 最後に、下のエッジが鋭くなり、最後の項目に到達したことが示されます。
 
-The fade is applied with `mask-image`, so it dissolves the content itself rather than overlaying a color. The mask uses a linear fade from transparent to black, so it adapts to any background without configuration. If your scroll area sits inside a card, put the background and border on a wrapper and `scroll-fade` on the inner scroller, so the fade dissolves the content and not the card.
+フェードは `mask-image` で適用されるため、色をオーバーレイするのではなく、コンテンツ自体をディゾルブします。マスクは透明から黒への線形フェードを使用するため、設定なしであらゆる背景に適応します。スクロール領域がカード内にある場合は、背景と境界線をラッパーに配置し、`scroll-fade` を内側のスクローラーに配置します。これにより、フェードによってカードではなくコンテンツがディゾルブされます。
 
-The [`ScrollArea`](/docs/components/scroll-area) and [`MessageScroller`](/docs/components/message-scroller) components can use `scroll-fade` on their scrollable viewport.
+[`ScrollArea`](/docs/components/scroll-area) および [`MessageScroller`](/docs/components/message-scroller) コンポーネントは、スクロール可能なビューポートで `scroll-fade` を使用できます。
 
-## No Overflow, No Fade
+## オーバーフローなし、フェードなし
 
-If the content does not overflow, no fade is shown. You can apply `scroll-fade` to any list without checking whether it scrolls.
+コンテンツがオーバーフローしていない場合、フェードは表示されません。スクロール可能か確認せず、任意のリストに `scroll-fade` を適用できます。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -71,9 +71,9 @@ If the content does not overflow, no fade is shown. You can apply `scroll-fade` 
   previewClassName="h-auto"
 />
 
-## Horizontal Scrolling
+## 水平スクロール
 
-Use `scroll-fade-x` on containers that scroll horizontally, i.e. the element that has `overflow-x-auto`.
+水平方向にスクロールするコンテナ、つまり `overflow-x-auto` を持つ要素で `scroll-fade-x` を使用します。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -85,11 +85,11 @@ Use `scroll-fade-x` on containers that scroll horizontally, i.e. the element tha
 <div className="flex scroll-fade-x overflow-x-auto">{/* ... */}</div>
 ```
 
-The horizontal fade is direction-aware. In RTL layouts, the crisp edge and the fade follow the reading direction with no extra classes needed. `scroll-fade-<number>` and `scroll-fade-none` work the same for both axes.
+水平フェードは方向を認識します。 RTL レイアウトでは、余分なクラスを必要とせずに、鮮明なエッジとフェードが読み取り方向に従います。 `scroll-fade-<number>` と `scroll-fade-none` は両方の軸で同じように機能します。
 
-## Edge Fades
+## エッジ フェード
 
-Use edge utilities when only one edge should track the scroll position.
+1 つのエッジだけでスクロール位置を追跡する場合は、エッジ ユーティリティを使います。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -101,11 +101,11 @@ Use edge utilities when only one edge should track the scroll position.
 <div className="scroll-fade-b overflow-y-auto">{/* ... */}</div>
 ```
 
-The edge utilities are scroll-aware. Start edges fade in after you scroll away from the start, and end edges fade out when you reach the end. Use `scroll-fade-t`, `scroll-fade-b`, `scroll-fade-l`, and `scroll-fade-r` for physical edges. Use `scroll-fade-s` and `scroll-fade-e` for logical inline edges that mirror in RTL.
+エッジ ユーティリティはスクロールを認識します。開始エッジは開始位置から離れるとフェードインし、終了エッジは末尾に到達するとフェードアウトします。物理エッジには `scroll-fade-t`、`scroll-fade-b`、`scroll-fade-l`、`scroll-fade-r` を使います。RTL で反転する論理インライン エッジには `scroll-fade-s` と `scroll-fade-e` を使います。
 
-## Fade Size
+## フェード サイズ
 
-The fade depth defaults to `12%` of the container, capped at `40px` so tall scrollers stay subtle. Use `scroll-fade-<number>` to set a fixed size on the spacing scale instead, the same way `scroll-mt-<number>` works.
+フェード深度のデフォルトはコンテナーの `12%` で、上限は `40px` なので、トール スクローラーは微妙なままです。代わりに、`scroll-fade-<number>` を使用して、`scroll-mt-<number>` の動作と同じように、間隔スケールに固定サイズを設定します。
 
 <ComponentPreview
   styleName="base-rhea"
@@ -117,13 +117,13 @@ The fade depth defaults to `12%` of the container, capped at `40px` so tall scro
 <div className="scroll-fade overflow-y-auto scroll-fade-24">{/* ... */}</div>
 ```
 
-For one-off values, use an arbitrary length or percentage:
+一度だけ使う値には、任意の長さまたはパーセンテージを指定します。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto scroll-fade-[15%]">{/* ... */}</div>
 ```
 
-To fade opposite edges by different amounts, use the per-edge modifiers `scroll-fade-t-<number>`, `scroll-fade-b-<number>`, `scroll-fade-s-<number>`, and `scroll-fade-e-<number>`. They override `scroll-fade-<number>` on the edge they target and accept arbitrary values too.
+向かい合うエッジを異なる量でフェードするには、エッジごとの修飾子 `scroll-fade-t-<number>`、`scroll-fade-b-<number>`、`scroll-fade-s-<number>`、`scroll-fade-e-<number>` を使います。対象エッジでは `scroll-fade-<number>` を上書きし、任意の値も受け取ります。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto scroll-fade-b-8 scroll-fade-t-2">
@@ -131,9 +131,9 @@ To fade opposite edges by different amounts, use the per-edge modifiers `scroll-
 </div>
 ```
 
-Use the logical `s`/`e` modifiers for horizontal scrollers so the sizes mirror in RTL.
+水平スクローラーでは論理的な `s`/`e` 修飾子を使うと、RTL でサイズが反転します。
 
-The fade eases in and out over a fixed scroll distance rather than appearing instantly. That distance is the `--scroll-fade-reveal` variable, `96px` by default and independent of the fade depth. Lower it for a snappier reveal or raise it for a more gradual one:
+フェードは即座に表示されるのではなく、一定のスクロール距離に応じて徐々に現れたり消えたりします。その距離は `--scroll-fade-reveal` 変数 (デフォルトでは `96px`) であり、フェード深度には関係ありません。よりきびきびとした表示にする場合は下げ、より緩やかな表示にする場合は上げます。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto [--scroll-fade-reveal:64px]">
@@ -141,9 +141,9 @@ The fade eases in and out over a fixed scroll distance rather than appearing ins
 </div>
 ```
 
-## Disabling the Fade
+## フェードを無効にする
 
-Use `scroll-fade-none` to remove the fade. It works in any class order, so the typical use is responsive or stateful:
+`scroll-fade-none` を使うとフェードを削除できます。クラスの順序に関係なく動作するため、レスポンシブまたは状態に応じた使い方ができます。
 
 ```tsx
 <div className="scroll-fade overflow-y-auto md:scroll-fade-none">
@@ -157,17 +157,17 @@ Use `scroll-fade-none` to remove the fade. It works in any class order, so the t
   previewClassName="h-auto"
 />
 
-## Fallback
+## フォールバック
 
-The scroll-aware behavior is implemented with [CSS scroll-driven animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations), with no JavaScript and no scroll listeners. In browsers that do not support scroll-driven animations, `scroll-fade` falls back to a static fade on both edges, and edge utilities fall back to a static fade on the selected edge.
+スクロール認識動作は、JavaScript やスクロール リスナーを使わず、[CSS スクロール駆動アニメーション](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations)で実装されています。スクロール駆動アニメーションに対応していないブラウザーでは、`scroll-fade` は両端の静的フェードにフォールバックし、エッジ ユーティリティは選択したエッジの静的フェードにフォールバックします。
 
-Since the mask is applied to the scroll container itself, a visible scrollbar fades with the content at the edges. Pair `scroll-fade` with `no-scrollbar`, which ships in the same package, if you want to hide the scrollbar entirely.
+マスクはスクロール コンテナ自体に適用されるため、表示されるスクロールバーは端のコンテンツとともにフェードアウトします。スクロールバーを完全に非表示にしたい場合は、同じパッケージに同梱されている `scroll-fade` を `no-scrollbar` と組み合わせます。
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
-`scroll-fade-x` follows the reading direction. At rest, the start edge is crisp and the end edge fades. In RTL layouts that means a crisp right edge and a fade on the left, mirrored from LTR.
+`scroll-fade-x` は読み取り方向に従います。静止状態では、開始エッジは鮮明で、終了エッジは消えます。 RTL レイアウトでは、LTR からミラーリングされた、鮮明な右エッジと左のフェードを意味します。
 
 <ComponentPreview
   styleName="base-nova"

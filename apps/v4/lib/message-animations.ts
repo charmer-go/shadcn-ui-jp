@@ -3,7 +3,7 @@ import type { Variants } from "motion/react"
 const ANIMATIONS = [
   {
     id: "fade",
-    name: "Fade",
+    name: "フェード",
     variants: {
       initial: { opacity: 0 },
       animate: {
@@ -15,7 +15,7 @@ const ANIMATIONS = [
   },
   {
     id: "slide-up",
-    name: "Slide Up",
+    name: "上へスライド",
     variants: {
       initial: { opacity: 0, y: 10 },
       animate: {
@@ -28,7 +28,7 @@ const ANIMATIONS = [
   },
   {
     id: "slide-side",
-    name: "Slide Side",
+    name: "横へスライド",
     variants: {
       initial: { opacity: 0, x: 18 },
       animate: {
@@ -45,7 +45,7 @@ const ANIMATIONS = [
   },
   {
     id: "pop",
-    name: "Pop",
+    name: "ポップ",
     variants: {
       initial: {
         opacity: 0,
@@ -65,7 +65,7 @@ const ANIMATIONS = [
   },
   {
     id: "spring-bounce",
-    name: "Spring Bounce",
+    name: "スプリングバウンス",
     variants: {
       initial: { opacity: 0, y: 12, scale: 0.96 },
       animate: {
@@ -84,7 +84,7 @@ const ANIMATIONS = [
   },
   {
     id: "blur-fade",
-    name: "Blur Fade",
+    name: "ぼかしフェード",
     variants: {
       initial: { opacity: 0, filter: "blur(4px)", y: 6 },
       animate: {
@@ -102,7 +102,7 @@ const ANIMATIONS = [
   },
   {
     id: "scale-fade",
-    name: "Scale Fade",
+    name: "拡大縮小フェード",
     variants: {
       initial: { opacity: 0, scale: 0.98 },
       animate: {

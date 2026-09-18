@@ -2,17 +2,17 @@
 
 import { REGEXP_ONLY_DIGITS } from "input-otp"
 
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/styles/base-nova/ui/input-otp"
+} from "@/components/ui/base/input-otp"
 
 export function InputOTPPattern() {
   return (
     <Field className="w-fit">
-      <FieldLabel htmlFor="digits-only">Digits Only</FieldLabel>
+      <FieldLabel htmlFor="digits-only">数字のみ</FieldLabel>
       <InputOTP id="digits-only" maxLength={6} pattern={REGEXP_ONLY_DIGITS}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />

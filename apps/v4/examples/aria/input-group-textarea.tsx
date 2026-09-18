@@ -11,7 +11,7 @@ import {
   InputGroupButton,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/aria-nova/ui/input-group"
+} from "@/components/ui/aria/input-group"
 
 export default function InputGroupTextareaExample() {
   return (
@@ -23,9 +23,9 @@ export default function InputGroupTextareaExample() {
           className="min-h-[200px]"
         />
         <InputGroupAddon align="block-end" className="border-t">
-          <InputGroupText>Line 1, Column 1</InputGroupText>
+          <InputGroupText>1行目, 1列目</InputGroupText>
           <InputGroupButton size="sm" className="ml-auto" variant="default">
-            Run <IconCornerDownLeft />
+            実行 <IconCornerDownLeft />
           </InputGroupButton>
         </InputGroupAddon>
         <InputGroupAddon align="block-start" className="border-b">

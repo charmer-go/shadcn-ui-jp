@@ -1,6 +1,6 @@
 ---
-title: Alert
-description: Displays a callout for user attention.
+title: 警告
+description: ユーザーの注意を促すコールアウトを表示します。
 base: aria
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,11 +31,11 @@ npx shadcn@latest add alert
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource name="alert" title="components/ui/alert.tsx" />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add alert
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -67,9 +67,9 @@ import {
 </Alert>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `Alert`:
+次の構成を使用して、`Alert` を構築します。
 
 ```text
 Alert
@@ -79,9 +79,9 @@ Alert
 └── AlertAction
 ```
 
-## Basic
+## 基本
 
-A basic alert with an icon, title and description.
+アイコン、タイトル、説明を含む基本的なアラート。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -89,9 +89,9 @@ A basic alert with an icon, title and description.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Destructive
+## 破壊的
 
-Use `variant="destructive"` to create a destructive alert.
+`variant="destructive"` を使用して、破壊的なアラートを作成します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -99,9 +99,9 @@ Use `variant="destructive"` to create a destructive alert.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Action
+## アクション
 
-Use `AlertAction` to add a button or other action element to the alert.
+`AlertAction` を使用して、ボタンまたはその他のアクション要素をアラートに追加します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -109,9 +109,9 @@ Use `AlertAction` to add a button or other action element to the alert.
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## Custom Colors
+## カスタムカラー
 
-You can customize the alert colors by adding custom classes such as `bg-amber-50 dark:bg-amber-950` to the `Alert` component.
+`bg-amber-50 dark:bg-amber-950` などのカスタム クラスを `Alert` コンポーネントに追加することで、アラートの色をカスタマイズできます。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -121,7 +121,7 @@ You can customize the alert colors by adding custom classes such as `bg-amber-50
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -130,36 +130,36 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-## API Reference
+## API リファレンス
 
-### Alert
+### アラート
 
-The `Alert` component displays a callout for user attention.
+`Alert` コンポーネントは、ユーザーの注意を促すコールアウトを表示します。
 
-| Prop      | Type                         | Default     |
+|小道具 |タイプ |デフォルト |
 | --------- | ---------------------------- | ----------- |
 | `variant` | `"default" \| "destructive"` | `"default"` |
 
-### AlertTitle
+### アラートタイトル
 
-The `AlertTitle` component displays the title of the alert.
+`AlertTitle` コンポーネントは、アラートのタイトルを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### AlertDescription
+### アラートの説明
 
-The `AlertDescription` component displays the description or content of the alert.
+`AlertDescription` コンポーネントは、アラートの説明または内容を表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### AlertAction
+### アラートアクション
 
-The `AlertAction` component displays an action element (like a button) positioned absolutely in the top-right corner of the alert.
+`AlertAction` コンポーネントは、アラートの右上隅に絶対に配置されたアクション要素 (ボタンなど) を表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |

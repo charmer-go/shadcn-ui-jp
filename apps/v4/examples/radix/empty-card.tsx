@@ -1,6 +1,6 @@
 import { ArrowUpRightIcon, FolderIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Empty,
   EmptyContent,
@@ -8,7 +8,7 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-nova/ui/empty"
+} from "@/components/ui/radix/empty"
 
 export function EmptyInCard() {
   return (
@@ -17,22 +17,21 @@ export function EmptyInCard() {
         <EmptyMedia variant="icon">
           <FolderIcon />
         </EmptyMedia>
-        <EmptyTitle>No projects yet</EmptyTitle>
+        <EmptyTitle>プロジェクトはまだありません</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          まだプロジェクトを作成していません。最初のプロジェクトを作成して始めましょう。
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <div className="flex gap-2">
           <Button asChild>
-            <a href="#">Create project</a>
+            <a href="#">プロジェクトを作成</a>
           </Button>
-          <Button variant="outline">Import project</Button>
+          <Button variant="outline">プロジェクトをインポート</Button>
         </div>
         <Button variant="link" asChild className="text-muted-foreground">
           <a href="#">
-            Learn more <ArrowUpRightIcon />
+            詳細を見る <ArrowUpRightIcon />
           </a>
         </Button>
       </EmptyContent>

@@ -1,6 +1,6 @@
 ---
-title: Questionnaire
-description: A multi-step questionnaire with single-choice, multiple-choice, freeform, and skippable questions.
+title: アンケート
+description: 単一選択、複数選択、自由入力、スキップ可能な質問に対応した複数ステップのアンケート。
 base: radix
 component: true
 ---
@@ -12,13 +12,13 @@ component: true
   previewClassName="min-h-[560px] p-4 sm:p-8"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -32,13 +32,13 @@ npx shadcn@latest add questionnaire
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependency:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @shadcn/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="questionnaire"
@@ -46,7 +46,7 @@ npm install @shadcn/react
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -54,7 +54,7 @@ npm install @shadcn/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import {
@@ -110,8 +110,8 @@ const items = [
 ] as const
 ```
 
-Define the collection once: pass it to `Questionnaire` for server-rendered
-progress, actions, and shortcuts, then map it into the parts.
+コレクションを一度定義します。サーバーでレンダリングされる
+の進行状況、アクション、およびショートカットをパーツにマップします。
 
 ```tsx
 <Questionnaire items={items} onSubmit={handleSubmit}>
@@ -164,7 +164,7 @@ function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 }
 ```
 
-## Composition
+## 構成
 
 ```text
 Questionnaire
@@ -184,16 +184,16 @@ Questionnaire
 ```
 
 Questionnaire owns the ordered items, active item, answer state, validation,
-progress, and navigation. The containing page, card, dialog, or drawer owns
-close and cancellation behavior, persistence, transport, and branching.
+の進行状況とナビゲーションに焦点が当てられます。これを含むページ、カード、ダイアログ、またはドロワーが
+クローズとキャンセルの動作、永続化、トランスポート、および分岐。
 
-## Server Rendering
+## サーバー レンダリング
 
 Pass `items` to server-render the active item, progress, actions, and answer
 shortcuts. See the
-[headless Questionnaire](/docs/react/questionnaire) for the complete behavior.
+[headless Questionnaire](/docs/react/questionnaire) を参照してください。
 
-## Multiple Selection
+## 複数選択
 
 Use `multiple` for an item that accepts more than one fixed answer.
 
@@ -204,9 +204,9 @@ Use `multiple` for an item that accepts more than one fixed answer.
   previewClassName="min-h-[420px] p-4 sm:p-8"
 />
 
-## Freeform Answer
+## フリーフォームの回答
 
-Compose `QuestionnaireInput` with fixed choices when the user can provide another answer.
+ユーザーが別の回答を提供できる場合は、固定の選択肢を使用して `QuestionnaireInput` を作成します。
 
 <ComponentPreview
   align="end"
@@ -215,9 +215,9 @@ Compose `QuestionnaireInput` with fixed choices when the user can provide anothe
   previewClassName="min-h-[420px] p-4 sm:p-8"
 />
 
-## Explicit Skip
+## 明示的スキップ
 
-Add `QuestionnaireSkip` when an optional item may be intentionally left unanswered.
+オプションの項目が意図的に未回答のままになっている可能性がある場合は、`QuestionnaireSkip` を追加します。
 
 <ComponentPreview
   align="end"
@@ -226,9 +226,9 @@ Add `QuestionnaireSkip` when an optional item may be intentionally left unanswer
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Shortcuts
+## ショートカット
 
-Assign a letter or number key to each answer with `shortcuts`.
+`shortcuts` を使用して、各回答に文字または数字キーを割り当てます。
 
 <ComponentPreview
   align="end"
@@ -237,9 +237,9 @@ Assign a letter or number key to each answer with `shortcuts`.
   previewClassName="min-h-[480px] p-4 sm:p-8"
 />
 
-## Custom Validation
+## カスタム検証
 
-Combine controlled navigation with an external schema such as Zod to return to an invalid item and present its error.
+制御されたナビゲーションと Zod などの外部スキーマを組み合わせて、無効な項目に戻り、そのエラーを表示します。
 
 <ComponentPreview
   align="end"
@@ -248,9 +248,9 @@ Combine controlled navigation with an external schema such as Zod to return to a
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Controlled
+## 制御
 
-Control the active item from host state, such as returning to an invalid step.
+無効なステップに戻るなど、ホスト状態からアクティブ項目を制御します。
 
 <ComponentPreview
   align="end"
@@ -259,7 +259,7 @@ Control the active item from host state, such as returning to an invalid step.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Resume
+## 再開
 
 Restore a saved active item and default answers, then reset changes back to that saved state.
 
@@ -270,9 +270,9 @@ Restore a saved active item and default answers, then reset changes back to that
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Conditional Items
+## 条件付きアイテム
 
-Disable items that do not apply to the user's earlier answers.
+Disable 項目も受け入れます。
 
 <ComponentPreview
   align="end"
@@ -281,9 +281,9 @@ Disable items that do not apply to the user's earlier answers.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Navigation State
+## ナビゲーション状態
 
-Read item status to opt into disabled navigation and custom action styling.
+アイテムのステータスを読み取り、無効なナビゲーションとカスタム アクション スタイルをオプトインします。
 
 <ComponentPreview
   align="end"
@@ -292,9 +292,9 @@ Read item status to opt into disabled navigation and custom action styling.
   previewClassName="min-h-[480px] p-4 sm:p-8"
 />
 
-## Custom Progress
+## カスタム進行状況
 
-Use the Progress render state to build a custom progress indicator.
+進行状況レンダリング状態を使用して、カスタム進行状況インジケーターを作成します。
 
 <ComponentPreview
   align="end"
@@ -303,9 +303,9 @@ Use the Progress render state to build a custom progress indicator.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Animated Items
+## アニメーション アイテムを所有しています
 
-Animate the active item while keeping progress and navigation stationary.
+進行状況とナビゲーションを静止させたまま、アクティブな項目をアニメーション化します。
 
 <ComponentPreview
   align="end"
@@ -314,7 +314,7 @@ Animate the active item while keeping progress and navigation stationary.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Card
+## カード
 
 Compose Questionnaire with Card slots while keeping the question title and description semantic.
 
@@ -325,9 +325,9 @@ Compose Questionnaire with Card slots while keeping the question title and descr
   previewClassName="min-h-[560px] p-4 sm:p-8"
 />
 
-## Dialog
+## ダイアログ
 
-Compose Questionnaire inside a Dialog while keeping cancellation and dismissal host-owned.
+キャンセルと閉じる操作をホスト側で管理しながら、ダイアログ内にアンケートを構成します。
 
 <ComponentPreview
   align="end"
@@ -336,32 +336,32 @@ Compose Questionnaire inside a Dialog while keeping cancellation and dismissal h
   previewClassName="min-h-[320px] p-4 sm:p-8"
 />
 
-## Accessibility
+## アクセシビリティ
 
-`QuestionnaireItem` renders a `fieldset`, and `QuestionnaireTitle` renders its
-`legend`. Descriptions and active errors are associated with the current item,
-and invalid items and answer controls expose `aria-invalid`.
+`QuestionnaireItem` は `fieldset` をレンダリングし、`QuestionnaireTitle` はその
+`legend`。説明とアクティブなエラーは現在のアイテムに関連付けられています。
+と無効な項目および応答コントロールにより `aria-invalid` が公開されます。
 
-Fixed choices preserve native radio and checkbox behavior. Progress is exposed
-as a named progressbar, navigation uses real buttons, and inactive items and
-actions are hidden and inert. Successful navigation focuses the newly active
+修正された選択肢は、ネイティブのラジオとチェックボックスの動作を保持します。進行状況が公開されます
+、ナビゲーションは実際のボタンを使用し、非アクティブなアイテムと
+アクションは非表示で不活性です。ナビゲーションが成功すると、新しくアクティブになった
 item; failed validation focuses an available answer control.
 
 Always give `QuestionnaireInput` an accessible name with a visible label,
-`aria-label`, or `aria-labelledby`. A placeholder is not a label. See the
+`aria-label`、または `aria-labelledby`。プレースホルダーはラベルではありません。
 [Questionnaire accessibility guide](/docs/react/questionnaire#accessibility)
 for labeling custom compositions and the complete keyboard behavior.
 
-## Unstyled
+## スタイルなし
 
 The behavior in `Questionnaire` comes from the `@shadcn/react` package. To use
 it directly with your own markup and styles, see
 [Questionnaire](/docs/react/questionnaire) under @shadcn/react.
 
-## API Reference
+## API リファレンス
 
 The props, data attributes, and render states for every part are documented on
-the [@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) page.
-The styled components inherit the corresponding unstyled props. Navigation
-components also accept Button `size` and `variant` props, and
-`QuestionnaireActions` is a styled-only layout helper.
+[@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) ページ。
+スタイル付きコンポーネントは、対応するスタイルされていないプロパティを継承します。ナビゲーション
+コンポーネントは、Button `size` および `variant` プロパティ、およびユーザーの以前の回答に適用されない
+`QuestionnaireActions` は、スタイルのみのレイアウト ヘルパーです。

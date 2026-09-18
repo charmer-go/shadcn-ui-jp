@@ -4,15 +4,15 @@ import * as React from "react"
 import { format } from "date-fns"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Calendar } from "@/styles/radix-nova/ui/calendar"
-import { Field, FieldGroup, FieldLabel } from "@/styles/radix-nova/ui/field"
-import { Input } from "@/styles/radix-nova/ui/input"
+import { Button } from "@/components/ui/radix/button"
+import { Calendar } from "@/components/ui/radix/calendar"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/radix/field"
+import { Input } from "@/components/ui/radix/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/radix-nova/ui/popover"
+} from "@/components/ui/radix/popover"
 
 export function DatePickerTime() {
   const [open, setOpen] = React.useState(false)
@@ -21,7 +21,7 @@ export function DatePickerTime() {
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">日付</FieldLabel>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -29,7 +29,7 @@ export function DatePickerTime() {
               id="date-picker-optional"
               className="w-32 justify-between font-normal"
             >
-              {date ? format(date, "PPP") : "Select date"}
+              {date ? format(date, "PPP") : "日付を選択"}
               <ChevronDownIcon />
             </Button>
           </PopoverTrigger>
@@ -48,7 +48,7 @@ export function DatePickerTime() {
         </Popover>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">時刻</FieldLabel>
         <Input
           type="time"
           id="time-picker-optional"

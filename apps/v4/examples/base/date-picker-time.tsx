@@ -4,15 +4,15 @@ import * as React from "react"
 import { format } from "date-fns"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function DatePickerTime() {
   const [open, setOpen] = React.useState(false)
@@ -21,7 +21,7 @@ export function DatePickerTime() {
   return (
     <FieldGroup className="mx-auto max-w-xs flex-row">
       <Field>
-        <FieldLabel htmlFor="date-picker-optional">Date</FieldLabel>
+        <FieldLabel htmlFor="date-picker-optional">日付</FieldLabel>
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger
             render={
@@ -32,7 +32,7 @@ export function DatePickerTime() {
               />
             }
           >
-            {date ? format(date, "PPP") : "Select date"}
+            {date ? format(date, "PPP") : "日付を選択"}
             <ChevronDownIcon data-icon="inline-end" />
           </PopoverTrigger>
           <PopoverContent className="w-auto overflow-hidden p-0" align="start">
@@ -50,7 +50,7 @@ export function DatePickerTime() {
         </Popover>
       </Field>
       <Field className="w-32">
-        <FieldLabel htmlFor="time-picker-optional">Time</FieldLabel>
+        <FieldLabel htmlFor="time-picker-optional">時刻</FieldLabel>
         <Input
           type="time"
           id="time-picker-optional"

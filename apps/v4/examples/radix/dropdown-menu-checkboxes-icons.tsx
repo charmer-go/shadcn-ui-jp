@@ -3,7 +3,7 @@
 import * as React from "react"
 import { BellIcon, MailIcon, MessageSquareIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -11,7 +11,7 @@ import {
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function DropdownMenuCheckboxesIcons() {
   const [notifications, setNotifications] = React.useState({
@@ -23,11 +23,11 @@ export function DropdownMenuCheckboxesIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Notifications</Button>
+        <Button variant="outline">通知</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
+          <DropdownMenuLabel>通知設定</DropdownMenuLabel>
           <DropdownMenuCheckboxItem
             checked={notifications.email}
             onCheckedChange={(checked) =>
@@ -35,7 +35,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MailIcon />
-            Email notifications
+            メール通知
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.sms}
@@ -44,7 +44,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MessageSquareIcon />
-            SMS notifications
+            SMS通知
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.push}
@@ -53,7 +53,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <BellIcon />
-            Push notifications
+            プッシュ通知
           </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

@@ -10,9 +10,9 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/base-rhea/ui/attachment"
-import { Bubble, BubbleContent } from "@/styles/base-rhea/ui/bubble"
-import { Message, MessageContent } from "@/styles/base-rhea/ui/message"
+} from "@/components/ui/base/attachment"
+import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
+import { Message, MessageContent } from "@/components/ui/base/message"
 
 export function MessageAttachmentDemo() {
   return (
@@ -23,14 +23,13 @@ export function MessageAttachmentDemo() {
             <AttachmentMedia variant="image">
               <img
                 src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
-                alt="Workspace"
+                alt="ワークスペース"
               />
             </AttachmentMedia>
           </Attachment>
           <Bubble>
             <BubbleContent>
-              Here&apos;s the image. Can you add it to the PDF? Use it for the
-              cover page.
+              画像です。PDFに追加してもらえますか？表紙に使ってください。
             </BubbleContent>
           </Bubble>
         </MessageContent>
@@ -39,7 +38,7 @@ export function MessageAttachmentDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              Done. Here&apos;s the PDF with the image added as the cover page.
+              完了しました。画像を表紙に追加したPDFです。
             </BubbleContent>
           </Bubble>
           <Attachment>
@@ -53,8 +52,8 @@ export function MessageAttachmentDemo() {
             <AttachmentActions>
               <AttachmentAction
                 type="button"
-                title="Download"
-                aria-label="Download"
+                title="ダウンロード"
+                aria-label="ダウンロード"
                 size="icon-sm"
                 variant="secondary"
               >
@@ -67,7 +66,7 @@ export function MessageAttachmentDemo() {
       <Message align="end">
         <MessageContent>
           <Bubble>
-            <BubbleContent>Thanks. Looks good.</BubbleContent>
+            <BubbleContent>ありがとう。いい感じです。</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>

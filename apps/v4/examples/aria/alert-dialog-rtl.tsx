@@ -16,8 +16,8 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/aria-nova/ui-rtl/alert-dialog"
-import { Button } from "@/styles/aria-nova/ui-rtl/button"
+} from "@/components/ui/aria/alert-dialog"
+import { Button } from "@/components/ui/aria/button"
 
 const translations: Translations = {
   en: {

@@ -1,25 +1,25 @@
 ---
-title: MCP Server
-description: MCP support for registry developers
+title: MCP サーバー
+description: レジストリ開発者向けの MCP サポート
 ---
 
-The [shadcn MCP server](/docs/mcp) works out of the box with any shadcn-compatible registry. You do not need to do anything special to enable MCP support for your registry.
-
----
-
-## Prerequisites
-
-The MCP server works by requesting your registry index. Make sure you have a registry item file at the root of your registry named `registry`.
-
-For example, if your registry is hosted at `https://acme.com/r/[name].json`, you should have a file at `https://acme.com/r/registry.json` or `https://acme.com/r/registry` if you're using a JSON file extension.
-
-This file must be a valid JSON file that conforms to the [registry schema](/docs/registry/registry-json).
+[shadcn MCP サーバー](/docs/mcp)は shadcn 互換のレジストリであればそのまま動作します。レジストリ側で MCP サポートを有効にするために特別な対応は不要です。
 
 ---
 
-## Configuring MCP
+## 前提条件
 
-Ask your registry consumers to configure your registry in their `components.json` file and install the shadcn MCP server:
+MCP サーバーはレジストリインデックスをリクエストして動作します。レジストリのルートに `registry` という名前のレジストリアイテムファイルがあることを確認してください。
+
+たとえば、レジストリが `https://acme.com/r/[name].json` でホストされている場合、`https://acme.com/r/registry.json` にファイルが必要です。JSON 拡張子を使わない形式の場合は `https://acme.com/r/registry` にファイルを配置してください。
+
+このファイルは[レジストリスキーマ](/docs/registry/registry-json)に準拠した有効な JSON ファイルでなければなりません。
+
+---
+
+## MCP の設定
+
+レジストリ利用者に対し、`components.json` ファイルでレジストリを設定し、shadcn MCP サーバーをインストールするよう案内してください:
 
 <Tabs defaultValue="claude">
   <TabsList>
@@ -30,7 +30,7 @@ Ask your registry consumers to configure your registry in their `components.json
     <TabsTrigger value="opencode">OpenCode</TabsTrigger>
   </TabsList>
   <TabsContent value="claude" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` ファイルで**レジストリを設定**します:
 
     ```json title="components.json" showLineNumbers
     {
@@ -40,22 +40,22 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Run the following command** in your project:
+    プロジェクトで**以下のコマンドを実行**します:
 
     ```bash
     npx shadcn@latest mcp init --client claude
     ```
 
-    **Restart Claude Code** and try the following prompts:
+    **Claude Code を再起動**して、以下のプロンプトを試してください:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
-    **Note:** You can use `/mcp` command in Claude Code to debug the MCP server.
+    **注意:** Claude Code では `/mcp` コマンドで MCP サーバーをデバッグできます。
 
   </TabsContent>
 
   <TabsContent value="cursor" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` ファイルで**レジストリを設定**します:
 
     ```json title="components.json" showLineNumbers
     {
@@ -64,19 +64,19 @@ Ask your registry consumers to configure your registry in their `components.json
       }
     }
     ```
-    **Run the following command** in your project:
+    プロジェクトで**以下のコマンドを実行**します:
        ```bash
        npx shadcn@latest mcp init --client cursor
        ```
 
-    Open **Cursor Settings** and **Enable the MCP server** for shadcn. Then try the following prompts:
+    **Cursor の設定**を開いて shadcn の MCP サーバーを**有効化**します。次に以下のプロンプトを試してください:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
   </TabsContent>
 
   <TabsContent value="vscode" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` ファイルで**レジストリを設定**します:
 
     ```json title="components.json" showLineNumbers
     {
@@ -85,19 +85,19 @@ Ask your registry consumers to configure your registry in their `components.json
       }
     }
     ```
-    **Run the following command** in your project:
+    プロジェクトで**以下のコマンドを実行**します:
        ```bash
        npx shadcn@latest mcp init --client vscode
        ```
 
-    Open `.vscode/mcp.json` and click **Start** next to the shadcn server. Then try the following prompts with GitHub Copilot:
+    `.vscode/mcp.json` を開いて shadcn サーバーの横にある**開始**をクリックします。次に GitHub Copilot で以下のプロンプトを試してください:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
   </TabsContent>
 
   <TabsContent value="codex" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` ファイルで**レジストリを設定**します:
 
     ```json title="components.json" showLineNumbers
     {
@@ -107,21 +107,21 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Add the following configuration** to `~/.codex/config.toml`:
+    `~/.codex/config.toml` に**以下の設定を追加**します:
        ```toml
        [mcp_servers.shadcn]
        command = "npx"
        args = ["shadcn@latest", "mcp"]
        ```
 
-    **Restart Codex** and try the following prompts:
+    **Codex を再起動**して、以下のプロンプトを試してください:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
   </TabsContent>
 
   <TabsContent value="opencode" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` ファイルで**レジストリを設定**します:
 
     ```json title="components.json" showLineNumbers
     {
@@ -131,27 +131,27 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Run the following command** in your project:
+    プロジェクトで**以下のコマンドを実行**します:
        ```bash
        npx shadcn@latest mcp init --client opencode
        ```
 
-    **Restart OpenCode** and try the following prompts:
+    **OpenCode を再起動**して、以下のプロンプトを試してください:
        - Show me the components in the acme registry
        - Create a landing page using items from the acme registry
 
   </TabsContent>
 </Tabs>
 
-You can read more about the MCP server in the [MCP documentation](/docs/mcp).
+MCP サーバーの詳細は [MCP ドキュメント](/docs/mcp)をご覧ください。
 
 ---
 
-## Best Practices
+## ベストプラクティス
 
-Here are some best practices for MCP-compatible registries:
+MCP 対応レジストリ向けのベストプラクティスを紹介します:
 
-1. **Clear Descriptions**: Add concise, informative descriptions that help AI assistants understand what a registry item is for and how to use it.
-2. **Proper Dependencies**: List all `dependencies` accurately so MCP can install them automatically.
-3. **Registry Dependencies**: Use `registryDependencies` to indicate relationships between items.
-4. **Consistent Naming**: Use kebab-case for component names and maintain consistency across your registry.
+1. **明確な説明**: AI アシスタントがレジストリアイテムの用途や使い方を理解できるよう、簡潔で分かりやすい説明を追加します。
+2. **適切な依存関係**: MCP が自動インストールできるよう、すべての `dependencies` を正確に列挙します。
+3. **レジストリ依存関係**: アイテム間の関係を示すために `registryDependencies` を使用します。
+4. **一貫した命名**: コンポーネント名には kebab-case を使い、レジストリ全体で一貫性を保ちます。

@@ -2,7 +2,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@/styles/base-nova/ui/resizable"
+} from "@/components/ui/base/resizable"
 
 export default function ResizableHandleDemo() {
   return (
@@ -12,13 +12,13 @@ export default function ResizableHandleDemo() {
     >
       <ResizablePanel defaultSize="25%">
         <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Sidebar</span>
+          <span className="font-semibold">サイドバー</span>
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
       <ResizablePanel defaultSize="75%">
         <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
+          <span className="font-semibold">コンテンツ</span>
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>

@@ -1,5 +1,5 @@
-import { Marker, MarkerContent, MarkerIcon } from "@/styles/base-rhea/ui/marker"
-import { Spinner } from "@/styles/base-rhea/ui/spinner"
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/base/marker"
+import { Spinner } from "@/components/ui/base/spinner"
 
 export function MarkerStatusDemo() {
   return (
@@ -8,13 +8,13 @@ export function MarkerStatusDemo() {
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent>Compacting conversation</MarkerContent>
+        <MarkerContent>会話を圧縮中</MarkerContent>
       </Marker>
       <Marker variant="separator" role="status">
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent>Running tests</MarkerContent>
+        <MarkerContent>テストを実行中</MarkerContent>
       </Marker>
     </div>
   )

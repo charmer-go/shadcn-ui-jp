@@ -1,13 +1,13 @@
-import { Separator } from "@/styles/radix-nova/ui/separator"
+import { Separator } from "@/components/ui/radix/separator"
 
 export function SeparatorVertical() {
   return (
     <div className="flex h-5 items-center gap-4 text-sm">
-      <div>Blog</div>
+      <div>ブログ</div>
       <Separator orientation="vertical" />
-      <div>Docs</div>
+      <div>ドキュメント</div>
       <Separator orientation="vertical" />
-      <div>Source</div>
+      <div>ソース</div>
     </div>
   )
 }

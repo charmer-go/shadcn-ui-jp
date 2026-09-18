@@ -1,6 +1,6 @@
 ---
-title: Button
-description: Displays a button or a component that looks like a button.
+title: ボタン
+description: ボタンまたはボタンに似たコンポーネントを表示します。
 featured: true
 base: aria
 component: true
@@ -11,13 +11,13 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="button-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,13 +31,13 @@ npx shadcn@latest add button
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install react-aria-components
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="button"
@@ -45,7 +45,7 @@ npm install react-aria-components
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -53,7 +53,7 @@ npm install react-aria-components
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Button } from "@/components/ui/button"
@@ -63,13 +63,13 @@ import { Button } from "@/components/ui/button"
 <Button variant="outline">Button</Button>
 ```
 
-## Cursor
+## カーソル
 
-Tailwind v4 [switched](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor) from `cursor: pointer` to `cursor: default` for the button component.
+Tailwind v4 [切り替え](https://tailwindcss.com/docs/upgrade-guide#buttons-use-the-default-cursor) ボタン コンポーネントの `cursor: pointer` から `cursor: default` へ。
 
-If you want to keep the `cursor: pointer` behavior, add the following code to your CSS file:
+`cursor: pointer` の動作を維持したい場合は、CSS ファイルに次のコードを追加します。
 
-You can also enable this during project setup with `npx shadcn@latest init --pointer`.
+プロジェクトのセットアップ中に `npx shadcn@latest init --pointer` を使用してこれを有効にすることもできます。
 
 ```css showLineNumbers title="globals.css"
 @layer base {
@@ -80,87 +80,87 @@ You can also enable this during project setup with `npx shadcn@latest init --poi
 }
 ```
 
-## Size
+## サイズ
 
-Use the `size` prop to change the size of the button.
+ボタンのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview styleName="aria-nova" name="button-size" />
 
-## Default
+## デフォルト
 
 <ComponentPreview styleName="aria-nova" name="button-default" />
 
-## Outline
+## 概要
 
 <ComponentPreview styleName="aria-nova" name="button-outline" />
 
-## Secondary
+## セカンダリ
 
 <ComponentPreview styleName="aria-nova" name="button-secondary" />
 
-## Ghost
+## おばけ
 
 <ComponentPreview styleName="aria-nova" name="button-ghost" />
 
-## Destructive
+## 破壊的
 
 <ComponentPreview styleName="aria-nova" name="button-destructive" />
 
-## Link
+## リンク
 
 <ComponentPreview styleName="aria-nova" name="button-link" />
 
-## Icon
+## アイコン
 
 <ComponentPreview styleName="aria-nova" name="button-icon" />
 
-## With Icon
+## アイコン付き
 
-Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the icon for the correct spacing.
+正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をアイコンに追加してください。
 
 <ComponentPreview styleName="aria-nova" name="button-with-icon" />
 
-## Rounded
+## 丸みを帯びた
 
-Use the `rounded-full` class to make the button rounded.
+`rounded-full` クラスを使用してボタンを丸くします。
 
 <ComponentPreview styleName="aria-nova" name="button-rounded" />
 
-## Spinner
+## スピナー
 
-Render a `<Spinner />` component inside the button to show a loading state. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` attribute to the spinner for the correct spacing.
+ボタン内に `<Spinner />` コンポーネントをレンダリングして、読み込み状態を表示します。正しい間隔を確保するには、必ず `data-icon="inline-start"` または `data-icon="inline-end"` 属性をスピナーに追加してください。
 
 <ComponentPreview styleName="aria-nova" name="button-spinner" />
 
-## Button Group
+## ボタングループ
 
-To create a button group, use the `ButtonGroup` component. See the [Button Group](/docs/components/aria/button-group) documentation for more details.
+ボタン グループを作成するには、`ButtonGroup` コンポーネントを使用します。詳細については、[ボタン グループ](/docs/components/aria/button-group) のドキュメントを参照してください。
 
 <ComponentPreview styleName="aria-nova" name="button-group-demo" />
 
-## As Link
+## リンクとして
 
-You can use the `buttonVariants` helper to make a link look like a button.
+`buttonVariants` ヘルパーを使用すると、リンクをボタンのように見せることができます。
 
-**Do not use `<Button>` for links.** The React Aria `Button` component always applies `role="button"`, which overrides the semantic link role on `<a>` elements. Use `buttonVariants` with a plain `<a>` tag instead.
+**リンクには `<Button>` を使用しないでください。** React Aria `Button` コンポーネントは常に `role="button"` を適用し、`<a>` 要素のセマンティック リンク ロールをオーバーライドします。代わりに、プレーンの `<a>` タグとともに `buttonVariants` を使用してください。
 
 <ComponentPreview styleName="aria-nova" name="button-render" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="button-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-### Button
+### ボタン
 
-The `Button` component is a wrapper around the `button` element that adds a variety of styles and functionality.
+`Button` コンポーネントは、さまざまなスタイルと機能を追加する `button` 要素のラッパーです。
 
-| Prop      | Type                                                                                 | Default     |
+|小道具 |タイプ |デフォルト |
 | --------- | ------------------------------------------------------------------------------------ | ----------- |
-| `variant` | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"`        | `"default"` |
-| `size`    | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` |
+| `variant` | `"default" \| "outline" \| "ghost" \| "destructive" \| "secondary" \| "link"` | `"default"` |
+| `size` | `"default" \| "xs" \| "sm" \| "lg" \| "icon" \| "icon-xs" \| "icon-sm" \| "icon-lg"` | `"default"` |
 
-See the [React Aria](https://react-aria.adobe.com/Button#api) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/Button#api) ドキュメントを参照してください。

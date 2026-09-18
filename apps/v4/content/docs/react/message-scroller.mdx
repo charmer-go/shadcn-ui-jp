@@ -1,27 +1,25 @@
 ---
 title: Message Scroller
-description: Use the MessageScroller behavior directly from the @shadcn/react package with your own markup and styles.
+description: 独自のマークアップとスタイルで、@shadcn/react パッケージの MessageScroller 動作を直接使用します。
 ---
 
-`MessageScroller` ships as a headless primitive in the `@shadcn/react` package.
-The package owns all of the scroll behavior, anchoring turns, following streamed
-output, preserving the reader's place as history loads, and tracking visibility,
-and renders no styles of its own.
+`MessageScroller` は `@shadcn/react` パッケージのスタイルなしプリミティブとして提供されています。
+このパッケージは、すべてのスクロール動作、ターンの固定、ストリーミング出力への追従、履歴読み込み時の読者位置の保持、
+表示状態の追跡を管理し、独自のスタイルは描画しません。
 
-The `message-scroller.tsx` component in the registry is a thin wrapper that adds
-Tailwind classes on top. Use the package directly when you want full control over
-the markup and styles, or when you are not using the registry.
+レジストリの `message-scroller.tsx` コンポーネントは、その上に Tailwind クラスを追加する薄いラッパーです。
+マークアップとスタイルを完全に制御したい場合や、レジストリを使わない場合は、パッケージを直接使用してください。
 
-For the behavior guide and live examples, see the
+動作ガイドと実際に操作できる例については、
 [Message Scroller](/docs/components/base/message-scroller) component.
 
-## Installation
+## インストール
 
 ```bash
 npm install @shadcn/react
 ```
 
-## Usage
+## 使い方
 
 ```tsx
 import {
@@ -30,8 +28,8 @@ import {
 } from "@shadcn/react/message-scroller"
 ```
 
-The package exports a namespace object instead of flat components. The parts and
-behavior are the same as the styled component, just unstyled.
+パッケージはフラットなコンポーネントではなく、名前空間オブジェクトをエクスポートします。
+パーツと動作はスタイル付きコンポーネントと同じで、スタイルだけがありません。
 
 ```tsx
 <MessageScroller.Provider>
@@ -54,10 +52,9 @@ behavior are the same as the styled component, just unstyled.
 </MessageScroller.Provider>
 ```
 
-## Parts
+## パーツ
 
-If you are coming from the styled component, the flat parts map to the namespace
-object like this.
+スタイル付きコンポーネントから移行する場合、フラットなパーツは次のように名前空間オブジェクトへ対応します。
 
 | Styled component          | Unstyled part              |
 | ------------------------- | -------------------------- |
@@ -68,8 +65,7 @@ object like this.
 | `MessageScrollerItem`     | `MessageScroller.Item`     |
 | `MessageScrollerButton`   | `MessageScroller.Button`   |
 
-The hooks are imported the same way and behave identically, since they read from
-`MessageScroller.Provider`.
+フックも同じ方法でインポートし、`MessageScroller.Provider` から読み取るため同じように動作します。
 
 ```tsx
 import {
@@ -79,10 +75,9 @@ import {
 } from "@shadcn/react/message-scroller"
 ```
 
-## Example
+## 例
 
-Here is a complete example that brings its own styles and wires the scroller to
-the AI SDK.
+独自のスタイルを使い、スクローラーを AI SDK に接続する完全な例を示します。
 
 ```tsx showLineNumbers
 "use client"
@@ -122,7 +117,7 @@ export function Chat() {
             </MessageScroller.Content>
           </MessageScroller.Viewport>
           <MessageScroller.Button className="absolute bottom-2 left-1/2 z-10 -translate-x-1/2 rounded-full border bg-background px-3 py-1 text-sm font-medium inert:opacity-0">
-            Jump to latest
+            最新へ移動
           </MessageScroller.Button>
         </MessageScroller.Root>
       </MessageScroller.Provider>
@@ -132,16 +127,11 @@ export function Chat() {
 }
 ```
 
-## Avoiding a Flash on Reload
+## 再読み込み時のちらつきを防ぐ
 
-A scroll container always opens at the top. HTML has no way to set `scrollTop`,
-so a server-rendered transcript shows the oldest messages first. After
-JavaScript runs, `defaultScrollPosition` moves the view, and you see a jump.
+スクロール コンテナは常に上部から開きます。HTML には `scrollTop` を設定する方法がないため、サーバーでレンダリングされたトランスクリプトでは最も古いメッセージが先に表示されます。JavaScript の実行後に `defaultScrollPosition` が表示位置を移動させるため、ジャンプが見えてしまいます。
 
-When `defaultScrollPosition` is `"end"` or `"last-anchor"`, the viewport has
-`data-pending-scroll` until that position is applied. Give the viewport an `id`
-and hide it while the attribute is present. Scope the rule to that id so you do
-not hide the root.
+`defaultScrollPosition` が `"end"` または `"last-anchor"` の場合、位置が適用されるまでビューポートに `data-pending-scroll` が付きます。ビューポートに `id` を付け、この属性がある間は非表示にします。ルートまで隠さないよう、ルールはその `id` に限定してください。
 
 ```css
 #messages[data-pending-scroll] {
@@ -149,9 +139,7 @@ not hide the root.
 }
 ```
 
-If you want `"end"` visible on first paint, add an inline script right after the
-viewport. Using the same `id`, scroll it to the bottom and remove
-`data-pending-scroll`.
+初回描画から `"end"` を表示したい場合は、ビューポートの直後にインライン スクリプトを追加します。同じ `id` を使って末尾へスクロールし、`data-pending-scroll` を削除します。
 
 ```tsx
 const scrollToEndScript = `(function () {
@@ -172,60 +160,53 @@ const scrollToEndScript = `(function () {
 </MessageScroller.Root>
 ```
 
-Put the script in your page, not in the primitive. It only works for `"end"`, and
-only when the messages are already in the HTML. Add `suppressHydrationWarning` on
-the viewport. If you use a Content Security Policy, pass a `nonce`.
+スクリプトはプリミティブではなくページに配置します。これは `"end"` の場合だけ、かつメッセージがすでに HTML にある場合だけ動作します。ビューポートに `suppressHydrationWarning` を追加してください。Content Security Policy を使う場合は `nonce` を渡します。
 
-Do not use this script with `"last-anchor"`. Skip it when messages load on the
-client.
+このスクリプトを `"last-anchor"` と組み合わせないでください。メッセージをクライアントで読み込む場合は省略します。
 
-## API Reference
+## APIリファレンス
 
 ### MessageScroller.Provider
 
-The headless root. It owns scroll state and the behavior props, and provides
-them to the parts and the hooks. It renders no DOM of its own.
+スタイルなしのルートです。スクロール状態と動作用 props を管理し、パーツとフックへ提供します。独自の DOM は描画しません。
 
-| Prop                     | Type                                | Default | Description                                                                                                                                                                                                                                                                                                                                                |
-| ------------------------ | ----------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `autoScroll`             | `boolean`                           | `false` | Follow new content only while the reader is already at the live edge. Wheel, touch, keyboard scroll, and explicit jumps release it.                                                                                                                                                                                                                        |
-| `defaultScrollPosition`  | `"start" \| "end" \| "last-anchor"` | `"end"` | Opening position on the first non-empty render, applied once. `"last-anchor"` opens at the last `scrollAnchor` row and falls back to `"end"` when the turn fits or no anchor exists. For `"end"` and `"last-anchor"`, the viewport has `data-pending-scroll` until the position is applied. See [Avoiding a Flash on Reload](#avoiding-a-flash-on-reload). |
-| `scrollEdgeThreshold`    | `number`                            | `8`     | Distance from either edge that still counts as being at the start or end. Controls state attributes and scroll button visibility.                                                                                                                                                                                                                          |
-| `scrollMargin`           | `number`                            | `0`     | Margin applied to the aligned edge for `scrollToMessage`, visibility, and programmatic targets.                                                                                                                                                                                                                                                            |
-| `scrollPreviousItemPeek` | `number`                            | `64`    | Extra margin added to `scrollMargin` when a newly appended `scrollAnchor` item is positioned so part of the previous item stays visible.                                                                                                                                                                                                                   |
+| Prop                     | Type                                | Default | Description                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------ | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `autoScroll`             | `boolean`                           | `false` | 読者がすでにライブ エッジにいる間だけ新しい内容に追従します。ホイール、タッチ、キーボード スクロール、明示的な移動で解除されます。                                                                                                                                                                                                                                       |
+| `defaultScrollPosition`  | `"start" \| "end" \| "last-anchor"` | `"end"` | 空でない最初の描画時に一度だけ適用する開始位置です。`"last-anchor"` は最後の `scrollAnchor` 行から開き、ターンが収まる場合やアンカーがない場合は `"end"` にフォールバックします。`"end"` と `"last-anchor"` では、位置が適用されるまでビューポートに `data-pending-scroll` が付きます。[再読み込み時のちらつきを防ぐ](#再読み込み時のちらつきを防ぐ)を参照してください。 |
+| `scrollEdgeThreshold`    | `number`                            | `8`     | 先頭または末尾にいると判定する、各端からの距離です。状態属性とスクロール ボタンの表示を制御します。                                                                                                                                                                                                                                                                      |
+| `scrollMargin`           | `number`                            | `0`     | `scrollToMessage`、表示状態、プログラムによる対象に適用する、整列先の端からのマージンです。                                                                                                                                                                                                                                                                              |
+| `scrollPreviousItemPeek` | `number`                            | `64`    | 新しく追加された `scrollAnchor` 項目を配置する際、前の項目の一部を表示し続けるため `scrollMargin` に加える余白です。                                                                                                                                                                                                                                                     |
 
 ### MessageScroller.Root
 
-The frame and layout container. It fills its parent, so use it inside a
-height-constrained layout, within a `MessageScroller.Provider`.
+フレーム兼レイアウト コンテナです。親要素いっぱいに広がるため、`MessageScroller.Provider` 内の高さを制約したレイアウトで使用します。
 
-| Prop       | Type                          | Default | Description                        |
-| ---------- | ----------------------------- | ------- | ---------------------------------- |
-| `...props` | `React.ComponentProps<"div">` | -       | Props spread to the frame element. |
+| Prop       | Type                          | Default | Description                         |
+| ---------- | ----------------------------- | ------- | ----------------------------------- |
+| `...props` | `React.ComponentProps<"div">` | -       | フレーム要素に展開する props です。 |
 
-The root mirrors the scroll-state attributes below (the viewport carries them
-too), so you can style the container by scroll state, such as edge fades on the
-frame. Headless usage should hide the viewport while `data-pending-scroll` is
-present, using `visibility: hidden` so layout still exists for the opening
-scroll.
+ルートは以下のスクロール状態属性をミラーリングします（ビューポートにも付与されます）。そのため、フレーム端のフェードなど、
+スクロール状態に応じてコンテナをスタイル設定できます。スタイルなしで使う場合は、開始時のスクロール用レイアウトを維持するため、
+`data-pending-scroll` がある間は `visibility: hidden` でビューポートを隠してください。
 
-| Data attribute        | Value                                             | Description                                                                                                                                                                                                          |
-| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | Edges the viewport can scroll toward. Query one with `[data-scrollable~="end"]`; absent means it fits.                                                                                                               |
-| `data-autoscrolling`  | present                                           | Present while the viewport is programmatically scrolling to the latest message.                                                                                                                                      |
-| `data-pending-scroll` | present                                           | Present until `defaultScrollPosition` (`"end"` or `"last-anchor"`) is applied, or skipped for an empty transcript. Hide the viewport while it is set. See [Avoiding a Flash on Reload](#avoiding-a-flash-on-reload). |
+| Data attribute        | Value                                             | Description                                                                                                                                                                                                                                        |
+| --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-scrollable`     | `"start"` \| `"end"` \| `"start end"` \| _absent_ | ビューポートがスクロールできる方向です。[data-scrollable~="end"]` のように検索できます。存在しない場合は内容が収まっています。                                                                                                                     |
+| `data-autoscrolling`  | present                                           | ビューポートが最新メッセージへプログラムでスクロールしている間に存在します。                                                                                                                                                                       |
+| `data-pending-scroll` | present                                           | `defaultScrollPosition`（`"end"` または `"last-anchor"`）が適用されるまで存在します。空のトランスクリプトでは省略されます。設定中はビューポートを隠してください。[再読み込み時のちらつきを防ぐ](#再読み込み時のちらつきを防ぐ)を参照してください。 |
 
 ### MessageScroller.Viewport
 
-The scrollable viewport.
+スクロール可能なビューポートです。
 
-| Prop                      | Type                          | Default      | Description                                                               |
-| ------------------------- | ----------------------------- | ------------ | ------------------------------------------------------------------------- |
-| `preserveScrollOnPrepend` | `boolean`                     | `true`       | Keep the first visible message item stable when older rows are prepended. |
-| `role`                    | `string`                      | `"region"`   | Landmark role for the labelled scrollable transcript viewport.            |
-| `aria-label`              | `string`                      | `"Messages"` | Accessible name for the scrollable chat transcript.                       |
-| `tabIndex`                | `number`                      | `0`          | Makes the transcript viewport keyboard-scrollable.                        |
-| `...props`                | `React.ComponentProps<"div">` | -            | Props spread to the viewport element.                                     |
+| Prop                      | Type                          | Default      | Description                                                                          |
+| ------------------------- | ----------------------------- | ------------ | ------------------------------------------------------------------------------------ |
+| `preserveScrollOnPrepend` | `boolean`                     | `true`       | 古い行を先頭に追加したとき、最初に表示されていたメッセージ項目を同じ位置に保ちます。 |
+| `role`                    | `string`                      | `"region"`   | ラベル付きスクロール可能トランスクリプト ビューポートのランドマーク ロールです。     |
+| `aria-label`              | `string`                      | `"Messages"` | スクロール可能なチャット トランスクリプトのアクセシブルな名前です。                  |
+| `tabIndex`                | `number`                      | `0`          | トランスクリプト ビューポートをキーボードでスクロール可能にします。                  |
+| `...props`                | `React.ComponentProps<"div">` | -            | ビューポート要素に展開する props です。                                              |
 
 | Data attribute        | Value                                             | Description                                                                                                                                                                                                          |
 | --------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -235,26 +216,25 @@ The scrollable viewport.
 
 ### MessageScroller.Content
 
-The transcript content element. Every direct child should be a
-`MessageScroller.Item`.
+トランスクリプトのコンテンツ要素です。直接の子要素はすべて `MessageScroller.Item` にします。
 
-| Prop              | Type                          | Default       | Description                                                             |
-| ----------------- | ----------------------------- | ------------- | ----------------------------------------------------------------------- |
-| `role`            | `string`                      | `"log"`       | ARIA role applied to the message list for live announcements.           |
-| `aria-relevant`   | `string`                      | `"additions"` | Live-region updates to announce. Defaults to new transcript rows only.  |
-| `aria-busy`       | `boolean`                     | -             | Marks the live region busy while a turn streams, if needed.             |
-| `spacerClassName` | `string`                      | -             | Class name for the internal spacer used to make room for anchored rows. |
-| `...props`        | `React.ComponentProps<"div">` | -             | Props spread to the content element.                                    |
+| Prop              | Type                          | Default       | Description                                                                             |
+| ----------------- | ----------------------------- | ------------- | --------------------------------------------------------------------------------------- |
+| `role`            | `string`                      | `"log"`       | ライブ通知用にメッセージ リストへ適用する ARIA ロールです。                             |
+| `aria-relevant`   | `string`                      | `"additions"` | 通知するライブ リージョンの更新です。既定では新しいトランスクリプト行だけです。         |
+| `aria-busy`       | `boolean`                     | -             | 必要に応じて、ターンのストリーミング中にライブ リージョンがビジーであることを示します。 |
+| `spacerClassName` | `string`                      | -             | アンカー行のための空間を確保する内部スペーサーのクラス名です。                          |
+| `...props`        | `React.ComponentProps<"div">` | -             | コンテンツ要素に展開する props です。                                                   |
 
 ### MessageScroller.Item
 
-One transcript row: a message, marker, typing row, separator, or load-more row.
+トランスクリプトの 1 行です。メッセージ、マーカー、入力中の行、区切り、追加読み込み行などを表します。
 
-| Prop           | Type                          | Default | Description                                                                    |
-| -------------- | ----------------------------- | ------- | ------------------------------------------------------------------------------ |
-| `messageId`    | `string`                      | -       | Stable row id used by `scrollToMessage`, visibility, and prepend preservation. |
-| `scrollAnchor` | `boolean`                     | `false` | Marks this row as a turn boundary that can anchor newly appended turns.        |
-| `...props`     | `React.ComponentProps<"div">` | -       | Props spread to the item element.                                              |
+| Prop           | Type                          | Default | Description                                                                 |
+| -------------- | ----------------------------- | ------- | --------------------------------------------------------------------------- |
+| `messageId`    | `string`                      | -       | `scrollToMessage`、表示状態、先頭追加時の位置保持に使う安定した行 ID です。 |
+| `scrollAnchor` | `boolean`                     | `false` | 新しく追加されるターンの基準となるターン境界として、この行をマークします。  |
+| `...props`     | `React.ComponentProps<"div">` | -       | 項目要素に展開する props です。                                             |
 
 | Data attribute       | Value                 | Description                        |
 | -------------------- | --------------------- | ---------------------------------- |
@@ -263,66 +243,61 @@ One transcript row: a message, marker, typing row, separator, or load-more row.
 
 ### MessageScroller.Button
 
-A button that scrolls to the start or end of the transcript. It is inert and
-removed from the tab order when there is nothing to scroll toward.
+トランスクリプトの先頭または末尾へスクロールするボタンです。スクロール先がない場合は inert になり、タブ順から除外されます。
 
-| Prop        | Type                                    | Default    | Description                                                              |
-| ----------- | --------------------------------------- | ---------- | ------------------------------------------------------------------------ |
-| `behavior`  | `ScrollBehavior`                        | `"smooth"` | Native scroll behavior used when the button scrolls to its target edge.  |
-| `direction` | `"start" \| "end"`                      | `"end"`    | Transcript edge the button scrolls toward.                               |
-| `children`  | `React.ReactNode`                       | -          | Custom button content. Defaults to the scroll icon and accessible label. |
-| `render`    | `React.ReactElement \| render function` | -          | Custom render target.                                                    |
-| `...props`  | `React.ComponentProps<"button">`        | -          | Props spread to the button.                                              |
+| Prop        | Type                                    | Default    | Description                                                                                     |
+| ----------- | --------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------- |
+| `behavior`  | `ScrollBehavior`                        | `"smooth"` | ボタンが対象の端へスクロールするときに使うネイティブのスクロール動作です。                      |
+| `direction` | `"start" \| "end"`                      | `"end"`    | ボタンが向かうトランスクリプトの端です。                                                        |
+| `children`  | `React.ReactNode`                       | -          | ボタンのカスタム コンテンツです。既定ではスクロール アイコンとアクセシブル ラベルを表示します。 |
+| `render`    | `React.ReactElement \| render function` | -          | カスタムの描画先です。                                                                          |
+| `...props`  | `React.ComponentProps<"button">`        | -          | ボタンに展開する props です。                                                                   |
 
-| Data attribute   | Value                 | Description                               |
-| ---------------- | --------------------- | ----------------------------------------- |
-| `data-direction` | `"start"` \| `"end"`  | Mirrors `direction`.                      |
-| `data-active`    | `"true"` \| `"false"` | Whether this button can currently scroll. |
+| Data attribute   | Value                 | Description                                    |
+| ---------------- | --------------------- | ---------------------------------------------- |
+| `data-direction` | `"start"` \| `"end"`  | `direction` を反映します。                     |
+| `data-active`    | `"true"` \| `"false"` | 現在このボタンでスクロールできるかを示します。 |
 
 ### useMessageScroller
 
-Imperative transcript controls.
+命令的にトランスクリプトを操作するための API です。
 
-| Method            | Type                                       | Description                     |
-| ----------------- | ------------------------------------------ | ------------------------------- |
-| `scrollToMessage` | `(messageId: string, options?) => boolean` | Scroll to a mounted message id. |
-| `scrollToEnd`     | `(options?) => boolean`                    | Scroll to the latest message.   |
-| `scrollToStart`   | `(options?) => boolean`                    | Scroll to the top.              |
+| Method            | Type                                       | Description                                      |
+| ----------------- | ------------------------------------------ | ------------------------------------------------ |
+| `scrollToMessage` | `(messageId: string, options?) => boolean` | マウント済みのメッセージ ID へスクロールします。 |
+| `scrollToEnd`     | `(options?) => boolean`                    | 最新のメッセージへスクロールします。             |
+| `scrollToStart`   | `(options?) => boolean`                    | 上部へスクロールします。                         |
 
-All commands return `false` when the command could not be applied.
-`scrollToStart` and `scrollToEnd` return `false` only when the viewport is not
-mounted yet. `scrollToMessage` returns `false` when the target is not mounted and
-cannot be queued.
+すべてのコマンドは適用できなかった場合に `false` を返します。
+`scrollToStart` と `scrollToEnd` は、ビューポートがまだマウントされていない場合だけ `false` を返します。
+`scrollToMessage` は、対象がマウントされておらずキューにも追加できない場合に `false` を返します。
 
-Command options:
+コマンドのオプション:
 
-| Option         | Type                                              | Default                 | Description                                          |
-| -------------- | ------------------------------------------------- | ----------------------- | ---------------------------------------------------- |
-| `align`        | `"start"` \| `"center"` \| `"end"` \| `"nearest"` | `"start"`               | How a message target aligns in the viewport.         |
-| `behavior`     | `ScrollBehavior`                                  | `"auto"`                | Native scroll behavior for the command.              |
-| `scrollMargin` | `number`                                          | provider `scrollMargin` | Margin applied to the aligned edge for this command. |
+| Option         | Type                                              | Default                 | Description                                                |
+| -------------- | ------------------------------------------------- | ----------------------- | ---------------------------------------------------------- |
+| `align`        | `"start"` \| `"center"` \| `"end"` \| `"nearest"` | `"start"`               | メッセージ対象をビューポート内でどのように整列するかです。 |
+| `behavior`     | `ScrollBehavior`                                  | `"auto"`                | コマンドに使うネイティブのスクロール動作です。             |
+| `scrollMargin` | `number`                                          | provider `scrollMargin` | このコマンドで整列先の端に適用するマージンです。           |
 
 ### useMessageScrollerScrollable
 
-Which edges the viewport can scroll toward, for sibling UI that needs the values
-in JavaScript. Prefer the `data-scrollable` attribute for styling the scroller
-itself.
+JavaScript で値が必要な周辺 UI 向けに、ビューポートがスクロールできる方向を返します。
+スクローラー自体のスタイルには `data-scrollable` 属性を優先してください。
 
-| Value   | Type      | Description                                                                                                                                                                     |
-| ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `start` | `boolean` | Whether the viewport can scroll toward the start. Content is hidden above (`!start` means at the top).                                                                          |
-| `end`   | `boolean` | Whether the viewport can scroll toward the end. Content is hidden below (`!end` means at the bottom). Stays `false` while follow-output is keeping the reader at the live edge. |
+| Value   | Type      | Description                                                                                                                                                                             |
+| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start` | `boolean` | ビューポートが先頭方向へスクロールできるかを示します。上にコンテンツが隠れている状態です（`!start` は先頭を示します）。                                                                 |
+| `end`   | `boolean` | ビューポートが末尾方向へスクロールできるかを示します。下にコンテンツが隠れている状態です（`!end` は末尾を示します）。出力追従が読者をライブ エッジに保っている間は `false` のままです。 |
 
 ### useMessageScrollerVisibility
 
-Visibility state for outline, search, and active-turn UI. It subscribes
-separately from `useMessageScrollerScrollable`, so visibility work is only paid for
-when a consumer needs it.
+アウトライン、検索、アクティブ ターン UI の表示状態です。`useMessageScrollerScrollable` とは別に購読するため、
+利用側が必要とする場合だけ表示状態の処理コストが発生します。
 
-| Value               | Type             | Description                                                                                    |
-| ------------------- | ---------------- | ---------------------------------------------------------------------------------------------- |
-| `currentAnchorId`   | `string \| null` | The current anchored turn, based on the last `scrollAnchor` item at or above the reading line. |
-| `visibleMessageIds` | `string[]`       | Message ids intersecting the viewport, in document order.                                      |
+| Value               | Type             | Description                                                                                               |
+| ------------------- | ---------------- | --------------------------------------------------------------------------------------------------------- |
+| `currentAnchorId`   | `string \| null` | 読み取りライン上またはそれより上にある最後の `scrollAnchor` 項目を基準にした、現在のアンカー ターンです。 |
+| `visibleMessageIds` | `string[]`       | ビューポートと交差するメッセージ ID をドキュメント順で返します。                                          |
 
-Filter `visibleMessageIds` in your app when you need a narrower outline, such as
-user messages, anchored turns, or search hits.
+ユーザー メッセージ、アンカー ターン、検索結果など、より限定したアウトラインが必要な場合は、アプリ内で `visibleMessageIds` を絞り込んでください。

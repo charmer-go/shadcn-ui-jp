@@ -1,20 +1,20 @@
 import { BotIcon, ChevronDownIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { ButtonGroup } from "@/styles/aria-nova/ui/button-group"
+import { Button } from "@/components/ui/aria/button"
+import { ButtonGroup } from "@/components/ui/aria/button-group"
 import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
+} from "@/components/ui/aria/field"
 import {
   Popover,
   PopoverDescription,
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/styles/aria-nova/ui/popover"
-import { Textarea } from "@/styles/aria-nova/ui/textarea"
+} from "@/components/ui/aria/popover"
+import { Textarea } from "@/components/ui/aria/textarea"
 
 export default function ButtonGroupPopover() {
   return (
@@ -23,27 +23,27 @@ export default function ButtonGroupPopover() {
         <BotIcon /> Copilot
       </Button>
       <PopoverTrigger>
-        <Button variant="outline" size="icon" aria-label="Open Popover">
+        <Button variant="outline" size="icon" aria-label="ポップオーバーを開く">
           <ChevronDownIcon />
         </Button>
         <Popover placement="bottom end" className="rounded-xl text-sm">
           <PopoverHeader>
-            <PopoverTitle>Start a new task with Copilot</PopoverTitle>
+            <PopoverTitle>Copilotで新しいタスクを開始</PopoverTitle>
             <PopoverDescription>
-              Describe your task in natural language.
+              自然言語でタスクを説明してください。
             </PopoverDescription>
           </PopoverHeader>
           <Field>
             <FieldLabel htmlFor="task" className="sr-only">
-              Task Description
+              タスクの説明
             </FieldLabel>
             <Textarea
               id="task"
-              placeholder="I need to..."
+              placeholder="やりたいことは..."
               className="resize-none"
             />
             <FieldDescription>
-              Copilot will open a pull request for review.
+              Copilotがレビュー用のプルリクエストを作成します。
             </FieldDescription>
           </Field>
         </Popover>

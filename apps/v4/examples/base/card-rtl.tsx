@@ -6,7 +6,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Card,
   CardAction,
@@ -15,9 +15,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/base-nova/ui-rtl/card"
-import { Input } from "@/styles/base-nova/ui-rtl/input"
-import { Label } from "@/styles/base-nova/ui-rtl/label"
+} from "@/components/ui/base/card"
+import { Input } from "@/components/ui/base/input"
+import { Label } from "@/components/ui/base/label"
 
 const translations: Translations = {
   en: {

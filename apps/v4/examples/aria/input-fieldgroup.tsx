@@ -1,35 +1,35 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Field,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+} from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputFieldgroup() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="fieldgroup-name">Name</FieldLabel>
-        <Input id="fieldgroup-name" placeholder="Jordan Lee" />
+        <FieldLabel htmlFor="fieldgroup-name">名前</FieldLabel>
+        <Input id="fieldgroup-name" placeholder="山田 太郎" />
       </Field>
       <Field>
-        <FieldLabel htmlFor="fieldgroup-email">Email</FieldLabel>
+        <FieldLabel htmlFor="fieldgroup-email">メールアドレス</FieldLabel>
         <Input
           id="fieldgroup-email"
           type="email"
           placeholder="name@example.com"
         />
         <FieldDescription>
-          We&apos;ll send updates to this address.
+          このアドレスに更新情報をお送りします。
         </FieldDescription>
       </Field>
       <Field orientation="horizontal">
         <Button type="reset" variant="outline">
-          Reset
+          リセット
         </Button>
-        <Button type="submit">Submit</Button>
+        <Button type="submit">送信</Button>
       </Field>
     </FieldGroup>
   )

@@ -1,11 +1,11 @@
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
+import { Checkbox } from "@/components/ui/base/checkbox"
 import {
   Field,
   FieldContent,
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
+} from "@/components/ui/base/field"
 
 export function CheckboxDescription() {
   return (
@@ -18,10 +18,10 @@ export function CheckboxDescription() {
         />
         <FieldContent>
           <FieldLabel htmlFor="terms-checkbox-desc">
-            Accept terms and conditions
+            利用規約に同意する
           </FieldLabel>
           <FieldDescription>
-            By clicking this checkbox, you agree to the terms and conditions.
+            このチェックボックスをクリックすると、利用規約に同意したことになります。
           </FieldDescription>
         </FieldContent>
       </Field>

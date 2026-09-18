@@ -17,8 +17,8 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Button } from "@/styles/radix-nova/ui-rtl/button"
-import { ButtonGroup } from "@/styles/radix-nova/ui-rtl/button-group"
+import { Button } from "@/components/ui/radix/button"
+import { ButtonGroup } from "@/components/ui/radix/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,7 +31,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui-rtl/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 const translations: Translations = {
   en: {
@@ -92,7 +92,7 @@ export function ButtonGroupRtl() {
     <div dir={dir}>
       <ButtonGroup>
         <ButtonGroup className="hidden sm:flex">
-          <Button variant="outline" size="icon" aria-label="Go Back">
+          <Button variant="outline" size="icon" aria-label="戻る">
             <ArrowLeftIcon className="rtl:rotate-180" />
           </Button>
         </ButtonGroup>
@@ -104,7 +104,7 @@ export function ButtonGroupRtl() {
           <Button variant="outline">{t.snooze}</Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="More Options">
+              <Button variant="outline" size="icon" aria-label="その他のオプション">
                 <MoreHorizontalIcon />
               </Button>
             </DropdownMenuTrigger>

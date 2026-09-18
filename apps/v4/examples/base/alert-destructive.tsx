@@ -4,16 +4,15 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@/styles/base-nova/ui/alert"
+} from "@/components/ui/base/alert"
 
 export default function AlertDestructive() {
   return (
     <Alert variant="destructive" className="max-w-md">
       <AlertCircleIcon />
-      <AlertTitle>Payment failed</AlertTitle>
+      <AlertTitle>支払いに失敗しました</AlertTitle>
       <AlertDescription>
-        Your payment could not be processed. Please check your payment method
-        and try again.
+        お支払いを処理できませんでした。お支払い方法をご確認の上、もう一度お試しください。
       </AlertDescription>
     </Alert>
   )

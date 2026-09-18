@@ -2,20 +2,20 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function InputField() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-field-username">Username</FieldLabel>
+      <FieldLabel htmlFor="input-field-username">ユーザー名</FieldLabel>
       <Input
         id="input-field-username"
         type="text"
-        placeholder="Enter your username"
+        placeholder="ユーザー名を入力してください"
       />
       <FieldDescription>
-        Choose a unique username for your account.
+        アカウントで使用する一意のユーザー名を選択してください。
       </FieldDescription>
     </Field>
   )

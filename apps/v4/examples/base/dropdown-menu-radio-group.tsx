@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 
 export function DropdownMenuRadioGroupDemo() {
   const [position, setPosition] = React.useState("bottom")
@@ -19,15 +19,15 @@ export function DropdownMenuRadioGroupDemo() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
+        開く
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+          <DropdownMenuLabel>パネルの位置</DropdownMenuLabel>
           <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-            <DropdownMenuRadioItem value="top">Top</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="bottom">Bottom</DropdownMenuRadioItem>
-            <DropdownMenuRadioItem value="right">Right</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="top">上</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="bottom">下</DropdownMenuRadioItem>
+            <DropdownMenuRadioItem value="right">右</DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuGroup>
       </DropdownMenuContent>

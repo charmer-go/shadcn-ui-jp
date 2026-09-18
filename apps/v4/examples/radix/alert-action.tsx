@@ -3,19 +3,19 @@ import {
   AlertAction,
   AlertDescription,
   AlertTitle,
-} from "@/styles/radix-nova/ui/alert"
-import { Button } from "@/styles/radix-nova/ui/button"
+} from "@/components/ui/radix/alert"
+import { Button } from "@/components/ui/radix/button"
 
 export default function AlertActionExample() {
   return (
     <Alert className="max-w-md">
-      <AlertTitle>Dark mode is now available</AlertTitle>
+      <AlertTitle>ダークモードを利用できます</AlertTitle>
       <AlertDescription>
-        Enable it under your profile settings to get started.
+        プロフィール設定から有効にしてご利用いただけます。
       </AlertDescription>
       <AlertAction>
         <Button size="xs" variant="default">
-          Enable
+          有効にする
         </Button>
       </AlertAction>
     </Alert>

@@ -1,18 +1,18 @@
 ---
-title: Package Imports
-description: Configure shadcn/ui with package.json imports.
+title: パッケージインポート
+description: package.json インポートを使用して shadcn/ui を構成します。
 ---
 
-The `shadcn` CLI supports [package imports](https://nodejs.org/api/packages.html#imports)
-for installing components, rewriting imports, and resolving third-party
-registries.
+`shadcn` CLI は [パッケージのインポート](https://nodejs.org/api/packages.html#imports) をサポートします
+コンポーネントのインストール、インポートの書き換え、サードパーティの解決用
+レジストリ。
 
-Package imports let you use private `#...` import aliases from your
-`package.json` instead of `compilerOptions.paths` in `tsconfig.json`.
+パッケージのインポートにより、プライベート `#...` インポート エイリアスを使用できます。
+`tsconfig.json` の `compilerOptions.paths` の代わりに `package.json`。
 
-## Example
+## 例
 
-You configure `imports` in your `package.json`:
+`package.json` で `imports` を構成します。
 
 ```json title="package.json" showLineNumbers
 {
@@ -24,7 +24,7 @@ You configure `imports` in your `package.json`:
 }
 ```
 
-Then import generated components using `#...` specifiers:
+次に、`#...` 指定子を使用して、生成されたコンポーネントをインポートします。
 
 ```tsx
 import { Button } from "#components/ui/button"
@@ -32,20 +32,20 @@ import { cn } from "#lib/utils"
 ```
 
 <Callout className="mt-6">
-  Package import specifiers must start with `#`. Use TypeScript 5 or later with
-  `moduleResolution: "bundler"` and `resolvePackageJsonImports: true`.
+パッケージのインポート指定子は、`#` で始まる必要があります。 TypeScript 5 以降を使用してください
+`moduleResolution: "bundler"` および `resolvePackageJsonImports: true`。
 </Callout>
 
-## App
+## アプリ
 
-For Next.js, Vite, and TanStack Start apps that install
-components into the same workspace.
+Next.js、Vite、TanStack の場合 インストールするアプリを開始します
+コンポーネントを同じワークスペースに追加します。
 
 <Steps>
 
-### Configure `package.json`
+### `package.json` を構成する
 
-Add imports for the shadcn/ui install targets.
+shadcn/ui インストール ターゲットのインポートを追加します。
 
 ```json title="package.json" showLineNumbers
 {
@@ -57,8 +57,8 @@ Add imports for the shadcn/ui install targets.
 }
 ```
 
-If your app does not use a `src` directory, remove `src/` from the targets. For
-example:
+アプリが `src` ディレクトリを使用しない場合は、ターゲットから `src/` を削除します。のために
+例：
 
 ```json title="package.json" showLineNumbers
 {
@@ -70,9 +70,9 @@ example:
 }
 ```
 
-### Configure TypeScript
+### TypeScript を設定する
 
-Enable package import resolution.
+パッケージのインポート解決を有効にします。
 
 ```json title="tsconfig.json" showLineNumbers
 {
@@ -83,11 +83,11 @@ Enable package import resolution.
 }
 ```
 
-You do not need `compilerOptions.paths` for these aliases.
+これらのエイリアスには `compilerOptions.paths` は必要ありません。
 
-### Configure `components.json`
+### `components.json` を構成する
 
-Use the same `#...` roots in `components.json`.
+`components.json` で同じ `#...` ルートを使用します。
 
 ```json title="components.json" showLineNumbers
 {
@@ -101,20 +101,20 @@ Use the same `#...` roots in `components.json`.
 }
 ```
 
-The `ui` alias uses `#components/ui`. It is still covered by the
-`#components/*` import in `package.json`.
+`ui` エイリアスは `#components/ui` を使用します。それはまだカバーされています
+`#components/*` を `package.json` にインポートします。
 
-The `utils` alias uses `#lib/utils`. It is covered by `#lib/*`, so you do not
-need a separate `#utils` import.
+`utils` エイリアスは `#lib/utils` を使用します。これは `#lib/*` でカバーされているため、次のことはできません。
+別途 `#utils` インポートが必要です。
 
 </Steps>
 
-## Monorepo
+## モノレポ
 
-In a monorepo, use package imports for files inside each package and package
-exports for files shared across workspaces.
+モノリポジトリでは、各パッケージ内のファイルとパッケージにパッケージ インポートを使用します。
+ワークスペース間で共有されるファイルのエクスポート。
 
-For an app workspace:
+アプリのワークスペースの場合:
 
 ```json title="apps/web/package.json" showLineNumbers
 {
@@ -143,7 +143,7 @@ For an app workspace:
 }
 ```
 
-For the shared UI package:
+共有 UI パッケージの場合:
 
 ```json title="packages/ui/package.json" showLineNumbers
 {
@@ -175,18 +175,18 @@ For the shared UI package:
 }
 ```
 
-When you run `add` from `apps/web`, app-local files use `#...` imports and
-shared UI files are imported from `@workspace/ui`.
+`apps/web` から `add` を実行すると、アプリのローカル ファイルは `#...` インポートを使用し、
+共有 UI ファイルは `@workspace/ui` からインポートされます。
 
 ```tsx
 import { Button } from "@workspace/ui/components/button"
 import { LoginForm } from "#components/login-form"
 ```
 
-## File extensions
+## ファイル拡張子
 
-The target pattern in `package.json#imports` controls whether generated imports
-include file extensions.
+`package.json#imports` のターゲット パターンは、インポートを生成するかどうかを制御します。
+ファイル拡張子を含めます。
 
 ```json title="package.json" showLineNumbers
 {
@@ -196,13 +196,13 @@ include file extensions.
 }
 ```
 
-This generates imports without extensions:
+これにより、拡張子なしのインポートが生成されます。
 
 ```tsx
 import { Button } from "#components/ui/button"
 ```
 
-If you use a target without the extension:
+拡張子なしでターゲットを使用する場合:
 
 ```json title="package.json" showLineNumbers
 {
@@ -212,23 +212,23 @@ If you use a target without the extension:
 }
 ```
 
-The generated import keeps the source extension:
+生成されたインポートでは、ソース拡張子が保持されます。
 
 ```tsx
 import { Button } from "#components/ui/button.tsx"
 ```
 
-For most apps, use the extension in the target pattern.
+ほとんどのアプリでは、ターゲット パターンで拡張子を使用します。
 
-## Troubleshooting
+## トラブルシューティング
 
-If TypeScript cannot resolve a `#...` import, check that:
+TypeScript が `#...` インポートを解決できない場合は、次のことを確認してください。
 
-- the specifier starts with `#`
-- the `imports` entry is in the nearest `package.json`
-- `moduleResolution` is set to `bundler`
-- `resolvePackageJsonImports` is enabled
-- the matching target exists after components are added
+- 指定子は `#` で始まります
+- `imports` エントリは最も近い `package.json` にあります
+- `moduleResolution` は `bundler` に設定されます
+- `resolvePackageJsonImports` が有効になっています
+- コンポーネントの追加後に一致するターゲットが存在する
 
-If a component is installed but imports still point to `@/...`, check that
-`components.json` uses the same `#...` aliases as your package imports.
+コンポーネントがインストールされているが、インポートが依然として `@/...` を指している場合は、次のことを確認してください。
+`components.json` は、パッケージのインポートと同じ `#...` エイリアスを使用します。

@@ -1,7 +1,7 @@
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/radix-nova/ui/toggle-group"
+} from "@/components/ui/radix/toggle-group"
 
 export function ToggleGroupSpacing() {
   return (
@@ -12,17 +12,17 @@ export function ToggleGroupSpacing() {
       variant="outline"
       spacing={2}
     >
-      <ToggleGroupItem value="top" aria-label="Toggle top">
-        Top
+      <ToggleGroupItem value="top" aria-label="上を切り替え">
+        上
       </ToggleGroupItem>
-      <ToggleGroupItem value="bottom" aria-label="Toggle bottom">
-        Bottom
+      <ToggleGroupItem value="bottom" aria-label="下を切り替え">
+        下
       </ToggleGroupItem>
-      <ToggleGroupItem value="left" aria-label="Toggle left">
-        Left
+      <ToggleGroupItem value="left" aria-label="左を切り替え">
+        左
       </ToggleGroupItem>
-      <ToggleGroupItem value="right" aria-label="Toggle right">
-        Right
+      <ToggleGroupItem value="right" aria-label="右を切り替え">
+        右
       </ToggleGroupItem>
     </ToggleGroup>
   )

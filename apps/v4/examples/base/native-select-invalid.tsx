@@ -1,15 +1,15 @@
 import {
   NativeSelect,
   NativeSelectOption,
-} from "@/styles/base-nova/ui/native-select"
+} from "@/components/ui/base/native-select"
 
 export function NativeSelectInvalid() {
   return (
     <NativeSelect aria-invalid="true">
-      <NativeSelectOption value="">Error state</NativeSelectOption>
-      <NativeSelectOption value="apple">Apple</NativeSelectOption>
-      <NativeSelectOption value="banana">Banana</NativeSelectOption>
-      <NativeSelectOption value="blueberry">Blueberry</NativeSelectOption>
+      <NativeSelectOption value="">エラー状態</NativeSelectOption>
+      <NativeSelectOption value="apple">りんご</NativeSelectOption>
+      <NativeSelectOption value="banana">バナナ</NativeSelectOption>
+      <NativeSelectOption value="blueberry">ブルーベリー</NativeSelectOption>
     </NativeSelect>
   )
 }

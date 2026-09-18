@@ -4,16 +4,16 @@ import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
+} from "@/components/ui/aria/input-group"
 
 export function InputGroupDemo() {
   return (
     <InputGroup className="max-w-xs">
-      <InputGroupInput placeholder="Search..." />
+      <InputGroupInput placeholder="検索..." />
       <InputGroupAddon>
         <Search />
       </InputGroupAddon>
-      <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+      <InputGroupAddon align="inline-end">12件の結果</InputGroupAddon>
     </InputGroup>
   )
 }

@@ -2,15 +2,15 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
+} from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
 
 export function InputFile() {
   return (
     <Field>
-      <FieldLabel htmlFor="picture">Picture</FieldLabel>
+      <FieldLabel htmlFor="picture">写真</FieldLabel>
       <Input id="picture" type="file" />
-      <FieldDescription>Select a picture to upload.</FieldDescription>
+      <FieldDescription>アップロードする写真を選択してください。</FieldDescription>
     </Field>
   )
 }

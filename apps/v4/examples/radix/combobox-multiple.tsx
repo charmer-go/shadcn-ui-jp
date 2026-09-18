@@ -13,7 +13,7 @@ import {
   ComboboxList,
   ComboboxValue,
   useComboboxAnchor,
-} from "@/styles/radix-nova/ui/combobox"
+} from "@/components/ui/radix/combobox"
 
 const frameworks = [
   "Next.js",
@@ -46,7 +46,7 @@ export function ComboboxMultiple() {
         </ComboboxValue>
       </ComboboxChips>
       <ComboboxContent anchor={anchor}>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

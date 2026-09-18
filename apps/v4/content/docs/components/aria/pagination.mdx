@@ -1,19 +1,19 @@
 ---
-title: Pagination
-description: Pagination with page navigation, next and previous links.
+title: ページネーション
+description: ページ ナビゲーション、次および前のリンクによるページネーション。
 base: aria
 component: true
 ---
 
 <ComponentPreview styleName="aria-nova" name="pagination-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,7 +27,7 @@ npx shadcn@latest add pagination
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="pagination"
@@ -35,7 +35,7 @@ npx shadcn@latest add pagination
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add pagination
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -84,7 +84,7 @@ import {
 </Pagination>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Pagination`:
 
@@ -101,9 +101,9 @@ Pagination
         └── PaginationNext
 ```
 
-## Simple
+## シンプル
 
-A simple pagination with only page numbers.
+ページ番号のみのシンプルなページネーション。
 
 <ComponentPreview styleName="aria-nova" name="pagination-simple" />
 
@@ -117,7 +117,7 @@ Use just the previous and next buttons without page numbers. This is useful for 
 
 By default the `<PaginationLink />` component will render an `<a />` tag.
 
-To use the Next.js `<Link />` component, make the following updates to `pagination.tsx`.
+Next.js `<Link />` コンポーネントを使用するには、`pagination.tsx` に次の更新を加えます。
 
 ```diff showLineNumbers /typeof Link/ {1}
 + import Link from "next/link"
@@ -145,19 +145,19 @@ const PaginationLink = ({...props }: ) => (
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="pagination-rtl" direction="rtl" />
 
-## Changelog
+## 変更履歴
 
-### RTL Support
+### RTL サポート
 
 If you're upgrading from a previous version of the `Pagination` component, you'll need to apply the following updates to add the `text` prop:
 
 <Steps>
 
-<Step>Update `PaginationPrevious`.</Step>
+<Step>`PaginationPrevious` を更新します。</Step>
 
 ```diff
   function PaginationPrevious({
@@ -183,7 +183,7 @@ If you're upgrading from a previous version of the `Pagination` component, you'l
   }
 ```
 
-<Step>Update `PaginationNext`.</Step>
+<Step>`PaginationNext` を更新します。</Step>
 
 ```diff
   function PaginationNext({

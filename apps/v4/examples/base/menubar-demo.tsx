@@ -13,32 +13,32 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/styles/base-nova/ui/menubar"
+} from "@/components/ui/base/menubar"
 
 export default function MenubarDemo() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>ファイル</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+              新しいタブ <MenubarShortcut>⌘T</MenubarShortcut>
             </MenubarItem>
             <MenubarItem>
-              New Window <MenubarShortcut>⌘N</MenubarShortcut>
+              新しいウィンドウ <MenubarShortcut>⌘N</MenubarShortcut>
             </MenubarItem>
-            <MenubarItem disabled>New Incognito Window</MenubarItem>
+            <MenubarItem disabled>新しいシークレットウィンドウ</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
+              <MenubarSubTrigger>共有</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarGroup>
-                  <MenubarItem>Email link</MenubarItem>
-                  <MenubarItem>Messages</MenubarItem>
-                  <MenubarItem>Notes</MenubarItem>
+                  <MenubarItem>リンクをメールで送信</MenubarItem>
+                  <MenubarItem>メッセージ</MenubarItem>
+                  <MenubarItem>メモ</MenubarItem>
                 </MenubarGroup>
               </MenubarSubContent>
             </MenubarSub>
@@ -46,75 +46,75 @@ export default function MenubarDemo() {
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarItem>
-              Print... <MenubarShortcut>⌘P</MenubarShortcut>
+              印刷... <MenubarShortcut>⌘P</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarTrigger>編集</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+              元に戻す <MenubarShortcut>⌘Z</MenubarShortcut>
             </MenubarItem>
             <MenubarItem>
-              Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+              やり直す <MenubarShortcut>⇧⌘Z</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarSub>
-              <MenubarSubTrigger>Find</MenubarSubTrigger>
+              <MenubarSubTrigger>検索</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarGroup>
-                  <MenubarItem>Search the web</MenubarItem>
+                  <MenubarItem>ウェブを検索</MenubarItem>
                 </MenubarGroup>
                 <MenubarSeparator />
                 <MenubarGroup>
-                  <MenubarItem>Find...</MenubarItem>
-                  <MenubarItem>Find Next</MenubarItem>
-                  <MenubarItem>Find Previous</MenubarItem>
+                  <MenubarItem>検索...</MenubarItem>
+                  <MenubarItem>次を検索</MenubarItem>
+                  <MenubarItem>前を検索</MenubarItem>
                 </MenubarGroup>
               </MenubarSubContent>
             </MenubarSub>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem>Cut</MenubarItem>
-            <MenubarItem>Copy</MenubarItem>
-            <MenubarItem>Paste</MenubarItem>
+            <MenubarItem>切り取り</MenubarItem>
+            <MenubarItem>コピー</MenubarItem>
+            <MenubarItem>貼り付け</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarTrigger>表示</MenubarTrigger>
         <MenubarContent className="w-44">
           <MenubarGroup>
-            <MenubarCheckboxItem>Bookmarks Bar</MenubarCheckboxItem>
-            <MenubarCheckboxItem checked>Full URLs</MenubarCheckboxItem>
+            <MenubarCheckboxItem>ブックマークバー</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>完全なURL</MenubarCheckboxItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarItem inset>
-              Reload <MenubarShortcut>⌘R</MenubarShortcut>
+              再読み込み <MenubarShortcut>⌘R</MenubarShortcut>
             </MenubarItem>
             <MenubarItem disabled inset>
-              Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+              強制再読み込み <MenubarShortcut>⇧⌘R</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+            <MenubarItem inset>全画面表示を切り替え</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Hide Sidebar</MenubarItem>
+            <MenubarItem inset>サイドバーを非表示</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Profiles</MenubarTrigger>
+        <MenubarTrigger>プロフィール</MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value="benoit">
             <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
@@ -123,11 +123,11 @@ export default function MenubarDemo() {
           </MenubarRadioGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Edit...</MenubarItem>
+            <MenubarItem inset>編集...</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Add Profile...</MenubarItem>
+            <MenubarItem inset>プロフィールを追加...</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>

@@ -1,6 +1,6 @@
-import { Badge } from "@/styles/radix-nova/ui/badge"
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
-import { Input } from "@/styles/radix-nova/ui/input"
+import { Badge } from "@/components/ui/radix/badge"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
+import { Input } from "@/components/ui/radix/input"
 
 export function InputBadge() {
   return (
@@ -8,7 +8,7 @@ export function InputBadge() {
       <FieldLabel htmlFor="input-badge">
         Webhook URL{" "}
         <Badge variant="secondary" className="ml-auto">
-          Beta
+          ベータ
         </Badge>
       </FieldLabel>
       <Input

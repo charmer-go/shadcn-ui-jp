@@ -12,28 +12,27 @@ import { ComponentPreview } from "@/components/component-preview"
 import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
-import { DirectoryList } from "@/components/directory-list"
 import { getIconForLanguageExtension } from "@/components/icons"
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/registry/new-york-v4/ui/accordion"
+} from "@/components/ui/accordion"
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@/registry/new-york-v4/ui/alert"
-import { AspectRatio } from "@/registry/new-york-v4/ui/aspect-ratio"
-import { Button } from "@/registry/new-york-v4/ui/button"
-import { Kbd } from "@/registry/new-york-v4/ui/kbd"
+} from "@/components/ui/alert"
+import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { Button } from "@/components/ui/button"
+import { Kbd } from "@/components/ui/kbd"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/registry/new-york-v4/ui/tabs"
+} from "@/components/ui/tabs"
 
 function getComponentsFolder() {
   const componentsFolder = source.pageTree.children.find(
@@ -348,7 +347,6 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList: ComponentsListWrapper,
-  DirectoryList,
   Link,
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link

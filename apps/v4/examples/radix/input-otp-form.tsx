@@ -1,6 +1,6 @@
 import { RefreshCwIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardContent,
@@ -8,38 +8,38 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui/field"
+} from "@/components/ui/radix/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/styles/radix-nova/ui/input-otp"
+} from "@/components/ui/radix/input-otp"
 
 export function InputOTPForm() {
   return (
     <Card className="mx-auto max-w-md">
       <CardHeader>
-        <CardTitle>Verify your login</CardTitle>
+        <CardTitle>ログインを確認</CardTitle>
         <CardDescription>
-          Enter the verification code we sent to your email address:{" "}
-          <span className="font-medium">m@example.com</span>.
+          ご登録のメールアドレスに送信された確認コードを入力してください:{" "}
+          <span className="font-medium">m@example.com</span>
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Field>
           <div className="flex items-center justify-between">
             <FieldLabel htmlFor="otp-verification">
-              Verification code
+              確認コード
             </FieldLabel>
             <Button variant="outline" size="xs">
               <RefreshCwIcon />
-              Resend Code
+              コードを再送信
             </Button>
           </div>
           <InputOTP maxLength={6} id="otp-verification" required>
@@ -56,22 +56,22 @@ export function InputOTPForm() {
             </InputOTPGroup>
           </InputOTP>
           <FieldDescription>
-            <a href="#">I no longer have access to this email address.</a>
+            <a href="#">このメールアドレスにアクセスできなくなった場合</a>
           </FieldDescription>
         </Field>
       </CardContent>
       <CardFooter>
         <Field>
           <Button type="submit" className="w-full">
-            Verify
+            確認
           </Button>
           <div className="text-sm text-muted-foreground">
-            Having trouble signing in?{" "}
+            ログインでお困りですか？{" "}
             <a
               href="#"
               className="underline underline-offset-4 transition-colors hover:text-primary"
             >
-              Contact support
+              サポートに問い合わせ
             </a>
           </div>
         </Field>

@@ -1,4 +1,4 @@
-import { buttonVariants } from "@/styles/base-nova/ui/button"
+import { buttonVariants } from "@/components/ui/base/button"
 
 export default function ButtonRender() {
   return (
@@ -6,7 +6,7 @@ export default function ButtonRender() {
       href="#"
       className={buttonVariants({ variant: "secondary", size: "sm" })}
     >
-      Login
+      ログイン
     </a>
   )
 }

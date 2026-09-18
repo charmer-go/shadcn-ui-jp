@@ -1,21 +1,21 @@
 ---
-title: April 2026 - shadcn apply
-description: Switch presets in existing projects without starting over.
+title: 2026 年 4 月 - shadcn 適用
+description: 最初からやり直すことなく、既存のプロジェクトのプリセットを切り替えます。
 date: 2026-04-08
 ---
 
-We added `shadcn apply` so you can switch presets in an existing project without starting over.
+`shadcn apply` を追加したので、最初からやり直すことなく既存のプロジェクトのプリセットを切り替えることができます。
 
-When you run `npx shadcn@latest apply` in an existing project, we apply a new preset, reinstall your existing components, and update your theme, colors, CSS variables, fonts, and icons.
+既存のプロジェクトで `npx shadcn@latest apply` を実行すると、新しいプリセットが適用され、既存のコンポーネントが再インストールされ、テーマ、色、CSS 変数、フォント、アイコンが更新されます。
 
 ```bash
 npx shadcn@latest apply --preset b2D0vQ7G4
 ```
 
-The CLI keeps the current base and RTL settings from your existing project, even when the preset URL was generated with different values.
+CLI は、プリセット URL が異なる値で生成された場合でも、既存のプロジェクトの現在のベース設定と RTL 設定を保持します。
 
 <Button asChild size="sm">
   <Link href="/create" className="mt-6 no-underline!">
-    Try a Preset
+    プリセットを試してみる
   </Link>
 </Button>

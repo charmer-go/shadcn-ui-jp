@@ -7,7 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 import {
   Sidebar,
   SidebarHeader,
@@ -17,7 +17,7 @@ import {
   SidebarMenuItem,
   SidebarProvider,
   SidebarTrigger,
-} from "@/styles/base-nova/ui/sidebar"
+} from "@/components/ui/base/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -32,7 +32,7 @@ export default function AppSidebar() {
                     <SidebarMenuButton className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground" />
                   }
                 >
-                  Select Workspace
+                  ワークスペースを選択
                   <ChevronDownIcon className="ml-auto" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-(--radix-popper-anchor-width)">

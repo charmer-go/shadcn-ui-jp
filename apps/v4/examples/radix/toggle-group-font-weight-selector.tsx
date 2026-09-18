@@ -6,17 +6,17 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/radix-nova/ui/field"
+} from "@/components/ui/radix/field"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/radix-nova/ui/toggle-group"
+} from "@/components/ui/radix/toggle-group"
 
 export function ToggleGroupFontWeightSelector() {
   const [fontWeight, setFontWeight] = React.useState("normal")
   return (
     <Field>
-      <FieldLabel>Font Weight</FieldLabel>
+      <FieldLabel>フォントの太さ</FieldLabel>
       <ToggleGroup
         type="single"
         value={fontWeight}
@@ -27,43 +27,43 @@ export function ToggleGroupFontWeightSelector() {
       >
         <ToggleGroupItem
           value="light"
-          aria-label="Light"
+          aria-label="ライト"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-light">Aa</span>
-          <span className="text-xs text-muted-foreground">Light</span>
+          <span className="text-xs text-muted-foreground">ライト</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="normal"
-          aria-label="Normal"
+          aria-label="標準"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-normal">Aa</span>
-          <span className="text-xs text-muted-foreground">Normal</span>
+          <span className="text-xs text-muted-foreground">標準</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="medium"
-          aria-label="Medium"
+          aria-label="中太"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-medium">Aa</span>
-          <span className="text-xs text-muted-foreground">Medium</span>
+          <span className="text-xs text-muted-foreground">中太</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="bold"
-          aria-label="Bold"
+          aria-label="太字"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-bold">Aa</span>
-          <span className="text-xs text-muted-foreground">Bold</span>
+          <span className="text-xs text-muted-foreground">太字</span>
         </ToggleGroupItem>
       </ToggleGroup>
       <FieldDescription>
-        Use{" "}
+        フォントの太さを設定するには{" "}
         <code className="rounded-md bg-muted px-1 py-0.5 font-mono">
           font-{fontWeight}
         </code>{" "}
-        to set the font weight.
+        を使用します。
       </FieldDescription>
     </Field>
   )

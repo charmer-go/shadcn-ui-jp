@@ -5,38 +5,38 @@ import {
   UserIcon,
 } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function DropdownMenuIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">開く</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
           <UserIcon />
-          Profile
+          プロフィール
         </DropdownMenuItem>
         <DropdownMenuItem>
           <CreditCardIcon />
-          Billing
+          請求
         </DropdownMenuItem>
         <DropdownMenuItem>
           <SettingsIcon />
-          Settings
+          設定
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem variant="destructive">
           <LogOutIcon />
-          Log out
+          ログアウト
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

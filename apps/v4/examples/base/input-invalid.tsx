@@ -2,16 +2,16 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function InputInvalid() {
   return (
     <Field data-invalid>
-      <FieldLabel htmlFor="input-invalid">Invalid Input</FieldLabel>
-      <Input id="input-invalid" placeholder="Error" aria-invalid />
+      <FieldLabel htmlFor="input-invalid">無効な入力</FieldLabel>
+      <Input id="input-invalid" placeholder="エラー" aria-invalid />
       <FieldDescription>
-        This field contains validation errors.
+        この項目には入力エラーがあります。
       </FieldDescription>
     </Field>
   )

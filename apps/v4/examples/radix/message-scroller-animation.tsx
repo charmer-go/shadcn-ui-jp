@@ -14,7 +14,7 @@ import {
   type MessageAnimationId,
 } from "@/lib/message-animations"
 import { MessageAnimated } from "@/components/message-animated"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -23,21 +23,21 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-rhea/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Empty,
   EmptyDescription,
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/styles/radix-rhea/ui/empty"
+} from "@/components/ui/radix/empty"
 import {
   MessageScroller,
   MessageScrollerButton,
   MessageScrollerContent,
   MessageScrollerProvider,
   MessageScrollerViewport,
-} from "@/styles/radix-rhea/ui/message-scroller"
+} from "@/components/ui/radix/message-scroller"
 import {
   Select,
   SelectContent,
@@ -45,23 +45,23 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/radix-rhea/ui/select"
+} from "@/components/ui/radix/select"
 
 const chat = createChat()
-  .user("Can user messages pop in like iMessage without breaking anchoring?")
+  .user("アンカリングを崩さずに、ユーザーのメッセージをiMessageみたいにポップインさせることはできますか？")
   .sleep(1000)
   .assistant(
-    "Yes. Animate the user row with transform and opacity, and let the assistant response stream normally below it.\n\nThat keeps the row measurement predictable while still giving the newly sent bubble a more tactile entrance."
+    "はい。ユーザーの行を transform と opacity でアニメーションさせつつ、その下ではアシスタントの応答を通常どおりストリーミングさせます。\n\nこうすることで行の高さ計測は予測可能なまま保たれ、送信直後のバブルにはより手触りのある登場アニメーションを与えられます。"
   )
-  .user("What makes the animation feel more like iMessage?")
+  .user("どうすればもっとiMessageっぽい見た目のアニメーションになりますか？")
   .sleep(1000)
   .assistant(
-    "Use a quick spring from the trailing edge: a little scale, a small upward move, and no layout animation.\n\nThe bubble feels tactile, but the measured row stays predictable, so anchoring and auto-scroll do not have to fight a changing layout."
+    "末尾側からの素早いスプリングを使いましょう。わずかな拡大、少し上への移動、そしてレイアウトアニメーションはなしです。\n\nバブルは手触りのある動きになりますが、計測される行の高さは予測可能なままなので、アンカリングや自動スクロールがレイアウトの変化と競合する必要がありません。"
   )
-  .user("Can I switch between presets while testing the same thread?")
+  .user("同じスレッドでテストしながらプリセットを切り替えることはできますか？")
   .sleep(1000)
   .assistant(
-    "Yes. Keep the conversation in place while you change the preset, then send the next message to compare the new entrance against the same context.\n\nThat makes it easier to judge the difference between a subtle fade, a snappy pop, and a more dramatic 3D tilt without rebuilding the scenario each time."
+    "はい。会話はそのままの状態でプリセットを変更し、次のメッセージを送信すれば、同じ文脈の中で新しい登場アニメーションを比較できます。\n\nこれにより、控えめなフェード、キレのあるポップ、よりドラマチックな3Dチルトの違いを、毎回シナリオを組み直さずに判断しやすくなります。"
   )
 
 const initialMessages = chat.get(0)
@@ -81,17 +81,16 @@ export function MessageScrollerAnimation() {
     <div className="relative flex flex-col gap-4">
       <Card className="mx-auto h-140 w-full max-w-sm gap-0">
         <CardHeader className="border-b">
-          <CardTitle>Animation</CardTitle>
+          <CardTitle>アニメーション</CardTitle>
           <CardDescription>
-            Choose how user messages are animated when they are added to the
-            conversation.
+            会話に追加されたときにユーザーのメッセージをどのようにアニメーションさせるか選択してください。
           </CardDescription>
           <CardAction className="flex items-center gap-2">
             <Button
               type="button"
               variant="outline"
               size="icon"
-              aria-label="Reset animated messages"
+              aria-label="アニメーションのメッセージをリセット"
               disabled={messages.length === 0 || isBusy}
               onClick={() => setMessages(initialMessages)}
             >
@@ -106,9 +105,9 @@ export function MessageScrollerAnimation() {
                 <EmptyMedia variant="icon">
                   <MessageCircleDashedIcon />
                 </EmptyMedia>
-                <EmptyTitle>No Messages Yet</EmptyTitle>
+                <EmptyTitle>まだメッセージはありません</EmptyTitle>
                 <EmptyDescription>
-                  Click the button below to send the first message.
+                  下のボタンをクリックして最初のメッセージを送信してください。
                 </EmptyDescription>
               </EmptyHeader>
             </Empty>
@@ -143,7 +142,7 @@ export function MessageScrollerAnimation() {
               setPresetId(value as MessageAnimationId)
             }}
           >
-            <SelectTrigger aria-label="Animation preset">
+            <SelectTrigger aria-label="アニメーションプリセット">
               <SelectValue>{preset.name}</SelectValue>
             </SelectTrigger>
             <SelectContent align="start" side="top" position="popper">
@@ -170,12 +169,12 @@ export function MessageScrollerAnimation() {
             }}
           >
             <ArrowUpIcon />
-            <span className="sr-only">Send Message</span>
+            <span className="sr-only">メッセージを送信</span>
           </Button>
         </CardFooter>
       </Card>
       <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-        Select an animation then click send to see it in action.
+        アニメーションを選択して送信をクリックすると、その動作を確認できます。
       </div>
     </div>
   )

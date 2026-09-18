@@ -6,20 +6,20 @@ import {
   Bubble,
   BubbleContent,
   BubbleReactions,
-} from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+} from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 
 export function BubbleReactionsDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-12 py-12">
       <Bubble variant="muted" align="end">
         <BubbleContent>
-          I don&apos;t need tests, I know my code works.
+          テストなんて要らないよ、自分のコードが動くのは分かってるから。
         </BubbleContent>
         <BubbleReactions
           align="start"
           role="img"
-          aria-label="Reactions: thumbs up, surprised"
+          aria-label="リアクション: いいね、驚き"
         >
           <span>👍</span>
           <span>😮</span>
@@ -27,12 +27,11 @@ export function BubbleReactionsDemo() {
       </Bubble>
       <Bubble variant="muted">
         <BubbleContent>
-          Bold. Fine I&apos;ll add some tests. I&apos;ll let you know when
-          they&apos;re done.
+          強気だね。分かった、テストを追加するよ。終わったら知らせるね。
         </BubbleContent>
         <BubbleReactions
           role="img"
-          aria-label="Reactions: eyes, rocket, and 2 more"
+          aria-label="リアクション: 目、ロケット、他2件"
         >
           <span>👀</span>
           <span>🚀</span>
@@ -41,27 +40,27 @@ export function BubbleReactionsDemo() {
       </Bubble>
       <Bubble variant="default" align="end">
         <BubbleContent>
-          Tests passed on the first try. All 142 of them. Looking good!
+          一発でテストが通ったよ。全142件。いい感じ！
         </BubbleContent>
         <BubbleReactions
           side="top"
           align="start"
           role="img"
-          aria-label="Reactions: party popper, clapping hands"
+          aria-label="リアクション: パーティー、拍手"
         >
           <span>🎉</span>
           <span>👏</span>
         </BubbleReactions>
       </Bubble>
       <Bubble variant="destructive">
-        <BubbleContent>Are you sure I can run this command?</BubbleContent>
+        <BubbleContent>本当にこのコマンドを実行していい？</BubbleContent>
         <BubbleReactions>
           <Button
             variant="ghost"
             size="xs"
-            onClick={() => toast.success("You clicked yes, running command...")}
+            onClick={() => toast.success("「はい」がクリックされました。コマンドを実行中...")}
           >
-            Yes, run it
+            はい、実行して
           </Button>
         </BubbleReactions>
       </Bubble>

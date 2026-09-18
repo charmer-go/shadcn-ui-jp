@@ -1,14 +1,14 @@
 ---
-title: April 2026 - Partial Preset Apply
-description: Apply only the theme or fonts from a preset while keeping your existing components.
+title: 2026 年 4 月 - 部分的なプリセットの適用
+description: 既存のコンポーネントを保持したまま、プリセットのテーマまたはフォントのみを適用します。
 date: 2026-04-22
 ---
 
-You can now selectively apply a preset.
+プリセットを選択的に適用できるようになりました。
 
-Say someone shares a preset with you and you already have your own components, but you like the theme or the fonts. Now you can apply just that.
+誰かがあなたとプリセットを共有しており、あなたはすでに独自のコンポーネントを持っているが、テーマやフォントが気に入っているとします。これで、それだけで申請できます。
 
-Keep your components. Apply only what you want.
+コンポーネントを保管してください。必要なものだけを適用してください。
 
 ```bash
 # Apply the full preset.
@@ -24,12 +24,12 @@ npx shadcn@latest apply --preset b2D0vQ7G4 --only font
 npx shadcn@latest apply --preset b2D0vQ7G4 --only theme,font
 ```
 
-The default behavior is unchanged. Running `shadcn apply --preset <preset>` still applies the full preset.
+デフォルトの動作は変更されません。 `shadcn apply --preset <preset>` を実行しても、完全なプリセットが適用されます。
 
-Partial preset apply currently supports `theme` and `font`.
+部分プリセット適用は現在、`theme` および `font` をサポートしています。
 
 <Button asChild size="sm">
   <Link href="/create" className="mt-6 no-underline!">
-    Try a Preset
+    プリセットを試してみる
   </Link>
 </Button>

@@ -6,7 +6,7 @@ import { toast } from "sonner"
 import {
   NativeSelect,
   NativeSelectOption,
-} from "@/styles/radix-nova/ui/native-select"
+} from "@/components/ui/radix/native-select"
 import {
   Questionnaire,
   QuestionnaireActions,
@@ -17,7 +17,7 @@ import {
   QuestionnaireItem,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 const items = [
   {
@@ -37,15 +37,15 @@ export function QuestionnaireShortcuts() {
 
     const action = new FormData(event.currentTarget).get("action")
 
-    toast("Next action selected", {
-      description: `Action: ${action ?? "None"} · Shortcuts: ${shortcuts ?? "none"}`,
+    toast("次のアクションを選択しました", {
+      description: `アクション: ${action ?? "なし"} ・ ショートカット: ${shortcuts ?? "none"}`,
     })
   }
 
   return (
     <div className="relative mx-auto flex h-full w-full max-w-md flex-col">
       <NativeSelect
-        aria-label="Shortcut style"
+        aria-label="ショートカットスタイル"
         className="absolute end-0 top-0"
         value={shortcuts ?? "none"}
         onChange={(event) => {
@@ -55,9 +55,9 @@ export function QuestionnaireShortcuts() {
           )
         }}
       >
-        <NativeSelectOption value="none">No shortcuts</NativeSelectOption>
-        <NativeSelectOption value="letters">Letters</NativeSelectOption>
-        <NativeSelectOption value="numbers">Numbers</NativeSelectOption>
+        <NativeSelectOption value="none">ショートカットなし</NativeSelectOption>
+        <NativeSelectOption value="letters">文字</NativeSelectOption>
+        <NativeSelectOption value="numbers">数字</NativeSelectOption>
       </NativeSelect>
 
       <Questionnaire
@@ -68,27 +68,27 @@ export function QuestionnaireShortcuts() {
       >
         <QuestionnaireItem name="action" required>
           <QuestionnaireTitle>
-            What should the agent do next?
+            エージェントは次に何をすべきですか？
           </QuestionnaireTitle>
           <QuestionnaireDescription>
-            Use the displayed shortcut or navigate with the keyboard.
+            表示されたショートカットを使うか、キーボードで操作してください。
           </QuestionnaireDescription>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="inspect">
-              Inspect the implementation
+              実装を確認する
             </QuestionnaireChoice>
             <QuestionnaireChoice value="tests">
-              Run the relevant tests
+              関連するテストを実行する
             </QuestionnaireChoice>
             <QuestionnaireChoice value="patch">
-              Prepare the patch
+              パッチを準備する
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
         </QuestionnaireItem>
 
         <QuestionnaireActions>
-          <QuestionnaireSubmit>Confirm action</QuestionnaireSubmit>
+          <QuestionnaireSubmit>アクションを確定</QuestionnaireSubmit>
         </QuestionnaireActions>
       </Questionnaire>
     </div>

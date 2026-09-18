@@ -1,17 +1,30 @@
-# shadcn/ui
+# shadcn-ui-jp
 
-A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code. **Use this to build your own component library**.
+**shadcn-ui-jp**はshadcn/uiの公式ドキュメントを日本語で読めるように翻訳した、コミュニティ運営の非公式サイトです。  
+  
+shadcn/ui は英語圏を中心に急速に広まっているコンポーネント配布プラットフォームですが、日本語のドキュメントは公式には提供されていません。  
+  
+shadcn-ui-jp は、そのギャップを埋めるために立ち上げられたプロジェクトです。原文のニュアンスをできるだけ損なわないように配慮しながら、コンポーネントの使い方やインストール手順、CLI の使い方などを日本語に翻訳して掲載しています。
 
 ![hero](apps/v4/public/opengraph-image.png)
 
-## Documentation
+## ドキュメント
 
-Visit https://ui.shadcn.com/docs to view the documentation.
+ドキュメントを表示するには https://ui.shadcn.com/docs にアクセスしてください。
 
-## Contributing
+## 開発者
+Rion: https://github.com/ri0n-dev
 
-Please read the [contributing guide](/CONTRIBUTING.md).
+## Cloudflare Pagesへのデプロイ
 
-## License
+Cloudflare Wranglerでログインした状態で、次のコマンドを実行します。
 
-Licensed under the [MIT license](./LICENSE.md).
+```bash
+pnpm pages:deploy
+```
+
+このコマンドは `apps/v4` を静的サイトとしてビルドし、生成された `apps/v4/out` をCloudflare Pagesの `shadcn-ui-jp` プロジェクトへデプロイします。
+
+## ライセンス
+
+[MITライセンス](./LICENSE.md)に基づいて配布されています。

@@ -14,7 +14,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/base-nova/ui/sidebar"
+} from "@/components/ui/base/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -28,31 +28,31 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupAction
-              title="Add Project"
-              onClick={() => toast("You clicked the group action!")}
+              title="プロジェクトを追加"
+              onClick={() => toast("グループアクションがクリックされました！")}
             >
-              <PlusIcon /> <span className="sr-only">Add Project</span>
+              <PlusIcon /> <span className="sr-only">プロジェクトを追加</span>
             </SidebarGroupAction>
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <FrameIcon />
-                    <span>Design Engineering</span>
+                    <span>デザインエンジニアリング</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <PieChartIcon />
-                    <span>Sales & Marketing</span>
+                    <span>セールス＆マーケティング</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <MapIcon />
-                    <span>Travel</span>
+                    <span>旅行</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

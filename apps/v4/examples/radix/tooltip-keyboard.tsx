@@ -1,12 +1,12 @@
 import { SaveIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Kbd } from "@/styles/radix-nova/ui/kbd"
+import { Button } from "@/components/ui/radix/button"
+import { Kbd } from "@/components/ui/radix/kbd"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/radix-nova/ui/tooltip"
+} from "@/components/ui/radix/tooltip"
 
 export function TooltipKeyboard() {
   return (
@@ -17,7 +17,7 @@ export function TooltipKeyboard() {
         </Button>
       </TooltipTrigger>
       <TooltipContent>
-        Save Changes <Kbd>S</Kbd>
+        変更を保存 <Kbd>S</Kbd>
       </TooltipContent>
     </Tooltip>
   )

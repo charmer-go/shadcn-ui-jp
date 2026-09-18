@@ -1,15 +1,15 @@
 "use client"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { toast } from "@/styles/base-nova/ui/toast"
+import { Button } from "@/components/ui/base/button"
+import { toast } from "@/components/ui/base/toast"
 
 export function ToastDemo() {
   function showToast() {
     const id = toast.add({
-      title: "Event created",
-      description: "Sunday, December 3 at 9:00 AM",
+      title: "イベントを作成しました",
+      description: "12月3日（日）午前9:00",
       actionProps: {
-        children: "Undo",
+        children: "元に戻す",
         onClick() {
           toast.close(id)
         },
@@ -19,7 +19,7 @@ export function ToastDemo() {
 
   return (
     <Button variant="outline" onClick={showToast}>
-      Show Toast
+      トーストを表示
     </Button>
   )
 }

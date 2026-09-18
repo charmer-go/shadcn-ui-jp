@@ -12,96 +12,96 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarProvider,
-} from "@/styles/aria-nova/ui/sidebar"
+} from "@/components/ui/aria/sidebar"
 
 const items = [
   {
-    title: "Getting Started",
+    title: "はじめに",
     url: "#",
     items: [
       {
-        title: "Installation",
+        title: "インストール",
         url: "#",
       },
       {
-        title: "Project Structure",
+        title: "プロジェクト構成",
         url: "#",
       },
     ],
   },
   {
-    title: "Build Your Application",
+    title: "アプリケーションの構築",
     url: "#",
     items: [
       {
-        title: "Routing",
+        title: "ルーティング",
         url: "#",
       },
       {
-        title: "Data Fetching",
+        title: "データフェッチ",
         url: "#",
         isActive: true,
       },
       {
-        title: "Rendering",
+        title: "レンダリング",
         url: "#",
       },
       {
-        title: "Caching",
+        title: "キャッシュ",
         url: "#",
       },
       {
-        title: "Styling",
+        title: "スタイリング",
         url: "#",
       },
       {
-        title: "Optimizing",
+        title: "最適化",
         url: "#",
       },
       {
-        title: "Configuring",
+        title: "設定",
         url: "#",
       },
       {
-        title: "Testing",
+        title: "テスト",
         url: "#",
       },
       {
-        title: "Authentication",
+        title: "認証",
         url: "#",
       },
       {
-        title: "Deploying",
+        title: "デプロイ",
         url: "#",
       },
       {
-        title: "Upgrading",
+        title: "アップグレード",
         url: "#",
       },
       {
-        title: "Examples",
+        title: "サンプル",
         url: "#",
       },
     ],
   },
   {
-    title: "API Reference",
+    title: "APIリファレンス",
     url: "#",
     items: [
       {
-        title: "Components",
+        title: "コンポーネント",
         url: "#",
       },
       {
-        title: "File Conventions",
+        title: "ファイル規約",
         url: "#",
       },
       {
-        title: "Functions",
+        title: "関数",
         url: "#",
       },
       {
-        title: "next.config.js Options",
+        title: "next.config.js のオプション",
         url: "#",
       },
       {
@@ -109,29 +109,29 @@ const items = [
         url: "#",
       },
       {
-        title: "Edge Runtime",
+        title: "エッジランタイム",
         url: "#",
       },
     ],
   },
   {
-    title: "Architecture",
+    title: "アーキテクチャ",
     url: "#",
     items: [
       {
-        title: "Accessibility",
+        title: "アクセシビリティ",
         url: "#",
       },
       {
-        title: "Fast Refresh",
+        title: "ファストリフレッシュ",
         url: "#",
       },
       {
-        title: "Next.js Compiler",
+        title: "Next.js コンパイラ",
         url: "#",
       },
       {
-        title: "Supported Browsers",
+        title: "対応ブラウザ",
         url: "#",
       },
       {

@@ -1,39 +1,39 @@
 ---
-title: June 2026 - GitHub Registries
-description: Turn any public GitHub repository into a shadcn registry.
+title: 2026 年 6 月 - GitHub レジストリ
+description: パブリック GitHub リポジトリを shadcn レジストリに変換します。
 date: 2026-06-01
 ---
 
-**You can now turn any public GitHub repository into a registry.**
+**パブリック GitHub リポジトリをレジストリに変えることができるようになりました。**
 
-Add a `registry.json` file at the root of the repository, define the items you
-want to distribute, and users can install them directly from GitHub with the
-`shadcn` CLI.
+リポジトリのルートに `registry.json` ファイルを追加し、必要な項目を定義します。
+配布したい場合、ユーザーは次のコマンドを使用して GitHub から直接インストールできます。
+`shadcn` CLI。
 
 ```bash
 npx shadcn@latest add <username>/<repo>/<item>
 ```
 
-For example, to install the `project-conventions` item from the `acme/toolkit` repository:
+たとえば、`acme/toolkit` リポジトリから `project-conventions` アイテムをインストールするには、次のようにします。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
 ```
 
-GitHub registries are source registries. You do not need to run `shadcn build`,
-publish generated item JSON files or set up a registry server. The CLI reads the
-root `registry.json`, resolves `include` entries, finds the requested item and
-installs the files declared by that item.
+GitHub レジストリはソース レジストリです。 `shadcn build` を実行する必要はありません。
+生成されたアイテムの JSON ファイルを公開するか、レジストリ サーバーをセットアップします。 CLI は、
+ルート `registry.json`、`include` エントリを解決し、要求されたアイテムを検索し、
+その項目で宣言されたファイルをインストールします。
 
-## Distribute anything
+## 何でも配布
 
-Registry items are not limited to components. A GitHub registry can distribute
-components, hooks, utilities, design tokens, feature kits, project conventions,
-agent instructions, testing setup, CI workflows, release workflows, templates,
-codemods, migration kits and other project files.
+レジストリ項目はコンポーネントに限定されません。 GitHub レジストリは配布できます
+コンポーネント、フック、ユーティリティ、デザイントークン、機能キット、プロジェクト規約、
+エージェントの指示、テスト設定、CI ワークフロー、リリース ワークフロー、テンプレート、
+codemod、移行キット、その他のプロジェクト ファイル。
 
-For example, a repository can expose a `project-conventions` item that installs
-shared docs, editor settings and agent instructions:
+たとえば、リポジトリは、以下をインストールする `project-conventions` 項目を公開できます。
+共有ドキュメント、エディタ設定、エージェントの指示:
 
 ```json title="registry.json" showLineNumbers
 {
@@ -66,33 +66,33 @@ shared docs, editor settings and agent instructions:
 }
 ```
 
-## Commands
+## コマンド
 
-GitHub registry addresses work with the same commands as other registry
-addresses.
+GitHub レジストリ アドレスは、他のレジストリと同じコマンドで動作します
+アドレス。
 
-List items from a GitHub registry:
+GitHub レジストリの項目をリストします。
 
 ```bash
 npx shadcn@latest list acme/toolkit
 ```
 
-Search items:
+検索項目:
 
 ```bash
 npx shadcn@latest search acme/toolkit --query conventions
 ```
 
-View an item:
+アイテムを表示します:
 
 ```bash
 npx shadcn@latest view acme/toolkit/project-conventions
 ```
 
-Install an item:
+アイテムをインストールします。
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
 ```
 
-See the [GitHub Registries](/docs/registry/github) docs for the full guide.
+完全なガイドについては、[GitHub Registries](/docs/registry/github) のドキュメントを参照してください。

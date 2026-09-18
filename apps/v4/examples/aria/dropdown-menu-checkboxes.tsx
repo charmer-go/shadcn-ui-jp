@@ -3,14 +3,14 @@
 import * as React from "react"
 import type { Selection } from "react-aria-components"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   DropdownMenu,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 export function DropdownMenuCheckboxes() {
   const [selectedKeys, setSelectedKeys] = React.useState<Selection>(
@@ -19,19 +19,19 @@ export function DropdownMenuCheckboxes() {
 
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Open</Button>
+      <Button variant="outline">開く</Button>
       <DropdownMenu className="w-40">
         <DropdownMenuGroup
           selectionMode="multiple"
           selectedKeys={selectedKeys}
           onSelectionChange={setSelectedKeys}
         >
-          <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-          <DropdownMenuItem id="status-bar">Status Bar</DropdownMenuItem>
+          <DropdownMenuLabel>外観</DropdownMenuLabel>
+          <DropdownMenuItem id="status-bar">ステータスバー</DropdownMenuItem>
           <DropdownMenuItem id="activity-bar" isDisabled>
-            Activity Bar
+            アクティビティバー
           </DropdownMenuItem>
-          <DropdownMenuItem id="panel">Panel</DropdownMenuItem>
+          <DropdownMenuItem id="panel">パネル</DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenu>
     </DropdownMenuTrigger>

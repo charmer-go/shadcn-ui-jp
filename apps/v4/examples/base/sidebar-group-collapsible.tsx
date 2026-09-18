@@ -6,7 +6,7 @@ import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/base-nova/ui/collapsible"
+} from "@/components/ui/base/collapsible"
 import {
   Sidebar,
   SidebarContent,
@@ -17,7 +17,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/base-nova/ui/sidebar"
+} from "@/components/ui/base/sidebar"
 
 export default function AppSidebar() {
   return (
@@ -30,7 +30,7 @@ export default function AppSidebar() {
                 render={<CollapsibleTrigger />}
                 className="text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
-                Help
+                ヘルプ
                 <ChevronDownIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
               </SidebarGroupLabel>
               <CollapsibleContent>
@@ -39,13 +39,13 @@ export default function AppSidebar() {
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <LifeBuoyIcon />
-                        Support
+                        サポート
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <SendIcon />
-                        Feedback
+                        フィードバック
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   </SidebarMenu>

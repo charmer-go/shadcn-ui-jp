@@ -1,17 +1,17 @@
 ---
 title: AI SDK
-description: Create AI SDK messages and stream predefined conversations through useChat without a model, API route, network request, or API key.
+description: AI SDK メッセージを作成し、モデル、API ルート、ネットワーク リクエスト、API キーを使用せずに useChat を通じて事前定義された会話をストリーミングします。
 ---
 
-`@shadcn/helpers/ai-sdk` lets you write an AI conversation in code and stream it
-through `useChat`, with no model, API route, network request, or API key.
+`@shadcn/helpers/ai-sdk` を使うと、AI 会話をコードで定義し、モデル、API
+ルート、ネットワーク リクエスト、API キーを使わずにストリーミングできます。
 
-Because the conversation streams through the real `useChat` lifecycle, your
-components behave exactly as they would in production.
+会話は実際の `useChat` ライフサイクルを通じてストリーミングされるため、コンポーネントは
+本番環境とまったく同じように動作します。
 
-It supports every part type the AI SDK does: reasoning, tools, data, files,
-sources, and custom parts. Tool calls can also pause for real user input,
-including approvals. See [Human in the Loop](#human-in-the-loop).
+AI SDK がサポートするすべてのパーツ形式（推論、ツール、データ、ファイル、ソース、カスタム
+パーツ）に対応しています。ツール呼び出しを実際のユーザー入力のために一時停止することもできます。
+詳しくは[ヒューマン・イン・ザ・ループ](#ヒューマン・イン・ザ・ループ)を参照してください。
 
 ```ts showLineNumbers
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -23,9 +23,8 @@ const chat = createChat()
   .assistant("Press ⌘K to search and ⌘Enter to submit.")
 ```
 
-Pass the chat to `useChat` with its initial messages and local transport.
-`useChat` receives the same typed `UIMessage[]` it would get from a streamed
-response.
+初期メッセージとローカル トランスポートを指定して、チャットを `useChat` に渡します。
+`useChat` はストリーミングされた応答を受け取ります。
 
 ```tsx showLineNumbers
 import { useChat } from "@ai-sdk/react"
@@ -53,42 +52,42 @@ function Chat() {
 }
 ```
 
-`get(0)` starts with no messages. `sendMessage(nextMessage)` sends the next
-predefined user message; the transport then streams its assistant response.
+`get(0)` はメッセージなしで始まります。`sendMessage(nextMessage)` は次の定義済みユーザー
+メッセージ（承認を含む）を送信し、トランスポートがそのアシスタント応答をストリーミングします。
 
 ---
 
-## What It's For
+## 用途
 
-The helper decouples your chat UI from the model and the backend, so you can
-work on the frontend on its own. It runs offline, instantly, and the same way every time.
+このヘルパーはチャット UI をモデルやバックエンドから切り離すため、フロントエンドだけで
+開発できます。オフラインで即座に実行でき、毎回同じように動作します。
 
-- **Build components.** Develop message bubbles, tool cards, and reasoning
-  panels against realistic streaming output, without wiring up a model first.
-- **Preview and demo.** Ship reproducible previews, screenshots, and videos
-  that never depend on a live model.
-- **Write docs.** Power documentation examples with conversations that render
-  the same way on every load.
-- **Test.** Assert against a deterministic stream in CI, with no network calls,
-  token spend, or flaky model output.
+- **コンポーネントを構築します。** メッセージ バブル、ツール カード、推論パネルを、最初に
+  モデルを接続することなく、現実的なストリーミング出力で作成できます。
+- **プレビューとデモ。** 稼働中のモデルに依存しない、再現可能なプレビュー、スクリーンショット、
+  ビデオを提供できます。
+- **ドキュメントを作成します。** 読み込むたびに同じように描画される会話で、ドキュメントの
+  例を動かせます。
+- **テスト** ネットワーク呼び出しを行わずに、CI の決定論的ストリームに対してアサートします。
+  トークンの支出、または不安定なモデル出力を拒否します。
 
 ---
 
-## Installation
+## インストール
 
 ```bash
 npm install @shadcn/helpers
 ```
 
-This helper works alongside your existing AI SDK setup (`ai` and
-`@ai-sdk/react`). Import the helpers from `@shadcn/helpers/ai-sdk`.
+このヘルパーは既存の AI SDK 構成（`ai` と `@ai-sdk/react`）と一緒に使えます。
+ヘルパーは `@shadcn/helpers/ai-sdk` からインポートしてください。
 
 ---
 
-## Usage
+## 使い方
 
-Create a conversation, pass its messages and transport to `useChat`, then send
-each predefined user message with `next()`.
+会話を作成し、そのメッセージとトランスポートを `useChat` に渡してから、`next()` で定義済みの
+ユーザー メッセージを順番に送信します。
 
 ```tsx showLineNumbers {3-4,6-10,12-13,16-21,28-34}
 "use client"
@@ -142,11 +141,11 @@ export function Chat() {
 
 ---
 
-## User Messages
+## ユーザーメッセージ
 
-Messages added with this helper use the `user` and `assistant` roles. Use
-`user()` to add a user message. Existing AI SDK messages are preserved when
-you start with `createChat({ messages })`.
+このヘルパーで追加するメッセージには `user` と `assistant` のロールが設定されます。`user()`
+でユーザー メッセージを追加できます。`createChat({ messages })` で開始した場合、既存の AI SDK
+メッセージは保持されます。
 
 ```ts
 const chat = createChat().user("What changed in this release?")
@@ -157,7 +156,7 @@ message.role // "user"
 message.parts // [{ type: "text", text: "What changed in this release?" }]
 ```
 
-Pass an `id` or metadata as the second argument when you need them.
+必要に応じて、第 2 引数で `id` またはメタデータを渡します。
 
 ```ts
 chat.user("What changed in this release?", {
@@ -168,13 +167,13 @@ chat.user("What changed in this release?", {
 })
 ```
 
-User messages can also include files. See [Files](#files).
+ユーザー メッセージにはファイルも含められます。[ファイル](#ファイル)を参照してください。
 
 ---
 
-## Assistant Messages
+## アシスタントメッセージ
 
-Use `assistant()` to add an assistant message.
+`assistant()` を使ってアシスタント メッセージを追加します。
 
 ```ts
 const chat = createChat().assistant(
@@ -187,8 +186,8 @@ message.role // "assistant"
 message.parts // [{ type: "text", text: "The release adds...", state: "done" }]
 ```
 
-A string creates one text part. You can also pass an array of AI SDK message
-parts.
+文字列を渡すと 1 つのテキスト パーツが作成されます。AI SDK メッセージ パーツの配列を渡す
+こともできます。
 
 ```ts
 chat.assistant([
@@ -197,7 +196,7 @@ chat.assistant([
 ])
 ```
 
-Use the writer callback when the message has more than plain text.
+プレーン テキスト以外の内容を含むメッセージには、ライター コールバックを使用します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -206,20 +205,20 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The writer adds parts in the order you call them.
+ライターは、呼び出した順序でパーツを追加します。
 
 ---
 
-## Message Parts
+## メッセージパーツ
 
-An assistant message can contain many part types. Add them with the `writer`
-passed to `assistant()`, in the order you call them:
+アシスタント メッセージには複数のパーツ形式を含められます。`writer` でパーツを追加すると、
+呼び出した順序で `assistant()` に渡されます。
 
-- [Text](#text) and [Reasoning](#reasoning)
-- [Tool Calls](#tool-calls)
-- [Data](#data)
-- [Files](#files) and [Sources](#sources)
-- [Step Starts](#step-starts) and [Custom Parts](#custom-parts)
+- [テキスト](#テキスト)と[推論](#推論)
+- [ツール呼び出し](#tool-calls)
+- [データ](#data)
+- [ファイル](#ファイル)と[ソース](#ソース)
+- [ステップ開始](#ステップ開始)と[カスタム パーツ](#カスタム-パーツ)
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -233,9 +232,9 @@ chat.assistant(({ writer }) => {
 
 ---
 
-## Text
+## テキスト
 
-Use `text()` to add a text part.
+`text()` を使ってテキスト パーツを追加します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -244,18 +243,18 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Each call creates a separate text part. Text streams word by word when the chat
-is used with `chat.transport()`.
+呼び出すたびに個別のテキスト パーツが作成されます。`chat.transport()` と一緒に使うと、
+テキストは単語ごとにストリーミングされます。
 
-Use `mode: "instant"` to send the whole part at once, or `delayMs` to change the
-delay between its text deltas.
+`mode: "instant"` を渡すとパーツ全体を一度に送信できます。`delayMs` を使うと、テキストの
+差分が送信される間隔を変更できます。
 
 ```ts
 writer.text("Done.", { mode: "instant" })
 writer.text("This part streams more slowly.", { delayMs: 100 })
 ```
 
-Pass an `id` when the text part needs a stable identifier.
+テキスト パーツに安定した識別子が必要な場合は `id` を渡します。
 
 ```ts
 writer.text("The final answer.", { id: "answer" })
@@ -263,9 +262,9 @@ writer.text("The final answer.", { id: "answer" })
 
 ---
 
-## Reasoning
+## 推理
 
-Use `reasoning()` to add a reasoning part.
+`reasoning()` を使用して推論部分を追加します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -274,7 +273,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Reasoning uses the same `id`, `delayMs`, and `mode` options as text.
+推論では、テキストと同じ `id`、`delayMs`、および `mode` オプションを使用します。
 
 ```ts
 writer.reasoning("Checking the forecast.", { mode: "instant" })
@@ -282,10 +281,10 @@ writer.reasoning("Checking the forecast.", { mode: "instant" })
 
 ---
 
-## Tool Calls
+## ツール呼び出し
 
-Use `tool()` to add a tool call. It returns a handle that follows the tool from
-input to output.
+`tool()` を使ってツール呼び出しを追加します。入力から出力までのツールのライフサイクルを
+追跡するハンドルが返されます。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -305,7 +304,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The tool can finish with `output()`, `error()`, or `denied()`.
+ツールは `output()`、`error()`、または `denied()` で終了できます。メッセージのない場合は、
 
 ```ts
 writer.tool("getWeather", { input: { city: "San Francisco" } }).error()
@@ -313,8 +312,8 @@ writer.tool("getWeather", { input: { city: "San Francisco" } }).error()
 writer.tool("getWeather", { input: { city: "San Francisco" } }).denied()
 ```
 
-Pass `dynamic: true` to create an AI SDK `dynamic-tool` part instead of a typed
-`tool-<name>` part.
+入力と結果の間にライフサイクル イベントが必要な場合はハンドルを使用します。`dynamic: true`
+を指定すると、型付き `tool-<name>` パーツの代わりに動的ツール パーツが作成されます。
 
 ```ts
 writer.tool("getWeather", {
@@ -324,8 +323,8 @@ writer.tool("getWeather", {
 })
 ```
 
-Type the tool name, input, and output by passing your message type to
-`createChat`. It takes the same type parameter as `useChat`.
+`createChat` にメッセージ型を渡すと、ツール名、入力、出力に型を付けられます。`useChat` と同じ
+型パラメーターを使用します。
 
 ```ts
 import type { UIMessage } from "ai"
@@ -342,7 +341,7 @@ type ChatMessage = UIMessage<unknown, Record<string, never>, Tools>
 const chat = createChat<ChatMessage>()
 ```
 
-Define the message type once and use it for both `createChat` and `useChat`.
+メッセージ型は一度だけ定義し、`createChat` と `useChat` の両方で使用します。
 
 ```ts
 const { messages } = useChat<ChatMessage>({
@@ -351,23 +350,22 @@ const { messages } = useChat<ChatMessage>({
 })
 ```
 
-A tool call can also wait for the user instead of finishing in the script.
-See [Human in the Loop](#human-in-the-loop).
+ツール呼び出しをスクリプト内で完了させず、ユーザーの入力を待つこともできます。
+[ヒューマン・イン・ザ・ループ](#ヒューマン・イン・ザ・ループ)を参照してください。
 
 ---
 
-## Human in the Loop
+## ヒューマン・イン・ザ・ループ
 
-A tool call can pause and hand control to the real user. The helper supports
-both AI SDK human-in-the-loop flows: client-executed tools, where the user
-supplies the output, and approval-gated tools, where the user approves or
-denies before a scripted output streams.
+ツール呼び出しを一時停止して、実際のユーザーに操作を委ねられます。このヘルパーは AI SDK の
+2 種類のヒューマン・イン・ザ・ループ フローに対応しています。1 つはユーザーが出力を入力する
+クライアント実行ツール、もう 1 つはユーザーが承認または拒否してから定義済みの出力を
+ストリーミングする承認ゲート付きツールです。
 
-### Pause a Tool Call
+### ツール呼び出しを一時停止する
 
-Leave a tool call unresolved to pause the turn. The input streams, the turn
-finishes, and the part stays in the `input-available` state until the client
-supplies its output with `addToolOutput`.
+ツール呼び出しを未解決のままにしてターンを一時停止します。入力のストリーミングが完了した後も、
+クライアントが `addToolOutput` で出力を渡すまで、パーツは `input-available` 状態に留まります。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -376,12 +374,12 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-### Require Approval
+### 承認が必要
 
-Pass `needsApproval: true` to pause behind the user's decision. `output` then
-means "stream this after approval" instead of "resolve immediately". Denial
-streams `tool-output-denied` automatically, and `errorText` with
-`needsApproval` scripts a tool that fails after approval.
+`needsApproval: true` を渡すと、ユーザーの判断が下るまで一時停止します。この場合の `output` は
+すぐに解決されず、承認後にストリーミングされます。拒否された場合は `tool-output-denied` が
+自動的にストリーミングされ、`needsApproval` とともに `errorText` を指定すると、承認後に
+失敗するツールを定義できます。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -394,15 +392,14 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Calling `output()`, `error()`, or `denied()` on the handle of a
-`needsApproval` call throws. The user's decision resolves it.
+`needsApproval` を指定した呼び出しのハンドルで `output()`、`error()`、または `denied()` を呼ぶと
+例外が発生します。ユーザーの判断によって呼び出しが解決されます。
 
-### Continuations
+### 継続処理
 
-A callback turn scripted immediately after a paused turn becomes a
-continuation. It does not materialize when the script is built. It runs when
-the follow-up request arrives, and its context includes `toolCall`: the
-paused call joined with what the user did.
+一時停止したターンの直後にコールバックで定義したターンは、継続処理になります。スクリプトを
+構築した時点では実体化されず、後続リクエストが届いたときに実行されます。コンテキストには
+`toolCall` が含まれ、一時停止した呼び出しとユーザーの操作が結合されます。
 
 ```ts
 chat
@@ -418,30 +415,30 @@ chat
   })
 ```
 
-For a client-executed tool, `toolCall.output` is the output the user
-submitted. For an approval, `toolCall.approved` and `toolCall.denied` carry
-the decision, and the scripted output streams before the callback's content.
+クライアント実行ツールでは、`toolCall.output` がユーザーの入力した出力です。承認フローでは、
+`toolCall.approved` と `toolCall.denied` に判断結果が入り、コールバックの内容より先に定義済みの
+出力がストリーミングされます。
 
-| Property     | Description                                                    |
+| プロパティ | 説明 |
 | ------------ | -------------------------------------------------------------- |
-| `name`       | The tool name. Comparing it narrows `input` and `output`.      |
-| `toolCallId` | The paused call's ID.                                          |
-| `input`      | The tool input.                                                |
-| `output`     | The user-submitted output, or the gated output after approval. |
-| `approved`   | `true` when the user approved. Approval calls only.            |
-| `denied`     | `true` when the user denied. Approval calls only.              |
+| `name` |ツール名。比較すると `input` と `output` が絞り込まれます。      |
+| `toolCallId` | 一時停止した呼び出しの ID。 |
+| `input` | ツールの入力。 |
+| `output` | ユーザーが入力した出力、または承認後のゲート付き出力。 |
+| `approved` | ユーザーが承認した場合は `true`。承認フローでのみ使用します。 |
+| `denied` | ユーザーが拒否した場合は `true`。承認フローでのみ使用します。 |
 
-Continuation context also includes `messages`, the live transcript, and
-`toolCalls`, every paused call when a turn has more than one.
+継続処理のコンテキストには、ライブな会話履歴である `messages` と、1 つのターンに複数ある場合の
+すべての一時停止呼び出しを含む `toolCalls` も含まれます。
 
-Continuations must stay pure. Regenerating re-resolves them against the
-current transcript, so a changed decision produces the other branch.
+継続処理は純粋なままにしてください。再生成時には現在の会話履歴に対して再解決されるため、
+判断が変わると別の分岐が生成されます。
 
-### Client Wiring
+### クライアント配線
 
-The client side uses the AI SDK as-is. Submit a client-executed tool's output
-with `addToolOutput`, answer an approval with `addToolApprovalResponse`, and
-let `sendAutomaticallyWhen` send the follow-up request.
+クライアント側では AI SDK をそのまま使用します。クライアント実行ツールの出力は
+`addToolOutput` で送信し、承認には `addToolApprovalResponse` で応答します。後続リクエストは
+`sendAutomaticallyWhen` に送信させます。
 
 ```tsx
 import {
@@ -470,20 +467,16 @@ addToolOutput({
 addToolApprovalResponse({ id: part.approval.id, approved: true })
 ```
 
-The continuation streams as a new step of the paused assistant message. The
-client merges its parts into that message instead of adding a new one, and
-the helper emits the step boundary and omits the continuation's message id so
-the merge stays in place and the automatic send does not re-trigger.
+継続は、一時停止したアシスタント メッセージの新しいステップとしてストリーミングされます。クライアントは新しいメッセージを追加する代わりに、そのパーツをメッセージにマージします。ヘルパーはステップ境界を出力し、継続のメッセージ ID を省略するため、マージが維持され、自動送信が再度トリガーされることもありません。
 
-In development, the helper warns when a `needsApproval` call has no
-continuation turn after it, and when a continuation resolves without a
-pending tool call.
+開発環境では、`needsApproval` の呼び出しに後続の継続ターンがない場合や、保留中のツール呼び出し
+なしで継続処理が解決された場合に、ヘルパーが警告します。
 
 ---
 
-## Data
+## データ
 
-Use `data()` to add a typed `data-*` part.
+`data()` を使用して、型指定された `data-*` 部分を追加します。
 
 ```ts
 type DataParts = {
@@ -506,8 +499,8 @@ const chat = createChat<UIMessage<unknown, DataParts>>().assistant(
 )
 ```
 
-Send the same `type` and `id` again to update the part in place. This is useful
-for states such as loading to success.
+同じ `type` と `id` を再度送信すると、そのパーツを所定の位置で更新できます。読み込み中から
+成功へ状態を更新する場合などに便利です。
 
 ```ts
 writer.data({
@@ -522,8 +515,8 @@ writer.data({
 })
 ```
 
-Set `transient: true` for an update that should stream to the client but should
-not remain in the final message.
+クライアントにはストリーミングするものの最終メッセージには残さない更新には、
+`transient: true` を設定します。
 
 ```ts
 writer.data({
@@ -535,9 +528,9 @@ writer.data({
 
 ---
 
-## Files
+## ファイル
 
-Add files to a user message with the `files` option.
+`files` オプションを使ってユーザー メッセージにファイルを追加します。
 
 ```ts
 chat.user("Summarize this report.", {
@@ -551,7 +544,7 @@ chat.user("Summarize this report.", {
 })
 ```
 
-Use `file()` to add a file to an assistant message.
+`file()` を使ってアシスタント メッセージにファイルを追加します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -563,7 +556,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Use `reasoningFile()` for a file attached to a reasoning part.
+推論パーツにファイルを添付するには `reasoningFile()` を使います。
 
 ```ts
 writer.reasoningFile({
@@ -575,9 +568,9 @@ writer.reasoningFile({
 
 ---
 
-## Sources
+## ソース
 
-Use `sourceUrl()` to add a URL source.
+`sourceUrl()` を使って URL ソースを追加します。
 
 ```ts
 writer.sourceUrl({
@@ -587,7 +580,7 @@ writer.sourceUrl({
 })
 ```
 
-Use `sourceDocument()` to add a document source.
+`sourceDocument()` を使用してドキュメント ソースを追加します。
 
 ```ts
 writer.sourceDocument({
@@ -600,9 +593,9 @@ writer.sourceDocument({
 
 ---
 
-## Step Starts
+## ステップ開始
 
-Use `stepStart()` to add an AI SDK step boundary.
+`stepStart()` を使用して AI SDK ステップ境界を追加します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -615,9 +608,9 @@ chat.assistant(({ writer }) => {
 
 ---
 
-## Custom Parts
+## カスタム パーツ
 
-Use `custom()` to add a custom part.
+`custom()` を使ってカスタム パーツを追加します。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -625,15 +618,15 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The message receives a `custom` part with the given `kind`. The AI SDK expects
-kinds in the `{provider}.{provider-type}` format. Calling `custom()` without a
-kind uses `"test.output"`.
+メッセージには指定した `kind` を持つ `custom` パーツが追加されます。AI SDK では、`kind` に
+`{provider}.{provider-type}` 形式を使用します。`kind` なしで `custom()` を呼ぶと
+`"test.output"` が使われます。
 
 ---
 
-## Reading Messages
+## メッセージを読む
 
-Use `get()` to return messages from the start of the conversation.
+`get()` を使うと、会話の先頭からメッセージを取得できます。
 
 ```ts
 chat.get() // Every message.
@@ -641,26 +634,25 @@ chat.get(2) // The first two messages.
 chat.get(0) // An empty initial conversation.
 ```
 
-`get()` returns cloned messages and does not change the chat. It stops before
-the first [continuation turn](#continuations), since a continuation has no
-message without a live transcript, and throws when `count` reaches past one.
+`get()` はメッセージの複製を返し、チャットを変更しません。継続処理はライブな会話履歴なしでは
+メッセージを持たないため、最初の[継続ターン](#継続処理)の前で停止します。`count` が実際の
+メッセージ数を超えると例外が発生します。
 
-Use `next()` to find the next predefined user message after the messages already
-shown.
+`next()` を使うと、すでに表示したメッセージの次にある定義済みユーザー メッセージを取得できます。
 
 ```ts
 const initialMessages = chat.get(2)
 const nextMessage = chat.next(initialMessages)
 ```
 
-`next()` always accepts a message transcript, not an index. It returns the next
-user message or `null` when none remain.
+`next()` は、インデックスではなく、常にメッセージ トランスクリプトを受け入れます。次の
+ユーザー メッセージが使用されるか、何も残っていない場合は `null` が使用されます。
 
 ---
 
-## Start from Existing Messages
+## 既存のメッセージから開始する
 
-Pass `messages` to continue from a saved conversation or fixture.
+保存した会話やフィクスチャから続行するには `messages` を渡します。
 
 ```ts
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -673,14 +665,13 @@ const chat = createChat({ messages: savedMessages })
   .assistant("Turn the open questions into a checklist.")
 ```
 
-Existing IDs, metadata, and parts are preserved.
+既存の ID、メタデータ、パーツは保持されます。
 
 ---
 
-## Transport
+## トランスポート
 
-`transport()` creates an AI SDK `ChatTransport` that you can pass directly to
-`useChat`.
+`transport()` は、`useChat` に直接渡せる AI SDK の `ChatTransport` を作成します。
 
 ```ts
 const transport = chat.transport()
@@ -691,23 +682,22 @@ const { messages, sendMessage } = useChat({
 })
 ```
 
-When `sendMessage()` runs, the transport finds the assistant message that
-follows the current transcript and streams it through the normal AI SDK chat
-lifecycle. It uses message IDs first and falls back to matching the role and
-text of the latest message. Automatic sends after tool results and approval
-responses resolve the next [continuation](#continuations); only a
-regeneration replays a turn by its message ID.
+`sendMessage()` が実行されると、トランスポートは現在の会話履歴に続くアシスタント メッセージを
+見つけ、通常の AI SDK チャット ライフサイクルを通してストリーミングします。まずメッセージ ID
+で照合し、見つからない場合は最新メッセージのロールとテキストで照合します。ツール結果や承認
+応答の後に自動送信されるリクエストは次の[継続処理](#継続処理)を解決します。メッセージ ID で
+ターンを再生するのは再生成の場合だけです。
 
-### Options
+### オプション
 
-| Option     | Type                                       | Default | Description                                                                   |
+| オプション | 型 | デフォルト | 説明 |
 | ---------- | ------------------------------------------ | ------- | ----------------------------------------------------------------------------- |
-| `delayMs`  | `number`                                   | `50`    | Delay between text and reasoning deltas. Use `0` or `undefined` to remove it. |
-| `fallback` | `string`, `UIMessagePart[]`, or a callback | None    | Response to stream when no predefined assistant response remains.             |
+| `delayMs` | `number` | `50` | テキストと推論の差分の間隔。`0` または `undefined` で無効化します。 |
+| `fallback` | `string`、`UIMessagePart[]`、またはコールバック |なし |事前定義されたアシスタント応答が残っていない場合のストリームへの応答。             |
 
-The transport-level `delayMs` is the default for every streamed text and
-reasoning part. Override it for one part with `writer.text(..., { delayMs })`
-or `writer.reasoning(..., { delayMs })`.
+トランスポート レベルの `delayMs` は、すべてのストリーミングされるテキストと推論パーツの
+デフォルト値です。1 つのパーツだけ変更するには、`writer.text(..., { delayMs })` または
+`writer.reasoning(..., { delayMs })` を使います。
 
 ```ts
 const transport = chat.transport({
@@ -715,10 +705,10 @@ const transport = chat.transport({
 })
 ```
 
-### Fallback
+### フォールバック
 
-Use `fallback` when the conversation has no predefined assistant response
-left. This keeps a demo usable after its predefined replies are exhausted.
+定義済みのアシスタント応答が残っていない場合は `fallback` を使います。定義済みの応答を使い
+切った後もデモを利用できるようになります。
 
 ```ts
 const transport = chat.transport({
@@ -726,9 +716,8 @@ const transport = chat.transport({
 })
 ```
 
-A fallback can also be an array of AI SDK message parts or a writer callback.
-The callback receives the incoming transcript, so it can create a response from
-the current state.
+フォールバックには、AI SDK メッセージ パーツの配列やライター コールバックも指定できます。
+コールバックには受信した会話履歴が渡されるため、現在の状態から応答を作成できます。
 
 ```ts
 const transport = chat.transport({
@@ -740,19 +729,18 @@ const transport = chat.transport({
 })
 ```
 
-Fallback responses stream like assistant responses but are not added to the
-predefined conversation. Without one, the transport throws
-`"No assistant response found for this transcript."` when the conversation is
-exhausted.
+フォールバック応答はアシスタント応答と同様にストリーミングされますが、定義済みの会話には
+追加されません。フォールバックがない状態で会話が終了すると、トランスポートは
+`"No assistant response found for this transcript."` をスローします。
 
-Calling `stop()` from `useChat` aborts the active transport stream.
-Reconnecting is not supported; `reconnectToStream()` returns `null`.
+`useChat` から `stop()` を呼び出すと、アクティブなトランスポート ストリームが中止されます。
+再接続には対応していません。`reconnectToStream()` は `null` を返します。
 
 ---
 
-## Timing
+## タイミング
 
-Use delays to reproduce the pace of a real response.
+遅延を使うと、実際の応答のテンポを再現できます。
 
 ```ts
 const chat = createChat()
@@ -767,22 +755,21 @@ const chat = createChat()
 const transport = chat.transport({ delayMs: 50 })
 ```
 
-- `chat.sleep(ms)` waits before the next assistant response starts.
-- `writer.sleep(ms)` waits between parts of an assistant response.
-- `tool.sleep(ms)` waits between a tool's input and its result.
-- `transport({ delayMs })` sets the default delay between text and reasoning
-  deltas.
-- `writer.text(text, { delayMs })` and `writer.reasoning(text, { delayMs })`
-  override that delay for one part.
-- `mode: "instant"` sends a whole text or reasoning part in one delta.
+- `chat.sleep(ms)` は、次のアシスタント応答が始まる前に待機します。
+- `writer.sleep(ms)` は、アシスタント応答のパーツ間で待機します。
+- `tool.sleep(ms)` は、ツールの入力とその結果の間で待機します。
+- `transport({ delayMs })` は、テキストと推論の差分間隔のデフォルト値を設定します。
+- `writer.text(text, { delayMs })` と `writer.reasoning(text, { delayMs })` は、1 つの
+  パーツだけその間隔を上書きします。
+- `mode: "instant"` は、テキストまたは推論パーツ全体を 1 回の差分で送信します。
 
-For fast tests, use `chat.transport({ delayMs: 0 })` and instant text.
+高速なテストでは、`chat.transport({ delayMs: 0 })` と即時テキストを使用します。
 
 ---
 
-## Errors
+## エラー
 
-Use `error()` on the chat when the whole assistant response should fail.
+アシスタント応答全体を失敗させるには、チャットで `error()` を使います。
 
 ```ts
 const chat = createChat()
@@ -790,7 +777,7 @@ const chat = createChat()
   .error("The report could not be loaded.")
 ```
 
-Use `writer.error()` to fail after other parts have streamed.
+他のパーツをストリーミングした後に失敗させるには、`writer.error()` を使います。
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -801,10 +788,10 @@ chat.assistant(({ writer }) => {
 
 ---
 
-## Metadata and IDs
+## メタデータと ID
 
-Pass metadata on individual messages. Its type is preserved through `get()`,
-`next()`, and the transport.
+個別のメッセージにメタデータを渡します。メタデータの型は `get()`、`next()`、トランスポートを
+通して保持されます。
 
 ```ts
 type Metadata = {
@@ -819,7 +806,7 @@ const chat = createChat<UIMessage<Metadata>>()
   })
 ```
 
-Use chat options when a fixture needs custom prefixes or a fixed clock.
+フィクスチャにカスタム プレフィックスまたは固定クロックが必要な場合は、チャット オプションを使用します。
 
 ```ts
 const chat = createChat({
@@ -832,14 +819,14 @@ const chat = createChat({
 
 ---
 
-## API Reference
+## APIリファレンス
 
-The sections above cover the common flows. This reference lists every public
-export and option.
+上記のセクションでは一般的なフローを説明しました。このリファレンスには、すべての公開されている
+エクスポートとオプションを一覧にしています。
 
 ### `createChat()`
 
-Creates a typed conversation and returns the fluent chat interface.
+型付きの会話を作成し、メソッドをチェーンできるチャット インターフェースを返します。
 
 ```ts
 function createChat<UI_MESSAGE extends UIMessage = UIMessage>(
@@ -847,60 +834,57 @@ function createChat<UI_MESSAGE extends UIMessage = UIMessage>(
 ): AiSdkChat<UI_MESSAGE>
 ```
 
-#### Type Parameters
+#### 型パラメーター
 
-| Parameter    | Description                                                                                                        |
+| パラメーター | 説明 |
 | ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `UI_MESSAGE` | The `UIMessage` type for the conversation, the same type parameter `useChat` accepts. Define it once and share it. |
+| `UI_MESSAGE` |会話の `UIMessage` タイプ。`useChat` が受け入れるのと同じタイプ パラメータ。一度定義して共有します。 |
 
-The message type carries the metadata shape, the typed `data-*` parts, and the
-tool definitions.
+メッセージ型には、メタデータの形、型付きの `data-*` パーツ、ツール定義が含まれます。
 
 ```ts
 type ChatMessage = UIMessage<Metadata, DataParts, Tools>
 ```
 
-#### Options
+#### オプション
 
-| Option             | Type             | Default                      | Description                                             |
+|オプション |タイプ |デフォルト |説明 |
 | ------------------ | ---------------- | ---------------------------- | ------------------------------------------------------- |
-| `messages`         | `UIMessage[]`    | `[]`                         | Start from an existing transcript. Messages are cloned. |
-| `messageIdPrefix`  | `string`         | `"msg"`                      | Prefix for generated message IDs.                       |
-| `toolCallIdPrefix` | `string`         | `"call"`                     | Prefix for generated tool call IDs.                     |
-| `sourceIdPrefix`   | `string`         | `"source"`                   | Prefix for generated source IDs.                        |
-| `now`              | `Date \| string` | `"2026-01-01T00:00:00.000Z"` | Fixed time used for generated `createdAt` metadata.     |
+| `messages` | `UIMessage[]` | `[]` | 既存の会話履歴から開始します。メッセージは複製されます。 |
+| `messageIdPrefix` | `string` | `"msg"` | 生成するメッセージ ID のプレフィックス。 |
+| `toolCallIdPrefix` | `string` | `"call"` | 生成するツール呼び出し ID のプレフィックス。 |
+| `sourceIdPrefix` | `string` | `"source"` | 生成するソース ID のプレフィックス。 |
+| `now` | `Date \| string` | `"2026-01-01T00:00:00.000Z"` | 生成する `createdAt` メタデータに使う固定時刻。 |
 
-IDs found in `messages` are reserved, so newly generated IDs continue after
-the existing transcript.
+`messages` 内にある ID は予約されるため、新しく生成する ID は既存の会話履歴の続きから始まります。
 
 ### `AiSdkChat`
 
-Every method that adds content returns the same chat, so calls can be chained.
+コンテンツを追加するすべてのメソッドは同じチャットを返すため、呼び出しをチェーンできます。
 
-| Method                        | Returns             | Description                                                      |
+| メソッド | 戻り値 | 説明 |
 | ----------------------------- | ------------------- | ---------------------------------------------------------------- |
-| `user(text?, options?)`       | `AiSdkChat`         | Add a user message with text and optional files.                 |
-| `assistant(input?, options?)` | `AiSdkChat`         | Add an assistant message from text, parts, or a writer callback. |
-| `sleep(delayMs)`              | `AiSdkChat`         | Wait before the next assistant response starts.                  |
-| `error(errorText?)`           | `AiSdkChat`         | Add an assistant response that emits an error.                   |
-| `get(count?)`                 | `UIMessage[]`       | Return cloned messages from the start of the conversation.       |
-| `next(messages)`              | `UIMessage \| null` | Return the next predefined user message after a transcript.      |
-| `transport(options?)`         | `ChatTransport`     | Create the transport used by `useChat`.                          |
+| `user(text?, options?)` | `AiSdkChat` | テキストと任意のファイルを含むユーザー メッセージを追加します。 |
+| `assistant(input?, options?)` | `AiSdkChat` | テキスト、パーツ、またはライター コールバックからアシスタント メッセージを追加します。 |
+| `sleep(delayMs)` | `AiSdkChat` | 次のアシスタント応答が始まる前に待機します。 |
+| `error(errorText?)` | `AiSdkChat` | エラーを発生させるアシスタント応答を追加します。 |
+| `get(count?)` | `UIMessage[]` | 会話の開始時から複製したメッセージを返します。 |
+| `next(messages)` | `UIMessage \| null` | 会話履歴の次にある定義済みユーザー メッセージを返します。 |
+| `transport(options?)` | `ChatTransport` | `useChat` が使うトランスポートを作成します。 |
 
-Calling `user()` or `assistant()` without content uses
-`"Summarize the uploaded receipt."`. Calling `error()` without a message uses
-`"An error occurred."`. `get(count)` throws when `count` is negative or not an
-integer.
+`user()` または `assistant()` を内容なしで呼ぶと `"Summarize the uploaded receipt."` が使われます。
+メッセージなしで `error()` を呼ぶと `"An error occurred."` が使われます。`count` が負数または
+整数でない場合、`get(count)` は例外を発生させます。
 
-#### `user()` Options
+#### `user()` オプション
 
-| Option     | Type            | Description                                 |
+| オプション | 型 | 説明 |
 | ---------- | --------------- | ------------------------------------------- |
-| `id`       | `string`        | Use a specific message ID.                  |
-| `metadata` | `METADATA`      | Set metadata for this message.              |
-| `files`    | `FilePayload[]` | Append file parts after the user text part. |
+| `id`       | `string`        | 特定のメッセージ ID を使用します。 |
+| `metadata` | `METADATA` |このメッセージのメタデータを設定します。              |
+| `files`    | `FilePayload[]` | ユーザーのテキスト パーツの後にファイル パーツを追加します。 |
 
-A user file has this shape:
+ユーザー ファイルの形式は次のとおりです。
 
 ```ts
 type FilePayload = {
@@ -912,86 +896,83 @@ type FilePayload = {
 }
 ```
 
-#### `assistant()` Input
+#### `assistant()` の入力
 
-| Input                  | Result                                                                                                                                                                                       |
+| 入力 | 結果 |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `string`               | One text part that streams word by word.                                                                                                                                                     |
-| `UIMessagePart[]`      | Static AI SDK parts that stream in their existing order.                                                                                                                                     |
-| `({ writer }) => void` | A synchronous callback for scripting parts, tools, errors, and timing. After a paused turn it becomes a [continuation](#continuations) and receives `toolCall`, `toolCalls`, and `messages`. |
+| `string` |単語ごとにストリーミングされる 1 つのテキスト部分。                                                                                                                                                     |
+| `UIMessagePart[]` | 既存の順序でストリーミングされる静的な AI SDK パーツ。 |
+| `({ writer }) => void` | パーツ、ツール、エラー、タイミングを定義する同期コールバック。一時停止したターンの後は[継続処理](#継続処理)になり、`toolCall`、`toolCalls`、`messages` を受け取ります。 |
 
-#### `assistant()` Options
+#### `assistant()` オプション
 
-| Option     | Type       | Description                    |
+| オプション | 型 | 説明 |
 | ---------- | ---------- | ------------------------------ |
-| `id`       | `string`   | Use a specific message ID.     |
-| `metadata` | `METADATA` | Set metadata for this message. |
+| `id` | `string` | 特定のメッセージ ID を使用します。 |
+| `metadata` | `METADATA` | このメッセージのメタデータを設定します。 |
 
-#### `transport()` Options
+#### `transport()` オプション
 
-| Option     | Type                                                          | Default | Description                                                                   |
+| オプション | 型 | デフォルト | 説明 |
 | ---------- | ------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------- |
-| `delayMs`  | `number`                                                      | `50`    | Delay between text and reasoning deltas. Use `0` or `undefined` to remove it. |
-| `fallback` | `string \| UIMessagePart[] \| ({ writer, messages }) => void` | None    | Response used when no predefined assistant response remains.                  |
+| `delayMs` | `number` | `50` | テキストと推論の差分の間隔。`0` または `undefined` で無効化します。 |
+| `fallback` | `string \| UIMessagePart[] \| ({ writer, messages }) => void` | なし | 定義済みのアシスタント応答が残っていない場合に使う応答。 |
 
-See [Transport](#transport) for matching, fallback, abort, and streaming
-behavior.
+照合、フォールバック、中止、ストリーミングの動作については[トランスポート](#トランスポート)を
+参照してください。
 
-### Writer
+### ライター
 
-The writer is available inside `assistant(({ writer }) => {})` and fallback
-callbacks.
+ライターは `assistant(({ writer }) => {})` とフォールバック コールバック内で使用できます。
 
-| Method                       | Description                                                       |
+| メソッド | 説明 |
 | ---------------------------- | ----------------------------------------------------------------- |
-| `text(text?, options?)`      | Add a text part.                                                  |
-| `reasoning(text?, options?)` | Add a reasoning part.                                             |
-| `tool(name, options?)`       | Add a typed or dynamic tool call and return its lifecycle handle. |
-| `data(part)`                 | Add or update a typed data part.                                  |
-| `file(options?)`             | Add a file part.                                                  |
-| `reasoningFile(options?)`    | Add a reasoning file part.                                        |
-| `sourceUrl(options?)`        | Add a URL source part.                                            |
-| `sourceDocument(options?)`   | Add a document source part.                                       |
-| `stepStart()`                | Add an AI SDK step boundary.                                      |
-| `custom(kind?)`              | Add a custom part with the given `kind`.                          |
-| `sleep(delayMs)`             | Pause before the next writer event.                               |
-| `error(errorText?)`          | Emit an error and end the response without a `finish` chunk.      |
+| `text(text?, options?)` | テキスト パーツを追加します。 |
+| `reasoning(text?, options?)` | 推論パーツを追加します。 |
+| `tool(name, options?)` | 型付きまたは動的なツール呼び出しを追加し、そのライフサイクル ハンドルを返します。 |
+| `data(part)` | 型付きデータ パーツを追加または更新します。 |
+| `file(options?)` | ファイル パーツを追加します。 |
+| `reasoningFile(options?)` | 推論ファイル パーツを追加します。 |
+| `sourceUrl(options?)` | URL ソース パーツを追加します。 |
+| `sourceDocument(options?)` | ドキュメント ソース パーツを追加します。 |
+| `stepStart()` | AI SDK ステップ境界を追加します。                                      |
+| `custom(kind?)` | 指定した `kind` のカスタム パーツを追加します。 |
+| `sleep(delayMs)` | 次のライター イベントまで待機します。 |
+| `error(errorText?)` |エラーを発行し、`finish` チャンクなしで応答を終了します。      |
 
-Calling `text()` without content uses `"Summarize the uploaded receipt."`.
-Calling `reasoning()` without content uses
-`"I need to inspect the available context before answering."`. Calling
-`error()` without a message uses `"An error occurred."`.
+内容なしで `text()` を呼ぶと `"Summarize the uploaded receipt."` が使われます。内容なしで
+`reasoning()` を呼ぶと `"I need to inspect the available context before answering."` が使われます。
+`error()` は `"An error occurred."` を使用します。
 
-#### Text and Reasoning Options
+#### テキストと推論のオプション
 
-| Option    | Type                    | Default    | Description                                             |
+| オプション | 型 | デフォルト | 説明 |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------- |
-| `id`      | `string`                | Generated  | Use a stable part ID.                                   |
-| `delayMs` | `number`                | Transport  | Override the transport delay for this part.             |
-| `mode`    | `"stream" \| "instant"` | `"stream"` | Stream word deltas or emit the whole part in one delta. |
+| `id` | `string` | 生成値 | 安定したパーツ ID を使用します。 |
+| `delayMs` | `number` | トランスポート | このパーツのトランスポート遅延を上書きします。 |
+| `mode` | `"stream" \| "instant"` | `"stream"` | 単語単位で差分をストリーミングするか、パーツ全体を 1 回の差分で送信します。 |
 
-#### Tool Options
+#### ツール オプション
 
 | Option             | Type                      | Description                                                                                     |
 | ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------- |
-| `toolCallId`       | `string`                  | Use a specific tool call ID.                                                                    |
-| `title`            | `string`                  | Add a display title to the tool part.                                                           |
-| `toolMetadata`     | `Record<string, unknown>` | Add provider or application metadata.                                                           |
-| `providerExecuted` | `boolean`                 | Mark the call as executed by the provider.                                                      |
-| `input`            | `TOOLS[NAME]["input"]`    | Set the typed tool input.                                                                       |
-| `output`           | `TOOLS[NAME]["output"]`   | Immediately finish with a typed output. With `needsApproval`, stream it after approval instead. |
-| `errorText`        | `string`                  | Immediately finish with an error. With `needsApproval`, stream it after approval instead.       |
-| `dynamic`          | `boolean`                 | Emit a `dynamic-tool` part instead of `tool-<name>`.                                            |
-| `needsApproval`    | `boolean`                 | Pause the turn behind the user's decision. See [Human in the Loop](#human-in-the-loop).         |
-| `approvalId`       | `string`                  | Use a specific approval ID.                                                                     |
+| `toolCallId` | `string` | 特定のツール呼び出し ID を使用します。 |
+| `title` | `string` | ツール パーツに表示用タイトルを追加します。 |
+| `toolMetadata` | `Record<string, unknown>` | プロバイダーまたはアプリケーションのメタデータを追加します。 |
+| `providerExecuted` | `boolean` | プロバイダーによって実行された呼び出しとして記録します。 |
+| `input` | `TOOLS[NAME]["input"]` |入力ツールの入力を設定します。                                                                       |
+| `output` | `TOOLS[NAME]["output"]` | 型付きの出力で直ちに完了します。`needsApproval` の場合は承認後にストリーミングします。 |
+| `errorText` | `string` | エラーで直ちに完了します。`needsApproval` の場合は承認後にストリーミングします。 |
+| `dynamic` | `boolean` | `tool-<name>` の代わりに `dynamic-tool` パーツを出力します。 |
+| `needsApproval` | `boolean` |ユーザーの決定の後にターンを一時停止します。 [人間参加者](#human-in-the-loop) を参照してください。         |
+| `approvalId` | `string` | 特定の承認 ID を使用します。 |
 
-`tool()` returns a handle with `sleep(delayMs)`, `output(value)`,
-`error(errorText?)`, and `denied()`. Use the handle when the tool lifecycle
-needs events between its input and result. Calling `tool.error()` without a
-message uses `"Tool call failed."`. The resolution methods throw on a
-`needsApproval` call.
+`tool()` は `sleep(delayMs)`、`output(value)`、`error(errorText?)`、`denied()` を持つハンドルを
+返します。入力と結果の間にイベントが必要な場合は、このハンドルを使用します。メッセージなしで
+`tool.error()` を呼ぶと `"Tool call failed."` が使われます。`needsApproval` を指定した呼び出し
+では、解決メソッドが例外を発生させます。
 
-#### Data Input
+#### データ入力
 
 ```ts
 writer.data({
@@ -1002,25 +983,24 @@ writer.data({
 })
 ```
 
-Repeating the same `type` and `id` replaces the earlier data part. A transient
-part streams to the client but is not included in the final message returned by
-`get()`.
+同じ `type` と `id` を繰り返すと、以前のデータ パーツが置き換えられます。transient パーツは
+クライアントへストリーミングされますが、`get()` が返す最終メッセージには含まれません。
 
-#### File and Source Options
+#### ファイルとソースのオプション
 
-| Method             | Fields                                                                |
+| メソッド | フィールド |
 | ------------------ | --------------------------------------------------------------------- |
 | `file()`           | `mediaType?`, `url?`, `filename?`, `providerMetadata?`                |
-| `reasoningFile()`  | `mediaType?`, `url?`, `filename?`, `providerMetadata?`                |
+| `reasoningFile()` | `mediaType?`、`url?`、`filename?`、`providerMetadata?` |
 | `sourceUrl()`      | `sourceId?`, `url?`, `title?`, `providerMetadata?`                    |
 | `sourceDocument()` | `sourceId?`, `mediaType?`, `title?`, `filename?`, `providerMetadata?` |
 
-These methods provide sample defaults for omitted fields. Pass explicit values
-when the payload matters to the component or test.
+これらのメソッドは、省略されたフィールドにサンプル用のデフォルト値を設定します。コンポーネントや
+テストでペイロードの内容が重要な場合は、明示的な値を渡してください。
 
-### Types
+### 型
 
-| Export              | Description                                       |
+| エクスポート | 説明 |
 | ------------------- | ------------------------------------------------- |
-| `AiSdkChat`         | The typed fluent chat returned by `createChat()`. |
-| `CreateChatOptions` | Options accepted by `createChat()`.               |
+| `AiSdkChat` | `createChat()` が返す、メソッドをチェーンできる型付きチャット。 |
+| `CreateChatOptions` | `createChat()` が受け取るオプション。 |

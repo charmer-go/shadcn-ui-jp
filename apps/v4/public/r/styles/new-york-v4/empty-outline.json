@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-outline",
+  "registryDependencies": [
+    "empty",
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/empty-outline.tsx",
+      "content": "import { IconCloud } from \"@tabler/icons-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport {\r\n  Empty,\r\n  EmptyContent,\r\n  EmptyDescription,\r\n  EmptyHeader,\r\n  EmptyMedia,\r\n  EmptyTitle,\r\n} from \"@/registry/new-york-v4/ui/empty\"\r\n\r\nexport default function EmptyOutline() {\r\n  return (\r\n    <Empty className=\"border border-dashed\">\r\n      <EmptyHeader>\r\n        <EmptyMedia variant=\"icon\">\r\n          <IconCloud />\r\n        </EmptyMedia>\r\n        <EmptyTitle>Cloud Storage Empty</EmptyTitle>\r\n        <EmptyDescription>\r\n          Upload files to your cloud storage to access them anywhere.\r\n        </EmptyDescription>\r\n      </EmptyHeader>\r\n      <EmptyContent>\r\n        <Button variant=\"outline\" size=\"sm\">\r\n          Upload Files\r\n        </Button>\r\n      </EmptyContent>\r\n    </Empty>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

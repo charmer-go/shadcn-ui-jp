@@ -1,6 +1,6 @@
 ---
-title: Marker
-description: Displays an inline status, system note, bordered row, or labeled separator in a conversation.
+title: マーカー
+description: 会話内にインライン ステータス、システムメモ、境界線付きの行、ラベル付き区切りを表示します。
 base: aria
 component: true
 ---
@@ -13,13 +13,13 @@ component: true
 
 The `Marker` component displays inline conversation markers such as status updates, system notes, bordered rows, and labeled separators. Compose it with [`Message`](/docs/components/aria/message) in a conversation thread.
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,7 +33,7 @@ npx shadcn@latest add marker
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="marker"
@@ -41,7 +41,7 @@ npx shadcn@latest add marker
   styleName="aria-rhea"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -49,7 +49,7 @@ npx shadcn@latest add marker
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
@@ -64,7 +64,7 @@ import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
 </Marker>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a marker:
 
@@ -74,7 +74,7 @@ Marker
 └── MarkerContent
 ```
 
-## Features
+## 機能
 
 - Inline marker, bordered row, and labeled separator variants
 - Decorative icon slot that is hidden from assistive tech
@@ -82,7 +82,7 @@ Marker
 - Pairs with the [`shimmer`](/docs/utils/shimmer) utility for streaming status text
 - Customizable styling through the `className` prop on every part
 
-## Variants
+## バリエーション
 
 Use `variant` to switch between an inline marker, bordered row, and labeled separator.
 
@@ -118,7 +118,7 @@ Add the [`shimmer`](/docs/utils/shimmer) utility class to `MarkerContent` for an
   previewClassName="h-auto theme-blue"
 />
 
-## Separator
+## 区切り
 
 Use the `separator` variant for labeled dividers, such as dates or section breaks, in a conversation.
 
@@ -138,7 +138,7 @@ Use the `border` variant for status rows that should keep the default marker ali
   previewClassName="h-auto theme-blue"
 />
 
-## With Icon
+## アイコン付き
 
 Use `MarkerIcon` to render an icon alongside the content. Use `flex-col` to stack the icon above the content.
 
@@ -170,7 +170,7 @@ export function MarkerLinkDemo() {
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
 `Marker` is presentational by default. The correct semantics depend on how you use it, so choose the role based on intent rather than relying on a single default.
 
@@ -242,7 +242,7 @@ When a marker links or triggers an action, render it as a real `<button>` or `<a
 </Marker>
 ```
 
-## API Reference
+## APIリファレンス
 
 ### Marker
 

@@ -1,68 +1,68 @@
 ---
-title: December 2023 - New Components
-description: Carousel, Drawer, Pagination, Resizable, Sonner, and CLI updates.
+title: 2023年12月 - 新しいコンポーネント
+description: カルーセル、ドロワー、ページネーション、サイズ変更可能、Sonner、および CLI の更新。
 date: 2023-12-22
 ---
 
-We've added new components to shadcn/ui and made a lot of improvements to the CLI.
+新しいコンポーネントを shadcn/ui に追加し、CLI に多くの改善を加えました。
 
-Here's a quick overview of what's new:
+新機能の概要を以下に示します。
 
-- [**Carousel**](#carousel) - A carousel component with motion, swipe gestures and keyboard support.
-- [**Drawer**](#drawer) - A drawer component that looks amazing on mobile.
-- [**Pagination**](#pagination) - A pagination component with page navigation, previous and next buttons.
-- [**Resizable**](#resizable) - A resizable component for building resizable panel groups and layouts.
-- [**Sonner**](#sonner) - The last toast component you'll ever need.
-- [**CLI updates**](#cli-updates) - Support for custom **Tailwind prefix** and `tailwind.config.ts`.
+- [**Carousel**](#carousel) - モーション、スワイプジェスチャ、キーボードサポートを備えたカルーセルコンポーネント。
+- [**Drawer**](#drawer) - モバイルで見る栄えの良いドロワー コンポーネント。
+- [**Pagination**](#pagination) - ページ ナビゲーション、前および次のボタンを備えたページネーション コンポーネント。
+- [**Resizable**](#resizable) - サイズ変更可能なパネル グループとレイアウトを構築するためのサイズ変更可能なコンポーネント。
+- [**Sonner**](#sonner) - 必要となる最後のトーストコンポーネント。
+- [**CLI アップデート**](#cli-updates) - カスタム **Tailwind プレフィックス** および `tailwind.config.ts` のサポート。
 
-### Carousel
+### カルーセル
 
-We've added a fully featured carousel component with motion, swipe gestures and keyboard support. Built on top of [Embla Carousel](https://www.embla-carousel.com).
+モーション、スワイプ ジェスチャ、キーボード サポートを備えたフル機能のカルーセル コンポーネントを追加しました。 [Embla Carousel](https://www.embla-carousel.com) の上に構築されています。
 
-It has support for infinite looping, autoplay, vertical orientation, and more.
+無限ループ、自動再生、垂直方向などをサポートしています。
 
 <ComponentPreview styleName="new-york-v4" name="carousel-demo" />
 
-### Drawer
+### 引き出し
 
-Oh the drawer component. Built on top of [Vaul](https://github.com/emilkowalski/vaul) by [emilkowalski](https://twitter.com/emilkowalski).
+ああ、引き出しコンポーネントです。 [emilkowalski](https://twitter.com/emilkowalski) によって [Vaul](https://github.com/emilkowalski/vaul) の上に構築されました。
 
-Try opening the following drawer on mobile. It looks amazing!
+モバイルで次のドロワーを開いてみてください。すごいですね！
 
 <ComponentPreview styleName="new-york-v4" name="drawer-demo" />
 
-### Pagination
+### ページネーション
 
-We've added a pagination component with page navigation, previous and next buttons. Simple, flexible and works with your framework's `<Link />` component.
+ページナビゲーション、前ボタンと次ボタンを備えたページネーションコンポーネントを追加しました。シンプルかつ柔軟で、フレームワークの `<Link />` コンポーネントと連携します。
 
 <ComponentPreview styleName="new-york-v4" name="pagination-demo" />
 
-### Resizable
+### サイズ変更可能
 
-Build resizable panel groups and layouts with this `<Resizable />` component.
+この `<Resizable />` コンポーネントを使用して、サイズ変更可能なパネル グループとレイアウトを構築します。
 
 <ComponentPreview styleName="new-york-v4" name="resizable-demo-with-handle" />
 
-`<Resizable />` is built using [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) by [bvaughn](https://github.com/bvaughn). It has support for mouse, touch and keyboard.
+`<Resizable />` は、[bvaughn](https://github.com/bvaughn) による [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) を使用して構築されています。マウス、タッチ、キーボードをサポートしています。
 
-### Sonner
+### ゾナー
 
-Another one by [emilkowalski](https://twitter.com/emilkowalski). The last toast component you'll ever need. Sonner is now available in shadcn/ui.
+[emilkowalski](https://twitter.com/emilkowalski) によるもう 1 枚。最後に必要となるトーストコンポーネントです。 Sonner が shadcn/ui で利用できるようになりました。
 
 <ComponentPreview styleName="new-york-v4" name="sonner-demo" />
 
-### CLI updates
+### CLI の更新
 
-This has been one of the most requested features. You can now configure a custom Tailwind prefix and the cli will automatically prefix your utility classes when adding components.
+これは最も要望の多かった機能の 1 つです。 カスタム Tailwind プレフィックスを構成できるようになり、コンポーネントを追加するときに cli がユーティリティ クラスに自動的にプレフィックスを付けます。
 
-This means you can now easily add shadcn/ui components to existing projects like Docusaurus, Nextra...etc. A drop-in for your existing design system with no conflict.
+これは、Docusaurus、Nextra などのみんなのプロジェクトに shadcn/ui コンポーネントを簡単に追加できることを意味します。
 
 ```tsx /tw-/
 <AlertDialog className="tw-grid tw-gap-4 tw-border tw-bg-background tw-shadow-lg" />
 ```
 
-It works with `cn`, `cva` and CSS variables.
+`cn`、`cva`、および CSS 変数で動作します。
 
-The cli can now also detect `tailwind.config.ts` and add the TypeScript version of the config for you.
+cli は `tailwind.config.ts` を検出し、TypeScript バージョンの構成を追加できるようになりました。
 
-That's it. Happy Holidays.
+それでおしまい。楽しい休日をお過ごしください。

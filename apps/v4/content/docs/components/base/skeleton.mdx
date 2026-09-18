@@ -1,19 +1,19 @@
 ---
-title: Skeleton
-description: Use to show a placeholder while content is loading.
+title: スケルトン
+description: コンテンツのロード中にプレースホルダーを表示するために使用します。
 base: base
 component: true
 ---
 
 <ComponentPreview styleName="base-nova" name="skeleton-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,7 +27,7 @@ npx shadcn@latest add skeleton
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="skeleton"
@@ -35,7 +35,7 @@ npx shadcn@latest add skeleton
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add skeleton
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Skeleton } from "@/components/ui/skeleton"
@@ -53,11 +53,11 @@ import { Skeleton } from "@/components/ui/skeleton"
 <Skeleton className="h-[20px] w-[100px] rounded-full" />
 ```
 
-## Avatar
+## アバター
 
 <ComponentPreview styleName="base-nova" name="skeleton-avatar" />
 
-## Card
+## カード
 
 <ComponentPreview
   styleName="base-nova"
@@ -65,20 +65,20 @@ import { Skeleton } from "@/components/ui/skeleton"
   previewClassName="h-80"
 />
 
-## Text
+## テキスト
 
 <ComponentPreview styleName="base-nova" name="skeleton-text" />
 
-## Form
+## フォーム
 
 <ComponentPreview styleName="base-nova" name="skeleton-form" />
 
-## Table
+## テーブル
 
 <ComponentPreview styleName="base-nova" name="skeleton-table" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="skeleton-rtl" direction="rtl" />

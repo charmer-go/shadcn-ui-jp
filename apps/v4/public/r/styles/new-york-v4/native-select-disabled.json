@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "native-select-disabled",
+  "registryDependencies": [
+    "native-select"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/native-select-disabled.tsx",
+      "content": "import {\r\n  NativeSelect,\r\n  NativeSelectOption,\r\n} from \"@/registry/new-york-v4/ui/native-select\"\r\n\r\nexport default function NativeSelectDisabled() {\r\n  return (\r\n    <NativeSelect disabled>\r\n      <NativeSelectOption value=\"\">Select priority</NativeSelectOption>\r\n      <NativeSelectOption value=\"low\">Low</NativeSelectOption>\r\n      <NativeSelectOption value=\"medium\">Medium</NativeSelectOption>\r\n      <NativeSelectOption value=\"high\">High</NativeSelectOption>\r\n      <NativeSelectOption value=\"critical\">Critical</NativeSelectOption>\r\n    </NativeSelect>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

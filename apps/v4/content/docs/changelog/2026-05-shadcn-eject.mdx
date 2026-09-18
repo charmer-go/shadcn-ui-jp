@@ -1,22 +1,22 @@
 ---
-title: May 2026 - shadcn eject
-description: Inline shadcn/tailwind.css and remove the shadcn dependency.
+title: 2026 年 5 月 - shadcn イジェクト
+description: shadcn/tailwind.css をインライン化し、shadcn の依存関係を削除します。
 date: 2026-05-31
 ---
 
-When we added support for both Radix and Base UI, we needed a place for shared Tailwind utilities that both libraries depend on, e.g. custom variants like `data-open:` and `data-closed:` and utilities like `no-scrollbar`.
+Radix と Base UI の両方のサポートを追加したとき、両方のライブラリが依存する共有 Tailwind ユーティリティのための場所が必要になりました。 `data-open:` や `data-closed:` などのカスタム バリアント、および `no-scrollbar` などのユーティリティ。
 
-We also ran into a few bugs while working on RTL support that were easier to fix in one shared place rather than duplicating across every component.
+また、RTL サポートの作業中にいくつかのバグに遭遇しましたが、すべてのコンポーネント間で重複して修正するよりも、1 つの共有場所で修正する方が簡単でした。
 
-So we created `shadcn/tailwind.css`. When you run `init`, it adds `@import "shadcn/tailwind.css"` to your global CSS file. It works just like other CSS imports such as `tw-animate-css`: a small dependency that is tree-shaken in production and resolved at build time.
+そこで、`shadcn/tailwind.css` を作成しました。 `init` を実行すると、グローバル CSS ファイルに `@import "shadcn/tailwind.css"` が追加されます。これは、`tw-animate-css` などの他の CSS インポートと同じように機能します。これは、運用環境でツリーシェイクされ、ビルド時に解決される小さな依存関係です。
 
-If you prefer not to depend on the `shadcn` package for that CSS, we've added the `shadcn eject` command. It inlines `shadcn/tailwind.css` into your global CSS file and removes the `shadcn` dependency from your project.
+その CSS の `shadcn` パッケージに依存したくない場合は、`shadcn eject` コマンドを追加しました。 `shadcn/tailwind.css` をグローバル CSS ファイルにインライン化し、プロジェクトから `shadcn` 依存関係を削除します。
 
 ```bash
 npx shadcn@latest eject
 ```
 
-**Before**
+**前に**
 
 ```css
 @import "tailwindcss";
@@ -24,7 +24,7 @@ npx shadcn@latest eject
 @import "shadcn/tailwind.css";
 ```
 
-**After**
+**後**
 
 ```css
 @import "tailwindcss";
@@ -52,10 +52,10 @@ npx shadcn@latest eject
 }
 ```
 
-In a monorepo, run the command from the workspace that contains your `components.json` and global CSS file:
+モノリポジトリで、`components.json` とグローバル CSS ファイルを含むワークスペースからコマンドを実行します。
 
 ```bash
 npx shadcn@latest eject -c packages/ui
 ```
 
-See the [CLI documentation](/docs/cli#eject) for more details.
+詳細については、[CLI ドキュメント](/docs/cli#eject) を参照してください。

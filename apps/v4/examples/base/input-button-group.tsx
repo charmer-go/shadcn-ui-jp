@@ -1,15 +1,15 @@
-import { Button } from "@/styles/base-nova/ui/button"
-import { ButtonGroup } from "@/styles/base-nova/ui/button-group"
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { ButtonGroup } from "@/components/ui/base/button-group"
+import { Field, FieldLabel } from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function InputButtonGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-button-group">Search</FieldLabel>
+      <FieldLabel htmlFor="input-button-group">検索</FieldLabel>
       <ButtonGroup>
-        <Input id="input-button-group" placeholder="Type to search..." />
-        <Button variant="outline">Search</Button>
+        <Input id="input-button-group" placeholder="検索キーワードを入力..." />
+        <Button variant="outline">検索</Button>
       </ButtonGroup>
     </Field>
   )

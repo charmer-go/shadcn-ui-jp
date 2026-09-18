@@ -1,4 +1,4 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Popover,
   PopoverContent,
@@ -6,20 +6,20 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function PopoverBasic() {
   return (
     <>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" className="w-fit" />}>
-          Open Popover
+          ポップオーバーを開く
         </PopoverTrigger>
         <PopoverContent align="start">
           <PopoverHeader>
-            <PopoverTitle>Dimensions</PopoverTitle>
+            <PopoverTitle>寸法</PopoverTitle>
             <PopoverDescription>
-              Set the dimensions for the layer.
+              レイヤーの寸法を設定します。
             </PopoverDescription>
           </PopoverHeader>
         </PopoverContent>

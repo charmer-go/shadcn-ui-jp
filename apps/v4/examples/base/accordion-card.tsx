@@ -3,33 +3,33 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/styles/base-nova/ui/accordion"
+} from "@/components/ui/base/accordion"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/base-nova/ui/card"
+} from "@/components/ui/base/card"
 
 const items = [
   {
     value: "plans",
-    trigger: "What subscription plans do you offer?",
+    trigger: "どのようなサブスクリプションプランがありますか？",
     content:
-      "We offer three subscription tiers: Starter ($9/month), Professional ($29/month), and Enterprise ($99/month). Each plan includes increasing storage limits, API access, priority support, and team collaboration features.",
+      "スターター（月額9ドル）、プロフェッショナル（月額29ドル）、エンタープライズ（月額99ドル）の3つのプランをご用意しています。各プランではストレージ容量が増え、APIアクセス、優先サポート、チームコラボレーション機能をご利用いただけます。",
   },
   {
     value: "billing",
-    trigger: "How does billing work?",
+    trigger: "請求はどのように行われますか？",
     content:
-      "Billing occurs automatically at the start of each billing cycle. We accept all major credit cards, PayPal, and ACH transfers for enterprise customers. You'll receive an invoice via email after each payment.",
+      "請求は各サイクルの開始時に自動的に行われます。主要なクレジットカードとPayPalに対応しており、エンタープライズのお客様にはACH送金もご利用いただけます。お支払いごとにメールで請求書をお送りします。",
   },
   {
     value: "cancel",
-    trigger: "How do I cancel my subscription?",
+    trigger: "サブスクリプションを解約するにはどうすればよいですか？",
     content:
-      "You can cancel your subscription anytime from your account settings. There are no cancellation fees or penalties. Your access will continue until the end of your current billing period.",
+      "アカウント設定からいつでもサブスクリプションを解約できます。解約手数料やペナルティは一切かかりません。現在の請求期間の終了まで引き続きご利用いただけます。",
   },
 ]
 
@@ -37,10 +37,9 @@ export default function AccordionCard() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Subscription & Billing</CardTitle>
+        <CardTitle>サブスクリプションと請求</CardTitle>
         <CardDescription>
-          Common questions about your account, plans, payments and
-          cancellations.
+          アカウント、プラン、お支払い、解約に関するよくある質問です。
         </CardDescription>
       </CardHeader>
       <CardContent>

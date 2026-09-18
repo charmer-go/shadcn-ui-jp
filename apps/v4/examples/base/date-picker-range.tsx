@@ -5,14 +5,14 @@ import { addDays, format } from "date-fns"
 import { CalendarIcon } from "lucide-react"
 import { type DateRange } from "react-day-picker"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/base-nova/ui/field"
+import { Button } from "@/components/ui/base/button"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Field, FieldLabel } from "@/components/ui/base/field"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function DatePickerWithRange() {
   const [date, setDate] = React.useState<DateRange | undefined>({
@@ -22,7 +22,7 @@ export function DatePickerWithRange() {
 
   return (
     <Field className="mx-auto w-60">
-      <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
+      <FieldLabel htmlFor="date-picker-range">日付範囲ピッカー</FieldLabel>
       <Popover>
         <PopoverTrigger
           render={
@@ -44,7 +44,7 @@ export function DatePickerWithRange() {
               format(date.from, "LLL dd, y")
             )
           ) : (
-            <span>Pick a date</span>
+            <span>日付を選択</span>
           )}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">

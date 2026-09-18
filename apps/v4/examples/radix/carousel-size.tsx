@@ -1,13 +1,13 @@
 import * as React from "react"
 
-import { Card, CardContent } from "@/styles/radix-nova/ui/card"
+import { Card, CardContent } from "@/components/ui/radix/card"
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/styles/radix-nova/ui/carousel"
+} from "@/components/ui/radix/carousel"
 
 export default function CarouselSize() {
   return (

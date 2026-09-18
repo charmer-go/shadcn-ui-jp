@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Card,
   CardAction,
@@ -11,13 +11,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
-import { Input } from "@/styles/radix-nova/ui/input"
-import { Label } from "@/styles/radix-nova/ui/label"
+} from "@/components/ui/radix/card"
+import { Input } from "@/components/ui/radix/input"
+import { Label } from "@/components/ui/radix/label"
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/radix-nova/ui/toggle-group"
+} from "@/components/ui/radix/toggle-group"
 
 const spacingOptions = [
   {
@@ -70,19 +70,19 @@ export function CardSpacing() {
       </ToggleGroup>
       <Card className={selectedSpacing?.className}>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+          <CardTitle>アカウントにログイン</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            アカウントにログインするには、以下にメールアドレスを入力してください
           </CardDescription>
           <CardAction>
-            <Button variant="link">Sign Up</Button>
+            <Button variant="link">新規登録</Button>
           </CardAction>
         </CardHeader>
         <CardContent>
           <form>
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
-                <Label htmlFor="email-spacing">Email</Label>
+                <Label htmlFor="email-spacing">メールアドレス</Label>
                 <Input
                   id="email-spacing"
                   type="email"
@@ -92,12 +92,12 @@ export function CardSpacing() {
               </div>
               <div className="grid gap-2">
                 <div className="flex items-center">
-                  <Label htmlFor="password-spacing">Password</Label>
+                  <Label htmlFor="password-spacing">パスワード</Label>
                   <a
                     href="#"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                   >
-                    Forgot your password?
+                    パスワードをお忘れですか？
                   </a>
                 </div>
                 <Input id="password-spacing" type="password" required />
@@ -107,10 +107,10 @@ export function CardSpacing() {
         </CardContent>
         <CardFooter className="flex-col gap-2">
           <Button type="submit" className="w-full">
-            Login
+            ログイン
           </Button>
           <Button variant="outline" className="w-full">
-            Login with Google
+            Googleでログイン
           </Button>
         </CardFooter>
       </Card>

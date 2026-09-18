@@ -6,7 +6,7 @@ import {
   useTranslation,
   type Translations,
 } from "@/components/language-selector"
-import { Slider } from "@/styles/aria-nova/ui-rtl/slider"
+import { Slider } from "@/components/ui/aria/slider"
 
 const translations: Translations = {
   en: {
@@ -28,7 +28,7 @@ export function SliderRtl() {
 
   return (
     <Slider
-      aria-label="RTL slider"
+      aria-label="RTLスライダー"
       defaultValue={[75]}
       maxValue={100}
       step={1}

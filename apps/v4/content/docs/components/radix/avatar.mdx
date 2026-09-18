@@ -1,6 +1,6 @@
 ---
-title: Avatar
-description: An image element with a fallback for representing the user.
+title: アバター
+description: ユーザーを表すためのフォールバックを備えた画像要素。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="avatar-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add avatar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource styleName="radix-nova"
   name="avatar"
@@ -44,7 +44,7 @@ npm install radix-ui
 
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
@@ -65,9 +65,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 </Avatar>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `Avatar`:
+次の構成を使用して、`Avatar` を構築します。
 
 ```text
 Avatar
@@ -76,7 +76,7 @@ Avatar
 └── AvatarBadge
 ```
 
-Use the following composition to build an `AvatarGroup`:
+次の構成を使用して、`AvatarGroup` を構築します。
 
 ```text
 AvatarGroup
@@ -91,19 +91,19 @@ AvatarGroup
 └── AvatarGroupCount
 ```
 
-## Basic
+## 基本
 
-A basic avatar component with an image and a fallback.
+画像とフォールバックを備えた基本的なアバター コンポーネント。
 
 <ComponentPreview styleName="radix-nova" name="avatar-basic" />
 
-## Badge
+## バッジ
 
 Use the `AvatarBadge` component to add a badge to the avatar. The badge is positioned at the bottom right of the avatar.
 
 <ComponentPreview styleName="radix-nova" name="avatar-badge" />
 
-Use the `className` prop to add custom styles to the badge such as custom colors, sizes, etc.
+`className` プロップを使用して、カスタムの色、サイズなどのカスタム スタイルをバッジに追加します。
 
 ```tsx showLineNumbers
 <Avatar>
@@ -113,9 +113,9 @@ Use the `className` prop to add custom styles to the badge such as custom colors
 </Avatar>
 ```
 
-## Badge with Icon
+## アイコン付きバッジ
 
-You can also use an icon inside `<AvatarBadge>`.
+`<AvatarBadge>` 内のアイコンも使用できます。
 
 <ComponentPreview
   name="avatar-badge-icon"
@@ -123,9 +123,9 @@ You can also use an icon inside `<AvatarBadge>`.
 
 />
 
-## Avatar Group
+## アバターグループ
 
-Use the `AvatarGroup` component to add a group of avatars.
+`AvatarGroup` コンポーネントを使用して、アバターのグループを追加します。
 
 <ComponentPreview
   name="avatar-group"
@@ -133,7 +133,7 @@ Use the `AvatarGroup` component to add a group of avatars.
 
 />
 
-## Avatar Group Count
+## アバター グループ数
 
 Use `<AvatarGroupCount>` to add a count to the group.
 
@@ -143,9 +143,9 @@ Use `<AvatarGroupCount>` to add a count to the group.
 
 />
 
-## Avatar Group with Icon
+## アイコン付きアバター グループ
 
-You can also use an icon inside `<AvatarGroupCount>`.
+`<AvatarGroupCount>` 内のアイコンも使用できます。
 
 <ComponentPreview
   name="avatar-group-count-icon"
@@ -153,9 +153,9 @@ You can also use an icon inside `<AvatarGroupCount>`.
 
 />
 
-## Sizes
+## サイズ
 
-Use the `size` prop to change the size of the avatar.
+アバターのサイズを変更するには、`size` プロップを使用します。
 
 <ComponentPreview
   name="avatar-size"
@@ -163,7 +163,7 @@ Use the `size` prop to change the size of the avatar.
 
 />
 
-## Dropdown
+## ドロップダウン
 
 You can use the `Avatar` component as a trigger for a dropdown menu.
 
@@ -171,7 +171,7 @@ You can use the `Avatar` component as a trigger for a dropdown menu.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -180,57 +180,57 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-72"
 />
 
-## API Reference
+## API リファレンス
 
 ### Avatar
 
-The `Avatar` component is the root component that wraps the avatar image and fallback.
+`Avatar` コンポーネントは、アバター画像とフォールバックをラップするルート コンポーネントです。
 
 | Prop        | Type                        | Default     |
 | ----------- | --------------------------- | ----------- |
-| `size`      | `"default" \| "sm" \| "lg"` | `"default"` |
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` |
 | `className` | `string`                    | -           |
 
 ### AvatarImage
 
 The `AvatarImage` component displays the avatar image. It accepts all Radix UI Avatar Image props.
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
 | `src`       | `string` | -       |
 | `alt`       | `string` | -       |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
-### AvatarFallback
+### アバターフォールバック
 
 The `AvatarFallback` component displays a fallback when the image fails to load. It accepts all Radix UI Avatar Fallback props.
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
 ### AvatarBadge
 
-The `AvatarBadge` component displays a badge indicator on the avatar, typically positioned at the bottom right.
+`AvatarBadge` コンポーネントは、アバター上にバッジ インジケーターを表示します。通常は右下に配置されます。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
 ### AvatarGroup
 
-The `AvatarGroup` component displays a group of avatars with overlapping styling.
+`AvatarGroup` コンポーネントは、スタイルが重なったアバターのグループを表示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
 ### AvatarGroupCount
 
-The `AvatarGroupCount` component displays a count indicator in an avatar group, typically showing the number of additional avatars.
+`AvatarGroupCount` コンポーネントは、アバター グループ内のカウント インジケーターを表示し、通常は追加のアバターの数を示します。
 
-| Prop        | Type     | Default |
+|小道具 |タイプ |デフォルト |
 | ----------- | -------- | ------- |
-| `className` | `string` | -       |
+| `className` | `string` | - |
 
 For more information about Radix UI Avatar props, see the [Radix UI documentation](https://www.radix-ui.com/primitives/docs/components/avatar#api-reference).

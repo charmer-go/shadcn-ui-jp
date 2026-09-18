@@ -1,4 +1,4 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Dialog,
   DialogClose,
@@ -7,37 +7,36 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/aria-nova/ui/dialog"
-import { Field, FieldGroup } from "@/styles/aria-nova/ui/field"
-import { Input } from "@/styles/aria-nova/ui/input"
-import { Label } from "@/styles/aria-nova/ui/label"
+} from "@/components/ui/aria/dialog"
+import { Field, FieldGroup } from "@/components/ui/aria/field"
+import { Input } from "@/components/ui/aria/input"
+import { Label } from "@/components/ui/aria/label"
 
 export function DialogDemo() {
   return (
     <DialogTrigger>
       <form>
-        <Button variant="outline">Open Dialog</Button>
+        <Button variant="outline">ダイアログを開く</Button>
         <Dialog className="sm:max-w-sm">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>プロフィールを編集</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              プロフィールを編集します。完了したら保存をクリックしてください。
             </DialogDescription>
           </DialogHeader>
           <FieldGroup>
             <Field>
-              <Label htmlFor="name-1">Name</Label>
+              <Label htmlFor="name-1">名前</Label>
               <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
             </Field>
             <Field>
-              <Label htmlFor="username-1">Username</Label>
+              <Label htmlFor="username-1">ユーザー名</Label>
               <Input id="username-1" name="username" defaultValue="@peduarte" />
             </Field>
           </FieldGroup>
           <DialogFooter>
-            <DialogClose variant="outline">Cancel</DialogClose>
-            <Button type="submit">Save changes</Button>
+            <DialogClose variant="outline">キャンセル</DialogClose>
+            <Button type="submit">変更を保存</Button>
           </DialogFooter>
         </Dialog>
       </form>

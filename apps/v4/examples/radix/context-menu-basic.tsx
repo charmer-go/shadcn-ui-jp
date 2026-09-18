@@ -4,24 +4,24 @@ import {
   ContextMenuGroup,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@/styles/radix-nova/ui/context-menu"
+} from "@/components/ui/radix/context-menu"
 
 export function ContextMenuBasic() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
-          <ContextMenuItem>Back</ContextMenuItem>
-          <ContextMenuItem disabled>Forward</ContextMenuItem>
-          <ContextMenuItem>Reload</ContextMenuItem>
+          <ContextMenuItem>戻る</ContextMenuItem>
+          <ContextMenuItem disabled>進む</ContextMenuItem>
+          <ContextMenuItem>再読み込み</ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenuContent>
     </ContextMenu>

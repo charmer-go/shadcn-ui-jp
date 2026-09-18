@@ -1,22 +1,22 @@
 ---
-title: Open in v0
-description: Integrate your registry with Open in v0.
+title: v0 で開く
+description: レジストリを Open in v0 と連携します。
 ---
 
-If your registry is hosted and publicly accessible via a URL, you can open a registry item in v0 by using the `https://v0.dev/chat/api/open?url=[URL]` endpoint.
+レジストリが URL でホストされ、公開アクセスできる場合、`https://v0.dev/chat/api/open?url=[URL]` エンドポイントを使ってレジストリアイテムを v0 で開けます。
 
-eg. [https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json](https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json)
+例: [https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json](https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json)
 
 <Callout className="mt-6">
-  **Important:** `Open in v0` does not support `cssVars`, `css`, `envVars`,
-  namespaced registries, or advanced authentication methods.
+  **重要:** `Open in v0` は
+  `cssVars`、`css`、`envVars`、名前空間付きレジストリ、高度な認証方式に対応していません。
 </Callout>
 
-## Button
+## ボタン
 
-See [Build your Open in v0 button](https://v0.dev/chat/button) for more information on how to build your own `Open in v0` button.
+独自の `Open in v0` ボタンの作り方は[Open in v0 ボタンを作る](https://v0.dev/chat/button)をご覧ください。
 
-Here's a simple example of how to add a `Open in v0` button to your site.
+サイトに `Open in v0` ボタンを追加するシンプルな例を紹介します。
 
 ```tsx showLineNumbers
 import { Button } from "@/components/ui/button"
@@ -59,26 +59,26 @@ export function OpenInV0Button({ url }: { url: string }) {
 <OpenInV0Button url="https://example.com/r/hello-world.json" />
 ```
 
-## Authentication
+## 認証
 
-Open in v0 only supports query parameter authentication. It does not support namespaced registries or advanced authentication methods like Bearer tokens or API keys in headers.
+Open in v0 はクエリパラメーター認証のみに対応しています。名前空間付きレジストリや、Bearer トークン・ヘッダー内の API キーなどの高度な認証方式には対応していません。
 
-### Using Query Parameter Authentication
+### クエリパラメーター認証を使う
 
-To add authentication to your registry for Open in v0, use a `token` query parameter:
+Open in v0 向けにレジストリへ認証を追加するには、`token` クエリパラメーターを使用します:
 
 ```
 https://registry.company.com/r/hello-world.json?token=your_secure_token_here
 ```
 
-When implementing this on your registry server:
+レジストリサーバーに実装する際は:
 
-1. Check for the `token` query parameter
-2. Validate the token against your authentication system
-3. Return a `401 Unauthorized` response if the token is invalid or missing
-4. Both the shadcn CLI and Open in v0 will handle the 401 response and display an appropriate message to users
+1. `token` クエリパラメーターを確認します
+2. トークンを認証システムと照合して検証します
+3. トークンが無効または不足している場合は `401 Unauthorized` レスポンスを返します
+4. shadcn CLI と Open in v0 はどちらも 401 レスポンスを処理し、ユーザーに適切なメッセージを表示します
 
-### Example Implementation
+### 実装例
 
 ```typescript
 // Next.js API route example
@@ -101,6 +101,6 @@ export async function GET(request: NextRequest) {
 ```
 
 <Callout className="mt-6">
-  **Security Note:** Make sure to encrypt and expire tokens. Never expose
-  production tokens in documentation or examples.
+  **セキュリティ注意:**
+  トークンは必ず暗号化し、有効期限を設定してください。本番用トークンをドキュメントや例に公開しないでください。
 </Callout>

@@ -4,76 +4,72 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/styles/radix-nova/ui/card"
+} from "@/components/ui/radix/card"
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/styles/radix-nova/ui/tabs"
+} from "@/components/ui/radix/tabs"
 
 export function TabsDemo() {
   return (
     <Tabs defaultValue="overview" className="w-[400px]">
       <TabsList>
-        <TabsTrigger value="overview">Overview</TabsTrigger>
-        <TabsTrigger value="analytics">Analytics</TabsTrigger>
-        <TabsTrigger value="reports">Reports</TabsTrigger>
-        <TabsTrigger value="settings">Settings</TabsTrigger>
+        <TabsTrigger value="overview">概要</TabsTrigger>
+        <TabsTrigger value="analytics">分析</TabsTrigger>
+        <TabsTrigger value="reports">レポート</TabsTrigger>
+        <TabsTrigger value="settings">設定</TabsTrigger>
       </TabsList>
       <TabsContent value="overview">
         <Card>
           <CardHeader>
-            <CardTitle>Overview</CardTitle>
+            <CardTitle>概要</CardTitle>
             <CardDescription>
-              View your key metrics and recent project activity. Track progress
-              across all your active projects.
+              主要な指標と最近のプロジェクトの活動状況を確認できます。進行中のすべてのプロジェクトの進捗を追跡します。
             </CardDescription>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">
-            You have 12 active projects and 3 pending tasks.
+            進行中のプロジェクトが12件、保留中のタスクが3件あります。
           </CardContent>
         </Card>
       </TabsContent>
       <TabsContent value="analytics">
         <Card>
           <CardHeader>
-            <CardTitle>Analytics</CardTitle>
+            <CardTitle>分析</CardTitle>
             <CardDescription>
-              Track performance and user engagement metrics. Monitor trends and
-              identify growth opportunities.
+              パフォーマンスとユーザーエンゲージメントの指標を追跡します。トレンドを監視し、成長の機会を見つけます。
             </CardDescription>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">
-            Page views are up 25% compared to last month.
+            ページビューは前月比25%増加しています。
           </CardContent>
         </Card>
       </TabsContent>
       <TabsContent value="reports">
         <Card>
           <CardHeader>
-            <CardTitle>Reports</CardTitle>
+            <CardTitle>レポート</CardTitle>
             <CardDescription>
-              Generate and download your detailed reports. Export data in
-              multiple formats for analysis.
+              詳細なレポートを生成してダウンロードできます。分析用に複数の形式でデータをエクスポートします。
             </CardDescription>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">
-            You have 5 reports ready and available to export.
+            エクスポート可能なレポートが5件用意されています。
           </CardContent>
         </Card>
       </TabsContent>
       <TabsContent value="settings">
         <Card>
           <CardHeader>
-            <CardTitle>Settings</CardTitle>
+            <CardTitle>設定</CardTitle>
             <CardDescription>
-              Manage your account preferences and options. Customize your
-              experience to fit your needs.
+              アカウントの環境設定とオプションを管理します。ニーズに合わせて使用体験をカスタマイズします。
             </CardDescription>
           </CardHeader>
           <CardContent className="text-sm text-muted-foreground">
-            Configure notifications, security, and themes.
+            通知、セキュリティ、テーマを設定します。
           </CardContent>
         </Card>
       </TabsContent>

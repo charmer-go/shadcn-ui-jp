@@ -7,7 +7,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/styles/base-nova/ui/breadcrumb"
+} from "@/components/ui/base/breadcrumb"
 
 export function BreadcrumbLinkDemo() {
   return (
@@ -15,18 +15,18 @@ export function BreadcrumbLinkDemo() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="#link-component" />}>
-            Home
+            ホーム
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="#link-component" />}>
-            Components
+            コンポーネント
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

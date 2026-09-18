@@ -1,13 +1,13 @@
 ---
 title: Remix
-description: Adding dark mode to your Remix app.
+description: Remix アプリにダークモードを追加します。
 ---
 
 <Steps>
 
-## Modify your tailwind.css file
+## tailwind.css ファイルを変更する
 
-Add `:root[class~="dark"]` to your tailwind.css file. This will allow you to use the `dark` class on your html element to apply dark mode styles.
+`tailwind.css` ファイルに `:root[class~="dark"]` を追加します。これにより、html 要素で `dark` クラスを使用してダークモードのスタイルを適用できます。
 
 ```css {2} title="app/tailwind.css" showLineNumbers
 .dark,
@@ -16,15 +16,15 @@ Add `:root[class~="dark"]` to your tailwind.css file. This will allow you to use
 }
 ```
 
-## Install remix-themes
+## remix-themes をインストールする
 
-Start by installing `remix-themes`:
+`remix-themes` をインストールすることから始めます。
 
 ```bash
 npm install remix-themes
 ```
 
-## Create a session storage and theme session resolver
+## セッションストレージとテーマセッションリゾルバーを作成する
 
 ```tsx title="app/sessions.server.tsx" showLineNumbers
 import { createThemeSessionResolver } from "remix-themes"
@@ -49,9 +49,9 @@ const sessionStorage = createCookieSessionStorage({
 export const themeSessionResolver = createThemeSessionResolver(sessionStorage)
 ```
 
-## Set up Remix Themes
+## Remix Themes を設定する
 
-Add the `ThemeProvider` to your root layout.
+ルートレイアウトに `ThemeProvider` を追加します。
 
 ```tsx {1-3,6-11,15-22,25-26,28,33} title="app/root.tsx" showLineNumbers
 import clsx from "clsx"
@@ -101,9 +101,9 @@ export function App() {
 }
 ```
 
-## Add an action route
+## アクションルートを追加する
 
-Create a file in `/routes/action.set-theme.ts`. Ensure that you pass the filename to the ThemeProvider component. This route is used to store the preferred theme in the session storage when the user changes it.
+`/routes/action.set-theme.ts` にファイルを作成します。ファイル名を ThemeProvider コンポーネントに渡してください。ユーザーがテーマを変更したとき、このルートを使用して優先テーマをセッションストレージに保存します。
 
 ```tsx title="app/routes/action.set-theme.ts" showLineNumbers
 import { createThemeAction } from "remix-themes"
@@ -113,9 +113,9 @@ import { themeSessionResolver } from "./sessions.server"
 export const action = createThemeAction(themeSessionResolver)
 ```
 
-## Add a mode toggle
+## モード切り替えを追加する
 
-Place a mode toggle on your site to toggle between light and dark mode.
+サイトにモード切り替えを配置して、ライトモードとダークモードを切り替えられるようにします。
 
 ```tsx title="components/mode-toggle.tsx" showLineNumbers
 import { Moon, Sun } from "lucide-react"

@@ -1,5 +1,5 @@
 ---
-title: Native Select
+title: ネイティブセレクト
 description: A styled native HTML select element with consistent design system integration.
 base: base
 component: true
@@ -14,13 +14,13 @@ import { InfoIcon } from "lucide-react"
 
 <ComponentPreview styleName="base-nova" name="native-select-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,7 +34,7 @@ npx shadcn@latest add native-select
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>グループ ラッパーがレポートされます。 次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="native-select"
@@ -42,7 +42,7 @@ npx shadcn@latest add native-select
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -50,7 +50,7 @@ npx shadcn@latest add native-select
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -70,11 +70,11 @@ import {
 </NativeSelect>
 ```
 
-## Composition
+## 構成
 
 ### Simple
 
-Options placed directly under `NativeSelect` (no `NativeSelectOptGroup`).
+`NativeSelect` の直下に配置されるオプション (`NativeSelectOptGroup` はありません)。
 
 ```text
 NativeSelect
@@ -98,19 +98,19 @@ NativeSelect
     └── NativeSelectOption
 ```
 
-## Groups
+## グループ
 
 Use `NativeSelectOptGroup` to organize options into categories.
 
 <ComponentPreview styleName="base-nova" name="native-select-groups" />
 
-## Disabled
+## 無効
 
-Add the `disabled` prop to the `NativeSelect` component to disable the select.
+`disabled` プロパティを `NativeSelect` コンポーネントに追加して、選択を無効にします。
 
 <ComponentPreview styleName="base-nova" name="native-select-disabled" />
 
-## Invalid
+## 無効な状態
 
 Use `aria-invalid` to show validation errors and the `data-invalid` attribute to the `Field` component for styling.
 
@@ -123,7 +123,7 @@ Use `aria-invalid` to show validation errors and the `data-invalid` attribute to
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="base-nova"
@@ -131,7 +131,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## API リファレンス
 
 ### NativeSelect
 
@@ -148,7 +148,7 @@ The main select component that wraps the native HTML select element.
 
 Represents an individual option within the select.
 
-| Prop       | Type      | Default |
+|小道具 |タイプ |デフォルト |
 | ---------- | --------- | ------- |
 | `value`    | `string`  |         |
 | `disabled` | `boolean` | `false` |
@@ -157,7 +157,7 @@ Represents an individual option within the select.
 
 Groups related options together for better organization.
 
-| Prop       | Type      | Default |
+|小道具 |タイプ |デフォルト |
 | ---------- | --------- | ------- |
 | `label`    | `string`  |         |
 | `disabled` | `boolean` | `false` |

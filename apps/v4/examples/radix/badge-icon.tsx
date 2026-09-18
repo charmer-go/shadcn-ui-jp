@@ -1,16 +1,16 @@
 import { BadgeCheck, BookmarkIcon } from "lucide-react"
 
-import { Badge } from "@/styles/radix-nova/ui/badge"
+import { Badge } from "@/components/ui/radix/badge"
 
 export function BadgeWithIconLeft() {
   return (
     <div className="flex flex-wrap gap-2">
       <Badge variant="secondary">
         <BadgeCheck data-icon="inline-start" />
-        Verified
+        認証済み
       </Badge>
       <Badge variant="outline">
-        Bookmark
+        ブックマーク
         <BookmarkIcon data-icon="inline-end" />
       </Badge>
     </div>

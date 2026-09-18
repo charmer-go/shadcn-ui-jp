@@ -15,8 +15,8 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/styles/base-rhea/ui/attachment"
-import { Spinner } from "@/styles/base-rhea/ui/spinner"
+} from "@/components/ui/base/attachment"
+import { Spinner } from "@/components/ui/base/spinner"
 
 export function AttachmentStates() {
   return (
@@ -27,10 +27,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>selected-file.pdf</AttachmentTitle>
-          <AttachmentDescription>Ready to upload</AttachmentDescription>
+          <AttachmentDescription>アップロードの準備完了</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove selected-file.pdf">
+          <AttachmentAction aria-label="selected-file.pdfを削除">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -41,10 +41,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>design-system.zip</AttachmentTitle>
-          <AttachmentDescription>Uploading · 64%</AttachmentDescription>
+          <AttachmentDescription>アップロード中 · 64%</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Cancel upload">
+          <AttachmentAction aria-label="アップロードをキャンセル">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -55,10 +55,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>market-research.pdf</AttachmentTitle>
-          <AttachmentDescription>Processing document</AttachmentDescription>
+          <AttachmentDescription>ドキュメントを処理中</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove market-research.pdf">
+          <AttachmentAction aria-label="market-research.pdfを削除">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -70,14 +70,14 @@ export function AttachmentStates() {
         <AttachmentContent>
           <AttachmentTitle>financial-model.xlsx</AttachmentTitle>
           <AttachmentDescription>
-            Upload failed. Try again.
+            アップロードに失敗しました。もう一度お試しください。
           </AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Retry upload">
+          <AttachmentAction aria-label="アップロードを再試行">
             <RefreshCwIcon />
           </AttachmentAction>
-          <AttachmentAction aria-label="Remove financial-model.xlsx">
+          <AttachmentAction aria-label="financial-model.xlsxを削除">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -88,10 +88,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>uploaded-report.pdf</AttachmentTitle>
-          <AttachmentDescription>Uploaded · 1.8 MB</AttachmentDescription>
+          <AttachmentDescription>アップロード完了 · 1.8 MB</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove uploaded-report.pdf">
+          <AttachmentAction aria-label="uploaded-report.pdfを削除">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>

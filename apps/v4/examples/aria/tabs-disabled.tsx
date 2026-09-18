@@ -1,12 +1,12 @@
-import { Tabs, TabsList, TabsTrigger } from "@/styles/aria-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/aria/tabs"
 
 export function TabsDisabled() {
   return (
     <Tabs defaultSelectedKey="home">
       <TabsList>
-        <TabsTrigger id="home">Home</TabsTrigger>
+        <TabsTrigger id="home">ホーム</TabsTrigger>
         <TabsTrigger id="settings" isDisabled>
-          Disabled
+          無効
         </TabsTrigger>
       </TabsList>
     </Tabs>

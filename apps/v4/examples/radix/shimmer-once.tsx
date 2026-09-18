@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Button } from "@/components/ui/radix/button"
 
 export function ShimmerOnce() {
   const [key, setKey] = React.useState(0)

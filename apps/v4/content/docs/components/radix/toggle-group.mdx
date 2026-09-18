@@ -1,6 +1,6 @@
 ---
-title: Toggle Group
-description: A set of two-state buttons that can be toggled on or off.
+title: トグルグループ
+description: オンとオフを切り替えられる2状態ボタンのセット。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add toggle-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="toggle-group"
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
@@ -66,7 +66,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 </ToggleGroup>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `ToggleGroup`:
 
@@ -76,13 +76,13 @@ ToggleGroup
 └── ToggleGroupItem
 ```
 
-## Outline
+## アウトライン
 
 Use `variant="outline"` for an outline style.
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-outline" />
 
-## Size
+## サイズ
 
 Use the `size` prop to change the size of the toggle group.
 
@@ -94,13 +94,13 @@ Use `spacing` to add spacing between toggle group items.
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-spacing" />
 
-## Vertical
+## 垂直
 
 Use `orientation="vertical"` for vertical toggle groups.
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-vertical" />
 
-## Disabled
+## 無効
 
 <ComponentPreview styleName="radix-nova" name="toggle-group-disabled" />
 
@@ -116,7 +116,7 @@ A custom toggle group example.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -124,11 +124,11 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## APIリファレンス
 
 See the [Radix Toggle Group](https://www.radix-ui.com/docs/primitives/components/toggle-group#api-reference) documentation.
 
-## Changelog
+## 変更履歴
 
 ### 2026-05-17 Default Spacing
 

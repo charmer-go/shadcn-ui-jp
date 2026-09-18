@@ -1,6 +1,6 @@
 import { AppWindowIcon, CodeIcon } from "lucide-react"
 
-import { Tabs, TabsList, TabsTrigger } from "@/styles/aria-nova/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/aria/tabs"
 
 export function TabsIcons() {
   return (
@@ -8,11 +8,11 @@ export function TabsIcons() {
       <TabsList>
         <TabsTrigger id="preview">
           <AppWindowIcon />
-          Preview
+          プレビュー
         </TabsTrigger>
         <TabsTrigger id="code">
           <CodeIcon />
-          Code
+          コード
         </TabsTrigger>
       </TabsList>
     </Tabs>

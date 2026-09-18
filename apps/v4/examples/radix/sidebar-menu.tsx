@@ -18,31 +18,31 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarProvider,
-} from "@/styles/radix-nova/ui/sidebar"
+} from "@/components/ui/radix/sidebar"
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "デザインエンジニアリング",
     url: "#",
     icon: FrameIcon,
   },
   {
-    name: "Sales & Marketing",
+    name: "セールス＆マーケティング",
     url: "#",
     icon: PieChartIcon,
   },
   {
-    name: "Travel",
+    name: "旅行",
     url: "#",
     icon: MapIcon,
   },
   {
-    name: "Support",
+    name: "サポート",
     url: "#",
     icon: LifeBuoyIcon,
   },
   {
-    name: "Feedback",
+    name: "フィードバック",
     url: "#",
     icon: SendIcon,
   },
@@ -54,7 +54,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {projects.map((project) => (

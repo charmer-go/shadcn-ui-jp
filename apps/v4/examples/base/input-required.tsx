@@ -2,21 +2,21 @@ import {
   Field,
   FieldDescription,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function InputRequired() {
   return (
     <Field>
       <FieldLabel htmlFor="input-required">
-        Required Field <span className="text-destructive">*</span>
+        必須項目 <span className="text-destructive">*</span>
       </FieldLabel>
       <Input
         id="input-required"
-        placeholder="This field is required"
+        placeholder="この項目は必須です"
         required
       />
-      <FieldDescription>This field must be filled out.</FieldDescription>
+      <FieldDescription>この項目は入力必須です。</FieldDescription>
     </Field>
   )
 }

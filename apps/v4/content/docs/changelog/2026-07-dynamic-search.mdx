@@ -1,21 +1,21 @@
 ---
-title: July 2026 - Dynamic Search
-description: Registries can now handle search server-side.
+title: 2026 年 7 月 - 動的検索
+description: レジストリはサーバー側で検索を処理できるようになりました。
 date: 2026-07-31
 ---
 
-**Registries can now handle search server-side.**
+**レジストリはサーバー側で検索を処理できるようになりました。**
 
-When you run `shadcn search`, the CLI forwards the search parameters to your
-registry as query params:
+`shadcn search` を実行すると、CLI は検索パラメータを
+レジストリをクエリパラメータとして使用します。
 
 ```txt
 GET /r/registry.json?q=button&limit=50&offset=0
 ```
 
-Return the matching items with a `pagination` object and the CLI uses your
-results as-is. This makes search fast for large registries: no more downloading
-the full catalog to search it.
+`pagination` オブジェクトを使用して一致する項目を返します。CLI は
+結果はそのまま。これにより、大規模なレジストリの検索が高速化され、ダウンロードが不要になります。
+完全なカタログを検索してください。
 
 ```json title="registry.json?q=button&limit=1"
 {
@@ -37,8 +37,8 @@ the full catalog to search it.
 }
 ```
 
-Dynamic search is opt-in. Static registries ignore the query params and keep
-working without any changes.
+動的検索はオプトインです。静的レジストリはクエリ パラメータを無視し、保持します。
+何も変更せずに動作します。
 
-See the [Dynamic Search](/docs/registry/dynamic-search) docs for the full
-guide.
+詳細については、[動的検索](/docs/registry/dynamic-search) ドキュメントを参照してください。
+ガイド。

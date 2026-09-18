@@ -1,6 +1,6 @@
 ---
-title: Radio Group
-description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+title: ラジオグループ
+description: ラジオボタンと呼ばれる、同時に1つまで選択できるチェック可能なボタンのセット。
 base: radix
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="radix-nova" name="radio-group-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add radio-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="radio-group"
@@ -44,7 +44,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import { Label } from "@/components/ui/label"
@@ -72,9 +72,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 </RadioGroup>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `RadioGroup`:
+次の構成を使用して、`RadioGroup` を構築します。
 
 ```text
 RadioGroup
@@ -88,9 +88,9 @@ Radio group items with a description using the `Field` component.
 
 <ComponentPreview styleName="radix-nova" name="radio-group-description" />
 
-## Choice Card
+## 完全な動作については、Choice Card
 
-Use `FieldLabel` to wrap the entire `Field` for a clickable card-style selection.
+`FieldLabel` を使用して `Field` 全体をラップし、クリック可能なカード スタイルの選択を行います。
 
 <ComponentPreview styleName="radix-nova" name="radio-group-choice-card" />
 
@@ -100,21 +100,21 @@ Use `FieldSet` and `FieldLegend` to group radio items with a label and descripti
 
 <ComponentPreview styleName="radix-nova" name="radio-group-fieldset" />
 
-## Disabled
+## 無効
 
-Use the `disabled` prop on `RadioGroupItem` to disable individual items.
+`RadioGroupItem` で `disabled` プロパティを使用して、個々の項目を無効にします。
 
 <ComponentPreview styleName="radix-nova" name="radio-group-disabled" />
 
-## Invalid
+## 無効な
 
-Use `aria-invalid` on `RadioGroupItem` and `data-invalid` on `Field` to show validation errors.
+について `RadioGroupItem` では `aria-invalid` を、`Field` では `data-invalid` を使用して検証エラーを表示します。
 
 <ComponentPreview styleName="radix-nova" name="radio-group-invalid" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -122,6 +122,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## APIリファレンス
 
 See the [Radix UI Radio Group](https://www.radix-ui.com/docs/primitives/components/radio-group#api-reference) documentation.

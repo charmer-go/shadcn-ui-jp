@@ -5,13 +5,13 @@ import {
   ThumbsUpIcon,
 } from "lucide-react"
 
-import { Bubble, BubbleContent } from "@/styles/base-rhea/ui/bubble"
-import { Button } from "@/styles/base-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/base/bubble"
+import { Button } from "@/components/ui/base/button"
 import {
   Message,
   MessageContent,
   MessageFooter,
-} from "@/styles/base-rhea/ui/message"
+} from "@/components/ui/base/message"
 
 export function MessageActionsDemo() {
   return (
@@ -20,21 +20,21 @@ export function MessageActionsDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              The install failure is coming from the workspace package.
+              インストールの失敗はワークスペースパッケージが原因です。
             </BubbleContent>
           </Bubble>
           <MessageFooter>
-            <Button variant="ghost" size="icon" aria-label="Copy" title="Copy">
+            <Button variant="ghost" size="icon" aria-label="コピー" title="コピー">
               <CopyIcon />
             </Button>
-            <Button variant="ghost" size="icon" aria-label="Like" title="Like">
+            <Button variant="ghost" size="icon" aria-label="いいね" title="いいね">
               <ThumbsUpIcon />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Dislike"
-              title="Dislike"
+              aria-label="低評価"
+              title="低評価"
             >
               <ThumbsDownIcon />
             </Button>
@@ -44,15 +44,15 @@ export function MessageActionsDemo() {
       <Message align="end">
         <MessageContent>
           <Bubble>
-            <BubbleContent>Okay drop me a link. Taking a look...</BubbleContent>
+            <BubbleContent>了解、リンクを送ってください。確認します...</BubbleContent>
           </Bubble>
           <MessageFooter className="gap-2">
-            <span className="font-normal text-destructive">Failed to send</span>
+            <span className="font-normal text-destructive">送信に失敗しました</span>
             <Button
               variant="ghost"
               size="icon-xs"
-              title="Retry"
-              aria-label="Retry"
+              title="再試行"
+              aria-label="再試行"
             >
               <RefreshCcwIcon />
             </Button>

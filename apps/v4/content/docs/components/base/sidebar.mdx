@@ -1,6 +1,6 @@
 ---
-title: Sidebar
-description: A composable, themeable and customizable sidebar component.
+title: サイドバー
+description: 組み合わせ可能で、テーマ設定とカスタマイズに対応したサイドバー コンポーネント。
 base: base
 component: true
 ---
@@ -27,13 +27,13 @@ Customizable.
 
 [Browse the Blocks Library](/blocks).
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -55,7 +55,7 @@ npx shadcn@latest add sidebar
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers title="app/layout.tsx"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
@@ -97,7 +97,7 @@ export function AppSidebar() {
 }
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Sidebar` layout:
 
@@ -130,7 +130,7 @@ SidebarProvider
 └── SidebarTrigger
 ```
 
-## Structure
+## 構造
 
 - **SidebarProvider** — Handles collapsible state and provides sidebar context to child components.
 - **Sidebar** — The main collapsible sidebar panel.
@@ -162,7 +162,7 @@ SidebarProvider
 
 The `SidebarProvider` component is used to provide the sidebar context to the `Sidebar` component. You should always wrap your application in a `SidebarProvider` component.
 
-### Props
+### プロップ
 
 | Name           | Type                      | Description                                  |
 | -------------- | ------------------------- | -------------------------------------------- |
@@ -170,7 +170,7 @@ The `SidebarProvider` component is used to provide the sidebar context to the `S
 | `open`         | `boolean`                 | Open state of the sidebar (controlled).      |
 | `onOpenChange` | `(open: boolean) => void` | Sets open state of the sidebar (controlled). |
 
-### Width
+### 幅
 
 If you have a single sidebar in your application, you can use the `SIDEBAR_WIDTH` and `SIDEBAR_WIDTH_MOBILE` variables in `sidebar.tsx` to set the width of the sidebar.
 
@@ -194,7 +194,7 @@ For multiple sidebars in your application, you can use the `--sidebar-width` and
 </SidebarProvider>
 ```
 
-### Keyboard Shortcut
+### キーボードショートカット
 
 To trigger the sidebar, you use the `cmd+b` keyboard shortcut on Mac and `ctrl+b` on Windows.
 
@@ -202,11 +202,11 @@ To trigger the sidebar, you use the `cmd+b` keyboard shortcut on Mac and `ctrl+b
 const SIDEBAR_KEYBOARD_SHORTCUT = "b"
 ```
 
-## Sidebar
+## サイドバー
 
 The main `Sidebar` component used to render a collapsible sidebar.
 
-### Props
+### プロパティ
 
 | Property      | Type                              | Description                       |
 | ------------- | --------------------------------- | --------------------------------- |
@@ -484,7 +484,7 @@ The `SidebarRail` component is used to render a rail within a `Sidebar`. This ra
 </Sidebar>
 ```
 
-## Controlled Sidebar
+## 制御されたサイドバー
 
 Use the `open` and `onOpenChange` props to control the sidebar.
 
@@ -500,7 +500,7 @@ export function AppSidebar() {
 }
 ```
 
-## Theming
+## テーマ
 
 We use the following CSS variables to theme the sidebar.
 
@@ -530,7 +530,7 @@ We use the following CSS variables to theme the sidebar.
 }
 ```
 
-## Styling
+## スタイリング
 
 Here are some tips for styling the sidebar based on different states.
 
@@ -551,16 +551,16 @@ Here are some tips for styling the sidebar based on different states.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 {/* prettier-ignore */}
 <Button asChild size="sm" className="mt-6">
   <a href="/view/base-nova/sidebar-rtl" target="_blank">View RTL Sidebar <ExternalLinkIcon /></a>
 </Button>
 
-## Changelog
+## 変更履歴
 
-### RTL Support
+### RTL サポート
 
 If you're upgrading from a previous version of the `Sidebar` component, you'll need to apply the following updates to add RTL support:
 

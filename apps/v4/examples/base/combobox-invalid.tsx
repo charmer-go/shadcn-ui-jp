@@ -7,7 +7,7 @@ import {
   ComboboxInput,
   ComboboxItem,
   ComboboxList,
-} from "@/styles/base-nova/ui/combobox"
+} from "@/components/ui/base/combobox"
 
 const frameworks = [
   "Next.js",
@@ -20,9 +20,9 @@ const frameworks = [
 export function ComboboxInvalid() {
   return (
     <Combobox items={frameworks}>
-      <ComboboxInput placeholder="Select a framework" aria-invalid="true" />
+      <ComboboxInput placeholder="フレームワークを選択" aria-invalid="true" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>項目が見つかりません。</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

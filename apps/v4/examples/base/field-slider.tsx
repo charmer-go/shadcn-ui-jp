@@ -6,19 +6,19 @@ import {
   Field,
   FieldDescription,
   FieldTitle,
-} from "@/styles/base-nova/ui/field"
-import { Slider } from "@/styles/base-nova/ui/slider"
+} from "@/components/ui/base/field"
+import { Slider } from "@/components/ui/base/slider"
 
 export default function FieldSlider() {
   const [value, setValue] = React.useState([200, 800])
 
   return (
     <Field className="w-full max-w-xs">
-      <FieldTitle>Price Range</FieldTitle>
+      <FieldTitle>価格帯</FieldTitle>
       <FieldDescription>
-        Set your budget range ($
-        <span className="font-medium tabular-nums">{value[0]}</span> -{" "}
-        <span className="font-medium tabular-nums">{value[1]}</span>).
+        予算の範囲を設定してください（$
+        <span className="font-medium tabular-nums">{value[0]}</span> ～{" "}
+        <span className="font-medium tabular-nums">{value[1]}</span>）。
       </FieldDescription>
       <Slider
         value={value}
@@ -27,7 +27,7 @@ export default function FieldSlider() {
         min={0}
         step={10}
         className="mt-2 w-full"
-        aria-label="Price Range"
+        aria-label="価格帯"
       />
     </Field>
   )

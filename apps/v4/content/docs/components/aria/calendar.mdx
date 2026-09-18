@@ -1,6 +1,6 @@
 ---
-title: Calendar
-description: A calendar component that allows users to select a date or a range of dates.
+title: カレンダー
+description: 日付または日付範囲を選択できるカレンダーコンポーネントです。
 base: aria
 component: true
 links:
@@ -14,13 +14,13 @@ links:
   previewClassName="h-96"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -34,17 +34,17 @@ npx shadcn@latest add calendar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします:</Step>
 
 ```bash
 npm install react-aria-components @internationalized/date
 ```
 
-<Step>Add the `Button` component to your project.</Step>
+<Step>`Button` コンポーネントをプロジェクトに追加します。</Step>
 
-The `Calendar` component uses the `Button` component. Make sure you have it installed in your project.
+`Calendar` コンポーネントは `Button` コンポーネントを使用します。プロジェクトにインストールされていることを確認してください。
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="calendar"
@@ -52,7 +52,7 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクトの設定に一致するようにインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -60,7 +60,7 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -82,27 +82,27 @@ return (
 )
 ```
 
-See the [React Aria](https://react-aria.adobe.com/Calendar) documentation for more information.
+詳細については、[React Aria](https://react-aria.adobe.com/Calendar) ドキュメントを参照してください。
 
-## Date Picker
+## 日付ピッカー
 
-You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/aria/date-picker) page for more information.
+`<Calendar>` コンポーネントを使用して日付ピッカーを構築できます。詳細については、[日付ピッカー](/docs/components/aria/date-picker) ページを参照してください。
 
-## International Calendars
+## 国際カレンダー
 
-To use international calendar systems such as Persian, Islamic, or Buddhist, use React Aria's `I18nProvider` to set the locale.
+ペルシャ、イスラム、仏教などの国際暦システムを使用するには、React Aria の `I18nProvider` を使用してロケールを設定します。
 
 <ComponentPreview
   styleName="aria-nova"
   name="calendar-hijri"
   title="Persian / Hijri / Jalali Calendar"
-  description="A Persian calendar."
+  description="ペルシャのカレンダーです。"
   previewClassName="h-[400px]"
 />
 
-## Basic
+## 基本
 
-A basic calendar component. We used `className="rounded-lg border"` to style the calendar.
+基本的なカレンダー コンポーネント。カレンダーのスタイルには `className="rounded-lg border"` を使用しました。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -110,9 +110,9 @@ A basic calendar component. We used `className="rounded-lg border"` to style the
   previewClassName="h-96"
 />
 
-## Range Calendar
+## 範囲カレンダー
 
-Use the `RangeCalendar` component to enable range selection.
+`RangeCalendar` コンポーネントを使用して範囲選択を有効にします。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -120,9 +120,9 @@ Use the `RangeCalendar` component to enable range selection.
   previewClassName="h-[36rem] md:h-96"
 />
 
-## Month and Year Selector
+## 月と年のセレクター
 
-Use `captionLayout="dropdown"` to show month and year dropdowns.
+月と年のドロップダウンを表示するには、`captionLayout="dropdown"` を使用します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -130,7 +130,7 @@ Use `captionLayout="dropdown"` to show month and year dropdowns.
   previewClassName="h-96"
 />
 
-## Presets
+## プリセット
 
 <ComponentPreview
   styleName="aria-nova"
@@ -138,7 +138,7 @@ Use `captionLayout="dropdown"` to show month and year dropdowns.
   previewClassName="h-[650px]"
 />
 
-## Date and Time Picker
+## 日付と時刻のピッカー
 
 <ComponentPreview
   styleName="aria-nova"
@@ -146,7 +146,7 @@ Use `captionLayout="dropdown"` to show month and year dropdowns.
   previewClassName="h-[600px]"
 />
 
-## Booked dates
+## 予約済みの日付
 
 <ComponentPreview
   styleName="aria-nova"
@@ -154,17 +154,17 @@ Use `captionLayout="dropdown"` to show month and year dropdowns.
   previewClassName="h-96"
 />
 
-## Custom Cell Size
+## カスタムセルサイズ
 
 <ComponentPreview
   styleName="aria-nova"
   name="calendar-custom-days"
-  title="Custom Cell Size"
-  description="A calendar with custom cell size that's responsive."
+  title="カスタムセルサイズ"
+  description="レスポンシブなカスタムセルサイズのカレンダー。"
   className="**:[.preview]:h-[560px]"
 />
 
-You can customize the size of calendar cells using the `--cell-size` CSS variable. You can also make it responsive by using breakpoint-specific values:
+`--cell-size` CSS 変数を使用して、カレンダーのセルのサイズをカスタマイズできます。ブレークポイント固有の値を使用して応答性を高めることもできます。
 
 ```tsx showLineNumbers
 <Calendar
@@ -174,7 +174,7 @@ You can customize the size of calendar cells using the `--cell-size` CSS variabl
 />
 ```
 
-Or use fixed values:
+または、固定値を使用します。
 
 ```tsx showLineNumbers
 <Calendar
@@ -186,9 +186,9 @@ Or use fixed values:
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
-See also the [International Calendars Guide](#international-calendars) for enabling the international calendars such as Persian / Hijri / Jalali.
+ペルシア語/ヒジュラ語/ジャラリ語などの国際カレンダーを有効にする方法については、[国際カレンダー ガイド](#international-calendars)も参照してください。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -197,6 +197,6 @@ See also the [International Calendars Guide](#international-calendars) for enabl
   previewClassName="h-96"
 />
 
-## API Reference
+## APIリファレンス
 
-See the [React Aria](https://react-aria.adobe.com/Calendar) documentation for more information on the `Calendar` component.
+`Calendar` コンポーネントの詳細については、[React Aria](https://react-aria.adobe.com/Calendar) ドキュメントを参照してください。

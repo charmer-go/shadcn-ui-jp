@@ -8,26 +8,26 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 
 export function InputGroupDropdown() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Enter file name" />
+        <InputGroupInput placeholder="ファイル名を入力" />
         <InputGroupAddon align="inline-end">
           <DropdownMenu>
             <DropdownMenuTrigger
               render={
                 <InputGroupButton
                   variant="ghost"
-                  aria-label="More"
+                  aria-label="その他"
                   size="icon-xs"
                 />
               }
@@ -36,16 +36,16 @@ export function InputGroupDropdown() {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={8} alignOffset={-4}>
               <DropdownMenuGroup>
-                <DropdownMenuItem>Settings</DropdownMenuItem>
-                <DropdownMenuItem>Copy path</DropdownMenuItem>
-                <DropdownMenuItem>Open location</DropdownMenuItem>
+                <DropdownMenuItem>設定</DropdownMenuItem>
+                <DropdownMenuItem>パスをコピー</DropdownMenuItem>
+                <DropdownMenuItem>保存場所を開く</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter search query" />
+        <InputGroupInput placeholder="検索クエリを入力" />
         <InputGroupAddon align="inline-end">
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -53,13 +53,13 @@ export function InputGroupDropdown() {
                 <InputGroupButton variant="ghost" className="pr-1.5! text-xs" />
               }
             >
-              Search In... <ChevronDownIcon className="size-3" />
+              検索対象... <ChevronDownIcon className="size-3" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={8} alignOffset={-4}>
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Blog Posts</DropdownMenuItem>
-                <DropdownMenuItem>Changelog</DropdownMenuItem>
+                <DropdownMenuItem>ドキュメント</DropdownMenuItem>
+                <DropdownMenuItem>ブログ記事</DropdownMenuItem>
+                <DropdownMenuItem>変更履歴</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
           </DropdownMenu>

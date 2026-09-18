@@ -3,20 +3,20 @@
 import * as React from "react"
 import { ChevronDownIcon } from "lucide-react"
 
-import { Bubble, BubbleContent } from "@/styles/radix-rhea/ui/bubble"
-import { Button } from "@/styles/radix-rhea/ui/button"
+import { Bubble, BubbleContent } from "@/components/ui/radix/bubble"
+import { Button } from "@/components/ui/radix/button"
 import {
   Collapsible,
   CollapsibleTrigger,
-} from "@/styles/radix-rhea/ui/collapsible"
+} from "@/components/ui/radix/collapsible"
 
-const text = `The accessibility review found two focus states that were visually too subtle in dark mode.
+const text = `アクセシビリティレビューの結果、ダークモードで視覚的に分かりづらいフォーカス状態が2つ見つかりました。
 
-I checked the dialog, menu, and drawer paths because each one renders focusable controls inside a layered surface.
+ダイアログ、メニュー、ドロワーの各パスを確認しました。いずれもレイヤー化された表面の中でフォーカス可能なコントロールを描画しているためです。
 
-The dialog and drawer are fine. The menu needs the hover and focus tokens split so keyboard focus stays visible when the pointer is not involved.
+ダイアログとドロワーは問題ありません。メニューについては、ポインターが関与しない場合でもキーボードフォーカスが見えるように、ホバーとフォーカスのトークンを分ける必要があります。
 
-I also recommend keeping the change in the style file instead of the primitive so the other themes can choose their own focus treatment later.`
+また、他のテーマが後で独自のフォーカス表現を選べるように、この変更はプリミティブ側ではなくスタイルファイル側に置いておくことをお勧めします。`
 
 const previewLength = 180
 
@@ -28,7 +28,7 @@ export function BubbleCollapsible() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>How can I help you today?</BubbleContent>
+        <BubbleContent>今日はどのようなご用件ですか？</BubbleContent>
       </Bubble>
 
       <Bubble variant="muted" align="end">
@@ -41,7 +41,7 @@ export function BubbleCollapsible() {
                   variant="link"
                   className="gap-1 p-0 text-muted-foreground"
                 >
-                  {open ? "Show less" : "Show more"}
+                  {open ? "折りたたむ" : "もっと見る"}
                   <ChevronDownIcon
                     data-icon="inline-end"
                     className="group-data-open/button:rotate-180"

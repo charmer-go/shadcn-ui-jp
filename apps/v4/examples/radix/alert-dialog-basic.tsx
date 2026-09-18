@@ -8,26 +8,25 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/radix-nova/ui/alert-dialog"
-import { Button } from "@/styles/radix-nova/ui/button"
+} from "@/components/ui/radix/alert-dialog"
+import { Button } from "@/components/ui/radix/button"
 
 export function AlertDialogBasic() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="outline">Show Dialog</Button>
+        <Button variant="outline">ダイアログを表示</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>本当によろしいですか?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            この操作は取り消せません。アカウントが完全に削除され、サーバーからデータが削除されます。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogCancel>キャンセル</AlertDialogCancel>
+          <AlertDialogAction>続行</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

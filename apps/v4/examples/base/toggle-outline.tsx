@@ -1,17 +1,17 @@
 import { BoldIcon, ItalicIcon } from "lucide-react"
 
-import { Toggle } from "@/styles/base-nova/ui/toggle"
+import { Toggle } from "@/components/ui/base/toggle"
 
 export function ToggleOutline() {
   return (
     <div className="flex flex-wrap items-center gap-2">
-      <Toggle variant="outline" aria-label="Toggle italic">
+      <Toggle variant="outline" aria-label="斜体を切り替え">
         <ItalicIcon />
-        Italic
+        斜体
       </Toggle>
-      <Toggle variant="outline" aria-label="Toggle bold">
+      <Toggle variant="outline" aria-label="太字を切り替え">
         <BoldIcon />
-        Bold
+        太字
       </Toggle>
     </div>
   )

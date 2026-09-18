@@ -2,17 +2,17 @@
 
 import { REGEXP_ONLY_DIGITS } from "input-otp"
 
-import { Field, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Field, FieldLabel } from "@/components/ui/radix/field"
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@/styles/radix-nova/ui/input-otp"
+} from "@/components/ui/radix/input-otp"
 
 export function InputOTPPattern() {
   return (
     <Field className="w-fit">
-      <FieldLabel htmlFor="digits-only">Digits Only</FieldLabel>
+      <FieldLabel htmlFor="digits-only">数字のみ</FieldLabel>
       <InputOTP id="digits-only" maxLength={6} pattern={REGEXP_ONLY_DIGITS}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />

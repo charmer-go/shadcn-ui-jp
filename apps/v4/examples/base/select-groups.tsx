@@ -7,21 +7,21 @@ import {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "@/styles/base-nova/ui/select"
+} from "@/components/ui/base/select"
 
 export function SelectGroups() {
   const fruits = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Blueberry", value: "blueberry" },
+    { label: "リンゴ", value: "apple" },
+    { label: "バナナ", value: "banana" },
+    { label: "ブルーベリー", value: "blueberry" },
   ]
   const vegetables = [
-    { label: "Carrot", value: "carrot" },
-    { label: "Broccoli", value: "broccoli" },
-    { label: "Spinach", value: "spinach" },
+    { label: "にんじん", value: "carrot" },
+    { label: "ブロッコリー", value: "broccoli" },
+    { label: "ほうれん草", value: "spinach" },
   ]
   const allItems = [
-    { label: "Select a fruit", value: null },
+    { label: "フルーツを選択", value: null },
     ...fruits,
     ...vegetables,
   ]
@@ -32,7 +32,7 @@ export function SelectGroups() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>フルーツ</SelectLabel>
           {fruits.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -41,7 +41,7 @@ export function SelectGroups() {
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
+          <SelectLabel>野菜</SelectLabel>
           {vegetables.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}

@@ -1,12 +1,12 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-nova/ui/tooltip"
+import { Button } from "@/components/ui/aria/button"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 export function TooltipDemo() {
   return (
     <TooltipTrigger>
-      <Button variant="outline">Hover</Button>
+      <Button variant="outline">ホバー</Button>
       <Tooltip>
-        <p>Add to library</p>
+        <p>ライブラリに追加</p>
       </Tooltip>
     </TooltipTrigger>
   )

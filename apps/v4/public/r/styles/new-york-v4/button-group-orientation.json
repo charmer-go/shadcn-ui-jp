@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button-group-orientation",
+  "registryDependencies": [
+    "button-group"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/button-group-orientation.tsx",
+      "content": "import { MinusIcon, PlusIcon } from \"lucide-react\"\r\n\r\nimport { Button } from \"@/registry/new-york-v4/ui/button\"\r\nimport { ButtonGroup } from \"@/registry/new-york-v4/ui/button-group\"\r\n\r\nexport default function ButtonGroupOrientation() {\r\n  return (\r\n    <ButtonGroup\r\n      orientation=\"vertical\"\r\n      aria-label=\"Media controls\"\r\n      className=\"h-fit\"\r\n    >\r\n      <Button variant=\"outline\" size=\"icon\">\r\n        <PlusIcon />\r\n      </Button>\r\n      <Button variant=\"outline\" size=\"icon\">\r\n        <MinusIcon />\r\n      </Button>\r\n    </ButtonGroup>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

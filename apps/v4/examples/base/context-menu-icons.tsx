@@ -12,39 +12,39 @@ import {
   ContextMenuItem,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from "@/styles/base-nova/ui/context-menu"
+} from "@/components/ui/base/context-menu"
 
 export function ContextMenuIcons() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          右クリックしてください
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          長押ししてください
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
             <CopyIcon />
-            Copy
+            コピー
           </ContextMenuItem>
           <ContextMenuItem>
             <ScissorsIcon />
-            Cut
+            切り取り
           </ContextMenuItem>
           <ContextMenuItem>
             <ClipboardPasteIcon />
-            Paste
+            貼り付け
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            削除
           </ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenuContent>

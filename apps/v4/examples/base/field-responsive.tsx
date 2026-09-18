@@ -1,4 +1,4 @@
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Field,
   FieldContent,
@@ -7,30 +7,30 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function FieldResponsive() {
   return (
     <div className="w-full max-w-lg">
       <form>
         <FieldSet>
-          <FieldLegend>Profile</FieldLegend>
-          <FieldDescription>Fill in your profile information.</FieldDescription>
+          <FieldLegend>プロフィール</FieldLegend>
+          <FieldDescription>プロフィール情報を入力してください。</FieldDescription>
           <FieldGroup>
             <Field orientation="responsive">
               <FieldContent>
-                <FieldLabel htmlFor="name">Name</FieldLabel>
+                <FieldLabel htmlFor="name">名前</FieldLabel>
                 <FieldDescription>
-                  Provide your full name for identification
+                  本人確認のためフルネームを入力してください
                 </FieldDescription>
               </FieldContent>
-              <Input id="name" placeholder="Evil Rabbit" required />
+              <Input id="name" placeholder="山田 太郎" required />
             </Field>
             <Field orientation="responsive">
-              <Button type="submit">Submit</Button>
+              <Button type="submit">送信</Button>
               <Button type="button" variant="outline">
-                Cancel
+                キャンセル
               </Button>
             </Field>
           </FieldGroup>

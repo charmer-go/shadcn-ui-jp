@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+import { Button } from "@/components/ui/aria/button"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 export function PopoverAlignments() {
   return (
@@ -7,26 +7,26 @@ export function PopoverAlignments() {
       <div className="flex gap-6">
         <PopoverTrigger>
           <Button variant="outline" size="sm">
-            Start
+            開始
           </Button>
           <Popover placement="bottom start" className="w-40">
-            Aligned to start
+            開始位置に整列
           </Popover>
         </PopoverTrigger>
         <PopoverTrigger>
           <Button variant="outline" size="sm">
-            Center
+            中央
           </Button>
           <Popover placement="bottom" className="w-40">
-            Aligned to center
+            中央に整列
           </Popover>
         </PopoverTrigger>
         <PopoverTrigger>
           <Button variant="outline" size="sm">
-            End
+            終了
           </Button>
           <Popover placement="bottom end" className="w-40">
-            Aligned to end
+            終了位置に整列
           </Popover>
         </PopoverTrigger>
       </div>

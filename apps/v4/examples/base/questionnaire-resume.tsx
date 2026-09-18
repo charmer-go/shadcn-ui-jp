@@ -3,7 +3,7 @@
 import * as React from "react"
 import { toast } from "sonner"
 
-import { Button } from "@/styles/base-nova/ui/button"
+import { Button } from "@/components/ui/base/button"
 import {
   Questionnaire,
   QuestionnaireActions,
@@ -18,7 +18,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/base-nova/ui/questionnaire"
+} from "@/components/ui/base/questionnaire"
 
 const items = [
   { name: "change", required: true },
@@ -37,8 +37,8 @@ export function QuestionnaireResume() {
       notes: formData.get("notes"),
     }
 
-    toast("Draft updated", {
-      description: `Migration: ${answers.change ?? "None"} · Verification: ${answers.verification.join(", ") || "None"} · Notes: ${answers.notes || "None"}`,
+    toast("下書きを更新しました", {
+      description: `移行: ${answers.change ?? "なし"} ・ 検証: ${answers.verification.join("、") || "なし"} ・ メモ: ${answers.notes || "なし"}`,
     })
   }
 
@@ -47,22 +47,22 @@ export function QuestionnaireResume() {
       className="mx-auto max-w-md"
       defaultItem="verification"
       items={items}
-      onReset={() => toast("Saved answers restored")}
+      onReset={() => toast("保存した回答を復元しました")}
       onSubmit={handleSubmit}
     >
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="change" required>
-        <QuestionnaireTitle>What kind of migration is this?</QuestionnaireTitle>
+        <QuestionnaireTitle>どのような移行ですか？</QuestionnaireTitle>
         <QuestionnaireDescription>
-          This answer was saved during the previous session.
+          この回答は前回のセッションで保存されました。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="incremental" defaultChecked>
-            Incremental migration
+            段階的な移行
           </QuestionnaireChoice>
           <QuestionnaireChoice value="cutover">
-            Single cutover
+            一括切り替え
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -70,20 +70,20 @@ export function QuestionnaireResume() {
 
       <QuestionnaireItem name="verification" multiple required>
         <QuestionnaireTitle>
-          How should the migration be verified?
+          移行はどのように検証しますか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          These checks were selected during the previous session.
+          これらのチェックは前回のセッションで選択されました。
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="tests" defaultChecked>
-            Run migration tests
+            移行テストを実行
           </QuestionnaireChoice>
           <QuestionnaireChoice value="typecheck" defaultChecked>
-            Run the typecheck
+            型チェックを実行
           </QuestionnaireChoice>
           <QuestionnaireChoice value="manual">
-            Perform a manual smoke test
+            手動のスモークテストを実施
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -91,24 +91,24 @@ export function QuestionnaireResume() {
 
       <QuestionnaireItem name="notes">
         <QuestionnaireTitle>
-          Anything else the agent should remember?
+          エージェントが覚えておくべきことは他にありますか？
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          This note was saved with the draft.
+          このメモは下書きと一緒に保存されました。
         </QuestionnaireDescription>
         <QuestionnaireInput
-          aria-label="Saved migration note"
-          defaultValue="Keep the existing public API stable."
+          aria-label="保存された移行メモ"
+          defaultValue="既存の公開APIの安定性を保ってください。"
         />
       </QuestionnaireItem>
 
       <QuestionnaireActions>
         <Button type="reset" variant="outline">
-          Reset changes
+          変更をリセット
         </Button>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Update draft</QuestionnaireSubmit>
+        <QuestionnaireNext>次へ</QuestionnaireNext>
+        <QuestionnaireSubmit>下書きを更新</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

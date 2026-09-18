@@ -1,19 +1,19 @@
 ---
-title: Spinner
-description: An indicator that can be used to show a loading state.
+title: スピナー
+description: 読み込み状態を示すために使用できるインジケーター。
 base: aria
 component: true
 ---
 
 <ComponentPreview styleName="aria-nova" name="spinner-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,7 +27,7 @@ npx shadcn@latest add spinner
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="spinner"
@@ -35,7 +35,7 @@ npx shadcn@latest add spinner
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add spinner
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import { Spinner } from "@/components/ui/spinner"
@@ -53,9 +53,9 @@ import { Spinner } from "@/components/ui/spinner"
 <Spinner />
 ```
 
-## Customization
+## カスタマイズ
 
-You can replace the default spinner icon with any other icon by editing the `Spinner` component.
+について `Spinner` コンポーネントを編集すると、デフォルトのスピナー アイコンを他のアイコンに置き換えることができます。
 
 <ComponentPreview styleName="aria-nova" name="spinner-custom" />
 
@@ -77,34 +77,34 @@ function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
 export { Spinner }
 ```
 
-## Size
+## サイズ
 
-Use the `size-*` utility class to change the size of the spinner.
+スピナーのサイズを変更するには、`size-*` ユーティリティ クラスを使用します。
 
 <ComponentPreview styleName="aria-nova" name="spinner-size" />
 
-## Button
+## ボタン
 
-Add a spinner to a button to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
+読み込み状態を示すスピナーをボタンに追加します。 `<Spinner />` を開始位置として `data-icon="inline-start"` を指定してラベルの前に配置するか、終了位置として `data-icon="inline-end"` を指定してラベルの後に配置します。
 
 <ComponentPreview styleName="aria-nova" name="spinner-button" />
 
-## Badge
+## バッジ
 
-Add a spinner to a badge to indicate a loading state. Place the `<Spinner />` before the label with `data-icon="inline-start"` for a start position, or after the label with `data-icon="inline-end"` for an end position.
+バッジにスピナーを追加して、読み込み状態を示します。 `<Spinner />` を開始位置として `data-icon="inline-start"` を指定してラベルの前に配置するか、終了位置として `data-icon="inline-end"` を指定してラベルの後に配置します。
 
 <ComponentPreview styleName="aria-nova" name="spinner-badge" />
 
-## Input Group
+## 入力グループ
 
 <ComponentPreview styleName="aria-nova" name="spinner-input-group" />
 
-## Empty
+## 空の
 
 <ComponentPreview styleName="aria-nova" name="spinner-empty" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="spinner-rtl" direction="rtl" />

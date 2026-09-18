@@ -1,6 +1,6 @@
 ---
-title: Menubar
-description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+title: メニューバー
+description: デスクトップ アプリケーションに共通する視覚的に永続的なメニューで、一貫したコマンド セットへの素早いアクセスを提供します。
 base: base
 component: true
 links:
@@ -10,13 +10,13 @@ links:
 
 <ComponentPreview styleName="base-nova" name="menubar-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -30,13 +30,13 @@ npx shadcn@latest add menubar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>にはなりません。 次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="menubar"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -52,7 +52,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -88,7 +88,7 @@ import {
 </Menubar>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Menubar`:
 
@@ -128,21 +128,21 @@ Menubar
             └── MenubarItem
 ```
 
-## Checkbox
+## チェックボックス
 
 Use `MenubarCheckboxItem` for toggleable options.
 
 <ComponentPreview styleName="base-nova" name="menubar-checkbox" />
 
-## Radio
+## ラジオ
 
-Use `MenubarRadioGroup` and `MenubarRadioItem` for single-select options.
+単一選択オプションには `MenubarRadioGroup` および `MenubarRadioItem` を使用します。
 
 <ComponentPreview styleName="base-nova" name="menubar-radio" />
 
-## Submenu
+## サブメニュー
 
-Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
+ネストされたメニューには `MenubarSub`、`MenubarSubTrigger`、および `MenubarSubContent` を使用します。
 
 <ComponentPreview styleName="base-nova" name="menubar-submenu" />
 
@@ -152,10 +152,10 @@ Use `MenubarSub`, `MenubarSubTrigger`, and `MenubarSubContent` for nested menus.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="menubar-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-See the [Base UI Menubar](https://base-ui.com/react/components/menubar#api-reference) documentation.
+[ベース UI メニューバー](https://base-ui.com/react/components/menubar#api-reference) ドキュメントを参照してください。

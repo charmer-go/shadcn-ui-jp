@@ -13,7 +13,7 @@ import {
   AvatarGroup,
   AvatarGroupCount,
   AvatarImage,
-} from "@/styles/base-nova/ui-rtl/avatar"
+} from "@/components/ui/base/avatar"
 
 const translations: Translations = {
   en: {

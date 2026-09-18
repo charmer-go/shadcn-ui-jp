@@ -10,15 +10,15 @@ import {
 import { parseDate as parseNaturalLanguage } from "chrono-node"
 import { CalendarIcon } from "lucide-react"
 
-import { Calendar } from "@/styles/aria-nova/ui/calendar"
-import { Field, FieldLabel } from "@/styles/aria-nova/ui/field"
+import { Calendar } from "@/components/ui/aria/calendar"
+import { Field, FieldLabel } from "@/components/ui/aria/field"
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Popover, PopoverTrigger } from "@/styles/aria-nova/ui/popover"
+} from "@/components/ui/aria/input-group"
+import { Popover, PopoverTrigger } from "@/components/ui/aria/popover"
 
 function parseDate(value: string) {
   const date = parseNaturalLanguage(value)
@@ -47,7 +47,7 @@ export function DatePickerNaturalLanguage() {
 
   return (
     <Field className="mx-auto max-w-xs">
-      <FieldLabel htmlFor="date-optional">Schedule Date</FieldLabel>
+      <FieldLabel htmlFor="date-optional">予定日</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-optional"
@@ -73,10 +73,10 @@ export function DatePickerNaturalLanguage() {
               id="date-picker"
               variant="ghost"
               size="icon-xs"
-              aria-label="Select date"
+              aria-label="日付を選択"
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">日付を選択</span>
             </InputGroupButton>
             <Popover
               className="w-auto overflow-hidden p-0"
@@ -97,8 +97,8 @@ export function DatePickerNaturalLanguage() {
         </InputGroupAddon>
       </InputGroup>
       <div className="px-1 text-sm text-muted-foreground">
-        Your post will be published on{" "}
-        <span className="font-medium">{formatDate(date)}</span>.
+        投稿は
+        <span className="font-medium">{formatDate(date)}</span>に公開されます。
       </div>
     </Field>
   )

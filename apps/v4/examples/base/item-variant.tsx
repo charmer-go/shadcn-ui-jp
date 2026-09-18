@@ -6,7 +6,7 @@ import {
   ItemDescription,
   ItemMedia,
   ItemTitle,
-} from "@/styles/base-nova/ui/item"
+} from "@/components/ui/base/item"
 
 export function ItemVariant() {
   return (
@@ -16,9 +16,9 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Default Variant</ItemTitle>
+          <ItemTitle>デフォルトバリアント</ItemTitle>
           <ItemDescription>
-            Transparent background with no border.
+            背景が透明でボーダーのないスタイルです。
           </ItemDescription>
         </ItemContent>
       </Item>
@@ -27,9 +27,9 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Outline Variant</ItemTitle>
+          <ItemTitle>アウトラインバリアント</ItemTitle>
           <ItemDescription>
-            Outlined style with a visible border.
+            ボーダーが表示されるアウトラインスタイルです。
           </ItemDescription>
         </ItemContent>
       </Item>
@@ -38,9 +38,9 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Muted Variant</ItemTitle>
+          <ItemTitle>ミューテッドバリアント</ItemTitle>
           <ItemDescription>
-            Muted background for secondary content.
+            副次的なコンテンツ向けのミュートされた背景です。
           </ItemDescription>
         </ItemContent>
       </Item>

@@ -1,16 +1,16 @@
 ---
-title: April 2026 - Pointer Cursor
-description: Add cursor pointer behavior for buttons during project setup.
+title: 2026 年 4 月 - ポインター カーソル
+description: プロジェクトのセットアップ中にボタンのカーソル ポインターの動作を追加します。
 date: 2026-04-25
 ---
 
-You can now enable `cursor: pointer` for buttons when initializing a project.
+プロジェクトの初期化時にボタンの `cursor: pointer` を有効にできるようになりました。
 
 ```bash
 npx shadcn@latest init --pointer
 ```
 
-This adds the following CSS to your global CSS file:
+これにより、次の CSS がグローバル CSS ファイルに追加されます。
 
 ```css title="globals.css"
 @layer base {
@@ -21,4 +21,4 @@ This adds the following CSS to your global CSS file:
 }
 ```
 
-The `--pointer` option is not part of preset codes. It is applied as a project setup option, similar to `--rtl`.
+`--pointer` オプションは、プリセット コードの一部ではありません。これは、`--rtl` と同様に、プロジェクト セットアップ オプションとして適用されます。

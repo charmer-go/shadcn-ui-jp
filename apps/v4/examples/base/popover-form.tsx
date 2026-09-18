@@ -1,6 +1,6 @@
-import { Button } from "@/styles/base-nova/ui/button"
-import { Field, FieldGroup, FieldLabel } from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/components/ui/base/button"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 import {
   Popover,
   PopoverContent,
@@ -8,32 +8,32 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/styles/base-nova/ui/popover"
+} from "@/components/ui/base/popover"
 
 export function PopoverForm() {
   return (
     <>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" />}>
-          Open Popover
+          ポップオーバーを開く
         </PopoverTrigger>
         <PopoverContent className="w-64" align="start">
           <PopoverHeader>
-            <PopoverTitle>Dimensions</PopoverTitle>
+            <PopoverTitle>寸法</PopoverTitle>
             <PopoverDescription>
-              Set the dimensions for the layer.
+              レイヤーの寸法を設定します。
             </PopoverDescription>
           </PopoverHeader>
           <FieldGroup className="gap-4">
             <Field orientation="horizontal">
               <FieldLabel htmlFor="width" className="w-1/2">
-                Width
+                幅
               </FieldLabel>
               <Input id="width" defaultValue="100%" />
             </Field>
             <Field orientation="horizontal">
               <FieldLabel htmlFor="height" className="w-1/2">
-                Height
+                高さ
               </FieldLabel>
               <Input id="height" defaultValue="25px" />
             </Field>

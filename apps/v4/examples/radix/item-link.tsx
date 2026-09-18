@@ -6,7 +6,7 @@ import {
   ItemContent,
   ItemDescription,
   ItemTitle,
-} from "@/styles/radix-nova/ui/item"
+} from "@/components/ui/radix/item"
 
 export function ItemLink() {
   return (
@@ -14,9 +14,9 @@ export function ItemLink() {
       <Item asChild>
         <a href="#">
           <ItemContent>
-            <ItemTitle>Visit our documentation</ItemTitle>
+            <ItemTitle>ドキュメントを見る</ItemTitle>
             <ItemDescription>
-              Learn how to get started with our components.
+              コンポーネントの使い方を学びましょう。
             </ItemDescription>
           </ItemContent>
           <ItemActions>
@@ -27,9 +27,9 @@ export function ItemLink() {
       <Item variant="outline" asChild>
         <a href="#" target="_blank" rel="noopener noreferrer">
           <ItemContent>
-            <ItemTitle>External resource</ItemTitle>
+            <ItemTitle>外部リソース</ItemTitle>
             <ItemDescription>
-              Opens in a new tab with security attributes.
+              セキュリティ属性を設定して新しいタブで開きます。
             </ItemDescription>
           </ItemContent>
           <ItemActions>

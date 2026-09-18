@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,25 +11,25 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function DropdownMenuSubmenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Open</Button>
+        <Button variant="outline">開く</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>チーム</DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>ユーザーを招待</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
+                <DropdownMenuItem>メール</DropdownMenuItem>
+                <DropdownMenuItem>メッセージ</DropdownMenuItem>
                 <DropdownMenuSub>
-                  <DropdownMenuSubTrigger>More options</DropdownMenuSubTrigger>
+                  <DropdownMenuSubTrigger>その他のオプション</DropdownMenuSubTrigger>
                   <DropdownMenuPortal>
                     <DropdownMenuSubContent>
                       <DropdownMenuItem>Calendly</DropdownMenuItem>
@@ -40,12 +40,12 @@ export function DropdownMenuSubmenu() {
                   </DropdownMenuPortal>
                 </DropdownMenuSub>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Advanced...</DropdownMenuItem>
+                <DropdownMenuItem>詳細設定...</DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
           <DropdownMenuItem>
-            New Team
+            新規チーム
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

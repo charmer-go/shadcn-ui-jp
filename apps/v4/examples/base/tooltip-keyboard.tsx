@@ -1,12 +1,12 @@
 import { SaveIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-nova/ui/button"
-import { Kbd } from "@/styles/base-nova/ui/kbd"
+import { Button } from "@/components/ui/base/button"
+import { Kbd } from "@/components/ui/base/kbd"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/styles/base-nova/ui/tooltip"
+} from "@/components/ui/base/tooltip"
 
 export function TooltipKeyboard() {
   return (
@@ -15,7 +15,7 @@ export function TooltipKeyboard() {
         <SaveIcon />
       </TooltipTrigger>
       <TooltipContent>
-        Save Changes <Kbd>S</Kbd>
+        変更を保存 <Kbd>S</Kbd>
       </TooltipContent>
     </Tooltip>
   )

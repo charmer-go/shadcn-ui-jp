@@ -1,38 +1,38 @@
 ---
-title: February 2026 - Unified Radix UI Package
-description: The new-york style now uses the unified radix-ui package.
+title: 2026 年 2 月 - Unified Radix UI パッケージ
+description: new-york スタイルでは、統合された radix-ui パッケージが使用されるようになりました。
 date: 2026-02-02
 ---
 
-The `new-york` style now uses the unified `radix-ui` package instead of individual `@radix-ui/react-*` packages.
+`new-york` スタイルは、個別の `@radix-ui/react-*` パッケージではなく、統合された `radix-ui` パッケージを使用するようになりました。
 
-### What's Changed
+### 何が変わったのか
 
-When you add components using the `new-york` style, they will now import from `radix-ui` instead of separate packages:
+`new-york` スタイルを使用してコンポーネントを追加すると、個別のパッケージではなく `radix-ui` からインポートされるようになります。
 
 ```diff title="components/ui/dialog.tsx"
 - import * as DialogPrimitive from "@radix-ui/react-dialog"
 + import { Dialog as DialogPrimitive } from "radix-ui"
 ```
 
-This results in a cleaner `package.json` with a single `radix-ui` dependency instead of multiple `@radix-ui/react-*` packages.
+これにより、複数の `@radix-ui/react-*` パッケージではなく、単一の `radix-ui` 依存関係を持つ、よりクリーンな `package.json` が作成されます。
 
-### Migrating Existing Projects
+### 既存のプロジェクトの移行
 
-If you have an existing project using the `new-york` style, you can migrate to the new `radix-ui` package using the migrate command:
+`new-york` スタイルを使用する既存のプロジェクトがある場合は、移行コマンドを使用して新しい `radix-ui` パッケージに移行できます。
 
 ```bash
 npx shadcn@latest migrate radix
 ```
 
-This will update all imports in your UI components and add `radix-ui` to your dependencies.
+これにより、UI コンポーネント内のすべてのインポートが更新され、`radix-ui` が依存関係に追加されます。
 
-To migrate components outside of your `ui` directory, use the `path` argument:
+`ui` ディレクトリの外にコンポーネントを移行するには、`path` 引数を使用します。
 
 ```bash
 npx shadcn@latest migrate radix src/components/custom
 ```
 
-Once complete, you can remove any unused `@radix-ui/react-*` packages from your `package.json`.
+完了したら、未使用の `@radix-ui/react-*` パッケージを `package.json` から削除できます。
 
-See the [migrate radix documentation](/docs/cli#migrate-radix) for more details.
+詳細については、[migrate radix ドキュメント](/docs/cli#merge-radix) を参照してください。

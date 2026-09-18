@@ -3,26 +3,26 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/styles/radix-nova/ui/accordion"
+} from "@/components/ui/radix/accordion"
 
 const items = [
   {
     value: "billing",
-    trigger: "How does billing work?",
+    trigger: "請求はどのように行われますか？",
     content:
-      "We offer monthly and annual subscription plans. Billing is charged at the beginning of each cycle, and you can cancel anytime. All plans include automatic backups, 24/7 support, and unlimited team members.",
+      "月額プランと年額プランをご用意しています。請求は各サイクルの開始時に行われ、いつでも解約できます。すべてのプランに自動バックアップ、24時間365日のサポート、チームメンバー数無制限が含まれます。",
   },
   {
     value: "security",
-    trigger: "Is my data secure?",
+    trigger: "データは安全に保護されていますか？",
     content:
-      "Yes. We use end-to-end encryption, SOC 2 Type II compliance, and regular third-party security audits. All data is encrypted at rest and in transit using industry-standard protocols.",
+      "はい。エンドツーエンド暗号化、SOC 2 Type IIへの準拠、定期的な第三者によるセキュリティ監査を実施しています。すべてのデータは業界標準のプロトコルを使用し、保存時および通信時に暗号化されます。",
   },
   {
     value: "integration",
-    trigger: "What integrations do you support?",
+    trigger: "どのような連携に対応していますか？",
     content:
-      "We integrate with 500+ popular tools including Slack, Zapier, Salesforce, HubSpot, and more. You can also build custom integrations using our REST API and webhooks.",
+      "Slack、Zapier、Salesforce、HubSpotなど、500以上の人気ツールと連携しています。REST APIとWebhookを使用して、独自の連携を構築することもできます。",
   },
 ]
 

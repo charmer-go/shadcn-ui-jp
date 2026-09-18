@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Building2Icon, CreditCardIcon, WalletIcon } from "lucide-react"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +12,7 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "@/styles/radix-nova/ui/dropdown-menu"
+} from "@/components/ui/radix/dropdown-menu"
 
 export function DropdownMenuRadioIcons() {
   const [paymentMethod, setPaymentMethod] = React.useState("card")
@@ -20,18 +20,18 @@ export function DropdownMenuRadioIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">Payment Method</Button>
+        <Button variant="outline">支払い方法</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-56">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Select Payment Method</DropdownMenuLabel>
+          <DropdownMenuLabel>支払い方法を選択</DropdownMenuLabel>
           <DropdownMenuRadioGroup
             value={paymentMethod}
             onValueChange={setPaymentMethod}
           >
             <DropdownMenuRadioItem value="card">
               <CreditCardIcon />
-              Credit Card
+              クレジットカード
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="paypal">
               <WalletIcon />
@@ -39,7 +39,7 @@ export function DropdownMenuRadioIcons() {
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="bank">
               <Building2Icon />
-              Bank Transfer
+              銀行振込
             </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuGroup>

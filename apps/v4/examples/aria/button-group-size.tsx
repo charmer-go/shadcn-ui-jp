@@ -1,42 +1,42 @@
 import { PlusIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { ButtonGroup } from "@/styles/aria-nova/ui/button-group"
+import { Button } from "@/components/ui/aria/button"
+import { ButtonGroup } from "@/components/ui/aria/button-group"
 
 export default function ButtonGroupSize() {
   return (
     <div className="flex flex-col items-start gap-8">
       <ButtonGroup>
         <Button variant="outline" size="sm">
-          Small
+          小
         </Button>
         <Button variant="outline" size="sm">
-          Button
+          ボタン
         </Button>
         <Button variant="outline" size="sm">
-          Group
+          グループ
         </Button>
         <Button variant="outline" size="icon-sm">
           <PlusIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Default</Button>
-        <Button variant="outline">Button</Button>
-        <Button variant="outline">Group</Button>
+        <Button variant="outline">標準</Button>
+        <Button variant="outline">ボタン</Button>
+        <Button variant="outline">グループ</Button>
         <Button variant="outline" size="icon">
           <PlusIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
         <Button variant="outline" size="lg">
-          Large
+          大
         </Button>
         <Button variant="outline" size="lg">
-          Button
+          ボタン
         </Button>
         <Button variant="outline" size="lg">
-          Group
+          グループ
         </Button>
         <Button variant="outline" size="icon-lg">
           <PlusIcon />

@@ -8,7 +8,7 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/radix-nova/ui/field"
+} from "@/components/ui/radix/field"
 import {
   Select,
   SelectContent,
@@ -16,8 +16,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/styles/radix-nova/ui/select"
-import { Switch } from "@/styles/radix-nova/ui/switch"
+} from "@/components/ui/radix/select"
+import { Switch } from "@/components/ui/radix/switch"
 
 export function SelectAlignItem() {
   const [alignItemWithTrigger, setAlignItemWithTrigger] = React.useState(true)
@@ -26,9 +26,9 @@ export function SelectAlignItem() {
     <FieldGroup className="w-full max-w-xs">
       <Field orientation="horizontal">
         <FieldContent>
-          <FieldLabel htmlFor="align-item">Align Item</FieldLabel>
+          <FieldLabel htmlFor="align-item">アイテムの位置揃え</FieldLabel>
           <FieldDescription>
-            Toggle to align the item with the trigger.
+            トリガーに合わせてアイテムの位置を揃えます。
           </FieldDescription>
         </FieldContent>
         <Switch
@@ -46,11 +46,11 @@ export function SelectAlignItem() {
             position={alignItemWithTrigger ? "item-aligned" : "popper"}
           >
             <SelectGroup>
-              <SelectItem value="apple">Apple</SelectItem>
-              <SelectItem value="banana">Banana</SelectItem>
-              <SelectItem value="blueberry">Blueberry</SelectItem>
-              <SelectItem value="grapes">Grapes</SelectItem>
-              <SelectItem value="pineapple">Pineapple</SelectItem>
+              <SelectItem value="apple">リンゴ</SelectItem>
+              <SelectItem value="banana">バナナ</SelectItem>
+              <SelectItem value="blueberry">ブルーベリー</SelectItem>
+              <SelectItem value="grapes">ぶどう</SelectItem>
+              <SelectItem value="pineapple">パイナップル</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>

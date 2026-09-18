@@ -1,5 +1,5 @@
-import { Checkbox } from "@/styles/radix-nova/ui/checkbox"
-import { Field, FieldGroup, FieldLabel } from "@/styles/radix-nova/ui/field"
+import { Checkbox } from "@/components/ui/radix/checkbox"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/radix/field"
 
 export function CheckboxBasic() {
   return (
@@ -7,7 +7,7 @@ export function CheckboxBasic() {
       <Field orientation="horizontal">
         <Checkbox id="terms-checkbox-basic" name="terms-checkbox-basic" />
         <FieldLabel htmlFor="terms-checkbox-basic">
-          Accept terms and conditions
+          利用規約に同意する
         </FieldLabel>
       </Field>
     </FieldGroup>

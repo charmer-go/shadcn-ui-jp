@@ -1,23 +1,23 @@
 ---
-title: Authentication
-description: Secure your registry with authentication for private and personalized components.
+title: 認証
+description: プライベートでパーソナライズされたコンポーネントのために、レジストリを認証で保護します。
 ---
 
-Authentication lets you run private registries, control who can access your components, and give different teams or users different content. This guide shows common authentication patterns and how to set them up.
+認証を利用すると、プライベートレジストリを運用したり、コンポーネントへのアクセスを制御したり、チームやユーザーごとに異なるコンテンツを提供したりできます。このガイドでは、一般的な認証パターンとその設定方法を紹介します。
 
-Authentication enables these use cases:
+認証によって、以下のユースケースが実現できます。
 
-- **Private Components**: Keep your business logic and internal components secure
-- **Team-Specific Resources**: Give different teams different components
-- **Access Control**: Limit who can see sensitive or experimental components
-- **Usage Analytics**: See who's using which components in your organization
-- **Licensing**: Control who gets premium or licensed components
+- **プライベートコンポーネント**: ビジネスロジックや社内コンポーネントを安全に保ちます
+- **チーム固有のリソース**: チームごとに異なるコンポーネントを提供します
+- **アクセス制御**: 機密性の高いコンポーネントや実験的なコンポーネントを閲覧できる人を制限します
+- **利用状況の分析**: 組織内で誰がどのコンポーネントを使っているかを把握します
+- **ライセンス管理**: プレミアムまたはライセンス付きコンポーネントの配布先を制御します
 
-## Common Authentication Patterns
+## 一般的な認証パターン
 
-### Token-Based Authentication
+### トークンベースの認証
 
-The most common approach uses Bearer tokens or API keys:
+最も一般的な方法は、BearerトークンやAPIキーを使用する方法です。
 
 ```json title="components.json"
 {
@@ -32,15 +32,15 @@ The most common approach uses Bearer tokens or API keys:
 }
 ```
 
-Set your token in environment variables:
+トークンは環境変数に設定します。
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_secret_token_here
 ```
 
-### API Key Authentication
+### APIキー認証
 
-Some registries use API keys in headers:
+レジストリによっては、ヘッダーでAPIキーを使用します。
 
 ```json title="components.json"
 {
@@ -56,9 +56,9 @@ Some registries use API keys in headers:
 }
 ```
 
-### Query Parameter Authentication
+### クエリパラメーター認証
 
-For simpler setups, use query parameters:
+よりシンプルな構成では、クエリパラメーターを使用します。
 
 ```json title="components.json"
 {
@@ -73,13 +73,13 @@ For simpler setups, use query parameters:
 }
 ```
 
-This creates: `https://registry.company.com/button.json?token=your_token`
+この設定では、次のURLが生成されます。`https://registry.company.com/button.json?token=your_token`
 
-## Server-Side Implementation
+## サーバー側の実装
 
-Here's how to add authentication to your registry server:
+レジストリサーバーに認証を追加する方法は次のとおりです。
 
-### Next.js API Route Example
+### Next.js APIルートの例
 
 ```typescript title="app/api/registry/[name]/route.ts"
 import { NextRequest, NextResponse } from "next/server"
@@ -123,7 +123,7 @@ function hasAccessToComponent(token: string, componentName: string) {
 }
 ```
 
-### Express.js Example
+### Express.jsの例
 
 ```javascript title="server.js"
 app.get("/registry/:name.json", (req, res) => {
@@ -142,11 +142,11 @@ app.get("/registry/:name.json", (req, res) => {
 })
 ```
 
-## Advanced Authentication Patterns
+## 高度な認証パターン
 
-### Team-Based Access
+### チームベースのアクセス
 
-Give different teams different components:
+チームごとに異なるコンポーネントを提供します。
 
 ```typescript title="api/registry/route.ts"
 async function GET(request: NextRequest) {
@@ -159,9 +159,9 @@ async function GET(request: NextRequest) {
 }
 ```
 
-### User-Personalized Registries
+### ユーザーごとにパーソナライズされたレジストリ
 
-Give users components based on their preferences:
+ユーザーの設定に基づいてコンポーネントを提供します。
 
 ```typescript
 async function GET(request: NextRequest) {
@@ -177,9 +177,9 @@ async function GET(request: NextRequest) {
 }
 ```
 
-### Temporary Access Tokens
+### 一時アクセストークン
 
-Use expiring tokens for better security:
+有効期限付きのトークンを使うと、セキュリティが向上します。
 
 ```typescript
 interface TemporaryToken {
@@ -198,9 +198,9 @@ async function validateTemporaryToken(token: string) {
 }
 ```
 
-## Multi-Registry Authentication
+## マルチレジストリ認証
 
-With [namespaced registries](/docs/registry/namespace), you can set up multiple registries with different authentication:
+[名前空間付きレジストリ](/docs/registry/namespace)を使うと、認証方法の異なる複数のレジストリを設定できます。
 
 ```json title="components.json"
 {
@@ -222,24 +222,24 @@ With [namespaced registries](/docs/registry/namespace), you can set up multiple 
 }
 ```
 
-This lets you:
+この構成では、次のことが可能です。
 
-- Mix public and private registries
-- Use different authentication per registry
-- Organize components by access level
+- パブリックレジストリとプライベートレジストリを混在させます
+- レジストリごとに異なる認証を使用します
+- アクセスレベルごとにコンポーネントを整理します
 
-## Security Best Practices
+## セキュリティのベストプラクティス
 
-### Use Environment Variables
+### 環境変数を使用する
 
-Never commit tokens to version control. Always use environment variables:
+トークンをバージョン管理にコミットしないでください。必ず環境変数を使用します。
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_secret_token_here
 API_KEY=your_api_key_here
 ```
 
-Then reference them in `components.json`:
+`components.json` では、次のように参照します。
 
 ```json
 {
@@ -254,9 +254,9 @@ Then reference them in `components.json`:
 }
 ```
 
-### Use HTTPS
+### HTTPSを使用する
 
-Always use HTTPS URLs for registries to protect your tokens in transit:
+転送中のトークンを保護するため、レジストリには必ずHTTPSのURLを使用します。
 
 ```json
 {
@@ -265,9 +265,9 @@ Always use HTTPS URLs for registries to protect your tokens in transit:
 }
 ```
 
-### Add Rate Limiting
+### レート制限を追加する
 
-Protect your registry from abuse:
+レジストリを不正利用から保護します。
 
 ```typescript
 import rateLimit from "express-rate-limit"
@@ -280,9 +280,9 @@ const limiter = rateLimit({
 app.use("/registry", limiter)
 ```
 
-### Rotate Tokens
+### トークンをローテーションする
 
-Change access tokens regularly:
+アクセストークンは定期的に変更します。
 
 ```typescript
 // Create new token with expiration.
@@ -294,9 +294,9 @@ function generateToken() {
 }
 ```
 
-### Log Access
+### アクセスをログに記録する
 
-Track registry access for security and analytics:
+セキュリティと分析のために、レジストリへのアクセスを記録します。
 
 ```typescript
 async function logAccess(request: Request, component: string, userId: string) {
@@ -310,9 +310,9 @@ async function logAccess(request: Request, component: string, userId: string) {
 }
 ```
 
-## Testing Authentication
+## 認証のテスト
 
-Test your authenticated registry locally:
+認証付きレジストリをローカルでテストします。
 
 ```bash
 # Test with curl.
@@ -323,17 +323,17 @@ curl -H "Authorization: Bearer your_token" \
 REGISTRY_TOKEN=your_token npx shadcn@latest add @private/button
 ```
 
-## Error Handling
+## エラー処理
 
-The shadcn CLI handles authentication errors gracefully:
+shadcn CLIは認証エラーを適切に処理します。
 
-- **401 Unauthorized**: Token is invalid or missing
-- **403 Forbidden**: Token lacks permission for this resource
-- **429 Too Many Requests**: Rate limit exceeded
+- **401 Unauthorized**: トークンが無効か、不足しています
+- **403 Forbidden**: このリソースに対するトークンの権限が不足しています
+- **429 Too Many Requests**: レート制限を超過しました
 
-### Custom Error Messages
+### カスタムエラーメッセージ
 
-Your registry server can return custom error messages in the response body, and the CLI will display them to users:
+レジストリサーバーはレスポンスボディにカスタムエラーメッセージを返すことができ、CLIはそれをユーザーに表示します。
 
 ```typescript
 // Registry server returns custom error
@@ -347,13 +347,13 @@ return NextResponse.json(
 )
 ```
 
-The user will see:
+ユーザーには次のように表示されます。
 
 ```txt
 Your subscription has expired. Please renew at company.com/billing
 ```
 
-This helps provide context-specific guidance:
+この仕組みを使うと、状況に応じたガイダンスを提供できます。
 
 ```typescript
 // Different error messages for different scenarios
@@ -389,11 +389,11 @@ if (!hasTeamAccess(token, component)) {
 }
 ```
 
-## Next Steps
+## 次のステップ
 
-To set up authentication with multiple registries and advanced patterns, see the [Namespaced Registries](/docs/registry/namespace) documentation. It covers:
+複数のレジストリでの認証設定や高度なパターンを利用するには、[名前空間付きレジストリ](/docs/registry/namespace)のドキュメントを参照してください。以下の内容が解説されています。
 
-- Setting up multiple authenticated registries
-- Using different authentication per namespace
-- Cross-registry dependency resolution
-- Advanced authentication patterns
+- 複数の認証付きレジストリを設定する方法
+- 名前空間ごとに異なる認証を使用する方法
+- レジストリをまたいだ依存関係の解決
+- 高度な認証パターン

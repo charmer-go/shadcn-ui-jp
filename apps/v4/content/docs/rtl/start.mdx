@@ -1,27 +1,27 @@
 ---
 title: TanStack Start
-description: Create a new TanStack Start project with RTL support.
+description: RTL サポートを備えた新しい TanStack Start プロジェクトを作成します。
 ---
 
 <Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
 
-**Starting a new project?** Use [shadcn/create](/create?template=start&base=base&rtl=true) for a fully configured TanStack Start app with custom themes, Base UI or Radix, and icon libraries.
+**新しいプロジェクトを始めますか？** カスタム テーマ、Base UI または Radix、アイコン ライブラリを備えた完全構成済みの TanStack Start アプリには、[shadcn/create](/create?template=start&base=base&rtl=true) を使います。
 
 </Callout>
 
 <Steps>
 
-### Create Project
+### プロジェクトの作成
 
-Create a new project using the `--rtl` flag and the `start` template.
+`--rtl` フラグと `start` テンプレートを使用して、新しいプロジェクトを作成します。
 
-**You can skip this step if you have already created a project using [shadcn/create](/create?template=start&base=base&rtl=true).**
+**[shadcn/create](/create?template=start&base=base&rtl=true) を使ってプロジェクトを作成済みの場合、この手順は省略できます。**
 
 ```bash
 npx shadcn@latest create --template start --rtl
 ```
 
-This will create a `components.json` file with the `rtl: true` flag.
+これにより、`rtl: true` フラグを持つ `components.json` ファイルが作成されます。
 
 ```json title="components.json" showLineNumbers {4}
 {
@@ -31,11 +31,11 @@ This will create a `components.json` file with the `rtl: true` flag.
 }
 ```
 
-### Add DirectionProvider
+### DirectionProvider を追加
 
-Add the `dir="rtl"` and `lang="ar"` attributes to the `html` tag. Update `lang="ar"` to your target language.
+`dir="rtl"` 属性と `lang="ar"` 属性を `html` タグに追加します。 `lang="ar"` をターゲット言語に更新します。
 
-Then wrap your app with the `DirectionProvider` component with the `direction="rtl"` prop in your `__root.tsx`:
+次に、`__root.tsx` で `direction="rtl"` prop を持つ `DirectionProvider` コンポーネントでアプリをラップします。
 
 ```tsx title="src/routes/__root.tsx" showLineNumbers {1,9,14-16}
 import { DirectionProvider } from "@/components/ui/direction"
@@ -59,17 +59,17 @@ function RootComponent() {
 }
 ```
 
-### Add Font
+### フォントの追加
 
-For the best RTL experience, we recommend using fonts that have proper support for your target language. [Noto](https://fonts.google.com/noto) is a great font family for this and it pairs well with Inter and Geist.
+最適な RTL 体験のため、対象言語を適切にサポートするフォントの使用を推奨します。[Noto](https://fonts.google.com/noto) はこの用途に適したフォント ファミリーで、Inter や Geist ともよく合います。
 
-Install the font using [Fontsource](https://fontsource.org/fonts/noto-sans-arabic):
+[フォントソース](https://fontsource.org/fonts/noto-sans-arabic) を使用してフォントをインストールします。
 
 ```bash
 npm install @fontsource-variable/noto-sans-arabic
 ```
 
-Import the font in your `styles.css`:
+`styles.css` でフォントをインポートします。
 
 ```css title="src/styles.css" showLineNumbers {4,7}
 @import "tailwindcss";
@@ -82,11 +82,11 @@ Import the font in your `styles.css`:
 }
 ```
 
-For other languages, eg. Hebrew, you can use `@fontsource-variable/noto-sans-hebrew`.
+その他の言語、たとえばヘブライ語には `@fontsource-variable/noto-sans-hebrew` を使えます。
 
-### Add Components
+### コンポーネントの追加
 
-You are now ready to add components to your project. The CLI will take care of handling RTL support for you.
+これでプロジェクトにコンポーネントを追加する準備ができました。CLI が RTL サポートを処理します。
 
 ```bash
 npx shadcn@latest add item

@@ -1,5 +1,5 @@
 ---
-title: Dropdown Menu
+title: ドロップダウン メニュー
 description: Displays a menu to the user — such as a set of actions or functions — triggered by a button.
 featured: true
 base: radix
@@ -15,13 +15,13 @@ links:
   description="A dropdown menu with icons, shortcuts and sub menu items."
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -35,13 +35,13 @@ npx shadcn@latest add dropdown-menu
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install radix-ui
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="dropdown-menu"
@@ -49,7 +49,7 @@ npm install radix-ui
   styleName="radix-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -57,7 +57,7 @@ npm install radix-ui
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import { Button } from "@/components/ui/button"
@@ -92,9 +92,9 @@ import {
 </DropdownMenu>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `DropdownMenu`:
+次の構成を使用して `DropdownMenu` を構築します。
 
 ```text
 DropdownMenu
@@ -124,37 +124,37 @@ DropdownMenu
                 └── DropdownMenuItem
 ```
 
-## Basic
+## 基本
 
-A basic dropdown menu with labels and separators.
+ラベルと区切り文字を含む基本的なドロップダウン メニュー。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-basic" />
 
-## Submenu
+## サブメニュー
 
 Use `DropdownMenuSub` to nest secondary actions.
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-submenu" />
 
-## Shortcuts
+## ショートカット
 
-Add `DropdownMenuShortcut` to show keyboard hints.
+キーボードのヒントを表示するには `DropdownMenuShortcut` を追加します。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-shortcuts" />
 
-## Icons
+## アイコン
 
 Combine icons with labels for quick scanning.
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-icons" />
 
-## Checkboxes
+## チェックボックス
 
-Use `DropdownMenuCheckboxItem` for toggles.
+トグルには `DropdownMenuCheckboxItem` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-checkboxes" />
 
-## Checkboxes Icons
+## チェックボックス アイコン
 
 Add icons to checkbox items.
 
@@ -163,31 +163,31 @@ Add icons to checkbox items.
   name="dropdown-menu-checkboxes-icons"
 />
 
-## Radio Group
+## 無線グループ
 
-Use `DropdownMenuRadioGroup` for exclusive choices.
+排他的な選択には `DropdownMenuRadioGroup` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-radio-group" />
 
 ## Radio Icons
 
-Show radio options with icons.
+ラジオ オプションをアイコンで表示します。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-radio-icons" />
 
-## Destructive
+## 破壊的
 
-Use `variant="destructive"` for irreversible actions.
+不可逆的なアクションには `variant="destructive"` を使用します。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-destructive" />
 
-## Avatar
+## アバター
 
-An account switcher dropdown triggered by an avatar.
+アバターによってトリガーされるアカウント切り替えドロップダウン。
 
 <ComponentPreview styleName="radix-nova" name="dropdown-menu-avatar" />
 
-## Complex
+## 複合
 
 A richer example combining groups, icons, and submenus.
 
@@ -195,7 +195,7 @@ A richer example combining groups, icons, and submenus.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview
   styleName="radix-nova"
@@ -203,6 +203,6 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-## API Reference
+## API リファレンス
 
 See the [Radix UI documentation](https://www.radix-ui.com/docs/primitives/components/dropdown-menu) for the full API reference.

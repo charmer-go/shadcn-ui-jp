@@ -3,32 +3,27 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/styles/radix-nova/ui/accordion"
+} from "@/components/ui/radix/accordion"
 
 export default function AccordionDisabled() {
   return (
     <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
-        <AccordionTrigger>Can I access my account history?</AccordionTrigger>
+        <AccordionTrigger>アカウント履歴を確認できますか？</AccordionTrigger>
         <AccordionContent>
-          Yes, you can view your complete account history including all
-          transactions, plan changes, and support tickets in the Account History
-          section of your dashboard.
+          はい、ダッシュボードの「アカウント履歴」セクションで、取引履歴、プラン変更、サポートチケットを含むすべてのアカウント履歴を確認できます。
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2" disabled>
-        <AccordionTrigger>Premium feature information</AccordionTrigger>
+        <AccordionTrigger>プレミアム機能の情報</AccordionTrigger>
         <AccordionContent>
-          This section contains information about premium features. Upgrade your
-          plan to access this content.
+          このセクションにはプレミアム機能に関する情報が含まれています。この内容を利用するにはプランをアップグレードしてください。
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>How do I update my email address?</AccordionTrigger>
+        <AccordionTrigger>メールアドレスを変更するにはどうすればよいですか？</AccordionTrigger>
         <AccordionContent>
-          You can update your email address in your account settings.
-          You&apos;ll receive a verification email at your new address to
-          confirm the change.
+          アカウント設定でメールアドレスを変更できます。変更を確認するため、新しいメールアドレス宛に確認メールが送信されます。
         </AccordionContent>
       </AccordionItem>
     </Accordion>

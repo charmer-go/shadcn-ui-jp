@@ -1,4 +1,4 @@
-import { Checkbox } from "@/styles/base-nova/ui/checkbox"
+import { Checkbox } from "@/components/ui/base/checkbox"
 import {
   Field,
   FieldContent,
@@ -8,17 +8,17 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
-} from "@/styles/base-nova/ui/field"
+} from "@/components/ui/base/field"
 
 export function FieldCheckbox() {
   return (
     <FieldGroup className="w-full max-w-xs">
       <FieldSet>
         <FieldLegend variant="label">
-          Show these items on the desktop
+          デスクトップに表示する項目
         </FieldLegend>
         <FieldDescription>
-          Select the items you want to show on the desktop.
+          デスクトップに表示したい項目を選択してください。
         </FieldDescription>
         <FieldGroup className="gap-3">
           <Field orientation="horizontal">
@@ -28,7 +28,7 @@ export function FieldCheckbox() {
               className="font-normal"
               defaultChecked
             >
-              Hard disks
+              ハードディスク
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
@@ -37,7 +37,7 @@ export function FieldCheckbox() {
               htmlFor="finder-pref-9k2-external-disks-1yg"
               className="font-normal"
             >
-              External disks
+              外部ディスク
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
@@ -46,7 +46,7 @@ export function FieldCheckbox() {
               htmlFor="finder-pref-9k2-cds-dvds-fzt"
               className="font-normal"
             >
-              CDs, DVDs, and iPods
+              CD、DVD、iPod
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
@@ -55,7 +55,7 @@ export function FieldCheckbox() {
               htmlFor="finder-pref-9k2-connected-servers-6l2"
               className="font-normal"
             >
-              Connected servers
+              接続中のサーバ
             </FieldLabel>
           </Field>
         </FieldGroup>
@@ -65,11 +65,11 @@ export function FieldCheckbox() {
         <Checkbox id="finder-pref-9k2-sync-folders-nep" defaultChecked />
         <FieldContent>
           <FieldLabel htmlFor="finder-pref-9k2-sync-folders-nep">
-            Sync Desktop & Documents folders
+            デスクトップと書類フォルダを同期
           </FieldLabel>
           <FieldDescription>
-            Your Desktop & Documents folders are being synced with iCloud Drive.
-            You can access them from other devices.
+            デスクトップと書類フォルダはiCloud
+            Driveと同期されています。他のデバイスからもアクセスできます。
           </FieldDescription>
         </FieldContent>
       </Field>

@@ -4,33 +4,33 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "@/styles/radix-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/radix-nova/ui/radio-group"
+} from "@/components/ui/radix/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radix/radio-group"
 
 export function FieldRadio() {
   return (
     <FieldSet className="w-full max-w-xs">
-      <FieldLegend variant="label">Subscription Plan</FieldLegend>
+      <FieldLegend variant="label">サブスクリプションプラン</FieldLegend>
       <FieldDescription>
-        Yearly and lifetime plans offer significant savings.
+        年払い・生涯プランなら大幅にお得になります。
       </FieldDescription>
       <RadioGroup defaultValue="monthly">
         <Field orientation="horizontal">
           <RadioGroupItem value="monthly" id="plan-monthly" />
           <FieldLabel htmlFor="plan-monthly" className="font-normal">
-            Monthly ($9.99/month)
+            月払い（月額980円）
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
           <RadioGroupItem value="yearly" id="plan-yearly" />
           <FieldLabel htmlFor="plan-yearly" className="font-normal">
-            Yearly ($99.99/year)
+            年払い（年額9,800円）
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
           <RadioGroupItem value="lifetime" id="plan-lifetime" />
           <FieldLabel htmlFor="plan-lifetime" className="font-normal">
-            Lifetime ($299.99)
+            生涯プラン（29,800円）
           </FieldLabel>
         </Field>
       </RadioGroup>

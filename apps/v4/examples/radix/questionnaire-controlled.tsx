@@ -16,7 +16,7 @@ import {
   QuestionnaireProgress,
   QuestionnaireSubmit,
   QuestionnaireTitle,
-} from "@/styles/radix-nova/ui/questionnaire"
+} from "@/components/ui/radix/questionnaire"
 
 const items = [
   { name: "scope", required: true },
@@ -25,9 +25,9 @@ const items = [
 ] as const
 
 const itemLabels: Record<string, string> = {
-  scope: "Change scope",
-  checks: "Verification",
-  output: "Final output",
+  scope: "変更範囲",
+  checks: "検証",
+  output: "最終出力",
 }
 
 export function QuestionnaireControlled() {
@@ -38,8 +38,8 @@ export function QuestionnaireControlled() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Agent workflow configured", {
-      description: `Scope: ${formData.get("scope") ?? "None"} · Verification: ${formData.get("checks") ?? "None"} · Output: ${formData.get("output") ?? "None"}`,
+    toast("エージェントワークフローを設定しました", {
+      description: `範囲: ${formData.get("scope") ?? "なし"} ・ 検証: ${formData.get("checks") ?? "なし"} ・ 出力: ${formData.get("output") ?? "なし"}`,
     })
   }
 
@@ -49,7 +49,7 @@ export function QuestionnaireControlled() {
         className="absolute end-0 top-0 text-sm text-muted-foreground"
         role="status"
       >
-        Current checkpoint: {itemLabels[item]}
+        現在のチェックポイント: {itemLabels[item]}
       </p>
 
       <Questionnaire
@@ -62,19 +62,19 @@ export function QuestionnaireControlled() {
         <QuestionnaireProgress />
 
         <QuestionnaireItem name="scope" required>
-          <QuestionnaireTitle>What may the agent change?</QuestionnaireTitle>
+          <QuestionnaireTitle>エージェントは何を変更してよいですか？</QuestionnaireTitle>
           <QuestionnaireDescription>
-            The host stores the active checkpoint while Questionnaire navigates.
+            Questionnaireがナビゲートする間、ホストがアクティブなチェックポイントを保持します。
           </QuestionnaireDescription>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="component">
-              Only the target component
+              対象のコンポーネントのみ
             </QuestionnaireChoice>
             <QuestionnaireChoice value="tests">
-              Component and related tests
+              コンポーネントと関連テスト
             </QuestionnaireChoice>
             <QuestionnaireChoice value="feature">
-              The complete feature area
+              機能領域全体
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
@@ -82,17 +82,17 @@ export function QuestionnaireControlled() {
 
         <QuestionnaireItem name="checks" required>
           <QuestionnaireTitle>
-            Which verification level should it use?
+            どの検証レベルを使用すべきですか？
           </QuestionnaireTitle>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="targeted">
-              Targeted tests
+              対象を絞ったテスト
             </QuestionnaireChoice>
             <QuestionnaireChoice value="package">
-              Package tests and typecheck
+              パッケージテストと型チェック
             </QuestionnaireChoice>
             <QuestionnaireChoice value="full">
-              Full workspace verification
+              ワークスペース全体の検証
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
@@ -100,17 +100,17 @@ export function QuestionnaireControlled() {
 
         <QuestionnaireItem name="output" required>
           <QuestionnaireTitle>
-            What should the agent return when finished?
+            エージェントは完了時に何を返すべきですか？
           </QuestionnaireTitle>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="summary">
-              Concise summary
+              簡潔な要約
             </QuestionnaireChoice>
             <QuestionnaireChoice value="diff">
-              Summary with changed files
+              変更ファイル付きの要約
             </QuestionnaireChoice>
             <QuestionnaireChoice value="handoff">
-              Detailed implementation handoff
+              詳細な実装引き渡し
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
@@ -118,8 +118,8 @@ export function QuestionnaireControlled() {
 
         <QuestionnaireActions>
           <QuestionnairePrevious />
-          <QuestionnaireNext>Next</QuestionnaireNext>
-          <QuestionnaireSubmit>Save workflow</QuestionnaireSubmit>
+          <QuestionnaireNext>次へ</QuestionnaireNext>
+          <QuestionnaireSubmit>ワークフローを保存</QuestionnaireSubmit>
         </QuestionnaireActions>
       </Questionnaire>
     </div>

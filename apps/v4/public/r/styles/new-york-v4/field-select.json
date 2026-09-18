@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "field-select",
+  "registryDependencies": [
+    "field"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/field-select.tsx",
+      "content": "import {\r\n  Field,\r\n  FieldDescription,\r\n  FieldLabel,\r\n} from \"@/registry/new-york-v4/ui/field\"\r\nimport {\r\n  Select,\r\n  SelectContent,\r\n  SelectItem,\r\n  SelectTrigger,\r\n  SelectValue,\r\n} from \"@/registry/new-york-v4/ui/select\"\r\n\r\nexport default function FieldSelect() {\r\n  return (\r\n    <div className=\"w-full max-w-md\">\r\n      <Field>\r\n        <FieldLabel>Department</FieldLabel>\r\n        <Select>\r\n          <SelectTrigger>\r\n            <SelectValue placeholder=\"Choose department\" />\r\n          </SelectTrigger>\r\n          <SelectContent>\r\n            <SelectItem value=\"engineering\">Engineering</SelectItem>\r\n            <SelectItem value=\"design\">Design</SelectItem>\r\n            <SelectItem value=\"marketing\">Marketing</SelectItem>\r\n            <SelectItem value=\"sales\">Sales</SelectItem>\r\n            <SelectItem value=\"support\">Customer Support</SelectItem>\r\n            <SelectItem value=\"hr\">Human Resources</SelectItem>\r\n            <SelectItem value=\"finance\">Finance</SelectItem>\r\n            <SelectItem value=\"operations\">Operations</SelectItem>\r\n          </SelectContent>\r\n        </Select>\r\n        <FieldDescription>\r\n          Select your department or area of work.\r\n        </FieldDescription>\r\n      </Field>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

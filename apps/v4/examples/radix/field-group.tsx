@@ -1,4 +1,4 @@
-import { Checkbox } from "@/styles/radix-nova/ui/checkbox"
+import { Checkbox } from "@/components/ui/radix/checkbox"
 import {
   Field,
   FieldDescription,
@@ -6,44 +6,43 @@ import {
   FieldLabel,
   FieldSeparator,
   FieldSet,
-} from "@/styles/radix-nova/ui/field"
+} from "@/components/ui/radix/field"
 
 export default function FieldGroupExample() {
   return (
     <FieldGroup className="w-full max-w-xs">
       <FieldSet>
-        <FieldLabel>Responses</FieldLabel>
+        <FieldLabel>返信</FieldLabel>
         <FieldDescription>
-          Get notified when ChatGPT responds to requests that take time, like
-          research or image generation.
+          リサーチや画像生成など、時間のかかるリクエストにChatGPTが応答したときに通知を受け取ります。
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
             <Checkbox id="push" defaultChecked disabled />
             <FieldLabel htmlFor="push" className="font-normal">
-              Push notifications
+              プッシュ通知
             </FieldLabel>
           </Field>
         </FieldGroup>
       </FieldSet>
       <FieldSeparator />
       <FieldSet>
-        <FieldLabel>Tasks</FieldLabel>
+        <FieldLabel>タスク</FieldLabel>
         <FieldDescription>
-          Get notified when tasks you&apos;ve created have updates.{" "}
-          <a href="#">Manage tasks</a>
+          作成したタスクに更新があった場合に通知を受け取ります。{" "}
+          <a href="#">タスクを管理</a>
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
             <Checkbox id="push-tasks" />
             <FieldLabel htmlFor="push-tasks" className="font-normal">
-              Push notifications
+              プッシュ通知
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <Checkbox id="email-tasks" />
             <FieldLabel htmlFor="email-tasks" className="font-normal">
-              Email notifications
+              メール通知
             </FieldLabel>
           </Field>
         </FieldGroup>

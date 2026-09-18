@@ -30,12 +30,12 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/styles/base-nova/ui/avatar"
+} from "@/components/ui/base/avatar"
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/styles/base-nova/ui/collapsible"
+} from "@/components/ui/base/collapsible"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,7 +45,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/styles/base-nova/ui/dropdown-menu"
+} from "@/components/ui/base/dropdown-menu"
 import {
   Sidebar,
   SidebarContent,
@@ -65,9 +65,9 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/styles/base-nova/ui/sidebar"
+} from "@/components/ui/base/sidebar"
 
-// This is sample data.
+// これはサンプルデータです。
 const data = {
   user: {
     name: "shadcn",
@@ -78,42 +78,42 @@ const data = {
     {
       name: "Acme Inc",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "エンタープライズ",
     },
     {
       name: "Acme Corp.",
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "スタートアップ",
     },
     {
       name: "Evil Corp.",
       logo: Command,
-      plan: "Free",
+      plan: "無料",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "プレイグラウンド",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "履歴",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "スター付き",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "設定",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "モデル",
       url: "#",
       icon: Bot,
       items: [
@@ -132,47 +132,47 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "ドキュメント",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "はじめに",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "使ってみる",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "チュートリアル",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "変更履歴",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "設定",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "一般",
           url: "#",
         },
         {
-          title: "Team",
+          title: "チーム",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "請求",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "上限",
           url: "#",
         },
       ],
@@ -180,17 +180,17 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "デザインエンジニアリング",
       url: "#",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "セールス＆マーケティング",
       url: "#",
       icon: PieChart,
     },
     {
-      name: "Travel",
+      name: "旅行",
       url: "#",
       icon: Map,
     },
@@ -242,7 +242,7 @@ function TeamSwitcher({
           >
             <DropdownMenuGroup>
               <DropdownMenuLabel className="text-xs text-muted-foreground">
-                Teams
+                チーム
               </DropdownMenuLabel>
               {teams.map((team, index) => (
                 <DropdownMenuItem
@@ -265,7 +265,7 @@ function TeamSwitcher({
                   <Plus className="size-4" />
                 </div>
                 <div className="font-medium text-muted-foreground">
-                  Add team
+                  チームを追加
                 </div>
               </DropdownMenuItem>
             </DropdownMenuGroup>
@@ -292,7 +292,7 @@ function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>プラットフォーム</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -340,7 +340,7 @@ function NavProjects({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Projects</SidebarGroupLabel>
+      <SidebarGroupLabel>プロジェクト</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
@@ -351,7 +351,7 @@ function NavProjects({
             <DropdownMenu>
               <DropdownMenuTrigger render={<SidebarMenuAction showOnHover />}>
                 <MoreHorizontal />
-                <span className="sr-only">More</span>
+                <span className="sr-only">その他</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-48 rounded-lg"
@@ -360,16 +360,16 @@ function NavProjects({
               >
                 <DropdownMenuItem>
                   <Folder className="text-muted-foreground" />
-                  <span>View Project</span>
+                  <span>プロジェクトを表示</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Forward className="text-muted-foreground" />
-                  <span>Share Project</span>
+                  <span>プロジェクトを共有</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <Trash2 className="text-muted-foreground" />
-                  <span>Delete Project</span>
+                  <span>プロジェクトを削除</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -378,7 +378,7 @@ function NavProjects({
         <SidebarMenuItem>
           <SidebarMenuButton className="text-sidebar-foreground/70">
             <MoreHorizontal className="text-sidebar-foreground/70" />
-            <span>More</span>
+            <span>その他</span>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
@@ -443,29 +443,29 @@ function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Sparkles />
-                Upgrade to Pro
+                Proにアップグレード
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+                アカウント
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCard />
-                Billing
+                請求
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell />
-                Notifications
+                通知
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <LogOut />
-                Log out
+                ログアウト
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>

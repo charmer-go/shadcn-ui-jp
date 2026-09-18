@@ -17,8 +17,8 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/styles/base-nova/ui-rtl/alert-dialog"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
+} from "@/components/ui/base/alert-dialog"
+import { Button } from "@/components/ui/base/button"
 
 const translations: Translations = {
   en: {

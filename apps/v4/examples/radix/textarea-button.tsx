@@ -1,11 +1,11 @@
-import { Button } from "@/styles/radix-nova/ui/button"
-import { Textarea } from "@/styles/radix-nova/ui/textarea"
+import { Button } from "@/components/ui/radix/button"
+import { Textarea } from "@/components/ui/radix/textarea"
 
 export function TextareaButton() {
   return (
     <div className="grid w-full gap-2">
-      <Textarea placeholder="Type your message here." />
-      <Button>Send message</Button>
+      <Textarea placeholder="ここにメッセージを入力してください。" />
+      <Button>メッセージを送信</Button>
     </div>
   )
 }

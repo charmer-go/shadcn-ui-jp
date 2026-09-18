@@ -7,16 +7,16 @@ import {
   FieldLegend,
   FieldSet,
   FieldTitle,
-} from "@/styles/aria-nova/ui/field"
-import { RadioGroup, RadioGroupItem } from "@/styles/aria-nova/ui/radio-group"
+} from "@/components/ui/aria/field"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/aria/radio-group"
 
 export default function FieldChoiceCard() {
   return (
     <FieldGroup className="w-full max-w-xs">
       <FieldSet>
-        <FieldLegend variant="label">Compute Environment</FieldLegend>
+        <FieldLegend variant="label">コンピューティング環境</FieldLegend>
         <FieldDescription>
-          Select the compute environment for your cluster.
+          クラスターで使用するコンピューティング環境を選択してください。
         </FieldDescription>
         <RadioGroup defaultValue="kubernetes">
           <FieldLabel htmlFor="kubernetes-r2h">
@@ -24,7 +24,7 @@ export default function FieldChoiceCard() {
               <FieldContent>
                 <FieldTitle>Kubernetes</FieldTitle>
                 <FieldDescription>
-                  Run GPU workloads on a K8s cluster.
+                  K8sクラスターでGPUワークロードを実行します。
                 </FieldDescription>
               </FieldContent>
               <RadioGroupItem value="kubernetes" id="kubernetes-r2h" />
@@ -33,9 +33,9 @@ export default function FieldChoiceCard() {
           <FieldLabel htmlFor="vm-z4k">
             <Field orientation="horizontal">
               <FieldContent>
-                <FieldTitle>Virtual Machine</FieldTitle>
+                <FieldTitle>仮想マシン</FieldTitle>
                 <FieldDescription>
-                  Access a cluster to run GPU workloads.
+                  クラスターにアクセスしてGPUワークロードを実行します。
                 </FieldDescription>
               </FieldContent>
               <RadioGroupItem value="vm" id="vm-z4k" />

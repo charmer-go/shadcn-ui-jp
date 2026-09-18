@@ -3,7 +3,7 @@ import {
   FieldDescription,
   FieldGroup,
   FieldLabel,
-} from "@/styles/base-nova/ui/field"
+} from "@/components/ui/base/field"
 import {
   InputGroup,
   InputGroupAddon,
@@ -11,37 +11,37 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/styles/base-nova/ui/input-group"
+} from "@/components/ui/base/input-group"
 
 export function InputGroupBlockEnd() {
   return (
     <FieldGroup className="max-w-sm">
       <Field>
-        <FieldLabel htmlFor="block-end-input">Input</FieldLabel>
+        <FieldLabel htmlFor="block-end-input">入力欄</FieldLabel>
         <InputGroup className="h-auto">
-          <InputGroupInput id="block-end-input" placeholder="Enter amount" />
+          <InputGroupInput id="block-end-input" placeholder="金額を入力" />
           <InputGroupAddon align="block-end">
             <InputGroupText>USD</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>Footer positioned below the input.</FieldDescription>
+        <FieldDescription>フッターは入力欄の下に配置されます。</FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="block-end-textarea">Textarea</FieldLabel>
+        <FieldLabel htmlFor="block-end-textarea">テキストエリア</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="block-end-textarea"
-            placeholder="Write a comment..."
+            placeholder="コメントを入力..."
           />
           <InputGroupAddon align="block-end">
             <InputGroupText>0/280</InputGroupText>
             <InputGroupButton variant="default" size="sm" className="ml-auto">
-              Post
+              投稿
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription>
-          Footer positioned below the textarea.
+          フッターはテキストエリアの下に配置されます。
         </FieldDescription>
       </Field>
     </FieldGroup>

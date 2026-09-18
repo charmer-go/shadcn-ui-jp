@@ -5,29 +5,29 @@ import {
   FieldLabel,
   FieldLegend,
   FieldSet,
-} from "@/styles/base-nova/ui/field"
-import { Input } from "@/styles/base-nova/ui/input"
+} from "@/components/ui/base/field"
+import { Input } from "@/components/ui/base/input"
 
 export function FieldFieldset() {
   return (
     <FieldSet className="w-full max-w-sm">
-      <FieldLegend>Address Information</FieldLegend>
+      <FieldLegend>住所情報</FieldLegend>
       <FieldDescription>
-        We need your address to deliver your order.
+        商品の配送先として住所が必要です。
       </FieldDescription>
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="street">Street Address</FieldLabel>
-          <Input id="street" type="text" placeholder="123 Main St" />
+          <FieldLabel htmlFor="street">番地・建物名</FieldLabel>
+          <Input id="street" type="text" placeholder="千代田区1-1-1" />
         </Field>
         <div className="grid grid-cols-2 gap-4">
           <Field>
-            <FieldLabel htmlFor="city">City</FieldLabel>
-            <Input id="city" type="text" placeholder="New York" />
+            <FieldLabel htmlFor="city">市区町村</FieldLabel>
+            <Input id="city" type="text" placeholder="東京都千代田区" />
           </Field>
           <Field>
-            <FieldLabel htmlFor="zip">Postal Code</FieldLabel>
-            <Input id="zip" type="text" placeholder="90502" />
+            <FieldLabel htmlFor="zip">郵便番号</FieldLabel>
+            <Input id="zip" type="text" placeholder="100-0001" />
           </Field>
         </div>
       </FieldGroup>

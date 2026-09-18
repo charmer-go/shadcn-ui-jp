@@ -2,8 +2,8 @@
 
 import * as React from "react"
 
-import { Calendar } from "@/styles/base-nova/ui/calendar"
-import { Card, CardContent } from "@/styles/base-nova/ui/card"
+import { Calendar } from "@/components/ui/base/calendar"
+import { Card, CardContent } from "@/components/ui/base/card"
 
 export function CalendarBookedDates() {
   const [date, setDate] = React.useState<Date | undefined>(

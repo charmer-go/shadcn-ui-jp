@@ -2,23 +2,23 @@
 
 import { toast } from "sonner"
 
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 
 export function SonnerDemo() {
   return (
     <Button
       variant="outline"
       onClick={() =>
-        toast("Event has been created", {
-          description: "Sunday, December 03, 2023 at 9:00 AM",
+        toast("イベントが作成されました", {
+          description: "2023年12月3日（日）午前9時",
           action: {
-            label: "Undo",
+            label: "元に戻す",
             onClick: () => console.log("Undo"),
           },
         })
       }
     >
-      Show Toast
+      トーストを表示
     </Button>
   )
 }

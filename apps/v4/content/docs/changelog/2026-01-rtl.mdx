@@ -1,12 +1,12 @@
 ---
-title: January 2026 - RTL Support
-description: The shadcn CLI now supports RTL (right-to-left) layouts by automatically converting physical CSS classes to logical equivalents.
+title: 2026 年 1 月 - RTL サポート
+description: shadcn CLI は、物理 CSS クラスを論理的に同等のものに自動的に変換することにより、RTL (右から左) レイアウトをサポートするようになりました。
 date: 2026-01-28
 ---
 
-shadcn/ui now has first-class support for right-to-left (RTL) layouts. Your components automatically adapt for languages like Arabic, Hebrew, and Persian.
+shadcn/ui は、右から左へ (RTL) レイアウトのファーストクラスのサポートを追加しました。コンポーネントは、アラビア語、ヘブライ語、ペルシア語などの言語に自動的に適応します。
 
-**This works with the [shadcn/ui components](/docs/components) as well as any component distributed on the shadcn registry.**
+**これは、[shadcn/ui コンポーネント](/docs/components) だけでなく、shadcn レジストリで配布されているコンポーネントでも機能します。**
 
 <ComponentPreview
   styleName="base-nova"
@@ -15,28 +15,28 @@ shadcn/ui now has first-class support for right-to-left (RTL) layouts. Your comp
   previewClassName="h-auto sm:h-72 p-6"
 />
 
-### Our approach to RTL
+### RTL に対する当社のアプローチ
 
-Traditionally, component libraries that support RTL ship with logical classes baked in. This means everyone has to work with classes like `ms-4` and `start-2`, even if they're only building for LTR layouts.
+従来、RTL をサポートするコンポーネント ライブラリは、論理クラスが組み込まれた状態で出荷されます。つまり、LTR レイアウトのみをビルドする場合でも、全員が `ms-4` や `start-2` などのクラスを使用する必要があります。
 
-We took a different approach. The shadcn CLI transforms classes at install time, so you only see logical classes when you actually need them. If you're not building for RTL, you work with familiar classes like `ml-4` and `left-2`. When you enable RTL, the CLI handles the conversion for you.
+私たちは別のアプローチをとりました。 shadcn CLI はインストール時にクラスを変換するため、論理クラスは実際に必要な場合にのみ表示されます。 RTL 用に構築していない場合は、`ml-4` や `left-2` などの使い慣れたクラスを使用します。 RTL を有効にすると、CLI が変換を処理します。
 
-**You don't have to learn RTL until you need it.**
+**必要になるまで RTL を学ぶ必要はありません。**
 
-### How it works
+### 仕組み
 
-When you add components with `rtl: true` set in your `components.json`, the CLI automatically converts physical CSS classes like `ml-4` and `text-left` to their logical equivalents like `ms-4` and `text-start`.
+`components.json` に `rtl: true` が設定されたコンポーネントを追加すると、CLI は、`ml-4` や `text-left` などの物理 CSS クラスを、`ms-4` や `text-start` などの論理同等クラスに自動的に変換します。
 
-- Physical positioning classes like `left-*` and `right-*` become `start-*` and `end-*`.
-- Margin and padding classes like `ml-*` and `pr-*` become `ms-*` and `pe-*`.
-- Text alignment classes like `text-left` become `text-start`.
-- Directional props are updated to use logical values.
-- Supported icons are automatically flipped using `rtl:rotate-180`.
-- Animations like `slide-in-from-left` become `slide-in-from-start`.
+- `left-*` および `right-*` のような物理位置クラスは、`start-*` および `end-*` になります。
+- `ml-*` および `pr-*` のようなマージンおよびパディング クラスは、`ms-*` および `pe-*` になります。
+- `text-left` のようなテキスト配置クラスは `text-start` になります。
+- 方向プロパティが論理値を使用するように更新されました。
+- サポートされているアイコンは、`rtl:rotate-180` を使用して自動的に反転されます。
+- `slide-in-from-left` のようなアニメーションは `slide-in-from-start` になります。
 
-### RTL examples for every component
+### 各コンポーネントの RTL 例
 
-We've added RTL examples for every component. You'll find live previews and code on each [component page](/docs/components).
+すべてのコンポーネントに RTL サンプルを追加しました。ライブ プレビューとコードは、各 [コンポーネント ページ](/docs/components) にあります。
 
 <ComponentPreview
   styleName="base-nova"
@@ -45,9 +45,9 @@ We've added RTL examples for every component. You'll find live previews and code
   previewClassName="h-auto"
 />
 
-### CLI updates
+### CLI の更新
 
-**New projects**: Use the `--rtl` flag with `init` or `create` to enable RTL from the start.
+**新しいプロジェクト**: 最初から RTL を有効にするには、`--rtl` フラグを `init` または `create` とともに使用します。
 
 ```bash
 npx shadcn@latest init --rtl
@@ -57,26 +57,26 @@ npx shadcn@latest init --rtl
 npx shadcn@latest create --rtl
 ```
 
-**Existing projects**: Migrate your components with the `migrate rtl` command.
+**既存のプロジェクト**: `migrate rtl` コマンドを使用してコンポーネントを移行します。
 
 ```bash
 npx shadcn@latest migrate rtl
 ```
 
-This transforms all components in your `ui` directory to use logical classes. You can also pass a specific path or glob pattern.
+これにより、`ui` ディレクトリ内のすべてのコンポーネントが論理クラスを使用するように変換されます。特定のパスまたはグロブ パターンを渡すこともできます。
 
-## Try it out
+## 試してみてください
 
-Click the link below to open a Next.js project with RTL support in v0.
+以下のリンクをクリックして、v0 で RTL をサポートする Next.js プロジェクトを開きます。
 
-[![Open in v0](https://v0.app/chat-static/button.svg)](https://v0.app/chat/api/open?url=https://github.com/shadcn-ui/next-template-rtl)
+[![v0 で開く](https://v0.app/chat-static/button.svg)](https://v0.app/chat/api/open?url=https://github.com/shadcn-ui/next-template-rtl)
 
-### Links
+### リンク
 
-- [RTL Documentation](/docs/rtl)
-- [Font Recommendations](/docs/rtl#font-recommendations)
-- [Animations](/docs/rtl#animations)
-- [Migrating Existing Components](/docs/rtl#migrating-existing-components)
-- [Next.js Setup](/docs/rtl/next)
-- [Vite Setup](/docs/rtl/vite)
-- [TanStack Start Setup](/docs/rtl/start)
+- [RTL ドキュメント](/docs/rtl)
+- [フォントの推奨事項](/docs/rtl#font-recommendations)
+- [アニメーション](/docs/rtl#animations)
+- [既存のコンポーネントの移行](/docs/rtl#migrated-existing-components)
+- [Next.js セットアップ](/docs/rtl/next)
+- [Vite セットアップ](/docs/rtl/vite)
+- [TanStack 起動セットアップ](/docs/rtl/start)

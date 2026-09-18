@@ -1,13 +1,13 @@
 ---
-title: FAQ
-description: Frequently asked questions about running a registry.
+title: よくある質問
+description: レジストリの運用に関するよくある質問です。
 ---
 
-## Frequently asked questions
+## よくある質問
 
-### What does a complex component look like?
+### 複雑なコンポーネントはどのような構成になりますか？
 
-Here's an example of a complex component that installs a page, two components, a hook, a format-date utils and a config file.
+以下は、ページ、2つのコンポーネント、フック、日付フォーマット用ユーティリティ、設定ファイルをインストールする複雑なコンポーネントの例です。
 
 ```json showLineNumbers
 {
@@ -47,9 +47,9 @@ Here's an example of a complex component that installs a page, two components, a
 }
 ```
 
-### How do I add a new Tailwind color?
+### 新しい Tailwind カラーを追加するにはどうすればよいですか？
 
-To add a new color you need to add it to `cssVars` under `light` and `dark` keys.
+新しいカラーを追加するには、`cssVars` の `light` と `dark` キーの配下に追加します。
 
 ```json showLineNumbers {10-18}
 {
@@ -74,14 +74,13 @@ To add a new color you need to add it to `cssVars` under `light` and `dark` keys
 }
 ```
 
-The CLI will update the project CSS file. Once updated, the new colors will be available to be used as utility classes: `bg-brand` and `text-brand-accent`.
+CLI がプロジェクトの CSS ファイルを更新します。更新後、新しいカラーは `bg-brand` や `text-brand-accent` といったユーティリティクラスとして使用できるようになります。
 
-### Why does `button` in `registryDependencies` not resolve to my GitHub repository?
+### `registryDependencies` の `button` が自分の GitHub リポジトリに解決されないのはなぜですか？
 
-Bare registry dependency names keep the existing shadcn behavior. `button`
-means the built-in shadcn `button` item.
+ベア（短縮形）のレジストリ依存名は、従来の shadcn の動作を維持します。`button` は組み込みの shadcn の `button` アイテムを指します。
 
-For a dependency from a GitHub repository, use the full GitHub item address.
+GitHub リポジトリからの依存関係を指定する場合は、GitHub アイテムの完全なアドレスを使用してください。
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -89,25 +88,23 @@ For a dependency from a GitHub repository, use the full GitHub item address.
 }
 ```
 
-### How do I pin a GitHub registry item?
+### GitHub レジストリアイテムをピン留めするにはどうすればよいですか？
 
-Add `#ref` to the GitHub item address. The ref can be a branch, tag or full
-commit SHA.
+GitHub アイテムのアドレスに `#ref` を追加します。ref にはブランチ、タグ、または完全なコミット SHA を指定できます。
 
 ```bash
 npx shadcn@latest add acme/ui/button#v1.2.0
 ```
 
-For published registries, prefer tags or full commit SHAs.
+公開済みレジストリでは、タグまたは完全なコミット SHA の使用を推奨します。
 
-### Can GitHub registry addresses use private repositories?
+### GitHub レジストリアドレスでプライベートリポジトリを使用できますか？
 
-Not currently. GitHub registry addresses support public `github.com`
-repositories. For private registries, use a namespace with authenticated URLs.
+現在は対応していません。GitHub レジストリアドレスは公開された `github.com` リポジトリをサポートしています。プライベートレジストリについては、認証付き URL を使用する名前空間をご利用ください。
 
-### How do I add or override a Tailwind theme variable?
+### Tailwind のテーマ変数を追加・上書きするにはどうすればよいですか？
 
-To add or override a theme variable you add it to `cssVars.theme` under the key you want to add or override.
+テーマ変数を追加・上書きするには、追加・上書きしたいキーで `cssVars.theme` に追加します。
 
 ```json showLineNumbers {10-15}
 {

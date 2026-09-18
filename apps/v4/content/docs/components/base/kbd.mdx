@@ -1,19 +1,19 @@
 ---
-title: Kbd
-description: Used to display textual user input from keyboard.
+title: キーボード入力
+description: キーボードからのテキスト ユーザー入力の表示に使用されます。
 base: base
 component: true
 ---
 
 <ComponentPreview styleName="base-nova" name="kbd-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -27,7 +27,7 @@ npx shadcn@latest add kbd
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="kbd"
@@ -35,7 +35,7 @@ npx shadcn@latest add kbd
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -43,7 +43,7 @@ npx shadcn@latest add kbd
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx
 import { Kbd } from "@/components/ui/kbd"
@@ -53,9 +53,9 @@ import { Kbd } from "@/components/ui/kbd"
 <Kbd>Ctrl</Kbd>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build `Kbd` and `KbdGroup`:
+次の構成を使用して、`Kbd` および `KbdGroup` を構築します。
 
 ```text
 Kbd
@@ -64,25 +64,25 @@ KbdGroup
 └── Kbd
 ```
 
-## Group
+## グループ
 
 Use the `KbdGroup` component to group keyboard keys together.
 
 <ComponentPreview styleName="base-nova" name="kbd-group" />
 
-## Button
+## ボタン
 
-Use the `Kbd` component inside a `Button` component to display a keyboard key inside a button.
+のラベル `Button` コンポーネント内で `Kbd` コンポーネントを使用して、ボタン内にキーボード キーを表示します。
 
 <ComponentPreview styleName="base-nova" name="kbd-button" />
 
-## Tooltip
+## ツールチップ
 
-You can use the `Kbd` component inside a `Tooltip` component to display a tooltip with a keyboard key.
+`Tooltip` コンポーネント内で `Kbd` コンポーネントを使用すると、キーボード キーでツールヒントを表示できます。
 
 <ComponentPreview styleName="base-nova" name="kbd-tooltip" />
 
-## Input Group
+## 入力グループ
 
 You can use the `Kbd` component inside a `InputGroupAddon` component to display a keyboard key inside an input group.
 
@@ -90,19 +90,19 @@ You can use the `Kbd` component inside a `InputGroupAddon` component to display 
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="base-nova" name="kbd-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 ### Kbd
 
-Use the `Kbd` component to display a keyboard key.
+`Kbd` コンポーネントを使用して、キーボードのキーを表示します。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
-| `className` | `string` | ``      |
+| `className` | `string` | `` |
 
 ```tsx
 <Kbd>Ctrl</Kbd>
@@ -114,7 +114,7 @@ Use the `KbdGroup` component to group `Kbd` components together.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
-| `className` | `string` | ``      |
+| `className` | `string` | `` |
 
 ```tsx
 <KbdGroup>

@@ -1,11 +1,11 @@
-import { Checkbox } from "@/styles/radix-nova/ui/checkbox"
-import { Label } from "@/styles/radix-nova/ui/label"
+import { Checkbox } from "@/components/ui/radix/checkbox"
+import { Label } from "@/components/ui/radix/label"
 
 export default function LabelDemo() {
   return (
     <div className="flex gap-2">
       <Checkbox id="terms" />
-      <Label htmlFor="terms">Accept terms and conditions</Label>
+      <Label htmlFor="terms">利用規約に同意する</Label>
     </div>
   )
 }

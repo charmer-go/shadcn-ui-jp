@@ -1,5 +1,5 @@
-import { Button } from "@/styles/aria-nova/ui/button"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-nova/ui/tooltip"
+import { Button } from "@/components/ui/aria/button"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 export function TooltipDisabled() {
   return (
@@ -7,11 +7,11 @@ export function TooltipDisabled() {
       <TooltipTrigger>
         <span className="inline-block w-fit">
           <Button variant="outline" isDisabled>
-            Disabled
+            無効
           </Button>
         </span>
         <Tooltip>
-          <p>This feature is currently unavailable</p>
+          <p>この機能は現在利用できません</p>
         </Tooltip>
       </TooltipTrigger>
     </>

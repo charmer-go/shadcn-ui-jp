@@ -1,6 +1,6 @@
 ---
-title: Table
-description: A responsive table component.
+title: テーブル
+description: 応答性の高いテーブル コンポーネント。
 base: base
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="h-[30rem]"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add table
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="table"
@@ -39,7 +39,7 @@ npx shadcn@latest add table
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add table
 
 </CodeTabs>
 
-## Usage
+## 使用方法
 
 ```tsx showLineNumbers
 import {
@@ -83,9 +83,9 @@ import {
 </Table>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build a `Table`:
+次の構成を使用して、`Table` を構築します。
 
 ```text
 Table
@@ -110,29 +110,29 @@ Table
 └── TableFooter
 ```
 
-## Footer
+## フッター
 
-Use the `<TableFooter />` component to add a footer to the table.
+`<TableFooter />` コンポーネントを使用して、テーブルにフッターを追加します。
 
 <ComponentPreview styleName="base-nova" name="table-footer" />
 
-## Actions
+## アクション
 
-A table showing actions for each row using a `<DropdownMenu />` component.
+`<DropdownMenu />` コンポーネントを使用した各行のアクションを示すテーブル。
 
 <ComponentPreview styleName="base-nova" name="table-actions" />
 
-## Data Table
+## データ テーブル
 
-You can use the `<Table />` component to build more complex data tables. Combine it with [@tanstack/react-table](https://tanstack.com/table/latest) to create tables with sorting, filtering and pagination.
+`<Table />` コンポーネントを使用して、より複雑なデータ テーブルを構築できます。 [@tanstack/react-table](https://tanstack.com/table/latest) と組み合わせて、並べ替え、フィルタリング、ページネーションを備えたテーブルを作成します。
 
-See the [Data Table](/docs/components/data-table) documentation for more information.
+詳細については、[データ テーブル](/docs/components/data-table) ドキュメントを参照してください。
 
-You can also see an example of a data table in the [Tasks](/examples/tasks) demo.
+[タスク](/examples/tasks) デモでデータ テーブルの例を確認することもできます。
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview
   styleName="base-nova"

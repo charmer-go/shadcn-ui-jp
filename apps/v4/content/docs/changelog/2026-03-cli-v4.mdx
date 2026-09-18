@@ -1,59 +1,59 @@
 ---
-title: March 2026 - shadcn/cli v4
-description: More capable, easier to use. Built for you and your coding agents. Skills, presets, dry run, new templates, monorepo and more.
+title: 2026 年 3 月 - shadcn/cli v4
+description: より高機能で、より使いやすくなりました。あなたとあなたのコーディングエージェントのために構築されています。スキル、プリセット、ドライラン、新しいテンプレート、モノリポジトリなど。
 date: 2026-03-06
 ---
 
-We're releasing version 4 of shadcn/cli. More capable, easier to use. Built for you and your coding agents. Here's everything new.
+shadcn/cli のバージョン 4 をリリースします。より高機能に、より使いやすく。あなたとあなたのコーディングエージェントのために構築されています。ここにはすべてが新しいものです。
 
-## shadcn/skills
+## shadcn/スキル
 
-shadcn/skills gives coding agents the context they need to work with your components and registry correctly. It covers both Radix and Base UI primitives, updated APIs, component patterns and registry workflows. The skill also knows how to use the shadcn CLI, when to invoke it and which flags to pass. Agents make fewer mistakes and produce code that actually matches your design system.
+shadcn/skills は、コンポーネントとレジストリを正しく操作するために必要なコンテキストをコーディング エージェントに提供します。 Radix と Base UI プリミティブの両方、更新された API、コンポーネント パターン、レジストリ ワークフローについて説明します。このスキルは、shadcn CLI の使用方法、いつ呼び出すか、どのフラグを渡すかについても認識しています。エージェントは間違いを減らし、実際に設計システムと一致するコードを生成します。
 
-You can ask your agent things like:
+エージェントに次のような質問をすることができます。
 
-- "create a new vite monorepo"
-- "find me a hero from tailark, add it to the homepage, animate the text using an animation from react-bits"
-- "install and configure a sign in page from @clerk"
+- 「新しい vite モノレポを作成する」
+- 「tailark からヒーローを見つけて、ホームページに追加し、react-bits のアニメーションを使用してテキストをアニメーション化します。」
+- 「@clark からサインイン ページをインストールして構成します」
 
 ```bash
 npx skills add shadcn/ui
 ```
 
-## Introducing --preset
+## --preset の導入
 
-A preset packs your entire design system config into a short code. Colors, theme, icon library, fonts, radius. One string, everything included.
+プリセットは、デザイン システム構成全体を短いコードにパックします。色、テーマ、アイコン ライブラリ、フォント、半径。 1 つの文字列にすべてが含まれています。
 
-Build your preset on [shadcn/create](/create), preview it live and grab the code when you're ready.
+[shadcn/create](/create) でプリセットをビルドし、ライブでプレビューし、準備ができたらコードを取得します。
 
 ```bash
 npx shadcn@latest init --preset a1Dg5eFl
 ```
 
-Use it to scaffold projects from custom config, share with your team or publish in your registry. Drop it in prompts so your agent knows where to start. Use it across Claude, Codex, v0, Replit. Take your preset with you.
+これを使用して、カスタム構成からプロジェクトをスキャフォールディングしたり、チームと共有したり、レジストリで公開したりできます。プロンプトにそれをドロップすると、エージェントがどこから始めればよいかわかるようになります。 Claude、Codex、v0、Replit 全体で使用します。プリセットを持ち歩きましょう。
 
-## Switching presets
+## プリセットの切り替え
 
-When you're working on a new app, it can take a few tries to find something you like so we've made switching presets really easy. Run `init --preset` in your app, and the CLI will take care of reconfiguring everything, including your components.
+新しいアプリに取り組んでいるときは、気に入ったものを見つけるまでに数回試行する必要があるため、プリセットの切り替えが非常に簡単になりました。アプリで `init --preset` を実行すると、CLI がコンポーネントを含むすべての再構成を処理します。
 
 ```bash
 npx shadcn@latest init --preset ad3qkJ7
 ```
 
-## Skills + Presets
+## スキル + プリセット
 
-Your agent knows how to use presets. Scaffold a project, switch design systems, try something new.
+エージェントはプリセットの使用方法を知っています。プロジェクトの足場を築き、設計システムを切り替え、何か新しいことに挑戦してください。
 
-- "create a new next app using --preset adtk27v"
-- "let's try --preset adtk27v"
+- 「--preset adtk27v を使用して新しい次のアプリを作成します」
+- 「--preset adtk27v を試してみましょう」
 
-## New shadcn/create
+## 新しい shadcn/作成
 
-To help you build custom presets, we rebuilt [shadcn/create](/create). It now includes a library of UI components you can use to preview your presets. See how your colors, fonts and radius apply to real components before you start building.
+カスタム プリセットの構築を支援するために、[shadcn/create](/create) を再構築しました。プリセットのプレビューに使用できる UI コンポーネントのライブラリが含まれるようになりました。構築を開始する前に、色、フォント、半径が実際のコンポーネントにどのように適用されるかを確認してください。
 
-## New --dry-run, --diff, and --view flags
+## 新しい --dry-run、--diff、および --view フラグ
 
-Inspect what a registry will add to your project before anything gets written. Review the payload yourself or pipe it to your coding agent for a second look.
+何かが書き込まれる前に、レジストリがプロジェクトに何を追加するかを調べてください。ペイロードを自分で確認するか、コーディング エージェントにパイプして再確認してください。
 
 ```bash
 npx shadcn@latest add button --dry-run
@@ -61,17 +61,17 @@ npx shadcn@latest add button --diff
 npx shadcn@latest add button --view
 ```
 
-## Updating primitives
+## プリミティブの更新
 
-You can use the `--diff` flag to check for registry updates. Or ask your agent: "check for updates from @shadcn and merge with my local changes".
+`--diff` フラグを使用して、レジストリの更新を確認できます。または、エージェントに「@shadcn からの更新を確認して、ローカルの変更とマージしてください」と依頼してください。
 
 ```bash
 npx shadcn@latest add button --diff
 ```
 
-## shadcn init --template
+## shadcn init --テンプレート
 
-`shadcn init` now scaffolds full project templates for Next.js, Vite, Laravel, React Router, Astro and TanStack Start. Dark mode included for Next.js and Vite.
+`shadcn init` は、Next.js、Vite、Laravel、React Router、Astro、TanStack Start の完全なプロジェクト テンプレートをスキャフォールディングするようになりました。 Next.js と Vite にはダーク モードが含まれています。
 
 ```bash
 npx shadcn@latest init
@@ -85,7 +85,7 @@ Select a template › - Use arrow-keys. Return to submit.
   Laravel
 ```
 
-Use `--monorepo` to set up a monorepo.
+`--monorepo` を使用してモノリポジトリを設定します。
 
 ```bash
 npx shadcn@latest init -t next --monorepo
@@ -93,23 +93,23 @@ npx shadcn@latest init -t next --monorepo
 
 ## shadcn init --base
 
-Pick your primitives. Use `--base` to start a project with Radix or Base UI.
+プリミティブを選択します。 Radix または Base UI でプロジェクトを開始するには、`--base` を使用します。
 
 ```bash
 npx shadcn@latest init --base radix
 ```
 
-## shadcn info
+## シャドン情報
 
-The `info` command now shows the full picture: framework, version, CSS vars, which components are installed, and where to find docs and examples for every component. Great for giving coding agents the context they need to work with your project.
+`info` コマンドにより、フレームワーク、バージョン、CSS 変数、インストールされているコンポーネント、各コンポーネントのドキュメントと例の場所などの全体像が表示されるようになりました。コーディング エージェントにプロジェクトで作業するために必要なコンテキストを提供するのに最適です。
 
 ```bash
 npx shadcn@latest info
 ```
 
-## shadcn docs
+## shadcn ドキュメント
 
-Get docs, code and examples for any UI component right from the CLI. Gives your coding agent the context to use your primitives correctly.
+CLI から直接、UI コンポーネントのドキュメント、コード、サンプルを入手できます。プリミティブを正しく使用するためのコンテキストをコーディング エージェントに提供します。
 
 ```bash
 npx shadcn@latest docs combobox
@@ -120,11 +120,11 @@ combobox
   - api       https://base-ui.com/react/components/combobox
 ```
 
-## registry:base and registry:font
+## レジストリ:ベースとレジストリ:フォント
 
-Registries can now distribute an entire design system as a single payload using `registry:base`. Components, dependencies, CSS vars, fonts, config. One install, everything set up.
+レジストリは、`registry:base` を使用して、設計システム全体を単一のペイロードとして配布できるようになりました。コンポーネント、依存関係、CSS 変数、フォント、構成。 1 回のインストールですべてがセットアップされます。
 
-Fonts are now a first-class registry type. Install and configure them the same way you install components.
+フォントは現在、第一級のレジストリ タイプです。コンポーネントをインストールするのと同じ方法で、それらをインストールして構成します。
 
 ```json title="font-inter.json" showLineNumbers
 {
@@ -145,9 +145,9 @@ Fonts are now a first-class registry type. Install and configure them the same w
 npx shadcn@latest add font-inter
 ```
 
-## Links
+## リンク
 
-- [shadcn/skills](/skills)
+- [shadcn/スキル](/スキル)
 - [shadcn/create](/create)
 - [shadcn/cli](/cli)
-- [shadcn/registry](/docs/registry)
+- [shadcn/レジストリ](/docs/registry)

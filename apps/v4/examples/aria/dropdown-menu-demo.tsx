@@ -1,6 +1,6 @@
 "use client"
 
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   DropdownMenu,
   DropdownMenuGroup,
@@ -12,56 +12,56 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/styles/aria-nova/ui/dropdown-menu"
+} from "@/components/ui/aria/dropdown-menu"
 
 export function DropdownMenuDemo() {
   return (
     <DropdownMenuTrigger>
-      <Button variant="outline">Open</Button>
+      <Button variant="outline">開く</Button>
       <DropdownMenu className="w-40" placement="bottom start">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+          <DropdownMenuLabel>マイアカウント</DropdownMenuLabel>
           <DropdownMenuItem>
-            Profile
+            プロフィール
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Billing
+            請求
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Settings
+            設定
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>チーム</DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>ユーザーを招待</DropdownMenuSubTrigger>
 
             <DropdownMenuSubContent>
-              <DropdownMenuItem>Email</DropdownMenuItem>
-              <DropdownMenuItem>Message</DropdownMenuItem>
+              <DropdownMenuItem>メール</DropdownMenuItem>
+              <DropdownMenuItem>メッセージ</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>More...</DropdownMenuItem>
+              <DropdownMenuItem>その他...</DropdownMenuItem>
             </DropdownMenuSubContent>
           </DropdownMenuSub>
           <DropdownMenuItem>
-            New Team
+            新規チーム
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>GitHub</DropdownMenuItem>
-          <DropdownMenuItem>Support</DropdownMenuItem>
+          <DropdownMenuItem>サポート</DropdownMenuItem>
           <DropdownMenuItem isDisabled>API</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            Log out
+            ログアウト
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

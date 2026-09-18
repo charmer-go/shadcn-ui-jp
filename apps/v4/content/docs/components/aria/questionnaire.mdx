@@ -1,6 +1,6 @@
 ---
-title: Questionnaire
-description: A multi-step questionnaire with single-choice, multiple-choice, freeform, and skippable questions.
+title: アンケート
+description: 単一選択、複数選択、自由入力、スキップ可能な質問に対応した複数ステップのアンケート。
 base: aria
 component: true
 ---
@@ -12,13 +12,13 @@ component: true
   previewClassName="min-h-[560px] p-4 sm:p-8"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -38,7 +38,7 @@ npx shadcn@latest add questionnaire
 npm install @shadcn/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="questionnaire"
@@ -46,7 +46,7 @@ npm install @shadcn/react
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -54,7 +54,7 @@ npm install @shadcn/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import {
@@ -164,7 +164,7 @@ function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
 }
 ```
 
-## Composition
+## 構成
 
 ```text
 Questionnaire
@@ -187,13 +187,13 @@ Questionnaire owns the ordered items, active item, answer state, validation,
 progress, and navigation. The containing page, card, dialog, or drawer owns
 close and cancellation behavior, persistence, transport, and branching.
 
-## Server Rendering
+## サーバーレンダリング
 
 Pass `items` to server-render the active item, progress, actions, and answer
 shortcuts. See the
 [headless Questionnaire](/docs/react/questionnaire) for the complete behavior.
 
-## Multiple Selection
+## 複数選択
 
 Use `multiple` for an item that accepts more than one fixed answer.
 
@@ -204,7 +204,7 @@ Use `multiple` for an item that accepts more than one fixed answer.
   previewClassName="min-h-[420px] p-4 sm:p-8"
 />
 
-## Freeform Answer
+## 自由入力
 
 Compose `QuestionnaireInput` with fixed choices when the user can provide another answer.
 
@@ -215,7 +215,7 @@ Compose `QuestionnaireInput` with fixed choices when the user can provide anothe
   previewClassName="min-h-[420px] p-4 sm:p-8"
 />
 
-## Explicit Skip
+## 明示的なスキップ
 
 Add `QuestionnaireSkip` when an optional item may be intentionally left unanswered.
 
@@ -226,7 +226,7 @@ Add `QuestionnaireSkip` when an optional item may be intentionally left unanswer
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Shortcuts
+## ショートカット
 
 Assign a letter or number key to each answer with `shortcuts`.
 
@@ -237,7 +237,7 @@ Assign a letter or number key to each answer with `shortcuts`.
   previewClassName="min-h-[480px] p-4 sm:p-8"
 />
 
-## Custom Validation
+## カスタム検証
 
 Combine controlled navigation with an external schema such as Zod to return to an invalid item and present its error.
 
@@ -248,7 +248,7 @@ Combine controlled navigation with an external schema such as Zod to return to a
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Controlled
+## 制御
 
 Control the active item from host state, such as returning to an invalid step.
 
@@ -259,7 +259,7 @@ Control the active item from host state, such as returning to an invalid step.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Resume
+## 再開
 
 Restore a saved active item and default answers, then reset changes back to that saved state.
 
@@ -270,7 +270,7 @@ Restore a saved active item and default answers, then reset changes back to that
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Conditional Items
+## 条件付き項目
 
 Disable items that do not apply to the user's earlier answers.
 
@@ -281,7 +281,7 @@ Disable items that do not apply to the user's earlier answers.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Navigation State
+## ナビゲーション状態
 
 Read item status to opt into disabled navigation and custom action styling.
 
@@ -292,7 +292,7 @@ Read item status to opt into disabled navigation and custom action styling.
   previewClassName="min-h-[480px] p-4 sm:p-8"
 />
 
-## Custom Progress
+## カスタム進捗
 
 Use the Progress render state to build a custom progress indicator.
 
@@ -303,7 +303,7 @@ Use the Progress render state to build a custom progress indicator.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Animated Items
+## アニメーション付き項目
 
 Animate the active item while keeping progress and navigation stationary.
 
@@ -314,7 +314,7 @@ Animate the active item while keeping progress and navigation stationary.
   previewClassName="min-h-[520px] p-4 sm:p-8"
 />
 
-## Card
+## カード
 
 Compose Questionnaire with Card slots while keeping the question title and description semantic.
 
@@ -336,7 +336,7 @@ Compose Questionnaire inside a Dialog while keeping cancellation and dismissal h
   previewClassName="min-h-[320px] p-4 sm:p-8"
 />
 
-## Accessibility
+## アクセシビリティ
 
 `QuestionnaireItem` renders a `fieldset`, and `QuestionnaireTitle` renders its
 `legend`. Descriptions and active errors are associated with the current item,
@@ -352,13 +352,13 @@ Always give `QuestionnaireInput` an accessible name with a visible label,
 [Questionnaire accessibility guide](/docs/react/questionnaire#accessibility)
 for labeling custom compositions and the complete keyboard behavior.
 
-## Unstyled
+## スタイルなし
 
 The behavior in `Questionnaire` comes from the `@shadcn/react` package. To use
 it directly with your own markup and styles, see
 [Questionnaire](/docs/react/questionnaire) under @shadcn/react.
 
-## API Reference
+## APIリファレンス
 
 The props, data attributes, and render states for every part are documented on
 the [@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) page.

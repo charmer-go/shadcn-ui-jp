@@ -4,22 +4,22 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-} from "@/styles/aria-nova/ui/breadcrumb"
+} from "@/components/ui/aria/breadcrumb"
 
 export function BreadcrumbBasic() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+          <BreadcrumbLink href="#">ホーム</BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink href="#">Components</BreadcrumbLink>
+          <BreadcrumbLink href="#">コンポーネント</BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>パンくずリスト</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

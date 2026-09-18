@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "item-header",
+  "registryDependencies": [
+    "item"
+  ],
+  "files": [
+    {
+      "path": "registry/new-york-v4/examples/item-header.tsx",
+      "content": "import Image from \"next/image\"\r\n\r\nimport {\r\n  Item,\r\n  ItemContent,\r\n  ItemDescription,\r\n  ItemGroup,\r\n  ItemHeader,\r\n  ItemTitle,\r\n} from \"@/registry/new-york-v4/ui/item\"\r\n\r\nconst models = [\r\n  {\r\n    name: \"v0-1.5-sm\",\r\n    description: \"Everyday tasks and UI generation.\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&w=640&auto=format&fit=crop\",\r\n    credit: \"Valeria Reverdo on Unsplash\",\r\n  },\r\n  {\r\n    name: \"v0-1.5-lg\",\r\n    description: \"Advanced thinking or reasoning.\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&w=640&auto=format&fit=crop\",\r\n    credit: \"Michael Oeser on Unsplash\",\r\n  },\r\n  {\r\n    name: \"v0-2.0-mini\",\r\n    description: \"Open Source model for everyone.\",\r\n    image:\r\n      \"https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&w=640&auto=format&fit=crop\",\r\n    credit: \"Cherry Laithang on Unsplash\",\r\n  },\r\n]\r\n\r\nexport default function ItemHeaderDemo() {\r\n  return (\r\n    <div className=\"flex w-full max-w-xl flex-col gap-6\">\r\n      <ItemGroup className=\"grid grid-cols-3 gap-4\">\r\n        {models.map((model) => (\r\n          <Item key={model.name} variant=\"outline\">\r\n            <ItemHeader>\r\n              <Image\r\n                src={model.image}\r\n                alt={model.name}\r\n                width={128}\r\n                height={128}\r\n                className=\"aspect-square w-full rounded-sm object-cover\"\r\n              />\r\n            </ItemHeader>\r\n            <ItemContent>\r\n              <ItemTitle>{model.name}</ItemTitle>\r\n              <ItemDescription>{model.description}</ItemDescription>\r\n            </ItemContent>\r\n          </Item>\r\n        ))}\r\n      </ItemGroup>\r\n    </div>\r\n  )\r\n}\r\n",
+      "type": "registry:example"
+    }
+  ],
+  "type": "registry:example"
+}

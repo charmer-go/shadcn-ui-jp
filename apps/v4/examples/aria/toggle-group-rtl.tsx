@@ -9,7 +9,7 @@ import {
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@/styles/aria-nova/ui-rtl/toggle-group"
+} from "@/components/ui/aria/toggle-group"
 
 const translations: Translations = {
   en: {

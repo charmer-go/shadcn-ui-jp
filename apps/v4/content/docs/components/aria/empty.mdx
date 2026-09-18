@@ -1,6 +1,6 @@
 ---
 title: Empty
-description: Use the Empty component to display an empty state.
+description: 空の状態を表示するには、Empty コンポーネントを使用します。
 base: aria
 component: true
 ---
@@ -11,13 +11,13 @@ component: true
   previewClassName="h-96 p-0"
 />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,7 +31,7 @@ npx shadcn@latest add empty
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="empty"
@@ -39,7 +39,7 @@ npx shadcn@latest add empty
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に合わせてインポートパスを更新します。</Step>
 
 </Steps>
 
@@ -47,7 +47,7 @@ npx shadcn@latest add empty
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx
 import {
@@ -75,7 +75,7 @@ import {
 </Empty>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build an `Empty` state:
 
@@ -88,7 +88,7 @@ Empty
 └── EmptyContent
 ```
 
-## Outline
+## アウトライン
 
 Use the `border` utility class to create an outline empty state.
 
@@ -98,7 +98,7 @@ Use the `border` utility class to create an outline empty state.
   previewClassName="h-96 p-6 md:p-10"
 />
 
-## Background
+## 背景
 
 Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty state.
 
@@ -108,9 +108,9 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
   previewClassName="h-96 p-0"
 />
 
-## Avatar
+## アバター
 
-Use the `EmptyMedia` component to display an avatar in the empty state.
+`EmptyMedia` コンポーネントを使用して、空の状態のアバターを表示します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -118,9 +118,9 @@ Use the `EmptyMedia` component to display an avatar in the empty state.
   previewClassName="h-96 p-0"
 />
 
-## Avatar Group
+## アバターグループ
 
-Use the `EmptyMedia` component to display an avatar group in the empty state.
+`EmptyMedia` コンポーネントを使用して、アバター グループを空の状態で表示します。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -130,7 +130,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 
 ## InputGroup
 
-You can add an `InputGroup` component to the `EmptyContent` component.
+`InputGroup` コンポーネントを `EmptyContent` コンポーネントに追加できます。
 
 <ComponentPreview
   styleName="aria-nova"
@@ -140,15 +140,15 @@ You can add an `InputGroup` component to the `EmptyContent` component.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="empty-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
 ### Empty
 
-The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent` components.
+空の状態の主要コンポーネント。 `EmptyHeader` コンポーネントと `EmptyContent` コンポーネントをラップします。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -181,7 +181,7 @@ The `EmptyHeader` component wraps the empty media, title, and description.
 
 Use the `EmptyMedia` component to display the media of the empty state such as an icon or an image. You can also use it to display other components such as an avatar.
 
-| Prop        | Type                  | Default   |
+を入力 |小道具 |タイプ |デフォルト |
 | ----------- | --------------------- | --------- |
 | `variant`   | `"default" \| "icon"` | `default` |
 | `className` | `string`              |           |
@@ -227,7 +227,7 @@ Use the `EmptyDescription` component to display the description of the empty sta
 
 ### EmptyContent
 
-Use the `EmptyContent` component to display the content of the empty state such as a button, input or a link.
+`EmptyContent` コンポーネントを使用して、ボタン、入力、リンクなどの空の状態のコンテンツを表示します。
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

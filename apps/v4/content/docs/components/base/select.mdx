@@ -1,6 +1,6 @@
 ---
 title: Select
-description: Displays a list of options for the user to pick from—triggered by a button.
+description: ボタンで開き、ユーザーが選択できるオプションのリストを表示します。
 base: base
 component: true
 featured: true
@@ -11,13 +11,13 @@ links:
 
 <ComponentPreview styleName="base-nova" name="select-demo" />
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -31,13 +31,13 @@ npx shadcn@latest add select
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="select"
@@ -45,7 +45,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -53,7 +53,7 @@ npm install @base-ui/react
 
 </CodeTabs>
 
-## Usage
+## 使い方
 
 ```tsx showLineNumbers
 import {
@@ -89,7 +89,7 @@ const items = [
 </Select>
 ```
 
-## Composition
+## 構成
 
 Use the following composition to build a `Select`:
 
@@ -115,23 +115,23 @@ Use `alignItemWithTrigger` on `SelectContent` to control whether the selected it
 
 <ComponentPreview styleName="base-nova" name="select-align-item" />
 
-## Groups
+## グループ
 
 Use `SelectGroup`, `SelectLabel`, and `SelectSeparator` to organize items.
 
 <ComponentPreview styleName="base-nova" name="select-groups" />
 
-## Scrollable
+## スクロール可能
 
 A select with many items that scrolls.
 
 <ComponentPreview styleName="base-nova" name="select-scrollable" />
 
-## Disabled
+## 無効
 
 <ComponentPreview styleName="base-nova" name="select-disabled" />
 
-## Invalid
+## 無効な状態
 
 Add the `data-invalid` attribute to the `Field` component and the `aria-invalid` attribute to the `SelectTrigger` component to show an error state.
 
@@ -148,10 +148,10 @@ Add the `data-invalid` attribute to the `Field` component and the `aria-invalid`
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl)を参照してください。
 
 <ComponentPreview styleName="base-nova" name="select-rtl" direction="rtl" />
 
-## API Reference
+## APIリファレンス
 
-See the [Base UI Select](https://base-ui.com/react/components/select#api-reference) documentation.
+[Base UI Select](https://base-ui.com/react/components/select#api-reference) ドキュメントを参照してください。

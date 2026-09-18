@@ -7,7 +7,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/styles/base-nova/ui/input-otp"
+} from "@/components/ui/base/input-otp"
 
 export function InputOTPInvalid() {
   const [value, setValue] = React.useState("000000")

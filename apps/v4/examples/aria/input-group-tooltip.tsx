@@ -5,48 +5,48 @@ import {
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-} from "@/styles/aria-nova/ui/input-group"
-import { Tooltip, TooltipTrigger } from "@/styles/aria-nova/ui/tooltip"
+} from "@/components/ui/aria/input-group"
+import { Tooltip, TooltipTrigger } from "@/components/ui/aria/tooltip"
 
 export default function InputGroupTooltip() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Enter password" type="password" />
+        <InputGroupInput placeholder="パスワードを入力" type="password" />
         <InputGroupAddon align="inline-end">
           <TooltipTrigger>
-            <InputGroupButton variant="ghost" aria-label="Info" size="icon-xs">
+            <InputGroupButton variant="ghost" aria-label="情報" size="icon-xs">
               <InfoIcon />
             </InputGroupButton>
             <Tooltip>
-              <p>Password must be at least 8 characters</p>
+              <p>パスワードは8文字以上で入力してください</p>
             </Tooltip>
           </TooltipTrigger>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Your email address" />
+        <InputGroupInput placeholder="メールアドレス" />
         <InputGroupAddon align="inline-end">
           <TooltipTrigger>
-            <InputGroupButton variant="ghost" aria-label="Help" size="icon-xs">
+            <InputGroupButton variant="ghost" aria-label="ヘルプ" size="icon-xs">
               <HelpCircle />
             </InputGroupButton>
             <Tooltip>
-              <p>We&apos;ll use this to send you notifications</p>
+              <p>通知の送信に使用します</p>
             </Tooltip>
           </TooltipTrigger>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter API key" />
+        <InputGroupInput placeholder="APIキーを入力" />
         <TooltipTrigger>
           <InputGroupAddon>
-            <InputGroupButton variant="ghost" aria-label="Help" size="icon-xs">
+            <InputGroupButton variant="ghost" aria-label="ヘルプ" size="icon-xs">
               <HelpCircle />
             </InputGroupButton>
           </InputGroupAddon>
           <Tooltip placement="left">
-            <p>Click for help with API keys</p>
+            <p>APIキーについてのヘルプはこちら</p>
           </Tooltip>
         </TooltipTrigger>
       </InputGroup>

@@ -1,4 +1,4 @@
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/components/ui/radix/button"
 import {
   Dialog,
   DialogContent,
@@ -6,20 +6,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/styles/radix-nova/ui/dialog"
+} from "@/components/ui/radix/dialog"
 
 export function DialogNoCloseButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="outline">No Close Button</Button>
+        <Button variant="outline">閉じるボタンなし</Button>
       </DialogTrigger>
       <DialogContent showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>No Close Button</DialogTitle>
+          <DialogTitle>閉じるボタンなし</DialogTitle>
           <DialogDescription>
-            This dialog doesn&apos;t have a close button in the top-right
-            corner.
+            このダイアログには右上に閉じるボタンがありません。
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

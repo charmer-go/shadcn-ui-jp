@@ -1,13 +1,13 @@
 import { MinusIcon, PlusIcon } from "lucide-react"
 
-import { Button } from "@/styles/aria-nova/ui/button"
-import { ButtonGroup } from "@/styles/aria-nova/ui/button-group"
+import { Button } from "@/components/ui/aria/button"
+import { ButtonGroup } from "@/components/ui/aria/button-group"
 
 export default function ButtonGroupOrientation() {
   return (
     <ButtonGroup
       orientation="vertical"
-      aria-label="Media controls"
+      aria-label="メディアコントロール"
       className="h-fit"
     >
       <Button variant="outline" size="icon">

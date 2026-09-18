@@ -1,6 +1,6 @@
 ---
-title: Input OTP
-description: Accessible one-time password component with copy paste functionality.
+title: 入力 OTP
+description: コピー＆ペースト機能を備えたアクセス可能なワンタイム パスワード コンポーネント。
 base: aria
 component: true
 links:
@@ -9,17 +9,17 @@ links:
 
 <ComponentPreview styleName="aria-nova" name="input-otp-demo" />
 
-## About
+## に使用します
 
-Input OTP is built on top of [input-otp](https://github.com/guilhermerodz/input-otp) by [@guilherme_rodz](https://twitter.com/guilherme_rodz).
+入力 OTP は、[@guilherme_rodz](https://twitter.com/guilherme_rodz) によって [input-otp](https://github.com/guilhermerodz/input-otp) の上に構築されます。
 
-## Installation
+## インストール
 
 <CodeTabs>
 
 <TabsList>
-  <TabsTrigger value="cli">Command</TabsTrigger>
-  <TabsTrigger value="manual">Manual</TabsTrigger>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">マニュアル</TabsTrigger>
 </TabsList>
 <TabsContent value="cli">
 
@@ -33,13 +33,13 @@ npx shadcn@latest add input-otp
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>次の依存関係をインストールします。</Step>
 
 ```bash
 npm install input-otp
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>次のコードをコピーしてプロジェクトに貼り付けます。</Step>
 
 <ComponentSource
   name="input-otp"
@@ -47,7 +47,7 @@ npm install input-otp
   styleName="aria-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>プロジェクト設定に一致するようにインポート パスを更新します。</Step>
 
 </Steps>
 
@@ -55,7 +55,7 @@ npm install input-otp
 
 </CodeTabs>
 
-## Usage
+## 使用法
 
 ```tsx showLineNumbers
 import {
@@ -82,9 +82,9 @@ import {
 </InputOTP>
 ```
 
-## Composition
+## 構成
 
-Use the following composition to build an `InputOTP`:
+次の構成を使用して、`InputOTP` を構築します。
 
 ```text
 InputOTP
@@ -103,9 +103,9 @@ InputOTP
     └── InputOTPSlot
 ```
 
-## Pattern
+## パターン
 
-Use the `pattern` prop to define a custom pattern for the OTP input.
+`pattern` プロップを使用して、OTP 入力のカスタム パターンを定義します。
 
 ```tsx showLineNumbers {1,5}
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
@@ -117,43 +117,43 @@ import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
 
 <ComponentPreview styleName="aria-nova" name="input-otp-pattern" />
 
-## Separator
+## 区切り文字
 
-Use the `<InputOTPSeparator />` component to add a separator between input groups.
+`<InputOTPSeparator />` コンポーネントを使用して、入力グループ間に区切り文字を追加します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-separator" />
 
-## Disabled
+## 無効
 
-Use the `disabled` prop to disable the input.
+`disabled` プロパティを使用して入力を無効にします。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-disabled" />
 
-## Controlled
+## 制御
 
-Use the `value` and `onChange` props to control the input value.
+`value` および `onChange` プロパティを使用して入力値を制御します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-controlled" />
 
-## Invalid
+## 無効です
 
-Use `aria-invalid` on the slots to show an error state.
+エラー状態を表示するには、スロットで `aria-invalid` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-invalid" />
 
-## Four Digits
+## 4 桁
 
-A common pattern for PIN codes. This uses the `pattern={REGEXP_ONLY_DIGITS}` prop.
+PIN コードの一般的なパターン。これは `pattern={REGEXP_ONLY_DIGITS}` プロパティを使用します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-four-digits" />
 
-## Alphanumeric
+## 英数字
 
-Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
+文字と数字の両方を受け入れるには `REGEXP_ONLY_DIGITS_AND_CHARS` を使用します。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-alphanumeric" />
 
-## Form
+## フォーム
 
 <ComponentPreview
   styleName="aria-nova"
@@ -163,10 +163,10 @@ Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui で RTL サポートを有効にするには、[RTL 構成ガイド](/docs/rtl) を参照してください。
 
 <ComponentPreview styleName="aria-nova" name="input-otp-rtl" direction="rtl" />
 
-## API Reference
+## API リファレンス
 
-See the [input-otp](https://input-otp.rodz.dev) documentation for more information.
+詳細については、[input-otp](https://input-otp.rodz.dev) ドキュメントを参照してください。

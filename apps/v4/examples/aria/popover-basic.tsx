@@ -1,21 +1,21 @@
-import { Button } from "@/styles/aria-nova/ui/button"
+import { Button } from "@/components/ui/aria/button"
 import {
   Popover,
   PopoverDescription,
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/styles/aria-nova/ui/popover"
+} from "@/components/ui/aria/popover"
 
 export function PopoverBasic() {
   return (
     <PopoverTrigger>
-      <Button variant="outline">Open Popover</Button>
+      <Button variant="outline">ポップオーバーを開く</Button>
       <Popover placement="bottom start">
         <PopoverHeader>
-          <PopoverTitle>Dimensions</PopoverTitle>
+          <PopoverTitle>寸法</PopoverTitle>
           <PopoverDescription>
-            Set the dimensions for the layer.
+            レイヤーの寸法を設定します。
           </PopoverDescription>
         </PopoverHeader>
       </Popover>

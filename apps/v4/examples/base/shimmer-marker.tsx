@@ -1,5 +1,5 @@
-import { Marker, MarkerContent, MarkerIcon } from "@/styles/base-rhea/ui/marker"
-import { Spinner } from "@/styles/base-rhea/ui/spinner"
+import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/base/marker"
+import { Spinner } from "@/components/ui/base/spinner"
 
 export function ShimmerMarker() {
   return (

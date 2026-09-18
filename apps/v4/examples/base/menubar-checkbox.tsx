@@ -7,33 +7,33 @@ import {
   MenubarSeparator,
   MenubarShortcut,
   MenubarTrigger,
-} from "@/styles/base-nova/ui/menubar"
+} from "@/components/ui/base/menubar"
 
 export function MenubarCheckbox() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarTrigger>表示</MenubarTrigger>
         <MenubarContent className="w-64">
-          <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
+          <MenubarCheckboxItem>常にブックマークバーを表示</MenubarCheckboxItem>
           <MenubarCheckboxItem checked>
-            Always Show Full URLs
+            常に完全なURLを表示
           </MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset>
-            Reload <MenubarShortcut>⌘R</MenubarShortcut>
+            再読み込み <MenubarShortcut>⌘R</MenubarShortcut>
           </MenubarItem>
           <MenubarItem disabled inset>
-            Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+            強制再読み込み <MenubarShortcut>⇧⌘R</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Format</MenubarTrigger>
+        <MenubarTrigger>書式</MenubarTrigger>
         <MenubarContent>
-          <MenubarCheckboxItem checked>Strikethrough</MenubarCheckboxItem>
-          <MenubarCheckboxItem>Code</MenubarCheckboxItem>
-          <MenubarCheckboxItem>Superscript</MenubarCheckboxItem>
+          <MenubarCheckboxItem checked>取り消し線</MenubarCheckboxItem>
+          <MenubarCheckboxItem>コード</MenubarCheckboxItem>
+          <MenubarCheckboxItem>上付き文字</MenubarCheckboxItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>
