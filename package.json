@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "pnpm --filter=v4 dev",
     "build": "pnpm --filter=v4 build",
+    "pages:build": "pnpm --filter=v4 build",
+    "pages:deploy": "pnpm pages:build && pnpm exec wrangler pages deploy apps/v4/out --project-name shadcn-ui-jp",
     "start": "pnpm --filter=v4 start",
     "lint": "pnpm --filter=v4 lint",
     "lint:fix": "pnpm --filter=v4 lint:fix",
@@ -22,5 +24,8 @@
   "packageManager": "pnpm@10.33.4",
   "engines": {
     "node": ">=20.18.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.132.0"
   }
 }
